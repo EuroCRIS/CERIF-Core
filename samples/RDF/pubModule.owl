@@ -1,0 +1,583 @@
+@prefix : <https://eurocris.org/spm#> .
+@prefix cf: <https://eurocris.org/cerif-core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://eurocris.org/spm> .
+
+<https://eurocris.org/spm> rdf:type owl:Ontology ;
+                            owl:imports <https://eurocris.org/cerif-core> .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  https://eurocris.org/cerif-core#DOI
+cf:DOI rdf:type rdfs:Datatype .
+
+
+###  https://eurocris.org/cerif-core#EUCountryCode
+cf:EUCountryCode rdf:type rdfs:Datatype ;
+                 owl:equivalentClass xsd:string .
+
+
+###  https://eurocris.org/cerif-core#ISO3166AlphaCode
+cf:ISO3166AlphaCode rdf:type rdfs:Datatype ;
+                    owl:equivalentClass xsd:string .
+
+
+###  https://eurocris.org/cerif-core#ISO3166NumericCode
+cf:ISO3166NumericCode rdf:type rdfs:Datatype ;
+                      owl:equivalentClass xsd:string .
+
+
+###  https://eurocris.org/cerif-core#ORCIDIdentifier
+cf:ORCIDIdentifier rdf:type rdfs:Datatype ;
+                   owl:equivalentClass xsd:string .
+
+
+###  https://eurocris.org/spm#ISBN
+:ISBN rdf:type rdfs:Datatype ;
+      owl:equivalentClass xsd:string .
+
+
+###  https://eurocris.org/spm#ISSN
+:ISSN rdf:type rdfs:Datatype ;
+      owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                            owl:onDatatype xsd:string ;
+                            owl:withRestrictions ( [ xsd:pattern "\\d{4}-\\d{3}(\\d|x|X)"
+                                                   ]
+                                                 )
+                          ] .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://eurocris.org/cerif-core#hasAccessRights
+cf:hasAccessRights rdf:type owl:ObjectProperty ;
+                   rdfs:range cf:TextualDocumentAccessibilitySpecification ;
+                   rdfs:label "Access Rights"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAffiliations
+cf:hasAffiliations rdf:type owl:ObjectProperty ;
+                   rdfs:label "Affiliations"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAgent
+cf:hasAgent rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty cf:hasAuthor ,
+                                   :hasEditor ,
+                                   :hasPublisher ;
+            rdfs:label "Contributor"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAuthor
+cf:hasAuthor rdf:type owl:ObjectProperty ;
+             rdfs:label "Author"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAuthors
+cf:hasAuthors rdf:type owl:ObjectProperty ;
+              rdfs:label "Authors"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAuthorships
+cf:hasAuthorships rdf:type owl:ObjectProperty ;
+                  rdfs:label "Authorships"@en .
+
+
+###  https://eurocris.org/cerif-core#hasContributionStatements
+cf:hasContributionStatements rdf:type owl:ObjectProperty ;
+                             rdfs:label "Contribution Statements"@en .
+
+
+###  https://eurocris.org/cerif-core#hasContributorships
+cf:hasContributorships rdf:type owl:ObjectProperty ;
+                       rdfs:label "Contributorships"@en .
+
+
+###  https://eurocris.org/cerif-core#hasCountry
+cf:hasCountry rdf:type owl:ObjectProperty ;
+              rdfs:label "Country"@en .
+
+
+###  https://eurocris.org/cerif-core#hasDocument
+cf:hasDocument rdf:type owl:ObjectProperty ;
+               rdfs:label "Document"@en .
+
+
+###  https://eurocris.org/cerif-core#hasInstitution
+cf:hasInstitution rdf:type owl:ObjectProperty ;
+                  rdfs:label "Institution"@en .
+
+
+###  https://eurocris.org/cerif-core#hasOrgUnit
+cf:hasOrgUnit rdf:type owl:ObjectProperty ;
+              rdfs:label "Organization Unit"@en .
+
+
+###  https://eurocris.org/cerif-core#hasPostalAddress
+cf:hasPostalAddress rdf:type owl:ObjectProperty ;
+                    rdfs:label "Postall Address"@en .
+
+
+###  https://eurocris.org/spm#hasDegreeOfContribution
+:hasDegreeOfContribution rdf:type owl:ObjectProperty ;
+                         rdfs:domain :CRediTContributionStatement ;
+                         rdfs:range :CRediTDegreeOfContribution ;
+                         rdfs:label "Degree of Contribution"@en .
+
+
+###  https://eurocris.org/spm#hasEditor
+:hasEditor rdf:type owl:ObjectProperty ;
+           rdfs:domain :Editorship ;
+           rdfs:range cf:Agent ;
+           rdfs:label "Editor"@en .
+
+
+###  https://eurocris.org/spm#hasEditorships
+:hasEditorships rdf:type owl:ObjectProperty ;
+                rdfs:domain :Monograph ;
+                rdfs:range :Editorship ;
+                rdfs:label "Editorships"@en .
+
+
+###  https://eurocris.org/spm#hasPublisher
+:hasPublisher rdf:type owl:ObjectProperty ;
+              rdfs:domain :Publishership ;
+              rdfs:range cf:Agent ;
+              rdfs:label "Publisher"@en .
+
+
+###  https://eurocris.org/spm#hasPublishers
+:hasPublishers rdf:type owl:ObjectProperty ;
+               rdfs:domain :Monograph ;
+               rdfs:range :Publishership ;
+               rdfs:label "Publishers"@en .
+
+
+###  https://eurocris.org/spm#hasPublishersAgents
+:hasPublishersAgents rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Journal ;
+                     rdfs:range cf:Agent ;
+                     rdfs:label "Publishers Agents"@en .
+
+
+###  https://eurocris.org/spm#hasRoleType
+:hasRoleType rdf:type owl:ObjectProperty ;
+             rdfs:domain :CRediTContributionStatement ;
+             rdfs:range :CRediTRoleType ;
+             rdfs:label "Role Type"@en .
+
+
+###  https://eurocris.org/spm#hasSource
+:hasSource rdf:type owl:ObjectProperty ;
+           rdfs:domain :JournalArticle ;
+           rdfs:range :Journal ;
+           rdfs:label "Source"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://eurocris.org/cerif-core#hasCity
+cf:hasCity rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string ;
+           rdfs:label "CIty"@en .
+
+
+###  https://eurocris.org/cerif-core#hasContacts
+cf:hasContacts rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:anyURI ;
+               rdfs:label "Contacts"@en .
+
+
+###  https://eurocris.org/cerif-core#hasCorrespondingAuthorFlag
+cf:hasCorrespondingAuthorFlag rdf:type owl:DatatypeProperty ;
+                              rdfs:range xsd:boolean ;
+                              rdfs:label "Corresponding Author Flag"@en .
+
+
+###  https://eurocris.org/cerif-core#hasDOI
+cf:hasDOI rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Journal ;
+          rdfs:label "DOI"@en .
+
+
+###  https://eurocris.org/cerif-core#hasDisplayText
+cf:hasDisplayText rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "Display Text" .
+
+
+###  https://eurocris.org/cerif-core#hasEUContryCode
+cf:hasEUContryCode rdf:type owl:DatatypeProperty ;
+                   rdfs:range cf:EUCountryCode ;
+                   rdfs:label "EU Country Code"@en .
+
+
+###  https://eurocris.org/cerif-core#hasFamilyNames
+cf:hasFamilyNames rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "Family Names"@en .
+
+
+###  https://eurocris.org/cerif-core#hasFirstName
+cf:hasFirstName rdf:type owl:DatatypeProperty ;
+                rdfs:label "First names"@en .
+
+
+###  https://eurocris.org/cerif-core#hasISO3166AlphaCode
+cf:hasISO3166AlphaCode rdf:type owl:DatatypeProperty ;
+                       rdfs:range cf:ISO3166AlphaCode ;
+                       rdfs:label "ISO 3166 Alpha Code"@en .
+
+
+###  https://eurocris.org/cerif-core#hasISO3166NumericCode
+cf:hasISO3166NumericCode rdf:type owl:DatatypeProperty ;
+                         rdfs:range cf:ISO3166NumericCode ;
+                         rdfs:label "ISO 3166 Numeric Code"@en .
+
+
+###  https://eurocris.org/cerif-core#hasName
+cf:hasName rdf:type owl:DatatypeProperty ;
+           rdfs:range rdf:PlainLiteral ;
+           rdfs:label "Name"@en .
+
+
+###  https://eurocris.org/cerif-core#hasORCIDiD
+cf:hasORCIDiD rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:label "ORCIDiD" .
+
+
+###  https://eurocris.org/cerif-core#hasOtherNames
+cf:hasOtherNames rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "Other Names"@en .
+
+
+###  https://eurocris.org/cerif-core#hasPublicationDate
+cf:hasPublicationDate rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:dateTime ;
+                      rdfs:label "Publication Date"@en .
+
+
+###  https://eurocris.org/cerif-core#hasStatement
+cf:hasStatement rdf:type owl:DatatypeProperty ;
+                rdfs:range rdf:PlainLiteral ;
+                rdfs:label "Statement"@en .
+
+
+###  https://eurocris.org/cerif-core#hasStreet
+cf:hasStreet rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string ;
+             rdfs:label "Street"@en .
+
+
+###  https://eurocris.org/cerif-core#hasTitle
+cf:hasTitle rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Journal ;
+            rdfs:range rdf:PlainLiteral ;
+            rdfs:label "Title"@en .
+
+
+###  https://eurocris.org/cerif-core#hasZipCode
+cf:hasZipCode rdf:type owl:DatatypeProperty ;
+              rdfs:label "Zip Code"@en .
+
+
+###  https://eurocris.org/spm#hasAcronym
+:hasAcronym rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Journal ;
+            rdfs:range rdf:PlainLiteral ;
+            rdfs:label "Acronym"@en .
+
+
+###  https://eurocris.org/spm#hasEISBN
+:hasEISBN rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Monograph ;
+          rdfs:range :ISBN ;
+          rdfs:label "eISBN"@en .
+
+
+###  https://eurocris.org/spm#hasEISSN
+:hasEISSN rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Journal ;
+          rdfs:range :ISSN ;
+          rdfs:label "eISSN"@en .
+
+
+###  https://eurocris.org/spm#hasEmbargoEndDate
+:hasEmbargoEndDate rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EmbargoedAccessCOARAccessibilitySpecificationv.1.0 ;
+                   rdfs:range xsd:dateTime ;
+                   rdfs:label "Embargo End Date"@en .
+
+
+###  https://eurocris.org/spm#hasEndDate
+:hasEndDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Journal ;
+            rdfs:range xsd:dateTime ;
+            rdfs:label "End Date"@en .
+
+
+###  https://eurocris.org/spm#hasEndPage
+:hasEndPage rdf:type owl:DatatypeProperty ;
+            rdfs:domain :JournalArticle ;
+            rdfs:range xsd:string ;
+            rdfs:label "End Page"@en .
+
+
+###  https://eurocris.org/spm#hasISBN
+:hasISBN rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Monograph ;
+         rdfs:range :ISBN ;
+         rdfs:label "ISBN"@en .
+
+
+###  https://eurocris.org/spm#hasISSN
+:hasISSN rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Journal ;
+         rdfs:range :ISSN ;
+         rdfs:label "ISSN"@en .
+
+
+###  https://eurocris.org/spm#hasIssue
+:hasIssue rdf:type owl:DatatypeProperty ;
+          rdfs:domain :JournalArticle ;
+          rdfs:range xsd:string ;
+          rdfs:label "Issue"@en .
+
+
+###  https://eurocris.org/spm#hasLeadingEditorFlag
+:hasLeadingEditorFlag rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Editorship ;
+                      rdfs:range xsd:boolean ;
+                      rdfs:label "Leading Editor Flag"@en .
+
+
+###  https://eurocris.org/spm#hasLeadingPublisherFlag
+:hasLeadingPublisherFlag rdf:type owl:DatatypeProperty ;
+                         rdfs:label "Leading Publisher Flag"@en .
+
+
+###  https://eurocris.org/spm#hasStartDate
+:hasStartDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Journal ;
+              rdfs:range xsd:dateTime ;
+              rdfs:label "Start Date"@en .
+
+
+###  https://eurocris.org/spm#hasStartPage
+:hasStartPage rdf:type owl:DatatypeProperty ;
+              rdfs:domain :JournalArticle ;
+              rdfs:range xsd:string ;
+              rdfs:label "Start Page"@en .
+
+
+###  https://eurocris.org/spm#hasVolume
+:hasVolume rdf:type owl:DatatypeProperty ;
+           rdfs:domain :JournalArticle ;
+           rdfs:range xsd:string ;
+           rdfs:label "Volume"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://eurocris.org/cerif-core#TextualDocumentAccessibilitySpecification
+cf:TextualDocumentAccessibilitySpecification rdf:type owl:Class ;
+                                             rdfs:label "Textual Document Accessibility Specification"@en .
+
+
+###  https://eurocris.org/spm#COARAccessibilitySpecificationv.1.0
+:COARAccessibilitySpecificationv.1.0 rdf:type owl:Class ;
+                                     rdfs:subClassOf cf:TextualDocumentAccessibilitySpecification ;
+                                     rdfs:label "COAR Accessibility Specification v.1.0"@en .
+
+
+###  https://eurocris.org/spm#CRediTContributionStatement
+:CRediTContributionStatement rdf:type owl:Class ;
+                             rdfs:subClassOf cf:ContributionStatement ;
+                             rdfs:label "CRediT Contribution Statement"@en .
+
+
+###  https://eurocris.org/spm#CRediTDegreeOfContribution
+:CRediTDegreeOfContribution rdf:type owl:Class ;
+                            rdfs:label "CRediT Degree of Contribution"@en .
+
+
+###  https://eurocris.org/spm#CRediTRoleType
+:CRediTRoleType rdf:type owl:Class ;
+                rdfs:label "CRediT Role Type"@en .
+
+
+###  https://eurocris.org/spm#Editorship
+:Editorship rdf:type owl:Class ;
+            rdfs:subClassOf cf:Contributorship .
+
+
+###  https://eurocris.org/spm#EmbargoedAccessCOARAccessibilitySpecificationv.1.0
+:EmbargoedAccessCOARAccessibilitySpecificationv.1.0 rdf:type owl:Class ;
+                                                    rdfs:subClassOf :COARAccessibilitySpecificationv.1.0 ;
+                                                    rdfs:label "Embargoed Access COAR Accessibility Specification v.1.0"@en .
+
+
+###  https://eurocris.org/spm#Journal
+:Journal rdf:type owl:Class .
+
+
+###  https://eurocris.org/spm#JournalArticle
+:JournalArticle rdf:type owl:Class ;
+                rdfs:subClassOf cf:TextualDocument ;
+                rdfs:label "Journal Article"@en .
+
+
+###  https://eurocris.org/spm#MetadataOnlyAccessCOARAccessibilitySpecificationv.1.0
+:MetadataOnlyAccessCOARAccessibilitySpecificationv.1.0 rdf:type owl:Class ;
+                                                       rdfs:subClassOf :COARAccessibilitySpecificationv.1.0 ;
+                                                       rdfs:label "Metadata Only Access COAR Accessibility Specification v.1.0"@en .
+
+
+###  https://eurocris.org/spm#Monograph
+:Monograph rdf:type owl:Class ;
+           rdfs:subClassOf cf:TextualDocument .
+
+
+###  https://eurocris.org/spm#OpenAccessCOARAccessibilitySpecificationv.1.0
+:OpenAccessCOARAccessibilitySpecificationv.1.0 rdf:type owl:Class ;
+                                               rdfs:subClassOf :COARAccessibilitySpecificationv.1.0 ;
+                                               rdfs:label "Open Access COAR Accessibility Specification v.1.0"@en .
+
+
+###  https://eurocris.org/spm#Publishership
+:Publishership rdf:type owl:Class ;
+               rdfs:subClassOf cf:Contributorship .
+
+
+###  https://eurocris.org/spm#RestrictedAccesCOARAccessibilitySpecificationv.1.0
+:RestrictedAccesCOARAccessibilitySpecificationv.1.0 rdf:type owl:Class ;
+                                                    rdfs:subClassOf :COARAccessibilitySpecificationv.1.0 ;
+                                                    rdfs:label "Restricted Acces COAR Accessibility Specification v.1.0"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://eurocris.org/spm#ConceptualizationCRediTRoleType
+:ConceptualizationCRediTRoleType rdf:type owl:NamedIndividual ,
+                                          :CRediTRoleType ;
+                                 rdfs:label "Conceptualization CRediT Role Type"@en .
+
+
+###  https://eurocris.org/spm#DataCurationCRediTRoleType
+:DataCurationCRediTRoleType rdf:type owl:NamedIndividual ,
+                                     :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#EqualCRediTDegreeOfContribution
+:EqualCRediTDegreeOfContribution rdf:type owl:NamedIndividual ,
+                                          :CRediTDegreeOfContribution ;
+                                 rdfs:label "Equal CRediT Degree of Contribution"@en .
+
+
+###  https://eurocris.org/spm#FormalAnalysisCRediTRoleType
+:FormalAnalysisCRediTRoleType rdf:type owl:NamedIndividual ,
+                                       :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#FundingAcquisitionCRediTRoleType
+:FundingAcquisitionCRediTRoleType rdf:type owl:NamedIndividual ,
+                                           :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#InvestigationCRediTRoleType
+:InvestigationCRediTRoleType rdf:type owl:NamedIndividual ,
+                                      :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#LeadCRediTDegreeOfContribution
+:LeadCRediTDegreeOfContribution rdf:type owl:NamedIndividual ,
+                                         :CRediTDegreeOfContribution ;
+                                rdfs:label "Lead CRediT Degree of Contribution"@en .
+
+
+###  https://eurocris.org/spm#MetadataOnlyAccessCOARv.1.0
+:MetadataOnlyAccessCOARv.1.0 rdf:type owl:NamedIndividual ,
+                                      :MetadataOnlyAccessCOARAccessibilitySpecificationv.1.0 ;
+                             rdfs:label "Metadata Only Access COAR v.1.0"@en .
+
+
+###  https://eurocris.org/spm#MethodologyCRediTRoleType
+:MethodologyCRediTRoleType rdf:type owl:NamedIndividual ,
+                                    :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#OpenAccessCOARv.1.0
+:OpenAccessCOARv.1.0 rdf:type owl:NamedIndividual ,
+                              :OpenAccessCOARAccessibilitySpecificationv.1.0 ;
+                     rdfs:label "Open Access COAR v.1.0"@en .
+
+
+###  https://eurocris.org/spm#ProjectAdministrationCRediTRoleType
+:ProjectAdministrationCRediTRoleType rdf:type owl:NamedIndividual ,
+                                              :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#ResourcesCRediTRoleType
+:ResourcesCRediTRoleType rdf:type owl:NamedIndividual ,
+                                  :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#RestrictedAccesCOARv.1.0
+:RestrictedAccesCOARv.1.0 rdf:type owl:NamedIndividual ,
+                                   :RestrictedAccesCOARAccessibilitySpecificationv.1.0 ;
+                          rdfs:label "Restricted Acces COAR v.1.0"@en .
+
+
+###  https://eurocris.org/spm#SoftwareCRediTRoleType
+:SoftwareCRediTRoleType rdf:type owl:NamedIndividual ,
+                                 :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#SupervisionCRediTRoleType
+:SupervisionCRediTRoleType rdf:type owl:NamedIndividual ,
+                                    :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#SupportingCRediTDegreeOfContribution
+:SupportingCRediTDegreeOfContribution rdf:type owl:NamedIndividual ,
+                                               :CRediTDegreeOfContribution ;
+                                      rdfs:label "Supporting CRediT Degree of Contribution"@en .
+
+
+###  https://eurocris.org/spm#ValidationCRediTRoleType
+:ValidationCRediTRoleType rdf:type owl:NamedIndividual ,
+                                   :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#VisualizationCRediTRoleType
+:VisualizationCRediTRoleType rdf:type owl:NamedIndividual ,
+                                      :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#WritingOriginalDraftCRediTRoleType
+:WritingOriginalDraftCRediTRoleType rdf:type owl:NamedIndividual ,
+                                             :CRediTRoleType .
+
+
+###  https://eurocris.org/spm#WritingReviewAndEditingCRediTRoleType
+:WritingReviewAndEditingCRediTRoleType rdf:type owl:NamedIndividual ,
+                                                :CRediTRoleType .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

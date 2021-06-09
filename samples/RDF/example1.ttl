@@ -1,0 +1,108 @@
+@prefix : <http://www.example.org/cerifcoreandpubmodule#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/cerifcoreandpubmodule> .
+
+<http://www.example.org/cerifcoreandpubmodule> rdf:type owl:Ontology ;
+                                                owl:imports <https://eurocris.org/cerif-core> ,
+                                                            <https://eurocris.org/spm> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.example.org/cerifcoreandpubmodule#EJOR
+:EJOR rdf:type owl:NamedIndividual ,
+               <https://eurocris.org/spm#Journal> ;
+      <https://eurocris.org/spm#hasPublishers> :elsevier ;
+      <https://eurocris.org/cerif-core#hasTitle> "European Journal of Operational Research"@en ;
+      <https://eurocris.org/spm#hasISSN> "0377-2217"^^<https://eurocris.org/spm#ISSN> .
+
+
+###  http://www.example.org/cerifcoreandpubmodule#Germany
+:Germany rdf:type owl:NamedIndividual ,
+                  <https://eurocris.org/cerif-core#Country> ;
+         <https://eurocris.org/cerif-core#hasISO3166AlphaCode> "DE"^^<https://eurocris.org/cerif-core#ISO3166AlphaCode> ;
+         <https://eurocris.org/cerif-core#hasName> "Deutschland"@de ,
+                                                   "Germany"@en ,
+                                                   "Nemačka"@sr-lat ,
+                                                   "Немачка"@sr-cyr .
+
+
+###  http://www.example.org/cerifcoreandpubmodule#affiliation1
+:affiliation1 rdf:type owl:NamedIndividual ,
+                       <https://eurocris.org/cerif-core#АffilliationStatement> ;
+              <https://eurocris.org/cerif-core#hasInstitution> :institution1 ;
+              <https://eurocris.org/cerif-core#hasPostalAddress> :affiliation1PostalAddress1 ;
+              <https://eurocris.org/cerif-core#hasDisplayText> """Department of Information Management,
+     Prof. Dr. Ulrike Reisach,
+     Neu-Ulm University of Applied Sciences,
+     Wiley-Street 1, D-89231 Neu-Ulm, Germany"""^^xsd:string .
+
+
+###  http://www.example.org/cerifcoreandpubmodule#affiliation1PostalAddress1
+:affiliation1PostalAddress1 rdf:type owl:NamedIndividual ,
+                                     <https://eurocris.org/cerif-core#PostalAddress> ;
+                            <https://eurocris.org/cerif-core#hasCountry> :Germany ;
+                            <https://eurocris.org/cerif-core#hasCity> "Neu-Ulm"^^xsd:string ;
+                            <https://eurocris.org/cerif-core#hasStreet> "Wiley-Street 1"^^xsd:string ;
+                            <https://eurocris.org/cerif-core#hasZipCode> "D-89231"^^xsd:string .
+
+
+###  http://www.example.org/cerifcoreandpubmodule#authorship1
+:authorship1 rdf:type owl:NamedIndividual ,
+                      <https://eurocris.org/cerif-core#Authorship> ;
+             <https://eurocris.org/cerif-core#hasAffiliations> :affiliation1 ;
+             <https://eurocris.org/cerif-core#hasAuthor> :personX ;
+             <https://eurocris.org/cerif-core#hasContacts> "mailto:xxxxxxxx@hnu.de"^^xsd:anyURI ;
+             <https://eurocris.org/cerif-core#hasCorrespondingAuthorFlag> "true"^^xsd:boolean ;
+             <https://eurocris.org/cerif-core#hasDisplayText> "Ulrike Reisach"^^xsd:string .
+
+
+###  http://www.example.org/cerifcoreandpubmodule#elsevier
+:elsevier rdf:type owl:NamedIndividual ,
+                   <https://eurocris.org/cerif-core#OrgUnit> ;
+          <https://eurocris.org/cerif-core#hasName> "Elsevier B.V."@en .
+
+
+###  http://www.example.org/cerifcoreandpubmodule#institution1
+:institution1 rdf:type owl:NamedIndividual ,
+                       <https://eurocris.org/cerif-core#OrgUnit> ;
+              <https://eurocris.org/cerif-core#hasName> "Hochschule für angewandte Wissenschaften Neu-Ulm"@de ,
+                                                        "Neu-Ulm University of Applied Sciences"@en .
+
+
+###  http://www.example.org/cerifcoreandpubmodule#personX
+:personX rdf:type owl:NamedIndividual ,
+                  <https://eurocris.org/cerif-core#Person> ;
+         <https://eurocris.org/cerif-core#hasPersonName> :personXName ;
+         <https://eurocris.org/cerif-core#hasORCIDiD> "https://orcid.org/0000-0003-3432-8728"^^<https://eurocris.org/cerif-core#ORCIDIdentifier> .
+
+
+###  http://www.example.org/cerifcoreandpubmodule#personXName
+:personXName rdf:type owl:NamedIndividual ,
+                      <https://eurocris.org/cerif-core#PersonName> ;
+             <https://eurocris.org/cerif-core#hasFamilyNames> "Reisach"^^xsd:string ;
+             <https://eurocris.org/cerif-core#hasFirstName> "Ulrike"^^xsd:string .
+
+
+###  http://www.example.org/cerifcoreandpubmodule#sampleJournalArticle1
+:sampleJournalArticle1 rdf:type owl:NamedIndividual ,
+                                <https://eurocris.org/spm#JournalArticle> ;
+                       <https://eurocris.org/cerif-core#hasAccessRights> <https://eurocris.org/spm#OpenAccessCOARv.1.0> ;
+                       <https://eurocris.org/cerif-core#hasAuthors> :personX ;
+                       <https://eurocris.org/cerif-core#hasAuthorships> :authorship1 ;
+                       <https://eurocris.org/spm#hasSource> :EJOR ;
+                       <https://eurocris.org/cerif-core#hasDOI> "10.1016/j.ejor.2020.09.020"^^<https://eurocris.org/cerif-core#DOI> ;
+                       <https://eurocris.org/cerif-core#hasPublicationDate> "2021-06-16"^^xsd:string ;
+                       <https://eurocris.org/cerif-core#hasTitle> "The responsibility of social media in times of societal and political manipulation"@en ;
+                       <https://eurocris.org/spm#hasEndPage> "917"^^xsd:string ;
+                       <https://eurocris.org/spm#hasIssue> "3"^^xsd:string ;
+                       <https://eurocris.org/spm#hasStartPage> "906"^^xsd:string ;
+                       <https://eurocris.org/spm#hasVolume> "291"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
