@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/cerifcoreandpubmodule#"
+     xml:base="http://www.example.org/cerifcoreandpubmodule"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:spm="https://eurocris.org/spm#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cerif-core="https://eurocris.org/cerif-core#">
+    <owl:Ontology rdf:about="http://www.example.org/cerifcoreandpubmodule">
+        <owl:imports rdf:resource="https://eurocris.org/cerif-core"/>
+        <owl:imports rdf:resource="https://eurocris.org/spm"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#EJOR -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#EJOR">
+        <rdf:type rdf:resource="https://eurocris.org/spm#Journal"/>
+        <spm:hasPublishers rdf:resource="http://www.example.org/cerifcoreandpubmodule#elsevier"/>
+        <cerif-core:hasTitle xml:lang="en">European Journal of Operational Research</cerif-core:hasTitle>
+        <spm:hasISSN rdf:datatype="https://eurocris.org/spm#ISSN">0377-2217</spm:hasISSN>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#Germany -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#Germany">
+        <rdf:type rdf:resource="https://eurocris.org/cerif-core#Country"/>
+        <cerif-core:hasISO3166AlphaCode rdf:datatype="https://eurocris.org/cerif-core#ISO3166AlphaCode">DE</cerif-core:hasISO3166AlphaCode>
+        <cerif-core:hasName xml:lang="de">Deutschland</cerif-core:hasName>
+        <cerif-core:hasName xml:lang="en">Germany</cerif-core:hasName>
+        <cerif-core:hasName xml:lang="sr-lat">Nemačka</cerif-core:hasName>
+        <cerif-core:hasName xml:lang="sr-cyr">Немачка</cerif-core:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#affiliation1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#affiliation1">
+        <rdf:type rdf:resource="https://eurocris.org/cerif-core#АffilliationStatement"/>
+        <cerif-core:hasInstitution rdf:resource="http://www.example.org/cerifcoreandpubmodule#institution1"/>
+        <cerif-core:hasPostalAddress rdf:resource="http://www.example.org/cerifcoreandpubmodule#affiliation1PostalAddress1"/>
+        <cerif-core:hasDisplayText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Department of Information Management,
+     Prof. Dr. Ulrike Reisach,
+     Neu-Ulm University of Applied Sciences,
+     Wiley-Street 1, D-89231 Neu-Ulm, Germany</cerif-core:hasDisplayText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#affiliation1PostalAddress1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#affiliation1PostalAddress1">
+        <rdf:type rdf:resource="https://eurocris.org/cerif-core#PostalAddress"/>
+        <cerif-core:hasCountry rdf:resource="http://www.example.org/cerifcoreandpubmodule#Germany"/>
+        <cerif-core:hasCity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neu-Ulm</cerif-core:hasCity>
+        <cerif-core:hasStreet rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wiley-Street 1</cerif-core:hasStreet>
+        <cerif-core:hasZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D-89231</cerif-core:hasZipCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#authorship1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#authorship1">
+        <rdf:type rdf:resource="https://eurocris.org/cerif-core#Authorship"/>
+        <cerif-core:hasAffiliations rdf:resource="http://www.example.org/cerifcoreandpubmodule#affiliation1"/>
+        <cerif-core:hasAuthor rdf:resource="http://www.example.org/cerifcoreandpubmodule#personX"/>
+        <cerif-core:hasContacts rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">mailto:xxxxxxxx@hnu.de</cerif-core:hasContacts>
+        <cerif-core:hasCorrespondingAuthorFlag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</cerif-core:hasCorrespondingAuthorFlag>
+        <cerif-core:hasDisplayText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ulrike Reisach</cerif-core:hasDisplayText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#elsevier -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#elsevier">
+        <rdf:type rdf:resource="https://eurocris.org/cerif-core#OrgUnit"/>
+        <cerif-core:hasName xml:lang="en">Elsevier B.V.</cerif-core:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#institution1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#institution1">
+        <rdf:type rdf:resource="https://eurocris.org/cerif-core#OrgUnit"/>
+        <cerif-core:hasName xml:lang="de">Hochschule für angewandte Wissenschaften Neu-Ulm</cerif-core:hasName>
+        <cerif-core:hasName xml:lang="en">Neu-Ulm University of Applied Sciences</cerif-core:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#personX -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#personX">
+        <rdf:type rdf:resource="https://eurocris.org/cerif-core#Person"/>
+        <cerif-core:hasPersonName rdf:resource="http://www.example.org/cerifcoreandpubmodule#personXName"/>
+        <cerif-core:hasORCIDiD rdf:datatype="https://eurocris.org/cerif-core#ORCIDIdentifier">https://orcid.org/0000-0003-3432-8728</cerif-core:hasORCIDiD>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#personXName -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#personXName">
+        <rdf:type rdf:resource="https://eurocris.org/cerif-core#PersonName"/>
+        <cerif-core:hasFamilyNames rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reisach</cerif-core:hasFamilyNames>
+        <cerif-core:hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ulrike</cerif-core:hasFirstName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/cerifcoreandpubmodule#sampleJournalArticle1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/cerifcoreandpubmodule#sampleJournalArticle1">
+        <rdf:type rdf:resource="https://eurocris.org/spm#JournalArticle"/>
+        <cerif-core:hasAccessRights rdf:resource="https://eurocris.org/spm#OpenAccessCOARv.1.0"/>
+        <cerif-core:hasAuthors rdf:resource="http://www.example.org/cerifcoreandpubmodule#personX"/>
+        <cerif-core:hasAuthorships rdf:resource="http://www.example.org/cerifcoreandpubmodule#authorship1"/>
+        <spm:hasSource rdf:resource="http://www.example.org/cerifcoreandpubmodule#EJOR"/>
+        <cerif-core:hasDOI rdf:datatype="https://eurocris.org/cerif-core#DOI">10.1016/j.ejor.2020.09.020</cerif-core:hasDOI>
+        <cerif-core:hasPublicationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-06-16</cerif-core:hasPublicationDate>
+        <cerif-core:hasTitle xml:lang="en">The responsibility of social media in times of societal and political manipulation</cerif-core:hasTitle>
+        <spm:hasEndPage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">917</spm:hasEndPage>
+        <spm:hasIssue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</spm:hasIssue>
+        <spm:hasStartPage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">906</spm:hasStartPage>
+        <spm:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#string">291</spm:hasVolume>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
