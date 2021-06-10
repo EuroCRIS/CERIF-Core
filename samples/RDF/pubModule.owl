@@ -47,7 +47,7 @@ cf:ORCIDIdentifier rdf:type rdfs:Datatype ;
 :ISSN rdf:type rdfs:Datatype ;
       owl:equivalentClass [ rdf:type rdfs:Datatype ;
                             owl:onDatatype xsd:string ;
-                            owl:withRestrictions ( [ xsd:pattern "\\d{4}-\\d{3}(\\d|x|X)"
+                            owl:withRestrictions ( [ xsd:pattern "\\d{4}-\\d{3}(\\d|X)"
                                                    ]
                                                  )
                           ] .
