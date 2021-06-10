@@ -33,9 +33,14 @@ cf:ISO3166NumericCode rdf:type rdfs:Datatype ;
                       owl:equivalentClass xsd:string .
 
 
-###  https://eurocris.org/cerif-core#ORCIDIdentifier
-cf:ORCIDIdentifier rdf:type rdfs:Datatype ;
-                   owl:equivalentClass xsd:string .
+###  https://eurocris.org/cerif-core#ORCID_iD_Type
+cf:ORCID_iD_Type rdf:type rdfs:Datatype ;
+                 owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                       owl:onDatatype xsd:string ;
+                                       owl:withRestrictions ( [ xsd:pattern "https://orcid\\.org/0000-000(1-[5-9]|2-[0-9]|3-[0-4])[0-9]{3}-[0-9]{3}[0-9X]"
+                                                              ]
+                                                            )
+                                     ] .
 
 
 #################################################################
