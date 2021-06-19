@@ -7,7 +7,7 @@ started in 2021 by [euroCRIS](https://www.eurocris.org/).
 ## Scope
 
 The Core consists of the following entities:
-* Agent, Person, OrgUnit
+* Agent: [Person](./entities/Person.md), OrgUnit
 * Activity
 * Document, TextualDocument
 * Contributorship, Authorship
@@ -17,7 +17,7 @@ The Core consists of the following entities:
 
 And the following data types:
 * MultilingualString
-* ORCID_iD_Type
+* [ORCID iD Type](./datatypes/ORCID_iD_Type.md)
 * ...
 
 ## Usage
