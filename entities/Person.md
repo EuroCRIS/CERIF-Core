@@ -19,7 +19,7 @@ One Person typically has many of these relationships.
 ## Attributes
 
 current official name : [PersonName_Type](PersonName_Type.md)
-ORCID iD : [ORCID_iD_Type](ORCID_iD_Type.md)
+ORCID iD : [ORCID_iD_Type](../datatypes/ORCID_iD_Type.md)
 
 ## Relationships
 
