@@ -26,5 +26,9 @@ ORCID iD : [ORCID_iD_Type](../datatypes/ORCID_iD_Type.md)
 
 ---
 
+## Matches
+1. Close match of [FOAF Person](http://xmlns.com/foaf/spec/#term_Person) (identified by URI http://xmlns.com/foaf/0.1/Person), which is also used in VIVO
+2. Narrow match of [Schema.org Person](https://schema.org/Person)
+
 ## References
 <a name="fn1">\[1\]</a> Source: The Oxford Dictionary, https://en.oxforddictionaries.com/definition/person
