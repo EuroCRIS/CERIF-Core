@@ -25,7 +25,7 @@ address: [PostalAddress](../datatypes/PostalAddress.md)
 ---
 
 ## Matches
-1. Close match of [VCard Organization](https://www.w3.org/2006/vcard/ns#Organization)
+1. Close match of [FOAF Group](http://xmlns.com/foaf/spec/#term_Group)
 2. Narrow match of [Schema.org Organization](https://schema.org/Organization)
 
 ## References
