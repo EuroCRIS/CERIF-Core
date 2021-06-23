@@ -14,18 +14,21 @@ The Core consists of the following entities:
   * [Textual Document](./entities/TextualDocument.md)
 * [Contributorship](./entities/Contributorship.md)
   * [Authorship](./entities/Authorship.md)
-* Affiliation Statement
-* Contribution Statement
-  * Free Text Contribution Statement
-* Textual Document Accessibility Specification
+* [Affiliation Statement](./entities/AffiliationStatement.md)
+* [Contribution Statement](./entities/ContributionStatement.md)
+  * [Free Text Contribution Statement](./entities/FreeTextContributionStatement.md)
+* [Textual Document Accessibility Specification](./entities/TextualDocumentAccessibilitySpecification.md)
 * Language Tag, Language, Country, Currency, Script
 * ...
 
 And the following data types:
 * [String](./datatypes/String.md)
+* [Date](./datatypes/Date.md)
+* [Boolean](./datatypes/Boolean.md)
 * [Multilingual String](./datatypes/MultilingualString.md)
 * [ORCID iD Type](./datatypes/ORCID_iD_Type.md)
 * [Person Name](./datatypes/PersonName.md)
+* [PostalAddress](./datatypes/PostalAddress.md)
 * ...
 
 ## Usage
