@@ -11,9 +11,9 @@ It is an abstract entity representing the root ancestor for research outputs suc
 [TextualDocument](TextualDocument.md)
 
 ## Attributes
-DOI : [DOI_Type](../datatypes/DOI_Type.md)
+DOI : [DOI Type](../datatypes/DOI_Type.md)
 
-title : [MultilingualString](../datatypes/MultilingualString.md)
+title : [Multilingual String](../datatypes/MultilingualString.md)
 
 publication date: [Date](../datatypes/Date.md)
 
