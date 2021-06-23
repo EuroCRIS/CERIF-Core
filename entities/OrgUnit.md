@@ -1,7 +1,7 @@
 # OrgUnit
 
 ## Definition
-an organisation, a unit therein, a committee or any other group of people that has a collective goal. Organisation Units are not necessarily formalized as legal entities.
+An organisation, a unit therein, a committee or any other group of people that has a collective goal. Organisation Units are not necessarily formalized as legal entities.
 
 ## Usage notes
 In the research information domain Organisation Units typically represents:
@@ -16,15 +16,19 @@ In the research information domain Organisation Units typically represents:
 [Agent](Agent.md)
 
 ## Attributes
-* rorId: [ROR_ID_Type](../datatypes/ROR_ID_Type.md)
-* name: [MultilingualString](../datatypes/MultilingualString.md)
-* acronym: [String](../datatypes/String.md)
-* address: [PostalAddress](../datatypes/PostalAddress.md)
-* webSiteURL: [URI](../datatypes/URI.md)
-* email: [URI](../datatypes/URI.md)
+ROR Id: [ROR ID Type](../datatypes/ROR_ID_Type.md)
 
-## Relationships
-* [Contributorship](Contributorship.md) - but this is actually derived from Agent
+name: [Multilingual String](../datatypes/MultilingualString.md)
+
+acronym: [String](../datatypes/String.md)
+
+address: [Postal Address](../datatypes/PostalAddress.md)
+
+web site URL: [URI](../datatypes/URI.md)
+
+email: [URI](../datatypes/URI.md)
+
+contributorships: List<[Contributorship](Contributorship.md)> (inherited from [Agent](Agent.md))
 
 ---
 
