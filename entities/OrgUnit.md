@@ -1,4 +1,4 @@
-# OrgUnit
+# Organisation Unit
 
 ## Definition
 An organisation, a unit therein, a committee or any other group of people that has a collective goal. Organisation Units are not necessarily formalized as legal entities.
