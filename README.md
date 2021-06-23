@@ -27,6 +27,8 @@ And the following data types:
 * [Boolean](./datatypes/Boolean.md)
 * [Multilingual String](./datatypes/MultilingualString.md)
 * [ORCID iD Type](./datatypes/ORCID_iD_Type.md)
+* [ROR ID Type](./datatypes/ROR_ID_Type.md)
+* [URI](./datatypes/URI.md)
 * [Person Name](./datatypes/PersonName.md)
 * [PostalAddress](./datatypes/PostalAddress.md)
 * [ISO3166 Alpha Code Type](../datatypes/ISO3166AlphaCode.md)
