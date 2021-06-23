@@ -7,17 +7,19 @@ started in 2021 by [euroCRIS](https://www.eurocris.org/).
 ## Scope
 
 The Core consists of the following entities:
-* Agent: [Person](./entities/Person.md), OrgUnit
+* [Agent](./entities/Agent.md), [Person](./entities/Person.md), [Organization Unit](./entities/OrgUnit.md)
 * Activity
-* Document, TextualDocument
+* [Document](./entities/Document.md), [Textual Document](./entities/TextualDocument.md)
 * Contributorship, Authorship
-* AffiliationStatement
-* LanguageTag, Language, Country, Currency, Script
+* Affiliation Statement
+* Language Tag, Language, Country, Currency, Script
 * ...
 
 And the following data types:
-* MultilingualString
+* [String](./datatypes/String.md)
+* [Multilingual String](./datatypes/MultilingualString.md)
 * [ORCID iD Type](./datatypes/ORCID_iD_Type.md)
+* [Person Name](./datatypes/PersonName.md)
 * ...
 
 ## Usage
