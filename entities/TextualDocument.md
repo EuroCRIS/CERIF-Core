@@ -14,13 +14,13 @@ This entity is NOT used to represent publishing channels and sources: journals a
 ## Attributes
 DOI : [DOI_Type](../datatypes/DOI_Type.md) (inherited from [Document](../entities/Document.md))
 
-title : [Multilingual String](../datatypes/MultilingualString.md)
+title : [Multilingual String](../datatypes/MultilingualString.md) (inherited from [Document](../entities/Document.md))
 
-publication date: [Date](../datatypes/Date.md)
+publication date: [Date](../datatypes/Date.md) (inherited from [Document](../entities/Document.md))
 
 access rights: [Textual Document Accessibility Specification](TextualDocumentAccessibilitySpecification.md)
 
-contributorships: List<[Contributorship](Contributorship.md)>
+contributorships: List<[Contributorship](Contributorship.md)> (inherited from [Document](../entities/Document.md))
 
 authorships: List<[Authorship](Authorship.md)>
 
