@@ -11,13 +11,13 @@ It is an abstract entity representing the root ancestor for research outputs suc
 [TextualDocument](TextualDocument.md)
 
 ## Attributes
-* DOI : [DOI_Type](../datatypes/DOI_Type.md)
-* title : [MultilingualString](../datatypes/MultilingualString.md)
-* PublicationDate: [Date](../datatypes/Date.md)
+DOI : [DOI_Type](../datatypes/DOI_Type.md)
 
+title : [MultilingualString](../datatypes/MultilingualString.md)
 
-## Relationships
-* [Contributorship](Contributorship.md)
+publication date: [Date](../datatypes/Date.md)
+
+contributorships: List<[Contributorship](Contributorship.md)>
 
 ---
 
