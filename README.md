@@ -18,7 +18,7 @@ The Core consists of the following entities:
 * [Contribution Statement](./entities/ContributionStatement.md)
   * [Free Text Contribution Statement](./entities/FreeTextContributionStatement.md)
 * [Textual Document Accessibility Specification](./entities/TextualDocumentAccessibilitySpecification.md)
-* Language Tag, Language, Country, Currency, Script
+* Language Tag, Language, [Country](./entities/Country.md), Currency, Script
 * ...
 
 And the following data types:
@@ -29,6 +29,9 @@ And the following data types:
 * [ORCID iD Type](./datatypes/ORCID_iD_Type.md)
 * [Person Name](./datatypes/PersonName.md)
 * [PostalAddress](./datatypes/PostalAddress.md)
+* [ISO3166 Alpha Code Type](../datatypes/ISO3166AlphaCode.md)
+* [ISO3166 Numeric Code Type](../datatypes/ISO3166NumericCode.md)
+* [EU Country Code Type](../datatypes/EUCountryCode.md)
 * ...
 
 ## Usage
