@@ -7,11 +7,17 @@ started in 2021 by [euroCRIS](https://www.eurocris.org/).
 ## Scope
 
 The Core consists of the following entities:
-* [Agent](./entities/Agent.md), [Person](./entities/Person.md), [Organisation Unit](./entities/OrgUnit.md)
+* [Agent](./entities/Agent.md)
+  * [Person](./entities/Person.md), [Organisation Unit](./entities/OrgUnit.md)
 * Activity
-* [Document](./entities/Document.md), [Textual Document](./entities/TextualDocument.md)
-* Contributorship, Authorship
+* [Document](./entities/Document.md)
+  * [Textual Document](./entities/TextualDocument.md)
+* [Contributorship](./entities/Contributorship.md)
+  * [Authorship](./entities/Authorship.md)
 * Affiliation Statement
+* Contribution Statement
+  * Free Text Contribution Statement
+* Textual Document Accessibility Specification
 * Language Tag, Language, Country, Currency, Script
 * ...
 
