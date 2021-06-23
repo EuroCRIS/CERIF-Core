@@ -16,8 +16,12 @@ In the research information domain Organisation Units typically represents:
 [Agent](Agent.md)
 
 ## Attributes
-current official name: [MultilingualString](../datatypes/MultilingualString.md)
+rorId: [ROR_ID_Type](../datatypes/ROR_ID_Type.md)
+name: [MultilingualString](../datatypes/MultilingualString.md)
+acronym: [String](../datatypes/String.md)
 address: [PostalAddress](../datatypes/PostalAddress.md)
+webSiteURL: [URI](../datatypes/URI.md)
+email: [URI](../datatypes/URI.md)
 
 ## Relationships
 [Contributorship](Contributorship.md) - but this is actually derived from Agent
