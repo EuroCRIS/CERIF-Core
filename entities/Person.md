@@ -17,12 +17,11 @@ One Person typically has many of these relationships.
 [Agent](Agent.md)
 
 ## Attributes
-current official name : [PersonName_Type](PersonName_Type.md)
+name: [Person Name Type](../datatypes/PersonName_Type.md)
 
-ORCID iD : [ORCID_iD_Type](../datatypes/ORCID_iD_Type.md)
+ORCID iD: [ORCID iD Type](../datatypes/ORCID_iD_Type.md)
 
-## Relationships
-[Contributorship](Contributorship.md) - but this is actually derived from Agent
+contributorships: List<[Contributorship](Contributorship.md)> (inherited from [Agent](Agent.md))
 
 ---
 
