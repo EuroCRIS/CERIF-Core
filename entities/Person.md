@@ -14,14 +14,14 @@ The kind of involvement of a Person in the research ecosystem is specified in th
 One Person typically has many of these relationships.
 
 ## Specialization of
-[Agent](Agent.md)
+[Agent](../entities/Agent.md)
 
 ## Attributes
 name: [Person Name Type](../datatypes/PersonName_Type.md)
 
 ORCID iD: [ORCID iD Type](../datatypes/ORCID_iD_Type.md)
 
-contributorships: List<[Contributorship](Contributorship.md)> (inherited from [Agent](Agent.md))
+contributorships: List<[Contributorship](../entities/Contributorship.md)> (inherited from [Agent](../entities/Agent.md))
 
 ---
 

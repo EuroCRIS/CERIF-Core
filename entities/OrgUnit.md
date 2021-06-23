@@ -13,7 +13,7 @@ In the research information domain Organisation Units typically represents:
 6. other bodies: editorial boards, evaluation panels, or committees of all kinds.
 
 ## Specialization of
-[Agent](Agent.md)
+[Agent](../entities/Agent.md)
 
 ## Attributes
 ROR Id: [ROR ID Type](../datatypes/ROR_ID_Type.md)
@@ -28,7 +28,7 @@ web site URL: [URI](../datatypes/URI.md)
 
 email: [URI](../datatypes/URI.md)
 
-contributorships: List<[Contributorship](Contributorship.md)> (inherited from [Agent](Agent.md))
+contributorships: List<[Contributorship](../entities/Contributorship.md)> (inherited from [Agent](../entities/Agent.md))
 
 ---
 

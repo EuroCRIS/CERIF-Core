@@ -9,7 +9,7 @@ A resource consisting primarily of words for reading. Examples include books, le
 This entity is NOT used to represent publishing channels and sources: journals and book series (incl. continuing conference proceedings series).
 
 ## Specialization of
-[Document](Document.md)
+[Document](../entities/Document.md)
 
 ## Attributes
 DOI : [DOI_Type](../datatypes/DOI_Type.md) (inherited from [Document](../entities/Document.md))
@@ -18,13 +18,13 @@ title : [Multilingual String](../datatypes/MultilingualString.md) (inherited fro
 
 publication date: [Date](../datatypes/Date.md) (inherited from [Document](../entities/Document.md))
 
-access rights: [Textual Document Accessibility Specification](TextualDocumentAccessibilitySpecification.md)
+access rights: [Textual Document Accessibility Specification](../entities/TextualDocumentAccessibilitySpecification.md)
 
-contributorships: List<[Contributorship](Contributorship.md)> (inherited from [Document](../entities/Document.md))
+contributorships: List<[Contributorship](../entities/Contributorship.md)> (inherited from [Document](../entities/Document.md))
 
-authorships: List<[Authorship](Authorship.md)>
+authorships: List<[Authorship](../entities/Authorship.md)>
 
-authors: List<[Agent](Agent.md)>
+authors: List<[Agent](../entities/Agent.md)>
 
 ---
 
