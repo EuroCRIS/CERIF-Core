@@ -11,7 +11,7 @@ language tag: [BCP47 Language Tag Type](../datatypes/BCP47_Language_Tag.md)
 
 [FIXME]
 
-language: [Language](../entities/Langauge.md)
+language: [Language](../entities/Language.md)
 
 country: [Country](../entities/Country.md)
 
