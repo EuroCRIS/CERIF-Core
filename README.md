@@ -22,7 +22,7 @@ The Core consists of the following entities:
 * [Contribution Statement](./entities/ContributionStatement.md)
   * [Free Text Contribution Statement](./entities/FreeTextContributionStatement.md)
 * [Textual Document Accessibility Specification](./entities/TextualDocumentAccessibilitySpecification.md)
-* Language Tag, Language, [Country](./entities/Country.md), Currency, Script
+* [Language Tag](./entities/LanguageTag.md), [Language](./entities/Language.md), [Country](./entities/Country.md), [Currency](./entities/Script.md), [Script](./entities/Script.md)
 * ...
 
 And the following data types:
