@@ -1,7 +1,7 @@
 # Contributorship
 
 ## Definition
-[FIXME] Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/OrgUnit.md)) with a [Document](../entities/Document.md) or any of its specialization ([Textual Document](../entities/TextualDocumentation.md))
+[FIXME] Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/OrgUnit.md)) with a [Document](../entities/Document.md) or any of its specialization ([Textual Document](../entities/TextualDocument.md))
 
 ## Usage notes
 
