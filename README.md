@@ -43,3 +43,7 @@ And the following data types:
 ## Usage
 
 The Core is seldom used on its own, you almost always need to add one or several additional modules.
+
+## Development Tools
+
+The [tools](./tools/) directory contains useful tools for checking the integrity of this repository.
