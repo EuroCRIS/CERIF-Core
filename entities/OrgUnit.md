@@ -16,7 +16,7 @@ In the research information domain Organisation Units typically represents:
 [Agent](../entities/Agent.md)
 
 ## Attributes
-ROR Id: [ROR ID Type](../datatypes/ROR_ID_Type.md)
+ROR Id: [ROR ID Type](../datatypes/ROR_ID.md)
 
 name: [Multilingual String](../datatypes/MultilingualString.md)
 

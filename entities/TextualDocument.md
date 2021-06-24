@@ -12,7 +12,7 @@ This entity is NOT used to represent publishing channels and sources: journals a
 [Document](../entities/Document.md)
 
 ## Attributes
-DOI : [DOI_Type](../datatypes/DOI_Type.md) (inherited from [Document](../entities/Document.md))
+DOI : [DOI_Type](../datatypes/DOI.md) (inherited from [Document](../entities/Document.md))
 
 title : [Multilingual String](../datatypes/MultilingualString.md) (inherited from [Document](../entities/Document.md))
 

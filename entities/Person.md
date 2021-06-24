@@ -17,9 +17,9 @@ One Person typically has many of these relationships.
 [Agent](../entities/Agent.md)
 
 ## Attributes
-name: [Person Name Type](../datatypes/PersonName_Type.md)
+name: [Person Name Type](../datatypes/PersonName.md)
 
-ORCID iD: [ORCID iD Type](../datatypes/ORCID_iD_Type.md)
+ORCID iD: [ORCID iD Type](../datatypes/ORCID_iD.md)
 
 contributorships: List<[Contributorship](../entities/Contributorship.md)> (inherited from [Agent](../entities/Agent.md))
 
