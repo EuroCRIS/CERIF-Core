@@ -10,7 +10,7 @@ name: [Multilingual String](../datatypes/MultilingualString.md)
 
 ISO639 1 code: [ISO639 1 Alpha2 Code Type](../datatypes/ISO639_1_Alpha2_Code.md)
 
-ISO639 2T Code: [ISO639 2T Alpha3 Code Type](../datatypes/ISO639_2T_Alpha3_Code.md)
+ISO639 2T code: [ISO639 2T Alpha3 Code Type](../datatypes/ISO639_2T_Alpha3_Code.md)
 
 ISO639 2B code: [ISO639 2B Alpha3 Code Type](../datatypes/ISO639_2B_Alpha3_Code.md)
 
