@@ -8,9 +8,7 @@ An area of land that has its own government, army, etc.<sup>[1](#fn1)</sup>
 ## Attributes
 name: [Multilingual String](../datatypes/Multilingual_String.md)
 
-ISO3166 alpha code: [ISO3166 Alpha Code Type](../datatypes/ISO3166_Alpha_Code.md)
-
-ISO3166 numeric code: [ISO3166 Numeric Code Type](../datatypes/ISO3166_Numeric_Code.md)
+ISO 3166 alpha code: [ISO 3166 Alpha Code Type](../datatypes/ISO_3166_Alpha_Code.md)
 
 EU country code: [EU Country Code Type](../datatypes/EU_Country_Code.md)
 
