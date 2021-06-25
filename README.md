@@ -12,32 +12,32 @@ started in 2021 by [euroCRIS](https://www.eurocris.org/).
 
 The Core consists of the following entities:
 * [Agent](./entities/Agent.md)
-  * [Person](./entities/Person.md), [Organisation Unit](./entities/OrgUnit.md)
+  * [Person](./entities/Person.md), [Organisation Unit](./entities/Organisation_Unit.md)
 * Activity
 * [Document](./entities/Document.md)
-  * [Textual Document](./entities/TextualDocument.md)
+  * [Textual Document](./entities/Textual_Document.md)
 * [Contributorship](./entities/Contributorship.md)
   * [Authorship](./entities/Authorship.md)
-* [Affiliation Statement](./entities/AffiliationStatement.md)
-* [Contribution Statement](./entities/ContributionStatement.md)
-  * [Free Text Contribution Statement](./entities/FreeTextContributionStatement.md)
-* [Textual Document Accessibility Specification](./entities/TextualDocumentAccessibilitySpecification.md)
-* [Language Tag](./entities/LanguageTag.md), [Language](./entities/Language.md), [Country](./entities/Country.md), [Currency](./entities/Script.md), [Script](./entities/Script.md)
+* [Affiliation Statement](./entities/Affiliation_Statement.md)
+* [Contribution Statement](./entities/Contribution_Statement.md)
+  * [Free Text Contribution Statement](./entities/Free_Text_Contribution_Statement.md)
+* [Textual Document Accessibility Specification](./entities/Textual_Document_Accessibility_Specification.md)
+* [Language Tag](./entities/Language_Tag.md), [Language](./entities/Language.md), [Country](./entities/Country.md), [Currency](./entities/Script.md), [Script](./entities/Script.md)
 * ...
 
 And the following data types:
 * [String](./datatypes/String.md)
 * [Date](./datatypes/Date.md)
 * [Boolean](./datatypes/Boolean.md)
-* [Multilingual String](./datatypes/MultilingualString.md)
+* [Multilingual String](./datatypes/Multilingual_String.md)
 * [ORCID iD Type](./datatypes/ORCID_iD.md)
 * [ROR ID Type](./datatypes/ROR_ID.md)
 * [URI](./datatypes/URI.md)
-* [Person Name](./datatypes/PersonName.md)
-* [PostalAddress](./datatypes/PostalAddress.md)
-* [ISO3166 Alpha Code Type](../datatypes/ISO3166AlphaCode.md)
-* [ISO3166 Numeric Code Type](../datatypes/ISO3166NumericCode.md)
-* [EU Country Code Type](../datatypes/EUCountryCode.md)
+* [Person Name](./datatypes/Person_Name.md)
+* [PostalAddress](./datatypes/Postal_Address.md)
+* [ISO 3166 Alpha Code Type](./datatypes/ISO_3166_Alpha_Code.md)
+* [ISO 3166 Numeric Code Type](./datatypes/ISO_3166_Numeric_Code.md)
+* [EU Country Code Type](./datatypes/EU_Country_Code.md)
 * ...
 
 ## Usage

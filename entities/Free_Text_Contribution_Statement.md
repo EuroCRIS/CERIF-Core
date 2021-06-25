@@ -10,7 +10,7 @@ All authors contributed ideas, text and review comments in the production of the
 K. XXX (kXXX@gmail.com), and the others by P. XXX (pXXX@gmail.com).
 
 ## Attributes
-statement: [Multilingual String](../datatypes/MultilingualString.md)
+statement: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ---
 

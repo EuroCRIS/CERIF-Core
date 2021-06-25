@@ -8,12 +8,12 @@ A document may manifest symbolic, diagrammatic or sensory-representational infor
 It is an abstract entity representing the root ancestor for research outputs such as Journal Article, Dataset, Software, Patent, etc. All relatioships which might be linked with any research output, should be generalized by linking the Document entity.
 
 ## Generalization of
-[Textual Document](../entities/TextualDocument.md)
+[Textual Document](../entities/Textual_Document.md)
 
 ## Attributes
 DOI : [DOI Type](../datatypes/DOI.md)
 
-title : [Multilingual String](../datatypes/MultilingualString.md)
+title : [Multilingual String](../datatypes/Multilingual_String.md)
 
 publication date: [Date](../datatypes/Date.md)
 

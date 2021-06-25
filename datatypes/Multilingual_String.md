@@ -1,6 +1,6 @@
 # Multilinqual String
 
-One or several [Strings](../datatypes/String.md) qualified by distinct [Language Tags](../entities/LanguageTag.md).
+One or several [Strings](../datatypes/String.md) qualified by distinct [Language Tags](../entities/Language_Tag.md).
 
 ---
 ## Matches

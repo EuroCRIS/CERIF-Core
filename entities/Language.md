@@ -6,7 +6,7 @@ A system of communication used by people living in a particular country consisti
 ## Usage notes
 
 ## Attributes
-name: [Multilingual String](../datatypes/MultilingualString.md)
+name: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ISO639 1 code: [ISO639 1 Alpha2 Code Type](../datatypes/ISO639_1_Alpha2_Code.md)
 

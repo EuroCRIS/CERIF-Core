@@ -7,7 +7,7 @@ The money that is used in a particular country at a particular time.<sup>[1](#fn
 The currency in which the monetary amount is expressed.
 
 ## Attributes
-name: [Multilingual String](../datatypes/MultilingualString.md)
+name: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ISO4217 alpha code: [ISO4217 Alpha Code](../datatypes/ISO4217_Alpha_Code.md)
 

@@ -7,9 +7,9 @@ Script indicates writing system variations that distinguish the written forms of
 An example of different scrypts for the same language might be Cyrillic and Latin alphabet for Serbian language. 
 
 ## Attributes
-name: [Multilingual String](../datatypes/MultilingualString.md)
+name: [Multilingual String](../datatypes/Multilingual_String.md)
 
-script code: [BCP47 Script Code Type](../datatypes/BCP47ScriptCode.md)
+script code: [BCP47 Script Code Type](../datatypes/BCP47_Script_Code.md)
 
 ---
 

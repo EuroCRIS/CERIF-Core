@@ -8,11 +8,11 @@
 ## Attributes
 display affiliation: [String](../datatypes/String.md)
 
-organisation unit: [Organisation Unit](../entities/OrgUnit.md)
+organisation unit: [Organisation Unit](../entities/Organisation_Unit.md)
 
-institution: [Organisation Unit](../entities/OrgUnit.md) 
+institution: [Organisation Unit](../entities/Organisation_Unit.md) 
 
-address: [Postal Address](../datatypes/PostalAddress.md)
+address: [Postal Address](../datatypes/Postal_Address.md)
 
 ---
 

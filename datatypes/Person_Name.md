@@ -4,9 +4,9 @@ The name of a [Person](../entities/Person.md).
 
 ## Components
 
-- first names : [Multilingual String](../datatypes/MultilingualString.md)
-- family names : [Multilingual String](../datatypes/MultilingualString.md)
-- other names : [Multilingual String](../datatypes/MultilingualString.md)
+- first names : [Multilingual String](../datatypes/Multilingual_String.md)
+- family names : [Multilingual String](../datatypes/Multilingual_String.md)
+- other names : [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Notes
 

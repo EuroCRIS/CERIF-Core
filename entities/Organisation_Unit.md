@@ -18,11 +18,11 @@ In the research information domain Organisation Units typically represents:
 ## Attributes
 ROR Id: [ROR ID Type](../datatypes/ROR_ID.md)
 
-name: [Multilingual String](../datatypes/MultilingualString.md)
+name: [Multilingual String](../datatypes/Multilingual_String.md)
 
 acronym: [String](../datatypes/String.md)
 
-address: [Postal Address](../datatypes/PostalAddress.md)
+address: [Postal Address](../datatypes/Postal_Address.md)
 
 web site URL: [URI](../datatypes/URI.md)
 
