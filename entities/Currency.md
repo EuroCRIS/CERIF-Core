@@ -9,7 +9,7 @@ The currency in which the monetary amount is expressed.
 ## Attributes
 name: [Multilingual String](../datatypes/Multilingual_String.md)
 
-ISO4217 alpha code: [ISO4217 Alpha Code](../datatypes/ISO4217_Alpha_Code.md)
+ISO 4217 alpha code: [ISO 4217 Alpha Code](../datatypes/ISO_4217_Alpha_Code.md)
 
 ---
 
