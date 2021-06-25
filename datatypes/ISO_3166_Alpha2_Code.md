@@ -1,6 +1,6 @@
 # The ISO 3166 Two-Letter Country Code datatype
 
-The datatype that represents the two-letter codes of countries in line with the ISO 3166 standard<sup>[1](#fn1)</sup>.
+The datatype that represents the two-letter codes of countries in line with the ISO 3166-1 Alpha-2 standard<sup>[1](#fn1)</sup>.
 
 It is based on the [String](../datatypes/String.md) datatype with the following additional restrictions:
 - the string must match the following regular expression: `[A-Z]{2}` (two uppercase letters of the English alphabet)

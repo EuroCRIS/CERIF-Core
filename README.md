@@ -35,9 +35,7 @@ And the following data types:
 * [URI](./datatypes/URI.md)
 * [Person Name](./datatypes/Person_Name.md)
 * [PostalAddress](./datatypes/Postal_Address.md)
-* [ISO 3166 Alpha Code Type](./datatypes/ISO_3166_Alpha_Code.md)
-* [ISO 3166 Numeric Code Type](./datatypes/ISO_3166_Numeric_Code.md)
-* [EU Country Code Type](./datatypes/EU_Country_Code.md)
+* [ISO 3166 Alpha2 Code Type](./datatypes/ISO_3166_Alpha2_Code.md)
 * ...
 
 ## Usage
