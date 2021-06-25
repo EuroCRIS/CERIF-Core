@@ -1,6 +1,6 @@
 # Postal Address
 
-The location assigned to an [Organisation Unit](../entities/Organistaion_Unit.md) or some other CERIF entity instance.
+The location assigned to an [Organisation Unit](../entities/Organisation_Unit.md) or some other CERIF entity instance.
 
 ## Components
 
