@@ -4,7 +4,7 @@
 # To be run from the main directory of the CERIF-Core repo.
 
 find . -name \*.md | \
-xargs grep -o -h -e '([./A-Za-z_]*\.md)' | \
+xargs grep -o -h -e '([./A-Z0-9a-z_]*\.md)' | \
 sed -e 's/(\.\.*\//.\//' -e 's/)$//' | \
 sort | uniq -c | \
 while read N F ; do 
