@@ -22,7 +22,7 @@ The Core consists of the following entities:
 * [Contribution Statement](./entities/Contribution_Statement.md)
   * [Free Text Contribution Statement](./entities/Free_Text_Contribution_Statement.md)
 * [Textual Document Accessibility Specification](./entities/Textual_Document_Accessibility_Specification.md)
-* [Language Tag](./entities/Language_Tag.md), [Language](./entities/Language.md), [Country](./entities/Country.md), [Currency](./entities/Script.md), [Script](./entities/Script.md)
+* [Language](./entities/Language.md), [Country](./entities/Country.md), [Currency](./entities/Script.md), [Script](./entities/Script.md)
 * ...
 
 And the following data types:
@@ -38,6 +38,7 @@ And the following data types:
 * [ISO 639-1 Alpha2 Code](./datatypes/ISO_639_1_Alpha2_Code.md), [ISO 639-2B Alpha3 Code](./datatypes/ISO_639_2B_Alpha3_Code.md), [ISO 639-2T Alpha3 Code](./datatypes/ISO_639_2T_Alpha3_Code.md)
 * [ISO 3166 Alpha2 Code](./datatypes/ISO_3166_Alpha2_Code.md)
 * [ISO 15924 Alpha4 Code](./datatypes/ISO_15924_Alpha4_Code.md)
+* [Language Tag](./datatypes/Language_Tag.md)
 * ...
 
 ## Usage
