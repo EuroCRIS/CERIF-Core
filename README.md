@@ -34,8 +34,9 @@ And the following data types:
 * [ROR ID Type](./datatypes/ROR_ID.md)
 * [URI](./datatypes/URI.md)
 * [Person Name](./datatypes/Person_Name.md)
-* [PostalAddress](./datatypes/Postal_Address.md)
-* [ISO 3166 Alpha2 Code Type](./datatypes/ISO_3166_Alpha2_Code.md)
+* [Postal Address](./datatypes/Postal_Address.md)
+* [ISO 3166 Alpha2 Code](./datatypes/ISO_3166_Alpha2_Code.md)
+* [ISO 15924 Alpha4 Code](./datatypes/ISO_15924_Alpha4_Code.md)
 * ...
 
 ## Usage
