@@ -35,9 +35,9 @@ And the following data types:
 * [URI](./datatypes/URI.md)
 * [Person Name](./datatypes/Person_Name.md)
 * [Postal Address](./datatypes/Postal_Address.md)
-* [ISO 639-1 Alpha2 Code](./datatypes/ISO_639_1_Alpha2_Code.md), [ISO 639-2B Alpha3 Code](./datatypes/ISO_639_2B_Alpha3_Code.md), [ISO 639-2T Alpha3 Code](./datatypes/ISO_639_2T_Alpha3_Code.md)
-* [ISO 3166 Alpha2 Code](./datatypes/ISO_3166_Alpha2_Code.md)
-* [ISO 15924 Alpha4 Code](./datatypes/ISO_15924_Alpha4_Code.md)
+* Codes for languages: [ISO 639-1 Alpha2 Code](./datatypes/ISO_639_1_Alpha2_Code.md), [ISO 639-2B Alpha3 Code](./datatypes/ISO_639_2B_Alpha3_Code.md), [ISO 639-2T Alpha3 Code](./datatypes/ISO_639_2T_Alpha3_Code.md)
+* Codes for countries: [ISO 3166 Alpha2 Code](./datatypes/ISO_3166_Alpha2_Code.md)
+* Codes for scripts: [ISO 15924 Alpha4 Code](./datatypes/ISO_15924_Alpha4_Code.md)
 * [Language Tag](./datatypes/Language_Tag.md)
 * ...
 
