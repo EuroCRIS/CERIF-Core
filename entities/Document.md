@@ -1,7 +1,7 @@
 # Document
 
 ## Definition
-A document is a bounded representation of body of information designed with the capacity (and usually intent) to communicate. 
+A document is a bounded representation of a body of information designed with the capacity (and usually intent) to communicate. 
 A document may manifest symbolic, diagrammatic or sensory-representational information.<sup>[1](#fn1)</sup>
 
 ## Usage notes
@@ -23,7 +23,7 @@ contributorships: List<[Contributorship](../entities/Contributorship.md)>
 
 ## Matches
 1. Close match of [Bibo Document](http://purl.org/ontology/bibo/Document)
-2. Close match of [Schema.org CreativityWork](https://schema.org/CreativeWork)
+2. Close match of [Schema.org CreativeWork](https://schema.org/CreativeWork)
 
 ## References
 <a name="fn1">\[1\]</a> Source: The Bibo Ontology, http://purl.org/ontology/bibo/Document
