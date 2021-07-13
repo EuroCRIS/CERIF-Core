@@ -1,0 +1,72 @@
+@startuml
+package "CERIF core" #DDDDDD {
+    class "Document"{
+        Multilingual_String title
+        Date publicationDate
+        DOI_Type DOI
+    }
+    class "Textual Document"{
+    }
+    class "Textual Document Accessibility Specification"{
+    }
+    class "Agent"{
+
+    }
+    class "Organisation Unit"{
+        Multilingual_String name
+    }
+    class "Person"{
+        ORCID_iD orcidid
+    }
+    class "Person Name"{
+        String firstNames
+        String familyNames
+        String otherNames
+    }
+    class "Authorship"{
+        Boolean correspondingAuthorFlag
+    }
+    class "Contributorship"{
+        List<URI> contacts
+        String displayName
+    }
+    class "Contribution Statement"{
+    }
+    class "Free Text Contribution"{
+        Multilingual_String statement
+    }
+    class "Affiliation Statement"{
+        String displayAffiliation
+    }
+    class "Postal Address"{
+        String street
+        String city
+        String zipCode
+    }
+    class "Country"{
+        Multilingual_String name
+        ISO3166_Alpha_Code iso3166alphaCode
+        ISO3166_Numeric_Code iso3166NumericCode
+        EU_Country_Code euCountryCode
+    }
+}
+
+"Postal Address" *-- "country" "Country"
+"Affiliation Statement" *-- "postalAddress" "Postal Address"
+"Affiliation Statement" *-- "orgUnit" "Organisation Unit"
+"Affiliation Statement" *-- "institution" "Organisation Unit"
+"Contribution Statement" <|-- "Free Text Contribution"
+"Contributorship" --* "document" "Document"
+"Contributorship" --* "contributor" "Agent"
+"Contributorship" o-- "affiliations" "Affiliation Statement"
+"Contributorship" o-- "contributionStatements" "Contribution Statement"
+"Contributorship" <|-- "Authorship"
+"Authorship" --* "Agent":author
+note on link #red: author == contributor
+"Person" o-- "names" "Person Name"
+"Agent" <|-- "Person"
+"Agent" <|-- "Organisation Unit"
+"Document" <|-- "Textual Document"
+"Textual Document" *-- "accessRights" "Textual Document Accessibility Specification"
+"Textual Document" *--  "authors" "Agent"
+@enduml
