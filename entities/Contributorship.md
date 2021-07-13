@@ -22,7 +22,6 @@ display name: [String](../datatypes/String.md)>
 contribution statements: List<[Contribution Statement](../entities/Contribution_Statement.md)> 
 
 ![The Contributorship diagram](../diagrams/contributorship.svg)
-<img src="../diagrams/contributorship.svg">
 ---
 
 ## Matches

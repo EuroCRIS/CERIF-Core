@@ -43,7 +43,6 @@ And the following data types:
 * ...
 
 ![The CERIF Core diagram](./diagrams/core.svg)
-<img src="./diagrams/core.svg">
 
 ## Usage
 
