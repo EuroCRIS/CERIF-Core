@@ -1,6 +1,6 @@
 @startuml
 package "CERIF core" #DDDDDD {
-    !startsub Contributorship
+    !startsub ContributorshipSection
     class "Document"{
         Multilingual_String title
         Date publicationDate
@@ -11,7 +11,7 @@ package "CERIF core" #DDDDDD {
     }
     class "Textual Document Accessibility Specification"{
     }
-    !startsub Contributorship
+    !startsub ContributorshipSection
     class "Agent"{
 
     }
@@ -30,7 +30,7 @@ package "CERIF core" #DDDDDD {
     class "Authorship"{
         Boolean correspondingAuthorFlag
     }
-    !startsub Contributorship
+    !startsub ContributorshipSection
     class "Contributorship"{
         List<URI> contacts
         String displayName
@@ -56,7 +56,7 @@ package "CERIF core" #DDDDDD {
     }
     !endsub
 }
-!startsub Contributorship
+!startsub ContributorshipSection
 "Postal Address" *-- "country" "Country"
 "Affiliation Statement" *-- "postalAddress" "Postal Address"
 "Affiliation Statement" *-- "orgUnit" "Organisation Unit"

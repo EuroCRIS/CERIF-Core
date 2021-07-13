@@ -1,5 +1,5 @@
 @startuml
 
-    !includesub core.puml!Contributorship
+    !includesub core.puml!ContributorshipSection
 
 @enduml

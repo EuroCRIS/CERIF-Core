@@ -42,7 +42,8 @@ And the following data types:
 * [Language Tag](./datatypes/Language_Tag.md)
 * ...
 
-![Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/EuroCRIS/CERIF-Core/main/diagrams/core.puml)
+![The CERIF Core diagram](./diagrams/core.svg)
+<img src="./diagrams/core.svg">
 
 ## Usage
 
