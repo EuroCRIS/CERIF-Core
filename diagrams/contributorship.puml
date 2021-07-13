@@ -1,0 +1,5 @@
+@startuml
+
+    !includesub core.puml!Contributorship
+
+@enduml

@@ -21,6 +21,8 @@ display name: [String](../datatypes/String.md)>
 
 contribution statements: List<[Contribution Statement](../entities/Contribution_Statement.md)> 
 
+![Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/EuroCRIS/CERIF-Core/main/diagrams/contributorship.puml)
+
 ---
 
 ## Matches

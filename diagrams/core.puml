@@ -1,17 +1,21 @@
 @startuml
 package "CERIF core" #DDDDDD {
+    !startsub Contributorship
     class "Document"{
         Multilingual_String title
         Date publicationDate
         DOI_Type DOI
     }
+    !endsub
     class "Textual Document"{
     }
     class "Textual Document Accessibility Specification"{
     }
+    !startsub Contributorship
     class "Agent"{
 
     }
+    !endsub
     class "Organisation Unit"{
         Multilingual_String name
     }
@@ -26,6 +30,7 @@ package "CERIF core" #DDDDDD {
     class "Authorship"{
         Boolean correspondingAuthorFlag
     }
+    !startsub Contributorship
     class "Contributorship"{
         List<URI> contacts
         String displayName
@@ -49,8 +54,9 @@ package "CERIF core" #DDDDDD {
         ISO3166_Numeric_Code iso3166NumericCode
         EU_Country_Code euCountryCode
     }
+    !endsub
 }
-
+!startsub Contributorship
 "Postal Address" *-- "country" "Country"
 "Affiliation Statement" *-- "postalAddress" "Postal Address"
 "Affiliation Statement" *-- "orgUnit" "Organisation Unit"
@@ -60,6 +66,7 @@ package "CERIF core" #DDDDDD {
 "Contributorship" --* "contributor" "Agent"
 "Contributorship" o-- "affiliations" "Affiliation Statement"
 "Contributorship" o-- "contributionStatements" "Contribution Statement"
+!endsub
 "Contributorship" <|-- "Authorship"
 "Authorship" --* "Agent":author
 note on link #red: author == contributor

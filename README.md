@@ -42,6 +42,8 @@ And the following data types:
 * [Language Tag](./datatypes/Language_Tag.md)
 * ...
 
+![Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/EuroCRIS/CERIF-Core/main/diagrams/core.puml)
+
 ## Usage
 
 The Core is seldom used on its own, you almost always need to add one or several additional modules.
@@ -49,3 +51,4 @@ The Core is seldom used on its own, you almost always need to add one or several
 ## Development Tools
 
 The [tools](./tools/) directory contains useful tools for checking the integrity of this repository.
+
