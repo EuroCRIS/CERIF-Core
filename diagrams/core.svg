@@ -30,10 +30,10 @@ reverse link Agent to Person--><path codeLine="73" d="M369.467,575.187 C352.817,
 reverse link Agent to Organisation Unit--><path codeLine="74" d="M418.652,578.266 C427.016,598.055 436.813,621.235 444.411,639.213 " fill="none" id="Agent-backto-Organisation Unit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="412.093,580.727,410.754,559.58,424.988,575.277,412.093,580.727" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[53b7c6d4e5a1aa2c96492a4408eaa466]
 reverse link Document to Textual Document--><path codeLine="75" d="M102,282.446 C102,319.008 102,363.023 102,389.332 " fill="none" id="Document-backto-Textual Document" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="95.0001,282.245,102,262.245,109,282.245,95.0001,282.245" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f787ba307220269751248ba5c7487a39]
 reverse link Textual Document to Textual Document Accessibility Specification--><path codeLine="76" d="M124.693,448.539 C138.107,468.66 154.738,493.607 166.623,511.434 " fill="none" id="Textual Document-backto-Textual Document Accessibility Specification" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="117.425,437.637,117.425,444.8481,124.0814,447.6216,124.0814,440.4105,117.425,437.637" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="67.9195" y="500.4291">accessRights</text><!--MD5=[d5a6c053a39d24fd07d740a282fdedf6]
-reverse link Textual Document to Agent--><path codeLine="77" d="M143.682,445.124 C160.2,455.994 179.808,467.403 199,475 C262.62,500.182 285.97,480.879 350,505 C355.839,507.2 361.791,510.026 367.471,513.055 " fill="none" id="Textual Document-backto-Agent" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="132.784,437.738,135.5069,444.4153,142.7178,444.47,139.9949,437.7927,132.784,437.738" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="334.073" y="500.4933">authors</text><!--MD5=[ab28db5788a800ed233af2c73f3603e6]
+reverse link Textual Document to Agent--><path codeLine="77" d="M143.682,445.124 C160.2,455.994 179.808,467.403 199,475 C262.62,500.182 285.97,480.879 350,505 C355.839,507.2 361.791,510.026 367.471,513.055 " fill="none" id="Textual Document-backto-Agent" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="132.784,437.738,135.5069,444.4153,142.7178,444.47,139.9949,437.7927,132.784,437.738" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="334.073" y="500.4933">authors</text><!--MD5=[fc03e7a60ec4acae1dcfc8bda907ab01]
 @startuml
 package "CERIF core" #DDDDDD {
-    !startsub ContributorshipSection
+    !startsub Contributorship
     class "Document"{
         Multilingual_String title
         Date publicationDate
@@ -44,7 +44,7 @@ package "CERIF core" #DDDDDD {
     }
     class "Textual Document Accessibility Specification"{
     }
-    !startsub ContributorshipSection
+    !startsub Contributorship
     class "Agent"{
 
     }
@@ -63,7 +63,7 @@ package "CERIF core" #DDDDDD {
     class "Authorship"{
         Boolean correspondingAuthorFlag
     }
-    !startsub ContributorshipSection
+    !startsub Contributorship
     class "Contributorship"{
         List<URI> contacts
         String displayName
@@ -89,7 +89,7 @@ package "CERIF core" #DDDDDD {
     }
     !endsub
 }
-!startsub ContributorshipSection
+!startsub Contributorship
 "Postal Address" *- - "country" "Country"
 "Affiliation Statement" *- - "postalAddress" "Postal Address"
 "Affiliation Statement" *- - "orgUnit" "Organisation Unit"
