@@ -1,6 +1,5 @@
 @startuml
-package "CERIF core" #DDDDDD {
-    class Temp2
+
 
     !startsub Contributorship
     class "Document"{
@@ -13,11 +12,10 @@ package "CERIF core" #DDDDDD {
     }
     class "Textual Document Accessibility Specification"{
     }
-    !startsub Contributorship
+    !startsub Agent
     class "Agent"{
 
     }
-    !endsub
     class "Organisation Unit"{
         Multilingual_String name
     }
@@ -29,6 +27,7 @@ package "CERIF core" #DDDDDD {
         String familyNames
         String otherNames
     }
+    !endsub
     class "Authorship"{
         Boolean correspondingAuthorFlag
     }
@@ -57,25 +56,30 @@ package "CERIF core" #DDDDDD {
         EU_Country_Code euCountryCode
     }
     !endsub
-}
+
 !startsub Contributorship
 "Postal Address" *-- "country" "Country"
 "Affiliation Statement" *-- "postalAddress" "Postal Address"
 "Affiliation Statement" *-- "orgUnit" "Organisation Unit"
 "Affiliation Statement" *-- "institution" "Organisation Unit"
 "Contribution Statement" <|-- "Free Text Contribution"
-"Contributorship" --* "document" "Document"
-"Contributorship" --* "contributor" "Agent"
+"Contributorship" -r-* "Document"
+"Contributorship" -l-* "Agent"
 "Contributorship" o-- "affiliations" "Affiliation Statement"
-"Contributorship" o-- "contributionStatements" "Contribution Statement"
+"Contributorship" o-u- "contributionStatements" "Contribution Statement"
 !endsub
-"Contributorship" <|-- "Authorship"
-"Authorship" --* "Agent":author
+"Authorship" -r-* "Textual Document"
+"Contributorship" <|-u- "Authorship"
+"Authorship" --> "author" "Agent"
 note on link #red: author == contributor
-"Person" o-- "names" "Person Name"
-"Agent" <|-- "Person"
-"Agent" <|-- "Organisation Unit"
-"Document" <|-- "Textual Document"
-"Textual Document" *-- "accessRights" "Textual Document Accessibility Specification"
+!startsub Agent
+"Person" o-d- "names" "Person Name"
+"Agent" <|-d- "Person"
+"Agent" <|-d- "Organisation Unit"
+!endsub
+"Document" <|-u- "Textual Document"
+"Textual Document" *-u- "accessRights" "Textual Document Accessibility Specification"
 "Textual Document" *--  "authors" "Agent"
+
+note left of Agent: The Agent is mandatory for almost \nall subclasses of Contributorship,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
 @enduml
