@@ -1,5 +1,5 @@
 @startuml
-
+class Temp
     !includesub core.puml!Contributorship
 
 @enduml

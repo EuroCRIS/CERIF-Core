@@ -1,5 +1,7 @@
 @startuml
 package "CERIF core" #DDDDDD {
+    class Temp2
+
     !startsub Contributorship
     class "Document"{
         Multilingual_String title
