@@ -1,5 +1,5 @@
 @startuml
 
-    !includesub core.puml!Agent
+    !includesub ./core.puml!Agent
 
 @enduml

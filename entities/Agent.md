@@ -6,6 +6,8 @@ A [Person](../entities/Person.md) or [Organisation Unit](../entities/Organisatio
 ## Usage notes
 It is an abstract entity representing the root ancestor for Person and Organisation unit. All relatioships which might be linked with Person and/or Organisation unit, should be generalized by linking the Agent entity. 
 
+![The Agent diagram](../diagrams/agent.svg)
+
 ## Generalization of
 [Person](../entities/Person.md)
 
