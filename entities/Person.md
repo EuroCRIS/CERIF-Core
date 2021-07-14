@@ -17,14 +17,13 @@ One Person typically has many of these relationships.
 [Agent](../entities/Agent.md)
 
 ## Attributes
-name: [Person Name Type](../datatypes/Person_Name.md)
+name: [Person Name](../datatypes/Person_Name.md)
 
-ORCID iD: [ORCID iD Type](../datatypes/ORCID_iD.md)
+ORCID iD: [ORCID iD](../datatypes/ORCID_iD.md)
 
 contributorships: List<[Contributorship](../entities/Contributorship.md)> (inherited from [Agent](../entities/Agent.md))
 
 ---
-
 ## Matches
 1. Close match of [FOAF Person](http://xmlns.com/foaf/spec/#term_Person) (identified by URI http://xmlns.com/foaf/0.1/Person), which is also used in VIVO
 2. Narrow match of [Schema.org Person](https://schema.org/Person)
