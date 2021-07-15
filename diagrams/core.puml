@@ -1,85 +1,91 @@
 @startuml
-
+	!startsub common
+	!define datatype(x) class x << (D,#FF7700) DataType>>
+	hide empty members
+	!endsub
 
     !startsub Contributorship
     class "Document"{
-        Multilingual_String title
-        Date publicationDate
-        DOI_Type DOI
+        title : Multilingual_String
+        publicationDate : Date 
+        doi : DOI
     }
     !endsub
-    class "Textual Document"{
+    class "Textual_Document"{
     }
-    class "Textual Document Accessibility Specification"{
+    class "Textual_Document_Accessibility_Specification"{
     }
     !startsub Agent
     class "Agent"{
 
     }
-    class "Organisation Unit"{
-        Multilingual_String name
+    class "Organisation_Unit"{
+        name : Multilingual_String
     }
     class "Person"{
-        ORCID_iD orcidid
+        name : Person_Name
+        orcidId : ORCID_iD
     }
-    class "Person Name"{
-        String firstNames
-        String familyNames
-        String otherNames
-    }
+    datatype("Person_Name") {
+        firstNames : Multilingual_String
+        familyNames : Multilingual_String
+        otherNames : Multilingual_String
+    } 
     !endsub
     class "Authorship"{
-        Boolean correspondingAuthorFlag
+        correspondingAuthorFlag : Boolean 
     }
     !startsub Contributorship
     class "Contributorship"{
-        List<URI> contacts
-        String displayName
+        contacts : List<URI> 
+        displayName : String
     }
-    class "Contribution Statement"{
+    class "Contribution_Statement"{
     }
-    class "Free Text Contribution"{
-        Multilingual_String statement
+    class "Free_Text_Contribution_Statement"{
+        statement : Multilingual_String
     }
-    class "Affiliation Statement"{
-        String displayAffiliation
+    class "Affiliation_Statement"{
+        displayAffiliation : String 
+        address : Postal_Address
     }
-    class "Postal Address"{
-        String street
-        String city
-        String zipCode
+    datatype("Postal_Address") {
+        street : Multilingual_String 
+        city : Multilingual_String
+        zipCode : Multilingual_String 
+        country : Country
     }
     class "Country"{
-        Multilingual_String name
-        ISO3166_Alpha_Code iso3166alphaCode
-        ISO3166_Numeric_Code iso3166NumericCode
-        EU_Country_Code euCountryCode
+        name : Multilingual_String
+        iso3166alphaCode : ISO3166_Alpha_Code
+        iso3166NumericCode : ISO3166_Numeric_Code
+        euCountryCode : EU_Country_Code
     }
     !endsub
 
 !startsub Contributorship
-"Postal Address" *-- "country" "Country"
-"Affiliation Statement" *-- "postalAddress" "Postal Address"
-"Affiliation Statement" *-- "orgUnit" "Organisation Unit"
-"Affiliation Statement" *-- "institution" "Organisation Unit"
-"Contribution Statement" <|-- "Free Text Contribution"
+"Postal_Address" o-- "country" "Country"
+"Affiliation_Statement" ..> "postalAddress" "Postal_Address"
+"Affiliation_Statement" o-- "orgUnit" "Organisation_Unit"
+"Affiliation_Statement" o-- "institution" "Organisation_Unit"
+"Contribution_Statement" <|-- "Free_Text_Contribution_Statement"
 "Contributorship" -r-* "Document"
-"Contributorship" -l-* "Agent"
-"Contributorship" o-- "affiliations" "Affiliation Statement"
-"Contributorship" o-u- "contributionStatements" "Contribution Statement"
+"Contributorship" -l-o "Agent"
+"Contributorship" o-- "affiliations" "Affiliation_Statement"
+"Contributorship" o-- "contributionStatements" "Contribution_Statement"
 !endsub
-"Authorship" -r-* "Textual Document"
+"Authorship" -r-* "Textual_Document"
 "Contributorship" <|-u- "Authorship"
-"Authorship" --> "author" "Agent"
-note on link #red: author == contributor
+"Authorship" --o "author" "Agent"
+note on link #yellow: author == contributor
 !startsub Agent
-"Person" o-d- "names" "Person Name"
+"Person" .d.> "name" "Person_Name"
 "Agent" <|-d- "Person"
-"Agent" <|-d- "Organisation Unit"
+"Agent" <|-d- "Organisation_Unit"
 !endsub
-"Document" <|-u- "Textual Document"
-"Textual Document" *-u- "accessRights" "Textual Document Accessibility Specification"
-"Textual Document" *--  "authors" "Agent"
+"Document" <|-u- "Textual_Document"
+"Textual_Document" *-u- "accessRights" "Textual_Document_Accessibility_Specification"
+"Textual_Document" *--  "authors" "Agent"
 
 note left of Agent: The Agent is mandatory for almost \nall subclasses of Contributorship,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
 @enduml

@@ -17,6 +17,7 @@ It is an abstract entity representing the root ancestor for Person and Organisat
 contributorships: List<[Contributorship](../entities/Contributorship.md)> 
 * representing structured information about linking an agent with [documents](../entities/Document.md)  
 
+---
 ## Matches
 1. Close match of [FOAF Agent](http://xmlns.com/foaf/spec/#term_Agent) 
 

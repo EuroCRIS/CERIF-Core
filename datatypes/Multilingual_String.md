@@ -5,7 +5,7 @@ One or several [Strings](../datatypes/String.md) qualified by distinct [Language
 ---
 ## Matches
 
-This datatype matches the rdf:PlainLiteral<sup>[1](#fn1)</sup>.
+This datatype matches the `rdf:PlainLiteral`<sup>[1](#fn1)</sup>.
 
 ## References
 

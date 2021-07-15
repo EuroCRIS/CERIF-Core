@@ -6,8 +6,8 @@ The location assigned to an [Organisation Unit](../entities/Organisation_Unit.md
 
 - street : [Multilingual String](../datatypes/Multilingual_String.md)
 - city : [Multilingual String](../datatypes/Multilingual_String.md)
-- country : [Country](../entities/Country.md)
 - ZIP code: [Multilingual String](../datatypes/Multilingual_String.md)
+- country : [Country](../entities/Country.md)
 
 ## Notes
 

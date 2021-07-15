@@ -1,9 +1,11 @@
 # Affiliation Statement
 
 ## Definition
-[FIXME] Structured information about affiliation of a [Person](../entities/Person.md) contributing to a [Document](../entities/Document.md)
+
+Structured information about affiliation of a [Person](../entities/Person.md) contributing to a [Document](../entities/Document.md)
 
 ## Usage notes
+
 
 ## Attributes
 display affiliation: [String](../datatypes/String.md)
@@ -15,8 +17,6 @@ institution: [Organisation Unit](../entities/Organisation_Unit.md)
 address: [Postal Address](../datatypes/Postal_Address.md)
 
 ---
-
 ## Matches
-
 
 ## References

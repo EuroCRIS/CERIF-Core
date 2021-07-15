@@ -1,4 +1,6 @@
 @startuml
-    !includesub ./core.puml!Contributorship
+
+    !includesub core.puml!common
+    !includesub core.puml!Contributorship
 
 @enduml

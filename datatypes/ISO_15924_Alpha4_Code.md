@@ -4,7 +4,7 @@ The datatype that represents the four-letter codes of scripts in line with the I
 
 It is based on the [String](../datatypes/String.md) datatype with the additional restrictions:
 - the string must match the following regular expression `[A-Z][a-z]{3}` (one uppercase letter followed by three lower-case letters of the English alphabet)
-- the combination of letters actually identifiers a language in the ISO 639-2T standard
+- the combination of letters actually identifiers a script in the ISO 15924 standard
 
 ---
 ## References
