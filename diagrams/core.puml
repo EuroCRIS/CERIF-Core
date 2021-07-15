@@ -70,9 +70,9 @@
 "Affiliation_Statement" o-- "institution" "Organisation_Unit"
 "Contribution_Statement" <|-- "Free_Text_Contribution_Statement"
 "Contributorship" -r-* "Document"
-"Contributorship" -l-o "Agent"
-"Contributorship" o-- "affiliations" "Affiliation_Statement"
-"Contributorship" o-- "contributionStatements" "Contribution_Statement"
+"Contributorship" -l-* "Agent"
+"Contributorship" *-- "affiliations" "Affiliation_Statement"
+"Contributorship" *-- "contributionStatements" "Contribution_Statement"
 !endsub
 "Authorship" -r-* "Textual_Document"
 "Contributorship" <|-u- "Authorship"
