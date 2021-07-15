@@ -1,1 +1,47 @@
-undefined
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="323px" preserveAspectRatio="none" style="width:383px;height:323px;background:#FFFFFF;" version="1.1" viewBox="0 0 383 323" width="383px" zoomAndPan="magnify"><defs><filter height="300%" id="fq3gw1yma62nx" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[9d44916250b776386006c440668bcfbb]
+class Agent--><rect codeLine="18" fill="#FEFECE" filter="url(#fq3gw1yma62nx)" height="32" id="Agent" style="stroke:#A80036;stroke-width:1.5;" width="69" x="143" y="7"/><ellipse cx="158" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M160.9688,28.6406 Q160.3906,28.9375 159.75,29.0781 Q159.1094,29.2344 158.4063,29.2344 Q155.9063,29.2344 154.5781,27.5938 Q153.2656,25.9375 153.2656,22.8125 Q153.2656,19.6875 154.5781,18.0313 Q155.9063,16.375 158.4063,16.375 Q159.1094,16.375 159.75,16.5313 Q160.4063,16.6875 160.9688,16.9844 L160.9688,19.7031 Q160.3438,19.125 159.75,18.8594 Q159.1563,18.5781 158.5313,18.5781 Q157.1875,18.5781 156.5,19.6563 Q155.8125,20.7188 155.8125,22.8125 Q155.8125,24.9063 156.5,25.9844 Q157.1875,27.0469 158.5313,27.0469 Q159.1563,27.0469 159.75,26.7813 Q160.3438,26.5 160.9688,25.9219 L160.9688,28.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37" x="172" y="27.1543">Agent</text><!--MD5=[779f3743e425ed8a6f0bf188ddea4860]
+class Organisation_Unit--><rect codeLine="21" fill="#FEFECE" filter="url(#fq3gw1yma62nx)" height="52.8047" id="Organisation_Unit" style="stroke:#A80036;stroke-width:1.5;" width="159" x="7" y="105.5"/><ellipse cx="29.2" cy="121.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M32.1688,127.1406 Q31.5906,127.4375 30.95,127.5781 Q30.3094,127.7344 29.6063,127.7344 Q27.1063,127.7344 25.7781,126.0938 Q24.4656,124.4375 24.4656,121.3125 Q24.4656,118.1875 25.7781,116.5313 Q27.1063,114.875 29.6063,114.875 Q30.3094,114.875 30.95,115.0313 Q31.6063,115.1875 32.1688,115.4844 L32.1688,118.2031 Q31.5438,117.625 30.95,117.3594 Q30.3563,117.0781 29.7313,117.0781 Q28.3875,117.0781 27.7,118.1563 Q27.0125,119.2188 27.0125,121.3125 Q27.0125,123.4063 27.7,124.4844 Q28.3875,125.5469 29.7313,125.5469 Q30.3563,125.5469 30.95,125.2813 Q31.5438,125 32.1688,124.4219 L32.1688,127.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="111" x="44.8" y="125.6543">Organisation_Unit</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="165" y1="137.5" y2="137.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="13" y="151.7104">name : Multilingual_String</text><!--MD5=[09ce52be0ee7de43c61b6e2d59bf108b]
+class Person--><rect codeLine="24" fill="#FEFECE" filter="url(#fq3gw1yma62nx)" height="65.6094" id="Person" style="stroke:#A80036;stroke-width:1.5;" width="135" x="201" y="99"/><ellipse cx="242.55" cy="115" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M245.5188,120.6406 Q244.9406,120.9375 244.3,121.0781 Q243.6594,121.2344 242.9563,121.2344 Q240.4563,121.2344 239.1281,119.5938 Q237.8156,117.9375 237.8156,114.8125 Q237.8156,111.6875 239.1281,110.0313 Q240.4563,108.375 242.9563,108.375 Q243.6594,108.375 244.3,108.5313 Q244.9563,108.6875 245.5188,108.9844 L245.5188,111.7031 Q244.8938,111.125 244.3,110.8594 Q243.7063,110.5781 243.0813,110.5781 Q241.7375,110.5781 241.05,111.6563 Q240.3625,112.7188 240.3625,114.8125 Q240.3625,116.9063 241.05,117.9844 Q241.7375,119.0469 243.0813,119.0469 Q243.7063,119.0469 244.3,118.7813 Q244.8938,118.5 245.5188,117.9219 L245.5188,120.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44" x="262.45" y="119.1543">Person</text><line style="stroke:#A80036;stroke-width:1.5;" x1="202" x2="335" y1="131" y2="131"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="207" y="145.2104">name : Person_Name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="207" y="158.0151">orcidId : ORCID_iD</text><!--MD5=[7b209ef07eb91b93e0aebc9fe4fb9a26]
+class Person_Name--><rect codeLine="28" fill="#FEFECE" filter="url(#fq3gw1yma62nx)" height="84.3516" id="Person_Name" style="stroke:#A80036;stroke-width:1.5;" width="201" x="168" y="225"/><ellipse cx="221.25" cy="243.9688" fill="#FF7700" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M220.8438,239.7813 L220.8438,247.7656 L221.5,247.7656 Q222.9375,247.7656 223.5469,246.8594 Q224.1719,245.9375 224.1719,243.7656 Q224.1719,241.5938 223.5469,240.6875 Q222.9375,239.7813 221.5,239.7813 L220.8438,239.7813 Z M218.3906,237.5781 L221.0156,237.5781 Q224.0469,237.5781 225.375,239.0313 Q226.7188,240.4688 226.7188,243.7656 Q226.7188,247.0625 225.375,248.5156 Q224.0469,249.9688 221.0156,249.9688 L218.3906,249.9688 L218.3906,237.5781 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="247.75" y="241.1387">«DataType»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="86" x="241.75" y="255.1074">Person_Name</text><line style="stroke:#A80036;stroke-width:1.5;" x1="169" x2="368" y1="262.9375" y2="262.9375"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="178" x="174" y="277.1479">firstNames : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="189" x="174" y="289.9526">familyNames : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="185" x="174" y="302.7573">otherNames : Multilingual_String</text><!--MD5=[5d8901ce694eb85aefa78b7d82d9f6f6]
+link Person to Person_Name--><path codeLine="81" d="M268.5,165.2 C268.5,181.36 268.5,201.25 268.5,219.07 " fill="none" id="Person-to-Person_Name" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="268.5,224.53,272.5,215.53,268.5,219.53,264.5,215.53,268.5,224.53" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="37" x="228.6672" y="213.9285">name</text><!--MD5=[de96f77e660762cb21a195b4097c3876]
+reverse link Agent to Person--><path codeLine="82" d="M203.58,54.66 C215.37,68.53 229.3,84.91 241.23,98.94 " fill="none" id="Agent-backto-Person" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="198.16,59.1,190.54,39.33,208.83,50.03,198.16,59.1" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[521d3f26cc3887ed8885a4c0e03f9952]
+reverse link Agent to Organisation_Unit--><path codeLine="83" d="M151.32,54.78 C137.7,70.8 121.23,90.17 108.3,105.37 " fill="none" id="Agent-backto-Organisation_Unit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="146.17,50.03,164.46,39.33,156.84,59.1,146.17,50.03" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a282d85f98fc66c9f9e8ed32f92c4be2]
+@startuml
+
+    !includesub core.puml!common
+    !includesub core.puml!Agent
+
+@enduml
+
+@startuml
+
+	hide empty members
+    class "Agent"{
+
+    }
+    class "Organisation_Unit"{
+        name : Multilingual_String
+    }
+    class "Person"{
+        name : Person_Name
+        orcidId : ORCID_iD
+    }
+    class Person_Name << (D,#FF7700) DataType>> {
+        firstNames : Multilingual_String
+        familyNames : Multilingual_String
+        otherNames : Multilingual_String
+    } 
+"Person" .d.> "name" "Person_Name"
+"Agent" <|-d- "Person"
+"Agent" <|-d- "Organisation_Unit"
+
+@enduml
+
+PlantUML version 1.2021.8(Sat Jun 26 08:20:59 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
