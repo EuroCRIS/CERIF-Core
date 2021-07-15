@@ -55,6 +55,7 @@ The [tools](./tools/) directory contains useful tools for checking the integrity
 * list-references.sh should be used to validate established linkes between classes. It should be run in this way 
 
 [FIXME] XXX
+
 * plantuml.jar should be used to generate SVG images by using Plant UML files. More details about this tool can be found at this [link](https://gist.github.com/thedmeyer/8b50362ae71ecbadabb17f8683c70ece). It might be run from the tools directory in terminal in this way
 
 java -jar plantuml.jar -v -tsvg -r -o "../diagrams" "../diagrams/**.puml"
