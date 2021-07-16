@@ -1,30 +1,33 @@
 # Contributorship
 
 ## Definition
-[FIXME] Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/Organisation_Unit.md)) with a [Document](../entities/Document.md) or any of its specialization ([Textual Document](../entities/Textual_Document.md))
+Any contribution an [Agent](../entities/Agent.md) made to a [Document](../entities/Document.md).
 
 ## Usage notes
 
-## Generalization of
-[Authorship](../entities/Authorship.md)
-
 ## Attributes
-contributor: [Agent](../entities/Agent.md)
-
-document: [Document](../entities/Document.md)
-
-affiliations: List<[Affiliation Statement](../entities/Affiliation_Statement.md)> 
 
 contacts: List<[URI](../datatypes/URI.md)>
 
 display name: [String](../datatypes/String.md)>
 
-contribution statements: List<[Contribution Statement](../entities/Contribution_Statement.md)> 
+## Relationships
+
+A Contributorship typically has the contributor: an instance of [Agent](../entities/Agent.md). For some subclasses of Contributorship, the Agent may not be known (e.g. for blind reviews). Also if the contributor uses a pseudonym, their identity (and sometimes event the type) are unknown, in which case just the display name is available.
+
+A Contributorship always has the document: an instance of [Document](../entities/Document.md).
+
+A Contributorship has any number of affiliations: instances of [Affiliation Statement](../entities/Affiliation_Statement.md).
+
+A Contributorship has any number of contribution statements: instances of [Contribution Statement](../entities/Contribution_Statement).
+
+## Illustrative Diagram
 
 ![The Contributorship diagram](../diagrams/contributorship.svg)
+
 ---
-
 ## Matches
-
+Roughly similar to ContributionSituation from SCoRO.<sup>[1](#fn1)</sup>
 
 ## References
+<a name="fn1">\[1\]</a> David Shotton, Silvio Peroni: *SCoRO, the Scholarly Contributions and Roles Ontology.* Available: http://purl.org/spar/scoro/2017-09-04

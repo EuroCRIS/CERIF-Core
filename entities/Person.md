@@ -21,7 +21,9 @@ name: [Person Name](../datatypes/Person_Name.md)
 
 ORCID iD: [ORCID iD](../datatypes/ORCID_iD.md)
 
-contributorships: List<[Contributorship](../entities/Contributorship.md)> (inherited from [Agent](../entities/Agent.md))
+## Relationships
+
+Those of [Agent](../entities/Agent.md#relationships)
 
 ---
 ## Matches

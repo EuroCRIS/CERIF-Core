@@ -16,25 +16,27 @@ In the research information domain Organisation Units typically represents:
 [Agent](../entities/Agent.md)
 
 ## Attributes
-ROR Id: [ROR ID Type](../datatypes/ROR_ID.md)
-
 name: [Multilingual String](../datatypes/Multilingual_String.md)
 
 acronym: [String](../datatypes/String.md)
 
 address: [Postal Address](../datatypes/Postal_Address.md)
 
+ROR Id: [ROR ID Type](../datatypes/ROR_ID.md)
+
 web site URL: [URI](../datatypes/URI.md)
 
 email: [URI](../datatypes/URI.md)
 
-contributorships: List<[Contributorship](../entities/Contributorship.md)> (inherited from [Agent](../entities/Agent.md))
+## Relationships
+
+Those of [Agent](../entities/Agent.md#relationships)
 
 ---
-
 ## Matches
-1. Close match of [FOAF Group](http://xmlns.com/foaf/spec/#term_Group)
-2. Narrow match of [Schema.org Organization](https://schema.org/Organization)
+1. Narrow match of [FOAF Organization](http://xmlns.com/foaf/spec/#term_Organization) 
+2. Narrow match of [FOAF Group](http://xmlns.com/foaf/spec/#term_Group) 
+3. Narrow match of [Schema.org Organization](https://schema.org/Organization)
 
 ## References
 

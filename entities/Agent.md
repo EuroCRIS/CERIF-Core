@@ -1,21 +1,24 @@
 # Agent
 
 ## Definition
-A [Person](../entities/Person.md) or [Organisation Unit](../entities/Organisation_Unit.md). 
+
+Anything that has the ability to perform actions.
 
 ## Usage notes
-It is an abstract entity representing the root ancestor for Person and Organisation unit. All relatioships which might be linked with Person and/or Organisation unit, should be generalized by linking the Agent entity. 
+
+Currently either [Person](../entities/Person.md) 
+or [Organisation Unit](../entities/Organisation_Unit.md),
+for future extension.
+
+## Relationships
+
+An agent is the target of too many relationships to list: 
+anywhere where an actor is given.
+These relationships are typically navigable both ways.
+
+## Illustrative Diagram
 
 ![The Agent diagram](../diagrams/agent.svg)
-
-## Generalization of
-[Person](../entities/Person.md)
-
-[Organisation Unit](../entities/Organisation_Unit.md)
-
-## Attributes
-contributorships: List<[Contributorship](../entities/Contributorship.md)> 
-* representing structured information about linking an agent with [documents](../entities/Document.md)  
 
 ---
 ## Matches
