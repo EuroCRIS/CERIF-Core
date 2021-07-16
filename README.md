@@ -50,12 +50,8 @@ The Core is seldom used on its own, you almost always need to add one or several
 
 ## Development Tools
 
-The [tools](./tools/) directory contains useful tools for checking the integrity of this repository.
+The [tools](./tools/) directory contains some useful tools:
 
-* list-references.sh should be used to validate established linkes between classes. It should be run in this way 
+* `./tools/list-references.sh \[DIR\]...` checks the integrity of the links between the entities and datatypes in this project together with projects specified by the list of directories one passes as parameters. It writes the targets of references together with their frequency. If a target is missing, the word `MISSING` is appended.
 
-[FIXME] XXX
-
-* plantuml.jar should be used to generate SVG images by using Plant UML files. More details about this tool can be found at this [link](https://gist.github.com/thedmeyer/8b50362ae71ecbadabb17f8683c70ece). It might be run from the tools directory in terminal in this way
-
-java -jar plantuml.jar -v -tsvg -r -o "../diagrams" "../diagrams/**.puml"
+* `./tools/generate-diagrams.sh \[DIR\]...` generates the UML diagrams in this project together with projects specified by the list of directories one passes as parameters. You need Java 8 or later installed for this to run. We use [Plant UML](https://plantuml.com/) (in `./tools/plantuml.jar`) for this.
