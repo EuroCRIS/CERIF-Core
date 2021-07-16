@@ -6,7 +6,7 @@ started in 2021 by [euroCRIS](https://www.eurocris.org/).
 
 ## Status
 
-(2021-06-24) This is experimental.
+(2021-06-24) This is experimental. The scope, structure or any other aspect can change.
 
 ## Scope
 
@@ -48,10 +48,17 @@ And the following data types:
 
 The Core is seldom used on its own, you almost always need to add one or several additional modules.
 
-## Development Tools
+## Development
+
+### Guidelines
+
+Guidelines for the development of this and related projects are put in the [guidelines](./guidelines/) subdirectory.
+Currently we specify how [entities](./guidelines/DESCRIBING_ENTITIES.md) should be described. 
+
+### Tools
 
 The [tools](./tools/) directory contains some useful tools:
 
-* `./tools/list-references.sh \[DIR\]...` checks the integrity of the links between the entities and datatypes in this project together with projects specified by the list of directories one passes as parameters. It writes the targets of references together with their frequency. If a target is missing, the word `MISSING` is appended.
+* `./tools/list-references.sh [DIR]...` checks the integrity of the links between the entities and datatypes in this project together with projects specified by the list of directories one passes as parameters. It writes the targets of references together with their frequency. If a target is missing, the word `MISSING` is appended.
 
-* `./tools/generate-diagrams.sh \[DIR\]...` generates the UML diagrams in this project together with projects specified by the list of directories one passes as parameters. You need Java 8 or later installed for this to run. We use [Plant UML](https://plantuml.com/) (in `./tools/plantuml.jar`) for this.
+* `./tools/generate-diagrams.sh [DIR]...` generates the UML diagrams in this project together with projects specified by the list of directories one passes as parameters. You need Java 8 or later installed for this to run. We use [Plant UML](https://plantuml.com/) (in `./tools/plantuml.jar`) for this.
