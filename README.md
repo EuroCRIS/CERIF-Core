@@ -62,3 +62,7 @@ The [tools](./tools/) directory contains some useful tools:
 * `./tools/list-references.sh [DIR]...` checks the integrity of the links between the entities and datatypes in this project together with projects specified by the list of directories one passes as parameters. It writes the targets of references together with their frequency. If a target is missing, the word `MISSING` is appended.
 
 * `./tools/generate-diagrams.sh [DIR]...` generates the UML diagrams in this project together with projects specified by the list of directories one passes as parameters. You need Java 8 or later installed for this to run. We use [Plant UML](https://plantuml.com/) (in `./tools/plantuml.jar`) for this.
+
+### Continuous Integration
+
+We use a [Github action](./.github/workflows/plantuml.yml) to re-generate the SVG diagrams.
