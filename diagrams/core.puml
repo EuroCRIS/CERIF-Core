@@ -73,18 +73,18 @@
 
 !startsub Contributorship
 "Affiliation_Statement" ..> "postalAddress" "Postal_Address"
-"Affiliation_Statement" o-- "orgUnit" "Organisation_Unit"
-"Affiliation_Statement" o-- "institution" "Organisation_Unit"
-"Affiliation_Statement" o-- "Person"
+"Affiliation_Statement" o-- "0..1 orgUnit" "Organisation_Unit"
+"Affiliation_Statement" o-- "0..1 institution" "Organisation_Unit"
+"Affiliation_Statement" o-- "person" "Person"
 "Contribution_Statement" <|-- "Free_Text_Contribution_Statement"
-"Contributorship" "*" --r--* "Document"
-"Contributorship" "*" --l--o "0..1 contributor" "Agent"
-"Contributorship" o-- "affiliations *" "Affiliation_Statement"
-"Contributorship" *-- "contributionStatements *" "Contribution_Statement"
+"Contributorship" "0..*" --r--* "Document"
+"Contributorship" "0..*" --l--o "0..1 contributor" "Agent"
+"Contributorship" o-- "0..* affiliations" "Affiliation_Statement"
+"Contributorship" *-- "0..* contributionStatements" "Contribution_Statement"
 !endsub
 "Authorship" -r-* "Textual_Document"
 "Contributorship" <|-u- "Authorship"
-"Authorship" --o "0..1 author" "Agent"
+"Authorship" "0..*" --o "0..1 author" "Agent"
 !startsub Agent
 "Person" ..> "name" "Person_Name"
 "Agent" <|-- "Person"
@@ -92,6 +92,6 @@
 "Organisation_Unit" ..> "address" "Postal_Address"
 !endsub
 "Document" <|-u- "Textual_Document"
-"Textual_Document" *-r- "accessRights" "Textual_Document_Accessibility_Specification"
-"Textual_Document" o---  "authors *" "Agent"
+"Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
+"Textual_Document" "0..* authoredDocuments" --- "0..* authors" "Agent"
 @enduml
