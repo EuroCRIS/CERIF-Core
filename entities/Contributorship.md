@@ -13,13 +13,13 @@ display name: [String](../datatypes/String.md)>
 
 ## Relationships
 
-A Contributorship typically has the contributor: an instance of [Agent](../entities/Agent.md). For some subclasses of Contributorship, the Agent may not be known (e.g. for blind reviews). Also if the contributor uses a pseudonym, their identity (and sometimes event the type) are unknown, in which case just the display name is available.
+A Contributorship typically has the *contributor*: an instance of [Agent](../entities/Agent.md). For some subclasses of Contributorship, the Agent may not be known (e.g. for blind reviews). Also if the contributor uses a pseudonym, their identity (and sometimes event the type) are unknown, in which case just the display name is available.
 
-A Contributorship always has the document: an instance of [Document](../entities/Document.md).
+A Contributorship always has the *document*: an instance of [Document](../entities/Document.md).
 
-A Contributorship has any number of affiliations: instances of [Affiliation Statement](../entities/Affiliation_Statement.md).
+A Contributorship has any number of *affiliations*: instances of [Affiliation Statement](../entities/Affiliation_Statement.md).
 
-A Contributorship has any number of contribution statements: instances of [Contribution Statement](../entities/Contribution_Statement).
+A Contributorship has any number of *contribution statements*: instances of [Contribution Statement](../entities/Contribution_Statement).
 
 ## Illustrative Diagram
 
