@@ -4,8 +4,8 @@
 
 1. **Definition**: The scope of the entity and its meaning.
 2. **Usage Notes**: An additional description to communicate the purpose of the entity.
-3. **Attributes**: The list of attributes: properties whose values are simple or composite datatypes.
-4. **Relationships**: The relationships that are important for this entity.
+3. **Attributes**: The list of attributes: properties whose values are simple or composite datatypes. All attributes are considered optional by default.
+4. **Relationships**: The relationships that are important for this entity. The default cardinality is "1".
 5. **Illustrative Diagram**: A UML diagram showing this entity in its context if one is available.
 ---
 6. **Matches**: Describe any external entitites or classes this entity matchees. 
