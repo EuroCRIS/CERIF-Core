@@ -5,6 +5,7 @@ A document is a bounded representation of a body of information designed with th
 A document may manifest symbolic, diagrammatic or sensory-representational information.<sup>[1](#fn1)</sup>
 
 ## Usage notes
+[FIXME]
 It is an abstract entity representing the root ancestor for research outputs such as Journal Article, Dataset, Software, Patent, etc. All relatioships which might be linked with any research output, should be generalized by linking the Document entity.
 
 ## Generalization of
@@ -17,10 +18,10 @@ title : [Multilingual String](../datatypes/Multilingual_String.md)
 
 publication date: [Date](../datatypes/Date.md)
 
-contributorships: List<[Contributorship](../entities/Contributorship.md)>
+## Relationships
+A Document has any number of *contributorships*: instances of [Contributorship](../entities/Contributorship.md).
 
 ---
-
 ## Matches
 1. Close match of [Bibo Document](http://purl.org/ontology/bibo/Document)
 2. Close match of [Schema.org CreativeWork](https://schema.org/CreativeWork)
