@@ -63,6 +63,8 @@ The [tools](./tools/) directory contains some useful tools:
 
 * `./tools/generate-diagrams.sh [DIR]...` generates the UML diagrams in this project together with projects specified by the list of directories one passes as parameters. You need Java 8 or later installed for this to run. We use [Plant UML](https://plantuml.com/) (in `./tools/plantuml.jar`) for this.
 
+* `./tools/new-relationship-uuid.sh` generates a skeleton for describing relationship. The requirement is to have uuidgen installed to run the script. 
+
 ### Continuous Integration
 
 We use a [Github action](./.github/workflows/plantuml.yml) to re-generate the SVG diagrams.
