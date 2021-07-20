@@ -15,7 +15,7 @@ display name: [String](../datatypes/String.md)>
 
 A Contributorship typically has the *contributor*: an instance of [Agent](../entities/Agent.md). For some subclasses of Contributorship, the Agent may not be known (e.g. for blind reviews). Also if the contributor uses a pseudonym, their identity (and sometimes event the type) are unknown, in which case just the display name is available.
 
-A Contributorship always has the *document*: an instance of [Document](../entities/Document.md).
+<a name="REL89291776-9CDD-4D18-88E7-290172438F5B">A Contributorship always has the *[document](../entities/Document.md#REL89291776-9CDD-4D18-88E7-290172438F5B)*: an instance of [Document](../entities/Document.md).</a>
 
 A Contributorship has any number of *affiliations*: instances of [Affiliation Statement](../entities/Affiliation_Statement.md).
 
