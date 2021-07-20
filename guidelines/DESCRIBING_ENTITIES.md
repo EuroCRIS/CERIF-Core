@@ -14,12 +14,13 @@ In UML diagrams and in interchange formats the camel-case notation should be use
 
 1. **Definition**: The scope of the entity and its meaning.
 2. **Usage Notes**: An additional description to communicate the purpose of the entity.
-3. **Attributes**: The list of attributes: properties whose values are simple or composite datatypes. All attributes are considered optional by default.
-4. **Relationships**: The relationships that are important for this entity. The default cardinality is "1".
-5. **Illustrative Diagram**: A UML diagram showing this entity in its context if one is available.
+3. **Specialization of**: The link to the super class
+4. **Attributes**: The list of attributes: properties whose values are simple or composite datatypes. All attributes are considered optional by default.
+5. **Relationships**: The relationships that are important for this entity. The default cardinality is "1".
+6. **Illustrative Diagram**: A UML diagram showing this entity in its context if one is available.
 ---
-6. **Matches**: Describe any external entitites or classes this entity matchees. 
-7. **References**: References to external resources in case these are referenced.
+7. **Matches**: Describe any external entitites or classes this entity matchees. 
+8. **References**: References to external resources in case these are referenced.
 
 A heading is left out if the section is empty.
 

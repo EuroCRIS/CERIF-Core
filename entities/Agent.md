@@ -12,6 +12,7 @@ for future extension.
 
 ## Relationships
 
+[FIXME]
 An agent is the target of too many relationships to list: 
 anywhere where an actor is given.
 These relationships are typically navigable both ways.
