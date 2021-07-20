@@ -12,22 +12,22 @@ This entity is NOT used to represent publishing channels and sources: journals a
 [Document](../entities/Document.md)
 
 ## Attributes
-DOI : [DOI_Type](../datatypes/DOI.md) (inherited from [Document](../entities/Document.md))
+Those of [Document](../entities/Document.md#attributes)
 
-title : [Multilingual String](../datatypes/Multilingual_String.md) (inherited from [Document](../entities/Document.md))
+## Relationships
+Those of [Document](../entities/Document.md#relationships)
 
-publication date: [Date](../datatypes/Date.md) (inherited from [Document](../entities/Document.md))
+A Textual Document has an optional *access rights specification*: an instance of [Textual Document Accessibility Specification](../entities/Textual_Document_Accessibility_Specification.md).
 
-access rights: [Textual Document Accessibility Specification](../entities/Textual_Document_Accessibility_Specification.md)
+A Textual Document has any number of *authorships*: instances of [Authorship](../entities/Authorship.md). This relationship is derived from *Document.contributorships* by including just those [Contributorships](../entities/Contributorship.md) that are [Authorships](../entities/Authorship.md).
 
-contributorships: List<[Contributorship](../entities/Contributorship.md)> (inherited from [Document](../entities/Document.md))
+A Textual Document has any number of *authors*: instances of [Agent](../entities/Agent.md). This relationships is derived: it relates the Textual Document with the *agents* of its *authorships*. This is a simplified form of expressing *authorships* without any additional qualification or context.
 
-authorships: List<[Authorship](../entities/Authorship.md)>
+## Illustrative Diagram
 
-authors: List<[Agent](../entities/Agent.md)>
+TO BE ADDED
 
 ---
-
 ## Matches
 (FIXME)
 1. Close match of [COAR Text](http://vocabularies.coar-repositories.org/documentation/resource_types/#http://purl.org/coar/resource_type/c_18cf)
