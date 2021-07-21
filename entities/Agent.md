@@ -12,10 +12,9 @@ for future extension.
 
 ## Relationships
 
-[FIXME]
-An agent is the target of too many relationships to list: 
-anywhere where an actor is given.
-These relationships are typically navigable both ways.
+<a name="relc4c92595-4f3d-43a3-8041-fd86fface421">An Agent can have any number of *[contributorships](../entities/Contributorship.md#user-content-relc4c92595-4f3d-43a3-8041-fd86fface421)*: instances of [Contributorship](../entities/Contributorship.md).</a>
+
+(FIXME)
 
 ## Illustrative Diagram
 
