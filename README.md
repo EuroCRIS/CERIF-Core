@@ -53,7 +53,7 @@ The Core is seldom used on its own, you almost always need to add one or several
 ### Guidelines
 
 Guidelines for the development of this and related projects are put in the [guidelines](./guidelines/) subdirectory.
-Currently we specify how [entities](./guidelines/DESCRIBING_ENTITIES.md) should be described. 
+Currently we specify how [entities](./guidelines/DESCRIBING_ENTITIES.md) and [datatypes](./guidelines/DESCRIBING_DATATYPES.md) should be described. 
 
 ### Tools
 
