@@ -2,7 +2,7 @@
 
 ## Naming
 
-Entities and types should be named with capitalized first letters of each word in the text with spaces between the words (e.g. [Affiliation Statement](../entities/Affiliation_Statement.md)). 
+Entities should be named with capitalized first letters of each word in the text with spaces between the words (e.g. [Affiliation Statement](../entities/Affiliation_Statement.md)). 
 The markdown files that describe these entities should be named the same, just with underscores instead of spaces (e.g. ../entities/Affiliation_Statement.md).
 The entities in UML diagrams should be also named with underscores (e.g. "Affiliation_Statement").
 URIs for the entity types (used in interchange formats) should be constructed using the form with underscores (e.g. "https://w3id.org/cerif/xxx/entities/Affilation_Statement" – a ficticious URI so far).
@@ -15,7 +15,7 @@ In UML diagrams and in interchange formats the camel-case notation should be use
 1. **Definition**: The scope of the entity and its meaning.
 2. **Usage Notes**: An additional description to communicate the purpose of the entity.
 3. **Specialization of**: The link to the super class
-4. **Attributes**: The list of attributes: properties whose values are simple or composite datatypes. All attributes are considered optional by default.
+4. **Attributes**: The list of attributes: properties whose values are simple or composite [datatypes](DESCRIBING_DATATYPES.md). All attributes are considered optional by default.
 5. **Relationships**: The relationships that are important for this entity. The default cardinality is "1".
 6. **Illustrative Diagram**: A UML diagram showing this entity in its context if one is available.
 ---
@@ -32,4 +32,5 @@ e.g. [Person relationships](../entities/Person.md#relationships).
 
 ## Additional notes
 
-An entity need not document all relationships it is member in.
+An entity should document all relationships it is member in, as long as the other end is in the same module or one of its dependencies (incl. the Core).
+
