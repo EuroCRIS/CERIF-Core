@@ -7,25 +7,13 @@
 [Contributorship](../entities/Contributorship.md)
 
 ## Attributes
-contacts: List<[URI](../datatypes/URI.md)> (inherited from [Contributorship](../entities/Contributorship.md))
 
-display name: [String](../datatypes/String.md)> (inherited from [Contributorship](../entities/Contributorship.md))
+Besides those of [Contributorship](../entities/Contributorship.md#attributes), there are also the following specific attribute:
 
 corresponding author flag: [Boolean](../datatypes/Boolean.md)
 
 ## Relationships
-author: [Agent](../entities/Agent.md)
-* [FIXME] replacing the inherited contributor attribute from [Contributorship](../entities/Contributorship.md) 
 
-document: [Document](../entities/Document.md) (inherited from [Contributorship](../entities/Contributorship.md))
+Besides those of [Contributorship](../entities/Contributorship.md#relationships), there is also also a link to *author*: an instance of [Agent](../entities/Agent.md) 
+[FIXME] replacing the inherited *contributor* link from [Contributorship](../entities/Contributorship.md) 
 
-affiliations: List<[Affiliation Statement](../entities/Affiliation_Statement.md)> (inherited from [Contributorship](../entities/Contributorship.md))
-
-contribution statements: List<[Contribution Statement](../entities/Contribution_Statement.md)> (inherited from [Contributorship](../entities/Contributorship.md))
-
----
-
-## Matches
-
-
-## References
