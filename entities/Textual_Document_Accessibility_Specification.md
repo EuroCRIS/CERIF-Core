@@ -6,11 +6,3 @@
 ## Usage notes
 This is an abstract entity. One example of concrete vocabulary which might be represented by subclassing this entity might be [COAR vocabulary for access rights](http://vocabularies.coar-repositories.org/documentation/access_rights/).
 
-## Attributes
-
----
-
-## Matches
-
-
-## References

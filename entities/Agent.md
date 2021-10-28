@@ -23,5 +23,3 @@ for future extension.
 ---
 ## Matches
 1. Close match of [FOAF Agent](http://xmlns.com/foaf/spec/#term_Agent) 
-
-## References
