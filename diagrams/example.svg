@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="486px" preserveAspectRatio="none" style="width:1080px;height:486px;background:#FFFFFF;" version="1.1" viewBox="0 0 1080 486" width="1080px" zoomAndPan="magnify"><defs><filter height="300%" id="fqlvpd939w684" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FEFECE" filter="url(#fqlvpd939w684)" height="37.6094" style="stroke:#A80036;stroke-width:1.5;" width="347" x="7" y="232"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" text-decoration="underline" textLength="55" x="153" y="245.1387">X:Person</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="353" y1="249.9688" y2="249.9688"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="335" x="13" y="263.251">orcid_id [ORCID_iD_Type] = "https://orcid.org/0000-0003-3432-8728"</text><rect fill="#FEFECE" filter="url(#fqlvpd939w684)" height="60.8906" style="stroke:#A80036;stroke-width:1.5;" width="178" x="91.5" y="399.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" text-decoration="underline" textLength="131" x="115" y="412.6387">X Name:PersonName</text><line style="stroke:#A80036;stroke-width:1.5;" x1="92.5" x2="268.5" y1="417.4688" y2="417.4688"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="145" x="97.5" y="430.751">firstNames [String] = "Urlike"</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="166" x="97.5" y="442.3916">familyNames [String] = "Reisach"</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="131" x="97.5" y="454.0322">otherNames [String] = null</text><rect fill="#FEFECE" filter="url(#fqlvpd939w684)" height="84.1719" style="stroke:#A80036;stroke-width:1.5;" width="375" x="339" y="388"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" text-decoration="underline" textLength="126" x="463.5" y="401.1387">Institution 1:OrgUnit</text><line style="stroke:#A80036;stroke-width:1.5;" x1="340" x2="713" y1="405.9688" y2="405.9688"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="363" x="345" y="419.251">name [MultilingualString] = "Neu-Ulm University of Applied Sciences"@en,</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="293" x="345" y="430.8916">"Hochschule für angewandte Wissenschaften Neu-Ulm"@de</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="131" x="345" y="442.5322">acronym [String] = "HNU"</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="247" x="345" y="454.1729">rorId [ROR_ID_Type] = "https://ror.org/03ggzay52"</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="223" x="345" y="465.8135">websiteURL [URI] = "https://www.hnu.de/en/"</text><rect fill="#FEFECE" filter="url(#fqlvpd939w684)" height="49.25" style="stroke:#A80036;stroke-width:1.5;" width="317" x="749" y="405.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" text-decoration="underline" textLength="107" x="854" y="418.6387">Germany:Country</text><line style="stroke:#A80036;stroke-width:1.5;" x1="750" x2="1065" y1="423.4688" y2="423.4688"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="247" x="755" y="436.751">iso3166alphaCode [ISO_3166_Alpha2_Code]: "DE"</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="305" x="755" y="448.3916">name [MultilingualString]: "Germany"@en, "Deutschland"@de</text><rect fill="#FEFECE" filter="url(#fqlvpd939w684)" height="37.6094" style="stroke:#A80036;stroke-width:1.5;" width="241" x="555" y="41.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" text-decoration="underline" textLength="127" x="612" y="54.6387">Elsevier B.V.:OrgUnit</text><line style="stroke:#A80036;stroke-width:1.5;" x1="556" x2="795" y1="59.4688" y2="59.4688"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="229" x="561" y="72.751">name [MultilingualString] = "Elsevier B.V."@en</text><rect fill="#FEFECE" filter="url(#fqlvpd939w684)" height="154.0156" style="stroke:#A80036;stroke-width:1.5;" width="345" x="389" y="174"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" text-decoration="underline" textLength="204" x="459.5" y="187.1387">Affiliation 1 : AffiliationStatement</text><line style="stroke:#A80036;stroke-width:1.5;" x1="390" x2="733" y1="191.9688" y2="191.9688"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="333" x="395" y="205.251">displayAffiliation [String]: "Department of Information Management,</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="115" x="395" y="216.8916">Prof. Dr. Ulrike Reisach,</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="195" x="395" y="228.5322">Neu-Ulm University of Applied Sciences,</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="221" x="395" y="240.1729">Wiley-Street 1, D-89231 Neu-Ulm, Germany"</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="109" x="395" y="251.8135">orgUnit [OrgUnit]: Null</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="159" x="395" y="263.4541">institution [OrgUnit]: Institution 1</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="151" x="395" y="275.0947">postalAddress [PostalAddress]:</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="156" x="395" y="286.7354">streetAddress: "Wiley-Street 1",</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="80" x="395" y="298.376">city: "Neu-Ulm",</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="92" x="395" y="310.0166">country: Germany,</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="97" x="395" y="321.6572">zipCode: "D-89231"</text><rect fill="#FEFECE" filter="url(#fqlvpd939w684)" height="107.4531" style="stroke:#A80036;stroke-width:1.5;" width="300" x="220.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" text-decoration="underline" textLength="160" x="290.5" y="20.1387">Authorship 1 : Authorship</text><line style="stroke:#A80036;stroke-width:1.5;" x1="221.5" x2="519.5" y1="24.9688" y2="24.9688"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="84" x="226.5" y="38.251">author [Agent]: X</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="245" x="226.5" y="49.8916">document [Document]: 10.1016/j.ejor.2020.09.020</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="259" x="226.5" y="61.5322">affiliations [List&lt;AffiliationStatement&gt;]: [Affiliation 1]</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="186" x="226.5" y="73.1729">displayName [String]: "Ulrike Reisach"</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="288" x="226.5" y="84.8135">contacts [Collection&lt;URI&gt;]: [ "mailto:xxxxxxxx@hnu.de" ]</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="198" x="226.5" y="96.4541">correspondingAuthorFlag [Boolean]: True</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="225" x="226.5" y="108.0947">contributionStatement [MultilingualString]: null</text><!--MD5=[0de6e0d82a0c46b459c3ae003f151d8a]
+link X to XName--><path codeLine="11" d="M180.5,270.28 C180.5,299.4 180.5,356.86 180.5,394.07 " fill="none" id="X-to-XName" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="180.5,399.4,184.5,390.4,180.5,394.4,176.5,390.4,180.5,399.4" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="37" x="139.6844" y="388.6337">name</text><!--MD5=[6cafdc760387d9ea46ffb3839ecb8ba8]
+link Aut1 to X--><path codeLine="53" d="M309.0518,122.4623 C309.0518,122.4623 234.01,196.91 207.93,222.79 " fill="none" id="Aut1-X" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="198.67,231.98,207.8761,228.4802,202.2192,228.4582,202.2412,222.8014,198.67,231.98" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="202.2192" x2="207.895" y1="228.4582" y2="222.82"/><polygon fill="#FFFFFF" points="317.57,114.01,310.4935,115.3967,309.0518,122.4623,316.1283,121.0755,317.57,114.01" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="155.8033" y="221.0053">author</text><!--MD5=[e9e6ee0994f4ed96c825e5add7595754]
+link Aff1 to Ins1--><path codeLine="54" d="M544.1169,339.861 C544.1169,339.861 539.36,363.95 537.26,374.59 " fill="none" id="Aff1-Ins1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="534.69,387.6,540.3635,379.5494,535.6621,382.6954,532.5162,377.994,534.69,387.6" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="535.6621" x2="537.205" y1="382.6954" y2="374.845"/><polygon fill="#FFFFFF" points="546.45,328.09,541.3598,333.1978,544.1169,339.861,549.2071,334.7532,546.45,328.09" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63" x="468.1207" y="377.023">institution</text><!--MD5=[48d91d06f17ccf2142226a173c86a258]
+link Aff1 to Ger--><path codeLine="55" d="M720.9199,333.5618 C720.9199,333.5618 814.46,381.4 849.61,399.38 " fill="none" id="Aff1-Ger" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="861.53,405.48,855.3365,397.8223,857.0778,403.2044,851.6956,404.9457,861.53,405.48" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="857.0778" x2="849.96" y1="403.2044" y2="399.56"/><polygon fill="#FFFFFF" points="710.24,328.09,713.756,334.3858,720.9199,333.5618,717.4039,327.2659,710.24,328.09" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="48" x="795.6002" y="394.3268">country</text><!--MD5=[95d1426ce0860d1e9f4491dbb03adc2d]
+link Aut1 to Aff1--><path codeLine="56" d="M432.2444,122.4357 C432.2444,122.4357 460.67,150.49 474.67,164.31 " fill="none" id="Aut1-Aff1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="484.31,173.82,480.7174,164.6498,480.7525,170.3065,475.0958,170.3417,484.31,173.82" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="480.7525" x2="475.055" y1="170.3065" y2="164.685"/><polygon fill="#A80036" points="423.7,114.01,425.1636,121.071,432.2444,122.4357,430.7808,115.3747,423.7,114.01" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="381.6161" y="162.8214">0..* affiliations</text><!--MD5=[3248d740eedf6bccf119b9840bd0a6c3]
+@startuml
+	object "<u>X:Person</u>" as X {
+           orcid_id [ORCID_iD_Type] = "https://orcid.org/0000-0003-3432-8728"
+        }
+
+	object "<u>X Name:PersonName</u>" as XName {
+            firstNames [String] = "Urlike"
+            familyNames [String] = "Reisach"
+            otherNames [String] = null
+        }
+
+    X - -> "name" XName
+
+    object "<u>Institution 1:OrgUnit</u>" as Ins1 {
+    	    name [MultilingualString] = "Neu-Ulm University of Applied Sciences"@en,
+    	    "Hochschule für angewandte Wissenschaften Neu-Ulm"@de
+            acronym [String] = "HNU"
+            rorId [ROR_ID_Type] = "https://ror.org/03ggzay52"
+            websiteURL [URI] = "https://www.hnu.de/en/"
+    	}
+
+    object "<u>Germany:Country</u>" as Ger {
+            iso3166alphaCode [ISO_3166_Alpha2_Code]: "DE"
+            name [MultilingualString]: "Germany"@en, "Deutschland"@de
+        }
+
+    object "<u>Elsevier B.V.:OrgUnit</u>" as Elsevier {
+            name [MultilingualString] = "Elsevier B.V."@en
+        }
+
+    object "<u>Affiliation 1 : AffiliationStatement</u>" as Aff1 {
+            displayAffiliation [String]: "Department of Information Management,
+                 Prof. Dr. Ulrike Reisach,
+                 Neu-Ulm University of Applied Sciences,
+                 Wiley-Street 1, D-89231 Neu-Ulm, Germany"
+            orgUnit [OrgUnit]: Null
+            institution [OrgUnit]: Institution 1
+            postalAddress [PostalAddress]:
+                  streetAddress: "Wiley-Street 1",
+                  city: "Neu-Ulm",
+                  country: Germany,
+                  zipCode: "D-89231"
+        }
+
+    object "<u>Authorship 1 : Authorship</u>" as Aut1 {
+                author [Agent]: X
+                 document [Document]: 10.1016/j.ejor.2020.09.020
+                 affiliations [List<AffiliationStatement>]: [Affiliation 1]
+                 displayName [String]: "Ulrike Reisach"
+                 contacts [Collection<URI>]: [ "mailto:xxxxxxxx@hnu.de" ]
+                 correspondingAuthorFlag [Boolean]: True
+                 contributionStatement [MultilingualString]: null
+            }
+      Aut1 o- -> "author" X
+      Aff1 o- -> "institution" Ins1
+      Aff1 o- -> "country" Ger
+      Aut1 *- -> "0..* affiliations" Aff1
+
+@enduml
+
+PlantUML version 1.2021.8(Sat Jun 26 08:20:59 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
