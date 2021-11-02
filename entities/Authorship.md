@@ -8,12 +8,18 @@
 
 ## Attributes
 
-Besides those of [Contributorship](../entities/Contributorship.md#attributes), there are also the following specific attribute:
+Beside those inherited from [Contributorship](../entities/Contributorship.md#attributes), there are also the following specific attribute:
 
-corresponding author flag: [Boolean](../datatypes/Boolean.md)
+corresponding author flag: [Boolean](../datatypes/Boolean.md) - indicates whether this author is responsible for correspondence (true)
 
 ## Relationships
 
-Besides those of [Contributorship](../entities/Contributorship.md#relationships), there is also also a link to *author*: an instance of [Agent](../entities/Agent.md) 
-[FIXME] replacing the inherited *contributor* link from [Contributorship](../entities/Contributorship.md) 
+Beside those inherited from [Contributorship](../entities/Contributorship.md#relationships), there is also also a link to *author*: an instance of [Agent](../entities/Agent.md) 
+[FIXME] replacing the derived *contributor* link from [Contributorship](../entities/Contributorship.md) 
 
+---
+## Matches
+1. Close match with the **[author](https://sparontologies.github.io/pro/current/pro.html#d4e543)** named individual from the SPAR PRO Ontology.<sup>[1](#fn1)</sup>
+
+## References
+<a name="fn1">\[1\]</a> Author. In: *PRO, the Publishing Roles Ontology*. Shotton, D. and Peroni, S. Available: https://sparontologies.github.io/pro/current/pro.html
