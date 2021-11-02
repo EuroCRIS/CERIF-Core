@@ -9,7 +9,7 @@ Any contribution an [Agent](../entities/Agent.md) made to a [Document](../entiti
 
 contacts: List<[URI](../datatypes/URI.md)>
 
-display name: [String](../datatypes/String.md)>
+display name: [String](../datatypes/String.md)
 
 ## Relationships
 
