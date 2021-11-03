@@ -15,7 +15,7 @@ Wiley-Street 1, D-89231 Neu-Ulm, Germany
 
 ## Illustrative diagram
 
-![Person Example diagram](../diagrams/PersonExample.svg)
+![Person Example diagram](../diagrams/personExample.svg)
 
 ## Serialization
 
