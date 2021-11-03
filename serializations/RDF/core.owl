@@ -1,0 +1,354 @@
+@prefix : <https://eurocris.org/cerif-core#> .
+@prefix cf: <https://eurocris.org/cerif-core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://eurocris.org/cerif-core> .
+
+<https://eurocris.org/cerif-core> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  https://eurocris.org/cerif-core#DOI
+cf:DOI rdf:type rdfs:Datatype ;
+       owl:equivalentClass xsd:string .
+
+
+###  https://eurocris.org/cerif-core#EUCountryCode
+cf:EUCountryCode rdf:type rdfs:Datatype ;
+                 owl:equivalentClass xsd:string .
+
+
+###  https://eurocris.org/cerif-core#ISO3166AlphaCode
+cf:ISO3166AlphaCode rdf:type rdfs:Datatype ;
+                    owl:equivalentClass xsd:string .
+
+
+###  https://eurocris.org/cerif-core#ISO3166NumericCode
+cf:ISO3166NumericCode rdf:type rdfs:Datatype ;
+                      owl:equivalentClass xsd:string .
+
+
+###  https://eurocris.org/cerif-core#ORCIDIdentifier
+cf:ORCIDIdentifier rdf:type rdfs:Datatype ;
+                   owl:equivalentClass xsd:string .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://eurocris.org/cerif-core#hasAccessRights
+cf:hasAccessRights rdf:type owl:ObjectProperty ;
+                   rdfs:domain cf:TextualDocument ;
+                   rdfs:range cf:TextualDocumentAccessibilitySpecification ;
+                   rdfs:label "Access Rights"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAffiliations
+cf:hasAffiliations rdf:type owl:ObjectProperty ;
+                   rdfs:domain cf:Contributorship ;
+                   rdfs:range cf:АffilliationStatement ;
+                   rdfs:label "Affiliations"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAgent
+cf:hasAgent rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty cf:hasAuthor ;
+            rdfs:domain cf:Contributorship ;
+            rdfs:range cf:Agent ;
+            rdfs:label "Contributor"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAuthor
+cf:hasAuthor rdf:type owl:ObjectProperty ;
+             rdfs:domain cf:Authorship ;
+             rdfs:range cf:Agent ;
+             rdfs:label "Author"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAuthors
+cf:hasAuthors rdf:type owl:ObjectProperty ;
+              rdfs:domain cf:TextualDocument ;
+              rdfs:range cf:Agent ;
+              rdfs:label "Authors"@en .
+
+
+###  https://eurocris.org/cerif-core#hasAuthorships
+cf:hasAuthorships rdf:type owl:ObjectProperty ;
+                  rdfs:domain cf:TextualDocument ;
+                  rdfs:range cf:Authorship ;
+                  rdfs:label "Authorships"@en .
+
+
+###  https://eurocris.org/cerif-core#hasContributionStatements
+cf:hasContributionStatements rdf:type owl:ObjectProperty ;
+                             rdfs:domain cf:Contributorship ;
+                             rdfs:range cf:ContributionStatement ;
+                             rdfs:label "Contribution Statements"@en .
+
+
+###  https://eurocris.org/cerif-core#hasContributorships
+cf:hasContributorships rdf:type owl:ObjectProperty ;
+                       rdfs:domain cf:Agent ,
+                                   cf:Document ;
+                       rdfs:range cf:Contributorship ;
+                       rdfs:label "Contributorships"@en .
+
+
+###  https://eurocris.org/cerif-core#hasCountry
+cf:hasCountry rdf:type owl:ObjectProperty ;
+              rdfs:domain cf:PostalAddress ;
+              rdfs:range cf:Country ;
+              rdfs:label "Country"@en .
+
+
+###  https://eurocris.org/cerif-core#hasDocument
+cf:hasDocument rdf:type owl:ObjectProperty ;
+               rdfs:domain cf:Contributorship ;
+               rdfs:range cf:Document ;
+               rdfs:label "Document"@en .
+
+
+###  https://eurocris.org/cerif-core#hasInstitution
+cf:hasInstitution rdf:type owl:ObjectProperty ;
+                  rdfs:domain cf:АffilliationStatement ;
+                  rdfs:range cf:OrgUnit ;
+                  rdfs:label "Institution"@en .
+
+
+###  https://eurocris.org/cerif-core#hasOrgUnit
+cf:hasOrgUnit rdf:type owl:ObjectProperty ;
+              rdfs:domain cf:АffilliationStatement ;
+              rdfs:range cf:OrgUnit ;
+              rdfs:label "Organization Unit"@en .
+
+
+###  https://eurocris.org/cerif-core#hasPersonName
+cf:hasPersonName rdf:type owl:ObjectProperty ;
+                 rdfs:domain cf:Person ;
+                 rdfs:range cf:PersonName ;
+                 rdfs:comment "Person Name"@en .
+
+
+###  https://eurocris.org/cerif-core#hasPostalAddress
+cf:hasPostalAddress rdf:type owl:ObjectProperty ;
+                    rdfs:domain cf:АffilliationStatement ;
+                    rdfs:range cf:PostalAddress ;
+                    rdfs:label "Postall Address"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://eurocris.org/cerif-core#hasCity
+cf:hasCity rdf:type owl:DatatypeProperty ;
+           rdfs:domain cf:PostalAddress ;
+           rdfs:range xsd:string ;
+           rdfs:label "CIty"@en .
+
+
+###  https://eurocris.org/cerif-core#hasContacts
+cf:hasContacts rdf:type owl:DatatypeProperty ;
+               rdfs:domain cf:Contributorship ;
+               rdfs:range xsd:anyURI ;
+               rdfs:label "Contacts"@en .
+
+
+###  https://eurocris.org/cerif-core#hasCorrespondingAuthorFlag
+cf:hasCorrespondingAuthorFlag rdf:type owl:DatatypeProperty ;
+                              rdfs:domain cf:Authorship ;
+                              rdfs:range xsd:boolean ;
+                              rdfs:label "Corresponding Author Flag"@en .
+
+
+###  https://eurocris.org/cerif-core#hasDOI
+cf:hasDOI rdf:type owl:DatatypeProperty ;
+          rdfs:domain cf:Document ;
+          rdfs:range cf:DOI ;
+          rdfs:label "DOI"@en .
+
+
+###  https://eurocris.org/cerif-core#hasDisplayText
+cf:hasDisplayText rdf:type owl:DatatypeProperty ;
+                  rdfs:domain cf:Contributorship ,
+                              cf:АffilliationStatement ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "Display Text" .
+
+
+###  https://eurocris.org/cerif-core#hasEUContryCode
+cf:hasEUContryCode rdf:type owl:DatatypeProperty ;
+                   rdfs:domain cf:Country ;
+                   rdfs:range cf:EUCountryCode ;
+                   rdfs:label "EU Country Code"@en .
+
+
+###  https://eurocris.org/cerif-core#hasFamilyNames
+cf:hasFamilyNames rdf:type owl:DatatypeProperty ;
+                  rdfs:domain cf:PersonName ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "Family Names"@en .
+
+
+###  https://eurocris.org/cerif-core#hasFirstName
+cf:hasFirstName rdf:type owl:DatatypeProperty ;
+                rdfs:label "First names"@en .
+
+
+###  https://eurocris.org/cerif-core#hasISO3166AlphaCode
+cf:hasISO3166AlphaCode rdf:type owl:DatatypeProperty ;
+                       rdfs:domain cf:Country ;
+                       rdfs:range cf:ISO3166AlphaCode ;
+                       rdfs:label "ISO 3166 Alpha Code"@en .
+
+
+###  https://eurocris.org/cerif-core#hasISO3166NumericCode
+cf:hasISO3166NumericCode rdf:type owl:DatatypeProperty ;
+                         rdfs:domain cf:Country ;
+                         rdfs:range cf:ISO3166NumericCode ;
+                         rdfs:label "ISO 3166 Numeric Code"@en .
+
+
+###  https://eurocris.org/cerif-core#hasName
+cf:hasName rdf:type owl:DatatypeProperty ;
+           rdfs:domain cf:Country ,
+                       cf:OrgUnit ;
+           rdfs:range rdf:PlainLiteral ;
+           rdfs:label "Name"@en .
+
+
+###  https://eurocris.org/cerif-core#hasORCIDiD
+cf:hasORCIDiD rdf:type owl:DatatypeProperty ;
+              rdfs:domain cf:Person ;
+              rdfs:range xsd:string ;
+              rdfs:label "ORCIDiD" .
+
+
+###  https://eurocris.org/cerif-core#hasOtherNames
+cf:hasOtherNames rdf:type owl:DatatypeProperty ;
+                 rdfs:domain cf:PersonName ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "Other Names"@en .
+
+
+###  https://eurocris.org/cerif-core#hasPublicationDate
+cf:hasPublicationDate rdf:type owl:DatatypeProperty ;
+                      rdfs:domain cf:Document ;
+                      rdfs:range xsd:dateTime ;
+                      rdfs:label "Publication Date"@en .
+
+
+###  https://eurocris.org/cerif-core#hasStatement
+cf:hasStatement rdf:type owl:DatatypeProperty ;
+                rdfs:domain cf:FreeTextContributionStatement ;
+                rdfs:range rdf:PlainLiteral ;
+                rdfs:label "Statement"@en .
+
+
+###  https://eurocris.org/cerif-core#hasStreet
+cf:hasStreet rdf:type owl:DatatypeProperty ;
+             rdfs:domain cf:PostalAddress ;
+             rdfs:range xsd:string ;
+             rdfs:label "Street"@en .
+
+
+###  https://eurocris.org/cerif-core#hasTitle
+cf:hasTitle rdf:type owl:DatatypeProperty ;
+            rdfs:domain cf:Document ;
+            rdfs:range rdf:PlainLiteral ;
+            rdfs:label "Title"@en .
+
+
+###  https://eurocris.org/cerif-core#hasZipCode
+cf:hasZipCode rdf:type owl:DatatypeProperty ;
+              rdfs:label "Zip Code"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://eurocris.org/cerif-core#Agent
+cf:Agent rdf:type owl:Class .
+
+
+###  https://eurocris.org/cerif-core#Authorship
+cf:Authorship rdf:type owl:Class ;
+              rdfs:subClassOf cf:Contributorship .
+
+
+###  https://eurocris.org/cerif-core#ContributionStatement
+cf:ContributionStatement rdf:type owl:Class ;
+                         rdfs:label "Contribution Statement" .
+
+
+###  https://eurocris.org/cerif-core#Contributorship
+cf:Contributorship rdf:type owl:Class .
+
+
+###  https://eurocris.org/cerif-core#Country
+cf:Country rdf:type owl:Class .
+
+
+###  https://eurocris.org/cerif-core#Document
+cf:Document rdf:type owl:Class .
+
+
+###  https://eurocris.org/cerif-core#FreeTextContributionStatement
+cf:FreeTextContributionStatement rdf:type owl:Class ;
+                                 rdfs:subClassOf cf:ContributionStatement ;
+                                 rdfs:label "Free Text Contribution Statement"@en .
+
+
+###  https://eurocris.org/cerif-core#OrgUnit
+cf:OrgUnit rdf:type owl:Class ;
+           rdfs:subClassOf cf:Agent ;
+           rdfs:label "Organisation Unit"@en .
+
+
+###  https://eurocris.org/cerif-core#Person
+cf:Person rdf:type owl:Class ;
+          rdfs:subClassOf cf:Agent ;
+          rdfs:label "Person"@en .
+
+
+###  https://eurocris.org/cerif-core#PersonName
+cf:PersonName rdf:type owl:Class ;
+              rdfs:subClassOf cf:complexDataType ;
+              rdfs:label "Person Name"@en .
+
+
+###  https://eurocris.org/cerif-core#PostalAddress
+cf:PostalAddress rdf:type owl:Class ;
+                 rdfs:subClassOf cf:complexDataType ;
+                 rdfs:label "Postal Address"@en .
+
+
+###  https://eurocris.org/cerif-core#TextualDocument
+cf:TextualDocument rdf:type owl:Class ;
+                   rdfs:subClassOf cf:Document ;
+                   rdfs:label "Textual Document"@en .
+
+
+###  https://eurocris.org/cerif-core#TextualDocumentAccessibilitySpecification
+cf:TextualDocumentAccessibilitySpecification rdf:type owl:Class ;
+                                             rdfs:label "Textual Document Accessibility Specification"@en .
+
+
+###  https://eurocris.org/cerif-core#complexDataType
+cf:complexDataType rdf:type owl:Class .
+
+
+###  https://eurocris.org/cerif-core#АffilliationStatement
+cf:АffilliationStatement rdf:type owl:Class ;
+                         rdfs:subClassOf cf:complexDataType ;
+                         rdfs:label "Affiliation Statement"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

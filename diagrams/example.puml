@@ -1,12 +1,16 @@
 @startuml
+	!startsub person
 	object "<u>X:Person</u>" as X {
            personName = {
            \t firstNames = "Urlike"
            \t familyNames = "Reisach"
            } ^^ PersonName
            orcid_id = "https://orcid.org/0000-0003-3432-8728" ^^ ORCID_iD_Type
+           affiliations = [Affiliation 1] ^^ List<AffiliationStatement>
         }
+    !endsub
 
+    !startsub ins
     object "<u>Institution 1:OrgUnit</u>" as Ins1 {
     	    name = "Neu-Ulm University of Applied Sciences"@en,
     	    \t "Hochschule für angewandte Wissenschaften Neu-Ulm"@de
@@ -14,16 +18,22 @@
             rorId = "https://ror.org/03ggzay52" ^^ ROR_ID_Type
             websiteURL = "https://www.hnu.de/en/" ^^ URI
     	}
+    !endsub
 
+    !startsub affiliations
     object "<u>Germany:Country</u>" as Ger {
            name = "Germany"@en, "Deutschland"@de
            iso3166alpha2Code = "DE" ^^ ISO_3166_Alpha2_Code
         }
+    !endsub
 
+    !startsub elsevier
     object "<u>Elsevier B.V.:OrgUnit</u>" as Elsevier {
             name = "Elsevier B.V."@en
         }
+    !endsub
 
+    !startsub affiliations
     object "<u>Affiliation 1 : AffiliationStatement</u>" as Aff1 {
             displayAffiliation = "Department of Information Management,
             \t Prof. Dr. Ulrike Reisach,
@@ -36,9 +46,10 @@
             \t zipCode = "D-89231"
             } ^^ PostalAddress
             institution = Institution 1 ^^ OrgUnit
-            person = X ^^ Person
         }
+    !endsub
 
+    !startsub aut
     object "<u>Authorship 1 : Authorship</u>" as Aut1 {
             contacts = [ "mailto:xxxxxxxx@hnu.de" ][Collection<URI>]
             displayName = "Ulrike Reisach"
@@ -47,9 +58,18 @@
             document = 10.1016/j.ejor.2020.09.020 ^^ Document
             affiliations = [Affiliation 1] ^^ List<AffiliationStatement>
         }
+    !endsub
+
+    !startsub autDoc
     Aut1 o--> "author" X
+    Aut1 *--> "0..* affiliations" Aff1
+    !endsub
+
+    !startsub affiliations
     Aff1 o--> "institution" Ins1
     Aff1 o--> "country" Ger
-    Aut1 *--> "0..* affiliations" Aff1
+    X o--> "0..* affiliations" Aff1
+    !endsub
+
 
 @enduml

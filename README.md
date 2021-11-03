@@ -47,6 +47,9 @@ And the following data types:
 ## Usage
 
 The Core is seldom used on its own, you almost always need to add one or several additional modules.
+Anyway, the Core includes the following examples:
+* [Person](./examples/Person_Example1.md)
+* ...
 
 ## Development
 
