@@ -3,11 +3,11 @@
 ## Definition
 A system of communication used by people living in a particular country consisting of sounds, words, and grammar.<sup>[1](#fn1)</sup>
 
-## Usage notes
+## Notes
 
 Lists of languages are complied as controlled vocabularies.<sup>[2](#fn2)</sup>
 
-## Attributes
+## Components
 name: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ISO639 1 code: [ISO639 1 Alpha2 Code Type](../datatypes/ISO_639_1_Alpha2_Code.md)

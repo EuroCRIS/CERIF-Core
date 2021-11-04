@@ -43,7 +43,7 @@
         zipCode : Multilingual_String 
         country : Country
     }
-    class "Country"{
+    datatype("Country") {
         name : Multilingual_String
         iso3166alpha2Code : ISO3166_Alpha2_Code
         # iso3166NumericCode : ISO3166_Numeric_Code

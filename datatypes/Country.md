@@ -3,11 +3,11 @@
 ## Definition
 An area of land that has its own government, army, etc.<sup>[1](#fn1)</sup>
 
-## Usage notes
+## Notes
 
 Lists of countries are complied as controlled vocabularies.<sup>[2](#fn2)</sup> 
 
-## Attributes
+## Components
 name: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ISO 3166 alpha2 code: [ISO 3166 Alpha2 Code Type](../datatypes/ISO_3166_Alpha2_Code.md)
