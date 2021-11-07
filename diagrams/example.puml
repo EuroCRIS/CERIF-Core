@@ -20,12 +20,6 @@
     	}
     !endsub
 
-    !startsub affiliations
-    object "<u>Germany:Country</u>" as Ger {
-           name = "Germany"@en, "Deutschland"@de
-           iso3166alpha2Code = "DE" ^^ ISO_3166_Alpha2_Code
-        }
-    !endsub
 
     !startsub elsevier
     object "<u>Elsevier B.V.:OrgUnit</u>" as Elsevier {
@@ -42,7 +36,10 @@
             postalAddress = {
             \t streetAddress = "Wiley-Street 1"
             \t city = "Neu-Ulm"
-            \t country = Germany ^^ Country
+            \t country = {
+                        \t\t name = "Germany"@en, "Deutschland"@de
+                        \t\t iso3166alpha2Code = "DE" ^^ ISO_3166_Alpha2_Code
+                        \t }^^ Country
             \t zipCode = "D-89231"
             } ^^ PostalAddress
             institution = Institution 1 ^^ OrgUnit
