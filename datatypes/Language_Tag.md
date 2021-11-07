@@ -10,8 +10,8 @@ Language tags are used as language qualifiers in [Multilingual Strings](../datat
 
 ## Syntax
 
-A code for [language](../entities/Language.md), optionally followied by codes 
-for a [script](../entities/Script.md), a [country](../entities/Country.md) or for other aspects, separated by dashes (`-`).
+A code for [language](../datatypes/Language.md), optionally followied by codes 
+for a [script](../datatypes/Script.md), a [country](../datatypes/Country.md) or for other aspects, separated by dashes (`-`).
 
 Examples:
 - `en` - English
@@ -21,4 +21,4 @@ Examples:
 
 ---
 ## References
-<a name="fn1">\[1\]</a> Source: A. Phillips; M. Davis. *Tags for Identifying Languages*. IETF. September 2009. IETF Best Current Practice. [FIXME] Available from https://tools.ietf.org/search/bcp47 
+<a name="fn1">\[1\]</a> Source: A. Phillips; M. Davis. *Tags for Identifying Languages*. IETF. September 2009. IETF Best Current Practice. Available from https://tools.ietf.org/rfc/bcp/bcp47.txt 

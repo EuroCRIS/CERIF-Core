@@ -20,8 +20,8 @@
          <https://eurocris.org/cerif-core#hasISO3166AlphaCode> "DE"^^<https://eurocris.org/cerif-core#ISO3166AlphaCode> ;
          <https://eurocris.org/cerif-core#hasName> "Deutschland"@de ,
                                                    "Germany"@en ,
-                                                   "Nemačka"@sr-lat ,
-                                                   "Немачка"@sr-cyr .
+                                                   "Nemačka"@sr-latn ,
+                                                   "Немачка"@sr-cyrl .
 
 
 ###  http://www.example.org/cerifcoreandpubmodule#affiliation1

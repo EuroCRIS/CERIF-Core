@@ -3,10 +3,10 @@
 ## Definition
 The money that is used in a particular country at a particular time.<sup>[1](#fn1)</sup>
 
-## Usage notes
-The currency in which the monetary amount is expressed.
+## Notes
+The currency in which a monetary amount is expressed.
 
-## Attributes
+## Components
 name: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ISO 4217 alpha code: [ISO 4217 Alpha Code](../datatypes/ISO_4217_Alpha_Code.md)
