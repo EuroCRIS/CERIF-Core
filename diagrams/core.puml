@@ -6,21 +6,21 @@
 	!endsub
 
     !startsub Contributorship
-    class "Document"{
+    class "Document" {
         doi : DOI
         title : Multilingual_String
         publicationDate : Date
     }
     !endsub
-    class "Textual_Document"{
+    class "Textual_Document" {
     }
-    class "Textual_Document_Accessibility_Specification"{
+    class "Textual_Document_Accessibility_Specification" {
     }
     !startsub Agent
-    class "Agent"{
+    class "Agent" {
 
     }
-    class "Organisation_Unit"{
+    class "Organisation_Unit" {
         name : Multilingual_String
         acronym : String
         address : Postal_Address
@@ -28,7 +28,7 @@
         webSiteURL : URL
         email : URL
     }
-    class "Person"{
+    class "Person" {
         name : Person_Name
         orcidId : ORCID_iD
     }
@@ -43,7 +43,7 @@
         zipCode : Multilingual_String 
         country : Country
     }
-    class "Country"{
+    class "Country" {
         name : Multilingual_String
         iso3166alpha2Code : ISO3166_Alpha2_Code
         # iso3166NumericCode : ISO3166_Numeric_Code
@@ -51,21 +51,21 @@
     }
 	"Postal_Address" o--> "country" "Country"
     !endsub
-    class "Authorship"{
+    class "Authorship" {
         correspondingAuthorFlag : Boolean 
     }
     note left #yellow: author == contributor
     !startsub Contributorship
-    class "Contributorship"{
+    class "Contributorship" {
         contacts : List<URI> 
         displayName : String
     }
-    class "Contribution_Statement"{
+    class "Contribution_Statement" {
     }
-    class "Free_Text_Contribution_Statement"{
+    class "Free_Text_Contribution_Statement" {
         statement : Multilingual_String
     }
-    class "Affiliation_Statement"{
+    class "Affiliation_Statement" {
         displayAffiliation : String 
         address : Postal_Address
     }
