@@ -1,5 +1,5 @@
 # Contribution Statement
 
 ## Definition
-[FIXME] An abstract entity representing a free text information or dictionary of cotribution roles describing contribution of a [Person](../entities/Person.md) to a [Document](../entities/Document.md). 
+An abstract entity representing a free-text or structured information of contribution roles that describe a contribution of an [Agent](../entities/Agent.md) (typically a [Person](../entities/Person.md)) to a [Document](../entities/Document.md). 
 
