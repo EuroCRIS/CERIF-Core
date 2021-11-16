@@ -4,7 +4,7 @@ The datatype that represents the three-letter codes of currencies in line with t
 
 It is based on the [String](../datatypes/String.md) datatype with the following additional restrictions:
 - the string must match the following regular expression: `[A-Z]{3}` (three uppercase letters of the English alphabet)
-- the combination of letters must actually identify a country in the ISO 4217 standard
+- the combination of letters must actually identify a currency in the ISO 4217 standard
 
 ---
 ## References
