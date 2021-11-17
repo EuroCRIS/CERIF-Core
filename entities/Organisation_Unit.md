@@ -3,7 +3,7 @@
 ## Definition
 An Organisation or a part of an Organisation's structure.
 
-*Organisation*: A formal, goal-orientated group with members and a defined structure, governed by rules and procedures that guide operation.<sup>[1](#fn1)</sup> 
+**Organisation**: A formal, goal-orientated group with members and a defined structure, governed by rules and procedures that guide operation.<sup>[1](#fn1)</sup> 
 
 ## Usage notes
 In the research information domain Organisation Units typically represents:
