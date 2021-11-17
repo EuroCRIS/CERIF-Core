@@ -46,8 +46,8 @@
     datatype("Country"){
         name : Multilingual_String
         iso3166alpha2Code : ISO3166_Alpha2_Code
-        # iso3166NumericCode : ISO3166_Numeric_Code
-        # euCountryCode : EU_Country_Code
+'         iso3166NumericCode : ISO3166_Numeric_Code   FIXME
+'         euCountryCode : EU_Country_Code			FIXME
     }
 	"Postal_Address" o--> "country" "Country"
     !endsub
