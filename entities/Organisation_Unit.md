@@ -1,7 +1,9 @@
 # Organisation Unit
 
 ## Definition
-An organisation, a unit therein, a committee or any other group of people that has a collective goal. Organisation Units are not necessarily formalized as legal entities.
+An Organisation or a part of an Organisation's structure.
+
+*Organisation*: A formal, goal-orientated group with members and a defined structure, governed by rules and procedures that guide operation.<sup>[1](#fn1)</sup> 
 
 ## Usage notes
 In the research information domain Organisation Units typically represents:
@@ -40,3 +42,4 @@ Those of [Agent](../entities/Agent.md#relationships)
 
 ## References
 
+<a name="fn1">\[1\]</a> Source: The Open Education Sociology Dictionary, https://sociologydictionary.org/organization/
