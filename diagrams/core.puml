@@ -1,26 +1,26 @@
 @startuml
 	!startsub common
-	!define datatype(x) class x << (D,#FF7700) DataType>>
+	!define datatype(x) class x << (D,#add0b2) DataType>> #ffffff
 	hide empty members
 	skinparam BoxPadding 120
 	!endsub
 
     !startsub Contributorship
-    class "Document"{
+    class "Document" #ffffff {
         doi : DOI
         title : Multilingual_String
         publicationDate : Date
     }
     !endsub
-    class "Textual_Document"{
+    class "Textual_Document" #ffffff {
     }
-    class "Textual_Document_Accessibility_Specification"{
+    class "Textual_Document_Accessibility_Specification" #ffffff {
     }
     !startsub Agent
-    class "Agent"{
+    class "Agent" #ffffff {
 
     }
-    class "Organisation_Unit"{
+    class "Organisation_Unit" #ffffff {
         name : Multilingual_String
         acronym : String
         address : Postal_Address
@@ -28,7 +28,7 @@
         webSiteURL : URL
         email : URL
     }
-    class "Person"{
+    class "Person" #ffffff {
         name : Person_Name
         orcidId : ORCID_iD
     }
@@ -51,21 +51,21 @@
     }
 	"Postal_Address" o--> "country" "Country"
     !endsub
-    class "Authorship"{
+    class "Authorship" #ffffff {
         correspondingAuthorFlag : Boolean 
     }
     note left #yellow: author == contributor
     !startsub Contributorship
-    class "Contributorship"{
+    class "Contributorship" #ffffff {
         contacts : List<URI> 
         displayName : String
     }
-    class "Contribution_Statement"{
+    class "Contribution_Statement" #ffffff {
     }
-    class "Free_Text_Contribution_Statement"{
+    class "Free_Text_Contribution_Statement" #ffffff {
         statement : Multilingual_String
     }
-    class "Affiliation_Statement"{
+    class "Affiliation_Statement" #ffffff {
         displayAffiliation : String 
         address : Postal_Address
     }
