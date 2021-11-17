@@ -64,7 +64,6 @@
 
     !startsub affiliations
     Aff1 o--> "institution" Ins1
-    Aff1 o--> "country" Ger
     X o--> "0..* affiliations" Aff1
     !endsub
 
