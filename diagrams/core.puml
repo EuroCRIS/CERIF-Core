@@ -94,16 +94,30 @@
     !endsub
     !startsub AffiliationStatement
         "Affiliation_Statement" ..> "postalAddress" "Postal_Address"
+    !endsub
+    !startsub AffiliationStatement
         "Affiliation_Statement" o-- "0..1 orgUnit" "Organisation_Unit"
+    !endsub
+    !startsub AffiliationStatement
         "Affiliation_Statement" o-- "0..1 institution" "Organisation_Unit"
         '    "Affiliation_Statement" o-- "person" "Person"
+    !endsub
+    !startsub AffiliationStatement
         "Person" o-- "0..* affiliations" "Affiliation_Statement"
+    !endsub
+    !startsub AffiliationStatement
         "Contributorship" *-- "0..* affiliations" "Affiliation_Statement"
     !endsub
     !startsub Contributorship
         "Contributorship" *-- "0..* contributionStatements" "Contribution_Statement"
+    !endsub
+    !startsub Contributorship
         "Contribution_Statement" <|-- "Free_Text_Contribution_Statement"
+    !endsub
+    !startsub Contributorship
         "Contributorship" "0..*" --r--* "Document"
+    !endsub
+    !startsub Contributorship
         "Contributorship" "0..*" --l--o "0..1 contributor" "Agent"
     !endsub
     "Authorship" -r-* "Textual_Document"
@@ -112,10 +126,14 @@
     note on link #yellow: author == contributor
     !startsub Person
         "Person" ..> "name" "Person_Name"
+    !endsub
+    !startsub Person
         "Agent" <|-- "Person"
     !endsub
     !startsub OrgUnit
         "Agent" <|-- "Organisation_Unit"
+    !endsub
+    !startsub OrgUnit
         "Organisation_Unit" ..> "address" "Postal_Address"
     !endsub
     !startsub Document

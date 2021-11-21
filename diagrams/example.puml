@@ -58,13 +58,17 @@
     !endsub
 
     !startsub autDoc
-    Aut1 o--> "author" X
-    Aut1 *--> "0..* affiliations" Aff1
+        Aut1 o--> "author" X
+    !endsub
+    !startsub autDoc
+        Aut1 *--> "0..* affiliations" Aff1
     !endsub
 
     !startsub affiliations
-    Aff1 o--> "institution" Ins1
-    X o--> "0..* affiliations" Aff1
+        Aff1 o--> "institution" Ins1
+    !endsub
+    !startsub affiliations
+        X o--> "0..* affiliations" Aff1
     !endsub
 
 
