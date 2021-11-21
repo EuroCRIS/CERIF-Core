@@ -1,218 +1,246 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1008px" preserveAspectRatio="none" style="width:971px;height:1008px;background:#FFFFFF;" version="1.1" viewBox="0 0 971 1008" width="971px" zoomAndPan="magnify"><defs><filter height="300%" id="fg955cpc2w1pw" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[59b530d44ae785dc18db921986a9c15c]
-class Document--><rect codeLine="8" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="78.4141" id="Document" style="stroke:#A80036;stroke-width:1.5;" width="148" x="508.79" y="181"/><ellipse cx="547.19" cy="197" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M550.1588,202.6406 Q549.5806,202.9375 548.94,203.0781 Q548.2994,203.2344 547.5963,203.2344 Q545.0963,203.2344 543.7681,201.5938 Q542.4556,199.9375 542.4556,196.8125 Q542.4556,193.6875 543.7681,192.0313 Q545.0963,190.375 547.5963,190.375 Q548.2994,190.375 548.94,190.5313 Q549.5963,190.6875 550.1588,190.9844 L550.1588,193.7031 Q549.5338,193.125 548.94,192.8594 Q548.3463,192.5781 547.7213,192.5781 Q546.3775,192.5781 545.69,193.6563 Q545.0025,194.7188 545.0025,196.8125 Q545.0025,198.9063 545.69,199.9844 Q546.3775,201.0469 547.7213,201.0469 Q548.3463,201.0469 548.94,200.7813 Q549.5338,200.5 550.1588,199.9219 L550.1588,202.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="566.39" y="201.1543">Document</text><line style="stroke:#A80036;stroke-width:1.5;" x1="509.79" x2="655.79" y1="213" y2="213"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="514.79" y="227.2104">doi : DOI</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="136" x="514.79" y="240.0151">title : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="125" x="514.79" y="252.8198">publicationDate : Date</text><!--MD5=[fe105c2ee1fabf2400c31a97ce9128bc]
-class Textual_Document--><rect codeLine="14" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="32" id="Textual_Document" style="stroke:#A80036;stroke-width:1.5;" width="147" x="461.29" y="17.5"/><ellipse cx="476.29" cy="33.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M479.2588,39.1406 Q478.6806,39.4375 478.04,39.5781 Q477.3994,39.7344 476.6963,39.7344 Q474.1963,39.7344 472.8681,38.0938 Q471.5556,36.4375 471.5556,33.3125 Q471.5556,30.1875 472.8681,28.5313 Q474.1963,26.875 476.6963,26.875 Q477.3994,26.875 478.04,27.0313 Q478.6963,27.1875 479.2588,27.4844 L479.2588,30.2031 Q478.6338,29.625 478.04,29.3594 Q477.4463,29.0781 476.8213,29.0781 Q475.4775,29.0781 474.79,30.1563 Q474.1025,31.2188 474.1025,33.3125 Q474.1025,35.4063 474.79,36.4844 Q475.4775,37.5469 476.8213,37.5469 Q477.4463,37.5469 478.04,37.2813 Q478.6338,37 479.2588,36.4219 L479.2588,39.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="115" x="490.29" y="37.6543">Textual_Document</text><!--MD5=[152f153d79baedb26b20a34b9b1b571f]
-class Textual_Document_Accessibility_Specification--><rect codeLine="16" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="32" id="Textual_Document_Accessibility_Specification" style="stroke:#A80036;stroke-width:1.5;" width="314" x="643.79" y="17.5"/><ellipse cx="658.79" cy="33.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M661.7588,39.1406 Q661.1806,39.4375 660.54,39.5781 Q659.8994,39.7344 659.1963,39.7344 Q656.6963,39.7344 655.3681,38.0938 Q654.0556,36.4375 654.0556,33.3125 Q654.0556,30.1875 655.3681,28.5313 Q656.6963,26.875 659.1963,26.875 Q659.8994,26.875 660.54,27.0313 Q661.1963,27.1875 661.7588,27.4844 L661.7588,30.2031 Q661.1338,29.625 660.54,29.3594 Q659.9463,29.0781 659.3213,29.0781 Q657.9775,29.0781 657.29,30.1563 Q656.6025,31.2188 656.6025,33.3125 Q656.6025,35.4063 657.29,36.4844 Q657.9775,37.5469 659.3213,37.5469 Q659.9463,37.5469 660.54,37.2813 Q661.1338,37 661.7588,36.4219 L661.7588,39.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="282" x="672.79" y="37.6543">Textual_Document_Accessibility_Specification</text><!--MD5=[9d44916250b776386006c440668bcfbb]
-class Agent--><rect codeLine="19" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="32" id="Agent" style="stroke:#A80036;stroke-width:1.5;" width="69" x="238.29" y="204"/><ellipse cx="253.29" cy="220" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M256.2587,225.6406 Q255.6806,225.9375 255.04,226.0781 Q254.3994,226.2344 253.6963,226.2344 Q251.1963,226.2344 249.8681,224.5938 Q248.5556,222.9375 248.5556,219.8125 Q248.5556,216.6875 249.8681,215.0313 Q251.1963,213.375 253.6963,213.375 Q254.3994,213.375 255.04,213.5313 Q255.6963,213.6875 256.2587,213.9844 L256.2587,216.7031 Q255.6338,216.125 255.04,215.8594 Q254.4463,215.5781 253.8213,215.5781 Q252.4775,215.5781 251.79,216.6563 Q251.1025,217.7188 251.1025,219.8125 Q251.1025,221.9063 251.79,222.9844 Q252.4775,224.0469 253.8213,224.0469 Q254.4463,224.0469 255.04,223.7813 Q255.6338,223.5 256.2587,222.9219 L256.2587,225.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37" x="267.29" y="224.1543">Agent</text><!--MD5=[779f3743e425ed8a6f0bf188ddea4860]
-class Organisation_Unit--><rect codeLine="22" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="116.8281" id="Organisation_Unit" style="stroke:#A80036;stroke-width:1.5;" width="159" x="261.29" y="589"/><ellipse cx="283.49" cy="605" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M286.4588,610.6406 Q285.8806,610.9375 285.24,611.0781 Q284.5994,611.2344 283.8963,611.2344 Q281.3963,611.2344 280.0681,609.5938 Q278.7556,607.9375 278.7556,604.8125 Q278.7556,601.6875 280.0681,600.0313 Q281.3963,598.375 283.8963,598.375 Q284.5994,598.375 285.24,598.5313 Q285.8963,598.6875 286.4588,598.9844 L286.4588,601.7031 Q285.8338,601.125 285.24,600.8594 Q284.6463,600.5781 284.0213,600.5781 Q282.6775,600.5781 281.99,601.6563 Q281.3025,602.7188 281.3025,604.8125 Q281.3025,606.9063 281.99,607.9844 Q282.6775,609.0469 284.0213,609.0469 Q284.6463,609.0469 285.24,608.7813 Q285.8338,608.5 286.4588,607.9219 L286.4588,610.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="111" x="299.09" y="609.1543">Organisation_Unit</text><line style="stroke:#A80036;stroke-width:1.5;" x1="262.29" x2="419.29" y1="621" y2="621"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="267.29" y="635.2104">name : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="95" x="267.29" y="648.0151">acronym : String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="267.29" y="660.8198">address : Postal_Address</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="267.29" y="673.6245">rorId : ROR_Id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="99" x="267.29" y="686.4292">webSiteURL : URL</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="267.29" y="699.2339">email : URL</text><!--MD5=[09ce52be0ee7de43c61b6e2d59bf108b]
-class Person--><rect codeLine="30" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="65.6094" id="Person" style="stroke:#A80036;stroke-width:1.5;" width="135" x="205.29" y="319"/><ellipse cx="246.84" cy="335" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M249.8088,340.6406 Q249.2306,340.9375 248.59,341.0781 Q247.9494,341.2344 247.2463,341.2344 Q244.7463,341.2344 243.4181,339.5938 Q242.1056,337.9375 242.1056,334.8125 Q242.1056,331.6875 243.4181,330.0313 Q244.7463,328.375 247.2463,328.375 Q247.9494,328.375 248.59,328.5313 Q249.2463,328.6875 249.8088,328.9844 L249.8088,331.7031 Q249.1838,331.125 248.59,330.8594 Q247.9963,330.5781 247.3713,330.5781 Q246.0275,330.5781 245.34,331.6563 Q244.6525,332.7188 244.6525,334.8125 Q244.6525,336.9063 245.34,337.9844 Q246.0275,339.0469 247.3713,339.0469 Q247.9963,339.0469 248.59,338.7813 Q249.1838,338.5 249.8088,337.9219 L249.8088,340.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44" x="266.74" y="339.1543">Person</text><line style="stroke:#A80036;stroke-width:1.5;" x1="206.29" x2="339.29" y1="351" y2="351"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="211.29" y="365.2104">name : Person_Name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="211.29" y="378.0151">orcidId : ORCID_iD</text><!--MD5=[7b209ef07eb91b93e0aebc9fe4fb9a26]
-class Person_Name--><rect codeLine="34" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="84.3516" id="Person_Name" style="stroke:#A80036;stroke-width:1.5;" width="201" x="91.29" y="445"/><ellipse cx="144.54" cy="463.9688" fill="#ADD0B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M144.1338,459.7813 L144.1338,467.7656 L144.79,467.7656 Q146.2275,467.7656 146.8369,466.8594 Q147.4619,465.9375 147.4619,463.7656 Q147.4619,461.5938 146.8369,460.6875 Q146.2275,459.7813 144.79,459.7813 L144.1338,459.7813 Z M141.6806,457.5781 L144.3056,457.5781 Q147.3369,457.5781 148.665,459.0313 Q150.0088,460.4688 150.0088,463.7656 Q150.0088,467.0625 148.665,468.5156 Q147.3369,469.9688 144.3056,469.9688 L141.6806,469.9688 L141.6806,457.5781 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="171.04" y="461.1387">«DataType»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="86" x="165.04" y="475.1074">Person_Name</text><line style="stroke:#A80036;stroke-width:1.5;" x1="92.29" x2="291.29" y1="482.9375" y2="482.9375"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="178" x="97.29" y="497.1479">firstNames : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="189" x="97.29" y="509.9526">familyNames : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="185" x="97.29" y="522.7573">otherNames : Multilingual_String</text><!--MD5=[fe1d14fe6d68ca7e76eb34268c62a1f3]
-class Postal_Address--><rect codeLine="39" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="97.1563" id="Postal_Address" style="stroke:#A80036;stroke-width:1.5;" width="171" x="321.29" y="766"/><ellipse cx="355.64" cy="784.9688" fill="#ADD0B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M355.2338,780.7813 L355.2338,788.7656 L355.89,788.7656 Q357.3275,788.7656 357.9369,787.8594 Q358.5619,786.9375 358.5619,784.7656 Q358.5619,782.5938 357.9369,781.6875 Q357.3275,780.7813 355.89,780.7813 L355.2338,780.7813 Z M352.7806,778.5781 L355.4056,778.5781 Q358.4369,778.5781 359.765,780.0313 Q361.1088,781.4688 361.1088,784.7656 Q361.1088,788.0625 359.765,789.5156 Q358.4369,790.9688 355.4056,790.9688 L352.7806,790.9688 L352.7806,778.5781 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="384.94" y="782.1387">«DataType»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="96" x="373.94" y="796.1074">Postal_Address</text><line style="stroke:#A80036;stroke-width:1.5;" x1="322.29" x2="491.29" y1="803.9375" y2="803.9375"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="149" x="327.29" y="818.1479">street : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="134" x="327.29" y="830.9526">city : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="159" x="327.29" y="843.7573">zipCode : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="327.29" y="856.562">country : Country</text><!--MD5=[deb4e1f6eb1e3c1256fdb830f96abfbb]
-class Country--><rect codeLine="45" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="71.5469" id="Country" style="stroke:#A80036;stroke-width:1.5;" width="263" x="275.29" y="923"/><ellipse cx="367.54" cy="941.9688" fill="#ADD0B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M367.1338,937.7813 L367.1338,945.7656 L367.79,945.7656 Q369.2275,945.7656 369.8369,944.8594 Q370.4619,943.9375 370.4619,941.7656 Q370.4619,939.5938 369.8369,938.6875 Q369.2275,937.7813 367.79,937.7813 L367.1338,937.7813 Z M364.6806,935.5781 L367.3056,935.5781 Q370.3369,935.5781 371.665,937.0313 Q373.0088,938.4688 373.0088,941.7656 Q373.0088,945.0625 371.665,946.5156 Q370.3369,947.9688 367.3056,947.9688 L364.6806,947.9688 L364.6806,935.5781 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="386.04" y="939.1387">«DataType»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="399.04" y="953.1074">Country</text><line style="stroke:#A80036;stroke-width:1.5;" x1="276.29" x2="537.29" y1="960.9375" y2="960.9375"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="281.29" y="975.1479">name : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="251" x="281.29" y="987.9526">iso3166alpha2Code : ISO3166_Alpha2_Code</text><!--MD5=[3b25461e5df73ababc6765bb9b0c47d3]
-class Authorship--><rect codeLine="53" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="52.8047" id="Authorship" style="stroke:#A80036;stroke-width:1.5;" width="212" x="213.79" y="7"/><ellipse cx="281.54" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M284.5087,28.6406 Q283.9306,28.9375 283.29,29.0781 Q282.6494,29.2344 281.9462,29.2344 Q279.4462,29.2344 278.1181,27.5938 Q276.8056,25.9375 276.8056,22.8125 Q276.8056,19.6875 278.1181,18.0313 Q279.4462,16.375 281.9462,16.375 Q282.6494,16.375 283.29,16.5313 Q283.9462,16.6875 284.5087,16.9844 L284.5087,19.7031 Q283.8837,19.125 283.29,18.8594 Q282.6962,18.5781 282.0712,18.5781 Q280.7275,18.5781 280.04,19.6563 Q279.3525,20.7188 279.3525,22.8125 Q279.3525,24.9063 280.04,25.9844 Q280.7275,27.0469 282.0712,27.0469 Q282.6962,27.0469 283.29,26.7813 Q283.8837,26.5 284.5087,25.9219 L284.5087,28.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68" x="302.04" y="27.1543">Authorship</text><line style="stroke:#A80036;stroke-width:1.5;" x1="214.79" x2="424.79" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="200" x="219.79" y="53.2104">correspondingAuthorFlag : Boolean</text><path d="M15.29,21 L15.29,46.1328 A0,0 0 0 0 15.29,46.1328 L178.29,46.1328 A0,0 0 0 0 178.29,46.1328 L178.29,39 L213.68,33.5 L178.29,31 L178.29,31 L168.29,21 L15.29,21 A0,0 0 0 0 15.29,21 " fill="#FFFF00" filter="url(#fg955cpc2w1pw)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M168.29,21 L168.29,31 L178.29,31 L168.29,21 " fill="#FFFF00" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="21.29" y="38.0669">author == contributor</text><!--MD5=[b821bb113f9f55c728f1fbb8949cc3af]
-class Contributorship--><rect codeLine="58" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="65.6094" id="Contributorship" style="stroke:#A80036;stroke-width:1.5;" width="131" x="342.29" y="187"/><ellipse cx="358.19" cy="203" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M361.1588,208.6406 Q360.5806,208.9375 359.94,209.0781 Q359.2994,209.2344 358.5963,209.2344 Q356.0963,209.2344 354.7681,207.5938 Q353.4556,205.9375 353.4556,202.8125 Q353.4556,199.6875 354.7681,198.0313 Q356.0963,196.375 358.5963,196.375 Q359.2994,196.375 359.94,196.5313 Q360.5963,196.6875 361.1588,196.9844 L361.1588,199.7031 Q360.5338,199.125 359.94,198.8594 Q359.3463,198.5781 358.7213,198.5781 Q357.3775,198.5781 356.69,199.6563 Q356.0025,200.7188 356.0025,202.8125 Q356.0025,204.9063 356.69,205.9844 Q357.3775,207.0469 358.7213,207.0469 Q359.3463,207.0469 359.94,206.7813 Q360.5338,206.5 361.1588,205.9219 L361.1588,208.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="97" x="372.39" y="207.1543">Contributorship</text><line style="stroke:#A80036;stroke-width:1.5;" x1="343.29" x2="472.29" y1="219" y2="219"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="348.29" y="233.2104">contacts : List&lt;URI&gt;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="119" x="348.29" y="246.0151">displayName : String</text><!--MD5=[532fe005ca0bef0ad6b309c9c6480e22]
-class Contribution_Statement--><rect codeLine="62" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="32" id="Contribution_Statement" style="stroke:#A80036;stroke-width:1.5;" width="181" x="508.29" y="336"/><ellipse cx="523.29" cy="352" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M526.2588,357.6406 Q525.6806,357.9375 525.04,358.0781 Q524.3994,358.2344 523.6963,358.2344 Q521.1963,358.2344 519.8681,356.5938 Q518.5556,354.9375 518.5556,351.8125 Q518.5556,348.6875 519.8681,347.0313 Q521.1963,345.375 523.6963,345.375 Q524.3994,345.375 525.04,345.5313 Q525.6963,345.6875 526.2588,345.9844 L526.2588,348.7031 Q525.6338,348.125 525.04,347.8594 Q524.4463,347.5781 523.8213,347.5781 Q522.4775,347.5781 521.79,348.6563 Q521.1025,349.7188 521.1025,351.8125 Q521.1025,353.9063 521.79,354.9844 Q522.4775,356.0469 523.8213,356.0469 Q524.4463,356.0469 525.04,355.7813 Q525.6338,355.5 526.2588,354.9219 L526.2588,357.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="149" x="537.29" y="356.1543">Contribution_Statement</text><!--MD5=[75e6ee6f0cee60576da1adad405695b7]
-class Free_Text_Contribution_Statement--><rect codeLine="64" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="52.8047" id="Free_Text_Contribution_Statement" style="stroke:#A80036;stroke-width:1.5;" width="247" x="523.29" y="460.5"/><ellipse cx="538.29" cy="476.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M541.2588,482.1406 Q540.6806,482.4375 540.04,482.5781 Q539.3994,482.7344 538.6963,482.7344 Q536.1963,482.7344 534.8681,481.0938 Q533.5556,479.4375 533.5556,476.3125 Q533.5556,473.1875 534.8681,471.5313 Q536.1963,469.875 538.6963,469.875 Q539.3994,469.875 540.04,470.0313 Q540.6963,470.1875 541.2588,470.4844 L541.2588,473.2031 Q540.6338,472.625 540.04,472.3594 Q539.4463,472.0781 538.8213,472.0781 Q537.4775,472.0781 536.79,473.1563 Q536.1025,474.2188 536.1025,476.3125 Q536.1025,478.4063 536.79,479.4844 Q537.4775,480.5469 538.8213,480.5469 Q539.4463,480.5469 540.04,480.2813 Q540.6338,480 541.2588,479.4219 L541.2588,482.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="215" x="552.29" y="480.6543">Free_Text_Contribution_Statement</text><line style="stroke:#A80036;stroke-width:1.5;" x1="524.29" x2="769.29" y1="492.5" y2="492.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="173" x="529.29" y="506.7104">statement : Multilingual_String</text><!--MD5=[ddbff00b4911ad4b77d6aa32dd14d1d7]
-class Affiliation_Statement--><rect codeLine="67" fill="#FFFFFF" filter="url(#fg955cpc2w1pw)" height="65.6094" id="Affiliation_Statement" style="stroke:#A80036;stroke-width:1.5;" width="161" x="327.29" y="454"/><ellipse cx="342.29" cy="470" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M345.2588,475.6406 Q344.6806,475.9375 344.04,476.0781 Q343.3994,476.2344 342.6963,476.2344 Q340.1963,476.2344 338.8681,474.5938 Q337.5556,472.9375 337.5556,469.8125 Q337.5556,466.6875 338.8681,465.0313 Q340.1963,463.375 342.6963,463.375 Q343.3994,463.375 344.04,463.5313 Q344.6963,463.6875 345.2588,463.9844 L345.2588,466.7031 Q344.6338,466.125 344.04,465.8594 Q343.4463,465.5781 342.8213,465.5781 Q341.4775,465.5781 340.79,466.6563 Q340.1025,467.7188 340.1025,469.8125 Q340.1025,471.9063 340.79,472.9844 Q341.4775,474.0469 342.8213,474.0469 Q343.4463,474.0469 344.04,473.7813 Q344.6338,473.5 345.2588,472.9219 L345.2588,475.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="129" x="356.29" y="474.1543">Affiliation_Statement</text><line style="stroke:#A80036;stroke-width:1.5;" x1="328.29" x2="487.29" y1="486" y2="486"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="138" x="333.29" y="500.2104">displayAffiliation : String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="333.29" y="513.0151">address : Postal_Address</text><!--MD5=[1c2d5a11bdff8297fbebaa44435072c9]
-link Postal_Address to Country--><path codeLine="51" d="M406.79,875.35 C406.79,875.35 406.79,898.95 406.79,909.63 " fill="none" id="Postal_Address-Country" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="406.79,922.67,410.79,913.67,406.79,917.67,402.79,913.67,406.79,922.67" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="406.79" x2="406.79" y1="917.67" y2="909.67"/><polygon fill="#FFFFFF" points="406.79,863.35,402.79,869.35,406.79,875.35,410.79,869.35,406.79,863.35" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="48" x="354.515" y="911.9819">country</text><!--MD5=[af6b79ce3af62c8c5ee779db9fbc8cf6]
-link Affiliation_Statement to Postal_Address--><path codeLine="74" d="M419.95,520.21 C426.69,539.79 434.37,565.47 437.79,589 C445.27,640.46 445.07,654.51 437.79,706 C435.21,724.28 430.27,743.81 425.08,761.14 " fill="none" id="Affiliation_Statement-to-Postal_Address" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="423.61,765.96,430.058,758.5153,425.0664,761.1768,422.4049,756.1851,423.61,765.96" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="432.7633" y="754.7943">postalAddress</text><!--MD5=[fe03d2c8e9644e7513bef3a6fb6291e6]
-reverse link Affiliation_Statement to Organisation_Unit--><path codeLine="75" d="M377.76,531.76 C369.01,549.39 360.04,569.99 352.85,588.82 " fill="none" id="Affiliation_Statement-backto-Organisation_Unit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="383.75,520.07,377.449,523.5767,378.2624,530.7418,384.5635,527.2351,383.75,520.07" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="75" x="274.7495" y="577.8398">0..1 orgUnit</text><!--MD5=[fe03d2c8e9644e7513bef3a6fb6291e6]
-reverse link Affiliation_Statement to Organisation_Unit--><path codeLine="76" d="M401.25,532.52 C395.18,549.99 386.86,570.26 378.22,588.82 " fill="none" id="Affiliation_Statement-backto-Organisation_Unit-1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="405.33,520.07,399.6579,524.5228,401.5867,531.4712,407.2588,527.0184,405.33,520.07" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="388.3271" y="577.8398">0..1 institution</text><!--MD5=[dc2c5634ff295731fc33abbfcbd96d36]
-reverse link Person to Affiliation_Statement--><path codeLine="78" d="M314.96,394.54 C334.3,413.6 356.89,435.86 374.94,453.64 " fill="none" id="Person-backto-Affiliation_Statement" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="305.47,385.2,306.9392,392.2599,314.021,393.619,312.5519,386.5592,305.47,385.2" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="296.9639" y="442.9355">0..* affiliations</text><!--MD5=[21f8b3605054312288eb3132d9b75edc]
-reverse link Contribution_Statement to Free_Text_Contribution_Statement--><path codeLine="79" d="M611.16,387.27 C619.41,410.12 630.07,439.68 637.58,460.48 " fill="none" id="Contribution_Statement-backto-Free_Text_Contribution_Statement" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="604.5,389.45,604.3,368.26,617.67,384.69,604.5,389.45" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1f014480a3afa8c0325c3be3fbf7ad6f]
-link Contributorship to Document--><path codeLine="80" d="M473.41,220 C480.71,220 488.01,220 495.31,220 " fill="none" id="Contributorship-to-Document" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="508.45,220,502.45,216,496.45,220,502.45,224,508.45,220" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="481.363" y="216.3204">0..*</text><!--MD5=[504de05de5dc33320621ff1be2e6e6ff]
-reverse link Agent to Contributorship--><path codeLine="81" d="M320.43,220 C327.7,220 334.98,220 342.26,220 " fill="none" id="Agent-backto-Contributorship" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="307.33,220,313.33,224,319.33,220,313.33,216,307.33,220" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="255.5511" y="272.3901">0..1 contributor</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="311.3163" y="216.3204">0..*</text><!--MD5=[d50a95e3ddb5a3ed983c7b2ff4649bd6]
-reverse link Contributorship to Affiliation_Statement--><path codeLine="82" d="M407.79,266.36 C407.79,319.79 407.79,407.17 407.79,453.99 " fill="none" id="Contributorship-backto-Affiliation_Statement" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="407.79,253.23,403.79,259.23,407.79,265.23,411.79,259.23,407.79,253.23" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="417.1744" y="442.7557">0..* affiliations</text><!--MD5=[aa65b9840c4d4bb6ada386eeadadc345]
-reverse link Contributorship to Contribution_Statement--><path codeLine="83" d="M465.78,260.47 C503.15,285.9 549.63,317.54 576.58,335.88 " fill="none" id="Contributorship-backto-Contribution_Statement" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="455,253.13,457.7084,259.8131,464.9192,259.8835,462.2108,253.2003,455,253.13" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="359.1797" y="324.8503">0..* contributionStatements</text><!--MD5=[db20fd804d8595e73b6b8c99fdd1338c]
-link Authorship to Textual_Document--><path codeLine="85" d="M426.03,33.5 C433.29,33.5 440.55,33.5 447.8,33.5 " fill="none" id="Authorship-to-Textual_Document" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="460.87,33.5,454.87,29.5,448.87,33.5,454.87,37.5,460.87,33.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e74e4958a1d7eb99db8e977d8859ba66]
-link Authorship to Contributorship--><path codeLine="86" d="M332.03,60.15 C345.34,88.06 366.95,133.37 383.69,168.47 " fill="none" id="Authorship-to-Contributorship" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="390.11,165.68,392.4,186.74,377.48,171.71,390.11,165.68" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[49125a4ba45432b051dcbcd9e53401d7]
-link Authorship to Agent--><path codeLine="87" d="M313.25,60.15 C304.48,94.59 288.95,155.55 279.9,191.1 " fill="none" id="Authorship-to-Agent" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="276.66,203.79,282.019,198.9649,279.6262,192.1624,274.2672,196.9874,276.66,203.79" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="286.3038" y="79.7231">0..*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="264.0391" y="183.4454">0..1 author</text><!--MD5=[5d8901ce694eb85aefa78b7d82d9f6f6]
-link Person to Person_Name--><path codeLine="89" d="M253.18,385.2 C243.17,401.64 230.81,421.93 219.81,439.99 " fill="none" id="Person-to-Person_Name" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="217.04,444.53,225.1363,438.922,219.6397,440.259,218.3027,434.7624,217.04,444.53" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="37" x="181.0736" y="433.9285">name</text><!--MD5=[de96f77e660762cb21a195b4097c3876]
-reverse link Agent to Person--><path codeLine="90" d="M272.79,256.4 C272.79,275.89 272.79,299.89 272.79,318.84 " fill="none" id="Agent-backto-Person" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="265.79,256.17,272.79,236.17,279.79,256.17,265.79,256.17" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[521d3f26cc3887ed8885a4c0e03f9952]
-reverse link Agent to Organisation_Unit--><path codeLine="91" d="M232.58,247.52 C156.73,300.9 6,425.1 73.79,529 C114.96,592.09 198.43,621.53 261.14,635.13 " fill="none" id="Agent-backto-Organisation_Unit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="228.78,241.64,249.23,236.09,236.7,253.18,228.78,241.64" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[15e2f573152931505f3d87c1c2d22c4e]
-link Organisation_Unit to Postal_Address--><path codeLine="92" d="M363.87,706.21 C371.01,724.05 378.83,743.59 385.81,761.05 " fill="none" id="Organisation_Unit-to-Postal_Address" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="387.76,765.92,388.1314,756.0781,385.903,761.2776,380.7036,759.0493,387.76,765.92" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="330.498" y="755.099">address</text><!--MD5=[8d9b790276a1e6c61f0b091de629785c]
-link Textual_Document to Document--><path codeLine="94" d="M538.72,49.6 C545,73.73 557.61,122.23 567.75,161.17 " fill="none" id="Textual_Document-to-Document" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="574.58,159.65,572.84,180.77,561.03,163.17,574.58,159.65" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0df3595c7a152ac097b4d28b9398e692]
-reverse link Textual_Document to Textual_Document_Accessibility_Specification--><path codeLine="95" d="M621.56,33.5 C628.92,33.5 636.28,33.5 643.64,33.5 " fill="none" id="Textual_Document-backto-Textual_Document_Accessibility_Specification" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="608.3,33.5,614.3,37.5,620.3,33.5,614.3,29.5,608.3,33.5" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="525.3538" y="59.8662">0..* accessRights</text><!--MD5=[2c23d09c80fbfac9dc5109bf504b493e]
-link Textual_Document to Agent--><path codeLine="96" d="M512.91,49.53 C474.61,75.89 392.98,132.31 324.79,181 C314.42,188.41 302.97,196.75 293.46,203.73 " fill="none" id="Textual_Document-Agent" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159" x="532.7169" y="69.7082">0..* authoredDocuments</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="211.7194" y="192.9451">0..* authors</text><!--MD5=[c98bd77809ace323fd8e921a94d0ea94]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="705px" preserveAspectRatio="none" style="width:1538px;height:705px;background:#FFFFFF;" version="1.1" viewBox="0 0 1538 705" width="1538px" zoomAndPan="magnify"><defs><filter height="300%" id="fwwfp8g1lrqy6" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[59b530d44ae785dc18db921986a9c15c]
+class Document--><rect codeLine="8" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="78.4141" id="Document" style="stroke:#A80036;stroke-width:1.5;" width="148" x="611.5" y="310.3064"/><ellipse cx="649.9" cy="326.3064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M652.8688,331.947 Q652.2906,332.2439 651.65,332.3845 Q651.0094,332.5408 650.3063,332.5408 Q647.8063,332.5408 646.4781,330.9002 Q645.1656,329.2439 645.1656,326.1189 Q645.1656,322.9939 646.4781,321.3377 Q647.8063,319.6814 650.3063,319.6814 Q651.0094,319.6814 651.65,319.8377 Q652.3063,319.9939 652.8688,320.2908 L652.8688,323.0095 Q652.2438,322.4314 651.65,322.1658 Q651.0563,321.8845 650.4313,321.8845 Q649.0875,321.8845 648.4,322.9627 Q647.7125,324.0252 647.7125,326.1189 Q647.7125,328.2127 648.4,329.2908 Q649.0875,330.3533 650.4313,330.3533 Q651.0563,330.3533 651.65,330.0877 Q652.2438,329.8064 652.8688,329.2283 L652.8688,331.947 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="669.1" y="330.4607">Document</text><line style="stroke:#A80036;stroke-width:1.5;" x1="612.5" x2="758.5" y1="342.3064" y2="342.3064"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="85" x="617.5" y="356.5169">DOI : DOI_Type</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="136" x="617.5" y="369.3215">title : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="125" x="617.5" y="382.1262">publicationDate : Date</text><!--MD5=[fe105c2ee1fabf2400c31a97ce9128bc]
+class Textual_Document--><rect codeLine="13" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="32" id="Textual_Document" style="stroke:#A80036;stroke-width:1.5;" width="147" x="572" y="30.8064"/><ellipse cx="587" cy="46.8064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M589.9688,52.447 Q589.3906,52.7439 588.75,52.8845 Q588.1094,53.0408 587.4063,53.0408 Q584.9063,53.0408 583.5781,51.4002 Q582.2656,49.7439 582.2656,46.6189 Q582.2656,43.4939 583.5781,41.8377 Q584.9063,40.1814 587.4063,40.1814 Q588.1094,40.1814 588.75,40.3377 Q589.4063,40.4939 589.9688,40.7908 L589.9688,43.5095 Q589.3438,42.9314 588.75,42.6658 Q588.1563,42.3845 587.5313,42.3845 Q586.1875,42.3845 585.5,43.4627 Q584.8125,44.5252 584.8125,46.6189 Q584.8125,48.7127 585.5,49.7908 Q586.1875,50.8533 587.5313,50.8533 Q588.1563,50.8533 588.75,50.5877 Q589.3438,50.3064 589.9688,49.7283 L589.9688,52.447 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="115" x="601" y="50.9607">Textual_Document</text><!--MD5=[152f153d79baedb26b20a34b9b1b571f]
+class Textual_Document_Accessibility_Specification--><rect codeLine="18" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="32" id="Textual_Document_Accessibility_Specification" style="stroke:#A80036;stroke-width:1.5;" width="314" x="754.5" y="30.8064"/><ellipse cx="769.5" cy="46.8064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M772.4688,52.447 Q771.8906,52.7439 771.25,52.8845 Q770.6094,53.0408 769.9063,53.0408 Q767.4063,53.0408 766.0781,51.4002 Q764.7656,49.7439 764.7656,46.6189 Q764.7656,43.4939 766.0781,41.8377 Q767.4063,40.1814 769.9063,40.1814 Q770.6094,40.1814 771.25,40.3377 Q771.9063,40.4939 772.4688,40.7908 L772.4688,43.5095 Q771.8438,42.9314 771.25,42.6658 Q770.6563,42.3845 770.0313,42.3845 Q768.6875,42.3845 768,43.4627 Q767.3125,44.5252 767.3125,46.6189 Q767.3125,48.7127 768,49.7908 Q768.6875,50.8533 770.0313,50.8533 Q770.6563,50.8533 771.25,50.5877 Q771.8438,50.3064 772.4688,49.7283 L772.4688,52.447 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="282" x="783.5" y="50.9607">Textual_Document_Accessibility_Specification</text><!--MD5=[9d44916250b776386006c440668bcfbb]
+class Agent--><rect codeLine="23" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="32" id="Agent" style="stroke:#A80036;stroke-width:1.5;" width="69" x="306" y="333.3064"/><ellipse cx="321" cy="349.3064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M323.9688,354.947 Q323.3906,355.2439 322.75,355.3845 Q322.1094,355.5408 321.4063,355.5408 Q318.9063,355.5408 317.5781,353.9002 Q316.2656,352.2439 316.2656,349.1189 Q316.2656,345.9939 317.5781,344.3377 Q318.9063,342.6814 321.4063,342.6814 Q322.1094,342.6814 322.75,342.8377 Q323.4063,342.9939 323.9688,343.2908 L323.9688,346.0095 Q323.3438,345.4314 322.75,345.1658 Q322.1563,344.8845 321.5313,344.8845 Q320.1875,344.8845 319.5,345.9627 Q318.8125,347.0252 318.8125,349.1189 Q318.8125,351.2127 319.5,352.2908 Q320.1875,353.3533 321.5313,353.3533 Q322.1563,353.3533 322.75,353.0877 Q323.3438,352.8064 323.9688,352.2283 L323.9688,354.947 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37" x="335" y="353.4607">Agent</text><!--MD5=[779f3743e425ed8a6f0bf188ddea4860]
+class Organisation_Unit--><rect codeLine="28" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="116.8281" id="Organisation_Unit" style="stroke:#A80036;stroke-width:1.5;" width="159" x="244" y="460.8064"/><ellipse cx="266.2" cy="476.8064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M269.1688,482.447 Q268.5906,482.7439 267.95,482.8845 Q267.3094,483.0408 266.6063,483.0408 Q264.1063,483.0408 262.7781,481.4002 Q261.4656,479.7439 261.4656,476.6189 Q261.4656,473.4939 262.7781,471.8377 Q264.1063,470.1814 266.6063,470.1814 Q267.3094,470.1814 267.95,470.3377 Q268.6063,470.4939 269.1688,470.7908 L269.1688,473.5095 Q268.5438,472.9314 267.95,472.6658 Q267.3563,472.3845 266.7313,472.3845 Q265.3875,472.3845 264.7,473.4627 Q264.0125,474.5252 264.0125,476.6189 Q264.0125,478.7127 264.7,479.7908 Q265.3875,480.8533 266.7313,480.8533 Q267.3563,480.8533 267.95,480.5877 Q268.5438,480.3064 269.1688,479.7283 L269.1688,482.447 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="111" x="281.8" y="480.9607">Organisation_Unit</text><line style="stroke:#A80036;stroke-width:1.5;" x1="245" x2="402" y1="492.8064" y2="492.8064"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="250" y="507.0169">name : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="95" x="250" y="519.8215">acronym : String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="250" y="532.6262">address : Postal_Address</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="250" y="545.4309">rorId : ROR_Id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="99" x="250" y="558.2356">webSiteURL : URL</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="250" y="571.0403">email : URL</text><!--MD5=[09ce52be0ee7de43c61b6e2d59bf108b]
+class Person--><rect codeLine="39" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="65.6094" id="Person" style="stroke:#A80036;stroke-width:1.5;" width="135" x="1104" y="13.8064"/><ellipse cx="1145.55" cy="29.8064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1148.5188,35.447 Q1147.9406,35.7439 1147.3,35.8845 Q1146.6594,36.0408 1145.9563,36.0408 Q1143.4563,36.0408 1142.1281,34.4002 Q1140.8156,32.7439 1140.8156,29.6189 Q1140.8156,26.4939 1142.1281,24.8377 Q1143.4563,23.1814 1145.9563,23.1814 Q1146.6594,23.1814 1147.3,23.3377 Q1147.9563,23.4939 1148.5188,23.7908 L1148.5188,26.5095 Q1147.8938,25.9314 1147.3,25.6658 Q1146.7063,25.3845 1146.0813,25.3845 Q1144.7375,25.3845 1144.05,26.4627 Q1143.3625,27.5252 1143.3625,29.6189 Q1143.3625,31.7127 1144.05,32.7908 Q1144.7375,33.8533 1146.0813,33.8533 Q1146.7063,33.8533 1147.3,33.5877 Q1147.8938,33.3064 1148.5188,32.7283 L1148.5188,35.447 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44" x="1165.45" y="33.9607">Person</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1105" x2="1238" y1="45.8064" y2="45.8064"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="1110" y="60.0169">name : Person_Name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="1110" y="72.8215">orcidId : ORCID_iD</text><!--MD5=[7b209ef07eb91b93e0aebc9fe4fb9a26]
+class Person_Name--><rect codeLine="44" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="84.3516" id="Person_Name" style="stroke:#A80036;stroke-width:1.5;" width="201" x="1071" y="147.3064"/><ellipse cx="1124.25" cy="166.2752" fill="#ADD0B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1123.8438,162.0877 L1123.8438,170.072 L1124.5,170.072 Q1125.9375,170.072 1126.5469,169.1658 Q1127.1719,168.2439 1127.1719,166.072 Q1127.1719,163.9002 1126.5469,162.9939 Q1125.9375,162.0877 1124.5,162.0877 L1123.8438,162.0877 Z M1121.3906,159.8845 L1124.0156,159.8845 Q1127.0469,159.8845 1128.375,161.3377 Q1129.7188,162.7752 1129.7188,166.072 Q1129.7188,169.3689 1128.375,170.822 Q1127.0469,172.2752 1124.0156,172.2752 L1121.3906,172.2752 L1121.3906,159.8845 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="1150.75" y="163.4451">«DataType»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="86" x="1144.75" y="177.4138">Person_Name</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1072" x2="1271" y1="185.2439" y2="185.2439"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="178" x="1077" y="199.4544">firstNames : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="189" x="1077" y="212.259">familyNames : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="185" x="1077" y="225.0637">otherNames : Multilingual_String</text><!--MD5=[3b25461e5df73ababc6765bb9b0c47d3]
+class Authorship--><rect codeLine="51" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="52.8047" id="Authorship" style="stroke:#A80036;stroke-width:1.5;" width="212" x="324.5" y="20.3064"/><ellipse cx="392.25" cy="36.3064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M395.2188,41.947 Q394.6406,42.2439 394,42.3845 Q393.3594,42.5408 392.6563,42.5408 Q390.1563,42.5408 388.8281,40.9002 Q387.5156,39.2439 387.5156,36.1189 Q387.5156,32.9939 388.8281,31.3377 Q390.1563,29.6814 392.6563,29.6814 Q393.3594,29.6814 394,29.8377 Q394.6563,29.9939 395.2188,30.2908 L395.2188,33.0095 Q394.5938,32.4314 394,32.1658 Q393.4063,31.8845 392.7813,31.8845 Q391.4375,31.8845 390.75,32.9627 Q390.0625,34.0252 390.0625,36.1189 Q390.0625,38.2127 390.75,39.2908 Q391.4375,40.3533 392.7813,40.3533 Q393.4063,40.3533 394,40.0877 Q394.5938,39.8064 395.2188,39.2283 L395.2188,41.947 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68" x="412.75" y="40.4607">Authorship</text><line style="stroke:#A80036;stroke-width:1.5;" x1="325.5" x2="535.5" y1="52.3064" y2="52.3064"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="200" x="330.5" y="66.5169">correspondingAuthorFlag : Boolean</text><!--MD5=[b821bb113f9f55c728f1fbb8949cc3af]
+class Contributorship--><rect codeLine="56" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="65.6094" id="Contributorship" style="stroke:#A80036;stroke-width:1.5;" width="131" x="445" y="316.3064"/><ellipse cx="460.9" cy="332.3064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M463.8688,337.947 Q463.2906,338.2439 462.65,338.3845 Q462.0094,338.5408 461.3063,338.5408 Q458.8063,338.5408 457.4781,336.9002 Q456.1656,335.2439 456.1656,332.1189 Q456.1656,328.9939 457.4781,327.3377 Q458.8063,325.6814 461.3063,325.6814 Q462.0094,325.6814 462.65,325.8377 Q463.3063,325.9939 463.8688,326.2908 L463.8688,329.0095 Q463.2438,328.4314 462.65,328.1658 Q462.0563,327.8845 461.4313,327.8845 Q460.0875,327.8845 459.4,328.9627 Q458.7125,330.0252 458.7125,332.1189 Q458.7125,334.2127 459.4,335.2908 Q460.0875,336.3533 461.4313,336.3533 Q462.0563,336.3533 462.65,336.0877 Q463.2438,335.8064 463.8688,335.2283 L463.8688,337.947 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="97" x="475.1" y="336.4607">Contributorship</text><line style="stroke:#A80036;stroke-width:1.5;" x1="446" x2="575" y1="348.3064" y2="348.3064"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="451" y="362.5169">contacts : List&lt;URI&gt;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="119" x="451" y="375.3215">displayName : String</text><!--MD5=[532fe005ca0bef0ad6b309c9c6480e22]
+class Contribution_Statement--><rect codeLine="61" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="32" id="Contribution_Statement" style="stroke:#A80036;stroke-width:1.5;" width="181" x="438" y="503.3064"/><ellipse cx="453" cy="519.3064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M455.9688,524.947 Q455.3906,525.2439 454.75,525.3845 Q454.1094,525.5408 453.4063,525.5408 Q450.9063,525.5408 449.5781,523.9002 Q448.2656,522.2439 448.2656,519.1189 Q448.2656,515.9939 449.5781,514.3377 Q450.9063,512.6814 453.4063,512.6814 Q454.1094,512.6814 454.75,512.8377 Q455.4063,512.9939 455.9688,513.2908 L455.9688,516.0095 Q455.3438,515.4314 454.75,515.1658 Q454.1563,514.8845 453.5313,514.8845 Q452.1875,514.8845 451.5,515.9627 Q450.8125,517.0252 450.8125,519.1189 Q450.8125,521.2127 451.5,522.2908 Q452.1875,523.3533 453.5313,523.3533 Q454.1563,523.3533 454.75,523.0877 Q455.3438,522.8064 455.9688,522.2283 L455.9688,524.947 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="149" x="467" y="523.4607">Contribution_Statement</text><!--MD5=[75e6ee6f0cee60576da1adad405695b7]
+class Free_Text_Contribution_Statement--><rect codeLine="64" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="52.8047" id="Free_Text_Contribution_Statement" style="stroke:#A80036;stroke-width:1.5;" width="247" x="405" y="638.8064"/><ellipse cx="420" cy="654.8064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M422.9688,660.447 Q422.3906,660.7439 421.75,660.8845 Q421.1094,661.0408 420.4063,661.0408 Q417.9063,661.0408 416.5781,659.4002 Q415.2656,657.7439 415.2656,654.6189 Q415.2656,651.4939 416.5781,649.8377 Q417.9063,648.1814 420.4063,648.1814 Q421.1094,648.1814 421.75,648.3377 Q422.4063,648.4939 422.9688,648.7908 L422.9688,651.5095 Q422.3438,650.9314 421.75,650.6658 Q421.1563,650.3845 420.5313,650.3845 Q419.1875,650.3845 418.5,651.4627 Q417.8125,652.5252 417.8125,654.6189 Q417.8125,656.7127 418.5,657.7908 Q419.1875,658.8533 420.5313,658.8533 Q421.1563,658.8533 421.75,658.5877 Q422.3438,658.3064 422.9688,657.7283 L422.9688,660.447 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="215" x="434" y="658.9607">Free_Text_Contribution_Statement</text><line style="stroke:#A80036;stroke-width:1.5;" x1="406" x2="651" y1="670.8064" y2="670.8064"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="173" x="411" y="685.0169">statement : Multilingual_String</text><!--MD5=[fe1d14fe6d68ca7e76eb34268c62a1f3]
+class Postal_Address--><rect codeLine="70" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="97.1563" id="Postal_Address" style="stroke:#A80036;stroke-width:1.5;" width="171" x="1307" y="140.8064"/><ellipse cx="1341.35" cy="159.7752" fill="#ADD0B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1340.9438,155.5877 L1340.9438,163.572 L1341.6,163.572 Q1343.0375,163.572 1343.6469,162.6658 Q1344.2719,161.7439 1344.2719,159.572 Q1344.2719,157.4002 1343.6469,156.4939 Q1343.0375,155.5877 1341.6,155.5877 L1340.9438,155.5877 Z M1338.4906,153.3845 L1341.1156,153.3845 Q1344.1469,153.3845 1345.475,154.8377 Q1346.8188,156.2752 1346.8188,159.572 Q1346.8188,162.8689 1345.475,164.322 Q1344.1469,165.7752 1341.1156,165.7752 L1338.4906,165.7752 L1338.4906,153.3845 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="1370.65" y="156.9451">«DataType»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="96" x="1359.65" y="170.9138">Postal_Address</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1308" x2="1477" y1="178.7439" y2="178.7439"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="149" x="1313" y="192.9544">street : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="134" x="1313" y="205.759">city : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="159" x="1313" y="218.5637">zipCode : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="1313" y="231.3684">country : Country</text><!--MD5=[deb4e1f6eb1e3c1256fdb830f96abfbb]
+class Country--><rect codeLine="76" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="71.5469" id="Country" style="stroke:#A80036;stroke-width:1.5;" width="263" x="1261" y="313.3064"/><ellipse cx="1353.25" cy="332.2752" fill="#ADD0B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1352.8438,328.0877 L1352.8438,336.072 L1353.5,336.072 Q1354.9375,336.072 1355.5469,335.1658 Q1356.1719,334.2439 1356.1719,332.072 Q1356.1719,329.9002 1355.5469,328.9939 Q1354.9375,328.0877 1353.5,328.0877 L1352.8438,328.0877 Z M1350.3906,325.8845 L1353.0156,325.8845 Q1356.0469,325.8845 1357.375,327.3377 Q1358.7188,328.7752 1358.7188,332.072 Q1358.7188,335.3689 1357.375,336.822 Q1356.0469,338.2752 1353.0156,338.2752 L1350.3906,338.2752 L1350.3906,325.8845 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="1371.75" y="329.4451">«DataType»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="1384.75" y="343.4138">Country</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1262" x2="1523" y1="351.2439" y2="351.2439"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="1267" y="365.4544">name : Multilingual_String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="251" x="1267" y="378.259">iso3166alpha2Code : ISO3166_Alpha2_Code</text><!--MD5=[ddbff00b4911ad4b77d6aa32dd14d1d7]
+class Affiliation_Statement--><rect codeLine="85" fill="#FFFFFF" filter="url(#fwwfp8g1lrqy6)" height="65.6094" id="Affiliation_Statement" style="stroke:#A80036;stroke-width:1.5;" width="161" x="1312" y="13.8064"/><ellipse cx="1327" cy="29.8064" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1329.9688,35.447 Q1329.3906,35.7439 1328.75,35.8845 Q1328.1094,36.0408 1327.4063,36.0408 Q1324.9063,36.0408 1323.5781,34.4002 Q1322.2656,32.7439 1322.2656,29.6189 Q1322.2656,26.4939 1323.5781,24.8377 Q1324.9063,23.1814 1327.4063,23.1814 Q1328.1094,23.1814 1328.75,23.3377 Q1329.4063,23.4939 1329.9688,23.7908 L1329.9688,26.5095 Q1329.3438,25.9314 1328.75,25.6658 Q1328.1563,25.3845 1327.5313,25.3845 Q1326.1875,25.3845 1325.5,26.4627 Q1324.8125,27.5252 1324.8125,29.6189 Q1324.8125,31.7127 1325.5,32.7908 Q1326.1875,33.8533 1327.5313,33.8533 Q1328.1563,33.8533 1328.75,33.5877 Q1329.3438,33.3064 1329.9688,32.7283 L1329.9688,35.447 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="129" x="1341" y="33.9607">Affiliation_Statement</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1313" x2="1472" y1="45.8064" y2="45.8064"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="138" x="1318" y="60.0169">displayAffiliation : String</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="1318" y="72.8215">address : Postal_Address</text><path d="M6,298.8064 L6,399.6033 A0,0 0 0 0 6,399.6033 L271,399.6033 A0,0 0 0 0 271,399.6033 L271,353.3064 L305.78,349.3064 L271,345.3064 L271,308.8064 L261,298.8064 L6,298.8064 A0,0 0 0 0 6,298.8064 " fill="#FFFF00" filter="url(#fwwfp8g1lrqy6)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M261,298.8064 L261,308.8064 L271,308.8064 L261,298.8064 " fill="#FFFF00" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="240" x="12" y="315.8733">The Agent is mandatory for almost all</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="192" x="12" y="331.0061">subclasses of Contributorship,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="203" x="12" y="346.1389">Reviewing is the exception if the</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="201" x="12" y="361.2717">reviewer's identity is concealed.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="184" x="12" y="376.4045">Also useful when authors are</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="12" y="391.5374">using pseudonyms.</text><!--MD5=[bf7e8cf64254ff374c5acfe277545dd5]
+reverse link Postal_Address to Country--><path codeLine="92" d="M1392.5,251.2464 C1392.5,272.2164 1392.5,294.9764 1392.5,313.1764 " fill="none" id="Postal_Address-backto-Country" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="1392.5,238.1364,1388.5,244.1364,1392.5,250.1364,1396.5,244.1364,1392.5,238.1364" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="48" x="1340.075" y="302.253">country</text><!--MD5=[af6b79ce3af62c8c5ee779db9fbc8cf6]
+link Affiliation_Statement to Postal_Address--><path codeLine="95" d="M1392.5,80.0364 C1392.5,96.4764 1392.5,116.8964 1392.5,135.5564 " fill="none" id="Affiliation_Statement-to-Postal_Address" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="1392.5,140.7664,1396.5,131.7664,1392.5,135.7664,1388.5,131.7664,1392.5,140.7664" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="1294.8172" y="129.6007">postalAddress</text><!--MD5=[aa65b9840c4d4bb6ada386eeadadc345]
+reverse link Contributorship to Contribution_Statement--><path codeLine="103" d="M515.37,395.7464 C519.2,431.4964 524.3,479.1464 526.87,503.1364 " fill="none" id="Contributorship-backto-Contribution_Statement" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="513.97,382.6964,510.6322,389.0885,515.2489,394.6281,518.5867,388.2359,513.97,382.6964" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="555.9769" y="492.3846">0..* contributionStatements</text><!--MD5=[21f8b3605054312288eb3132d9b75edc]
+reverse link Contribution_Statement to Free_Text_Contribution_Statement--><path codeLine="104" d="M528.5,555.7564 C528.5,581.4764 528.5,615.6764 528.5,638.7664 " fill="none" id="Contribution_Statement-backto-Free_Text_Contribution_Statement" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="521.5,555.4464,528.5,535.4464,535.5,555.4464,521.5,555.4464" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1f014480a3afa8c0325c3be3fbf7ad6f]
+link Contributorship to Document--><path codeLine="105" d="M576.12,349.3064 C583.42,349.3064 590.72,349.3064 598.02,349.3064 " fill="none" id="Contributorship-to-Document" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="611.16,349.3064,605.16,345.3064,599.16,349.3064,605.16,353.3064,611.16,349.3064" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="584.073" y="345.6268">0..*</text><!--MD5=[504de05de5dc33320621ff1be2e6e6ff]
+reverse link Agent to Contributorship--><path codeLine="106" d="M388.13,349.3064 C407.05,349.3064 425.96,349.3064 444.88,349.3064 " fill="none" id="Agent-backto-Contributorship" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="375.03,349.3064,381.03,353.3064,387.03,349.3064,381.03,345.3064,375.03,349.3064" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="338.8304" y="341.1947">0..1 contributor</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="413.927" y="362.1737">0..*</text><!--MD5=[db20fd804d8595e73b6b8c99fdd1338c]
+link Authorship to Textual_Document--><path codeLine="108" d="M536.74,46.8064 C544,46.8064 551.26,46.8064 558.51,46.8064 " fill="none" id="Authorship-to-Textual_Document" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="571.58,46.8064,565.58,42.8064,559.58,46.8064,565.58,50.8064,571.58,46.8064" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e74e4958a1d7eb99db8e977d8859ba66]
+link Authorship to Contributorship--><path codeLine="109" d="M444.59,73.5464 C454.04,91.8264 466.08,117.2164 473.5,140.8064 C489.71,192.3464 499.53,253.4664 504.94,295.9664 " fill="none" id="Authorship-to-Contributorship" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="511.92,295.3664,507.34,316.0564,498.02,297.0264,511.92,295.3664" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[49125a4ba45432b051dcbcd9e53401d7]
+link Authorship to Agent--><path codeLine="110" d="M364.87,73.4564 C335.96,88.4364 304.89,110.4764 288.5,140.8064 C256.19,200.5964 296.64,280.9364 322.35,321.8964 " fill="none" id="Authorship-to-Agent" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="329.6,333.0464,329.6835,325.8358,323.0597,322.9854,322.9762,330.196,329.6,333.0464" style="stroke:#A80036;stroke-width:1.0;"/><path d="M293.5,174.8064 L293.5,199.8064 L456.5,199.8064 L456.5,184.8064 L446.5,174.8064 L293.5,174.8064 " fill="#FFFF00" filter="url(#fwwfp8g1lrqy6)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M446.5,174.8064 L446.5,184.8064 L456.5,184.8064 L446.5,174.8064 " fill="#FFFF00" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="299.5" y="191.8733">author == contributor</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="324.9978" y="93.0295">0..*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="337.5831" y="322.2648">0..1 author</text><!--MD5=[5d8901ce694eb85aefa78b7d82d9f6f6]
+link Person to Person_Name--><path codeLine="113" d="M1171.5,80.0364 C1171.5,98.4164 1171.5,121.7464 1171.5,142.0464 " fill="none" id="Person-to-Person_Name" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="1171.5,147.1364,1175.5,138.1364,1171.5,142.1364,1167.5,138.1364,1171.5,147.1364" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="37" x="1131.5516" y="136.2697">name</text><!--MD5=[521d3f26cc3887ed8885a4c0e03f9952]
+reverse link Agent to Organisation_Unit--><path codeLine="117" d="M336.92,385.6364 C334.73,407.3264 331.87,435.6164 329.35,460.4964 " fill="none" id="Agent-backto-Organisation_Unit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="329.98,384.7064,338.96,365.5164,343.91,386.1164,329.98,384.7064" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8d9b790276a1e6c61f0b091de629785c]
+link Textual_Document to Document--><path codeLine="121" d="M647.54,63.1164 C653.03,104.3964 668.37,219.6064 677.78,290.3164 " fill="none" id="Textual_Document-to-Document" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="684.74,289.5264,680.44,310.2764,670.86,291.3764,684.74,289.5264" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0df3595c7a152ac097b4d28b9398e692]
+reverse link Textual_Document to Textual_Document_Accessibility_Specification--><path codeLine="123" d="M732.27,46.8064 C739.63,46.8064 746.99,46.8064 754.35,46.8064 " fill="none" id="Textual_Document-backto-Textual_Document_Accessibility_Specification" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="719.01,46.8064,725.01,50.8064,731.01,46.8064,725.01,42.8064,719.01,46.8064" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="637.0765" y="19.6328">0..* accessRights</text><!--MD5=[2c23d09c80fbfac9dc5109bf504b493e]
+link Textual_Document to Agent--><path codeLine="124" d="M633.02,63.0064 C605.56,96.1164 537.26,176.6964 473.5,237.8064 C435.57,274.1564 387.35,312.4464 360.63,333.0364 " fill="none" id="Textual_Document-Agent" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159" x="655.2204" y="82.9459">0..* authoredDocuments</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="278.989" y="322.2023">0..* authors</text><!--MD5=[1d937cd64172fd057f60a9dd49a70163]
 @startuml
 	!startsub common
-	!define datatype(x) class x << (D,#add0b2) DataType>> #ffffff
-	hide empty members
-	skinparam BoxPadding 120
+        !define datatype(x) class x << (D,#add0b2) DataType>> #ffffff
+        hide empty members
+        skinparam BoxPadding 120
 	!endsub
 
-    !startsub Contributorship
-    class "Document" #ffffff {
-        doi : DOI
-        title : Multilingual_String
-        publicationDate : Date
-    }
+    !startsub Document
+        class "Document" #ffffff {
+            DOI : DOI_Type
+            title : Multilingual_String
+            publicationDate : Date
+        }
+        class "Textual_Document" #ffffff {
+        }
     !endsub
-    class "Textual_Document" #ffffff {
-    }
-    class "Textual_Document_Accessibility_Specification" #ffffff {
-    }
-    !startsub Agent
-    class "Agent" #ffffff {
 
-    }
-    class "Organisation_Unit" #ffffff {
-        name : Multilingual_String
-        acronym : String
-        address : Postal_Address
-        rorId : ROR_Id
-        webSiteURL : URL
-        email : URL
-    }
+    !startsub TDAS
+        class "Textual_Document_Accessibility_Specification" #ffffff {
+        }
+    !endsub
+
+    !startsub Agent
+        class "Agent" #ffffff {
+        }
+    !endsub
+
+    !startsub OrgUnit
+        class "Organisation_Unit" #ffffff {
+            name : Multilingual_String
+            acronym : String
+            address : Postal_Address
+            rorId : ROR_Id
+            webSiteURL : URL
+            email : URL
+        }
+    !endsub
+
+   !startsub Person
     class "Person" #ffffff {
         name : Person_Name
         orcidId : ORCID_iD
     }
+
     datatype("Person_Name") {
         firstNames : Multilingual_String
         familyNames : Multilingual_String
         otherNames : Multilingual_String
-    } 
-    datatype("Postal_Address") {
-        street : Multilingual_String 
-        city : Multilingual_String
-        zipCode : Multilingual_String 
-        country : Country
-    }
-    datatype("Country"){
-        name : Multilingual_String
-        iso3166alpha2Code : ISO3166_Alpha2_Code
-'         iso3166NumericCode : ISO3166_Numeric_Code   FIXME
-'         euCountryCode : EU_Country_Code			FIXME
-    }
-	"Postal_Address" o- -> "country" "Country"
-    !endsub
-    class "Authorship" #ffffff {
-        correspondingAuthorFlag : Boolean 
-    }
-    note left #yellow: author == contributor
-    !startsub Contributorship
-    class "Contributorship" #ffffff {
-        contacts : List<URI> 
-        displayName : String
-    }
-    class "Contribution_Statement" #ffffff {
-    }
-    class "Free_Text_Contribution_Statement" #ffffff {
-        statement : Multilingual_String
-    }
-    class "Affiliation_Statement" #ffffff {
-        displayAffiliation : String 
-        address : Postal_Address
     }
     !endsub
 
-!startsub Contributorship
-"Affiliation_Statement" ..> "postalAddress" "Postal_Address"
-"Affiliation_Statement" o- - "0..1 orgUnit" "Organisation_Unit"
-"Affiliation_Statement" o- - "0..1 institution" "Organisation_Unit"
-' "Affiliation_Statement" o- - "person" "Person"
-"Person" o- - "0..* affiliations" "Affiliation_Statement"
-"Contribution_Statement" <|- - "Free_Text_Contribution_Statement"
-"Contributorship" "0..*" - -r- -* "Document"
-"Contributorship" "0..*" - -l- -o "0..1 contributor" "Agent"
-"Contributorship" o- - "0..* affiliations" "Affiliation_Statement"
-"Contributorship" *- - "0..* contributionStatements" "Contribution_Statement"
-!endsub
-"Authorship" -r-* "Textual_Document"
-"Contributorship" <|-u- "Authorship"
-"Authorship" "0..*" - -o "0..1 author" "Agent"
-!startsub Agent
-"Person" ..> "name" "Person_Name"
-"Agent" <|- - "Person"
-"Agent" <|- - "Organisation_Unit"
-"Organisation_Unit" ..> "address" "Postal_Address"
-!endsub
-"Document" <|-u- "Textual_Document"
-"Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
-"Textual_Document" "0..* authoredDocuments" - - - "0..* authors" "Agent"
+    class "Authorship" #ffffff {
+        correspondingAuthorFlag : Boolean
+    }
+
+    !startsub Contributorship
+        class "Contributorship" #ffffff {
+            contacts : List<URI>
+            displayName : String
+        }
+
+        class "Contribution_Statement" #ffffff {
+        }
+
+        class "Free_Text_Contribution_Statement" #ffffff {
+            statement : Multilingual_String
+        }
+    !endsub
+
+    !startsub PostalAddress
+        datatype("Postal_Address") {
+            street : Multilingual_String
+            city : Multilingual_String
+            zipCode : Multilingual_String
+            country : Country
+        }
+        datatype("Country") {
+            name : Multilingual_String
+            iso3166alpha2Code : ISO3166_Alpha2_Code
+    '       iso3166NumericCode : ISO3166_Numeric_Code   FIXME
+    '       euCountryCode : EU_Country_Code			FIXME
+        }
+    !endsub
+
+    !startsub AffiliationStatement
+        class "Affiliation_Statement" #ffffff {
+            displayAffiliation : String
+            address : Postal_Address
+        }
+    !endsub AffiliationStatement
+
+    !startsub PostalAddress
+    "Postal_Address" o- - "country" "Country"
+    !endsub
+    !startsub AffiliationStatement
+        "Affiliation_Statement" ..> "postalAddress" "Postal_Address"
+        "Affiliation_Statement" o- - "0..1 orgUnit" "Organisation_Unit"
+        "Affiliation_Statement" o- - "0..1 institution" "Organisation_Unit"
+        '    "Affiliation_Statement" o- - "person" "Person"
+        "Person" o- - "0..* affiliations" "Affiliation_Statement"
+        "Contributorship" *- - "0..* affiliations" "Affiliation_Statement"
+    !endsub
+    !startsub Contributorship
+        "Contributorship" *- - "0..* contributionStatements" "Contribution_Statement"
+        "Contribution_Statement" <|- - "Free_Text_Contribution_Statement"
+        "Contributorship" "0..*" - -r- -* "Document"
+        "Contributorship" "0..*" - -l- -o "0..1 contributor" "Agent"
+    !endsub
+    "Authorship" -r-* "Textual_Document"
+    "Contributorship" <|-u- "Authorship"
+    "Authorship" "0..*" - -o "0..1 author" "Agent"
+    note on link #yellow: author == contributor
+    !startsub Person
+        "Person" ..> "name" "Person_Name"
+        "Agent" <|- - "Person"
+    !endsub
+    !startsub OrgUnit
+        "Agent" <|- - "Organisation_Unit"
+        "Organisation_Unit" ..> "address" "Postal_Address"
+    !endsub
+    !startsub Document
+        "Document" <|-u- "Textual_Document"
+    !endsub
+    "Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
+    "Textual_Document" "0..* authoredDocuments" - - - "0..* authors" "Agent"
+    note left of Agent #yellow: The Agent is mandatory for almost all \nsubclasses of Contributorship,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
 @enduml
 
 @startuml
-	hide empty members
-	skinparam BoxPadding 120
+        hide empty members
+        skinparam BoxPadding 120
 
-    class "Document" #ffffff {
-        doi : DOI
-        title : Multilingual_String
-        publicationDate : Date
-    }
-    class "Textual_Document" #ffffff {
-    }
-    class "Textual_Document_Accessibility_Specification" #ffffff {
-    }
-    class "Agent" #ffffff {
+        class "Document" #ffffff {
+            DOI : DOI_Type
+            title : Multilingual_String
+            publicationDate : Date
+        }
+        class "Textual_Document" #ffffff {
+        }
 
-    }
-    class "Organisation_Unit" #ffffff {
-        name : Multilingual_String
-        acronym : String
-        address : Postal_Address
-        rorId : ROR_Id
-        webSiteURL : URL
-        email : URL
-    }
+        class "Textual_Document_Accessibility_Specification" #ffffff {
+        }
+
+        class "Agent" #ffffff {
+        }
+
+        class "Organisation_Unit" #ffffff {
+            name : Multilingual_String
+            acronym : String
+            address : Postal_Address
+            rorId : ROR_Id
+            webSiteURL : URL
+            email : URL
+        }
+
     class "Person" #ffffff {
         name : Person_Name
         orcidId : ORCID_iD
     }
+
     class Person_Name << (D,#add0b2) DataType>> #ffffff {
         firstNames : Multilingual_String
         familyNames : Multilingual_String
         otherNames : Multilingual_String
-    } 
-    class Postal_Address << (D,#add0b2) DataType>> #ffffff {
-        street : Multilingual_String 
-        city : Multilingual_String
-        zipCode : Multilingual_String 
-        country : Country
-    }
-    class Country << (D,#add0b2) DataType>> #ffffff{
-        name : Multilingual_String
-        iso3166alpha2Code : ISO3166_Alpha2_Code
-    }
-	"Postal_Address" o- -> "country" "Country"
-    class "Authorship" #ffffff {
-        correspondingAuthorFlag : Boolean 
-    }
-    note left #yellow: author == contributor
-    class "Contributorship" #ffffff {
-        contacts : List<URI> 
-        displayName : String
-    }
-    class "Contribution_Statement" #ffffff {
-    }
-    class "Free_Text_Contribution_Statement" #ffffff {
-        statement : Multilingual_String
-    }
-    class "Affiliation_Statement" #ffffff {
-        displayAffiliation : String 
-        address : Postal_Address
     }
 
-"Affiliation_Statement" ..> "postalAddress" "Postal_Address"
-"Affiliation_Statement" o- - "0..1 orgUnit" "Organisation_Unit"
-"Affiliation_Statement" o- - "0..1 institution" "Organisation_Unit"
-"Person" o- - "0..* affiliations" "Affiliation_Statement"
-"Contribution_Statement" <|- - "Free_Text_Contribution_Statement"
-"Contributorship" "0..*" - -r- -* "Document"
-"Contributorship" "0..*" - -l- -o "0..1 contributor" "Agent"
-"Contributorship" o- - "0..* affiliations" "Affiliation_Statement"
-"Contributorship" *- - "0..* contributionStatements" "Contribution_Statement"
-"Authorship" -r-* "Textual_Document"
-"Contributorship" <|-u- "Authorship"
-"Authorship" "0..*" - -o "0..1 author" "Agent"
-"Person" ..> "name" "Person_Name"
-"Agent" <|- - "Person"
-"Agent" <|- - "Organisation_Unit"
-"Organisation_Unit" ..> "address" "Postal_Address"
-"Document" <|-u- "Textual_Document"
-"Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
-"Textual_Document" "0..* authoredDocuments" - - - "0..* authors" "Agent"
+    class "Authorship" #ffffff {
+        correspondingAuthorFlag : Boolean
+    }
+
+        class "Contributorship" #ffffff {
+            contacts : List<URI>
+            displayName : String
+        }
+
+        class "Contribution_Statement" #ffffff {
+        }
+
+        class "Free_Text_Contribution_Statement" #ffffff {
+            statement : Multilingual_String
+        }
+
+        class Postal_Address << (D,#add0b2) DataType>> #ffffff {
+            street : Multilingual_String
+            city : Multilingual_String
+            zipCode : Multilingual_String
+            country : Country
+        }
+        class Country << (D,#add0b2) DataType>> #ffffff {
+            name : Multilingual_String
+            iso3166alpha2Code : ISO3166_Alpha2_Code
+        }
+
+        class "Affiliation_Statement" #ffffff {
+            displayAffiliation : String
+            address : Postal_Address
+        }
+
+    "Postal_Address" o- - "country" "Country"
+        "Affiliation_Statement" ..> "postalAddress" "Postal_Address"
+        "Contributorship" *- - "0..* contributionStatements" "Contribution_Statement"
+        "Contribution_Statement" <|- - "Free_Text_Contribution_Statement"
+        "Contributorship" "0..*" - -r- -* "Document"
+        "Contributorship" "0..*" - -l- -o "0..1 contributor" "Agent"
+    "Authorship" -r-* "Textual_Document"
+    "Contributorship" <|-u- "Authorship"
+    "Authorship" "0..*" - -o "0..1 author" "Agent"
+    note on link #yellow: author == contributor
+        "Person" ..> "name" "Person_Name"
+        "Agent" <|- - "Organisation_Unit"
+        "Document" <|-u- "Textual_Document"
+    "Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
+    "Textual_Document" "0..* authoredDocuments" - - - "0..* authors" "Agent"
+    note left of Agent #yellow: The Agent is mandatory for almost all \nsubclasses of Contributorship,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
 @enduml
 
 PlantUML version 1.2021.8(Sat Jun 26 08:20:59 UTC 2021)
