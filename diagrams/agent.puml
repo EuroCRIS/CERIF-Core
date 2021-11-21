@@ -2,5 +2,8 @@
 
     !includesub core.puml!common
     !includesub core.puml!Agent
+    !includesub core.puml!Person
+    !includesub core.puml!OrgUnit
+    !includesub core.puml!PostalAddress
 
 @enduml
