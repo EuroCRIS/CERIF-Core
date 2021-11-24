@@ -1,5 +1,8 @@
 # Document
 
+## URI
+https://w3id.org/cerif2/core/Document
+
 ## Definition
 A document is a bounded representation of a body of information designed with the capacity (and usually intent) to communicate. 
 A document may manifest symbolic, diagrammatic or sensory-representational information.<sup>[1](#fn1)</sup>
@@ -9,7 +12,7 @@ A document may manifest symbolic, diagrammatic or sensory-representational infor
 It is an abstract entity representing the root ancestor for research outputs such as Journal Article, Dataset, Software, Patent, etc. All relatioships which might be linked with any research output, should be generalized by linking the Document entity.
 
 ## Attributes
-DOI : [DOI Type](../datatypes/DOI.md)
+<a name="DOI">DOI : [DOI Type](../datatypes/DOI.md)</a>
 
 title : [Multilingual String](../datatypes/Multilingual_String.md)
 
