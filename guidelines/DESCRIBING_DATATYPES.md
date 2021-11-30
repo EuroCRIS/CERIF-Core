@@ -2,8 +2,8 @@
 
 ## Naming
 
-Datatypes should be named with capitalized first letters of each word in the text with spaces between the words (e.g. [ORCID iD](../entities/ORCID_iD.md)). 
-The markdown files that describe these datatypes should be named the same, just with underscores instead of spaces (e.g. ../entities/ORCID_iD.md).
+Datatypes should be named with capitalized first letters of each word in the text with spaces between the words (e.g. [ORCID iD](../datatypes/ORCID_iD.md)). 
+The markdown files that describe these datatypes should be named the same, just with underscores instead of spaces (e.g. ../datatypes/ORCID_iD.md).
 The datatypes in UML diagrams should be also named with underscores (e.g. "ORCID_iD").
 URIs for the datatypes (used in interchange formats) should be constructed using the form with underscores (e.g. "https://w3id.org/cerif/xxx/datatypes/ORCID_iD" – a ficticious URI so far).
 
