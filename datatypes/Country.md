@@ -4,9 +4,9 @@
 An area of land that has or used to have its own government and laws.<sup>[1](#fn1)</sup>
 
 ## Components
-name: [Multilingual String](../datatypes/Multilingual_String.md)
+ISO 3166 alpha2 code: [ISO 3166 Alpha2 Code Type](../datatypes/ISO_3166_Alpha2_Code.md) – this should be the preferred way of referencing a country
 
-ISO 3166 alpha2 code: [ISO 3166 Alpha2 Code Type](../datatypes/ISO_3166_Alpha2_Code.md)
+name: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ---
 
