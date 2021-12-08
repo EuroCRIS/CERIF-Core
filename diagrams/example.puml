@@ -37,8 +37,8 @@
             \t streetAddress = "Wiley-Street 1"
             \t city = "Neu-Ulm"
             \t country = {
-                        \t\t name = "Germany"@en, "Deutschland"@de
                         \t\t iso3166alpha2Code = "DE" ^^ ISO_3166_Alpha2_Code
+                        \t\t name = "Germany"@en, "Deutschland"@de
                         \t }^^ Country
             \t zipCode = "D-89231"
             } ^^ PostalAddress
