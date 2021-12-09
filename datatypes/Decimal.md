@@ -1,4 +1,4 @@
-# Decimal number
+# Decimal
 
 A rational number that can be expressed with a finite fractional part in the decimal system.
 
