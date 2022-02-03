@@ -19,7 +19,7 @@ In UML diagrams and in interchange formats the camel-case notation should be use
 5. **Relationships**: The relationships that are important for this entity. The default cardinality is "1".
 6. **Illustrative Diagram**: A UML diagram showing this entity in its context if one is available.
 ---
-7. **Matches**: Describe any external entitites or classes this entity matchees. 
+7. **Matches**: Describe any external entities or classes this entity matches. 
 8. **References**: References to external resources in case these are referenced.
 
 A heading is left out if the section is empty.
