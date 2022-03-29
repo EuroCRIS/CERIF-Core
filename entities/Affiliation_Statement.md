@@ -12,6 +12,8 @@ address: [Postal Address](../datatypes/Postal_Address.md)
 
 ## Relatioships
 
+<a name="rel35288350-0e23-4190-90f7-9c12fa184007">An Affiliation Statement can be linked with *[contributorship](../entities/Contributorship.md#user-content-rel35288350-0e23-4190-90f7-9c12fa184007)*: an instance of [Contributorship](../entities/Contributorship.md).</a>
+
 An Affiliation Statement can be linked with *institution*, and/or *organisation unit (for instance department)*: both instances of [Organisation Unit](../entities/Organisation_Unit.md).
 
 Moreover, an Affiliation Statement might be linked with *person*: an instance of [Person](../entities/Organisation_Unit.md).

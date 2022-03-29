@@ -17,7 +17,7 @@ display name: [String](../datatypes/String.md)
 
 <a name="relab1878d2-60c9-47cb-bac9-09b3b91aa89c">A Contributorship always has the *[document](../entities/Document.md#user-content-relab1878d2-60c9-47cb-bac9-09b3b91aa89c)*: an instance of [Document](../entities/Document.md).</a>
 
-A Contributorship has any number of *affiliations*: instances of [Affiliation Statement](../entities/Affiliation_Statement.md).
+<a name="rel35288350-0e23-4190-90f7-9c12fa184007">A Contributorship has any number of *[affiliations](../entities/Affiliation_Statement.md#user-content-rel35288350-0e23-4190-90f7-9c12fa184007)*: instances of [Affiliation Statement](../entities/Affiliation_Statement.md).</a>
 
 A Contributorship has any number of *contribution statements*: instances of [Contribution Statement](../entities/Contribution_Statement).
 
