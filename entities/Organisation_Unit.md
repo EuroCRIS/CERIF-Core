@@ -26,6 +26,8 @@ address: [Postal Address](../datatypes/Postal_Address.md)
 
 ROR ID: [ROR ID Type](../datatypes/ROR_ID.md)
 
+Fundref ID: [Fundref ID Type](../datatypes/Fundref_ID.md) for organizations that also fund research
+
 web site URL: [URI](../datatypes/URI.md)
 
 email: [URI](../datatypes/URI.md)
