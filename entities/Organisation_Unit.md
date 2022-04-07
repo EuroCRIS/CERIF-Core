@@ -24,7 +24,7 @@ acronym: [String](../datatypes/String.md)
 
 address: [Postal Address](../datatypes/Postal_Address.md)
 
-ROR Id: [ROR ID Type](../datatypes/ROR_ID.md)
+ROR ID: [ROR ID Type](../datatypes/ROR_ID.md)
 
 web site URL: [URI](../datatypes/URI.md)
 
