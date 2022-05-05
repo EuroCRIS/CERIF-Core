@@ -18,7 +18,7 @@ Wikidata ID: [Wikidata ID Type](../datatypes/Wikidata_ID.md)
 
 ## Relationships
 
-<a name="relc4c92595-4f3d-43a3-8041-fd86fface421">An Agent can have any number of *[contributorships](../entities/Contributorship.md#user-content-relc4c92595-4f3d-43a3-8041-fd86fface421)*: instances of [Contributorship](../entities/Contributorship.md).</a>
+<a name="relc4c92595-4f3d-43a3-8041-fd86fface421">An Agent can have any number of *[contributorships](Contributorship_to_Document.md#user-content-relc4c92595-4f3d-43a3-8041-fd86fface421)*: instances of [Contributorship](Contributorship_to_Document.md).</a>
 
 (FIXME)
 

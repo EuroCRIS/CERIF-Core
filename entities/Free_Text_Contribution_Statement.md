@@ -11,7 +11,7 @@ K. XXX (kXXX@gmail.com), and the others by P. XXX (pXXX@gmail.com).
 
 ## Specialization of
 
-[Agent](../entities/Contribution_Statement.md)
+[Contribution Statement](../entities/Contribution_Statement.md)
 
 ## Attributes
 
