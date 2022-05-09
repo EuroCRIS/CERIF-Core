@@ -1,7 +1,7 @@
 # Membership
 
 ## Definition
-Membership of an [Agent](../entities/Agent.md) into a [Group](../entities/Group.md) or [Association or Society](../entities/Association_or_Society.md).
+Membership of an [Agent](../entities/Agent.md) in a [Group](../entities/Group.md).
 
 ## Usage notes
 
@@ -10,13 +10,13 @@ Membership of an [Agent](../entities/Agent.md) into a [Group](../entities/Group.
 
 ## Attributes
 
-Besides those inherited from [Activity](../entities/Activity.md#attributes), a membership has the following attributes:
-
-date of joining ...
+Those inherited from [Activity](../entities/Activity.md#attributes).
 
 ## Relationships
 
-Beside those inherited from [Activity](../entities/Activity.md#relationships), a Membership always has the *[Group](../entities/Group.md)*: an instance of [Group](../entities/Group.md) or a subclass such as [Association or Society](../entities/Association_or_Society.md). 
+Beside those inherited from [Activity](../entities/Activity.md#relationships):
+
+A Membership always has the *[group](../entities/Group.md)*: an instance of [Group](../entities/Group.md).
 
 ## Illustrative Diagram
 

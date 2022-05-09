@@ -1,4 +1,4 @@
-# Association or Society
+# Organisation Unit with Members
 
 ## Definition
 
@@ -6,8 +6,7 @@
 ## Usage notes
 
 ## Specialization of
-[Group](../entities/Group.md)
-[Organisation](../entities/Organisation_Unit.md)
+[Group](../entities/Group.md) and [Organisation](../entities/Organisation_Unit.md) at the same time.
 
 ## Attributes
 name: [Multilingual String](../datatypes/Multilingual_String.md)
