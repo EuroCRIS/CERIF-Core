@@ -1,7 +1,7 @@
 # Activity
 
 ## Definition
-Any academic activity of a [Person](../entities/Person.md), [Organization](../entities/Organisation_Unit.md) or a [Group](../entities/Group.md). For instance, the activity might represent [contribution](../entities/Contribution.md) to a [Project](../entities/ContributionshipToProject.md), [Event](../entities/ContributionshipToEvent.md), or a [Document](Contributorship_to_Document.md), or a [membership in an Association](../entities/Membership.md).
+Any academic activity of a [Person](../entities/Person.md), [Organization](../entities/Organisation_Unit.md) or a [Group](../entities/Group.md). For instance, the activity might represent [contribution](../entities/Contribution.md) to a [Project](../entities/ContributionshipToProject.md), [Event](../entities/ContributionshipToEvent.md), or a [Document](Contribution_to_Document.md), or a [membership in an Association](../entities/Membership.md).
 
 ## Usage notes
 

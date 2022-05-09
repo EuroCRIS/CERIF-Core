@@ -1,4 +1,4 @@
-# Contributorship to Document
+# Contribution to Document
 
 ## Definition
 Any contribution an [Agent](../entities/Agent.md) made to a [Document](../entities/Document.md).
@@ -11,7 +11,7 @@ Those inherited from [Contribution](../entities/Contribution.md#attributes)
 
 ## Relationships
 
-Beside those inherited from [Contribution](../entities/Contribution.md#relationships), a Contributionship to Document always has the *[document](../entities/Document.md)*: an instance of [Document](../entities/Document.md).
+Beside those inherited from [Contribution](../entities/Contribution.md#relationships), a Contribution to Document always has the *[document](../entities/Document.md)*: an instance of [Document](../entities/Document.md).
 
 ## Illustrative Diagram
 

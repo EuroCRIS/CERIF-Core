@@ -63,16 +63,16 @@
         }
     !endsub
 
-    !startsub ContributorshipToProject
-        class "Contributorship_to_Project" #ffffff {
+    !startsub ContributionToProject
+        class "Contribution_to_Project" #ffffff {
         }
     
         class "Project" #ffffff {
         }
     !endsub
     
-    !startsub ContributorshipToEvent
-        class "Contributorship_to_Event" #ffffff {
+    !startsub ContributionToEvent
+        class "Contribution_to_Event" #ffffff {
         }
     
         class "Event" #ffffff {
@@ -101,8 +101,8 @@
     !endsub
 
 
-    !startsub ContributorshipToDocument
-        class "Contributorship_to_Document" #ffffff {
+    !startsub ContributionToDocument
+        class "Contribution_to_Document" #ffffff {
         }
     !endsub
     !startsub Authorship    
@@ -159,8 +159,8 @@
     !startsub Contribution
         "Contribution_Statement" <|-- "Resource_Contribution_Statement"
     !endsub
-    !startsub ContributorshipToDocument
-        "Contributorship_to_Document" "0..*" --* "Document"
+    !startsub ContributionToDocument
+        "Contribution_to_Document" "0..*" --* "Document"
     !endsub
     !startsub Activity
         "Activity" "0..*" --o "0..1 who" "Agent"
@@ -169,22 +169,22 @@
         "Authorship" --* "Textual_Document"
     !endsub
     !startsub Authorship
-        "Contributorship_to_Document" <|-- "Authorship"
+        "Contribution_to_Document" <|-- "Authorship"
     !endsub
-    !startsub ContributorshipToDocument
-        "Contribution" <|-- "Contributorship_to_Document"
+    !startsub ContributionToDocument
+        "Contribution" <|-- "Contribution_to_Document"
     !endsub
-    !startsub ContributorshipToProject
-        "Contribution" <|-- "Contributorship_to_Project"
+    !startsub ContributionToProject
+        "Contribution" <|-- "Contribution_to_Project"
     !endsub
-    !startsub ContributorshipToProject
-        "Contributorship_to_Project" "0..*" --* "0..1 project" "Project"
+    !startsub ContributionToProject
+        "Contribution_to_Project" "0..*" --* "0..1 project" "Project"
     !endsub
-    !startsub ContributorshipToEvent
-        "Contribution" <|-- "Contributorship_to_Event"
+    !startsub ContributionToEvent
+        "Contribution" <|-- "Contribution_to_Event"
     !endsub
-    !startsub ContributorshipToEvent
-        "Contributorship_to_Event" "0..*" --* "0..1 event" "Event"
+    !startsub ContributionToEvent
+        "Contribution_to_Event" "0..*" --* "0..1 event" "Event"
     !endsub
     !startsub Contribution
         "Activity" <|-- "Contribution"
@@ -227,5 +227,5 @@
     !startsub Authorship
         "Textual_Document" "0..* authoredDocuments" --- "0..* authors" "Agent"
     !endsub
-    note left of Agent #yellow: The Agent is mandatory for almost all \nsubclasses of Contributorship,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
+    note left of Agent #yellow: The Agent is mandatory for almost all \nsubclasses of Contribution,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
 @enduml

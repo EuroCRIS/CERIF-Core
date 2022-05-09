@@ -1,7 +1,7 @@
 # Contributorship
 
 ## Definition
-Any contribution an [Agent](../entities/Agent.md) made to an academic entity such as a [Project](../entities/ContributionshipToProject.md), [Event](../entities/ContributionshipToEvent.md), or a [Document](Contributorship_to_Document.md).
+Any contribution an [Agent](../entities/Agent.md) made to an academic entity such as a [Project](../entities/Contribution_to_Project.md), [Event](../entities/Contribution_to_Event.md), or a [Document](Contribution_to_Document.md).
 
 ## Usage notes
 
