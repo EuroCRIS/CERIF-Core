@@ -1,7 +1,7 @@
 # Contribution Statement
 
 ## Definition
-An element of a [Contribution](../entities/Contribution.md). All such elements taken together form the Contribution.
+An element of a [Contribution](../entities/Contribution.md). All such elements taken together describe the Contribution.
 
 ## Usage Notes
 An example of a structured contribution statement:
