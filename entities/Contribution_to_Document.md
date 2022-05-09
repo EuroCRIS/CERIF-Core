@@ -15,7 +15,7 @@ Beside those inherited from [Contribution](../entities/Contribution.md#relations
 
 ## Illustrative Diagram
 
-![The Contributorship diagram](../diagrams/contributorship.svg)
+![The Contributorship diagram](../diagrams/contributionToDocument.svg)
 
 ---
 ## Matches
