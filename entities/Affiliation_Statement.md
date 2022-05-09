@@ -17,14 +17,15 @@ display person name: [String](../datatypes/String.md) -- the raw string form of 
 
 address: [Postal Address](../datatypes/Postal_Address.md)
 
-## Relatioships
+contacts: List<[URI](../datatypes/URI.md)>
 
-<<<<<<< HEAD
+
+## Relationships
+
 An Affiliation Statement can optionally be linked with *institution*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).
-=======
-<a name="rel35288350-0e23-4190-90f7-9c12fa184007">An Affiliation Statement can be linked with *[contributions](../entities/Contribution_to_Document.md#user-content-rel35288350-0e23-4190-90f7-9c12fa184007)*: an instance of [Contribution to Document](../entities/Contribution_to_Document.md).</a>
->>>>>>> 37635170dbc175126bff1171c68b04f597d82bdc
 
 An Affiliation Statement can optionally be linked with *organisation unit*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).
 
 An Affiliation Statement is typically linked with *person*: an instance of [Person](../entities/Person.md).
+
+An Affiliation Statement can optionally be linked with an *activity*: an instance of [Activity](../entities/Activity.md).
