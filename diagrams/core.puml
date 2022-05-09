@@ -49,21 +49,65 @@
     }
     !endsub
 
-    class "Authorship" #ffffff {
-        correspondingAuthorFlag : Boolean
+    !startsub Activity
+    class "Activity" #ffffff {
+        contacts : List<URI>
+        displayName : String
     }
+    !endsub
 
-    !startsub Contributorship
-        class "Contributorship" #ffffff {
-            contacts : List<URI>
-            displayName : String
+    !startsub Membership
+        class "Membership" #ffffff {
         }
+        class "Group" #ffffff {
+        }
+    !endsub
 
+    !startsub ContributionToProject
+        class "Contribution_to_Project" #ffffff {
+        }
+    
+        class "Project" #ffffff {
+        }
+    !endsub
+    
+    !startsub ContributionToEvent
+        class "Contribution_to_Event" #ffffff {
+        }
+    
+        class "Event" #ffffff {
+        }
+    !endsub
+
+    !startsub Contribution
+        class "Contribution" #ffffff {
+        }
+            
+        class "Acknowledgement_Statement" #ffffff {
+        }
+        
         class "Contribution_Statement" #ffffff {
         }
-
+        
         class "Free_Text_Contribution_Statement" #ffffff {
             statement : Multilingual_String
+        }
+    
+        class "Resource_Contribution_Statement" #ffffff {
+        }
+    
+        class "Resource" #ffffff {
+        }
+    !endsub
+
+
+    !startsub ContributionToDocument
+        class "Contribution_to_Document" #ffffff {
+        }
+    !endsub
+    !startsub Authorship    
+        class "Authorship" #ffffff {
+            correspondingAuthorFlag : Boolean
         }
     !endsub
 
@@ -104,23 +148,65 @@
         "Person" o-- "0..* affiliations" "Affiliation_Statement"
     !endsub
     !startsub AffiliationStatement
-        "Contributorship" *-- "0..* affiliations" "Affiliation_Statement"
+        "Activity" *-- "0..* affiliations" "Affiliation_Statement"
     !endsub
-    !startsub Contributorship
-        "Contributorship" *-- "0..* contributionStatements" "Contribution_Statement"
+    !startsub Contribution
+        "Contribution" *-- "0..* contributionStatements" "Contribution_Statement"
     !endsub
-    !startsub Contributorship
+    !startsub Contribution
         "Contribution_Statement" <|-- "Free_Text_Contribution_Statement"
     !endsub
-    !startsub Contributorship
-        "Contributorship" "0..*" --r--* "Document"
+    !startsub Contribution
+        "Contribution_Statement" <|-- "Resource_Contribution_Statement"
     !endsub
-    !startsub Contributorship
-        "Contributorship" "0..*" --l--o "0..1 contributor" "Agent"
+    !startsub ContributionToDocument
+        "Contribution_to_Document" "0..*" --* "Document"
     !endsub
-    "Authorship" -r-* "Textual_Document"
-    "Contributorship" <|-u- "Authorship"
-    "Authorship" "0..*" --o "0..1 author" "Agent"
+    !startsub Activity
+        "Activity" "0..*" --o "0..1 who" "Agent"
+    !endsub
+    !startsub Authorship
+        "Authorship" --* "Textual_Document"
+    !endsub
+    !startsub Authorship
+        "Contribution_to_Document" <|-- "Authorship"
+    !endsub
+    !startsub ContributionToDocument
+        "Contribution" <|-- "Contribution_to_Document"
+    !endsub
+    !startsub ContributionToProject
+        "Contribution" <|-- "Contribution_to_Project"
+    !endsub
+    !startsub ContributionToProject
+        "Contribution_to_Project" "0..*" --* "0..1 project" "Project"
+    !endsub
+    !startsub ContributionToEvent
+        "Contribution" <|-- "Contribution_to_Event"
+    !endsub
+    !startsub ContributionToEvent
+        "Contribution_to_Event" "0..*" --* "0..1 event" "Event"
+    !endsub
+    !startsub Contribution
+        "Activity" <|-- "Contribution"
+    !endsub
+    !startsub Membership
+        "Activity" <|-- "Membership"
+    !endsub
+    !startsub Membership
+        "Membership" "0..*" --o "0..1 member of" "Group"
+    !endsub
+    !startsub Contribution
+        "Acknowledgement_Statement" "0..* thanks to" --o "0..1" "Contribution"
+    !endsub
+    !startsub Contribution
+        "Acknowledgement_Statement" "0..*" --o "0..1 resource" "Resource"
+    !endsub
+    !startsub Contribution
+        "Resource_Contribution_Statement" "0..*" --* "0..1 resource" "Resource"
+    !endsub
+    !startsub Authorship
+        "Authorship" "0..*" --o "0..1 author" "Agent"
+    !endsub
     note on link #yellow: author == contributor
     !startsub Person
         "Person" ..> "name" "Person_Name"
@@ -135,9 +221,11 @@
         "Organisation_Unit" ..> "address" "Postal_Address"
     !endsub
     !startsub Document
-        "Document" <|-u- "Textual_Document"
+        "Document" <|-- "Textual_Document"
     !endsub
-    "Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
-    "Textual_Document" "0..* authoredDocuments" --- "0..* authors" "Agent"
-    note left of Agent #yellow: The Agent is mandatory for almost all \nsubclasses of Contributorship,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
+    "Textual_Document" *-- "0..* accessRights" "Textual_Document_Accessibility_Specification"
+    !startsub Authorship
+        "Textual_Document" "0..* authoredDocuments" --- "0..* authors" "Agent"
+    !endsub
+    note left of Agent #yellow: The Agent is mandatory for almost all \nsubclasses of Contribution,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
 @enduml

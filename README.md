@@ -16,7 +16,7 @@ The Core consists of the following entities:
 * Activity
 * [Document](./entities/Document.md)
   * [Textual Document](./entities/Textual_Document.md)
-* [Contributorship](./entities/Contributorship.md)
+* [Contributorship](entities/Contribution_to_Document.md)
   * [Authorship](./entities/Authorship.md)
 * [Affiliation Statement](./entities/Affiliation_Statement.md)
 * [Contribution Statement](./entities/Contribution_Statement.md)

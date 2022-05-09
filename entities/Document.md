@@ -19,7 +19,7 @@ title : [Multilingual String](../datatypes/Multilingual_String.md)
 publication date: [Date](../datatypes/Date.md)
 
 ## Relationships
-<a name="relab1878d2-60c9-47cb-bac9-09b3b91aa89c">A Document has any number of *[contributorships](../entities/Contributorship.md#user-content-relab1878d2-60c9-47cb-bac9-09b3b91aa89c)*: instances of [Contributorship](../entities/Contributorship.md).</a>
+<a name="relab1878d2-60c9-47cb-bac9-09b3b91aa89c">A Document has any number of *[contributorships](Contribution_to_Document.md#user-content-relab1878d2-60c9-47cb-bac9-09b3b91aa89c)*: instances of [Contribution to Document](Contribution_to_Document.md).</a>
 
 ---
 ## Matches

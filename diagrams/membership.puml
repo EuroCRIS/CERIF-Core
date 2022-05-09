@@ -1,0 +1,9 @@
+@startuml
+
+    !includesub core.puml!common
+    !includesub core.puml!Agent
+    !includesub core.puml!Activity
+    !includesub core.puml!Membership
+    !includesub core.puml!AffiliationStatement
+
+@enduml

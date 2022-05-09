@@ -1,0 +1,14 @@
+@startuml
+
+    !includesub core.puml!common
+    !includesub core.puml!Activity
+    !includesub core.puml!Contribution
+    !includesub core.puml!ContributionToDocument
+    !includesub core.puml!Authorship
+    !includesub core.puml!ContributionToProject
+    !includesub core.puml!ContributionToEvent
+    !includesub core.puml!Membership
+    !includesub core.puml!AffiliationStatement
+    !includesub core.puml!Document
+
+@enduml

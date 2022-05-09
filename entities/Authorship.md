@@ -4,18 +4,18 @@
 [FIXME] Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/Organisation_Unit.md)) with a [Textual Document](../entities/Textual_Document.md) or any of its specializations.
 
 ## Specialization of
-[Contributorship](../entities/Contributorship.md)
+[Contribution to Document](Contribution_to_Document.md)
 
 ## Attributes
 
-Beside those inherited from [Contributorship](../entities/Contributorship.md#attributes), there are also the following specific attribute:
+Beside those inherited from [Contribution to Document](Contribution_to_Document.md#attributes), there are also the following specific attribute:
 
 corresponding author flag: [Boolean](../datatypes/Boolean.md) - indicates whether this author is responsible for correspondence (true)
 
 ## Relationships
 
-Beside those inherited from [Contributorship](../entities/Contributorship.md#relationships), there is also also a link to *author*: an instance of [Agent](../entities/Agent.md) 
-[FIXME] replacing the derived *contributor* link from [Contributorship](../entities/Contributorship.md) 
+Beside those inherited from [Contribution to Document](Contribution_to_Document.md#relationships), there is also also a link to *author*: an instance of [Agent](../entities/Agent.md) 
+[FIXME] replacing the derived *contributor* link from [Contribution to Document](Contribution_to_Document.md) 
 
 ---
 ## Matches

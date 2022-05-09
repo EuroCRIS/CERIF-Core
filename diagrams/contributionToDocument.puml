@@ -2,10 +2,9 @@
 
     !includesub core.puml!common
     !includesub core.puml!Agent
-    !includesub core.puml!Person
-    !includesub core.puml!OrgUnit
-    !includesub core.puml!PostalAddress
-    !includesub core.puml!Contributorship
+    !includesub core.puml!Activity
+    !includesub core.puml!Contribution
+    !includesub core.puml!ContributionToDocument
     !includesub core.puml!AffiliationStatement
     !includesub core.puml!Document
 
