@@ -19,6 +19,7 @@ An Activity has any number of *[affiliations](../entities/Affiliation_Statement.
 
 ## Illustrative Diagram
 
+![The Activity diagram](../diagrams/activity.svg)
 
 ---
 ## Matches

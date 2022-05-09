@@ -1,10 +1,13 @@
 @startuml
 
     !includesub core.puml!common
-    !includesub core.puml!Agent
     !includesub core.puml!Activity
     !includesub core.puml!Contribution
     !includesub core.puml!ContributorshipToDocument
+    !includesub core.puml!Authorship
+    !includesub core.puml!ContributorshipToProject
+    !includesub core.puml!ContributorshipToEvent
+    !includesub core.puml!Membership
     !includesub core.puml!AffiliationStatement
     !includesub core.puml!Document
 

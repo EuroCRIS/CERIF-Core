@@ -20,6 +20,7 @@ Beside those inherited from [Activity](../entities/Activity.md#relationships), a
 
 ## Illustrative Diagram
 
+![The Membership diagram](../diagrams/membership.svg)
 
 ---
 ## Matches
