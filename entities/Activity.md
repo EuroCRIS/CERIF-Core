@@ -6,7 +6,7 @@ Anything an Agent does.
 
 ## Usage notes
 
-This records any research-related activity of an [Agent](../entities/Agent.md) (i.e., [Person](../entities/Person.md), [Organization](../entities/Organisation_Unit.md) or a [Group](../entities/Group.md)). Activities represent [Contributions](../entities/Contribution.md) to different things (to [Projects](../entities/ContributionToProject.md), [Events](../entities/ContributionToEvent.md), [Documents](Contribution_to_Document.md), ...) or [Memberships](../entities/Membership.md) in [Groups](../entities/Group.md).
+This records any research-related activity of an [Agent](../entities/Agent.md) (i.e., [Person](../entities/Person.md), [Organization](../entities/Organisation_Unit.md) or a [Group](../entities/Group.md)). Activities represent [Contributions](../entities/Contribution.md) to different things (to [Projects](../entities/Contribution_to_Project.md), [Events](../entities/Contribution_to_Event.md), [Documents](../entities/Contribution_to_Document.md), ...) or [Memberships](../entities/Membership.md) in [Groups](../entities/Group.md).
 
 ## Attributes
 

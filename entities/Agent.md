@@ -19,7 +19,7 @@ Wikidata ID: [Wikidata ID Type](../datatypes/Wikidata_ID.md)
 
 ## Relationships
 
-<a name="relc4c92595-4f3d-43a3-8041-fd86fface421">An Agent can have any number of *[activities](Activity.md#user-content-relc4c92595-4f3d-43a3-8041-fd86fface421)*: instances of [Activity](Activity.md).</a>
+<a name="relc4c92595-4f3d-43a3-8041-fd86fface421">An Agent can have any number of *[activities](../entities/Activity.md#user-content-relc4c92595-4f3d-43a3-8041-fd86fface421)*: instances of [Activity](../entities/Activity.md).</a>
 
 (FIXME)
 
