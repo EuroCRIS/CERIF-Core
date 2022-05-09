@@ -12,16 +12,25 @@ started in 2021 by [euroCRIS](https://www.eurocris.org/).
 
 The Core consists of the following entities:
 * [Agent](./entities/Agent.md)
-  * [Person](./entities/Person.md), [Organisation Unit](./entities/Organisation_Unit.md)
-* Activity
+  * [Person](./entities/Person.md)
+  * [Organisation Unit](./entities/Organisation_Unit.md), [Group](./entities/Group.md) (or [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) to represent the intersection of these two)
+* [Activity](./entities/Activity.md)
+  * [Contribution](./entities/Contribution.md)
+    * [Contribution_to_Document](./entities/Contribution_to_Document.md)    
+      * [Authorship](./entities/Authorship.md)
+    * [Contribution_to_Project](./entities/Contribution_to_Project.md)
+    * [Contribution_to_Event](./entities/Contribution_to_Event.md)
+  * [Membership](./entities/Membership.md)
 * [Document](./entities/Document.md)
   * [Textual Document](./entities/Textual_Document.md)
-* [Contributorship](./entities/Contribution_to_Document.md)
-  * [Authorship](./entities/Authorship.md)
 * [Affiliation Statement](./entities/Affiliation_Statement.md)
 * [Contribution Statement](./entities/Contribution_Statement.md)
   * [Free Text Contribution Statement](./entities/Free_Text_Contribution_Statement.md)
+  * [Resource Contribution Statement](./entities/Resource_Contribution_Statement.md)
 * [Textual Document Accessibility Specification](./entities/Textual_Document_Accessibility_Specification.md)
+* [Project](./entities/Project.md)
+* [Event](./entities/Event.md)
+* [Resource](./entities/Resource.md)
 * ...
 
 And the following data types:
