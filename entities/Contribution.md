@@ -1,25 +1,24 @@
-# Contributorship
+# Contribution
 
 ## Definition
-Any contribution an [Agent](../entities/Agent.md) made to an academic entity such as a [Project](../entities/Contribution_to_Project.md), [Event](../entities/Contribution_to_Event.md), or a [Document](../entities/Contribution_to_Document.md).
+An activity that helps achieve a goal.
 
 ## Usage notes
+This represents any contribution an [Agent](../entities/Agent.md) makes to a [Project](../entities/Contribution_to_Project.md), [Event](../entities/Contribution_to_Event.md), or a [Document](../entities/Contribution_to_Document.md).
+The particular ways of contributing are represented by the linked [Contribution Statements](../entities/Contribution_Statement.md).
 
 ## Specialization of
 [Activity](../entities/Activity.md)
 
 ## Attributes
-
-contacts: List<[URI](../datatypes/URI.md)
-
-display name: [String](../datatypes/String.md)
+Just those of [Activity](../entities/Activity.md).
 
 ## Relationships
+Beside those inherited from [Activity](../entities/Activity.md#relationships):
 
-Beside those inherited from [Activity](../entities/Activity.md#relationships), a Contribution has any number of *contribution statements*: instances of [Contribution Statement](../entities/Contribution_Statement), and any number of *acknowledgement statements*: instances of [Acknowledgement Statement](../entities/Acknowledgement_Statement). 
+A Contribution has any number of *contribution statements*: instances of [Contribution Statement](../entities/Contribution_Statement).
 
-## Illustrative Diagram
-
+A Contribution has any number of *acknowledgement statements*: instances of [Acknowledgement Statement](../entities/Acknowledgement_Statement). 
 
 ---
 ## Matches
