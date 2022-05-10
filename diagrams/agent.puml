@@ -4,6 +4,7 @@
     !includesub core.puml!Agent
     !includesub core.puml!Person
     !includesub core.puml!OrgUnit
-    !includesub core.puml!PostalAddress
+    !includesub core.puml!Group
+    !includesub core.puml!OrgUnitWithMembers
 
 @enduml
