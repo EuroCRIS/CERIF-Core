@@ -37,31 +37,37 @@
     !endsub
 
    !startsub Person
-    class "Person" #ffffff {
-        name : Person_Name
-        orcidId : ORCID_iD
-    }
+        class "Person" #ffffff {
+            name : Person_Name
+            orcidId : ORCID_iD
+        }
 
-    datatype("Person_Name") {
-        firstNames : Multilingual_String
-        familyNames : Multilingual_String
-        otherNames : Multilingual_String
-    }
+        datatype("Person_Name") {
+            firstNames : Multilingual_String
+            familyNames : Multilingual_String
+            otherNames : Multilingual_String
+        }
     !endsub
 
     !startsub Activity
-    class "Activity" #ffffff {
-        contacts : List<URI>
-        displayName : String
-    }
+        class "Activity" #ffffff {
+        }
     !endsub
 
     !startsub Membership
         class "Membership" #ffffff {
         }
+    !endsub
+
+    !startsub Group
         class "Group" #ffffff {
         }
     !endsub
+
+    !startsub OrgUnitWithMembers
+            class "Organisation_Unit_with_Members" #ffffff {
+            }
+        !endsub
 
     !startsub ContributionToProject
         class "Contribution_to_Project" #ffffff {
@@ -83,17 +89,11 @@
         class "Contribution" #ffffff {
         }
             
-        class "Acknowledgement_Statement" #ffffff {
-        }
+     '   class "Acknowledgement_Statement" #ffffff {
+     '   }
         
         class "Contribution_Statement" #ffffff {
-        }
-        
-        class "Free_Text_Contribution_Statement" #ffffff {
             statement : Multilingual_String
-        }
-    
-        class "Resource_Contribution_Statement" #ffffff {
         }
     
         class "Resource" #ffffff {
@@ -105,7 +105,8 @@
         class "Contribution_to_Document" #ffffff {
         }
     !endsub
-    !startsub Authorship    
+
+    !startsub Authorship
         class "Authorship" #ffffff {
             correspondingAuthorFlag : Boolean
         }
@@ -127,105 +128,146 @@
     !startsub AffiliationStatement
         class "Affiliation_Statement" #ffffff {
             displayAffiliation : String
+            displayPersonName : String
             address : Postal_Address
+            contacts : List<URI>
         }
     !endsub AffiliationStatement
 
     !startsub PostalAddress
-    "Postal_Address" o-- "country" "Country"
+        "Postal_Address" o-- "country" "Country"
     !endsub
-    !startsub AffiliationStatement
+
+    !startsub PostalAddress
         "Affiliation_Statement" ..> "postalAddress" "Postal_Address"
     !endsub
+
     !startsub AffiliationStatement
         "Affiliation_Statement" o-- "0..1 orgUnit" "Organisation_Unit"
     !endsub
+
     !startsub AffiliationStatement
         "Affiliation_Statement" o-- "0..1 institution" "Organisation_Unit"
         '    "Affiliation_Statement" o-- "person" "Person"
     !endsub
+
     !startsub AffiliationStatement
         "Person" o-- "0..* affiliations" "Affiliation_Statement"
     !endsub
+
     !startsub AffiliationStatement
         "Activity" *-- "0..* affiliations" "Affiliation_Statement"
     !endsub
+
     !startsub Contribution
         "Contribution" *-- "0..* contributionStatements" "Contribution_Statement"
     !endsub
-    !startsub Contribution
-        "Contribution_Statement" <|-- "Free_Text_Contribution_Statement"
-    !endsub
-    !startsub Contribution
-        "Contribution_Statement" <|-- "Resource_Contribution_Statement"
-    !endsub
+
     !startsub ContributionToDocument
-        "Contribution_to_Document" "0..*" --* "Document"
+        "Contribution_to_Document" --> "document" "Document"
     !endsub
+
     !startsub Activity
         "Activity" "0..*" --o "0..1 who" "Agent"
     !endsub
+
     !startsub Authorship
         "Authorship" --* "Textual_Document"
     !endsub
+
     !startsub Authorship
         "Contribution_to_Document" <|-- "Authorship"
     !endsub
+
     !startsub ContributionToDocument
         "Contribution" <|-- "Contribution_to_Document"
     !endsub
+
     !startsub ContributionToProject
         "Contribution" <|-- "Contribution_to_Project"
     !endsub
+
     !startsub ContributionToProject
-        "Contribution_to_Project" "0..*" --* "0..1 project" "Project"
+        "Contribution_to_Project" --> "project" "Project"
     !endsub
+
     !startsub ContributionToEvent
         "Contribution" <|-- "Contribution_to_Event"
     !endsub
+
     !startsub ContributionToEvent
-        "Contribution_to_Event" "0..*" --* "0..1 event" "Event"
+        "Contribution_to_Event" --> "event" "Event"
     !endsub
+
     !startsub Contribution
         "Activity" <|-- "Contribution"
     !endsub
+
     !startsub Membership
         "Activity" <|-- "Membership"
     !endsub
+
     !startsub Membership
-        "Membership" "0..*" --o "0..1 member of" "Group"
+        "Membership" "0..*" --> "0..1 member of" "Group"
     !endsub
+
+   ' !startsub Contribution
+   '     "Acknowledgement_Statement" "0..* thanks to" --o "0..1" "Contribution"
+   ' !endsub
+
+   ' !startsub Contribution
+   '     "Acknowledgement_Statement" --> "0..1 resource" "Resource"
+   ' !endsub
+
     !startsub Contribution
-        "Acknowledgement_Statement" "0..* thanks to" --o "0..1" "Contribution"
+        "Contribution_Statement" --> "0..1 resource" "Resource"
     !endsub
-    !startsub Contribution
-        "Acknowledgement_Statement" "0..*" --o "0..1 resource" "Resource"
-    !endsub
-    !startsub Contribution
-        "Resource_Contribution_Statement" "0..*" --* "0..1 resource" "Resource"
-    !endsub
+
     !startsub Authorship
         "Authorship" "0..*" --o "0..1 author" "Agent"
     !endsub
+
     note on link #yellow: author == contributor
+
     !startsub Person
         "Person" ..> "name" "Person_Name"
     !endsub
+
     !startsub Person
         "Agent" <|-- "Person"
     !endsub
+
     !startsub OrgUnit
         "Agent" <|-- "Organisation_Unit"
     !endsub
-    !startsub OrgUnit
-        "Organisation_Unit" ..> "address" "Postal_Address"
+
+    !startsub PostalAddress
+        "Organisation_Unit" ..> "0..1 address" "Postal_Address"
     !endsub
+
+    !startsub Group
+        "Agent" <|-- "Group"
+    !endsub
+
+    !startsub OrgUnitWithMembers
+        "Group" <|-- "Organisation_Unit_with_Members"
+    !endsub
+
+    !startsub OrgUnitWithMembers
+        "Organisation_Unit" <|-- "Organisation_Unit_with_Members"
+    !endsub
+
     !startsub Document
         "Document" <|-- "Textual_Document"
     !endsub
-    "Textual_Document" *-- "0..* accessRights" "Textual_Document_Accessibility_Specification"
-    !startsub Authorship
-        "Textual_Document" "0..* authoredDocuments" --- "0..* authors" "Agent"
+
+    !startsub AccessRights
+        "Textual_Document" *-- "0..* accessRights" "Textual_Document_Accessibility_Specification"
     !endsub
+
+    !startsub Authorship
+        "Textual_Document" "0..* authoredDocuments" o-- "0..* authors" "Agent"
+    !endsub
+
     note left of Agent #yellow: The Agent is mandatory for almost all \nsubclasses of Contribution,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
 @enduml
