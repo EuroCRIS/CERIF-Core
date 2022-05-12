@@ -6,6 +6,9 @@ Money provided by an organization or government for a particular purpose.<sup>[1
 ## Usage notes
 
 
+## Specialization of
+[Resource](../entities/Resource.md)
+
 ## Relationships
 
 ---
