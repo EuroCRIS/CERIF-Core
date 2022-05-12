@@ -16,10 +16,10 @@ The Core consists of the following entities:
   * [Organisation Unit](./entities/Organisation_Unit.md), [Group](./entities/Group.md) (or [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) to represent the intersection of these two)
 * [Activity](./entities/Activity.md)
   * [Contribution](./entities/Contribution.md)
-    * [Contribution_to_Document](./entities/Contribution_to_Document.md)    
+    * [Contribution to Document](./entities/Contribution_to_Document.md)    
       * [Authorship](./entities/Authorship.md)
-    * [Contribution_to_Project](./entities/Contribution_to_Project.md)
-    * [Contribution_to_Event](./entities/Contribution_to_Event.md)
+    * [Contribution to Project](./entities/Contribution_to_Project.md)
+    * [Contribution to Event](./entities/Contribution_to_Event.md)
   * [Membership](./entities/Membership.md)
 * [Document](./entities/Document.md)
   * [Textual Document](./entities/Textual_Document.md)
@@ -31,6 +31,7 @@ The Core consists of the following entities:
 * [Project](./entities/Project.md)
 * [Event](./entities/Event.md)
 * [Resource](./entities/Resource.md)
+  * [Funding](./entities/Funding.md)
 * ...
 
 And the following data types:
