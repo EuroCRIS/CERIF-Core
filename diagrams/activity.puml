@@ -10,5 +10,6 @@
     !includesub core.puml!Membership
     !includesub core.puml!AffiliationStatement
     !includesub core.puml!Document
+    !includesub core.puml!Agent
 
 @enduml

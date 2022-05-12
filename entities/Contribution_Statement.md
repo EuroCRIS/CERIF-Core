@@ -15,3 +15,11 @@ An example of a free text contribution statement:
 Another example of a structured contribution statement:
 
 > Agency XYZ provided Funding to project PQR.
+
+## Attributes
+
+statement: [Multilingual String](../datatypes/Multilingual_String.md)
+
+## Relationships
+
+A Contribution Statement might has the *[resource](../entities/Resource.md)*: an instance of [Resource](../entities/Resource.md). For instance it might be funding, expertise, equipment, time. or space
