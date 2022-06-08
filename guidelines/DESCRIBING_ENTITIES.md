@@ -17,10 +17,11 @@ In UML diagrams and in interchange formats the camel-case notation should be use
 3. **Specialization of**: The link to the super class
 4. **Attributes**: The list of attributes: properties whose values are simple or composite [datatypes](../guidelines/DESCRIBING_DATATYPES.md). All attributes are considered optional by default.
 5. **Relationships**: The relationships that are important for this entity. The default cardinality is "1".
-6. **Illustrative Diagram**: A UML diagram showing this entity in its context if one is available.
+6. **Constraints**: Any constraints a subclass makes on its superclasses.
+7. **Illustrative Diagram**: A UML diagram showing this entity in its context if one is available.
 ---
-7. **Matches**: Describe any external entities or classes this entity matches. 
-8. **References**: References to external resources in case these are referenced.
+8. **Matches**: Describe any external entities or classes this entity matches. 
+9. **References**: References to external resources in case these are referenced.
 
 A heading is left out if the section is empty.
 
