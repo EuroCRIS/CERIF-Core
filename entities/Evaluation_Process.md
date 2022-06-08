@@ -4,7 +4,7 @@
 Evaluation Process means the completion of initial evaluations, reevaluations and assessments, and might also include a meeting of the evaluation team to review the results of the evaluations and assessments, as well as writing a summary report.<sup>[1](#fn1)</sup> 
 
 ## Usage notes
-When the purpose of the evaluation is to determine eligibility for special [Invitation for Applications](../entities/Invitation_for_Applications.md), the evaluation process also includes the determination of eligibility.
+When the purpose of the evaluation is to determine eligibility for special [Call for Applications](../entities/Call_for_Applications.md), the evaluation process also includes the determination of eligibility.
 
 ## Specialization of
 [Process](../entities/Process.md)
