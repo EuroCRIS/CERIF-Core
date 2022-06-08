@@ -21,7 +21,7 @@ A Textual Document has an optional *access rights specification*: an instance of
 
 A Textual Document has any number of *authorships*: instances of [Authorship](../entities/Authorship.md). This relationship is derived from *Document.contributorships* by including just those [Contributions to Documents](../entities/Contribution_to_Document.md) that are [Authorships](../entities/Authorship.md).
 
-A Textual Document has any number of *authors*: instances of [Agent](../entities/Agent.md). This relationships is derived: it relates the Textual Document with the *agents* of its *authorships*. This is a simplified form of expressing *authorships* without any additional qualification or context.
+A Textual Document has any number of *authors*: instances of [Agent](../entities/Agent.md). This relationships is derived: it relates the Textual Document with the *actors* of its *authorships*. This is a simplified form of expressing *authorships* without any additional qualification or context.
 
 ## Illustrative Diagram
 
