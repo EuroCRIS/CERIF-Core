@@ -10,6 +10,8 @@ It is typically published or circulated among potential candidates.
 
 Examples include job advertisements, funding calls (requests for grant proposals), calls for nominations for an award etc.
 
+The term "Offer" was considered as an alternative for naming this entity. However, it was not used as it only covers one aspect of the whole situation.
+
 ## Attributes
 
 deadline: [Date](../datatypes/Date.md) – until when applications can be submitted
@@ -24,9 +26,6 @@ An Call for Applications always references the *inviter*, the [Agent](../entitie
 An invitation for application can optionally reference its *contents*, the [Document](../entities/Document.md) that details the invitation.
 
 ---
-
-## Notes
-The term "Offer" was considered as an alternative for naming this entity. However, it was not used as it only covers one aspect of the whole situation.
 
 ## References
 <a name="fn1">\[1\]</a> Source: The Oxford Dictionary, https://www.lexico.com/definition/invitation
