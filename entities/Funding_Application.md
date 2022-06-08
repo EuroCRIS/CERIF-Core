@@ -10,8 +10,10 @@ An application submitted in the form and manner described by a Funding agency, t
 Those of [Application](../entities/Application.md#attributes)
 
 ## Relationships
-Beside those inherited from [Application](../entities/Application.md#relationships), there is also a link to *funding call*: an instance of [Funding Call](../entities/Funding_Call.md) 
-[FIXME] replacing the derived *in-response-to* link from [Application](../entities/Application.md) 
+Those inherited from [Application](../entities/Application.md#relationships).
+
+## Constraints 
+The derived *in-response-to* association from [Application](../entities/Application.md) can only reference [Funding Calls](../entities/Funding_Call.md).
 
 ---
 
