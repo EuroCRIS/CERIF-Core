@@ -25,8 +25,6 @@ The Core consists of the following entities:
   * [Textual Document](./entities/Textual_Document.md)
 * [Affiliation Statement](./entities/Affiliation_Statement.md)
 * [Contribution Statement](./entities/Contribution_Statement.md)
-  * [Free Text Contribution Statement](./entities/Free_Text_Contribution_Statement.md)
-  * [Resource Contribution Statement](./entities/Resource_Contribution_Statement.md)
 * [Textual Document Accessibility Specification](./entities/Textual_Document_Accessibility_Specification.md)
 * [Project](./entities/Project.md)
 * [Event](./entities/Event.md)
