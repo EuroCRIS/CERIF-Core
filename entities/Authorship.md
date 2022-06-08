@@ -14,7 +14,7 @@ corresponding author flag: [Boolean](../datatypes/Boolean.md) - indicates whethe
 
 ## Relationships
 
-Beside those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#relationships), there is also also a link to *author*: an instance of [Agent](../entities/Agent.md) 
+Beside those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#relationships), there is also a link to *author*: an instance of [Agent](../entities/Agent.md) 
 [FIXME] replacing the derived *contributor* link from [Contribution to Document](../entities/Contribution_to_Document.md) 
 
 ---
