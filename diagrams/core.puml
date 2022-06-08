@@ -36,7 +36,7 @@
         }
     !endsub
 
-   !startsub Person
+    !startsub Person
         class "Person" #ffffff {
             name : Person_Name
             orcidId : ORCID_iD
@@ -133,6 +133,81 @@
             contacts : List<URI>
         }
     !endsub AffiliationStatement
+
+    !startsub Application
+        class "Application" #ffffff {
+            date : Date
+        }
+
+        class "Funding_Application" #ffffff {
+        }
+
+        class "Call_for_Applications" #ffffff {
+
+        }
+
+        class "Funding_Call" #ffffff {
+        }
+
+        class "Process" #ffffff {
+
+        }
+
+        class "Evaluation_Process" #ffffff {
+        }
+    !endsub Application
+
+    !startsub Application
+        "Application" -u-> "applicant" "Agent"
+    !endsub
+
+    !startsub Application
+        "Application" -u-> "addressee" "Agent"
+    !endsub
+
+    !startsub Application
+        "Application" *--> "evaluation" "Evaluation_Process"
+    !endsub
+
+    !startsub Application
+        "Application" --> "0..1 in-response-to" "Call_for_Applications"
+    !endsub
+
+    !startsub Application
+        "Application" *--> "0..1 contents" "Document"
+    !endsub
+
+    !startsub Application
+        "Application" <|-- "Funding_Application"
+    !endsub
+
+    !startsub Application
+        "Funding_Application" --> "in-response-to" "Funding_Call"
+    !endsub
+
+    !startsub Application
+        "Call_for_Applications" <|-- "Funding_Call"
+    !endsub
+
+    !startsub Application
+        "Process" --> "0..* organized by" "Agent"
+    !endsub
+
+    !startsub Application
+        "Process" *--> "0..1 decision" "Document"
+    !endsub
+
+    !startsub Application
+        "Process" *--> "0..* iterations" "Process"
+    !endsub
+
+    !startsub Application
+        "Process" <|-l- "Evaluation_Process"
+    !endsub
+
+    !startsub Application
+        "Evaluation_Process" --> "0..* reviewers" "Agent"
+    !endsub
 
     !startsub PostalAddress
         "Postal_Address" o-- "country" "Country"

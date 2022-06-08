@@ -1,0 +1,6 @@
+@startuml
+    !includesub core.puml!common
+    !includesub core.puml!Application
+    !includesub core.puml!Document
+    !includesub core.puml!Agent
+@enduml

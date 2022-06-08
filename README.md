@@ -30,7 +30,10 @@ The Core consists of the following entities:
 * [Event](./entities/Event.md)
 * [Resource](./entities/Resource.md)
   * [Funding](./entities/Funding.md)
-* [Application](./entities/Application.md), [Call for Applications](./entities/Call_for_Applications.md)
+* [Application](./entities/Application.md)
+  * [Funding Application](./entities/Funding_Application.md) 
+* [Call for Applications](./entities/Call_for_Applications.md)
+  * [Funding Call](./entities/Funding_Call.md)
 
 And the following data types:
 * [String](./datatypes/String.md)
