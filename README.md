@@ -32,7 +32,7 @@ The Core consists of the following entities:
 * [Event](./entities/Event.md)
 * [Resource](./entities/Resource.md)
   * [Funding](./entities/Funding.md)
-* ...
+* [Application](./entities/Application.md), [Invitation for Applications](./entities/Invitation_for_Applications.md)
 
 And the following data types:
 * [String](./datatypes/String.md)
