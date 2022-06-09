@@ -139,6 +139,10 @@
             date : Date
         }
 
+        class "Decision" #ffffff {
+            date : Date
+        }
+
         class "Funding_Application" #ffffff {
         }
 
@@ -166,7 +170,11 @@
     !endsub
 
     !startsub Application
-        "Application" *--> "evaluation" "Evaluation_Process"
+        "Application" --> "revises" "Application"
+    !endsub
+
+    !startsub Application
+        "Application" o--> "evaluation" "Evaluation_Process"
     !endsub
 
     !startsub Application
@@ -174,7 +182,15 @@
     !endsub
 
     !startsub Application
-        "Application" *--> "0..1 contents" "Document"
+        "Application" o--> "0..1 contents" "Document"
+    !endsub
+
+    !startsub Application
+        "Application" o--> "0..1 decision" "Decision"
+    !endsub
+
+    !startsub Application
+        "Decision" o--> "0..1 report" "Document"
     !endsub
 
     !startsub Application
@@ -194,11 +210,11 @@
     !endsub
 
     !startsub Application
-        "Process" *--> "0..1 decision" "Document"
+        "Process" o--> "0..1 decision" "Decision"
     !endsub
 
     !startsub Application
-        "Process" *--> "0..* iterations" "Process"
+        "Process" o--> "0..* substeps" "Process"
     !endsub
 
     !startsub Application
@@ -206,7 +222,7 @@
     !endsub
 
     !startsub Application
-        "Evaluation_Process" --> "0..* reviewers" "Agent"
+        "Evaluation_Process" --> "0..1 reviewer" "Agent"
     !endsub
 
     !startsub PostalAddress
