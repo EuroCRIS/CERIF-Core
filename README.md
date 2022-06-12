@@ -33,7 +33,7 @@ The Core consists of the following entities:
 * [Application](./entities/Application.md)
   * [Funding Application](./entities/Funding_Application.md) 
 * [Call for Applications](./entities/Call_for_Applications.md)
-  * [Funding Call](./entities/Funding_Call.md)
+  * [Call for Funding Applications](./entities/Call_for_Funding_Applications.md)
 
 And the following data types:
 * [String](./datatypes/String.md)
