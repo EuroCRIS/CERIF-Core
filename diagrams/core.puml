@@ -182,7 +182,7 @@
     !endsub
 
     !startsub Application
-        "Application" "0..*" -l- "0..1" "Call_for_Applications" : in-response-to >
+        "Application" "0..*" -l- "0..1" "Call_for_Applications" : in response to >
     !endsub
 
     !startsub Application
@@ -202,7 +202,7 @@
     !endsub
 
     !startsub Application
-        "Funding_Application" "0..*" -l- "0..1" "Call_for_Funding_Applications" : in-response-to >
+        "Funding_Application" "0..*" -l- "0..1" "Call_for_Funding_Applications" : in response to >
     !endsub
 
     !startsub Application
@@ -214,11 +214,11 @@
     !endsub
 
     !startsub Application
-'        "Process" o--> "0..1 decision" "Decision"
+        "Evaluation_Process" -d-> "0..1" "Decision" : make >
     !endsub
 
     !startsub Application
-'        "Process" o--> "0..* substeps" "Process"
+        "Process" o--> "0..*" "Process" : substeps >
     !endsub
 
     !startsub Application
@@ -322,7 +322,7 @@
         "Authorship" "0..*" --o "0..1 author" "Agent"
     !endsub
 
-    note on link #yellow: author == contributor
+    note on link #white : author == contributor
 
     !startsub Person
         "Person" ..> "name" "Person_Name"
@@ -364,5 +364,5 @@
         "Textual_Document" "0..* authoredDocuments" o-- "0..* authors" "Agent"
     !endsub
 
-    note left of Agent #yellow: The Agent is mandatory for almost all \nsubclasses of Contribution,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
+    note left of Agent #white: The Agent is mandatory for almost all \nsubclasses of Contribution,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
 @enduml
