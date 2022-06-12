@@ -162,63 +162,67 @@
     !endsub Application
 
     !startsub Application
-        "Application" -u-> "applicant" "Agent"
+        "Application" -u-> "0..1" "Agent" : applicant >
     !endsub
 
     !startsub Application
-        "Application" -u-> "addressee" "Agent"
+        "Application" -u-> "0..1" "Agent" : addressee >
     !endsub
 
     !startsub Application
-        "Application" --> "revises" "Application"
+		"Call_for_Applications" -u-> "issuer" "Agent"
     !endsub
 
     !startsub Application
-        "Application" o--> "evaluation" "Evaluation_Process"
+        "Application" --> "Application" : revise >
     !endsub
 
     !startsub Application
-        "Application" --> "0..1 in-response-to" "Call_for_Applications"
+        "Application" -- "0..1" "Evaluation_Process" : assessed in >
     !endsub
 
     !startsub Application
-        "Application" o--> "0..1 contents" "Document"
+        "Application" "0..*" -l- "0..1" "Call_for_Applications" : in-response-to >
     !endsub
 
     !startsub Application
-        "Application" o--> "0..1 decision" "Decision"
+        "Application" o-- "0..1" "Document" : contents >
     !endsub
 
     !startsub Application
-        "Decision" o--> "0..1 report" "Document"
+        "Application" -r- "0..1" "Decision" : on <
     !endsub
 
     !startsub Application
-        "Application" <|-- "Funding_Application"
+        "Decision" o-- "0..1" "Document" : expressed in >
     !endsub
 
     !startsub Application
-        "Funding_Application" --> "in-response-to" "Call_for_Funding_Applications"
+        "Application" <|-d- "Funding_Application"
     !endsub
 
     !startsub Application
-        "Call_for_Applications" <|-- "Call_for_Funding_Applications"
+        "Funding_Application" "0..*" -l- "0..1" "Call_for_Funding_Applications" : in-response-to >
     !endsub
 
     !startsub Application
-        "Process" --> "0..* organized by" "Agent"
+        "Call_for_Applications" <|-d- "Call_for_Funding_Applications"
     !endsub
 
     !startsub Application
-        "Process" o--> "0..1 decision" "Decision"
+        "Evaluation_Process" -u-> "0..*" "Agent" : organizer >
     !endsub
 
     !startsub Application
-        "Process" o--> "0..* substeps" "Process"
+'        "Process" o--> "0..1 decision" "Decision"
     !endsub
 
     !startsub Application
-        "Process" <|-l- "Evaluation_Process"
+'        "Process" o--> "0..* substeps" "Process"
+    !endsub
+
+    !startsub Application
+        "Process" <|-- "Evaluation_Process"
     !endsub
 
     !startsub Application
