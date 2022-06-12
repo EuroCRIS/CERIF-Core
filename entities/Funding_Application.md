@@ -13,7 +13,7 @@ Those of [Application](../entities/Application.md#attributes)
 Those inherited from [Application](../entities/Application.md#relationships).
 
 ## Constraints 
-The derived *in-response-to* association from [Application](../entities/Application.md) can only reference [Funding Calls](../entities/Funding_Call.md).
+The derived *in-response-to* association from [Application](../entities/Application.md) can only reference [Calls for Funding Applications](../entities/Call_for_Funding_Applications.md).
 
 ---
 

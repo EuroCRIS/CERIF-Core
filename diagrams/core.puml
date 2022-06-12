@@ -150,7 +150,7 @@
 
         }
 
-        class "Funding_Call" #ffffff {
+        class "Call_for_Funding_Applications" #ffffff {
         }
 
         class "Process" #ffffff {
@@ -198,11 +198,11 @@
     !endsub
 
     !startsub Application
-        "Funding_Application" --> "in-response-to" "Funding_Call"
+        "Funding_Application" --> "in-response-to" "Call_for_Funding_Applications"
     !endsub
 
     !startsub Application
-        "Call_for_Applications" <|-- "Funding_Call"
+        "Call_for_Applications" <|-- "Call_for_Funding_Applications"
     !endsub
 
     !startsub Application
