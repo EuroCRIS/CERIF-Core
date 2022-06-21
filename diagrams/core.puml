@@ -159,6 +159,10 @@
 
         class "Evaluation_Process" #ffffff {
         }
+        
+		class "Evaluation_Outcome" #ffffff {
+    	}
+
     !endsub Application
 
     !startsub Application
@@ -211,10 +215,16 @@
 
     !startsub Application
         "Evaluation_Process" -u-> "0..*" "Agent" : organizer >
+        "Decision" -u-> "0..*" "Agent" : make <
     !endsub
 
     !startsub Application
-        "Evaluation_Process" -d-> "0..1" "Decision" : make >
+    	"Evaluation_Process" --> "0..1" "Evaluation_Outcome" : result in >
+    	"Application" --> "0..1" "Evaluation_Outcome" : receive >    	
+    !endsub
+
+    !startsub Application
+        "Evaluation_Outcome" -d-> "0..1" "Decision" : form the basis for >
     !endsub
 
     !startsub Application
