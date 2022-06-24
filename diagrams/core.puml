@@ -153,14 +153,13 @@
         class "Call_for_Funding_Applications" #ffffff {
         }
 
-        class "Process" #ffffff {
-
-        }
-
-        class "Evaluation_Process" #ffffff {
-        }
-        
 		class "Evaluation_Outcome" #ffffff {
+    	}
+
+		class "Contribution_to_Evaluation_Outcome" #ffffff {
+    	}
+
+		class "Application_Review" #ffffff {
     	}
 
     !endsub Application
@@ -182,7 +181,7 @@
     !endsub
 
     !startsub Application
-        "Application" -- "0..1" "Evaluation_Process" : assessed in >
+        "Application" "0..1" -- "0..*" "Evaluation_Outcome" : of <
     !endsub
 
     !startsub Application
@@ -214,13 +213,7 @@
     !endsub
 
     !startsub Application
-        "Evaluation_Process" -u-> "0..*" "Agent" : organizer >
         "Decision" -u-> "0..*" "Agent" : make <
-    !endsub
-
-    !startsub Application
-    	"Evaluation_Process" --> "0..1" "Evaluation_Outcome" : result in >
-    	"Application" --> "0..1" "Evaluation_Outcome" : receive >    	
     !endsub
 
     !startsub Application
@@ -228,15 +221,12 @@
     !endsub
 
     !startsub Application
-        "Process" o--> "0..*" "Process" : substeps >
+        "Contribution" <|-- "Contribution_to_Evaluation_Outcome"
+        "Contribution_to_Evaluation_Outcome" <|-d- "Application_Review"
     !endsub
 
     !startsub Application
-        "Process" <|-- "Evaluation_Process"
-    !endsub
-
-    !startsub Application
-        "Evaluation_Process" --> "0..1 reviewer" "Agent"
+        "Contribution_to_Evaluation_Outcome" --> "Evaluation_Outcome"
     !endsub
 
     !startsub PostalAddress

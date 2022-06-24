@@ -9,7 +9,8 @@ Examples include job applications, grant proposals (i.e. requests for funding), 
 
 Some applications reference an explicit [Call for Applications](../entities/Call_for_Applications.md) (e.g. a funding call or call for nominations for an award), while other applications are based on an implicit invitation (e.g. a manuscript submitted to a journal).
 
-Applications, when submitted, enter some kind of an evaluation [Process](../entities/Process.md).
+Applications, when submitted, typically enter some kind of process which results in an [Evaluation Outcome](../entities/Evaluation_Outcome.md).
+Based on one or more such outcomes, a [Decision](../entities/Decision.md) is made.
 
 This entity represents the act of applying rather than the application [Document](../entities/Document.md). 
 
