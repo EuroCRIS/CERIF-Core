@@ -11,10 +11,11 @@ Those inherited from [Contribution](../entities/Contribution.md#attributes)
 
 ## Relationships
 
-Beside those inherited from [Contribution](../entities/Contribution.md#relationships), a Contribution to Evaluation Outcome always has the *[evaluation outcome]*: an instance of [Evaluation Outcome](../entities/Evaluation_Outcome.md).
+Beside those inherited from [Contribution](../entities/Contribution.md#relationships):
+
+A Contribution to Evaluation Outcome always has the *[evaluation outcome]*: an instance of [Evaluation Outcome](../entities/Evaluation_Outcome.md).
 
 ## Illustrative Diagram
-
 
 ---
 ## Matches
