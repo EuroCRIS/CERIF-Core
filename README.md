@@ -10,7 +10,35 @@ started in 2021 by [euroCRIS](https://www.eurocris.org/).
 
 ## Scope
 
-The Core consists of the following entities:
+[Agents](./entities/Agent.md) can perform [Activities](./entities/Activity.md). 
+[Persons](./entities/Person.md), [Groups](./entities/Group.md) and [Organisation Units](./entities/Organisation_Unit.md) are Agents. 
+A Group can have any number of Agents as members (so we track [Memberships](./entities/Membership.md), one type of an Activity).
+A Person can act on their own, in affiliation to or on behalf of an Organisation Unit or a Group. In the latter cases, [Affiliation Statements](./entities/Affiliation_Statement.md) describe the connection.
+
+Research is typically carried out in [Projects](./entities/Project.md). 
+Projects need [Resources](./entities/Resource.md), such as [Funding](./entities/Funding.md).
+Bringing Resources of different kinds is a way how Agents can make [Contributions to Projects](./entities/Contribution_to_Project.md).
+
+Scientific and other [Events](./entities/Event.md) support communication, including scholarly communication. 
+Agents can make different [Contributions to Events](./entities/Contribution_to_Event.md).
+
+Information and knowledge are typically stored in [Documents](./entities/Document.md), for instance [Textual Documents](./entities/Textual_Document.md).
+Agents can make different [Contributions to Documents](./entities/Contribution_to_Document.md), most notably that of [Authorship](./entities/Authorship.md).
+Accessibility of Documents is a pressing issue, so it can be expressed in [Textual Document Accessibility Specifications](./entities/Textual_Document_Accessibility_Specification.md).
+
+Agents prepare and submit [Applications](./entities/Application.md), for instance [Funding Applications](./entities/Funding_Application.md).
+This can occur in response to a [Call for Applications](./entities/Call_for_Applications.md), for instance a [Call for Funding Applications](./entities/Call_for_Funding_Applications.md), or outside of any such call, perhaps based on an implicit invitation to do so.
+Once submitted, an application, will go through some kind of evaluation process and in the end there will be a [Decision](./entities/Decision.md).
+On the way to it there may be [Evaluation Outcomes](./entities/Evaluation_Outcome.md).
+Agents can make [Contributions to Evaluation Outcomes](./entities/Contribution_to_Evaluation_Outcome.md), most notably by doing the [Application_Review](./entities/Application_Review.md).
+
+All the contributions mentioned above are subclasses of [Contribution](./entities/Contribution.md).
+A Contribution is another type of Activity.
+
+## Listings
+
+### Entities
+
 * [Agent](./entities/Agent.md)
   * [Person](./entities/Person.md)
   * [Organisation Unit](./entities/Organisation_Unit.md), [Group](./entities/Group.md) (or [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) to represent the intersection of these two)
@@ -35,8 +63,10 @@ The Core consists of the following entities:
 * [Application](./entities/Application.md)
   * [Funding Application](./entities/Funding_Application.md) 
 * [Evaluation Outcome](./entities/Evaluation_Outcome.md)
+* [Decision](./entities/Decision.md) 	
 
-And the following data types:
+### Data Types
+
 * [String](./datatypes/String.md)
 * [Date](./datatypes/Date.md)
 * [Boolean](./datatypes/Boolean.md)
@@ -54,6 +84,8 @@ And the following data types:
 * Codes for currencies: [ISO 4217 Alpha Code](./datatypes/ISO_4217_Alpha_Code.md)
 * Codes for scripts: [ISO 15924 Alpha4 Code](./datatypes/ISO_15924_Alpha4_Code.md)
 * ...
+
+## Illustrative Diagram
 
 ![The CERIF Core diagram](./diagrams/core.svg)
 
