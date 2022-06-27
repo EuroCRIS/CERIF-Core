@@ -17,6 +17,7 @@ A Person can act on their own, in affiliation to or on behalf of an Organisation
 
 Research is typically carried out in [Projects](./entities/Project.md). 
 Projects need [Resources](./entities/Resource.md), such as [Funding](./entities/Funding.md).
+Funding can cover Activities.
 Bringing Resources of different kinds is a way how Agents can make [Contributions to Projects](./entities/Contribution_to_Project.md).
 
 Scientific and other [Events](./entities/Event.md) support communication, including scholarly communication. 
