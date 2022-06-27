@@ -20,6 +20,8 @@ An Activity typically has the *[actor](../entities/Agent.md)*: an instance of [A
 
 An Activity has any number of *[affiliations](../entities/Affiliation_Statement.md)*: instances of [Affiliation Statement](../entities/Affiliation_Statement.md).</a>
 
+<a name="rel__be-covered-by"> An Activity can *[be covered by](../entities/Funding.md#user-content-rel__cover)* [Funding](../entities/Funding.md).</a>
+
 [comment]: # (TODO: Proof of the activity)
 
 

@@ -10,6 +10,9 @@ Money provided by an organization or government for a particular purpose.<sup>[1
 [Resource](../entities/Resource.md)
 
 ## Relationships
+Those of [Resource](../entities/Resource.md) plus:
+
+<a name="rel__cover">A Funding can *[cover](../entities/Activity.md#user-content-rel__be-covered-by)* any number of [Activities](../entities/Activity.md).</a>
 
 ---
 ## Matches

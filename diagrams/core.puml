@@ -253,6 +253,7 @@
 
     !startsub Contribution
         "Contribution" *-r- "0..*" "Contribution_Statement" : is detailed in >
+        "Activity" "0..*" -- "0..*" "Funding" : is covered by >
     !endsub
 
     !startsub ContributionToDocument
