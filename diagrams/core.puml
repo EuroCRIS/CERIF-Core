@@ -67,7 +67,7 @@
     !startsub OrgUnitWithMembers
             class "Organisation_Unit_with_Members" #ffffff {
             }
-        !endsub
+    !endsub
 
     !startsub ContributionToProject
         class "Contribution_to_Project" #ffffff {
@@ -97,6 +97,9 @@
         }
     
         class "Resource" #ffffff {
+        }
+
+        class "Funding" #ffffff {
         }
     !endsub
 
@@ -205,11 +208,9 @@
     !endsub
 
     !startsub Application
-        "Funding_Application" "0..*" -l- "0..1" "Call_for_Funding_Applications" : in response to >
-    !endsub
-
-    !startsub Application
         "Call_for_Applications" <|-d- "Call_for_Funding_Applications"
+		"Call_for_Funding_Applications" o-- "Funding"
+		"Funding_Application" o-- "Funding"
     !endsub
 
     !startsub Application
@@ -230,36 +231,32 @@
     !endsub
 
     !startsub PostalAddress
-        "Postal_Address" o-- "country" "Country"
+        "Postal_Address" o..> "country" "Country"
     !endsub
 
     !startsub PostalAddress
-        "Affiliation_Statement" ..> "postalAddress" "Postal_Address"
+        "Affiliation_Statement" o..> "Postal_Address" : address >
     !endsub
 
     !startsub AffiliationStatement
-        "Affiliation_Statement" o-- "0..1 orgUnit" "Organisation_Unit"
+        "Affiliation_Statement" o-- "0..1" "Organisation_Unit" : organisation unit >
     !endsub
 
     !startsub AffiliationStatement
-        "Affiliation_Statement" o-- "0..1 institution" "Organisation_Unit"
-        '    "Affiliation_Statement" o-- "person" "Person"
+        "Affiliation_Statement" o-- "0..1" "Organisation_Unit" : institution >
+        "Affiliation_Statement" o-- "0..1" "Person" : person >
     !endsub
 
     !startsub AffiliationStatement
-        "Person" o-- "0..* affiliations" "Affiliation_Statement"
-    !endsub
-
-    !startsub AffiliationStatement
-        "Activity" *-- "0..* affiliations" "Affiliation_Statement"
+        "Activity" "0..*" o-- "0..*" "Affiliation_Statement" : affilations >
     !endsub
 
     !startsub Contribution
-        "Contribution" *-- "0..* contributionStatements" "Contribution_Statement"
+        "Contribution" *-r- "0..*" "Contribution_Statement" : is detailed in >
     !endsub
 
     !startsub ContributionToDocument
-        "Contribution_to_Document" --> "document" "Document"
+        "Contribution_to_Document" --> "Document" : document >
     !endsub
 
     !startsub Activity
@@ -283,7 +280,7 @@
     !endsub
 
     !startsub ContributionToProject
-        "Contribution_to_Project" --> "project" "Project"
+        "Contribution_to_Project" --> "Project" : project >
     !endsub
 
     !startsub ContributionToEvent
@@ -291,7 +288,7 @@
     !endsub
 
     !startsub ContributionToEvent
-        "Contribution_to_Event" --> "event" "Event"
+        "Contribution_to_Event" --> "Event" : event >
     !endsub
 
     !startsub Contribution
@@ -303,7 +300,7 @@
     !endsub
 
     !startsub Membership
-        "Membership" "0..*" --> "0..1 member of" "Group"
+        "Membership" "0..*" --> "0..1" "Group" : in >
     !endsub
 
    ' !startsub Contribution
@@ -315,7 +312,8 @@
    ' !endsub
 
     !startsub Contribution
-        "Contribution_Statement" --> "0..1 resource" "Resource"
+         "Contribution_Statement" --> "0..1" "Resource" : reference >
+         "Resource" <|-- "Funding"
     !endsub
 
     !startsub Authorship
@@ -337,7 +335,7 @@
     !endsub
 
     !startsub PostalAddress
-        "Organisation_Unit" ..> "0..1 address" "Postal_Address"
+        "Organisation_Unit" ..> "0..1" "Postal_Address" : address >
     !endsub
 
     !startsub Group
