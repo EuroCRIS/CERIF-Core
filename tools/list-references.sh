@@ -30,3 +30,14 @@ while read N F ; do
     else echo $N $F - MISSING!
   fi
 done
+
+ls ./entities/*.md >${TMPDIR}/CERIF-entities-$$.txt
+sed <README.md -e '1,/## Scope/d' -e '/^## /,$d' \
+| grep -oh -e '\(./entities/[A-Za-z0-9_]*\.md\)' \
+| sort \
+| join -v2 - ${TMPDIR}/CERIF-entities-$$.txt >${TMPDIR}/CERIF-entities-undescribed-$$.txt
+if [ -s ${TMPDIR}/CERIF-entities-undescribed-$$.txt ] ; then
+	echo
+	echo 'Entities missing from the Scope description in the README.md file:'
+	cat ${TMPDIR}/CERIF-entities-undescribed-$$.txt
+fi
