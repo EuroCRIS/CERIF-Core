@@ -13,6 +13,7 @@ started in 2021 by [euroCRIS](https://www.eurocris.org/).
 [Agents](./entities/Agent.md) can perform [Activities](./entities/Activity.md). 
 [Persons](./entities/Person.md), [Groups](./entities/Group.md) and [Organisation Units](./entities/Organisation_Unit.md) are Agents. 
 A Group can have any number of Agents as members (so we track [Memberships](./entities/Membership.md), one type of an Activity).
+[Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) is a mixin of both Group and Organisation Unit.
 A Person can act on their own, in affiliation to or on behalf of an Organisation Unit or a Group. In the latter cases, [Affiliation Statements](./entities/Affiliation_Statement.md) describe the connection.
 
 Research is typically carried out in [Projects](./entities/Project.md). 
@@ -35,6 +36,7 @@ Agents can make [Contributions to Evaluation Outcomes](./entities/Contribution_t
 
 All the contributions mentioned above are subclasses of [Contribution](./entities/Contribution.md).
 A Contribution is another type of Activity.
+Contributions can be further detailed with any number of [Contribution Statements](./entities/Contribution_Statement.md).
 
 ## Listings
 
