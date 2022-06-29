@@ -11,6 +11,9 @@ A document may manifest symbolic, diagrammatic or sensory-representational infor
 [FIXME]
 It is an abstract entity representing the root ancestor for research outputs such as Journal Article, Dataset, Software, Patent, etc. All relatioships which might be linked with any research output, should be generalized by linking the Document entity.
 
+## Specialization of
+[Resource](../entities/Resource.md)
+
 ## Attributes
 <a name="DOI">DOI : [DOI Type](../datatypes/DOI.md)</a>
 

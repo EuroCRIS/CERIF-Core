@@ -352,6 +352,7 @@
     !endsub
 
     !startsub Document
+    	"Resource" <|-- "Document"
         "Document" <|-- "Textual_Document"
     !endsub
 
