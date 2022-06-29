@@ -31,4 +31,4 @@ An Affiliation Statement can optionally be linked with *organisation unit*, an i
 
 An Affiliation Statement is typically linked with *person*: an instance of [Person](../entities/Person.md).
 
-An Affiliation Statement can optionally be linked with an *activity*: an instance of [Activity](../entities/Activity.md).
+<a name="rel__is-used-in">An Affiliation Statement can optionally *[be used in](../entities/Activity.md#user-content-rel__has-affiliation-statements)* any number of [Activities](../entities/Activity.md).</a>
