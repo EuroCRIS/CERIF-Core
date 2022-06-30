@@ -2,7 +2,7 @@
 
 ## Definition
 
-The conclusions of an evaluation process.
+The conclusions from considering an Application.
 
 ## Usage notes
 

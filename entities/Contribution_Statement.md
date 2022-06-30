@@ -22,4 +22,4 @@ statement: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
 
-A Contribution Statement might has the *[resource](../entities/Resource.md)*: an instance of [Resource](../entities/Resource.md). For instance it might be funding, expertise, equipment, time. or space
+A Contribution Statement can optionally *[reference](../entities/Resource.md)* a [Resource](../entities/Resource.md). For instance it might be funding, expertise, equipment, time. or space

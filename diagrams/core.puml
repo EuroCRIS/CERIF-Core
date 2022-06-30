@@ -96,6 +96,10 @@
             statement : Multilingual_String
         }
     
+        class "Resource_Usage_Statement" #ffffff {
+            statement : Multilingual_String
+        }
+    
         class "Resource" #ffffff {
         }
 
@@ -252,8 +256,7 @@
     !endsub
 
     !startsub Contribution
-        "Contribution" *-r- "0..*" "Contribution_Statement" : is detailed in >
-        "Activity" "0..*" -- "0..*" "Funding" : is covered by >
+        "Contribution" *-l- "0..*" "Contribution_Statement" : is detailed in >
     !endsub
 
     !startsub ContributionToDocument
@@ -313,7 +316,9 @@
    ' !endsub
 
     !startsub Contribution
-         "Contribution_Statement" --> "0..1" "Resource" : reference >
+         "Contribution_Statement" --> "0..1" "Resource" : produce >
+         "Resource_Usage_Statement" --> "Resource" : use >
+         "Contribution_Statement" o-l- "0..*" "Resource_Usage_Statement"
          "Resource" <|-- "Funding"
     !endsub
 
