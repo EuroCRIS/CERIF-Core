@@ -171,6 +171,13 @@
 
     !endsub Application
 
+    !startsub Distinctions
+		class "Prize" #ffffff {
+    	}
+		class "Distinction" #ffffff {
+    	}
+    !endsub
+
     !startsub Application
         "Application" -u-> "0..1" "Agent" : applicant >
     !endsub
@@ -181,10 +188,6 @@
 
     !startsub Application
 		"Call_for_Applications" -u-> "issuer" "Agent"
-    !endsub
-
-    !startsub Application
-        "Application" --> "Application" : revise >
     !endsub
 
     !startsub Application
@@ -316,8 +319,8 @@
    ' !endsub
 
     !startsub Contribution
-         "Contribution_Statement" --> "0..1" "Resource" : produce >
-         "Resource_Usage_Statement" --> "Resource" : use >
+         "Contribution_Statement" --> "0..1" "Resource" : provides >
+         "Resource_Usage_Statement" --> "Resource" : uses >
          "Contribution_Statement" o-l- "0..*" "Resource_Usage_Statement"
          "Resource" <|-- "Funding"
     !endsub
@@ -368,6 +371,36 @@
     !startsub Authorship
         "Textual_Document" "0..* authoredDocuments" o-- "0..* authors" "Agent"
     !endsub
+
+    !startsub Distinctions
+    	"Distinction" "0..*" -l-o "Prize" : by awarding >
+    	"Distinction" --> "Agent" : goes to >
+    	"Prize" --> "Agent" : by whom >
+    	"Distinction" --> "0..1" "Document" : for >
+    	"Distinction" --> "0..1" "Project" : for >
+    	"Distinction" --> "0..1" "Event" : for >    	
+    !endsub
+
+    class "Resource_Offer" #ffffff {
+    }
+    
+    "Resource_Offer" --> "1..*" "Resource" : of >
+    
+    "Resource_Offer" <|-- "Call_for_Applications"
+    
+    class "Condition_Statement" #ffffff {
+    }
+
+	"Resource_Offer" o-- "0..*" "Condition_Statement" : comes with >
+
+    class "Resource_Request" #ffffff {
+    }
+
+    "Resource_Request" <|-- "Application"
+    
+	"Resource_Request" o-- "0..*" "Document" : described in >
+
+    "Resource_Request" "0..*" --> "0..1" "Resource_Request" : revise >
 
     note left of Agent #white: The Agent is mandatory for almost all \nsubclasses of Contribution,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
 @enduml
