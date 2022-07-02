@@ -17,3 +17,5 @@ URIs for the datatypes (used in interchange formats) should be constructed using
 5. **References**: References to external resources in case these are referenced.
 
 A heading is left out if the section is empty.
+
+Use the [template file](./TEMPLATE_DATATYPE.md) as a starting point.
