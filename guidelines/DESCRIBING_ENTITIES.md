@@ -25,11 +25,13 @@ In UML diagrams and in interchange formats the camel-case notation should be use
 
 A heading is left out if the section is empty.
 
+Use the [template file](./TEMPLATE_ENTITY.md) as a starting point.
+
 ## Handling inheritance
 
 Inherited attributes and relationships in a subclass are not listed explicitly, 
 but the relevant section in the superclass is referenced, 
-e.g. [Person relationships](../entities/Person.md#relationships).
+e.g. [Document relationships](../entities/Document.md#relationships).
 
 ## Additional notes
 
