@@ -171,10 +171,10 @@
 
     !endsub Application
 
-    !startsub Distinctions
+    !startsub Prize_Awards
 		class "Prize" #ffffff {
     	}
-		class "Distinction" #ffffff {
+		class "Prize_Award" #ffffff {
     	}
     !endsub
 
@@ -372,13 +372,13 @@
         "Textual_Document" "0..* authoredDocuments" o-- "0..* authors" "Agent"
     !endsub
 
-    !startsub Distinctions
-    	"Distinction" "0..*" -l-o "Prize" : by awarding >
-    	"Distinction" --> "Agent" : goes to >
+    !startsub PrizeAwards
+    	"Prize_Award" "0..*" -l-o "Prize" : of >
+    	"Prize_Award" --> "Agent" : recipient >
     	"Prize" --> "Agent" : by whom >
-    	"Distinction" --> "0..1" "Document" : for >
-    	"Distinction" --> "0..1" "Project" : for >
-    	"Distinction" --> "0..1" "Event" : for >    	
+    	"Prize_Award" --> "0..1" "Document" : for >
+    	"Prize_Award" --> "0..1" "Project" : for >
+    	"Prize_Award" --> "0..1" "Event" : for >    	
     !endsub
 
     class "Resource_Offer" #ffffff {
