@@ -361,11 +361,11 @@
 
     !startsub Document
     	"Resource" <|-- "Document"
-        "Document" <|-- "Textual_Document"
+        "Document" <|-d- "Textual_Document"
     !endsub
 
     !startsub AccessRights
-        "Textual_Document" *-- "0..* accessRights" "Textual_Document_Accessibility_Specification"
+        "Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
     !endsub
 
     !startsub Authorship
@@ -417,6 +417,9 @@
     "Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Condition"
     "Condition" <|-- "Expertise_and_Skills_Condition"
     
-    "Education" <|-- "Activity"
+    class "Education" #ffffff {
+    }
+    
+    "Activity" <|-- "Education"
 
 @enduml
