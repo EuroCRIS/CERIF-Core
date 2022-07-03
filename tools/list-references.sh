@@ -43,3 +43,24 @@ if [ -s ${TMPDIR}/CERIF-entities-undescribed-$$.txt ] ; then
 	cat ${TMPDIR}/CERIF-entities-undescribed-$$.txt
 fi
 
+ls ./entities/*.md >${TMPDIR}/CERIF-entities-$$.txt
+sed <README.md -e '1,/### Entities/d' -e '/^### /,$d' \
+| grep -oh -e '\(./entities/[A-Za-z0-9_]*\.md\)' \
+| sort \
+| join -v2 - ${TMPDIR}/CERIF-entities-$$.txt >${TMPDIR}/CERIF-entities-undescribed-$$.txt
+if [ -s ${TMPDIR}/CERIF-entities-undescribed-$$.txt ] ; then
+	echo
+	echo 'Entities missing from the Listing / Entities section in the README.md file:'
+	cat ${TMPDIR}/CERIF-entities-undescribed-$$.txt
+fi
+
+ls ./datatypes/*.md >${TMPDIR}/CERIF-datatypes-$$.txt
+sed <README.md -e '1,/### Data Types/d' -e '/^## /,$d' \
+| grep -oh -e '\(./datatypes/[A-Za-z0-9_]*\.md\)' \
+| sort \
+| join -v2 - ${TMPDIR}/CERIF-datatypes-$$.txt >${TMPDIR}/CERIF-datatypes-undescribed-$$.txt
+if [ -s ${TMPDIR}/CERIF-datatypes-undescribed-$$.txt ] ; then
+	echo
+	echo 'Datatypes missing from the Listing / Datatypes section in the README.md file:'
+	cat ${TMPDIR}/CERIF-datatypes-undescribed-$$.txt
+fi
