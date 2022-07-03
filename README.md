@@ -43,6 +43,8 @@ But a Resource Offer can specify any other [Conditions](../entities/Condition.md
 Opposite to a Resource Offer, we can also have a [Resource Request](../entities/Resource_Request.md).
 Calls for Application are one example of Resource Requests.
 
+[Prizes](./entities/Prize.md) are conferred on Agents in [Prize Awards](./entities/Prize_Award.md).
+
 ## Listings
 
 ### Entities
@@ -55,6 +57,8 @@ Calls for Application are one example of Resource Requests.
       * [Authorship](./entities/Authorship.md)
     * [Contribution to Project](./entities/Contribution_to_Project.md)
     * [Contribution to Event](./entities/Contribution_to_Event.md)
+    * [Contribution to Evaluation Outcome](./entities/Contribution_to_Evaluation_Outcome.md)
+      * [Application Review](./entities/Application_Review.md)
   * [Membership](./entities/Membership.md)
 * [Document](./entities/Document.md)
   * [Textual Document](./entities/Textual_Document.md)
@@ -67,21 +71,33 @@ Calls for Application are one example of Resource Requests.
   * [Funding](./entities/Funding.md)
 * [Resource Offer](../entities/Resource_Offer.md)
 * [Resource Request](../entities/Resource_Request.md)
+* [Resource Usage Statement](./entities/Resource_Usage_Statement.md)
+* [Condition](./entities/Condition.md)
 * [Call for Applications](./entities/Call_for_Applications.md)
   * [Call for Funding Applications](./entities/Call_for_Funding_Applications.md)
 * [Application](./entities/Application.md)
   * [Funding Application](./entities/Funding_Application.md) 
 * [Evaluation Outcome](./entities/Evaluation_Outcome.md)
 * [Decision](./entities/Decision.md) 	
+* [Prize](./entities/Prize.md)
+* [Prize Award](./entities/Prize_Award.md)
+* [Expertise and Skills](./entities/Expertise_and_Skills.md)
+* [Expertise and Skills Condition](./entities/Expertise_and_Skills_Condition.md)
+* [Expertise and Skills Posession](./entities/Expertise_and_Skills_Posession.md)
 
 ### Data Types
 * [String](./datatypes/String.md)
 * [Date](./datatypes/Date.md)
 * [Boolean](./datatypes/Boolean.md)
+* [Decimal](./datatypes/Decimal.md)
 * [Multilingual String](./datatypes/Multilingual_String.md)
 * [ORCID iD Type](./datatypes/ORCID_iD.md)
 * [ROR ID Type](./datatypes/ROR_ID.md)
-* [URI](./datatypes/URI.md)
+* [URI Type](./datatypes/URI.md)
+* [DOI Type](./datatypes/DOI.md)
+* [Fundref ID Type](./datatypes/Fundref_ID.md)
+* [ISNI ID Type](./datatypes/ISNI_ID.md)
+* [Wikidata ID Type](./datatypes/Wikidata_ID.md)
 * [Person Name](./datatypes/Person_Name.md)
 * [Postal Address](./datatypes/Postal_Address.md)
 * [Language](./datatypes/Language.md), [Country](./datatypes/Country.md), [Script](./datatypes/Script.md)
