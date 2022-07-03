@@ -1,4 +1,4 @@
-# Affiliation Statement
+# Affiliation
 
 ## Definition
 
@@ -25,10 +25,10 @@ contacts: List<[URI](../datatypes/URI.md)>
 
 ## Relationships
 
-An Affiliation Statement can optionally be linked with *institution*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).
+An Affiliation can optionally be linked with *institution*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).
 
-An Affiliation Statement can optionally be linked with *organisation unit*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).
+An Affiliation can optionally be linked with *organisation unit*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).
 
-An Affiliation Statement is typically linked with *person*: an instance of [Person](../entities/Person.md).
+An Affiliation is typically linked with *person*: an instance of [Person](../entities/Person.md).
 
-<a name="rel__is-used-in">An Affiliation Statement can optionally *[be used in](../entities/Activity.md#user-content-rel__has-affiliation-statements)* any number of [Activities](../entities/Activity.md).</a>
+<a name="rel__is-used-in">An Affiliation can optionally *[be used in](../entities/Activity.md#user-content-rel__has-affiliation-statements)* any number of [Activities](../entities/Activity.md).</a>

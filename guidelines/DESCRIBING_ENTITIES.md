@@ -2,9 +2,9 @@
 
 ## Naming
 
-Entities should be named with capitalized first letters of each word in the text with spaces between the words (e.g. [Affiliation Statement](../entities/Affiliation_Statement.md)). 
-The markdown files that describe these entities should be named the same, just with underscores instead of spaces (e.g. ../entities/Affiliation_Statement.md).
-The entities in UML diagrams should be also named with underscores (e.g. "Affiliation_Statement").
+Entities should be named with capitalized first letters of each word in the text with spaces between the words (e.g. [Affiliation](../entities/Affiliation.md)). 
+The markdown files that describe these entities should be named the same, just with underscores instead of spaces (e.g. ../entities/Affiliation.md).
+The entities in UML diagrams should be also named with underscores (e.g. "Affiliation").
 URIs for the entity types (used in interchange formats) should be constructed using the form with underscores (e.g. "https://w3id.org/cerif/xxx/entities/Affilation_Statement" – a ficticious URI so far).
 
 Attributes and relationship ends should be called with lowercase letters in the text with spaces between the words (e.g. "web site URL" or "contribution statements").

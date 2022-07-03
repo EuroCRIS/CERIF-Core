@@ -9,7 +9,7 @@ The information interchanged is not necessarily intended to be public.
 Agents can perform [Activities](./entities/Activity.md).
 
 Persons can act on their own, in affiliation to or on behalf of an Organisation Unit or a Group (optionally in their Position).
-In the latter cases, one or more [Affiliation Statements](./entities/Affiliation_Statement.md) describe the connection.
+In the latter cases, one or more [Affiliations](./entities/Affiliation.md) describe the connection.
 
 A Group can have any number of Agents as members (so we track [Memberships](./entities/Membership.md), one type of Activity).
 If members of an Organisation Unit are to be represented, [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) can be used.
@@ -58,7 +58,7 @@ Calls for Application are one example of Resource Requests.
   * [Membership](./entities/Membership.md)
 * [Document](./entities/Document.md)
   * [Textual Document](./entities/Textual_Document.md)
-* [Affiliation Statement](./entities/Affiliation_Statement.md)
+* [Affiliation](./entities/Affiliation.md)
 * [Contribution Statement](./entities/Contribution_Statement.md)
 * [Textual Document Accessibility Specification](./entities/Textual_Document_Accessibility_Specification.md)
 * [Project](./entities/Project.md)
