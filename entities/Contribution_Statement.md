@@ -17,9 +17,7 @@ Another example of a structured contribution statement:
 > Agency XYZ provided Funding to project PQR.
 
 ## Attributes
-
 statement: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
-
-A Contribution Statement can optionally *[reference](../entities/Resource.md)* a [Resource](../entities/Resource.md). For instance it might be funding, expertise, equipment, time. or space
+<a name="rel__resource">A Contribution Statement can optionally *[reference](../entities/Resource.md#user-content-rel__produced-by)* a [Resource](../entities/Resource.md) that it produced. For instance it can be funding, expertise, equipment, time or space.</a>
