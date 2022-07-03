@@ -51,7 +51,7 @@ sed <README.md -e '1,/### Entities/d' -e '/^### /,$d' \
 if [ -s ${TMPDIR}/CERIF-entities-undescribed-$$.txt ] ; then
 	echo
 	echo 'Entities missing from the Listing / Entities section in the README.md file:'
-	cat ${TMPDIR}/CERIF-entities-undescribed-$$.txt
+	sed -e 's/\(\.\/entities\/\)\([A-Za-z0-9_]*\)\(\.md\)/* [\2](\1\2\3)/' ${TMPDIR}/CERIF-entities-undescribed-$$.txt
 fi
 
 ls ./datatypes/*.md >${TMPDIR}/CERIF-datatypes-$$.txt
@@ -62,5 +62,5 @@ sed <README.md -e '1,/### Data Types/d' -e '/^## /,$d' \
 if [ -s ${TMPDIR}/CERIF-datatypes-undescribed-$$.txt ] ; then
 	echo
 	echo 'Datatypes missing from the Listing / Datatypes section in the README.md file:'
-	cat ${TMPDIR}/CERIF-datatypes-undescribed-$$.txt
+	sed -e 's/\(\.\/datatypes\/\)\([A-Za-z0-9_]*\)\(\.md\)/* [\2](\1\2\3)/' ${TMPDIR}/CERIF-datatypes-undescribed-$$.txt
 fi
