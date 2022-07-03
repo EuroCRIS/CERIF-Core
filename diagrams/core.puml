@@ -388,10 +388,10 @@
     
     "Resource_Offer" <|-- "Call_for_Applications"
     
-    class "Condition_Statement" #ffffff {
+    class "Condition" #ffffff {
     }
 
-	"Resource_Offer" o-- "0..*" "Condition_Statement" : comes with >
+	"Resource_Offer" o-- "0..*" "Condition" : has >
 
     class "Resource_Request" #ffffff {
     }
@@ -401,6 +401,22 @@
 	"Resource_Request" o-- "0..*" "Document" : described in >
 
     "Resource_Request" "0..*" --> "0..1" "Resource_Request" : revise >
+    
+    class "Expertise_and_Skills" #ffffff {
+    }
 
-    note left of Agent #white: The Agent is mandatory for almost all \nsubclasses of Contribution,\nReviewing is the exception if the \nreviewer's identity is concealed. \nAlso useful when authors are \nusing pseudonyms.
+    class "Expertise_and_Skills_Posession" #ffffff {
+    }
+    
+    class "Expertise_and_Skills_Condition" #ffffff {
+    }
+    
+    "Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Posession"
+    "Agent" <-- "0..*" "Expertise_and_Skills_Posession"
+
+    "Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Condition"
+    "Condition" <|-- "Expertise_and_Skills_Condition"
+    
+    "Education" <|-- "Activity"
+
 @enduml
