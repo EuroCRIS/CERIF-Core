@@ -87,7 +87,7 @@ Calls for Application are one example of Resource Requests.
 
 ### Data Types
 * [String](./datatypes/String.md)
-* [Date](./datatypes/Date.md)
+* [Date](./datatypes/Date.md), [Date Range](./datatypes/Date_Range.md)
 * [Boolean](./datatypes/Boolean.md)
 * [Decimal](./datatypes/Decimal.md)
 * [Multilingual String](./datatypes/Multilingual_String.md)
