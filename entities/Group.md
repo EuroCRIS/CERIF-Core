@@ -6,7 +6,7 @@ A non-formal group of [persons](../entities/Person.md) and [organizations](../en
 ## Usage notes
 
 ## Specialization of
-[Agent](../entities/Agent.md)
+[Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md)
 
 ## Attributes
 name: [Multilingual String](../datatypes/Multilingual_String.md)

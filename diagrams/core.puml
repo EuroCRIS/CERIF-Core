@@ -23,6 +23,8 @@
     !startsub Agent
         class "Agent" #ffffff {
         }
+        class "Group_or_Organisation_Unit" #ffffff {
+        }
     !endsub
 
     !startsub OrgUnit
@@ -51,6 +53,7 @@
 
     !startsub Activity
         class "Activity" #ffffff {
+      		dateRange : Date_Range
         }
     !endsub
 
@@ -246,15 +249,6 @@
     !endsub
 
     !startsub AffiliationStatement
-        "Affiliation_Statement" o-- "0..1" "Organisation_Unit" : organisation unit >
-    !endsub
-
-    !startsub AffiliationStatement
-        "Affiliation_Statement" o-- "0..1" "Organisation_Unit" : institution >
-        "Affiliation_Statement" o-- "0..1" "Person" : person >
-    !endsub
-
-    !startsub AffiliationStatement
         "Activity" "0..*" o-- "0..*" "Affiliation_Statement" : affilations >
     !endsub
 
@@ -300,14 +294,6 @@
 
     !startsub Contribution
         "Activity" <|-- "Contribution"
-    !endsub
-
-    !startsub Membership
-        "Activity" <|-- "Membership"
-    !endsub
-
-    !startsub Membership
-        "Membership" "0..*" --> "0..1" "Group" : in >
     !endsub
 
    ' !startsub Contribution
@@ -420,6 +406,33 @@
     class "Education" #ffffff {
     }
     
-    "Activity" <|-- "Education"
+    "Activity" <|-- "Engagement"
+    
+    class "Engagement" #ffffff {
+    }
+    
+    class "Employment" #ffffff {
+    }
+    
+    "Engagement" <|-- "Employment"
+    "Engagement" <|-- "Membership"
+    "Engagement" <|-- "Education"
+        
+	"Employment" "0..1" --> "0..*" "Document" : contract >
+	
+	"Employment" "0..*" --> "0..1" "Organisation_Unit" : employed by >
+
+	"Engagement" "0..*" -l-> "0..*" "Affiliation_Statement" : is the foundation for >
+
+	"Engagement" "0..*" --> "Group_or_Organisation_Unit" : in >
+	
+	"Group_or_Organisation_Unit" <|-- "Group"
+
+	"Group_or_Organisation_Unit" <|-- "Organisation_Unit"
+
+	"Agent" <|-- "Group_or_Organisation_Unit"
+	
+	"Engagement" "0..*" --> "0..1" "Engagement" : part >
+	"Engagement" "0..*" --> "0..*" "Engagement" : part transitive >
 
 @enduml

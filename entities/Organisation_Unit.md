@@ -15,7 +15,7 @@ In the research information domain Organisation Units typically represents:
 6. other bodies: editorial boards, evaluation panels, or committees of all kinds.
 
 ## Specialization of
-[Agent](../entities/Agent.md)
+[Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md)
 
 ## Attributes
 name: [Multilingual String](../datatypes/Multilingual_String.md)
