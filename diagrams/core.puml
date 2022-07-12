@@ -418,7 +418,14 @@
     "Engagement" <|-- "Membership"
     "Engagement" <|-- "Education"
         
+    class "Position_Title" #ffffff {
+    }
+
+	"Affiliation_Statement" "0..*" --> "0..1" "Position_Title" : position >
+	
 	"Employment" "0..1" --> "0..*" "Document" : contract >
+	
+	"Engagement" "0..*" --> "0..1" "Position_Title" : position >
 	
 	"Employment" "0..*" --> "0..1" "Organisation_Unit" : employed by >
 
