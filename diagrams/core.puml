@@ -133,8 +133,8 @@
     !endsub
 
     !startsub AffiliationStatement
-        class "Affiliation" #ffffff {
-            displayAffiliation : String
+        class "Affiliation_Statement" #ffffff {
+            displayAffiliation_Statement : String
             displayPersonName : String
             address : Postal_Address
             contacts : List<URI>
@@ -242,20 +242,20 @@
     !endsub
 
     !startsub PostalAddress
-        "Affiliation" o..> "Postal_Address" : address >
+        "Affiliation_Statement" o..> "Postal_Address" : address >
     !endsub
 
     !startsub AffiliationStatement
-        "Affiliation" o-- "0..1" "Organisation_Unit" : organisation unit >
+        "Affiliation_Statement" o-- "0..1" "Organisation_Unit" : organisation unit >
     !endsub
 
     !startsub AffiliationStatement
-        "Affiliation" o-- "0..1" "Organisation_Unit" : institution >
-        "Affiliation" o-- "0..1" "Person" : person >
+        "Affiliation_Statement" o-- "0..1" "Organisation_Unit" : institution >
+        "Affiliation_Statement" o-- "0..1" "Person" : person >
     !endsub
 
     !startsub AffiliationStatement
-        "Activity" "0..*" o-- "0..*" "Affiliation" : affilations >
+        "Activity" "0..*" o-- "0..*" "Affiliation_Statement" : affilations >
     !endsub
 
     !startsub Contribution

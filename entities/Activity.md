@@ -15,7 +15,7 @@ end date: [Date](../datatypes/Date.md)
 ## Relationships
 <a name="rel__actor">An Activity typically has the *[actor](../entities/Agent.md#user-content-rel__activity)*: an instance of [Agent](../entities/Agent.md).</a> For some subclasses of Activity, the Agent may not be known or disclosed (e.g. for blind reviews). Also if the actor uses a pseudonym, their identity (and sometimes event the type) are unknown, in which case just the display name is available.</a>
 
-<a name="rel__has-affiliation-statements">An Activity *[has](../entities/Affiliation.md#user-content-rel__is-used-in)* any number of [Affiliations](../entities/Affiliation.md).</a>
+<a name="rel__has-affiliation-statements">An Activity *[has](../entities/Affiliation_Statement.md#user-content-rel__is-used-in)* any number of [Affiliation Statements](../entities/Affiliation_Statement.md).</a>
 
 [comment]: # (TODO: Proof of the activity)
 
