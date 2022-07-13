@@ -9,10 +9,7 @@ Activities represent [Contributions](../entities/Contribution.md) to different t
 or [Involvements](../entities/Involvement.md) in [Groups or Organisation Units](../entities/Group_or_Organisation_Unit.md).
 
 ## Attributes
-
-start date: [Date](../datatypes/Date.md)
-
-end date: [Date](../datatypes/Date.md)
+date range : [Date Range](../datatypes/Date_Range.md)
 
 ## Relationships
 <a name="rel__actor">An Activity typically has the *[actor](../entities/Agent.md#user-content-rel__activity)*: an instance of [Agent](../entities/Agent.md).</a> For some subclasses of Activity, the Agent may not be known or disclosed (e.g. for blind reviews). Also if the actor uses a pseudonym, their identity (and sometimes event the type) are unknown, in which case just the display name is available.</a>
