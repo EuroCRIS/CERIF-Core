@@ -48,7 +48,7 @@
 
     !startsub aut
     object "<u>Authorship 1 : Authorship</u>" as Aut1 #ffffff {
-            contacts = [ "mailto:xxxxxxxx@hnu.de" ][Collection<URI>]
+            contacts = [ "mailto:xxxxxxxx@hnu.de" ] ^^ Collection<URI>
             displayName = "Ulrike Reisach"
             correspondingAuthorFlag = True
             author = X ^^ Agent
