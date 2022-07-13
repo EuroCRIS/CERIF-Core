@@ -396,17 +396,17 @@
     class "Education" #ffffff {
     }
     
-    "Activity" <|-- "Engagement"
+    "Activity" <|-- "Involvement"
     
-    class "Engagement" #ffffff {
+    class "Involvement" #ffffff {
     }
     
     class "Employment" #ffffff {
     }
     
-    "Engagement" <|-- "Employment"
-    "Engagement" <|-- "Membership"
-    "Engagement" <|-- "Education"
+    "Involvement" <|-- "Employment"
+    "Involvement" <|-- "Membership"
+    "Involvement" <|-- "Education"
         
     class "Position_Title" #ffffff {
     }
@@ -415,11 +415,11 @@
 	
 	"Employment" "0..1" --> "0..*" "Document" : contract >
 	
-	"Engagement" "0..*" --> "0..1" "Position_Title" : position >
+	"Involvement" "0..*" --> "0..1" "Position_Title" : position >
 	
-	"Engagement" "0..*" -l-> "0..*" "Affiliation_Statement" : is the foundation for >
+	"Involvement" "0..*" -l-> "0..*" "Affiliation_Statement" : is the foundation for >
 
-	"Engagement" "0..*" --> "Group_or_Organisation_Unit" : in >
+	"Involvement" "0..*" --> "Group_or_Organisation_Unit" : in >
 	
 	"Group_or_Organisation_Unit" <|-- "Group"
 
@@ -427,7 +427,7 @@
 
 	"Agent" <|-- "Group_or_Organisation_Unit"
 	
-	"Engagement" "0..*" --> "0..1" "Engagement" : part >
-	"Engagement" "0..*" --> "0..*" "Engagement" : part transitive >
+	"Involvement" "0..*" --> "0..1" "Involvement" : part >
+	"Involvement" "0..*" --> "0..*" "Involvement" : part transitive >
 
 @enduml
