@@ -29,13 +29,13 @@ while read N F ; do
   X=0 
   for D in . "$@"
   do
-    if [ -f $D/$F ]
+    if [ -f "$D"/"$F" ]
       then X=1
     fi
   done
   if [ $X == '1' ]
-    then echo $N $F
-    else echo $N $F - MISSING!
+    then echo $N "$F"
+    else echo $N "$F" - MISSING!
   fi
 done
 
