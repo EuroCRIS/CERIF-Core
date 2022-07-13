@@ -416,8 +416,6 @@
 	
 	"Engagement" "0..*" --> "0..1" "Position_Title" : position >
 	
-	"Employment" "0..*" --> "0..1" "Organisation_Unit" : employed by >
-
 	"Engagement" "0..*" -l-> "0..*" "Affiliation_Statement" : is the foundation for >
 
 	"Engagement" "0..*" --> "Group_or_Organisation_Unit" : in >
