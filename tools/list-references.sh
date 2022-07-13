@@ -7,15 +7,22 @@
 # - directories where the definitions could be also found.
 
 (
+# References from md files
 find . "$@" -name \*.md | \
 xargs grep -o -h -e '([-:./A-Z0-9a-z_]*\.md)' | \
 sed -e 's/(\.\.*\//.\//' -e 's/)$//' \
     -e 's/(https:\/\/github.com\/[-A-Za-z0-9_.]*\/[-A-Za-z0-9_.]*\/blob\/[-A-Za-z0-9_.]*\//.\//' \
     -e '/\/XXX\.md/d' -e '/\/TEMPLATE_.*/d'
+# Names of entities and datatypes in puml files
 find . "$@" -name \*.puml | \
 xargs grep -oh -e 'class "[A-Za-z0-9_]*"' -e 'datatype *( *"[A-Za-z0-9_]*" *)' | \
 sed -e 's/^class "/.\/entities\//' -e 's/"$/.md/' \
     -e 's/^datatype( *"/.\/datatypes\//' -e 's/" *)$/.md/'
+# Datatypes of attributes from class and datatype definitions in puml files
+find . "$@" -name \*.puml | \
+xargs sed -e '1,/{/d' -e '/}/,/{/d' -e '/}/,$d' \
+	-e 's/[^^]*\^\^//' -e 's/[^:]*//' -e 's/^: *//' \
+	-e '/^ *$/d' -e 's/^/.\/datatypes\//' -e 's/$/.md/'
 ) | \
 sort | uniq -c | \
 while read N F ; do
