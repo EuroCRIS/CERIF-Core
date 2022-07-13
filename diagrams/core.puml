@@ -7,7 +7,7 @@
 
     !startsub Document
         class "Document" #ffffff {
-            DOI : DOI_Type
+            DOI : DOI
             title : Multilingual_String
             publicationDate : Date
         }
@@ -32,9 +32,9 @@
             name : Multilingual_String
             acronym : String
             address : Postal_Address
-            rorId : ROR_Id
-            webSiteURL : URL
-            email : URL
+            rorId : ROR_ID
+            webSiteURL : URI
+            email : URI
         }
     !endsub
 
@@ -130,7 +130,7 @@
             country : Country
         }
         datatype("Country") {
-             iso3166alpha2Code : ISO3166_Alpha2_Code
+             iso3166alpha2Code : ISO_3166_Alpha2_Code
              name : Multilingual_String
         }
     !endsub
