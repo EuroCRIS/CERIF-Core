@@ -17,7 +17,7 @@ Wikidata ID : [Wikidata ID Type](../datatypes/Wikidata_ID.md)
 lifetime : [Date Range](../datatypes/Date_Range.md)
 
 ## Relationships
-<a name="rel__activity">An Agent can have any number of *[activities](../entities/Activity.md#user-content-rel__actor)*: instances of [Activity](../entities/Activity.md).</a>
+<a name="rel__activity">An Agent can *[be the actor](../entities/Activity.md#user-content-rel__actor)* of any number of [Activities](../entities/Activity.md).</a>
 
 <a name="rel__receives">An Agent can *[receive](../entities/Prize_Award.md#user-content-rel__recipient)* any number of [Prize Awards](../entities/Prize_Award.md).</a>
 
