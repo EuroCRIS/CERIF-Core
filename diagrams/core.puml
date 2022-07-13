@@ -447,7 +447,7 @@
 !endsub
 
 !startsub Textual_Document_Accessibility_Specification
-    "Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
+    "Textual_Document" *-r- "0..*" "Textual_Document_Accessibility_Specification" : has access >
 !endsub
 
 !startsub Authorship
