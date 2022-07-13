@@ -6,12 +6,12 @@
            \t familyNames = "Reisach"
            } ^^ PersonName
            orcid_id = "https://orcid.org/0000-0003-3432-8728" ^^ ORCID_iD_Type
-           affiliations = [Affiliation 1] ^^ List<AffiliationStatement>
+           Affiliation_Statement = [Affiliation 1] ^^ List<Affiliation_Statement>
         }
     !endsub
 
     !startsub ins
-    object "<u>Institution 1:OrgUnit</u>" as Ins1 #ffffff {
+    object "<u>Institution 1:Organisation_Unit</u>" as Ins1 #ffffff {
     	    name = "Neu-Ulm University of Applied Sciences"@en,
     	    \t "Hochschule für angewandte Wissenschaften Neu-Ulm"@de
             acronym = "HNU"
@@ -22,13 +22,13 @@
 
 
     !startsub elsevier
-    object "<u>Elsevier B.V.:OrgUnit</u>" as Elsevier #ffffff {
+    object "<u>Elsevier B.V.:Organisation_Unit</u>" as Elsevier #ffffff {
             name = "Elsevier B.V."@en
         }
     !endsub
 
-    !startsub affiliations
-    object "<u>Affiliation 1 : AffiliationStatement</u>" as Aff1 #ffffff {
+    !startsub Affiliation_Statement
+    object "<u>Affiliation 1 : Affiliation_Statement</u>" as Aff1 #ffffff {
             displayAffiliation = "Department of Information Management,
             \t Prof. Dr. Ulrike Reisach,
             \t Neu-Ulm University of Applied Sciences,
@@ -41,8 +41,8 @@
                         \t\t name = "Germany"@en, "Deutschland"@de
                         \t }^^ Country
             \t zipCode = "D-89231"
-            } ^^ PostalAddress
-            institution = Institution 1 ^^ OrgUnit
+            } ^^ Postal_Address
+            institution = Institution 1 ^^ Organisation_Unit
         }
     !endsub
 
@@ -53,7 +53,7 @@
             correspondingAuthorFlag = True
             author = X ^^ Agent
             document = 10.1016/j.ejor.2020.09.020 ^^ Document
-            affiliations = [Affiliation 1] ^^ List<AffiliationStatement>
+            Affiliation_Statement = [Affiliation 1] ^^ List<Affiliation_Statement>
         }
     !endsub
 
@@ -61,14 +61,14 @@
         Aut1 o--> "author" X
     !endsub
     !startsub autDoc
-        Aut1 *--> "0..* affiliations" Aff1
+        Aut1 *--> "0..* Affiliation_Statement" Aff1
     !endsub
 
-    !startsub affiliations
+    !startsub Affiliation_Statement
         Aff1 o--> "institution" Ins1
     !endsub
-    !startsub affiliations
-        X o--> "0..* affiliations" Aff1
+    !startsub Affiliation_Statement
+        X o--> "0..* Affiliation_Statement" Aff1
     !endsub
 
 

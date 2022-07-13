@@ -1,6 +1,16 @@
 @startuml
+
     !includesub core.puml!common
+    !includesub core.puml!Call_for_Applications
     !includesub core.puml!Application
+    !includesub core.puml!Resource
     !includesub core.puml!Document
     !includesub core.puml!Agent
+    !includesub core.puml!Resource_Offer
+    !includesub core.puml!Resource_Request
+    !includesub core.puml!Condition
+    !includesub core.puml!Funding
+    !includesub core.puml!Funding_Application
+    !includesub core.puml!Call_for_Funding_Applications
+
 @enduml

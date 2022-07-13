@@ -1,433 +1,584 @@
 @startuml
-	!startsub common
-        !define datatype(x) class x << (D,#add0b2) DataType>> #ffffff
-        hide empty members
-        skinparam BoxPadding 120
-	!endsub
-
-    !startsub Document
-        class "Document" #ffffff {
-            DOI : DOI
-            title : Multilingual_String
-            publicationDate : Date
-        }
-        class "Textual_Document" #ffffff {
-        }
-    !endsub
-
-    !startsub TDAS
-        class "Textual_Document_Accessibility_Specification" #ffffff {
-        }
-    !endsub
-
-    !startsub Agent
-        class "Agent" #ffffff {
-        	lifetime : Date_Range
-        }
-        class "Group_or_Organisation_Unit" #ffffff {
-        }
-    !endsub
-
-    !startsub OrgUnit
-        class "Organisation_Unit" #ffffff {
-            name : Multilingual_String
-            acronym : String
-            address : Postal_Address
-            rorId : ROR_ID
-            webSiteURL : URI
-            email : URI
-        }
-    !endsub
-
-    !startsub Person
-        class "Person" #ffffff {
-            name : Person_Name
-            orcidId : ORCID_iD
-        }
-
-        datatype("Person_Name") {
-            firstNames : Multilingual_String
-            familyNames : Multilingual_String
-            otherNames : Multilingual_String
-        }
-    !endsub
-
-    !startsub Activity
-        class "Activity" #ffffff {
-      		dateRange : Date_Range
-        }
-    !endsub
-
-    !startsub Membership
-        class "Membership" #ffffff {
-        }
-    !endsub
-
-    !startsub Group
-        class "Group" #ffffff {
-        }
-    !endsub
-
-    !startsub OrgUnitWithMembers
-            class "Organisation_Unit_with_Members" #ffffff {
-            }
-    !endsub
-
-    !startsub ContributionToProject
-        class "Contribution_to_Project" #ffffff {
-        }
-    
-        class "Project" #ffffff {
-        }
-    !endsub
-    
-    !startsub ContributionToEvent
-        class "Contribution_to_Event" #ffffff {
-        }
-    
-        class "Event" #ffffff {
-        }
-    !endsub
-
-    !startsub Contribution
-        class "Contribution" #ffffff {
-        }
-            
-        class "Contribution_Statement" #ffffff {
-            statement : Multilingual_String
-        }
-    
-        class "Resource_Usage_Statement" #ffffff {
-            statement : Multilingual_String
-        }
-    
-        class "Resource" #ffffff {
-        }
-
-        class "Funding" #ffffff {
-        }
-    !endsub
-
-
-    !startsub ContributionToDocument
-        class "Contribution_to_Document" #ffffff {
-        }
-    !endsub
-
-    !startsub Authorship
-        class "Authorship" #ffffff {
-            correspondingAuthorFlag : Boolean
-        }
-    !endsub
-
-    !startsub PostalAddress
-        datatype("Postal_Address") {
-            street : Multilingual_String
-            city : Multilingual_String
-            zipCode : Multilingual_String
-            country : Country
-        }
-        datatype("Country") {
-             iso3166alpha2Code : ISO_3166_Alpha2_Code
-             name : Multilingual_String
-        }
-    !endsub
-
-    !startsub AffiliationStatement
-        class "Affiliation_Statement" #ffffff {
-            displayAffiliation_Statement : String
-            displayPersonName : String
-            address : Postal_Address
-            contacts : List<URI>
-        }
-    !endsub AffiliationStatement
-
-    !startsub Application
-        class "Application" #ffffff {
-            date : Date
-        }
-
-        class "Decision" #ffffff {
-            date : Date
-        }
-
-        class "Funding_Application" #ffffff {
-        }
-
-        class "Call_for_Applications" #ffffff {
-
-        }
-
-        class "Call_for_Funding_Applications" #ffffff {
-        }
-
-		class "Evaluation_Outcome" #ffffff {
-    	}
-
-		class "Contribution_to_Evaluation_Outcome" #ffffff {
-    	}
-
-		class "Application_Review" #ffffff {
-    	}
-
-    !endsub Application
-
-    !startsub Prize_Awards
-		class "Prize" #ffffff {
-    	}
-		class "Prize_Award" #ffffff {
-    	}
-    !endsub
-
-    !startsub Application
-        "Application" -u-> "0..1" "Agent" : applicant >
-    !endsub
-
-    !startsub Application
-        "Application" -u-> "0..1" "Agent" : addressee >
-    !endsub
-
-    !startsub Application
-		"Call_for_Applications" -u-> "issuer" "Agent"
-    !endsub
-
-    !startsub Application
-        "Application" "0..1" -- "0..*" "Evaluation_Outcome" : of <
-    !endsub
-
-    !startsub Application
-        "Application" "0..*" -l- "0..1" "Call_for_Applications" : in response to >
-    !endsub
-
-    !startsub Application
-        "Application" o-- "0..1" "Document" : contents >
-    !endsub
-
-    !startsub Application
-        "Application" -r- "0..1" "Decision" : on <
-    !endsub
-
-    !startsub Application
-        "Decision" o-- "0..1" "Document" : expressed in >
-    !endsub
-
-    !startsub Application
-        "Application" <|-d- "Funding_Application"
-    !endsub
-
-    !startsub Application
-        "Call_for_Applications" <|-d- "Call_for_Funding_Applications"
-		"Call_for_Funding_Applications" o-- "Funding"
-		"Funding_Application" o-- "Funding"
-    !endsub
-
-    !startsub Application
-        "Decision" -u-> "0..*" "Agent" : make <
-    !endsub
-
-    !startsub Application
-        "Evaluation_Outcome" -d-> "0..1" "Decision" : form the basis for >
-    !endsub
-
-    !startsub Application
-        "Contribution" <|-- "Contribution_to_Evaluation_Outcome"
-        "Contribution_to_Evaluation_Outcome" <|-d- "Application_Review"
-    !endsub
-
-    !startsub Application
-        "Contribution_to_Evaluation_Outcome" --> "Evaluation_Outcome"
-    !endsub
-
-    !startsub PostalAddress
-        "Postal_Address" o..> "country" "Country"
-    !endsub
-
-    !startsub PostalAddress
-        "Affiliation_Statement" o..> "Postal_Address" : address >
-    !endsub
-
-    !startsub AffiliationStatement
-        "Activity" "0..*" o-- "0..*" "Affiliation_Statement" : affilations >
-    !endsub
-
-    !startsub Contribution
-        "Contribution" *-l- "0..*" "Contribution_Statement" : is detailed in >
-    !endsub
-
-    !startsub ContributionToDocument
-        "Contribution_to_Document" --> "Document" : document >
-    !endsub
-
-    !startsub Activity
-        "Activity" "0..*" --o "0..1 who" "Agent"
-    !endsub
-
-    !startsub Authorship
-        "Authorship" --* "Textual_Document"
-    !endsub
-
-    !startsub Authorship
-        "Contribution_to_Document" <|-- "Authorship"
-    !endsub
-
-    !startsub ContributionToDocument
-        "Contribution" <|-- "Contribution_to_Document"
-    !endsub
-
-    !startsub ContributionToProject
-        "Contribution" <|-- "Contribution_to_Project"
-    !endsub
-
-    !startsub ContributionToProject
-        "Contribution_to_Project" --> "Project" : project >
-    !endsub
-
-    !startsub ContributionToEvent
-        "Contribution" <|-- "Contribution_to_Event"
-    !endsub
-
-    !startsub ContributionToEvent
-        "Contribution_to_Event" --> "Event" : event >
-    !endsub
-
-    !startsub Contribution
-        "Activity" <|-- "Contribution"
-    !endsub
-
-    !startsub Contribution
-         "Contribution_Statement" --> "0..1" "Resource" : provides >
-         "Resource_Usage_Statement" --> "Resource" : uses >
-         "Contribution_Statement" o-l- "0..*" "Resource_Usage_Statement"
-         "Resource" <|-- "Funding"
-    !endsub
-
-    !startsub Authorship
-        "Authorship" "0..*" --o "0..1 author" "Agent"
-    !endsub
-
-    note on link #white : author == contributor
-
-    !startsub Person
-        "Person" ..> "name" "Person_Name"
-    !endsub
-
-    !startsub Person
-        "Agent" <|-- "Person"
-    !endsub
-
-    !startsub OrgUnit
-        "Agent" <|-- "Organisation_Unit"
-    !endsub
-
-    !startsub PostalAddress
-        "Organisation_Unit" ..> "0..1" "Postal_Address" : address >
-    !endsub
-
-    !startsub Group
-        "Agent" <|-- "Group"
-    !endsub
-
-    !startsub OrgUnitWithMembers
-        "Group" <|-- "Organisation_Unit_with_Members"
-    !endsub
-
-    !startsub OrgUnitWithMembers
-        "Organisation_Unit" <|-- "Organisation_Unit_with_Members"
-    !endsub
-
-    !startsub Document
-    	"Resource" <|-- "Document"
-        "Document" <|-d- "Textual_Document"
-    !endsub
-
-    !startsub AccessRights
-        "Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
-    !endsub
-
-    !startsub Authorship
-        "Textual_Document" "0..* authoredDocuments" o-- "0..* authors" "Agent"
-    !endsub
-
-    !startsub PrizeAwards
-    	"Prize_Award" "0..*" -l-o "Prize" : of >
-    	"Prize_Award" --> "Agent" : recipient >
-    	"Prize" --> "Agent" : by whom >
-    	"Prize_Award" --> "0..1" "Document" : for >
-    	"Prize_Award" --> "0..1" "Project" : for >
-    	"Prize_Award" --> "0..1" "Event" : for >    	
-    !endsub
-
-    class "Resource_Offer" #ffffff {
+!startsub common
+    !define datatype(x) class x << (D,#add0b2) DataType>> #ffffff
+    hide empty members
+    skinparam BoxPadding 120
+!endsub
+
+' === Agent hierarchy ===
+
+!startsub Agent
+    class "Agent" #ffffff {
+    	lifetime : Date_Range
     }
-    
-    "Resource_Offer" --> "1..*" "Resource" : of >
-    
-    "Resource_Offer" <|-- "Call_for_Applications"
-    
-    class "Condition" #ffffff {
-    }
+!endsub
 
-	"Resource_Offer" o-- "0..*" "Condition" : has >
-
-    class "Resource_Request" #ffffff {
+!startsub Person
+    class "Person" #ffffff {
+        name : Person_Name
+        orcidId : ORCID_iD
     }
+!endsub
 
-    "Resource_Request" <|-- "Application"
-    
-	"Resource_Request" o-- "0..*" "Document" : described in >
+!startsub Person
+    "Agent" <|-- "Person"
+!endsub
 
-    "Resource_Request" "0..*" --> "0..1" "Resource_Request" : revise >
-    
-    class "Expertise_and_Skills" #ffffff {
+!startsub Person
+    datatype("Person_Name") {
+        firstNames : Multilingual_String
+        familyNames : Multilingual_String
+        otherNames : Multilingual_String
     }
+!endsub
 
-    class "Expertise_and_Skills_Posession" #ffffff {
-    }
-    
-    class "Expertise_and_Skills_Condition" #ffffff {
-    }
-    
-    "Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Posession"
-    "Agent" <-- "0..*" "Expertise_and_Skills_Posession"
+!startsub Person
+    "Person" ..> "name" "Person_Name"
+!endsub
 
-    "Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Condition"
-    "Condition" <|-- "Expertise_and_Skills_Condition"
-    
-    class "Education" #ffffff {
+!startsub Postal_Address
+    "Organisation_Unit" ..> "0..1" "Postal_Address" : address >
+!endsub
+
+!startsub Group_or_Organisation_Unit
+    class "Group_or_Organisation_Unit" #ffffff {
     }
-    
-    "Activity" <|-- "Involvement"
-    
+!endsub
+
+!startsub Group_or_Organisation_Unit
+	"Agent" <|-- "Group_or_Organisation_Unit"
+!endsub
+
+!startsub Group
+    class "Group" #ffffff {
+    }
+!endsub
+
+!startsub Group
+	"Group_or_Organisation_Unit" <|-- "Group"
+!endsub
+
+!startsub Organisation_Unit
+    class "Organisation_Unit" #ffffff {
+        name : Multilingual_String
+        acronym : String
+        address : Postal_Address
+        rorId : ROR_ID
+        webSiteURL : URI
+        email : URI
+    }
+!endsub
+
+!startsub Organisation_Unit
+	"Group_or_Organisation_Unit" <|-- "Organisation_Unit"
+!endsub
+
+!startsub Organisation_Unit_with_Members
+    class "Organisation_Unit_with_Members" #ffffff {
+    }
+!endsub
+
+!startsub Organisation_Unit_with_Members
+    "Group" <|-- "Organisation_Unit_with_Members"
+!endsub
+
+!startsub Organisation_Unit_with_Members
+    "Organisation_Unit" <|-- "Organisation_Unit_with_Members"
+!endsub
+
+' === Activity hierarchy ===
+
+!startsub Activity
+    class "Activity" #ffffff {
+  		dateRange : Date_Range
+    }
+!endsub
+
+!startsub Involvement
     class "Involvement" #ffffff {
     }
-    
+!endsub
+
+!startsub Involvement
+    "Activity" <|-- "Involvement"
+!endsub
+
+!startsub Employment
     class "Employment" #ffffff {
     }
-    
+!endsub
+
+!startsub Employment
     "Involvement" <|-- "Employment"
-    "Involvement" <|-- "Membership"
-    "Involvement" <|-- "Education"
-        
-    class "Position_Title" #ffffff {
+!endsub
+
+!startsub Education
+    class "Education" #ffffff {
     }
+!endsub
 
+!startsub Education
+    "Involvement" <|-- "Education"
+!endsub
+
+!startsub Membership
+    class "Membership" #ffffff {
+    }
+!endsub
+
+!startsub Membership
+    "Involvement" <|-- "Membership"
+!endsub
+
+!startsub Contribution
+    class "Contribution" #ffffff {
+    }
+!endsub
+
+!startsub Contribution
+    "Activity" <|-- "Contribution"
+!endsub
+
+!startsub Contribution_to_Project
+    class "Contribution_to_Project" #ffffff {
+    }
+!endsub
+
+!startsub Contribution_to_Project
+    "Contribution" <|-- "Contribution_to_Project"
+!endsub
+
+!startsub Contribution_to_Document
+    class "Contribution_to_Document" #ffffff {
+    }
+!endsub
+
+!startsub Contribution_to_Document
+    "Contribution" <|-- "Contribution_to_Document"
+!endsub
+
+!startsub Contribution_to_Event
+    class "Contribution_to_Event" #ffffff {
+    }
+!endsub
+
+!startsub Contribution_to_Event
+    "Contribution" <|-- "Contribution_to_Event"
+!endsub
+
+' === Agent - Activity links ===
+
+!startsub Activity
+    "Activity" "0..*" --> "0..1" "Agent" : actor >
+!endsub
+
+!startsub Involvement
+	"Involvement" "0..*" --> "Group_or_Organisation_Unit" : involved in >
+!endsub
+
+' === Resource hierarchy ===
+
+!startsub Resource
+    class "Resource" #ffffff {
+    }
+!endsub
+
+!startsub Funding
+    class "Funding" #ffffff {
+    }
+!endsub
+
+!startsub Funding
+     "Resource" <|-- "Funding"
+!endsub
+
+!startsub Document_isa_Resource
+	"Resource" <|-- "Document"
+!endsub
+
+!startsub Document
+    class "Document" #ffffff {
+        DOI : DOI
+        title : Multilingual_String
+        publicationDate : Date
+    }
+!endsub
+
+!startsub Textual_Document
+    class "Textual_Document" #ffffff {
+    }
+!endsub
+
+!startsub Textual_Document
+    "Document" <|-- "Textual_Document"
+!endsub
+
+
+
+
+!startsub Contribution_to_Project
+    "Contribution_to_Project" --> "Project" : project >
+!endsub
+
+!startsub Project
+    class "Project" #ffffff {
+    }
+!endsub
+
+!startsub Event
+    class "Event" #ffffff {
+    }
+!endsub
+
+!startsub Contribution_Statement
+    class "Contribution_Statement" #ffffff {
+        statement : Multilingual_String
+    }
+!endsub
+
+!startsub Resource_Usage_Statement
+    class "Resource_Usage_Statement" #ffffff {
+        statement : Multilingual_String
+    }
+!endsub
+
+!startsub Textual_Document_Accessibility_Specification
+    class "Textual_Document_Accessibility_Specification" #ffffff {
+    }
+!endsub
+
+!startsub Authorship
+    class "Authorship" #ffffff {
+        correspondingAuthorFlag : Boolean
+    }
+!endsub
+
+!startsub Postal_Address
+    datatype("Postal_Address") {
+        street : Multilingual_String
+        city : Multilingual_String
+        zipCode : Multilingual_String
+        country : Country
+    }
+!endsub
+
+!startsub Country
+    datatype("Country") {
+         iso3166alpha2Code : ISO_3166_Alpha2_Code
+         name : Multilingual_String
+    }
+!endsub
+
+!startsub Postal_Address
+    "Postal_Address" o..> "Country" : country >
+!endsub
+
+!startsub Affiliation_Statement
+    class "Affiliation_Statement" #ffffff {
+        displayAffiliation_Statement : String
+        displayPersonName : String
+        address : Postal_Address
+        contacts : List<URI>
+    }
+!endsub
+
+!startsub Application
+    class "Application" #ffffff {
+        date : Date
+    }
+!endsub
+
+!startsub Decision
+    class "Decision" #ffffff {
+        date : Date
+    }
+!endsub
+
+!startsub Funding_Application
+    class "Funding_Application" #ffffff {
+    }
+!endsub
+
+!startsub Funding_Application
+    "Application" <|-- "Funding_Application"
+!endsub
+
+!startsub Call_for_Applications
+    class "Call_for_Applications" #ffffff {
+    }
+!endsub
+
+!startsub Call_for_Funding_Applications
+    class "Call_for_Funding_Applications" #ffffff {
+    }
+!endsub
+
+!startsub Evaluation_Outcome
+	class "Evaluation_Outcome" #ffffff {
+	}
+!endsub
+
+!startsub Contribution_to_Evaluation_Outcome
+	class "Contribution_to_Evaluation_Outcome" #ffffff {
+	}
+!endsub
+
+!startsub Application_Review
+	class "Application_Review" #ffffff {
+	}
+!endsub
+
+!startsub Prize
+	class "Prize" #ffffff {
+	}
+!endsub
+
+!startsub Prize_Award
+	class "Prize_Award" #ffffff {
+	}
+!endsub
+
+!startsub Application
+    "Application" -u-> "0..1" "Agent" : applicant >
+!endsub
+
+!startsub Application
+    "Application" -u-> "0..1" "Agent" : addressee >
+!endsub
+
+!startsub Call_for_Applications
+	"Call_for_Applications" -u-> "issuer" "Agent"
+!endsub
+
+!startsub Evaluation_Outcome
+    "Application" "0..1" -- "0..*" "Evaluation_Outcome" : of <
+!endsub
+
+!startsub Call_for_Applications
+    "Application" "0..*" -l- "0..1" "Call_for_Applications" : in response to >
+!endsub
+
+!startsub Application
+    "Application" o-- "0..1" "Document" : contents >
+!endsub
+
+!startsub Decision
+    "Application" -r- "0..1" "Decision" : on <
+!endsub
+
+!startsub Decision
+    "Decision" o-- "0..1" "Document" : expressed in >
+!endsub
+
+!startsub Call_for_Funding_Applications
+    "Call_for_Applications" <|-- "Call_for_Funding_Applications"
+!endsub
+
+!startsub Call_for_Funding_Applications
+	"Call_for_Funding_Applications" o-- "Funding"
+!endsub
+
+!startsub Funding_Application
+	"Funding_Application" o-- "Funding"
+!endsub
+
+!startsub Decision
+    "Decision" -u-> "0..*" "Agent" : make <
+!endsub
+
+!startsub Evaluation_Outcome
+    "Evaluation_Outcome" -d-> "0..1" "Decision" : form the basis for >
+!endsub
+
+!startsub Contribution_to_Evaluation_Outcome
+    "Contribution" <|-- "Contribution_to_Evaluation_Outcome"
+!endsub
+
+!startsub Application_Review
+    "Contribution_to_Evaluation_Outcome" <|-- "Application_Review"
+!endsub
+
+!startsub Contribution_to_Evaluation_Outcome
+    "Contribution_to_Evaluation_Outcome" --> "Evaluation_Outcome"
+!endsub
+
+!startsub Postal_Address
+    "Affiliation_Statement" o..> "Postal_Address" : address >
+!endsub
+
+!startsub Affiliation_Statement
+    "Activity" "0..*" o-- "0..*" "Affiliation_Statement" : affilations >
+!endsub
+
+!startsub Contribution_Statement
+    "Contribution" *-l- "0..*" "Contribution_Statement" : is detailed in >
+!endsub
+
+!startsub Contribution_to_Document
+    "Contribution_to_Document" --> "Document" : document >
+!endsub
+
+!startsub Authorship
+    "Authorship" --o "Textual_Document"
+!endsub
+
+!startsub Authorship
+    "Contribution_to_Document" <|-- "Authorship"
+!endsub
+
+!startsub Contribution_to_Event
+    "Contribution_to_Event" --> "Event" : event >
+!endsub
+
+!startsub Contribution
+     "Contribution_Statement" --> "0..1" "Resource" : provides >
+!endsub
+
+!startsub Resource_Usage_Statement
+     "Resource_Usage_Statement" --> "Resource" : uses >
+!endsub
+
+!startsub Resource_Usage_Statement
+     "Contribution_Statement" o-l- "0..*" "Resource_Usage_Statement"
+!endsub
+
+!startsub Authorship
+    "Authorship" "0..*" --o "0..1 author" "Agent"
+!endsub
+
+!startsub Textual_Document_Accessibility_Specification
+    "Textual_Document" *-r- "0..* accessRights" "Textual_Document_Accessibility_Specification"
+!endsub
+
+!startsub Authorship
+    "Textual_Document" "0..* authoredDocuments" o-- "0..* authors" "Agent"
+!endsub
+
+!startsub Prize_Award
+	"Prize_Award" "0..*" -l-o "Prize" : of >
+!endsub
+
+!startsub Prize_Award
+	"Prize_Award" --> "Agent" : recipient >
+!endsub
+
+!startsub Prize_Award
+	"Prize" --> "Agent" : by whom >
+!endsub
+
+!startsub Prize_Award
+	"Prize_Award" --> "0..1" "Document" : for >
+!endsub
+
+!startsub Prize_Award
+	"Prize_Award" --> "0..1" "Project" : for >
+!endsub
+
+!startsub Prize_Award
+	"Prize_Award" --> "0..1" "Event" : for >
+!endsub
+
+!startsub Resource_Offer
+	class "Resource_Offer" #ffffff {
+	}
+!endsub
+
+!startsub Resource_Offer
+	"Resource_Offer" --> "1..*" "Resource" : of >
+!endsub
+
+!startsub Call_for_Applications
+	"Resource_Offer" <|-- "Call_for_Applications"
+!endsub
+
+!startsub Condition
+	class "Condition" #ffffff {
+	}
+!endsub
+
+!startsub Resource_Offer
+	"Resource_Offer" o-- "0..*" "Condition" : has >
+!endsub
+
+!startsub Resource_Request
+	class "Resource_Request" #ffffff {
+	}
+!endsub
+
+!startsub Application
+	"Resource_Request" <|-- "Application"
+!endsub
+
+!startsub Resource_Request
+	"Resource_Request" "0..1" o-- "0..*" "Document" : described in >
+!endsub
+
+!startsub Resource_Offer
+	"Resource_Offer" "0..1" o-- "0..*" "Document" : described in >
+!endsub
+
+!startsub Resource_Request
+	"Resource_Request" "0..*" --> "0..1" "Resource_Request" : revise >
+!endsub
+
+!startsub Expertise_and_Skills
+	class "Expertise_and_Skills" #ffffff {
+	}
+!endsub
+
+!startsub Expertise_and_Skills_Posession
+	class "Expertise_and_Skills_Posession" #ffffff {
+	}
+!endsub
+
+!startsub Expertise_and_Skills_Condition
+	class "Expertise_and_Skills_Condition" #ffffff {
+	}
+!endsub
+
+!startsub Expertise_and_Skills_Posession
+	"Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Posession"
+!endsub
+
+!startsub Expertise_and_Skills_Posession
+	"Agent" <-- "0..*" "Expertise_and_Skills_Posession"
+!endsub
+
+!startsub Expertise_and_Skills_Condition
+	"Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Condition"
+!endsub
+
+!startsub Expertise_and_Skills_Condition
+	"Condition" <|-- "Expertise_and_Skills_Condition"
+!endsub
+
+!startsub Position_Title
+	class "Position_Title" #ffffff {
+	}
+!endsub
+
+!startsub Position_Title
 	"Affiliation_Statement" "0..*" --> "0..1" "Position_Title" : position >
-	
+!endsub
+
+!startsub Position_Title
 	"Employment" "0..1" --> "0..*" "Document" : contract >
-	
+!endsub
+
+!startsub Position_Title
 	"Involvement" "0..*" --> "0..1" "Position_Title" : position >
-	
+!endsub
+
+!startsub Involvement
 	"Involvement" "0..*" -l-> "0..*" "Affiliation_Statement" : is the foundation for >
+!endsub
 
-	"Involvement" "0..*" --> "Group_or_Organisation_Unit" : in >
-	
-	"Group_or_Organisation_Unit" <|-- "Group"
-
-	"Group_or_Organisation_Unit" <|-- "Organisation_Unit"
-
-	"Agent" <|-- "Group_or_Organisation_Unit"
-	
+!startsub Involvement
 	"Involvement" "0..*" --> "0..1" "Involvement" : part >
+!endsub
+
+!startsub Involvement
 	"Involvement" "0..*" --> "0..*" "Involvement" : part transitive >
+!endsub
 
 @enduml

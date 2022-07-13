@@ -6,8 +6,10 @@
     !includesub core.puml!Membership
     !includesub core.puml!Person
     !includesub core.puml!Group
-    !includesub core.puml!OrgUnit
-    !includesub core.puml!OrgUnitWithMembers
-    !includesub core.puml!AffiliationStatement
+    !includesub core.puml!Organisation_Unit
+    !includesub core.puml!Organisation_Unit_with_Members
+    !includesub core.puml!Group_or_Organisation_Unit
+    !includesub core.puml!Involvement
+    !includesub core.puml!Affiliation_Statement
 
 @enduml

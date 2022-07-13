@@ -2,6 +2,6 @@
 
     !includesub example.puml!person
     !includesub example.puml!ins
-    !includesub example.puml!affiliations
+    !includesub example.puml!Affiliation_Statement
 
 @enduml

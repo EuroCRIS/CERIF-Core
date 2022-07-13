@@ -3,13 +3,20 @@
     !includesub core.puml!common
     !includesub core.puml!Activity
     !includesub core.puml!Contribution
-    !includesub core.puml!ContributionToDocument
-    !includesub core.puml!Authorship
-    !includesub core.puml!ContributionToProject
-    !includesub core.puml!ContributionToEvent
+    !includesub core.puml!Contribution_to_Document
+    !includesub core.puml!Contribution_to_Project
+    !includesub core.puml!Contribution_to_Event
+    !includesub core.puml!Involvement
     !includesub core.puml!Membership
-    !includesub core.puml!AffiliationStatement
+    !includesub core.puml!Education
+    !includesub core.puml!Employment
+    !includesub core.puml!Affiliation_Statement
+    !includesub core.puml!Contribution_Statement
+    !includesub core.puml!Resource
     !includesub core.puml!Document
+    !includesub core.puml!Project
+    !includesub core.puml!Event
     !includesub core.puml!Agent
+    !includesub core.puml!Group_or_Organisation_Unit
 
 @enduml
