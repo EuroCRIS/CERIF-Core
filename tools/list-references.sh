@@ -22,6 +22,7 @@ sed -e 's/^class "/.\/entities\//' -e 's/"$/.md/' \
 find . "$@" -name \*.puml | \
 xargs sed -e '1,/{/d' -e '/}/,/{/d' -e '/}/,$d' \
 	-e 's/[^^]*\^\^//' -e 's/[^:]*//' -e 's/^: *//' \
+	-e '/<.*>/{ s/.*<//; s/>.*//; }' \
 	-e '/^ *$/d' -e 's/^/.\/datatypes\//' -e 's/$/.md/'
 ) | \
 sort | uniq -c | \
