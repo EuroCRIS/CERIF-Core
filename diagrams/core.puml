@@ -92,9 +92,6 @@
         class "Contribution" #ffffff {
         }
             
-     '   class "Acknowledgement_Statement" #ffffff {
-     '   }
-        
         class "Contribution_Statement" #ffffff {
             statement : Multilingual_String
         }
@@ -295,14 +292,6 @@
     !startsub Contribution
         "Activity" <|-- "Contribution"
     !endsub
-
-   ' !startsub Contribution
-   '     "Acknowledgement_Statement" "0..* thanks to" --o "0..1" "Contribution"
-   ' !endsub
-
-   ' !startsub Contribution
-   '     "Acknowledgement_Statement" --> "0..1 resource" "Resource"
-   ' !endsub
 
     !startsub Contribution
          "Contribution_Statement" --> "0..1" "Resource" : provides >
