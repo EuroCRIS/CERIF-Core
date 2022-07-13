@@ -22,6 +22,7 @@
 
     !startsub Agent
         class "Agent" #ffffff {
+        	lifetime : Date_Range
         }
         class "Group_or_Organisation_Unit" #ffffff {
         }
