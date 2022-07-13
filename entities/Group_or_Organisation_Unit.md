@@ -5,3 +5,6 @@ A common supertype for [Group](../entities/Group.md) and [Organisation Unit](../
 
 ## Specialization of
 [Agent](../entities/Agent.md)
+
+## Relationships
+<a name="rel__has-involvement">A Group or Organisation Unit can *[have any number of involvements](../entities/Involvement.md#user-content-rel__in)*, instances of [Involvement](../entities/Involvement.md), which involve [Agents](../entities/Agent.md).</a>
