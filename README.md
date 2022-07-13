@@ -9,10 +9,14 @@ The information interchanged is not necessarily intended to be public.
 Agents can perform [Activities](./entities/Activity.md).
 
 Persons can act on their own, in affiliation to or on behalf of an Organisation Unit or a Group (optionally in their Position).
-In the latter cases, one or more [Affiliation Statements](./entities/Affiliation_Statement.md) describe the connection.
+In the latter cases, an [Affiliation Statement](./entities/Affiliation_Statement.md) describes the connection. Multiple Affilation Statements are possible.
 
 A Group can have any number of Agents as members (so we track [Memberships](./entities/Membership.md), one type of Activity).
 If members of an Organisation Unit are to be represented, [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) can be used.
+
+Membership is a specific type of [Involvement](./entities/Involvement.md) in a [Group or Organisation Unit](./entities/Group_or_Organisation_Unit.md).
+Other types are [Employment](./entities/Employment.md) and [Education](./entities/Education.md).
+Involvements can reference a [Position Title](./entities/Position_Title.md) that describes the capacities of the involved Agent.
 
 Research is typically carried out in [Projects](./entities/Project.md). 
 Projects need [Resources](./entities/Resource.md), such as [Funding](./entities/Funding.md).
@@ -50,7 +54,7 @@ Calls for Application are one example of Resource Requests.
 ### Entities
 * [Agent](./entities/Agent.md)
   * [Person](./entities/Person.md)
-  * [Organisation Unit](./entities/Organisation_Unit.md), [Group](./entities/Group.md) (or [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) to represent the intersection of these two)
+  * [Organisation Unit](./entities/Organisation_Unit.md), [Group](./entities/Group.md) (or [Group_or_Organisation_Unit](./entities/Group_or_Organisation_Unit.md) to represent the union of these two, or [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) to represent the intersection of these two)
 * [Activity](./entities/Activity.md)
   * [Contribution](./entities/Contribution.md)
     * [Contribution to Document](./entities/Contribution_to_Document.md)    
@@ -59,7 +63,11 @@ Calls for Application are one example of Resource Requests.
     * [Contribution to Event](./entities/Contribution_to_Event.md)
     * [Contribution to Evaluation Outcome](./entities/Contribution_to_Evaluation_Outcome.md)
       * [Application Review](./entities/Application_Review.md)
-  * [Membership](./entities/Membership.md)
+  * [Involvement](./entities/Involvement.md)
+    * [Membership](./entities/Membership.md)
+    * [Employment](./entities/Employment.md)
+    * [Education](./entities/Education.md)
+* [Position_Title](./entities/Position_Title.md)
 * [Document](./entities/Document.md)
   * [Textual Document](./entities/Textual_Document.md)
 * [Affiliation](./entities/Affiliation_Statement.md)
