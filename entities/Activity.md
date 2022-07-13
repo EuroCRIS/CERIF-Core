@@ -4,7 +4,9 @@
 Anything an Agent does.
 
 ## Usage notes
-This records any research-related activity of an [Agent](../entities/Agent.md) (i.e., [Person](../entities/Person.md), [Organization](../entities/Organisation_Unit.md) or a [Group](../entities/Group.md)). Activities represent [Contributions](../entities/Contribution.md) to different things (to [Projects](../entities/Contribution_to_Project.md), [Events](../entities/Contribution_to_Event.md), [Documents](../entities/Contribution_to_Document.md), ...) or [Memberships](../entities/Membership.md) in [Groups](../entities/Group.md).
+This records any research-related activity of an [Agent](../entities/Agent.md) (i.e., [Person](../entities/Person.md), [Organization](../entities/Organisation_Unit.md) or a [Group](../entities/Group.md)). 
+Activities represent [Contributions](../entities/Contribution.md) to different things (to [Projects](../entities/Contribution_to_Project.md), [Events](../entities/Contribution_to_Event.md), [Documents](../entities/Contribution_to_Document.md), ...) 
+or [Involvements](../entities/Involvement.md) in [Groups or Organisation Units](../entities/Group_or_Organisation_Unit.md).
 
 ## Attributes
 
@@ -19,9 +21,7 @@ end date: [Date](../datatypes/Date.md)
 
 [comment]: # (TODO: Proof of the activity)
 
-
 ## Illustrative Diagram
-
 ![The Activity diagram](../diagrams/activity.svg)
 
 ---
