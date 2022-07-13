@@ -5,7 +5,9 @@ The act or process of taking part in something,<sup>[1](#fn1)</sup> namely in a 
 
 ## Usage notes
 This entity represents any kind of relationship between the *[actor](../entities/Agent.md#user-content-rel__activity)* and a [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md).
-Membership, Employment and Education are examples of Involvement.
+
+[Membership](../entities/Membership.md), Employment and Education are examples of Involvement.
+
 Involvements may form a hierarchic structure which may in part reflect a hierarchy of Groups or Organisation Units.
 
 ## Specialization of
