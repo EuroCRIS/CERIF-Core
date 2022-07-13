@@ -4,20 +4,16 @@
 The process of (teaching or) learning, especially in a school or college, or the knowledge that you get from this.<sup>[1](#fn1)</sup>
 
 ## Usage notes
-An additional description to communicate the purpose of the entity.
+An Education is an *[involvement in](../entities/Involvement.md#user-content-rel__in)* a training process organized by an [Organisation Unit](../entities/Organisation_Unit.md).
 
 ## Specialization of
 [Involvement](./entities/Involvement.md)
 
 ## Attributes
-Besides those of [Involvement](./entities/Involvement.md):
-
-<a name="DOI">attribute name : [datatype](../datatypes/XXX.md)</a>
+Those of [Involvement](./entities/Involvement.md).
 
 ## Relationships
-Besides those of [Involvement](./entities/Involvement.md):
-
-Use `./tools/new-relationship.sh` to generate the skeleton of a relationship description.
+Those of [Involvement](./entities/Involvement.md).
 
 ## Constraints
 Any constraints a subclass makes on its superclasses.
