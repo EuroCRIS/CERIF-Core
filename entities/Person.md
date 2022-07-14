@@ -21,6 +21,8 @@ name: [Person Name](../datatypes/Person_Name.md)
 
 ORCID iD: [ORCID iD](../datatypes/ORCID_iD.md)
 
+Scopus Author ID: [Scopus Author ID](../datatypes/Scopus_Author_ID.md)
+
 ## Relationships
 
 Those of [Agent](../entities/Agent.md#relationships)
