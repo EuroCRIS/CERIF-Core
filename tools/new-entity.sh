@@ -30,4 +30,4 @@ else
 /^## Specialization of/{N;N;d;}
 EOC
 fi
-sed <./guidelines/TEMPLATE_ENTITY.md >./entities/${1// /_}.md -f $Q
+sed <$( dirname $0 )/../guidelines/TEMPLATE_ENTITY.md >./entities/${1// /_}.md -f $Q
