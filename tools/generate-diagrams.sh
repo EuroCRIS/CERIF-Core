@@ -8,6 +8,7 @@
 
 for D in . "$@"
 do
-	java -jar ../CERIF-Core/tools/plantuml.jar -charset UTF-8 -v -tsvg "$D/diagrams/**.puml" || \
+	find "$D" -name \*.puml | \
+	xargs java -jar ../CERIF-Core/tools/plantuml.jar -charset UTF-8 -v -tsvg || \
 	exit 1
 done
