@@ -16,7 +16,7 @@ date range : [Date Range](../datatypes/Date_Range.md)
 
 <a name="rel__has-affiliation-statements">An Activity *[has](../entities/Affiliation_Statement.md#user-content-rel__is-used-in)* any number of [Affiliation Statements](../entities/Affiliation_Statement.md).</a>
 
-[comment]: # (TODO: Proof of the activity)
+<a name="rel__is-evidenced-by">An Activity can *[be evidenced by](../entities/Document.md#user-content-rel__prove_Activity)* any number of [Documents](../entities/Document.md).</a>
 
 ## Illustrative Diagram
 ![The Activity diagram](../diagrams/activity.svg)

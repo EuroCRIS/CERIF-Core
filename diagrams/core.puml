@@ -166,6 +166,10 @@
     "Contribution" <|-- "Contribution_to_Event"
 !endsub
 
+!startsub Activity
+	"Document" "0..*" -- "0..*" "Activity" : prove >
+!endsub
+
 ' === Agent - Activity links ===
 
 !startsub Activity
@@ -537,11 +541,19 @@
 !endsub
 
 !startsub Expertise_and_Skills_Posession
+	"Resource" <|-- "Expertise_and_Skills_Posession"
+!endsub
+
+!startsub Expertise_and_Skills_Posession
 	"Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Posession"
 !endsub
 
 !startsub Expertise_and_Skills_Posession
 	"Agent" <-- "0..*" "Expertise_and_Skills_Posession"
+!endsub
+
+!startsub Expertise_and_Skills_Posession
+	"Document" "0..*" -- "0..*" "Expertise_and_Skills_Posession" : prove >
 !endsub
 
 !startsub Expertise_and_Skills_Condition
