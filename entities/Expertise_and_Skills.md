@@ -15,7 +15,7 @@ label: [Multilingual String](../datatypes/Multilingual_String.md)
 description: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
-<a name="rel__be-posessed-by">An Expertise and Skills can *[be posessed by](../entities/Expertise_and_Skills_Posession.md#user-content-rel__posesses)* any number of [Expertise and Skills Posessions](../entities/Expertise_and_Skills_Posession.md).</a>
+<a name="rel__be-posessed-by">An Expertise and Skills can *[be posessed by](../entities/Expertise_and_Skills_Possession.md#user-content-rel__posesses)* any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md).</a>
 
 ---
 ## References

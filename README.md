@@ -40,7 +40,7 @@ A Contribution is another type of Activity.
 Contributions can be detailed with any number of [Contribution Statements](./entities/Contribution_Statement.md).
 These can in turn be further refined with [Resource Usage Statements](./entities/Resource_Usage_Statement.md) which represent the fact of a Resource being used for the Activity.
 
-[Expertise or Skills](../entities/Expertise_and_Skills.md) can be [posesses](../entities/Expertise_and_Skills_Posession.md) by Agents 
+[Expertise or Skills](../entities/Expertise_and_Skills.md) can be [posesses](../entities/Expertise_and_Skills_Possession.md) by Agents 
 or they can be [conditions](../entities/Expertise_and_Skills_Condition.md) for a [Resource Offer](../entities/Resource_Offer.md).
 But a Resource Offer can specify any other [Conditions](../entities/Condition.md), too.
 
@@ -91,7 +91,7 @@ Calls for Application are one example of Resource Requests.
 * [Prize Award](./entities/Prize_Award.md)
 * [Expertise and Skills](./entities/Expertise_and_Skills.md)
 * [Expertise and Skills Condition](./entities/Expertise_and_Skills_Condition.md)
-* [Expertise and Skills Posession](./entities/Expertise_and_Skills_Posession.md)
+* [Expertise and Skills Possession](./entities/Expertise_and_Skills_Possession.md)
 
 ### Data Types
 * [String](./datatypes/String.md)

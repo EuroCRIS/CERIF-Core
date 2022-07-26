@@ -530,8 +530,8 @@
 	}
 !endsub
 
-!startsub Expertise_and_Skills_Posession
-	class "Expertise_and_Skills_Posession" #ffffff {
+!startsub Expertise_and_Skills_Possession
+	class "Expertise_and_Skills_Possession" #ffffff {
 	}
 !endsub
 
@@ -540,20 +540,20 @@
 	}
 !endsub
 
-!startsub Expertise_and_Skills_Posession
-	"Resource" <|-- "Expertise_and_Skills_Posession"
+!startsub Expertise_and_Skills_Possession
+	"Resource" <|-- "Expertise_and_Skills_Possession"
 !endsub
 
-!startsub Expertise_and_Skills_Posession
-	"Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Posession"
+!startsub Expertise_and_Skills_Possession
+	"Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Possession"
 !endsub
 
-!startsub Expertise_and_Skills_Posession
-	"Agent" <-- "0..*" "Expertise_and_Skills_Posession"
+!startsub Expertise_and_Skills_Possession
+	"Agent" <-- "0..*" "Expertise_and_Skills_Possession"
 !endsub
 
-!startsub Expertise_and_Skills_Posession
-	"Document" "0..*" -- "0..*" "Expertise_and_Skills_Posession" : prove >
+!startsub Expertise_and_Skills_Possession
+	"Document" "0..*" -- "0..*" "Expertise_and_Skills_Possession" : prove >
 !endsub
 
 !startsub Expertise_and_Skills_Condition
