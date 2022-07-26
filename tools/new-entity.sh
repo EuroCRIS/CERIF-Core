@@ -10,7 +10,7 @@ cat >$Q <<EOC
 # $1
 EOC
 if [ ! -z "$2" ] ; then
-	P="[$2](./entities/${2// /_}.md)"
+	P="[$2](../entities/${2// /_}.md)"
 	cat >>$Q <<EOC
 /^## Specialization of/{
 n;
