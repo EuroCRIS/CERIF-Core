@@ -14,6 +14,8 @@ Those of [Resource](../entities/Resource.md) plus:
 
 <a name="rel__cover">A Funding can *[cover](../entities/Activity.md#user-content-rel__be-covered-by)* any number of [Activities](../entities/Activity.md).</a>
 
+(FIXME) part of relation should be added
+
 ---
 ## Matches
 

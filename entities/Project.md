@@ -19,9 +19,15 @@ The Project entity only captures details of the project scope and plan. Informat
 
 ## Attributes
 
+name : [Multilingual String](../datatypes/Multilingual_String.md)
+
+acronym : [String](../datatypes/String.md)
 
 ## Relationships
 
+(FIXME) part of (link to super Project structure, might be link between a task and working package, or working package and project)
+
+(FIXME) funding source (link to fundings)
 
 ---
 ## Matches
