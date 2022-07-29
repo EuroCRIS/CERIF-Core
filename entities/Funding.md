@@ -9,6 +9,11 @@ Money provided by an organization or government for a particular purpose.<sup>[1
 ## Specialization of
 [Resource](../entities/Resource.md)
 
+## Attributes
+Those of [Resource](../entities/Resource.md) plus:
+
+amount : [Monetary Amount](../datatypes/Monetary_Amount.md)
+
 ## Relationships
 Those of [Resource](../entities/Resource.md) plus:
 
