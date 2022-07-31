@@ -217,6 +217,10 @@
     "Document" <|-- "Textual_Document"
 !endsub
 
+!startsub Funding
+     "Funding" "0..*" -- "0..*" "Funding" : is part of >
+!endsub
+
 
 
 
