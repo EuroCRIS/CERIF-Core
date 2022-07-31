@@ -564,6 +564,20 @@
 	"Condition" <|-- "Expertise_and_Skills_Condition"
 !endsub
 
+!startsub Expertise_and_Time_and_Effort
+	class "Expertise_and_Time_and_Effort" #ffffff {
+	  amount_of_time_in_person_hours : Decimal
+	}
+!endsub
+
+!startsub Expertise_and_Time_and_Effort
+	"Resource" <|-- "Expertise_and_Time_and_Effort"
+!endsub
+
+!startsub Expertise_and_Time_and_Effort
+	"Agent" <-- "0..*" "Expertise_and_Time_and_Effort" : of <
+!endsub
+
 !startsub Position_Title
 	class "Position_Title" #ffffff {
 	}
