@@ -40,11 +40,11 @@ A Contribution is another type of Activity.
 Contributions can be detailed with any number of [Contribution Statements](./entities/Contribution_Statement.md).
 These can in turn be further refined with [Resource Usage Statements](./entities/Resource_Usage_Statement.md) which represent the fact of a Resource being used for the Activity.
 
-[Expertise or Skills](../entities/Expertise_and_Skills.md) can be [posesses](../entities/Expertise_and_Skills_Possession.md) by Agents.
+[Expertise or Skills](./entities/Expertise_and_Skills.md) can be [posesses](./entities/Expertise_and_Skills_Possession.md) by Agents.
 When joined with availability and willingness in [Expertise and Time and Effort](./entities/Expertise_and_Time_and_Effort.md),
-they can be [offered](../entities/Resource_Offer.md), [requested](../entities/Resource_Request.md), [provided](../entities/Contribution_Statement.md) or actually [used](../entities/Resource_Usage_Statement.md).
-Expertise and Skills can also be [conditions](../entities/Expertise_and_Skills_Condition.md) for a [Resource Offer](../entities/Resource_Offer.md),
-a specific subtype of a general [Condition](../entities/Condition.md).
+they can be [offered](./entities/Resource_Offer.md), [requested](./entities/Resource_Request.md), [provided](./entities/Contribution_Statement.md) or actually [used](./entities/Resource_Usage_Statement.md).
+Expertise and Skills can also be [conditions](./entities/Expertise_and_Skills_Condition.md) for a [Resource Offer](./entities/Resource_Offer.md),
+a specific subtype of a general [Condition](./entities/Condition.md).
 
 [Prizes](./entities/Prize.md) are conferred on Agents in [Prize Awards](./entities/Prize_Award.md).
 
@@ -77,8 +77,8 @@ a specific subtype of a general [Condition](../entities/Condition.md).
 * [Resource](./entities/Resource.md)
   * [Funding](./entities/Funding.md)
   * [Expertise and Time and Effort](./entities/Expertise_and_Time_and_Effort.md)
-* [Resource Offer](../entities/Resource_Offer.md)
-* [Resource Request](../entities/Resource_Request.md)
+* [Resource Offer](./entities/Resource_Offer.md)
+* [Resource Request](./entities/Resource_Request.md)
 * [Resource Usage Statement](./entities/Resource_Usage_Statement.md)
 * [Condition](./entities/Condition.md)
 * [Call for Applications](./entities/Call_for_Applications.md)
