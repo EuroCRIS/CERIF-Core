@@ -2,14 +2,9 @@
 
 ## Definition
 The statement of Possession of an [Expertise or Skill](../entities/Expertise_and_Skills.md) 
-by an [Agent](../entities/Agent.md) as a [Resource](../entities/Resource.md).
-
-## Specialization of
-[Resource](../entities/Resource.md)
+by an [Agent](../entities/Agent.md).
 
 ## Relationships
-Besides those of [Resource](../entities/Resource.md):
-
 <a name="rel__posesses">An Expertise and Skills Possession *[references](../entities/Expertise_and_Skills.md#user-content-rel__be-posessed-by)* the [Expertise and Skills](../entities/Expertise_and_Skills.md) that the [Agent](../entities/Agent.md) posesses.</a>
 
 <a name="rel__of-agent">An Expertise and Skills Possession *[references](../entities/Agent.md#user-content-rel__has-expertise-or-skills)* the [Agent](../entities/Agent.md) who posesses the [Expertise and Skills](../entities/Expertise_and_Skills.md).</a>
