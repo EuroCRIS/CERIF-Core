@@ -15,8 +15,8 @@ In UML diagrams and in interchange formats the camel-case notation should be use
 1. **Definition**: The scope of the entity and its meaning.
 2. **Usage Notes**: An additional description to communicate the purpose of the entity.
 3. **Specialization of**: The link to the super class
-4. **Attributes**: The list of attributes: properties whose values are simple or composite [datatypes](../guidelines/DESCRIBING_DATATYPES.md). All attributes are considered optional by default.
-5. **Relationships**: The relationships that are important for this entity. The default cardinality is "1".
+4. **Attributes**: The list of attributes: properties whose values are simple or composite [datatypes](../guidelines/DESCRIBING_DATATYPES.md). This section can introduce new attributes and it can also contain guidelines on using attributes from superclasses. All attributes are considered optional by default.
+5. **Relationships**: The relationships that are important for this entity. This section can add new relationships and it can also contain guidelines on using relationships from superclasses. The default cardinality of a relationship is "1".
 6. **Constraints**: Any constraints a subclass makes on its superclasses.
 7. **Illustrative Diagram**: A UML diagram showing this entity in its context if one is available.
 ---
