@@ -545,10 +545,6 @@
 !endsub
 
 !startsub Expertise_and_Skills_Possession
-	"Resource" <|-- "Expertise_and_Skills_Possession"
-!endsub
-
-!startsub Expertise_and_Skills_Possession
 	"Expertise_and_Skills" <-- "0..*" "Expertise_and_Skills_Possession"
 !endsub
 
