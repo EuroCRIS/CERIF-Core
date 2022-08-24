@@ -15,5 +15,9 @@ Those of [Call for Applications](../entities/Call_for_Applications.md)
 ## Relationships
 Those inherited from [Call for Applications](../entities/Call_for_Applications.md).
 
+The [Funding](../entities/Funding.md) that is offerred in this Call for Funding Applications is referenced through the derived *of* association from [Resource Offer](../entities/Resource_Offer.md).
+
 ## Constraints 
 The derived *applications* association from [Call for Applications](../entities/Call_for_Applications.md) can only reference [Funding Applications](../entities/Funding_Application.md).
+
+The derived *of* association from [Resource Offer](../entities/Resource_Offer.md) can only reference a single [Resource](../entities/Resource.md) which must be a [Funding](../entities/Funding.md).

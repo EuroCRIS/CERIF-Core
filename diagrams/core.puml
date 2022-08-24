@@ -382,14 +382,6 @@
     "Call_for_Applications" <|-- "Call_for_Funding_Applications"
 !endsub
 
-!startsub Call_for_Funding_Applications
-	"Call_for_Funding_Applications" o-- "Funding"
-!endsub
-
-!startsub Funding_Application
-	"Funding_Application" o-- "Funding"
-!endsub
-
 !startsub Decision
     "Decision" -u-> "0..*" "Agent" : make <
 !endsub
@@ -492,7 +484,7 @@
 !endsub
 
 !startsub Resource_Offer
-	"Resource_Offer" --> "1..*" "Resource" : of >
+	"Resource_Offer" "0..*" --> "1..*" "Resource" : of >
 !endsub
 
 !startsub Call_for_Applications
@@ -527,6 +519,10 @@
 
 !startsub Resource_Request
 	"Resource_Request" "0..*" --> "0..1" "Resource_Request" : revise >
+!endsub
+
+!startsub Resource_Request
+	"Resource_Request" "0..*" --> "1..*" "Resource" : of >
 !endsub
 
 !startsub Expertise_and_Skills

@@ -12,8 +12,12 @@ Those of [Application](../entities/Application.md#attributes)
 ## Relationships
 Those inherited from [Application](../entities/Application.md#relationships).
 
+The [Funding](../entities/Funding.md) that is requested in this Funding Application is referenced through the derived *of* association from [Resource Request](../entities/Resource_Request.md).
+
 ## Constraints 
-The derived *in-response-to* association from [Application](../entities/Application.md) can only reference [Calls for Funding Applications](../entities/Call_for_Funding_Applications.md).
+The derived *in-response-to* association from [Application](../entities/Application.md) can only reference a [Call for Funding Applications](../entities/Call_for_Funding_Applications.md).
+
+The derived *of* association from [Resource Request](../entities/Resource_Request.md) can only reference a single [Resource](../entities/Resource.md) which must be a [Funding](../entities/Funding.md).
 
 ---
 
