@@ -16,8 +16,20 @@
 !startsub Person
     class "Person" #ffffff {
         name : Person_Name
+    }
+!endsub
+
+!startsub Person_Identifier
+    class "Person_Identifier" #ffffff {
+    }
+    
+    "Person_Identifier" "0..*" <-- "1" "Person" : has <
+
+    class "ORCID_Identifier" #ffffff {
         orcidId : ORCID_iD
     }
+    
+    "Person_Identifier" <|-- "ORCID_Identifier"
 !endsub
 
 !startsub Person
