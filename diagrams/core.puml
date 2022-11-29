@@ -112,7 +112,7 @@
 !endsub
 
 !startsub Involvement
-    "Activity" <|-- "Involvement"
+   "Activity" <|-d- "Involvement"
 !endsub
 
 !startsub Employment
@@ -121,7 +121,7 @@
 !endsub
 
 !startsub Employment
-    "Involvement" <|-- "Employment"
+    "Involvement" <|-d- "Employment"
 !endsub
 
 !startsub Education
@@ -130,7 +130,7 @@
 !endsub
 
 !startsub Education
-    "Involvement" <|-- "Education"
+    "Involvement" <|-d- "Education"
 !endsub
 
 !startsub Membership
@@ -139,7 +139,7 @@
 !endsub
 
 !startsub Membership
-    "Involvement" <|-- "Membership"
+    "Involvement" <|-d- "Membership"
 !endsub
 
 !startsub Contribution
@@ -148,7 +148,7 @@
 !endsub
 
 !startsub Contribution
-    "Activity" <|-- "Contribution"
+    "Activity" <|-d- "Contribution"
 !endsub
 
 !startsub Contribution_to_Project
@@ -157,7 +157,7 @@
 !endsub
 
 !startsub Contribution_to_Project
-    "Contribution" <|-- "Contribution_to_Project"
+    "Contribution" <|-d- "Contribution_to_Project"
 !endsub
 
 !startsub Contribution_to_Document
@@ -166,7 +166,7 @@
 !endsub
 
 !startsub Contribution_to_Document
-    "Contribution" <|-- "Contribution_to_Document"
+    "Contribution" <|-d- "Contribution_to_Document"
 !endsub
 
 !startsub Contribution_to_Event
@@ -175,7 +175,7 @@
 !endsub
 
 !startsub Contribution_to_Event
-    "Contribution" <|-- "Contribution_to_Event"
+    "Contribution" <|-d- "Contribution_to_Event"
 !endsub
 
 !startsub Activity
@@ -423,7 +423,7 @@
 !endsub
 
 !startsub Contribution_Statement
-    "Contribution" *-l- "0..*" "Contribution_Statement" : is detailed in >
+    "Contribution" *-- "0..*" "Contribution_Statement" : is detailed in >
 !endsub
 
 !startsub Contribution_to_Document
