@@ -9,10 +9,10 @@
 (
 # References from md files
 find . "$@" -name \*.md | \
+grep -v '/TEMPLATE_' | \
 xargs grep -o -h -e '([-:./A-Z0-9a-z_]*\.md)' | \
 sed -e 's/(\.\.*\//.\//' -e 's/)$//' \
-    -e 's/(https:\/\/github.com\/[-A-Za-z0-9_.]*\/[-A-Za-z0-9_.]*\/blob\/[-A-Za-z0-9_.]*\//.\//' \
-    -e '/\/XXX\.md/d' -e '/\/TEMPLATE_.*/d'
+    -e 's/(https:\/\/github.com\/[-A-Za-z0-9_.]*\/[-A-Za-z0-9_.]*\/blob\/[-A-Za-z0-9_.]*\//.\//'
 # Names of entities and datatypes in puml files
 find . "$@" -name \*.puml | \
 xargs grep -oh -e 'class "[A-Za-z0-9_]*"' -e 'datatype *( *"[A-Za-z0-9_]*" *)' | \
