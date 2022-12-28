@@ -52,6 +52,9 @@ a specific subtype of a general [Condition](./entities/Condition.md).
 
 [Prizes](./entities/Prize.md) are conferred on Agents in [Prize Awards](./entities/Prize_Award.md).
 
+A Person can have any number of [Person Identifiers](./entities/Person_Identifier.md) assigned,
+for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
+
 ## Listings
 
 ### Entities
@@ -96,6 +99,8 @@ a specific subtype of a general [Condition](./entities/Condition.md).
 * [Expertise and Skills](./entities/Expertise_and_Skills.md)
 * [Expertise and Skills Condition](./entities/Expertise_and_Skills_Condition.md)
 * [Expertise and Skills Possession](./entities/Expertise_and_Skills_Possession.md)
+* [Person Identifier](./entities/Person_Identifier.md)
+  * [ORCID Identifier](./entities/ORCID_Identifier.md)
 
 ### Data Types
 * [String](./datatypes/String.md)
