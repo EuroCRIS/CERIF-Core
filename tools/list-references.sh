@@ -40,6 +40,28 @@ while read N F ; do
   fi
 done
 
+find ./entities -name \*.md \
+| xargs egrep -o -e '<a name="rel[^"]*' \
+| sed -e 's/\.md:<a name="/.md#user-content-/' \
+| sort >${TMPDIR}/CERIF-relationship-anchors-$$.txt
+find ./entities -name \*.md \
+| xargs egrep -H -o -e '\./entities/[A-Za-z0-9_]*\.md#user-content-rel__[^)]*' \
+| sed -e 's/^\([^:]*\):\(.*\)$/\2 \1/' \
+| sort \
+| tee ${TMPDIR}/CERIF-relationship-targets-$$.txt \
+| join -v1 - ${TMPDIR}/CERIF-relationship-anchors-$$.txt >${TMPDIR}/CERIF-relationship-mismatches-$$.txt
+if [ -s ${TMPDIR}/CERIF-relationship-mismatches-$$.txt ] ; then
+	echo
+	echo 'Relationships with non-existent targets:'
+	cat ${TMPDIR}/CERIF-relationship-mismatches-$$.txt
+fi
+join -v2 ${TMPDIR}/CERIF-relationship-targets-$$.txt ${TMPDIR}/CERIF-relationship-anchors-$$.txt >${TMPDIR}/CERIF-relationship-unused-anchors-$$.txt
+if [ -s ${TMPDIR}/CERIF-relationship-unused-anchors-$$.txt ] ; then
+	echo
+	echo 'Unused relationship anchors:'
+	cat ${TMPDIR}/CERIF-relationship-unused-anchors-$$.txt
+fi
+
 ls ./entities/*.md >${TMPDIR}/CERIF-entities-$$.txt
 sed <README.md -e '1,/## Overview/d' -e '/^## /,$d' \
 | grep -oh -e '\(./entities/[A-Za-z0-9_]*\.md\)' \
