@@ -9,7 +9,7 @@ An ORCID<sup>[1](#fn1)</sup> identifier assigned to a [Person](../entities/Perso
 ## Attributes
 Besides those of [Person Identifier](../entities/Person_Identifier.md):
 
-<a name="DOI">attribute name : [datatype](../datatypes/XXX.md)</a>
+<a name="DOI">ORCID ID : [ORCID iD Type](../datatypes/ORCID_iD.md)</a>
 
 ## Relationships
 None besides those of [Person Identifier](../entities/Person_Identifier.md).
