@@ -20,8 +20,6 @@ Wikidata ID : [Wikidata ID Type](../datatypes/Wikidata_ID.md)
 
 lifetime : [Date Range](../datatypes/Date_Range.md)
 
-otherIDs : List<[ID](../datatypes/ID.md)>
-
 ## Relationships
 <a name="rel__activity">An Agent can *[be the actor](../entities/Activity.md#user-content-rel__actor)* of any number of [Activities](../entities/Activity.md).</a>
 
