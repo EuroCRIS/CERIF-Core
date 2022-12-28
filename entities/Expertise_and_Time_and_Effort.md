@@ -22,7 +22,7 @@ Besides those of [Resource](../entities/Resource.md):
 ## Relationships
 Besides those of [Resource](../entities/Resource.md):
 
-<a name="rel__of">An Expertise and Time and Effort *[references](../entities/Agent.md#user-content-rel__has)* the [Agent](../entities/Agent.md) whose expertise, time and effort it would be.</a>
+<a name="rel__agent">An Expertise and Time and Effort *[references](../entities/Agent.md#user-content-rel__in-expertise-and-time-and-effort)* the [Agent](../entities/Agent.md) whose expertise, time and effort it would be.</a>
 
 ---
 ## References

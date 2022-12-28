@@ -18,6 +18,8 @@ date range : [Date Range](../datatypes/Date_Range.md)
 
 <a name="rel__is-evidenced-by">An Activity can *[be evidenced by](../entities/Document.md#user-content-rel__prove_Activity)* any number of [Documents](../entities/Document.md).</a>
 
+<a name="rel__is-covered-by">An Activity can *[be covered by](../entities/Funding.md#user-content-rel__cover)* any number of [Fundings](../entities/Funding.md).</a>
+
 ## Illustrative Diagram
 ![The Activity diagram](../diagrams/activity.svg)
 

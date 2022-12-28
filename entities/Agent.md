@@ -27,7 +27,9 @@ otherIDs : List<[ID](../datatypes/ID.md)>
 
 <a name="rel__receives">An Agent can *[receive](../entities/Prize_Award.md#user-content-rel__recipient)* any number of [Prize Awards](../entities/Prize_Award.md).</a>
 
-(FIXME)
+<a name="rel__in-expertise-and-skills-possession">An Agent can *[be the agent in](../entities/Expertise_and_Skills_Possession.md#user-content-rel__by-agent)* any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md).</a>
+
+<a name="rel__in-expertise-and-time-and-effort">An Agent can *[be the agent in](../entities/Expertise_and_Time_and_Effort.md#user-content-rel__agent)* any number of [Expertise and Time and Effort](../entities/Expertise_and_Time_and_Effort.md).</a>
 
 ## Illustrative Diagram
 ![The Agent diagram](../diagrams/agent.svg)

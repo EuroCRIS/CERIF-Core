@@ -11,7 +11,9 @@ Those inherited from [Contribution](../entities/Contribution.md#attributes)
 
 ## Relationships
 
-Beside those inherited from [Contribution](../entities/Contribution.md#relationships), a Contribution to Document always has the *[document](../entities/Document.md)*: an instance of [Document](../entities/Document.md).
+Beside those inherited from [Contribution](../entities/Contribution.md#relationships):
+
+<a name="rel__document">A Contribution to Document always has the *[document](../entities/Document.md#user-content-rel__contributions)*: an instance of [Document](../entities/Document.md).</a>
 
 ## Illustrative Diagram
 
