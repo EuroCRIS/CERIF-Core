@@ -27,6 +27,9 @@ Any Resource can be [requested](./entities/Resource_Request.md),
 [provided](./entities/Contribution_Statement.md) or 
 actually [used](./entities/Resource_Usage_Statement.md).
 
+Projects typically make use of [Infrastructure](./entities/Infrastructure.md).
+Agents can make [Contributions to Infrastructure](./entities/Contribution_to_Infrastructure.md).
+
 Scientific and other [Events](./entities/Event.md) support communication, including scholarly communication. 
 Agents can make different [Contributions to Events](./entities/Contribution_to_Event.md).
 
@@ -69,6 +72,7 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
     * [Contribution to Event](./entities/Contribution_to_Event.md)
     * [Contribution to Evaluation Outcome](./entities/Contribution_to_Evaluation_Outcome.md)
       * [Application Review](./entities/Application_Review.md)
+    * [Contribution_to_Infrastructure](./entities/Contribution_to_Infrastructure.md)
   * [Involvement](./entities/Involvement.md)
     * [Membership](./entities/Membership.md)
     * [Employment](./entities/Employment.md)
@@ -84,10 +88,12 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
 * [Resource](./entities/Resource.md)
   * [Funding](./entities/Funding.md)
   * [Expertise and Time and Effort](./entities/Expertise_and_Time_and_Effort.md)
+  * [Infrastructure](./entities/Infrastructure.md)
 * [Resource Offer](./entities/Resource_Offer.md)
 * [Resource Request](./entities/Resource_Request.md)
 * [Resource Usage Statement](./entities/Resource_Usage_Statement.md)
 * [Condition](./entities/Condition.md)
+  * [Expertise and Skills Condition](./entities/Expertise_and_Skills_Condition.md)
 * [Call for Applications](./entities/Call_for_Applications.md)
   * [Call for Funding Applications](./entities/Call_for_Funding_Applications.md)
 * [Application](./entities/Application.md)
@@ -97,7 +103,6 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
 * [Prize](./entities/Prize.md)
 * [Prize Award](./entities/Prize_Award.md)
 * [Expertise and Skills](./entities/Expertise_and_Skills.md)
-* [Expertise and Skills Condition](./entities/Expertise_and_Skills_Condition.md)
 * [Expertise and Skills Possession](./entities/Expertise_and_Skills_Possession.md)
 * [Person Identifier](./entities/Person_Identifier.md)
   * [ORCID Identifier](./entities/ORCID_Identifier.md)

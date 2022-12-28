@@ -1,35 +1,15 @@
 # Contribution to Infrastructure
 
-FIXME
-
 ## Definition
-The scope of the entity and its meaning.<sup>[1](#fn1)</sup>
-
-## Usage notes
-An additional description to communicate the purpose of the entity.
+Any contribution an [Agent](../entities/Agent.md) made to an [Infrastructure](../entities/Infrastructure.md).
 
 ## Specialization of
 [Contribution](../entities/Contribution.md)
 
 ## Attributes
-Besides those of [Contribution](../entities/Contribution.md):
-
-<a name="DOI">attribute name : [datatype](../datatypes/XXX.md)</a>
+None besides those of [Contribution](../entities/Contribution.md)
 
 ## Relationships
 Besides those of [Contribution](../entities/Contribution.md):
 
-Use `./tools/new-relationship.sh` to generate the skeleton of a relationship description.
-
-## Constraints
-Any constraints a subclass makes on its superclasses.
-
-## Illustrative Diagram
-A UML diagram showing this entity in its context if one is available.
-
----
-## Matches
-1. Close match of [whatever](url)
-
-## References
-<a name="fn1">\[1\]</a> Source: ...
+<a name="rel__references">A Contribution to Infrastructure *[reference](../entities/Infrastructure.md#user-content-rel__has-benefitted-from)* the [Infrastructure](../entities/Infrastructure.md) that has benefitted.</a>
