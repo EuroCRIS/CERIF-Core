@@ -1,15 +1,9 @@
 # Person Identifier
 
-FIXME
-
 ## Definition
-The scope of the entity and its meaning.<sup>[1](#fn1)</sup>
-
-## Usage notes
-An additional description to communicate the purpose of the entity.
+An identifier that is assigned to a [Person](../entities/Person.md).
 
 ## Attributes
-<a name="DOI">attribute name : [datatype](../datatypes/XXX.md)</a>
 
 ## Relationships
 Use `./tools/new-relationship.sh` to generate the skeleton of a relationship description.
