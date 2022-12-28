@@ -4,15 +4,18 @@
 An ORCID<sup>[1](#fn1)</sup> identifier assigned to a [Person](../entities/Person.md).
 
 ## Specialization of
-[Person Identifier](../entities/Person_Identifier.md)
+[Agent Identifier](../entities/Agent_Identifier.md)
 
 ## Attributes
-Besides those of [Person Identifier](../entities/Person_Identifier.md):
+Besides those of [Agent Identifier](../entities/Agent_Identifier.md):
 
 <a name="DOI">ORCID ID : [ORCID iD Type](../datatypes/ORCID_iD.md)</a>
 
 ## Relationships
-None besides those of [Person Identifier](../entities/Person_Identifier.md).
+None besides those of [Agent Identifier](../entities/Agent_Identifier.md).
+
+## Constraints
+An ORCID Identifier can only [be assigned](../entities/Agent_Identifier.md#user-content-rel__is-assigned-to) to a [Person](../entities/Person.md), not other subtypes of [Agent](../entities/Agent.md).
 
 ---
 ## References
