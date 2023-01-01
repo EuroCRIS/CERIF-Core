@@ -3,7 +3,7 @@
     !includesub core.puml!common
     !includesub core.puml!Agent
     !includesub core.puml!Person
-    !includesub core.puml!PersonAgent_Identifier
+    !includesub core.puml!Agent_Identifier
     !includesub core.puml!Group_or_Organisation_Unit
     !includesub core.puml!Organisation_Unit
     !includesub core.puml!Group
