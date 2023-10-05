@@ -275,11 +275,21 @@
 
 !startsub Postal_Address
     datatype("Postal_Address") {
+        country : Country
+    }
+
+    datatype("Simple_Postal_Address") {
+        address : Multilingual_String
+    }
+
+    datatype("Structured_Postal_Address") {
         street : Multilingual_String
         city : Multilingual_String
         zipCode : Multilingual_String
-        country : Country
     }
+
+     "Postal_Address" <|-d- "Simple_Postal_Address"
+     "Postal_Address" <|-d- "Structured_Postal_Address"
 !endsub
 
 !startsub Country

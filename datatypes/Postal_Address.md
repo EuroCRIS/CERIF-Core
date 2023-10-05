@@ -4,13 +4,10 @@ The location assigned to an [Organisation Unit](../entities/Organisation_Unit.md
 
 ## Components
 
-- street : [Multilingual String](../datatypes/Multilingual_String.md)
-- city : [Multilingual String](../datatypes/Multilingual_String.md)
-- ZIP code: [Multilingual String](../datatypes/Multilingual_String.md)
-- stateOrProvince: [Multilingual String](../datatypes/Multilingual_String.md)
 - country : [Country](../datatypes/Country.md)
 
 ## Notes
 
-The main intended usage of multiple strings for different languages is to allow the representation of the addresses in different scripts, allowing for transliterations.
+Please note there are two specializations of this data type providing more or less structured details about a postal 
+address [Simple Postal Address](../datatypes/Simple_Postal_Address.md) and [Structured Postal Address](../datatypes/Structured_Postal_Address.md)
 
