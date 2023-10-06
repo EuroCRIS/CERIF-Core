@@ -10,11 +10,12 @@ URIs for the datatypes (used in interchange formats) should be constructed using
 ## Sections
 
 1. **Definition**: The scope of the datatype and its meaning. (The heading can be ommited of simple types.)
-2. **Notes**: An additional description to communicate the purpose of the datatype.
-3. **Components**: The list of fields the datatype is composed of. Similar to attributes for [entities](DESCRIBING_ENTITIES.md#sections).
+2. **Specialization of**: The link to the super datatype (the datatype this type extends)
+3. **Notes**: An additional description to communicate the purpose of the datatype.
+4. **Components**: The list of fields the datatype is composed of. Similar to attributes for [entities](DESCRIBING_ENTITIES.md#sections).
 ---
-4. **Matches**: Describe any external datatypes this datatype matches. 
-5. **References**: References to external resources in case these are referenced.
+5. **Matches**: Describe any external datatypes this datatype matches. 
+6. **References**: References to external resources in case these are referenced.
 
 A heading is left out if the section is empty.
 

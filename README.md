@@ -122,6 +122,8 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
 * [Wikidata ID Type](./datatypes/Wikidata_ID.md)
 * [Person Name](./datatypes/Person_Name.md)
 * [Postal Address](./datatypes/Postal_Address.md)
+  * [Simple Postal Address](./datatypes/Simple_Postal_Address.md)
+  * [Structured Postal Address](./datatypes/Structured_Postal_Address.md)
 * [Language](./datatypes/Language.md), [Country](./datatypes/Country.md), [Script](./datatypes/Script.md)
 * [Language Tag](./datatypes/Language_Tag.md)
 * [Monetary Amount](./datatypes/Monetary_Amount.md)
