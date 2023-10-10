@@ -41,7 +41,7 @@ public class Model {
 
 	public Model( final String moduleName ) throws OWLOntologyCreationException {
 		super();
-		this.baseIRI = IRI.create( IRI_BASE + "/", moduleName + "/" );
+		this.baseIRI = IRI.create( IRI_BASE.toString(), moduleName + "/" );
 		log.info( "Starting model for module '" + moduleName + "', IRI " + baseIRI );
 		this.ont = man.createOntology( baseIRI );
 	}
