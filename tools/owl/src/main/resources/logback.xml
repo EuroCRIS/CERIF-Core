@@ -2,6 +2,7 @@
 <configuration>
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<target>System.err</target>
 		<encoder name="enc">
 			<pattern>%d %-5level [%thread] %logger{0}: %msg%n</pattern>
 			<outputPatternAsHeader>true</outputPatternAsHeader>
