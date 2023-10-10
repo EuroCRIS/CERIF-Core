@@ -15,6 +15,8 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vladsch.flexmark.ast.Link;
+
 public class Model {
 
 	protected final Logger log = LoggerFactory.getLogger( getClass().getName() );
@@ -35,7 +37,7 @@ public class Model {
 
 	public Model( final String moduleName ) throws OWLOntologyCreationException {
 		super();
-		this.baseIRI = IRI_BASE.resolve( moduleName );
+		this.baseIRI = IRI.create( IRI_BASE + "/", moduleName + "/" );
 		log.info( "Starting model for module '" + moduleName + "', IRI " + baseIRI );
 		this.ont = man.createOntology( baseIRI );
 	}
@@ -50,10 +52,23 @@ public class Model {
 		entities.add( mainSection );
 
 		final String owlClassName = CaseUtils.toCamelCase( mainSection.getTitle(), true, ' ' );
-		final IRI classIRI = IRI.create( baseIRI.toString() + "/", owlClassName );
+		final IRI classIRI = baseIRI.resolve( owlClassName );
 		log.info( "Declaring class '" + owlClassName + "', IRI " + classIRI );
 		final OWLClass owlClass = dataFactory.getOWLClass( classIRI );
 		ont.add( dataFactory.getOWLDeclarationAxiom( owlClass ) );
+		
+		final Section specializationOfSection = mainSection.getSubsectionByTitle( "Specialization of" );
+		if ( specializationOfSection != null ) {
+			Link x = (Link) specializationOfSection.getContents().get(0).getChildOfType( Link.class );
+			while ( x != null ) {
+				final String linkUrl = x.getUrl().toString();
+				final String linkUrlBase = linkUrl.replaceAll( ".*/", "" ).replaceFirst( "\\.md$", "" );
+				final IRI superclassIRI = baseIRI.resolve( linkUrlBase );
+				final OWLClass owlSuperclass = dataFactory.getOWLClass( superclassIRI );
+				ont.add( dataFactory.getOWLSubClassOfAxiom( owlClass, owlSuperclass ) );
+				x = (Link) x.getNextAny( Link.class );
+			}
+		}
 	}
 
 	public void save() throws OWLOntologyStorageException {
