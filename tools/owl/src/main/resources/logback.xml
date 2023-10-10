@@ -2,7 +2,7 @@
 <configuration>
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder name="enc" class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+		<encoder name="enc">
 			<pattern>%d %-5level [%thread] %logger{0}: %msg%n</pattern>
 			<outputPatternAsHeader>true</outputPatternAsHeader>
 		</encoder>
@@ -12,6 +12,6 @@
 		<appender-ref ref="STDOUT" />
 	</root>
 
-	<logger name="org.eurocris" level="debug" />
+	<logger name="org.eurocris" level="debug"/>
 
 </configuration>
