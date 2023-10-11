@@ -1,6 +1,6 @@
 # ORCID iD Type
 
-The datatype that represents the [ORCID](https://orcid.org/) identifier.
+The datatype that represents the [ORCID identifier](../entities/ORCID_Identifier.md).
 
 It is based on the [String](../datatypes/String.md) datatype with the following restriction:
 - the string must match one of the following regular expressions:<sup>[1](#fn1)</sup> 

@@ -19,11 +19,9 @@ One Person typically has many of these relationships.
 ## Attributes
 name: [Person Name](../datatypes/Person_Name.md)
 
-FIXME - move to ORCID_Identifier
-ORCID iD: [ORCID iD](../datatypes/ORCID_iD.md)
+ORCID iD: [ORCID Identifier](../entities/ORCID_Identifier.md)
 
-FIXME - move to Scopus_Author_ID_Identifier
-Scopus Author ID: [Scopus Author ID](../datatypes/Scopus_Author_ID.md)
+Scopus Author ID: [Scopus Author Identifier](../entities/Scopus_Author_Identifier.md)
 
 ## Relationships
 
