@@ -19,10 +19,6 @@ One Person typically has many of these relationships.
 ## Attributes
 name: [Person Name](../datatypes/Person_Name.md)
 
-ORCID iD: [ORCID Identifier](../entities/ORCID_Identifier.md)
-
-Scopus Author ID: [Scopus Author Identifier](../entities/Scopus_Author_Identifier.md)
-
 ## Relationships
 
 Those of [Agent](../entities/Agent.md#relationships)
