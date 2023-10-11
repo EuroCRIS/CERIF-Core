@@ -10,7 +10,7 @@
 
 Beside those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#attributes), there are also the following specific attribute:
 
-corresponding author flag: [Boolean](../datatypes/Boolean.md) - indicates whether this author is responsible for correspondence (true)
+corresponding author flag: [Boolean](../datatypes/Boolean.md) – indicates whether this author is responsible for correspondence (true)
 
 ## Relationships
 
