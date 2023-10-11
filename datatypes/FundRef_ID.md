@@ -1,4 +1,4 @@
-# The Fundref ID datatype
+# The FundRef ID datatype
 
 The datatype that represents [Funder registry](https://www.crossref.org/services/funder-registry/) entries.
 

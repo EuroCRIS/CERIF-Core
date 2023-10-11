@@ -14,10 +14,6 @@ description: [Multilingual String](../datatypes/Multilingual_String.md)
 
 keywords: List<[Multilingual String](../datatypes/Multilingual_String.md)>
 
-ISNI ID : [ISNI ID Type](../datatypes/ISNI_ID.md)
-
-Wikidata ID : [Wikidata ID Type](../datatypes/Wikidata_ID.md)
-
 lifetime : [Date Range](../datatypes/Date_Range.md)
 
 ## Relationships

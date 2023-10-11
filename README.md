@@ -117,7 +117,7 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
 * [ROR ID Type](./datatypes/ROR_ID.md)
 * [URI Type](./datatypes/URI.md)
 * [DOI Type](./datatypes/DOI.md)
-* [Fundref ID Type](./datatypes/Fundref_ID.md)
+* [Fundref ID Type](./datatypes/FundRef_ID.md)
 * [ISNI ID Type](./datatypes/ISNI_ID.md)
 * [Wikidata ID Type](./datatypes/Wikidata_ID.md)
 * [Person Name](./datatypes/Person_Name.md)
