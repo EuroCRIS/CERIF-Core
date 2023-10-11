@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.text.CaseUtils;
 import org.jetbrains.annotations.NotNull;
 import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.formats.TurtleDocumentFormat;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotationValue;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -14,6 +15,7 @@ import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLDataUnionOf;
 import org.semanticweb.owlapi.model.OWLDatatype;
 import org.semanticweb.owlapi.model.OWLDeclarationAxiom;
+import org.semanticweb.owlapi.model.OWLDocumentFormat;
 import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -188,7 +190,8 @@ public class Model {
 	}
 
 	public void save() throws OWLOntologyStorageException {
-		ont.saveOntology( System.out );
+		final OWLDocumentFormat format = new TurtleDocumentFormat();
+		ont.saveOntology( format, System.out );
 	}
 	
 }
