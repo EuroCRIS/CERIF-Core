@@ -30,6 +30,36 @@
     }
     
     "Agent_Identifier" <|-- "ORCID_Identifier"
+
+    class "ROR_Identifier" #ffffff {
+            rorId : ROR_ID
+        }
+
+    "Agent_Identifier" <|-- "ROR_Identifier"
+
+    class "ISNI_Identifier" #ffffff {
+            isniId : ISNI_ID
+        }
+
+    "Agent_Identifier" <|-- "ISNI_Identifier"
+
+    class "FundRef_Identifier" #ffffff {
+            fundRefId : FundRef_ID
+        }
+
+    "Agent_Identifier" <|-- "FundRef_Identifier"
+
+    class "Scopus_Author_Identifier" #ffffff {
+            scopusAuthorId : Scopus_Author_ID
+        }
+
+    "Agent_Identifier" <|-- "Scopus_Author_Identifier"
+
+    class "Wikidata_Identifier" #ffffff {
+           wikidataId : Wikidata_ID
+        }
+
+    "Agent_Identifier" <|-- "Wikidata_Identifier"
 !endsub
 
 !startsub Person
@@ -75,7 +105,6 @@
         name : Multilingual_String
         acronym : String
         address : Postal_Address
-        rorId : ROR_ID
         webSiteURL : URI
         email : URI
     }
@@ -214,7 +243,6 @@
 
 !startsub Document
     class "Document" #ffffff {
-        DOI : DOI
         title : Multilingual_String
         publicationDate : Date
     }
