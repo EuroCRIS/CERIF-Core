@@ -267,8 +267,19 @@
      "Funding" "0..*" -- "0..*" "Funding" : is part of >
 !endsub
 
+!startsub Resource_Identifier
+    class "Resource_Identifier" #ffffff {
+    }
 
+    "Resource_Identifier" "0..*" <-- "1" "Resource" : has identifier <
 
+    class "DOI_Identifier" #ffffff {
+        doiId : DOI_ID
+    }
+
+    "Resource_Identifier" <|-- "DOI_Identifier"
+
+!endsub
 
 !startsub Contribution_to_Project
     "Contribution_to_Project" --> "Project" : project >
