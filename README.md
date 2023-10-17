@@ -114,6 +114,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md).
   * [FundRef Identifier](./entities/FundRef_Identifier.md)
   * [Scopus Author Identifier](./entities/Scopus_Author_Identifier.md)
   * [Wikidata Identifier](./entities/Wikidata_Identifier.md)
+  * [Local Agent Identifier](./entities/Local_Agent_Identifier.md)
 * [Resource Identifier](./entities/Resource_Identifier.md)
   * [DOI identifier](./entities/DOI_Identifier.md)
 
