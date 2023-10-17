@@ -19,7 +19,7 @@ Should that be necessary, a particular module should undertake this effort.
 [Resource](../entities/Resource.md)
 
 ## Attributes
-<a name="DOI">DOI : [DOI Type](../datatypes/DOI.md)</a>
+<a name="DOI">DOI : [DOI Type](../datatypes/DOI_ID.md)</a>
 
 title : [Multilingual String](../datatypes/Multilingual_String.md)
 

@@ -106,6 +106,8 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
 * [Expertise and Skills Possession](./entities/Expertise_and_Skills_Possession.md)
 * [Agent Identifier](./entities/Agent_Identifier.md)
   * [ORCID Identifier](./entities/ORCID_Identifier.md)
+* [Resource Identifier](./entities/Resource_Identifier.md)
+  * [DOI identifier](./entities/DOI_Identifier.md)
 
 ### Data Types
 * [String](./datatypes/String.md)
@@ -116,7 +118,7 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
 * [ORCID iD Type](./datatypes/ORCID_iD.md)
 * [ROR ID Type](./datatypes/ROR_ID.md)
 * [URI Type](./datatypes/URI.md)
-* [DOI Type](./datatypes/DOI.md)
+* [DOI ID Type](./datatypes/DOI_ID.md)
 * [Fundref ID Type](./datatypes/FundRef_ID.md)
 * [ISNI ID Type](./datatypes/ISNI_ID.md)
 * [Wikidata ID Type](./datatypes/Wikidata_ID.md)
