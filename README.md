@@ -131,6 +131,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md).
 * [Fundref ID Type](./datatypes/FundRef_ID.md)
 * [ISNI ID Type](./datatypes/ISNI_ID.md)
 * [Wikidata ID Type](./datatypes/Wikidata_ID.md)
+* [Scopus Author ID Type](./datatypes/Scopus_Author_ID.md)
 * [Person Name](./datatypes/Person_Name.md)
 * [Postal Address](./datatypes/Postal_Address.md)
   * [Simple Postal Address](./datatypes/Simple_Postal_Address.md)
