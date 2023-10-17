@@ -14,7 +14,7 @@ Involvements may form a hierarchic structure which may in part reflect a hierarc
 [Activity](../entities/Activity.md)
 
 ## Relationships
-<a name="rel__in">An Involvement specifies the [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md) *[in which](../entities/Group_or_Organisation_Unit.md#user-content-rel__has-involvement)* the Agent is involved.</a>
+<a name="rel__in">An Involvement specifies the [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md) the Agent is *[involved in](../entities/Group_or_Organisation_Unit.md#user-content-rel__has-involvement)*.</a>
 
 <a name="rel__have-parent">An Involvement can have a *[parent](../entities/Involvement.md#user-content-rel__have-child)* [Involvement](../entities/Involvement.md).</a>
 Inversely, <a name="rel__have-child">an Involvement can have any number of *[child](../entities/Involvement.md#user-content-rel__have-parent)* [Involvements](../entities/Involvement.md).</a>
