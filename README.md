@@ -135,6 +135,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md).
 * [Postal Address](./datatypes/Postal_Address.md)
   * [Simple Postal Address](./datatypes/Simple_Postal_Address.md)
   * [Structured Postal Address](./datatypes/Structured_Postal_Address.md)
+* [Contact Information](./datatypes/Contact_Information.md)
 * [Language](./datatypes/Language.md), [Country](./datatypes/Country.md), [Script](./datatypes/Script.md)
 * [Language Tag](./datatypes/Language_Tag.md)
 * [Monetary Amount](./datatypes/Monetary_Amount.md)

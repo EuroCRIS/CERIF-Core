@@ -84,10 +84,6 @@
     "Person" ..> "name" "Person_Name"
 !endsub
 
-!startsub Postal_Address
-    "Organisation_Unit" ..> "0..1" "Postal_Address" : address >
-!endsub
-
 !startsub Group_or_Organisation_Unit
     class "Group_or_Organisation_Unit" #ffffff {
     }
@@ -110,9 +106,7 @@
     class "Organisation_Unit" #ffffff {
         name : Multilingual_String
         acronym : String
-        address : Postal_Address
-        webSiteURL : URI
-        email : URI
+        contacts : List<Contact_Information>
     }
 !endsub
 
@@ -335,6 +329,14 @@
 
      "Postal_Address" <|-d- "Simple_Postal_Address"
      "Postal_Address" <|-d- "Structured_Postal_Address"
+
+     datatype("Contact_Information") {
+         postalAddress : Postal_Address
+         visitingAddress : Postal_Address
+         phone : String
+         emailAddress : URI
+         webSiteURL : URI
+     }
 !endsub
 
 !startsub Country
@@ -352,8 +354,7 @@
     class "Affiliation_Statement" #ffffff {
         displayAffiliation_Statement : String
         displayPersonName : String
-        address : Postal_Address
-        contacts : List<URI>
+        contacts : List<Contact_Information>
     }
 !endsub
 
@@ -467,10 +468,6 @@
 
 !startsub Contribution_to_Evaluation_Outcome
     "Contribution_to_Evaluation_Outcome" --> "Evaluation_Outcome"
-!endsub
-
-!startsub Postal_Address
-    "Affiliation_Statement" o..> "Postal_Address" : address >
 !endsub
 
 !startsub Affiliation_Statement
