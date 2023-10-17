@@ -109,6 +109,11 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md).
 * [Expertise and Skills Possession](./entities/Expertise_and_Skills_Possession.md)
 * [Agent Identifier](./entities/Agent_Identifier.md)
   * [ORCID Identifier](./entities/ORCID_Identifier.md)
+  * [ROR Identifier](./entities/ROR_Identifier.md)
+  * [ISNI Identifier](./entities/ISNI_Identifier.md)
+  * [FundRef Identifier](./entities/FundRef_Identifier.md)
+  * [Scopus Author Identifier](./entities/Scopus_Author_Identifier.md)
+  * [Wikidata Identifier](./entities/Wikidata_Identifier.md)
 * [Resource Identifier](./entities/Resource_Identifier.md)
   * [DOI identifier](./entities/DOI_Identifier.md)
 
