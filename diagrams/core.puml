@@ -60,6 +60,12 @@
         }
 
     "Agent_Identifier" <|-- "Wikidata_Identifier"
+
+    class "Local_Agent_Identifier" #ffffff {
+           localAgentId : LocalA_Agent_ID
+    }
+
+    "Agent_Identifier" <|-- "Local_Agent_Identifier"
 !endsub
 
 !startsub Person
