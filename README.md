@@ -56,7 +56,10 @@ a specific subtype of a general [Condition](./entities/Condition.md).
 [Prizes](./entities/Prize.md) are conferred on Agents in [Prize Awards](./entities/Prize_Award.md).
 
 An Agent can have any number of [Agent Identifiers](./entities/Agent_Identifier.md) assigned,
-for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
+for instance the [ORCID Identifier](./entities/ORCID_Identifier.md). 
+
+A Resource can have any number of [Resource Identifiers](./entities/Resource_Identifier.md) assigned,
+for instance the [DOI Identifier](./entities/DOI_Identifier.md).
 
 ## Listings
 
