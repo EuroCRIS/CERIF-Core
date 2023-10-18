@@ -22,12 +22,6 @@ name: [Multilingual String](../datatypes/Multilingual_String.md)
 
 acronym: [String](../datatypes/String.md)
 
-address: [Postal Address](../datatypes/Postal_Address.md)
-
-web site URL: [URI](../datatypes/URI.md)
-
-email: [URI](../datatypes/URI.md)
-
 ## Relationships
 
 Those of [Agent](../entities/Agent.md#relationships)

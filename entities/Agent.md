@@ -16,6 +16,8 @@ keywords: List<[Multilingual String](../datatypes/Multilingual_String.md)>
 
 lifetime : [Date Range](../datatypes/Date_Range.md)
 
+contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
+
 ## Relationships
 <a name="rel__activity">An Agent can *[be the actor](../entities/Activity.md#user-content-rel__actor)* of any number of [Activities](../entities/Activity.md).</a>
 

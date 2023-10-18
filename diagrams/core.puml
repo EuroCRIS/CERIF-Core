@@ -30,6 +30,42 @@
     }
     
     "Agent_Identifier" <|-- "ORCID_Identifier"
+
+    class "ROR_Identifier" #ffffff {
+            rorId : ROR_ID
+        }
+
+    "Agent_Identifier" <|-- "ROR_Identifier"
+
+    class "ISNI_Identifier" #ffffff {
+            isniId : ISNI_ID
+        }
+
+    "Agent_Identifier" <|-- "ISNI_Identifier"
+
+    class "FundRef_Identifier" #ffffff {
+            fundRefId : FundRef_ID
+        }
+
+    "Agent_Identifier" <|-- "FundRef_Identifier"
+
+    class "Scopus_Author_Identifier" #ffffff {
+            scopusAuthorId : Scopus_Author_ID
+        }
+
+    "Agent_Identifier" <|-- "Scopus_Author_Identifier"
+
+    class "Wikidata_Identifier" #ffffff {
+           wikidataId : Wikidata_ID
+        }
+
+    "Agent_Identifier" <|-- "Wikidata_Identifier"
+
+    class "Local_Agent_Identifier" #ffffff {
+           localAgentId : LocalA_Agent_ID
+    }
+
+    "Agent_Identifier" <|-- "Local_Agent_Identifier"
 !endsub
 
 !startsub Person
@@ -46,10 +82,6 @@
 
 !startsub Person
     "Person" ..> "name" "Person_Name"
-!endsub
-
-!startsub Postal_Address
-    "Organisation_Unit" ..> "0..1" "Postal_Address" : address >
 !endsub
 
 !startsub Group_or_Organisation_Unit
@@ -74,10 +106,7 @@
     class "Organisation_Unit" #ffffff {
         name : Multilingual_String
         acronym : String
-        address : Postal_Address
-        rorId : ROR_ID
-        webSiteURL : URI
-        email : URI
+        contacts : List<Contact_Information>
     }
 !endsub
 
@@ -214,7 +243,6 @@
 
 !startsub Document
     class "Document" #ffffff {
-        DOI : DOI
         title : Multilingual_String
         publicationDate : Date
     }
@@ -233,8 +261,19 @@
      "Funding" "0..*" -- "0..*" "Funding" : is part of >
 !endsub
 
+!startsub Resource_Identifier
+    class "Resource_Identifier" #ffffff {
+    }
 
+    "Resource_Identifier" "0..*" <-- "1" "Resource" : has identifier <
 
+    class "DOI_Identifier" #ffffff {
+        doiId : DOI_ID
+    }
+
+    "Resource_Identifier" <|-- "DOI_Identifier"
+
+!endsub
 
 !startsub Contribution_to_Project
     "Contribution_to_Project" --> "Project" : project >
@@ -290,6 +329,14 @@
 
      "Postal_Address" <|-d- "Simple_Postal_Address"
      "Postal_Address" <|-d- "Structured_Postal_Address"
+
+     datatype("Contact_Information") {
+         postalAddress : Postal_Address
+         visitingAddress : Postal_Address
+         phone : String
+         emailAddress : URI
+         webSiteURL : URI
+     }
 !endsub
 
 !startsub Country
@@ -307,8 +354,7 @@
     class "Affiliation_Statement" #ffffff {
         displayAffiliation_Statement : String
         displayPersonName : String
-        address : Postal_Address
-        contacts : List<URI>
+        contacts : List<Contact_Information>
     }
 !endsub
 
@@ -422,10 +468,6 @@
 
 !startsub Contribution_to_Evaluation_Outcome
     "Contribution_to_Evaluation_Outcome" --> "Evaluation_Outcome"
-!endsub
-
-!startsub Postal_Address
-    "Affiliation_Statement" o..> "Postal_Address" : address >
 !endsub
 
 !startsub Affiliation_Statement

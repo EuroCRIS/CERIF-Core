@@ -56,7 +56,10 @@ a specific subtype of a general [Condition](./entities/Condition.md).
 [Prizes](./entities/Prize.md) are conferred on Agents in [Prize Awards](./entities/Prize_Award.md).
 
 An Agent can have any number of [Agent Identifiers](./entities/Agent_Identifier.md) assigned,
-for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
+for instance the [ORCID Identifier](./entities/ORCID_Identifier.md). 
+
+A Resource can have any number of [Resource Identifiers](./entities/Resource_Identifier.md) assigned,
+for instance the [DOI Identifier](./entities/DOI_Identifier.md).
 
 ## Listings
 
@@ -106,6 +109,14 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
 * [Expertise and Skills Possession](./entities/Expertise_and_Skills_Possession.md)
 * [Agent Identifier](./entities/Agent_Identifier.md)
   * [ORCID Identifier](./entities/ORCID_Identifier.md)
+  * [ROR Identifier](./entities/ROR_Identifier.md)
+  * [ISNI Identifier](./entities/ISNI_Identifier.md)
+  * [FundRef Identifier](./entities/FundRef_Identifier.md)
+  * [Scopus Author Identifier](./entities/Scopus_Author_Identifier.md)
+  * [Wikidata Identifier](./entities/Wikidata_Identifier.md)
+  * [Local Agent Identifier](./entities/Local_Agent_Identifier.md)
+* [Resource Identifier](./entities/Resource_Identifier.md)
+  * [DOI identifier](./entities/DOI_Identifier.md)
 
 ### Data Types
 * [String](./datatypes/String.md)
@@ -116,14 +127,17 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md).
 * [ORCID iD Type](./datatypes/ORCID_iD.md)
 * [ROR ID Type](./datatypes/ROR_ID.md)
 * [URI Type](./datatypes/URI.md)
-* [DOI Type](./datatypes/DOI.md)
+* [DOI ID Type](./datatypes/DOI_ID.md)
 * [Fundref ID Type](./datatypes/FundRef_ID.md)
 * [ISNI ID Type](./datatypes/ISNI_ID.md)
 * [Wikidata ID Type](./datatypes/Wikidata_ID.md)
+* [Scopus Author ID Type](./datatypes/Scopus_Author_ID.md)
+* [Local Agent ID Type](./datatypes/Local_Agent_ID.md)
 * [Person Name](./datatypes/Person_Name.md)
 * [Postal Address](./datatypes/Postal_Address.md)
   * [Simple Postal Address](./datatypes/Simple_Postal_Address.md)
   * [Structured Postal Address](./datatypes/Structured_Postal_Address.md)
+* [Contact Information](./datatypes/Contact_Information.md)
 * [Language](./datatypes/Language.md), [Country](./datatypes/Country.md), [Script](./datatypes/Script.md)
 * [Language Tag](./datatypes/Language_Tag.md)
 * [Monetary Amount](./datatypes/Monetary_Amount.md)

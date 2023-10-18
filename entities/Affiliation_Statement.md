@@ -18,9 +18,7 @@ display affiliation: [String](../datatypes/String.md) – the raw string form of
 
 display person name: [String](../datatypes/String.md) – the raw string form of the name of the person as found e.g. in scholarly publications; more structured statements make use of the *person* relationship below
 
-address: [Postal Address](../datatypes/Postal_Address.md)
-
-contacts: List<[URI](../datatypes/URI.md)>
+contacts: List<[Contact Information](../datatypes/Contact_Information.md)>
 
 
 ## Relationships
