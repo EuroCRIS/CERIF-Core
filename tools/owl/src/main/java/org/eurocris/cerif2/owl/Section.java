@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.vladsch.flexmark.ast.Heading;
+import com.vladsch.flexmark.ast.ThematicBreak;
 import com.vladsch.flexmark.util.ast.Node;
 import com.vladsch.flexmark.util.collection.iteration.ReversiblePeekingIterator;
 
@@ -31,7 +32,10 @@ public class Section {
 				while ( iterator.hasNext() ) {
 					final Node nextNode = iterator.peek();
 					if ( nextNode instanceof Heading ) break;
-					contents.add( iterator.next() );
+					iterator.next();
+					if (!( nextNode instanceof ThematicBreak )) {
+						contents.add( nextNode );
+					}
 				}
 				final Section section = new Section( (Heading) firstNode, contents );
 
