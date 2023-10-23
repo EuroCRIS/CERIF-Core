@@ -72,9 +72,20 @@ public class Model {
 		}
 	}
 
-	public void readInDatatypeFile( final StructuredFile file ) {
+	public void readInDatatypeFile( final StructuredFile file ) throws ParseException {
 		final Section mainSection = file.getMainSection();
 		datatypes.add( mainSection );
+		
+		final Section componentsSection = mainSection.getSubsectionByTitle( "Components" );
+		if ( componentsSection != null ) {
+			// corresponds to an XSD complexType -> owl:Class
+			final String owlClassName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
+			final IRI classIRI = baseIRI.resolve( "datatypes" ).resolve( owlClassName );
+			createClass( mainSection, owlClassName, classIRI, "Components", false );
+		} else {
+			// corresponds to an XSD simpleType -> owl:Datatype
+
+		}
 	}
 
 	public void readInEntityFile( final StructuredFile file ) throws ParseException {
@@ -83,6 +94,10 @@ public class Model {
 
 		final String owlClassName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
 		final IRI classIRI = baseIRI.resolve( owlClassName );
+		createClass( mainSection, owlClassName, classIRI, "Attributes", true );
+	}
+
+	protected void createClass( final Section mainSection, final String owlClassName, final IRI classIRI, final String attributesSectionTitle, final boolean definitionObligatory ) throws ParseException {
 		log.info( "Declaring class '" + owlClassName + "', IRI " + classIRI );
 		final OWLClass owlClass = dataFactory.getOWLClass( classIRI );
 		ont.add( dataFactory.getOWLDeclarationAxiom( owlClass ) );
@@ -100,7 +115,7 @@ public class Model {
 			}
 			final OWLLiteral definitionLiteral = dataFactory.getOWLLiteral( sb.toString().trim() + "@" + DEFAULT_LANGUAGE_CODE, OWL2Datatype.RDF_PLAIN_LITERAL );
 			ont.add( dataFactory.getOWLAnnotationAssertionAxiom( owlClass.getIRI(), dataFactory.getRDFSComment( definitionLiteral ) ) );
-		} else {
+		} else if ( definitionObligatory ) {
 			throw new IllegalStateException( "Class " + owlClassName + ": definition not found (no subsection titled \"Definition\")" );
 		}
 		
@@ -117,7 +132,7 @@ public class Model {
 			}
 		}
 		
-		final Section attributesSection = mainSection.getSubsectionByTitle( "Attributes" );
+		final Section attributesSection = mainSection.getSubsectionByTitle( attributesSectionTitle );
 		if ( attributesSection != null ) {
 			final List<Node> children = attributesSection.getContents();
 			int i = 0;
@@ -141,11 +156,14 @@ public class Model {
 					final BasedSequence rest = text.subSequence( colonPosition + 1 ).trim();
 					final int endashPosition = rest.indexOf( '–' );
 					final BasedSequence datatypeSpec = ( endashPosition > 0 ) ? rest.subSequence( 0, endashPosition ).trim() : rest.trim();
-					final String datatypeLinkTarget = datatypeSpec.toString().replaceAll( "[^(]*\\(([^)]*)\\)", "$1" );
+					final String datatypeLinkTarget = datatypeSpec.toString().replaceAll( "[^(]*\\(([^)]*)\\)[^)]*", "$1" );
 					final String attributeName = CaseUtils.toCamelCase( attributeText, false, ' ', '-', '_', '.' );
 					log.info( "Attribute " + attributeName + ", datatype " + datatypeLinkTarget );
 					if (! datatypeLinkTarget.startsWith( "../datatypes/" ) ) {
 						throw new ParseException( "Not referencing ../datatypes/", node );
+					}
+					if ( datatypeLinkTarget.contains( " " ) ) {
+						throw new ParseException( "Missing endash", node );
 					}
 					final String datatypeName = datatypeLinkTarget.replaceFirst( "\\.\\./datatypes/(.*)\\.md", "$1" );
 					final OWLDatatype datatype;
@@ -169,8 +187,7 @@ public class Model {
 						datatype = dateDatatype;
 						break;
 					default:
-						datatype = dataFactory.getIntegerOWLDatatype();
-//						throw new IllegalArgumentException( "Unknown datatype " + datatypeName );
+						datatype = dataFactory.getOWLDatatype( baseIRI.resolve( "datatypes/" + datatypeName ) );
 					}
 					
 					final IRI attributeIRI = classIRI.resolve( "#" + attributeName );
