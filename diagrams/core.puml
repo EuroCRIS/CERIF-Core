@@ -158,6 +158,7 @@
 
 !startsub Education
     class "Education" #ffffff {
+        completed   :   Boolean
     }
 !endsub
 
