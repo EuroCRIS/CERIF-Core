@@ -17,7 +17,8 @@
 
 !startsub Person
     class "Person" #ffffff {
-        name : Person_Name
+        name            : Person_Name
+        alternateNames  : List<Person_Name>
     }
 !endsub
 
