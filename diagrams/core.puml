@@ -122,7 +122,8 @@
 !endsub
 
 !startsub Organisation_Unit
-	"Organisation_Unit" : superunits < "0..*" o..> "0..*" "Organisation_Unit" : subunits >
+	"Organisation_Unit" o..> "0..*" "Organisation_Unit" : subunits >
+	"Organisation_Unit" o..> "0..*" "Organisation_Unit" : superunits >
 !endsub
 
 !startsub Organisation_Unit_with_Members
