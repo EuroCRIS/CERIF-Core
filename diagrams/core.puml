@@ -350,6 +350,10 @@
          emailAddress : URI
          webSiteURL : URI
      }
+
+     "Contact_Information" --> "Postal_Address" : postalAddress >
+     "Contact_Information" --> "Postal_Address" : visitingAddress >
+
 !endsub
 
 !startsub Country
@@ -372,7 +376,7 @@
 !endsub
 
 !startsub Affiliation_Statement
-    "Affiliation_Statement" "1" --> "0..*" "Contact_Information" : contacts >
+    "Affiliation_Statement" --> "0..*" "Contact_Information" : contacts >
 !endsub
 
 !startsub Application
