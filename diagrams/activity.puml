@@ -18,5 +18,6 @@
     !includesub core.puml!Event
     !includesub core.puml!Agent
     !includesub core.puml!Group_or_Organisation_Unit
+    !includesub core.puml!Position
 
 @enduml

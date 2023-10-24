@@ -642,21 +642,23 @@
 	"Agent" <-- "0..*" "Expertise_and_Time_and_Effort" : of <
 !endsub
 
-!startsub Position_Title
-	class "Position_Title" #ffffff {
+!startsub Position
+    datatype("Position") {
+        title   :   Multilingual_String
+        code    :   String
 	}
 !endsub
 
-!startsub Position_Title
-	"Affiliation_Statement" "0..*" --> "0..1" "Position_Title" : position >
+!startsub Position
+	"Affiliation_Statement" "0..*" --> "0..1" "Position" : position >
 !endsub
 
-!startsub Position_Title
+!startsub Position
 	"Employment" "0..1" --> "0..*" "Document" : contract >
 !endsub
 
-!startsub Position_Title
-	"Involvement" "0..*" --> "0..1" "Position_Title" : position >
+!startsub Position
+	"Involvement" "0..*" --> "0..1" "Position" : position >
 !endsub
 
 !startsub Involvement
