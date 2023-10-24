@@ -121,6 +121,10 @@
 	"Group_or_Organisation_Unit" <|-- "Organisation_Unit"
 !endsub
 
+!startsub Organisation_Unit
+	"Organisation_Unit" : superunits < "0..*" o..> "0..*" "Organisation_Unit" : subunits >
+!endsub
+
 !startsub Organisation_Unit_with_Members
     class "Organisation_Unit_with_Members" #ffffff {
     }
