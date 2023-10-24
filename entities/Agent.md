@@ -10,7 +10,6 @@ or [Group](../entities/Group.md),
 for future extension.
 
 ## Attributes
-description: [Multilingual String](../datatypes/Multilingual_String.md)
 
 keywords: List<[Multilingual String](../datatypes/Multilingual_String.md)>
 

@@ -18,9 +18,8 @@ In the research information domain Organisation Units typically represents:
 [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md)
 
 ## Attributes
-name: [Multilingual String](../datatypes/Multilingual_String.md)
 
-acronym: [String](../datatypes/String.md)
+Those of [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md).
 
 ## Relationships
 

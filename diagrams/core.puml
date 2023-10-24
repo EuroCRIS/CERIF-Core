@@ -9,7 +9,9 @@
 
 !startsub Agent
     class "Agent" #ffffff {
+        keywords : List<Multilingual_String>
     	lifetime : Date_Range
+    	contacts : List<Contact_Information>
     }
 !endsub
 
@@ -86,6 +88,9 @@
 
 !startsub Group_or_Organisation_Unit
     class "Group_or_Organisation_Unit" #ffffff {
+        name : Multilingual_String
+        acronym : String
+        description : Multilingual_String
     }
 !endsub
 
@@ -104,9 +109,6 @@
 
 !startsub Organisation_Unit
     class "Organisation_Unit" #ffffff {
-        name : Multilingual_String
-        acronym : String
-        contacts : List<Contact_Information>
     }
 !endsub
 
