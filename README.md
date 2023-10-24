@@ -9,7 +9,7 @@ The information interchanged is not necessarily intended to be public.
 Agents can perform [Activities](./entities/Activity.md).
 
 Persons can act on their own, in affiliation to or on behalf of an Organisation Unit or a Group (optionally in their Position).
-In the latter cases, an [Affiliation Statement](./entities/Affiliation_Statement.md) describes the connection. Multiple Affilation Statements are possible.
+In the latter cases, an [Affiliation Statement](./entities/Affiliation_Statement.md) describes the connection. Multiple Affiliation Statements are possible.
 
 A Group can have any number of Agents as members (so we track [Memberships](./entities/Membership.md), one type of Activity).
 If members of an Organisation Unit are to be represented, [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) can be used.
