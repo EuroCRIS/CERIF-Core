@@ -18,13 +18,16 @@ In the research information domain Organisation Units typically represents:
 [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md)
 
 ## Attributes
-name: [Multilingual String](../datatypes/Multilingual_String.md)
 
-acronym: [String](../datatypes/String.md)
+Those of [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md).
 
 ## Relationships
 
 Those of [Agent](../entities/Agent.md#relationships)
+
+<a name="rel__has-superunit">An Organisation Unit can *[have](../entities/Organisation_Unit.md#user-content-rel__has-subunit)* any number of [Organisation superunits](../entities/Organisation_Unit.md).</a>
+
+<a name="rel__has-subunit">An Organisation Unit can *[have](../entities/Organisation_Unit.md#user-content-rel__has-superunit)* any number of [Organisation subunits](../entities/Organisation_Unit.md).</a>
 
 ---
 ## Matches

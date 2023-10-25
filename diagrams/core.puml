@@ -9,13 +9,20 @@
 
 !startsub Agent
     class "Agent" #ffffff {
+        keywords : List<Multilingual_String>
     	lifetime : Date_Range
+    	contacts : List<Contact_Information>
     }
+!endsub
+
+!startsub Agent
+    "Agent" "1" --> "0..*" "Contact_Information" : contacts >
 !endsub
 
 !startsub Person
     class "Person" #ffffff {
-        name : Person_Name
+        name            : Person_Name
+        alternateNames  : List<Person_Name>
     }
 !endsub
 
@@ -86,6 +93,9 @@
 
 !startsub Group_or_Organisation_Unit
     class "Group_or_Organisation_Unit" #ffffff {
+        name : Multilingual_String
+        acronym : String
+        description : Multilingual_String
     }
 !endsub
 
@@ -104,14 +114,16 @@
 
 !startsub Organisation_Unit
     class "Organisation_Unit" #ffffff {
-        name : Multilingual_String
-        acronym : String
-        contacts : List<Contact_Information>
     }
 !endsub
 
 !startsub Organisation_Unit
 	"Group_or_Organisation_Unit" <|-- "Organisation_Unit"
+!endsub
+
+!startsub Organisation_Unit
+	"Organisation_Unit" o..> "0..*" "Organisation_Unit" : subunits >
+	"Organisation_Unit" o..> "0..*" "Organisation_Unit" : superunits >
 !endsub
 
 !startsub Organisation_Unit_with_Members
@@ -155,6 +167,7 @@
 
 !startsub Education
     class "Education" #ffffff {
+        completed   :   Boolean
     }
 !endsub
 
@@ -337,6 +350,10 @@
          emailAddress : URI
          webSiteURL : URI
      }
+
+     "Contact_Information" --> "Postal_Address" : postalAddress >
+     "Contact_Information" --> "Postal_Address" : visitingAddress >
+
 !endsub
 
 !startsub Country
@@ -356,6 +373,10 @@
         displayPersonName : String
         contacts : List<Contact_Information>
     }
+!endsub
+
+!startsub Affiliation_Statement
+    "Affiliation_Statement" --> "0..*" "Contact_Information" : contacts >
 !endsub
 
 !startsub Application
@@ -638,21 +659,23 @@
 	"Agent" <-- "0..*" "Expertise_and_Time_and_Effort" : of <
 !endsub
 
-!startsub Position_Title
-	class "Position_Title" #ffffff {
+!startsub Position
+    datatype("Position") {
+        title   :   Multilingual_String
+        code    :   String
 	}
 !endsub
 
-!startsub Position_Title
-	"Affiliation_Statement" "0..*" --> "0..1" "Position_Title" : position >
+!startsub Position
+	"Affiliation_Statement" "0..*" --> "0..1" "Position" : position >
 !endsub
 
-!startsub Position_Title
+!startsub Position
 	"Employment" "0..1" --> "0..*" "Document" : contract >
 !endsub
 
-!startsub Position_Title
-	"Involvement" "0..*" --> "0..1" "Position_Title" : position >
+!startsub Position
+	"Involvement" "0..*" --> "0..1" "Position" : position >
 !endsub
 
 !startsub Involvement

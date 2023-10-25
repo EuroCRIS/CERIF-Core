@@ -9,14 +9,14 @@ The information interchanged is not necessarily intended to be public.
 Agents can perform [Activities](./entities/Activity.md).
 
 Persons can act on their own, in affiliation to or on behalf of an Organisation Unit or a Group (optionally in their Position).
-In the latter cases, an [Affiliation Statement](./entities/Affiliation_Statement.md) describes the connection. Multiple Affilation Statements are possible.
+In the latter cases, an [Affiliation Statement](./entities/Affiliation_Statement.md) describes the connection. Multiple Affiliation Statements are possible.
 
 A Group can have any number of Agents as members (so we track [Memberships](./entities/Membership.md), one type of Activity).
 If members of an Organisation Unit are to be represented, [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) can be used.
 
 Membership is a specific type of [Involvement](./entities/Involvement.md) in a [Group or Organisation Unit](./entities/Group_or_Organisation_Unit.md).
 Other types are [Employment](./entities/Employment.md) and [Education](./entities/Education.md).
-Involvements can reference a [Position Title](./entities/Position_Title.md) that describes the capacities of the involved Agent.
+Involvements can reference a [Position](./datatypes/Position.md) that describes the capacities of the involved Agent.
 
 Research is typically carried out in [Projects](./entities/Project.md). 
 Projects need [Resources](./entities/Resource.md), such as [Funding](./entities/Funding.md).
@@ -80,7 +80,6 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md).
     * [Membership](./entities/Membership.md)
     * [Employment](./entities/Employment.md)
     * [Education](./entities/Education.md)
-* [Position_Title](./entities/Position_Title.md)
 * [Document](./entities/Document.md)
   * [Textual Document](./entities/Textual_Document.md)
 * [Affiliation](./entities/Affiliation_Statement.md)
@@ -138,6 +137,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md).
   * [Simple Postal Address](./datatypes/Simple_Postal_Address.md)
   * [Structured Postal Address](./datatypes/Structured_Postal_Address.md)
 * [Contact Information](./datatypes/Contact_Information.md)
+* [Position](./datatypes/Position.md)
 * [Language](./datatypes/Language.md), [Country](./datatypes/Country.md), [Script](./datatypes/Script.md)
 * [Language Tag](./datatypes/Language_Tag.md)
 * [Monetary Amount](./datatypes/Monetary_Amount.md)

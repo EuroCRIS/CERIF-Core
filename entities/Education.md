@@ -7,13 +7,15 @@ The process of (teaching or) learning, especially in a school or college, or the
 An Education is an *[involvement in](../entities/Involvement.md#user-content-rel__in)* a training process organized by an [Organisation Unit](../entities/Organisation_Unit.md).
 
 ## Specialization of
-[Involvement](./entities/Involvement.md)
+[Involvement](../entities/Involvement.md)
 
 ## Attributes
-Those of [Involvement](./entities/Involvement.md).
+Those of [Involvement](../entities/Involvement.md).
+
+completed   :   [Boolean](../datatypes/Boolean.md)
 
 ## Relationships
-Those of [Involvement](./entities/Involvement.md).
+Those of [Involvement](../entities/Involvement.md).
 
 ## Constraints
 Any constraints a subclass makes on its superclasses.
@@ -22,8 +24,5 @@ Any constraints a subclass makes on its superclasses.
 A UML diagram showing this entity in its context if one is available.
 
 ---
-## Matches
-1. Close match of [whatever](url)
-
 ## References
 <a name="fn1">\[1\]</a> Source: The Cambridge Dictionary of English. https://dictionary.cambridge.org/dictionary/english/education

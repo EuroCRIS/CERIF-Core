@@ -17,7 +17,9 @@ One Person typically has many of these relationships.
 [Agent](../entities/Agent.md)
 
 ## Attributes
-name: [Person Name](../datatypes/Person_Name.md)
+name            : [Person Name](../datatypes/Person_Name.md)
+
+alternate names : List<[Person Name](../datatypes/Person_Name.md)>
 
 ## Relationships
 
