@@ -286,6 +286,12 @@
 
     "Resource_Identifier" <|-- "DOI_Identifier"
 
+    class "Wikidata_Resource_Identifier" #ffffff {
+        wikidataId : Wikidata_ID
+    }
+
+    "Resource_Identifier" <|-- "Wikidata_Resource_Identifier"
+
 !endsub
 
 !startsub Contribution_to_Project
