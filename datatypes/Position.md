@@ -14,8 +14,6 @@ data type can be found in the relation between [Postal Address](../datatypes/Pos
 
 title : [Multilingual String](../datatypes/Multilingual_String.md)
 
-code : [String](../datatypes/String.md)
-
 ---
 ## Matches
 1. Close match of [the rdfs:label in VIVO Position](https://wiki.lyrasis.org/display/VIVODOC115x/Person+Model)
