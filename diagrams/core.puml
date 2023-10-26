@@ -62,11 +62,11 @@
 
     "Agent_Identifier" <|-- "Scopus_Author_Identifier"
 
-    class "Wikidata_Identifier" #ffffff {
+    class "Wikidata_Agent_Identifier" #ffffff {
            wikidataId : Wikidata_ID
         }
 
-    "Agent_Identifier" <|-- "Wikidata_Identifier"
+    "Agent_Identifier" <|-- "Wikidata_Agent_Identifier"
 
     class "Local_Agent_Identifier" #ffffff {
            localAgentId : LocalA_Agent_ID
