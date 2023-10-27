@@ -121,9 +121,8 @@
 	"Group_or_Organisation_Unit" <|-- "Organisation_Unit"
 !endsub
 
-!startsub Organisation_Unit
-	"Organisation_Unit" o..> "0..*" "Organisation_Unit" : subunits >
-	"Organisation_Unit" o..> "0..*" "Organisation_Unit" : superunits >
+!startsub Group_or_Organisation_Unit
+	"Group_or_Organisation_Unit" "0..* part of" <..> "0..* parts" "Group_or_Organisation_Unit"
 !endsub
 
 !startsub Organisation_Unit_with_Members
