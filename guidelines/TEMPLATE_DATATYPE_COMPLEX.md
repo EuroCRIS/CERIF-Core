@@ -16,6 +16,8 @@ An additional description to communicate the purpose of the datatype.
 The list of fields the datatype is composed of. 
 Similar to attributes for [entities](./DESCRIBING_ENTITIES.md#sections).
 
+## Restrictions
+1. ...
 ---
 ## Matches
 1. Close match of [whatever](url)

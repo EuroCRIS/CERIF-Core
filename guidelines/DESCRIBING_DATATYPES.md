@@ -16,9 +16,10 @@ A heading is left out if the section is empty.
 2. **Notes**: An additional description to communicate the purpose of the datatype.
 3. **Specialization of**: The link to the super datatype (the datatype this type extends)
 4. **Components**: The list of fields the datatype is composed of. Similar to attributes for [entities](DESCRIBING_ENTITIES.md#sections).
+5. **Restrictions**: An enumerated list of restrictions that apply between components (e.g. The *start date* and *end date* must have the same granularity)
 ---
-5. **Matches**: Describe any external datatypes this datatype matches. 
-6. **References**: References to external resources in case these are referenced.
+6. **Matches**: Describe any external datatypes this datatype matches. 
+7. **References**: References to external resources in case these are referenced.
 
 Use the [template file](./TEMPLATE_DATATYPE_COMPLEX.md) as a starting point.
 
@@ -27,8 +28,9 @@ Use the [template file](./TEMPLATE_DATATYPE_COMPLEX.md) as a starting point.
 2. **Notes**: An additional description to communicate the purpose of the datatype.
 3. **Based on**: The link to the base datatype (the datatype this type restricts)
 4. **Restrictions**: An enumerated list of restrictions that apply (e.g. maximum length, regular expression, possibly also algorithmic restrictions such as checksums)
+5. **Examples**: A list of examples
 ---
-5. **Matches**: Describe any external datatypes this datatype matches.
-6. **References**: References to external resources in case these are referenced.
+6. **Matches**: Describe any external datatypes this datatype matches.
+7. **References**: References to external resources in case these are referenced.
 
 Use the [template file](./TEMPLATE_DATATYPE_SIMPLE.md) as a starting point.

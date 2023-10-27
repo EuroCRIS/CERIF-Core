@@ -7,9 +7,8 @@ A certain volume of money, together with the specification of a currency.
 Currency: The money that is used in a particular country at a particular time.<sup>[1](#fn1)</sup>
 
 ## Components
-amount: [Decimal](../datatypes/Decimal.md) – mandatory
-
-currency code: [ISO 4217 Alpha Code](../datatypes/ISO_4217_Alpha_Code.md) – mandatory
+- amount: [Decimal](../datatypes/Decimal.md) – mandatory
+- currency code: [ISO 4217 Alpha Code](../datatypes/ISO_4217_Alpha_Code.md) – mandatory
 
 ---
 

@@ -8,9 +8,8 @@ An example of different scripts for the same language might be Cyrillic and Lati
 ISO 15924 standardizes<sup>[2](#fn2)</sup> the codes for scripts. 
 
 ## Components
-name: [Multilingual String](../datatypes/Multilingual_String.md)
-
-script code: [ISO 15924 Alphabetic Code Type](../datatypes/ISO_15924_Alpha4_Code.md)
+- name: [Multilingual String](../datatypes/Multilingual_String.md)
+- script code: [ISO 15924 Alphabetic Code Type](../datatypes/ISO_15924_Alpha4_Code.md)
 
 ---
 ## References

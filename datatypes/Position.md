@@ -11,8 +11,7 @@ data type can be found in the relation between [Postal Address](../datatypes/Pos
 [Structured Postal Address](../datatypes/Structured_Postal_Address.md) 
 
 ## Components
-
-title : [Multilingual String](../datatypes/Multilingual_String.md)
+- title : [Multilingual String](../datatypes/Multilingual_String.md)
 
 ---
 ## Matches

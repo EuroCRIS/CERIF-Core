@@ -1,5 +1,6 @@
 # Boolean
 
+## Definition
 A boolean value, so either True or False.
 
 ---

@@ -1,5 +1,6 @@
 # URI (Uniform Resource Identifier)
 
+## Definition
 Any sequence of characters that is legal as a Uniform Resource Identifier<sup>[1](#fn1)</sup>.
 Relative URIs are supported too, but the datatype does not specify their resolution context.
 

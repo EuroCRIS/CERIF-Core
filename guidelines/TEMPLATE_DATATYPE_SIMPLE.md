@@ -15,6 +15,9 @@ An additional description to communicate the purpose of the datatype.
 ## Restrictions
 1. ...
 
+## Examples
+- ...
+
 ---
 ## Matches
 1. Close match of [whatever](url)
