@@ -26,11 +26,12 @@ Use the [template file](./TEMPLATE_DATATYPE_COMPLEX.md) as a starting point.
 ### For datatypes without components (xsd:simpleType)
 1. **Definition**: The scope of the datatype and its meaning.
 2. **Notes**: An additional description to communicate the purpose of the datatype.
-3. **Based on**: The link to the base datatype (the datatype this type restricts)
-4. **Restrictions**: An enumerated list of restrictions that apply (e.g. maximum length, regular expression, possibly also algorithmic restrictions such as checksums)
-5. **Examples**: A list of examples
+3. **Specialization of**: The link to the super datatype (the datatype this type extends)
+4. **Based on**: The link to the base datatype (the datatype this type restricts)
+5. **Restrictions**: An enumerated list of restrictions that apply (e.g. maximum length, regular expression, possibly also algorithmic restrictions such as checksums)
+6. **Examples**: A list of examples
 ---
-6. **Matches**: Describe any external datatypes this datatype matches.
-7. **References**: References to external resources in case these are referenced.
+7. **Matches**: Describe any external datatypes this datatype matches.
+8. **References**: References to external resources in case these are referenced.
 
 Use the [template file](./TEMPLATE_DATATYPE_SIMPLE.md) as a starting point.

@@ -9,6 +9,9 @@ The scope of the datatype and its meaning.<sup>[1](#fn1)</sup>
 ## Notes
 An additional description to communicate the purpose of the datatype.
 
+## Specialization of
+[XXX](../datatypes/XXX.md)
+
 ## Based on
 [XXX](../datatypes/XXX.md)
 

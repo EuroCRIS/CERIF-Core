@@ -2,7 +2,7 @@
 
 ## Definition
 The contact information assigned to an [Agent](../entities/Organisation_Unit.md). The contact information might be 
-Postal address, Visiting address, Email address, Telephone number, Website URL
+Physical Address (Postal address, Visiting address) or Electronic Address (Email address, Telephone number, Website URL, etc.)
 
 ## Components
 - postalAddress : [Postal Address](../datatypes/Postal_Address.md)
