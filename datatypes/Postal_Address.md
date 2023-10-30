@@ -1,14 +1,15 @@
 # Postal Address
 
 ## Definition
+A postal address assigned to an [Agent](../entities/Organisation_Unit.md). 
 
-The location assigned to an [Organisation Unit](../entities/Organisation_Unit.md) or some other CERIF entity instance.
-
-## Notes
-
-Please note there are two specializations of this data type providing more or less structured details about a postal
-address [Simple Postal Address](../datatypes/Simple_Postal_Address.md) and [Structured Postal Address](../datatypes/Structured_Postal_Address.md)
+## Specialization of
+[Contact Information](../datatypes/Contact_Information.md)
 
 ## Components
+- physical address : [Physical Address](../datatypes/Physical_Address.md)
 
-- country : [Country](../datatypes/Country.md)
+---
+## Matches
+1. Close match of [Schema.org home location](https://schema.org/homeLocation)
+2. Close match of [Schema.org address](https://schema.org/address)

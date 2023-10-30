@@ -1,11 +1,13 @@
 # The DOI (Digital Object Identifier) datatype
 
+## Definition
 The datatype that represents the [Digital Object Identifiers](https://www.doi.org/).
 
-It is based on the [String](../datatypes/String.md) datatype with the additional restriction that the string must match the following regular expression<sup>[1](#fn1)</sup>:
-```
-10\.[0-9]{4,}(\.[0-9]+)*/[^  ]
-```
+## Based on
+[String](../datatypes/String.md) 
+
+## Restriction
+1. The string must match the following regular expression<sup>[1](#fn1)</sup>: `10\.[0-9]{4,}(\.[0-9]+)*/[^  ]`
 
 ---
 ## References

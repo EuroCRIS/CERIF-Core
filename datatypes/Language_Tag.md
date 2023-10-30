@@ -8,12 +8,14 @@ The syntax and semantics of language tags is specified by the BCP 47 standard<su
 
 Language tags are used as language qualifiers in [Multilingual Strings](../datatypes/Multilingual_String.md).
 
-## Syntax
+## Based on
+[String](../datatypes/String.md)
 
-A code for [language](../datatypes/Language.md), optionally followied by codes 
+## Restrictions
+1. A code for [language](../datatypes/Language.md), optionally followied by codes 
 for a [script](../datatypes/Script.md), a [country](../datatypes/Country.md) or for other aspects, separated by dashes (`-`).
 
-Examples:
+## Examples
 - `en` - English
 - `de-AT` - German as used in Austria
 - `sr-Cyrl` - Serbian written in Cyrillic 

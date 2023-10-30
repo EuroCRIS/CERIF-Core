@@ -62,11 +62,11 @@
 
     "Agent_Identifier" <|-- "Scopus_Author_Identifier"
 
-    class "Wikidata_Identifier" #ffffff {
+    class "Wikidata_Agent_Identifier" #ffffff {
            wikidataId : Wikidata_ID
         }
 
-    "Agent_Identifier" <|-- "Wikidata_Identifier"
+    "Agent_Identifier" <|-- "Wikidata_Agent_Identifier"
 
     class "Local_Agent_Identifier" #ffffff {
            localAgentId : LocalA_Agent_ID
@@ -121,9 +121,8 @@
 	"Group_or_Organisation_Unit" <|-- "Organisation_Unit"
 !endsub
 
-!startsub Organisation_Unit
-	"Organisation_Unit" o..> "0..*" "Organisation_Unit" : subunits >
-	"Organisation_Unit" o..> "0..*" "Organisation_Unit" : superunits >
+!startsub Group_or_Organisation_Unit
+	"Group_or_Organisation_Unit" "0..* part of" <..> "0..* parts" "Group_or_Organisation_Unit"
 !endsub
 
 !startsub Organisation_Unit_with_Members
@@ -286,6 +285,12 @@
 
     "Resource_Identifier" <|-- "DOI_Identifier"
 
+    class "Wikidata_Resource_Identifier" #ffffff {
+        wikidataId : Wikidata_ID
+    }
+
+    "Resource_Identifier" <|-- "Wikidata_Resource_Identifier"
+
 !endsub
 
 !startsub Contribution_to_Project
@@ -325,34 +330,67 @@
     }
 !endsub
 
-!startsub Postal_Address
-    datatype("Postal_Address") {
+!startsub Physical_Address
+    datatype("Physical_Address") {
         country : Country
     }
 
-    datatype("Simple_Postal_Address") {
+    datatype("Simple_Physical_Address") {
         address : Multilingual_String
     }
 
-    datatype("Structured_Postal_Address") {
+    datatype("Structured_Physical_Address") {
         street : Multilingual_String
         city : Multilingual_String
         zipCode : Multilingual_String
     }
 
-     "Postal_Address" <|-d- "Simple_Postal_Address"
-     "Postal_Address" <|-d- "Structured_Postal_Address"
+     "Physical_Address" <|-d- "Simple_Physical_Address"
+     "Physical_Address" <|-d- "Structured_Physical_Address"
 
      datatype("Contact_Information") {
-         postalAddress : Postal_Address
-         visitingAddress : Postal_Address
+         postalAddress : Physical_Address
+         visitingAddress : Physical_Address
          phone : String
          emailAddress : URI
          webSiteURL : URI
      }
 
-     "Contact_Information" --> "Postal_Address" : postalAddress >
-     "Contact_Information" --> "Postal_Address" : visitingAddress >
+     datatype("Postal_Address") {
+          physicalAddress : Physical_Address
+     }
+
+     "Contact_Information" <|-d- "Postal_Address"
+     "Postal_Address" --> "1" "Physical_Address"
+
+
+     datatype("Visiting_Address") {
+          physicalAddress : Physical_Address
+     }
+
+     "Contact_Information" <|-d- "Visiting_Address"
+     "Visiting_Address" --> "1" "Physical_Address"
+
+     datatype("Electronic_Address") {
+     }
+
+     "Contact_Information" <|-d- "Electronic_Address"
+
+     datatype("Email_Address") {
+     }
+
+     "Electronic_Address" <|-d- "Email_Address"
+
+     datatype("Website_Address") {
+     }
+
+     "Electronic_Address" <|-d- "Website_Address"
+
+     datatype("Phone_Number") {
+     }
+
+     "Electronic_Address" <|-d- "Phone_Number"
+
 
 !endsub
 
@@ -363,8 +401,8 @@
     }
 !endsub
 
-!startsub Postal_Address
-    "Postal_Address" o..> "Country" : country >
+!startsub Physical_Address
+    "Physical_Address" o..> "Country" : country >
 !endsub
 
 !startsub Affiliation_Statement

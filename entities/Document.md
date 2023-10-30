@@ -19,8 +19,6 @@ Should that be necessary, a particular module should undertake this effort.
 [Resource](../entities/Resource.md)
 
 ## Attributes
-<a name="DOI">DOI : [DOI Type](../datatypes/DOI_ID.md)</a>
-
 title : [Multilingual String](../datatypes/Multilingual_String.md)
 
 publication date: [Date](../datatypes/Date.md) in case the document has gone through publication

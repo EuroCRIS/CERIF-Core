@@ -1,4 +1,4 @@
-# Wikidata Identifier
+# Wikidata Agent Identifier
 
 ## Definition
 A Wikidata<sup>[1](#fn1)</sup> identifier assigned to an [Agent](../entities/Agent.md).

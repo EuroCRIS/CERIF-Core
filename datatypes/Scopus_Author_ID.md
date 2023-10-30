@@ -1,8 +1,12 @@
 # Scopus Author ID Type
 
-The datatype that represents the [Scopus Author identifier](../entities/Scopus_Author_Identifier.md).
+## Definition
+The datatype that represents the [Scopus Author](https://scopus.com) identifier.
 
-It is based on the [Decimal](../datatypes/Decimal.md) datatype with the following restriction:
-- it is a positive integer usually with 10 or 11 digits
+## Based on 
+[Decimal](../datatypes/Decimal.md) 
+
+## Restrictions
+1. A positive integer with 10 or 11 digits
 
 

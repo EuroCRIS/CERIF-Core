@@ -1,13 +1,13 @@
 # Date
 
+## Definition
 Represents dates of the proleptic Gregorian calendar in line with the ISO 8601:2019 standard.<sup>[1](#fn1)</sup>
 
-## Variants
-
+## Notes
 Three granularities are supported:
-1. Full date (YYYY-MM-DD)
-2. Year and month (YYYY-MM)
-3. Just the year (YYYY)
+- Full date (YYYY-MM-DD)
+- Year and month (YYYY-MM)
+- Just the year (YYYY)
 
 ---
 ## Matches

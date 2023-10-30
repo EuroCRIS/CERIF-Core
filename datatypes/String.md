@@ -1,5 +1,6 @@
 # String
 
+## Definition
 A string of Unicode characters of any length.
 
 ---

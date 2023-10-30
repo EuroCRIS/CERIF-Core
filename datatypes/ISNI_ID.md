@@ -1,10 +1,14 @@
 # ISNI ID Type
 
+## Definition
 The datatype that represents the [ISNI](https://isni.org/) identifier (International Standard Name Identifier).
 
-It is based on the [String](../datatypes/String.md) datatype with the following restriction:
-- the string must match the following regular expression: `https://isni\.org/isni/[0-9]{15}[0-9X]`<sup>[1](#fn1)</sup>
-- the last character is the checksum character of the previous 15 digits (discarding the hyphens) calculated by the MOD11-2 algorithm<sup>[2](#fn2)</sup>
+## Based on
+[String](../datatypes/String.md)
+
+## Restrictions
+1. The string must match the following regular expression<sup>[1](#fn1)</sup>: `https://isni\.org/isni/[0-9]{15}[0-9X]`
+1. The last character is the checksum character of the previous 15 digits (discarding the hyphens) calculated by the MOD11-2 algorithm<sup>[2](#fn2)</sup>
 
 ---
 ## References
