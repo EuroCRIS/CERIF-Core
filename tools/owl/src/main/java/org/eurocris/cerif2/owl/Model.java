@@ -38,8 +38,10 @@ import org.semanticweb.owlapi.vocab.XSDVocabulary;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vladsch.flexmark.ast.BulletList;
 import com.vladsch.flexmark.ast.Link;
 import com.vladsch.flexmark.util.ast.Node;
+import com.vladsch.flexmark.util.collection.iteration.ReversiblePeekingIterable;
 import com.vladsch.flexmark.util.sequence.BasedSequence;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString;
@@ -190,68 +192,33 @@ public class Model {
 					int i = 0;
 					for ( final Node node : children ) {
 						++i;
-						@NotNull
-						BasedSequence text = node.getChars().trim();
-						log.info( "Node " + node + ": " + text );
-						if ( i == 1 && ( text.startsWith( "Beside" ) || text.startsWith( "Those " ) || text.startsWith( "None besides those of " ) || text.startsWith( "Just those of " ) ) ) {
-							// ignore
-						} else if ( text.startsWith( "FIXME" ) ) {
-							// ignore
-						} else {
-							if ( text.startsWith( "<a name=\"" ) && text.endsWith( "</a>" ) ) {
-								text = text.subSequence( text.indexOf( ">" ) + 1, text.length() - "</a>".length() );
-							}
-							final int colonPosition = text.indexOf( ':' );
-							if ( colonPosition < 0 ) {
-								throw new ParseException( "No colon specified", node );
-							}
-							final String attributeText = text.subSequence( 0, colonPosition ).trim().toString();
-							final BasedSequence rest = text.subSequence( colonPosition + 1 ).trim();
-							final int endashPosition = rest.indexOf( '–' );
-							final BasedSequence datatypeSpec = ( endashPosition > 0 ) ? rest.subSequence( 0, endashPosition ).trim() : rest.trim();
-							final String datatypeLinkTarget = datatypeSpec.toString().replaceAll( "[^(]*\\(([^)]*)\\)[^)]*", "$1" );
-							final String attributeName = CaseUtils.toCamelCase( attributeText, false, ' ', '-', '_', '.' );
-							log.info( "Attribute " + attributeName + ", datatype " + datatypeLinkTarget );
-							if ( !datatypeLinkTarget.startsWith( "../datatypes/" ) ) {
-								throw new ParseException( "Not referencing ../datatypes/", node );
-							}
-							if ( datatypeLinkTarget.contains( " " ) ) {
-								throw new ParseException( "Missing endash", node );
-							}
-							final IRI attributeIRI = classIRI.resolve( "#" + attributeName );
-							final String datatypeName = datatypeLinkTarget.replaceFirst( "\\.\\./datatypes/(.*)\\.md", "$1" );
-							@SuppressWarnings( "unchecked" )
-							final Future<OWLEntity> owlDatatypeFuture = (Future<OWLEntity>) datatypeByName.get( datatypeName );
-							if ( owlDatatypeFuture == null ) {
-								throw new IllegalStateException( "Unknown datatype " + datatypeName );
-							} else {
-								try {
-									final OWLEntity owlDatatype = owlDatatypeFuture.get();
-									if ( owlDatatype instanceof OWLClass ) {
-										final OWLClass owlClass2 = (OWLClass) owlDatatype;
-										final OWLObjectProperty owlObjectProperty = dataFactory.getOWLObjectProperty( attributeIRI );
-										ont.add( dataFactory.getOWLDeclarationAxiom( owlObjectProperty ) );
-										ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
-										ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, owlClass2 ) );
-									} else if ( owlDatatype instanceof OWLDatatype ) {
-										final OWLDatatype datatype = (OWLDatatype) owlDatatype;
-										final OWLDataProperty owlDataProperty = dataFactory.getOWLDataProperty( attributeIRI );
-										ont.add( dataFactory.getOWLDeclarationAxiom( owlDataProperty ) );
-										ont.add( dataFactory.getOWLDataPropertyDomainAxiom( owlDataProperty, owlClass ) );
-										ont.add( dataFactory.getOWLDataPropertyRangeAxiom( owlDataProperty, datatype ) );
-									} else {
-										throw new IllegalStateException( "Unknown construct " + owlDatatype );
-									}
-								} catch ( final ExecutionException e ) {
-									throw new RuntimeException( e.getCause() );
-								} catch ( final InterruptedException e ) {
-									Thread.currentThread().interrupt();
+						if ( node instanceof BulletList ) {
+							final @NotNull ReversiblePeekingIterable<Node> children2 = node.getChildren();
+							int j = 0;
+							for ( final Node node2 : children2 ) {
+								++j;
+								final BasedSequence text2x = node2.getChars().trim();
+								final BasedSequence text2 = ( text2x.startsWith( "- " ) || text2x.startsWith( "* " ) ) ? text2x.subSequence( 2 ) : text2x;
+								final String text2lc = text2x.toString().toLowerCase();
+								log.info( "Node " + node2 + ": " + text2 );
+								if ( j == 1 && ( text2lc.startsWith( "beside" ) || text2lc.startsWith( "those " ) || text2lc.startsWith( "none besides those of " ) || text2lc.startsWith( "just those of " ) ) ) {
+									// ignore
+								} else if ( text2.startsWith( "FIXME" ) ) {
+										// ignore
+								} else {
+									processAttributeNode( classIRI, owlClass, node2, text2 );
 								}
 							}
-	
-							if ( endashPosition > 0 ) {
-								final OWLAnnotationValue value = new OWLLiteralImplString( rest.subSequence( endashPosition + 1 ).toString().trim() );
-								ont.add( dataFactory.getOWLAnnotationAssertionAxiom( dataFactory.getRDFSLabel(), attributeIRI, value ) );
+						} else {
+							@NotNull
+							BasedSequence text = node.getChars().trim();
+							log.info( "Node " + node + ": " + text );
+							if ( i == 1 && ( text.startsWith( "Beside" ) || text.startsWith( "Those " ) || text.startsWith( "None besides those of " ) || text.startsWith( "Just those of " ) ) ) {
+								// ignore
+							} else if ( text.startsWith( "FIXME" ) ) {
+								// ignore
+							} else {
+								processAttributeNode( classIRI, owlClass, node, text );
 							}
 						}
 					}
@@ -287,6 +254,64 @@ public class Model {
 		}
 		final OWLDocumentFormat format = new TurtleDocumentFormat();
 		ont.saveOntology( format, System.out );
+	}
+
+	protected void processAttributeNode( final IRI classIRI, final OWLClass owlClass, final Node node, BasedSequence text ) throws ParseException {
+		if ( text.startsWith( "<a name=\"" ) && text.endsWith( "</a>" ) ) {
+			text = text.subSequence( text.indexOf( ">" ) + 1, text.length() - "</a>".length() );
+		}
+		final int colonPosition = text.indexOf( ':' );
+		if ( colonPosition < 0 ) {
+			throw new ParseException( "No colon specified", node );
+		}
+		final String attributeText = text.subSequence( 0, colonPosition ).trim().toString();
+		final BasedSequence rest = text.subSequence( colonPosition + 1 ).trim();
+		final int endashPosition = rest.indexOf( '–' );
+		final BasedSequence datatypeSpec = ( endashPosition > 0 ) ? rest.subSequence( 0, endashPosition ).trim() : rest.trim();
+		final String datatypeLinkTarget = datatypeSpec.toString().replaceAll( "[^(]*\\(([^)]*)\\)[^)]*", "$1" );
+		final String attributeName = ( attributeText.contains( " " ) || Character.isUpperCase( attributeText.charAt( 0 ) ) ) ? CaseUtils.toCamelCase( attributeText, false, ' ', '-', '_', '.' ) : attributeText;
+		log.info( "Attribute " + attributeName + ", datatype " + datatypeLinkTarget );
+		if ( !datatypeLinkTarget.startsWith( "../datatypes/" ) ) {
+			throw new ParseException( "Not referencing ../datatypes/", node );
+		}
+		if ( datatypeLinkTarget.contains( " " ) ) {
+			throw new ParseException( "Missing endash", node );
+		}
+		final IRI attributeIRI = classIRI.resolve( "#" + attributeName );
+		final String datatypeName = datatypeLinkTarget.replaceFirst( "\\.\\./datatypes/(.*)\\.md", "$1" );
+		@SuppressWarnings( "unchecked" )
+		final Future<OWLEntity> owlDatatypeFuture = (Future<OWLEntity>) datatypeByName.get( datatypeName );
+		if ( owlDatatypeFuture == null ) {
+			throw new IllegalStateException( "Unknown datatype " + datatypeName );
+		} else {
+			try {
+				final OWLEntity owlDatatype = owlDatatypeFuture.get();
+				if ( owlDatatype instanceof OWLClass ) {
+					final OWLClass owlClass2 = (OWLClass) owlDatatype;
+					final OWLObjectProperty owlObjectProperty = dataFactory.getOWLObjectProperty( attributeIRI );
+					ont.add( dataFactory.getOWLDeclarationAxiom( owlObjectProperty ) );
+					ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
+					ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, owlClass2 ) );
+				} else if ( owlDatatype instanceof OWLDatatype ) {
+					final OWLDatatype datatype = (OWLDatatype) owlDatatype;
+					final OWLDataProperty owlDataProperty = dataFactory.getOWLDataProperty( attributeIRI );
+					ont.add( dataFactory.getOWLDeclarationAxiom( owlDataProperty ) );
+					ont.add( dataFactory.getOWLDataPropertyDomainAxiom( owlDataProperty, owlClass ) );
+					ont.add( dataFactory.getOWLDataPropertyRangeAxiom( owlDataProperty, datatype ) );
+				} else {
+					throw new IllegalStateException( "Unknown construct " + owlDatatype );
+				}
+			} catch ( final ExecutionException e ) {
+				throw new RuntimeException( e.getCause() );
+			} catch ( final InterruptedException e ) {
+				Thread.currentThread().interrupt();
+			}
+		}
+
+		if ( endashPosition > 0 ) {
+			final OWLAnnotationValue value = new OWLLiteralImplString( rest.subSequence( endashPosition + 1 ).toString().trim() );
+			ont.add( dataFactory.getOWLAnnotationAssertionAxiom( dataFactory.getRDFSLabel(), attributeIRI, value ) );
+		}
 	}
 
 }
