@@ -56,6 +56,8 @@ public class Model {
 
 	private final List<Section> entities = new ArrayList<>();
 	
+	private final Map<String, Future<? extends OWLEntity>> entityByName = new HashMap<>();
+
 	public static final IRI IRI_BASE = IRI.create( "https://w3id.org/cerif2/" );
 
 	public static final String DEFAULT_LANGUAGE_CODE = "en";
@@ -118,7 +120,7 @@ public class Model {
 
 		final String owlClassName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
 		final IRI classIRI = baseIRI.resolve( owlClassName );
-		createClass( mainSection, owlClassName, classIRI, "Attributes", true );
+		entityByName.put( owlClassName, createClass( mainSection, owlClassName, classIRI, "Attributes", true ) );
 	}
 	
 	public void markDoneReading() {
@@ -250,6 +252,16 @@ public class Model {
 				throw new RuntimeException( e );
 			} catch ( ExecutionException e ) {
 				log.warn( "When getting datatype " + x.getKey(), e );
+			}
+		}
+		for ( final Map.Entry<String, Future<? extends OWLEntity>> x : entityByName.entrySet() ) {
+			try {
+				log.debug( "Getting entity " + x.getKey() );
+				x.getValue().get();
+			} catch ( InterruptedException e ) {
+				throw new RuntimeException( e );
+			} catch ( ExecutionException e ) {
+				log.warn( "When getting entity " + x.getKey(), e );
 			}
 		}
 		final OWLDocumentFormat format = new TurtleDocumentFormat();
