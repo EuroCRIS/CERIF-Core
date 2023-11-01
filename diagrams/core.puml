@@ -372,6 +372,7 @@
      "Visiting_Address" --> "1" "Physical_Address"
 
      datatype("Electronic_Address") {
+          uri : URI
      }
 
      "Contact_Information" <|-d- "Electronic_Address"
