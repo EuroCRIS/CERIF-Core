@@ -8,7 +8,7 @@ This entity represents title of a position and a code. If restricted list of ava
 can be subtyped and restrictions over String for the code component can be defined. An example of defining restriction over 
 String can be found in the definition of [ISNI ID](../datatypes/ISNI_ID.md). An example of defining specification of a 
 data type can be found in the relation between [Postal Address](../datatypes/Postal_Address.md) and
-[Structured Postal Address](../datatypes/Structured_Postal_Address.md) 
+[Structured Physical Address](../datatypes/Structured_Physical_Address.md) 
 
 ## Components
 - title : [Multilingual String](../datatypes/Multilingual_String.md)

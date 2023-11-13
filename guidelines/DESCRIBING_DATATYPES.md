@@ -21,7 +21,7 @@ A heading is left out if the section is empty.
 6. **Matches**: Describe any external datatypes this datatype matches. 
 7. **References**: References to external resources in case these are referenced.
 
-Use the [template file](./TEMPLATE_DATATYPE_COMPLEX.md) as a starting point.
+Use the [template file](../guidelines/TEMPLATE_DATATYPE_COMPLEX.md) as a starting point.
 
 ### For datatypes without components (xsd:simpleType)
 1. **Definition**: The scope of the datatype and its meaning.
@@ -34,4 +34,4 @@ Use the [template file](./TEMPLATE_DATATYPE_COMPLEX.md) as a starting point.
 7. **Matches**: Describe any external datatypes this datatype matches.
 8. **References**: References to external resources in case these are referenced.
 
-Use the [template file](./TEMPLATE_DATATYPE_SIMPLE.md) as a starting point.
+Use the [template file](../guidelines/TEMPLATE_DATATYPE_SIMPLE.md) as a starting point.

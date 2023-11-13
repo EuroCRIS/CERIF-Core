@@ -7,10 +7,10 @@ A request to use a [Resource](../entities/Resource.md).
 An additional description to communicate the purpose of the entity.
 
 ## Attributes
-<a name="DOI">attribute name : [datatype](../datatypes/XXX.md)</a>
+[FIXME]
 
 ## Relationships
-Use `./tools/new-relationship.sh` to generate the skeleton of a relationship description.
+[FIXME]
 
 ## Constraints
 Any constraints a subclass makes on its superclasses.

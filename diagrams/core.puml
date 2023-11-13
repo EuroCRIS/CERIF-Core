@@ -69,7 +69,7 @@
     "Agent_Identifier" <|-- "Wikidata_Agent_Identifier"
 
     class "Local_Agent_Identifier" #ffffff {
-           localAgentId : LocalA_Agent_ID
+           localAgentId : Local_Agent_ID
     }
 
     "Agent_Identifier" <|-- "Local_Agent_Identifier"
