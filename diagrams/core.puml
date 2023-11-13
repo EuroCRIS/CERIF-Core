@@ -349,11 +349,6 @@
      "Physical_Address" <|-d- "Structured_Physical_Address"
 
      datatype("Contact_Information") {
-         postalAddress : Physical_Address
-         visitingAddress : Physical_Address
-         phone : String
-         emailAddress : URI
-         webSiteURL : URI
      }
 
      datatype("Postal_Address") {
