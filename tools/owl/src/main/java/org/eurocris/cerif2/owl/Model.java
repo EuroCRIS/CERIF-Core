@@ -13,6 +13,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.function.Supplier;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.text.CaseUtils;
 import org.jetbrains.annotations.NotNull;
@@ -57,6 +59,8 @@ public class Model {
 	private final List<Section> entities = new ArrayList<>();
 	
 	private final Map<String, Future<? extends OWLEntity>> entityByName = new HashMap<>();
+	
+	private final Map<String, Map<String, Relationship>> relationshipByEntityAndRelationshipName = new HashMap<>();
 
 	public static final IRI IRI_BASE = IRI.create( "https://w3id.org/cerif2/" );
 
@@ -125,6 +129,93 @@ public class Model {
 	
 	public void markDoneReading() {
 		// TODO
+	}
+
+	private static <T> T nvl( T a, T b ) {
+		return ( a != null ) ? a : b;
+	}
+	
+	/**
+	 * Represents data of a relationship.
+	 */
+	public abstract class Relationship {
+
+		private final String relName;
+		
+		private final IRI iri;
+
+		private final IRI domainClassIRI;
+		
+		private final String rangeClassName;
+		
+		private final String inversePropropertyName;
+		
+		private final boolean ordered;
+		
+		private final String definitionLine;
+		
+		protected OWLObjectProperty owlObjectProperty = null;
+		
+		public Relationship( final String relName, final IRI domainClassIRI, final String rangeClassName, final String inversePropropertyName, final boolean ordered, final String definitionLine ) {
+			super();
+			this.relName = relName;
+			this.iri = domainClassIRI.resolve( "#" + relName );
+			this.domainClassIRI = domainClassIRI;
+			this.rangeClassName = rangeClassName;
+			this.inversePropropertyName = inversePropropertyName;
+			this.ordered = ordered;
+			this.definitionLine = definitionLine;
+		}
+
+		protected abstract void handle() throws InterruptedException, ExecutionException;
+
+		public String getRelName() {
+			return relName;
+		}
+
+		public IRI getIri() {
+			return iri;
+		}
+
+		public IRI getDomainClassIRI() {
+			return domainClassIRI;
+		}
+
+		public String getRangeClassName() {
+			return rangeClassName;
+		}
+
+		public String getInversePropropertyName() {
+			return inversePropropertyName;
+		}
+
+		public boolean isOrdered() {
+			return ordered;
+		}
+		
+		public String getDefinitionLine() {
+			return definitionLine;
+		}
+		
+		public OWLObjectProperty getOwlObjectProperty() {
+			return owlObjectProperty;
+		}
+		
+		public String toString() {
+			return domainClassIRI + " --( " + relName + " )--> " + rangeClassName;
+		}
+		
+		public void index() {
+			final String classNameFragment = domainClassIRI.getFragment();
+			final Map<String, Relationship> secondStageMap1 = new HashMap<>();
+			final Map<String, Relationship> secondStageMap = nvl( relationshipByEntityAndRelationshipName.putIfAbsent( classNameFragment, secondStageMap1 ), secondStageMap1 );
+			secondStageMap.put( relName, this );
+		}
+		
+		public void deindex() {
+			relationshipByEntityAndRelationshipName.get( domainClassIRI.getFragment() ).remove( relName, this );
+		}
+
 	}
 
 	static interface ThrowingSupplier<T, E extends Exception> {
@@ -208,7 +299,11 @@ public class Model {
 								} else if ( text2.startsWith( "FIXME" ) ) {
 										// ignore
 								} else {
-									processAttributeNode( classIRI, owlClass, node2, text2 );
+									try {
+										processAttributeNode( classIRI, owlClass, node2, text2 );
+									} catch ( final Exception e ) {
+										log.warn( "When processing attribute", e );
+									}
 								}
 							}
 						} else {
@@ -220,11 +315,38 @@ public class Model {
 							} else if ( text.startsWith( "FIXME" ) ) {
 								// ignore
 							} else {
-								processAttributeNode( classIRI, owlClass, node, text );
+								try {
+									processAttributeNode( classIRI, owlClass, node, text );
+								} catch ( final Exception e ) {
+									log.warn( "When processing attribute", e );
+								}
 							}
 						}
 					}
 				}
+				
+				final Section relationshipsSection = mainSection.getSubsectionByTitle( "Relationships" );
+				if ( relationshipsSection != null ) {
+					final List<Node> children = relationshipsSection.getContents();
+					int i = 0;
+					for ( final Node node : children ) {
+						++i;
+						BasedSequence text = node.getChars().trim();
+						log.info( "Node " + node + ": " + text );
+						if ( i == 1 && ( text.startsWith( "Beside" ) || text.startsWith( "Those " ) || text.startsWith( "None besides those of " ) || text.startsWith( "Just those of " ) ) ) {
+							// ignore
+						} else if ( text.startsWith( "FIXME" ) ) {
+							// ignore
+						} else if ( text.isNotBlank() ) {
+							try {
+								processRelationshipNode( classIRI, owlClass, node, text );
+							} catch ( final Exception e ) {
+								log.warn( "When processing relationship", e );
+							}
+						}
+					}					
+				}
+				
 				return owlClass;
 			}
 			
@@ -244,30 +366,105 @@ public class Model {
 
 	public void save() throws OWLOntologyStorageException {
 		log.info( "About to write the ontology" );
-		for ( final Map.Entry<String, Future<? extends OWLEntity>> x : datatypeByName.entrySet() ) {
-			try {
-				log.debug( "Getting datatype " + x.getKey() );
-				x.getValue().get();
-			} catch ( InterruptedException e ) {
-				throw new RuntimeException( e );
-			} catch ( ExecutionException e ) {
-				log.warn( "When getting datatype " + x.getKey(), e );
+		synchronized ( this ) {
+			for ( final Map.Entry<String, Future<? extends OWLEntity>> x : datatypeByName.entrySet() ) {
+				try {
+					log.debug( "Getting datatype " + x.getKey() );
+					x.getValue().get();
+				} catch ( InterruptedException e ) {
+					throw new RuntimeException( e );
+				} catch ( ExecutionException e ) {
+					log.warn( "When getting datatype " + x.getKey(), e );
+				}
 			}
 		}
-		for ( final Map.Entry<String, Future<? extends OWLEntity>> x : entityByName.entrySet() ) {
-			try {
-				log.debug( "Getting entity " + x.getKey() );
-				x.getValue().get();
-			} catch ( InterruptedException e ) {
-				throw new RuntimeException( e );
-			} catch ( ExecutionException e ) {
-				log.warn( "When getting entity " + x.getKey(), e );
+		synchronized ( this ) {
+			for ( final Map.Entry<String, Future<? extends OWLEntity>> x : entityByName.entrySet() ) {
+				try {
+					log.debug( "Getting entity " + x.getKey() );
+					x.getValue().get();
+				} catch ( InterruptedException e ) {
+					throw new RuntimeException( e );
+				} catch ( ExecutionException e ) {
+					log.warn( "When getting entity " + x.getKey(), e );
+				}
+			}			
+		}
+		synchronized ( this ) {
+			for ( final Map<String, Relationship> x : relationshipByEntityAndRelationshipName.values() ) {
+				for ( final Relationship y : x.values() ) {
+					try {
+						y.handle();
+					} catch ( final Exception e ) {
+						log.warn( "When handling relationship " + y.getIri(), e );
+					}
+				}
 			}
 		}
 		final OWLDocumentFormat format = new TurtleDocumentFormat();
 		ont.saveOntology( format, System.out );
 	}
 
+	static final Pattern getEntityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
+
+	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, BasedSequence text ) throws ParseException {
+		if (!( text.startsWith( "<a name=\"" ) && text.endsWith( "</a>" ) )) {
+			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship description", node );
+		}
+		final String relName1 = text.toString().replaceFirst( "<a name=\"([^\"]*)\">.*", "$1" );
+		final String relName = CaseUtils.toCamelCase( relName1.replaceFirst( "^rel__", "" ), false, ' ', '-', '_', '.' );
+		if ( relName.equals( relName1 ) ) {
+			throw new ParseException( "Relationship name '" + relName1 + "' not starting with 'rel__'", node );
+		}
+		text = text.subSequence( text.indexOf( ">" ) + 1, text.length() - "</a>".length() );
+		log.info( "Class " + classIRI + ", relationship " + relName );
+		final String txt = text.toString().trim();
+		
+		final Matcher entityNameMatcher = getEntityNamePattern.matcher( txt );
+		if ( ! entityNameMatcher.find() ) {
+			throw new ParseException( "No reference to the relationship inverse", node );
+		}
+		final String inverseEntityName1 = entityNameMatcher.group(1);
+		final String inverseFragment1 = entityNameMatcher.group(2);
+		if ( ! entityNameMatcher.find() ) {
+			throw new ParseException( "No reference to the range class", node );
+		}
+		final String rangeClassName = entityNameMatcher.group(1);
+		if ( ! inverseEntityName1.startsWith( rangeClassName ) ) {
+			throw new ParseException( "Inverse property's entity '" + inverseEntityName1 + "' not pointing to the range class '" + rangeClassName + "'", node );
+		}
+		final String fragmentPrefix = "#user-content-rel__";
+		if ( ! inverseFragment1.startsWith( fragmentPrefix ) ) {
+			throw new ParseException( "Inverse property fragment '" + inverseFragment1 + "' not starting with '" + fragmentPrefix + "'", node );
+		}
+		final String inversePropertyName = CaseUtils.toCamelCase( inverseFragment1.substring( fragmentPrefix.length() ), false, ' ', '-', '_', '.' );
+		final boolean ordered = false;
+		final Relationship relationship = new Relationship( relName, classIRI, rangeClassName, inversePropertyName, ordered, txt ) {
+			protected void handle() throws InterruptedException, ExecutionException {
+				final Future<? extends OWLEntity> rangeClassFuture = entityByName.get( getRangeClassName() );
+				final OWLClass rangeClass = (OWLClass) rangeClassFuture.get();
+
+				this.owlObjectProperty = dataFactory.getOWLObjectProperty( getIri() );
+				ont.add( dataFactory.getOWLDeclarationAxiom( owlObjectProperty ) );
+				final OWLLiteral definitionLiteral = dataFactory.getOWLLiteral( getDefinitionLine() + "@" + DEFAULT_LANGUAGE_CODE, OWL2Datatype.RDF_PLAIN_LITERAL );
+				ont.add( dataFactory.getOWLAnnotationAssertionAxiom( owlObjectProperty.getIRI(), dataFactory.getRDFSComment( definitionLiteral ) ) );
+				ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
+				ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, rangeClass ) );
+				
+				final Relationship inverseRelationship = relationshipByEntityAndRelationshipName.get( getRangeClassName() ).get( inversePropertyName );
+				if ( inverseRelationship != null ) {
+					
+					final OWLObjectProperty inverseProperty = inverseRelationship.getOwlObjectProperty();
+					if ( inverseProperty != null ) {
+						ont.add(  dataFactory.getOWLInverseObjectPropertiesAxiom( owlObjectProperty, inverseProperty ) );
+					}
+				}
+			}
+		};
+		log.info( "New relationship " + relationship );
+		relationship.index();
+	}
+	
 	protected void processAttributeNode( final IRI classIRI, final OWLClass owlClass, final Node node, BasedSequence text ) throws ParseException {
 		if ( text.startsWith( "<a name=\"" ) && text.endsWith( "</a>" ) ) {
 			text = text.subSequence( text.indexOf( ">" ) + 1, text.length() - "</a>".length() );

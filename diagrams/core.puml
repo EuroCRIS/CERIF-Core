@@ -538,7 +538,7 @@
 !endsub
 
 !startsub Contribution_to_Document
-    "Contribution_to_Document" --> "Document" : document >
+    "Contribution_to_Document" --> "Document" : document <<ordered>> >
 !endsub
 
 !startsub Authorship

@@ -1,354 +1,950 @@
-@prefix : <https://eurocris.org/cerif-core#> .
-@prefix cf: <https://eurocris.org/cerif-core#> .
+@prefix : <https://w3id.org/cerif2/./> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://eurocris.org/cerif-core> .
+@base <https://w3id.org/cerif2/./> .
 
-<https://eurocris.org/cerif-core> rdf:type owl:Ontology .
+<https://w3id.org/cerif2/./> rdf:type owl:Ontology .
 
 #################################################################
 #    Datatypes
 #################################################################
 
-###  https://eurocris.org/cerif-core#DOI
-cf:DOI rdf:type rdfs:Datatype ;
-       owl:equivalentClass xsd:string .
+###  https://w3id.org/cerif2/Boolean
+<https://w3id.org/cerif2/Boolean> rdf:type rdfs:Datatype .
 
 
-###  https://eurocris.org/cerif-core#EUCountryCode
-cf:EUCountryCode rdf:type rdfs:Datatype ;
-                 owl:equivalentClass xsd:string .
+###  https://w3id.org/cerif2/DOI_ID
+<https://w3id.org/cerif2/DOI_ID> rdf:type rdfs:Datatype .
 
 
-###  https://eurocris.org/cerif-core#ISO3166AlphaCode
-cf:ISO3166AlphaCode rdf:type rdfs:Datatype ;
-                    owl:equivalentClass xsd:string .
+###  https://w3id.org/cerif2/Date
+<https://w3id.org/cerif2/Date> rdf:type rdfs:Datatype .
 
 
-###  https://eurocris.org/cerif-core#ISO3166NumericCode
-cf:ISO3166NumericCode rdf:type rdfs:Datatype ;
-                      owl:equivalentClass xsd:string .
+###  https://w3id.org/cerif2/Decimal
+<https://w3id.org/cerif2/Decimal> rdf:type rdfs:Datatype .
 
 
-###  https://eurocris.org/cerif-core#ORCIDIdentifier
-cf:ORCIDIdentifier rdf:type rdfs:Datatype ;
-                   owl:equivalentClass xsd:string .
+###  https://w3id.org/cerif2/FundRef_ID
+<https://w3id.org/cerif2/FundRef_ID> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/ISNI_ID
+<https://w3id.org/cerif2/ISNI_ID> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/ISO_15924_Alpha4_Code
+<https://w3id.org/cerif2/ISO_15924_Alpha4_Code> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/ISO_3166_Alpha2_Code
+<https://w3id.org/cerif2/ISO_3166_Alpha2_Code> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/ISO_4217_Alpha_Code
+<https://w3id.org/cerif2/ISO_4217_Alpha_Code> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/ISO_639_1_Alpha2_Code
+<https://w3id.org/cerif2/ISO_639_1_Alpha2_Code> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/ISO_639_2B_Alpha3_Code
+<https://w3id.org/cerif2/ISO_639_2B_Alpha3_Code> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/ISO_639_2T_Alpha3_Code
+<https://w3id.org/cerif2/ISO_639_2T_Alpha3_Code> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/Local_Agent_ID
+<https://w3id.org/cerif2/Local_Agent_ID> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/Multilingual_String
+<https://w3id.org/cerif2/Multilingual_String> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/ORCID_iD
+<https://w3id.org/cerif2/ORCID_iD> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/ROR_ID
+<https://w3id.org/cerif2/ROR_ID> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/Scopus_Author_ID
+<https://w3id.org/cerif2/Scopus_Author_ID> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/String
+<https://w3id.org/cerif2/String> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/URI
+<https://w3id.org/cerif2/URI> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/Wikidata_ID
+<https://w3id.org/cerif2/Wikidata_ID> rdf:type rdfs:Datatype .
 
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  https://eurocris.org/cerif-core#hasAccessRights
-cf:hasAccessRights rdf:type owl:ObjectProperty ;
-                   rdfs:domain cf:TextualDocument ;
-                   rdfs:range cf:TextualDocumentAccessibilitySpecification ;
-                   rdfs:label "Access Rights"@en .
+###  https://w3id.org/cerif2/Activity#dateRange
+<https://w3id.org/cerif2/Activity#dateRange> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <https://w3id.org/cerif2/Activity> ;
+                                             rdfs:range <https://w3id.org/cerif2/Date_Range> .
 
 
-###  https://eurocris.org/cerif-core#hasAffiliations
-cf:hasAffiliations rdf:type owl:ObjectProperty ;
-                   rdfs:domain cf:Contributorship ;
-                   rdfs:range cf:Аffilliation ;
-                   rdfs:label "Affiliations"@en .
+###  https://w3id.org/cerif2/Affiliation_Statement#contacts
+<https://w3id.org/cerif2/Affiliation_Statement#contacts> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Contact_Information> .
 
 
-###  https://eurocris.org/cerif-core#hasAgent
-cf:hasAgent rdf:type owl:ObjectProperty ;
-            owl:equivalentProperty cf:hasAuthor ;
-            rdfs:domain cf:Contributorship ;
-            rdfs:range cf:Agent ;
-            rdfs:label "Contributor"@en .
+###  https://w3id.org/cerif2/Agent#contacts
+<https://w3id.org/cerif2/Agent#contacts> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                         rdfs:range <https://w3id.org/cerif2/Contact_Information> .
 
 
-###  https://eurocris.org/cerif-core#hasAuthor
-cf:hasAuthor rdf:type owl:ObjectProperty ;
-             rdfs:domain cf:Authorship ;
-             rdfs:range cf:Agent ;
-             rdfs:label "Author"@en .
+###  https://w3id.org/cerif2/Agent#lifetime
+<https://w3id.org/cerif2/Agent#lifetime> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                         rdfs:range <https://w3id.org/cerif2/Date_Range> .
 
 
-###  https://eurocris.org/cerif-core#hasAuthors
-cf:hasAuthors rdf:type owl:ObjectProperty ;
-              rdfs:domain cf:TextualDocument ;
-              rdfs:range cf:Agent ;
-              rdfs:label "Authors"@en .
+###  https://w3id.org/cerif2/Contact_Information#postalAddress
+<https://w3id.org/cerif2/Contact_Information#postalAddress> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <https://w3id.org/cerif2/Contact_Information> ;
+                                                            rdfs:range <https://w3id.org/cerif2/Postal_Address> .
 
 
-###  https://eurocris.org/cerif-core#hasAuthorships
-cf:hasAuthorships rdf:type owl:ObjectProperty ;
-                  rdfs:domain cf:TextualDocument ;
-                  rdfs:range cf:Authorship ;
-                  rdfs:label "Authorships"@en .
+###  https://w3id.org/cerif2/Contact_Information#visitingAddress
+<https://w3id.org/cerif2/Contact_Information#visitingAddress> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <https://w3id.org/cerif2/Contact_Information> ;
+                                                              rdfs:range <https://w3id.org/cerif2/Postal_Address> .
 
 
-###  https://eurocris.org/cerif-core#hasContributionStatements
-cf:hasContributionStatements rdf:type owl:ObjectProperty ;
-                             rdfs:domain cf:Contributorship ;
-                             rdfs:range cf:ContributionStatement ;
-                             rdfs:label "Contribution Statements"@en .
+###  https://w3id.org/cerif2/Funding#amount
+<https://w3id.org/cerif2/Funding#amount> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/cerif2/Funding> ;
+                                         rdfs:range <https://w3id.org/cerif2/Monetary_Amount> .
 
 
-###  https://eurocris.org/cerif-core#hasContributorships
-cf:hasContributorships rdf:type owl:ObjectProperty ;
-                       rdfs:domain cf:Agent ,
-                                   cf:Document ;
-                       rdfs:range cf:Contributorship ;
-                       rdfs:label "Contributorships"@en .
+###  https://w3id.org/cerif2/Person#alternateNames
+<https://w3id.org/cerif2/Person#alternateNames> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <https://w3id.org/cerif2/Person> ;
+                                                rdfs:range <https://w3id.org/cerif2/Person_Name> .
 
 
-###  https://eurocris.org/cerif-core#hasCountry
-cf:hasCountry rdf:type owl:ObjectProperty ;
-              rdfs:domain cf:PostalAddress ;
-              rdfs:range cf:Country ;
-              rdfs:label "Country"@en .
+###  https://w3id.org/cerif2/Person#name
+<https://w3id.org/cerif2/Person#name> rdf:type owl:ObjectProperty ;
+                                      rdfs:domain <https://w3id.org/cerif2/Person> ;
+                                      rdfs:range <https://w3id.org/cerif2/Person_Name> .
 
 
-###  https://eurocris.org/cerif-core#hasDocument
-cf:hasDocument rdf:type owl:ObjectProperty ;
-               rdfs:domain cf:Contributorship ;
-               rdfs:range cf:Document ;
-               rdfs:label "Document"@en .
+###  https://w3id.org/cerif2/Physical_Address#country
+<https://w3id.org/cerif2/Physical_Address#country> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <https://w3id.org/cerif2/Physical_Address> ;
+                                                   rdfs:range <https://w3id.org/cerif2/Country> .
 
 
-###  https://eurocris.org/cerif-core#hasInstitution
-cf:hasInstitution rdf:type owl:ObjectProperty ;
-                  rdfs:domain cf:Аffilliation ;
-                  rdfs:range cf:OrgUnit ;
-                  rdfs:label "Institution"@en .
+###  https://w3id.org/cerif2/Postal_Address#physicalAddress
+<https://w3id.org/cerif2/Postal_Address#physicalAddress> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Postal_Address> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Physical_Address> .
 
 
-###  https://eurocris.org/cerif-core#hasOrgUnit
-cf:hasOrgUnit rdf:type owl:ObjectProperty ;
-              rdfs:domain cf:Аffilliation ;
-              rdfs:range cf:OrgUnit ;
-              rdfs:label "Organization Unit"@en .
-
-
-###  https://eurocris.org/cerif-core#hasPersonName
-cf:hasPersonName rdf:type owl:ObjectProperty ;
-                 rdfs:domain cf:Person ;
-                 rdfs:range cf:PersonName ;
-                 rdfs:comment "Person Name"@en .
-
-
-###  https://eurocris.org/cerif-core#hasPostalAddress
-cf:hasPostalAddress rdf:type owl:ObjectProperty ;
-                    rdfs:domain cf:Аffilliation ;
-                    rdfs:range cf:PostalAddress ;
-                    rdfs:label "Postall Address"@en .
+###  https://w3id.org/cerif2/Visiting_Address#physicalAddress
+<https://w3id.org/cerif2/Visiting_Address#physicalAddress> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <https://w3id.org/cerif2/Visiting_Address> ;
+                                                           rdfs:range <https://w3id.org/cerif2/Physical_Address> .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  https://eurocris.org/cerif-core#hasCity
-cf:hasCity rdf:type owl:DatatypeProperty ;
-           rdfs:domain cf:PostalAddress ;
-           rdfs:range xsd:string ;
-           rdfs:label "CIty"@en .
+###  https://w3id.org/cerif2/Affiliation_Statement#displayAffiliation
+<https://w3id.org/cerif2/Affiliation_Statement#displayAffiliation> rdf:type owl:DatatypeProperty ;
+                                                                   rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
+                                                                   rdfs:range <https://w3id.org/cerif2/String> ;
+                                                                   rdfs:label "the raw string form of the affiliation as found e.g. in scholarly publications; more structured statements make use of the *institution* and/or *organisation unit* relationships below" .
 
 
-###  https://eurocris.org/cerif-core#hasContacts
-cf:hasContacts rdf:type owl:DatatypeProperty ;
-               rdfs:domain cf:Contributorship ;
-               rdfs:range xsd:anyURI ;
-               rdfs:label "Contacts"@en .
+###  https://w3id.org/cerif2/Affiliation_Statement#displayPersonName
+<https://w3id.org/cerif2/Affiliation_Statement#displayPersonName> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
+                                                                  rdfs:range <https://w3id.org/cerif2/String> ;
+                                                                  rdfs:label "the raw string form of the name of the person as found e.g. in scholarly publications; more structured statements make use of the *person* relationship below" .
 
 
-###  https://eurocris.org/cerif-core#hasCorrespondingAuthorFlag
-cf:hasCorrespondingAuthorFlag rdf:type owl:DatatypeProperty ;
-                              rdfs:domain cf:Authorship ;
-                              rdfs:range xsd:boolean ;
-                              rdfs:label "Corresponding Author Flag"@en .
+###  https://w3id.org/cerif2/Agent#keywords
+<https://w3id.org/cerif2/Agent#keywords> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                         rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
-###  https://eurocris.org/cerif-core#hasDOI
-cf:hasDOI rdf:type owl:DatatypeProperty ;
-          rdfs:domain cf:Document ;
-          rdfs:range cf:DOI ;
-          rdfs:label "DOI"@en .
+###  https://w3id.org/cerif2/Application#applicationDate
+<https://w3id.org/cerif2/Application#applicationDate> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain <https://w3id.org/cerif2/Application> ;
+                                                      rdfs:range <https://w3id.org/cerif2/Date> .
 
 
-###  https://eurocris.org/cerif-core#hasDisplayText
-cf:hasDisplayText rdf:type owl:DatatypeProperty ;
-                  rdfs:domain cf:Contributorship ,
-                              cf:Аffilliation ;
-                  rdfs:range xsd:string ;
-                  rdfs:label "Display Text" .
+###  https://w3id.org/cerif2/Authorship#correspondingAuthorFlag
+<https://w3id.org/cerif2/Authorship#correspondingAuthorFlag> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:domain <https://w3id.org/cerif2/Authorship> ;
+                                                             rdfs:range <https://w3id.org/cerif2/Boolean> ;
+                                                             rdfs:label "indicates whether this author is responsible for correspondence (true)" .
 
 
-###  https://eurocris.org/cerif-core#hasEUContryCode
-cf:hasEUContryCode rdf:type owl:DatatypeProperty ;
-                   rdfs:domain cf:Country ;
-                   rdfs:range cf:EUCountryCode ;
-                   rdfs:label "EU Country Code"@en .
+###  https://w3id.org/cerif2/Call_for_Applications#deadline
+<https://w3id.org/cerif2/Call_for_Applications#deadline> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Call_for_Applications> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Date> ;
+                                                         rdfs:label "until when applications can be submitted" .
 
 
-###  https://eurocris.org/cerif-core#hasFamilyNames
-cf:hasFamilyNames rdf:type owl:DatatypeProperty ;
-                  rdfs:domain cf:PersonName ;
-                  rdfs:range xsd:string ;
-                  rdfs:label "Family Names"@en .
+###  https://w3id.org/cerif2/Contact_Information#emailAddress
+<https://w3id.org/cerif2/Contact_Information#emailAddress> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:domain <https://w3id.org/cerif2/Contact_Information> ;
+                                                           rdfs:range <https://w3id.org/cerif2/URI> .
 
 
-###  https://eurocris.org/cerif-core#hasFirstName
-cf:hasFirstName rdf:type owl:DatatypeProperty ;
-                rdfs:label "First names"@en .
+###  https://w3id.org/cerif2/Contact_Information#phone
+<https://w3id.org/cerif2/Contact_Information#phone> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <https://w3id.org/cerif2/Contact_Information> ;
+                                                    rdfs:range <https://w3id.org/cerif2/String> .
 
 
-###  https://eurocris.org/cerif-core#hasISO3166AlphaCode
-cf:hasISO3166AlphaCode rdf:type owl:DatatypeProperty ;
-                       rdfs:domain cf:Country ;
-                       rdfs:range cf:ISO3166AlphaCode ;
-                       rdfs:label "ISO 3166 Alpha Code"@en .
+###  https://w3id.org/cerif2/Contact_Information#webSiteUrl
+<https://w3id.org/cerif2/Contact_Information#webSiteUrl> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Contact_Information> ;
+                                                         rdfs:range <https://w3id.org/cerif2/URI> .
 
 
-###  https://eurocris.org/cerif-core#hasISO3166NumericCode
-cf:hasISO3166NumericCode rdf:type owl:DatatypeProperty ;
-                         rdfs:domain cf:Country ;
-                         rdfs:range cf:ISO3166NumericCode ;
-                         rdfs:label "ISO 3166 Numeric Code"@en .
+###  https://w3id.org/cerif2/Contribution_Statement#statement
+<https://w3id.org/cerif2/Contribution_Statement#statement> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:domain <https://w3id.org/cerif2/Contribution_Statement> ;
+                                                           rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
-###  https://eurocris.org/cerif-core#hasName
-cf:hasName rdf:type owl:DatatypeProperty ;
-           rdfs:domain cf:Country ,
-                       cf:OrgUnit ;
-           rdfs:range rdf:PlainLiteral ;
-           rdfs:label "Name"@en .
+###  https://w3id.org/cerif2/Country#iso3166Alpha2Code
+<https://w3id.org/cerif2/Country#iso3166Alpha2Code> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <https://w3id.org/cerif2/Country> ;
+                                                    rdfs:range <https://w3id.org/cerif2/ISO_3166_Alpha2_Code> ;
+                                                    rdfs:label " this should be the preferred way of referencing a country" .
 
 
-###  https://eurocris.org/cerif-core#hasORCIDiD
-cf:hasORCIDiD rdf:type owl:DatatypeProperty ;
-              rdfs:domain cf:Person ;
-              rdfs:range xsd:string ;
-              rdfs:label "ORCIDiD" .
+###  https://w3id.org/cerif2/Country#name
+<https://w3id.org/cerif2/Country#name> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <https://w3id.org/cerif2/Country> ;
+                                       rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
-###  https://eurocris.org/cerif-core#hasOtherNames
-cf:hasOtherNames rdf:type owl:DatatypeProperty ;
-                 rdfs:domain cf:PersonName ;
-                 rdfs:range xsd:string ;
-                 rdfs:label "Other Names"@en .
+###  https://w3id.org/cerif2/DOI_Identifier#doiId
+<https://w3id.org/cerif2/DOI_Identifier#doiId> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/cerif2/DOI_Identifier> ;
+                                               rdfs:range <https://w3id.org/cerif2/DOI_ID> .
 
 
-###  https://eurocris.org/cerif-core#hasPublicationDate
-cf:hasPublicationDate rdf:type owl:DatatypeProperty ;
-                      rdfs:domain cf:Document ;
-                      rdfs:range xsd:dateTime ;
-                      rdfs:label "Publication Date"@en .
+###  https://w3id.org/cerif2/Date_Range#endDate
+<https://w3id.org/cerif2/Date_Range#endDate> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/cerif2/Date_Range> ;
+                                             rdfs:range <https://w3id.org/cerif2/Date> .
 
 
-###  https://eurocris.org/cerif-core#hasStatement
-cf:hasStatement rdf:type owl:DatatypeProperty ;
-                rdfs:domain cf:FreeTextContributionStatement ;
-                rdfs:range rdf:PlainLiteral ;
-                rdfs:label "Statement"@en .
+###  https://w3id.org/cerif2/Date_Range#endDateInclusive
+<https://w3id.org/cerif2/Date_Range#endDateInclusive> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain <https://w3id.org/cerif2/Date_Range> ;
+                                                      rdfs:range <https://w3id.org/cerif2/Boolean> .
 
 
-###  https://eurocris.org/cerif-core#hasStreet
-cf:hasStreet rdf:type owl:DatatypeProperty ;
-             rdfs:domain cf:PostalAddress ;
-             rdfs:range xsd:string ;
-             rdfs:label "Street"@en .
+###  https://w3id.org/cerif2/Date_Range#startDate
+<https://w3id.org/cerif2/Date_Range#startDate> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/cerif2/Date_Range> ;
+                                               rdfs:range <https://w3id.org/cerif2/Date> .
 
 
-###  https://eurocris.org/cerif-core#hasTitle
-cf:hasTitle rdf:type owl:DatatypeProperty ;
-            rdfs:domain cf:Document ;
-            rdfs:range rdf:PlainLiteral ;
-            rdfs:label "Title"@en .
+###  https://w3id.org/cerif2/Date_Range#startDateInclusive
+<https://w3id.org/cerif2/Date_Range#startDateInclusive> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <https://w3id.org/cerif2/Date_Range> ;
+                                                        rdfs:range <https://w3id.org/cerif2/Boolean> .
 
 
-###  https://eurocris.org/cerif-core#hasZipCode
-cf:hasZipCode rdf:type owl:DatatypeProperty ;
-              rdfs:label "Zip Code"@en .
+###  https://w3id.org/cerif2/Document#publicationDate
+<https://w3id.org/cerif2/Document#publicationDate> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                                   rdfs:range <https://w3id.org/cerif2/Date> .
+
+
+###  https://w3id.org/cerif2/Document#title
+<https://w3id.org/cerif2/Document#title> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                         rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Education#completed
+<https://w3id.org/cerif2/Education#completed> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/cerif2/Education> ;
+                                              rdfs:range <https://w3id.org/cerif2/Boolean> .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Skills#description
+<https://w3id.org/cerif2/Expertise_and_Skills#description> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills> ;
+                                                           rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Skills#label
+<https://w3id.org/cerif2/Expertise_and_Skills#label> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills> ;
+                                                     rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Time_and_Effort#amountOfTimeInPersonHours
+<https://w3id.org/cerif2/Expertise_and_Time_and_Effort#amountOfTimeInPersonHours> rdf:type owl:DatatypeProperty ;
+                                                                                  rdfs:domain <https://w3id.org/cerif2/Expertise_and_Time_and_Effort> ;
+                                                                                  rdfs:range <https://w3id.org/cerif2/Decimal> .
+
+
+###  https://w3id.org/cerif2/FundRef_Identifier#fundrefId
+<https://w3id.org/cerif2/FundRef_Identifier#fundrefId> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain <https://w3id.org/cerif2/FundRef_Identifier> ;
+                                                       rdfs:range <https://w3id.org/cerif2/FundRef_ID> .
+
+
+###  https://w3id.org/cerif2/Group_or_Organisation_Unit#acronym
+<https://w3id.org/cerif2/Group_or_Organisation_Unit#acronym> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:domain <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
+                                                             rdfs:range <https://w3id.org/cerif2/String> .
+
+
+###  https://w3id.org/cerif2/Group_or_Organisation_Unit#description
+<https://w3id.org/cerif2/Group_or_Organisation_Unit#description> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:domain <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
+                                                                 rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Group_or_Organisation_Unit#name
+<https://w3id.org/cerif2/Group_or_Organisation_Unit#name> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:domain <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
+                                                          rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/ISNI_Identifier#isniId
+<https://w3id.org/cerif2/ISNI_Identifier#isniId> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/cerif2/ISNI_Identifier> ;
+                                                 rdfs:range <https://w3id.org/cerif2/ISNI_ID> .
+
+
+###  https://w3id.org/cerif2/Language#iso6391Code
+<https://w3id.org/cerif2/Language#iso6391Code> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/cerif2/Language> ;
+                                               rdfs:range <https://w3id.org/cerif2/ISO_639_1_Alpha2_Code> .
+
+
+###  https://w3id.org/cerif2/Language#iso6392bCode
+<https://w3id.org/cerif2/Language#iso6392bCode> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/cerif2/Language> ;
+                                                rdfs:range <https://w3id.org/cerif2/ISO_639_2B_Alpha3_Code> .
+
+
+###  https://w3id.org/cerif2/Language#iso6392tCode
+<https://w3id.org/cerif2/Language#iso6392tCode> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/cerif2/Language> ;
+                                                rdfs:range <https://w3id.org/cerif2/ISO_639_2T_Alpha3_Code> .
+
+
+###  https://w3id.org/cerif2/Language#name
+<https://w3id.org/cerif2/Language#name> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/cerif2/Language> ;
+                                        rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Local_Agent_Identifier#localId
+<https://w3id.org/cerif2/Local_Agent_Identifier#localId> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Local_Agent_Identifier> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Local_Agent_ID> .
+
+
+###  https://w3id.org/cerif2/Monetary_Amount#amount
+<https://w3id.org/cerif2/Monetary_Amount#amount> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/cerif2/Monetary_Amount> ;
+                                                 rdfs:range <https://w3id.org/cerif2/Decimal> ;
+                                                 rdfs:label " mandatory" .
+
+
+###  https://w3id.org/cerif2/Monetary_Amount#currencyCode
+<https://w3id.org/cerif2/Monetary_Amount#currencyCode> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain <https://w3id.org/cerif2/Monetary_Amount> ;
+                                                       rdfs:range <https://w3id.org/cerif2/ISO_4217_Alpha_Code> ;
+                                                       rdfs:label " mandatory" .
+
+
+###  https://w3id.org/cerif2/ORCID_Identifier#orcidId
+<https://w3id.org/cerif2/ORCID_Identifier#orcidId> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <https://w3id.org/cerif2/ORCID_Identifier> ;
+                                                   rdfs:range <https://w3id.org/cerif2/ORCID_iD> .
+
+
+###  https://w3id.org/cerif2/Person_Name#familyNames
+<https://w3id.org/cerif2/Person_Name#familyNames> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/cerif2/Person_Name> ;
+                                                  rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Person_Name#firstNames
+<https://w3id.org/cerif2/Person_Name#firstNames> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/cerif2/Person_Name> ;
+                                                 rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Person_Name#otherNames
+<https://w3id.org/cerif2/Person_Name#otherNames> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/cerif2/Person_Name> ;
+                                                 rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Position#title
+<https://w3id.org/cerif2/Position#title> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/cerif2/Position> ;
+                                         rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Prize#name
+<https://w3id.org/cerif2/Prize#name> rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain <https://w3id.org/cerif2/Prize> ;
+                                     rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Project#acronym
+<https://w3id.org/cerif2/Project#acronym> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/cerif2/Project> ;
+                                          rdfs:range <https://w3id.org/cerif2/String> .
+
+
+###  https://w3id.org/cerif2/Project#name
+<https://w3id.org/cerif2/Project#name> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <https://w3id.org/cerif2/Project> ;
+                                       rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/ROR_Identifier#rorId
+<https://w3id.org/cerif2/ROR_Identifier#rorId> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/cerif2/ROR_Identifier> ;
+                                               rdfs:range <https://w3id.org/cerif2/ROR_ID> .
+
+
+###  https://w3id.org/cerif2/Resource_Usage_Statement#statement
+<https://w3id.org/cerif2/Resource_Usage_Statement#statement> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:domain <https://w3id.org/cerif2/Resource_Usage_Statement> ;
+                                                             rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Scopus_Author_Identifier#scopusAuthorIdentifier
+<https://w3id.org/cerif2/Scopus_Author_Identifier#scopusAuthorIdentifier> rdf:type owl:DatatypeProperty ;
+                                                                          rdfs:domain <https://w3id.org/cerif2/Scopus_Author_Identifier> ;
+                                                                          rdfs:range <https://w3id.org/cerif2/Scopus_Author_ID> .
+
+
+###  https://w3id.org/cerif2/Script#name
+<https://w3id.org/cerif2/Script#name> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <https://w3id.org/cerif2/Script> ;
+                                      rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Script#scriptCode
+<https://w3id.org/cerif2/Script#scriptCode> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/cerif2/Script> ;
+                                            rdfs:range <https://w3id.org/cerif2/ISO_15924_Alpha4_Code> .
+
+
+###  https://w3id.org/cerif2/Wikidata_Agent_Identifier#wikidataId
+<https://w3id.org/cerif2/Wikidata_Agent_Identifier#wikidataId> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:domain <https://w3id.org/cerif2/Wikidata_Agent_Identifier> ;
+                                                               rdfs:range <https://w3id.org/cerif2/Wikidata_ID> .
+
+
+###  https://w3id.org/cerif2/Wikidata_Resource_Identifier#wikidataId
+<https://w3id.org/cerif2/Wikidata_Resource_Identifier#wikidataId> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:domain <https://w3id.org/cerif2/Wikidata_Resource_Identifier> ;
+                                                                  rdfs:range <https://w3id.org/cerif2/Wikidata_ID> .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://eurocris.org/cerif-core#Agent
-cf:Agent rdf:type owl:Class .
+###  https://w3id.org/cerif2/Activity
+<https://w3id.org/cerif2/Activity> rdf:type owl:Class ;
+                                   rdfs:comment "Anything an Agent does."@en ;
+                                   rdfs:label "Activity"@en .
 
 
-###  https://eurocris.org/cerif-core#Authorship
-cf:Authorship rdf:type owl:Class ;
-              rdfs:subClassOf cf:Contributorship .
+###  https://w3id.org/cerif2/Affiliation_Statement
+<https://w3id.org/cerif2/Affiliation_Statement> rdf:type owl:Class ;
+                                                rdfs:comment "A statement of a connection between a [Person](../entities/Person.md) and an [Organisation Unit](../entities/Organisation_Unit.md)."@en ;
+                                                rdfs:label "Affiliation Statement"@en .
 
 
-###  https://eurocris.org/cerif-core#ContributionStatement
-cf:ContributionStatement rdf:type owl:Class ;
-                         rdfs:label "Contribution Statement" .
+###  https://w3id.org/cerif2/Agent
+<https://w3id.org/cerif2/Agent> rdf:type owl:Class ;
+                                rdfs:comment "Anything that has the ability to perform activities."@en ;
+                                rdfs:label "Agent"@en .
 
 
-###  https://eurocris.org/cerif-core#Contributorship
-cf:Contributorship rdf:type owl:Class .
+###  https://w3id.org/cerif2/Agent_Identifier
+<https://w3id.org/cerif2/Agent_Identifier> rdf:type owl:Class ;
+                                           rdfs:comment "An identifier that is assigned to an [Agent](../entities/Agent.md)."@en ;
+                                           rdfs:label "Agent Identifier"@en .
 
 
-###  https://eurocris.org/cerif-core#Country
-cf:Country rdf:type owl:Class .
+###  https://w3id.org/cerif2/Application
+<https://w3id.org/cerif2/Application> rdf:type owl:Class ;
+                                      rdfs:comment "A formal request to be considered for a position or to be allowed to do or have something, submitted to an authority, institution, or organization.<sup>[1](#fn1)</sup>"@en ;
+                                      rdfs:label "Application"@en .
 
 
-###  https://eurocris.org/cerif-core#Document
-cf:Document rdf:type owl:Class .
+###  https://w3id.org/cerif2/Application_Review
+<https://w3id.org/cerif2/Application_Review> rdf:type owl:Class ;
+                                             rdfs:subClassOf <https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome> ;
+                                             rdfs:comment "Any contribution to an [Evaluation Outcome](../entities/Evaluation_Outcome.md) of an [Application](../entities/Application.md) an [Agent](../entities/Agent.md) made by reviewing the Application."@en ;
+                                             rdfs:label "Application Review"@en .
 
 
-###  https://eurocris.org/cerif-core#FreeTextContributionStatement
-cf:FreeTextContributionStatement rdf:type owl:Class ;
-                                 rdfs:subClassOf cf:ContributionStatement ;
-                                 rdfs:label "Free Text Contribution Statement"@en .
+###  https://w3id.org/cerif2/Authorship
+<https://w3id.org/cerif2/Authorship> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/cerif2/Contribution_to_Document> ;
+                                     rdfs:comment "[FIXME] Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/Organisation_Unit.md)) with a [Textual Document](../entities/Textual_Document.md) or any of its specializations."@en ;
+                                     rdfs:label "Authorship"@en .
 
 
-###  https://eurocris.org/cerif-core#OrgUnit
-cf:OrgUnit rdf:type owl:Class ;
-           rdfs:subClassOf cf:Agent ;
-           rdfs:label "Organisation Unit"@en .
+###  https://w3id.org/cerif2/Call_for_Applications
+<https://w3id.org/cerif2/Call_for_Applications> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/cerif2/Resource_Request> ;
+                                                rdfs:comment """A written or verbal request inviting someone to go somewhere or to do something,<sup>[1](#fn1)</sup>
+namely, submit an [Application](../entities/Application.md)."""@en ;
+                                                rdfs:label "Call for Applications"@en .
 
 
-###  https://eurocris.org/cerif-core#Person
-cf:Person rdf:type owl:Class ;
-          rdfs:subClassOf cf:Agent ;
-          rdfs:label "Person"@en .
+###  https://w3id.org/cerif2/Call_for_Funding_Applications
+<https://w3id.org/cerif2/Call_for_Funding_Applications> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <https://w3id.org/cerif2/Call_for_Applications> ;
+                                                        rdfs:comment "A [Call for Applications](../entities/Call_for_Applications.md) that expects [Funding Applications](../entities/Funding_Application.md)."@en ;
+                                                        rdfs:label "Call for Funding Applications"@en .
 
 
-###  https://eurocris.org/cerif-core#PersonName
-cf:PersonName rdf:type owl:Class ;
-              rdfs:subClassOf cf:complexDataType ;
-              rdfs:label "Person Name"@en .
+###  https://w3id.org/cerif2/Condition
+<https://w3id.org/cerif2/Condition> rdf:type owl:Class ;
+                                    rdfs:comment "A condition that needs to be satisfied for a Resource Offer to be applicable.<sup>[1](#fn1)</sup>"@en ;
+                                    rdfs:label "Condition"@en .
 
 
-###  https://eurocris.org/cerif-core#PostalAddress
-cf:PostalAddress rdf:type owl:Class ;
-                 rdfs:subClassOf cf:complexDataType ;
-                 rdfs:label "Postal Address"@en .
+###  https://w3id.org/cerif2/Contact_Information
+<https://w3id.org/cerif2/Contact_Information> rdf:type owl:Class ;
+                                              rdfs:comment """The contact information assigned to an [Agent](../entities/Organisation_Unit.md). The contact information might be 
+Physical Address (Postal address, Visiting address) or Electronic Address (Email address, Telephone number, Website URL, etc.)"""@en ;
+                                              rdfs:label "Contact Information"@en .
 
 
-###  https://eurocris.org/cerif-core#TextualDocument
-cf:TextualDocument rdf:type owl:Class ;
-                   rdfs:subClassOf cf:Document ;
-                   rdfs:label "Textual Document"@en .
+###  https://w3id.org/cerif2/Contribution
+<https://w3id.org/cerif2/Contribution> rdf:type owl:Class ;
+                                       rdfs:subClassOf <https://w3id.org/cerif2/Activity> ;
+                                       rdfs:comment "An activity that helps achieve a goal."@en ;
+                                       rdfs:label "Contribution"@en .
 
 
-###  https://eurocris.org/cerif-core#TextualDocumentAccessibilitySpecification
-cf:TextualDocumentAccessibilitySpecification rdf:type owl:Class ;
-                                             rdfs:label "Textual Document Accessibility Specification"@en .
+###  https://w3id.org/cerif2/Contribution_Statement
+<https://w3id.org/cerif2/Contribution_Statement> rdf:type owl:Class ;
+                                                 rdfs:comment "An element of a [Contribution](../entities/Contribution.md). All such elements taken together describe the Contribution."@en ;
+                                                 rdfs:label "Contribution Statement"@en .
 
 
-###  https://eurocris.org/cerif-core#complexDataType
-cf:complexDataType rdf:type owl:Class .
+###  https://w3id.org/cerif2/Contribution_to_Document
+<https://w3id.org/cerif2/Contribution_to_Document> rdf:type owl:Class ;
+                                                   rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to a [Document](../entities/Document.md)."@en ;
+                                                   rdfs:label "Contribution to Document"@en .
 
 
-###  https://eurocris.org/cerif-core#Аffilliation
-cf:Аffilliation rdf:type owl:Class ;
-                         rdfs:subClassOf cf:complexDataType ;
-                         rdfs:label "Affiliation"@en .
+###  https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome
+<https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome> rdf:type owl:Class ;
+                                                             rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to an [Evaluation Outcome](../entities/Evaluation_Outcome.md)."@en ;
+                                                             rdfs:label "Contribution to Evaluation Outcome"@en .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  https://w3id.org/cerif2/Contribution_to_Event
+<https://w3id.org/cerif2/Contribution_to_Event> rdf:type owl:Class ;
+                                                rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to a [Event](../entities/Event.md)."@en ;
+                                                rdfs:label "Contribution to Event"@en .
+
+
+###  https://w3id.org/cerif2/Contribution_to_Infrastructure
+<https://w3id.org/cerif2/Contribution_to_Infrastructure> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <https://w3id.org/cerif2/Contribution> ;
+                                                         rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to an [Infrastructure](../entities/Infrastructure.md)."@en ;
+                                                         rdfs:label "Contribution to Infrastructure"@en .
+
+
+###  https://w3id.org/cerif2/Contribution_to_Project
+<https://w3id.org/cerif2/Contribution_to_Project> rdf:type owl:Class ;
+                                                  rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to a [Project](../entities/Resource.md)."@en ;
+                                                  rdfs:label "Contribution to Project"@en .
+
+
+###  https://w3id.org/cerif2/Country
+<https://w3id.org/cerif2/Country> rdf:type owl:Class ;
+                                  rdfs:comment "An area of land that has or used to have its own government and laws.<sup>[1](#fn1)</sup>"@en ;
+                                  rdfs:label "Country"@en .
+
+
+###  https://w3id.org/cerif2/DOI_Identifier
+<https://w3id.org/cerif2/DOI_Identifier> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/cerif2/Resource_Identifier> ;
+                                         rdfs:comment "A DOI<sup>[1](#fn1)</sup> identifier assigned to a [Document](../entities/Document.md)."@en ;
+                                         rdfs:label "DOI Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Date_Range
+<https://w3id.org/cerif2/Date_Range> rdf:type owl:Class ;
+                                     rdfs:comment "A range of [Dates](../datatypes/Date.md)."@en ;
+                                     rdfs:label "Date Range"@en .
+
+
+###  https://w3id.org/cerif2/Decision
+<https://w3id.org/cerif2/Decision> rdf:type owl:Class ;
+                                   rdfs:comment "The conclusions from considering an Application."@en ;
+                                   rdfs:label "Evaluation Outcome"@en .
+
+
+###  https://w3id.org/cerif2/Document
+<https://w3id.org/cerif2/Document> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://w3id.org/cerif2/Resource> ;
+                                   rdfs:comment """A document is a bounded representation of a body of information designed with the capacity (and usually intent) to communicate. 
+A document may manifest symbolic, diagrammatic or sensory-representational information.<sup>[1](#fn1)</sup>"""@en ;
+                                   rdfs:label "Document"@en .
+
+
+###  https://w3id.org/cerif2/Education
+<https://w3id.org/cerif2/Education> rdf:type owl:Class ;
+                                    rdfs:subClassOf <https://w3id.org/cerif2/Involvement> ;
+                                    rdfs:comment "The process of (teaching or) learning, especially in a school or college, or the knowledge that you get from this.<sup>[1](#fn1)</sup>"@en ;
+                                    rdfs:label "Education"@en .
+
+
+###  https://w3id.org/cerif2/Employment
+<https://w3id.org/cerif2/Employment> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/cerif2/Involvement> ;
+                                     rdfs:comment "Work that you are paid to do for a particular company or organization.<sup>[1](#fn1)</sup>"@en ;
+                                     rdfs:label "Employment"@en .
+
+
+###  https://w3id.org/cerif2/Evaluation_Outcome
+<https://w3id.org/cerif2/Evaluation_Outcome> rdf:type owl:Class ;
+                                             rdfs:comment "The conclusions of an evaluation process."@en ;
+                                             rdfs:label "Decision"@en .
+
+
+###  https://w3id.org/cerif2/Event
+<https://w3id.org/cerif2/Event> rdf:type owl:Class ;
+                                rdfs:comment "A thing that happens, especially something important.<sup>[1](#fn1)</sup>"@en ;
+                                rdfs:label "Event"@en .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Skills
+<https://w3id.org/cerif2/Expertise_and_Skills> rdf:type owl:Class ;
+                                               rdfs:comment """**Expertise**: A high level of knowledge or skill.<sup>[1](#fn1)</sup>
+
+**Skill**: An ability to do an activity or job well, especially because you have practised it.<sup>[2](#fn2)</sup>"""@en ;
+                                               rdfs:label "Expertise And Skills"@en .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Skills_Condition
+<https://w3id.org/cerif2/Expertise_and_Skills_Condition> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <https://w3id.org/cerif2/Condition> ;
+                                                         rdfs:comment "The scope of the entity and its meaning.<sup>[1](#fn1)</sup>"@en ;
+                                                         rdfs:label "Expertise and Skills Condition"@en .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Skills_Possession
+<https://w3id.org/cerif2/Expertise_and_Skills_Possession> rdf:type owl:Class ;
+                                                          rdfs:comment """The statement of Possession of an [Expertise or Skill](../entities/Expertise_and_Skills.md) 
+by an [Agent](../entities/Agent.md)."""@en ;
+                                                          rdfs:label "Expertise and Skills Possession"@en .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Time_and_Effort
+<https://w3id.org/cerif2/Expertise_and_Time_and_Effort> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <https://w3id.org/cerif2/Resource> ;
+                                                        rdfs:comment """**Expertise**: A high level of knowledge or skill.<sup>[1](#fn1)</sup>
+
+**Time**: An amount of time that you have available to do something.<sup>[2](#fn2)</sup>
+
+**Effort**: Physical or mental activity needed to achieve something.<sup>[3](#fn3)</sup>"""@en ;
+                                                        rdfs:label "Expertise and Time and Effort"@en .
+
+
+###  https://w3id.org/cerif2/FundRef_Identifier
+<https://w3id.org/cerif2/FundRef_Identifier> rdf:type owl:Class ;
+                                             rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
+                                             rdfs:comment "A FundRef<sup>[1](#fn1)</sup> identifier assigned to an [Organisation unit](../entities/Organisation_Unit.md)."@en ;
+                                             rdfs:label "FundRef Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Funding
+<https://w3id.org/cerif2/Funding> rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://w3id.org/cerif2/Resource> ;
+                                  rdfs:comment "Money provided by an organization or government for a particular purpose.<sup>[1](#fn1)</sup>"@en ;
+                                  rdfs:label "Funding"@en .
+
+
+###  https://w3id.org/cerif2/Funding_Application
+<https://w3id.org/cerif2/Funding_Application> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/cerif2/Application> ;
+                                              rdfs:comment "An application submitted in the form and manner described by a Funding agency, the purpose of which is to provide information to a Commission for project selection.<sup>[1](#fn1)</sup>"@en ;
+                                              rdfs:label "Funding Application"@en .
+
+
+###  https://w3id.org/cerif2/Group
+<https://w3id.org/cerif2/Group> rdf:type owl:Class ;
+                                rdfs:subClassOf <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
+                                rdfs:comment "A non-formal group of [persons](../entities/Person.md) and [organizations](../entities/Organisation_Unit.md)."@en ;
+                                rdfs:label "Group"@en .
+
+
+###  https://w3id.org/cerif2/Group_or_Organisation_Unit
+<https://w3id.org/cerif2/Group_or_Organisation_Unit> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <https://w3id.org/cerif2/Agent> ;
+                                                     rdfs:comment "A common supertype for [Group](../entities/Group.md) and [Organisation Unit](../entities/Organisation_Unit.md)."@en ;
+                                                     rdfs:label "Group or Organisation Unit"@en .
+
+
+###  https://w3id.org/cerif2/ISNI_Identifier
+<https://w3id.org/cerif2/ISNI_Identifier> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
+                                          rdfs:comment "An ISNI<sup>[1](#fn1)</sup> identifier assigned to an [Agent](../entities/Agent.md)."@en ;
+                                          rdfs:label "ISNI Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Infrastructure
+<https://w3id.org/cerif2/Infrastructure> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/cerif2/Resource> ;
+                                         rdfs:comment "The basic structure of an organization or system which is necessary for its operation, esp. public water, energy, and systems for communication and transport.<sup>[1](#fn1)</sup>"@en ;
+                                         rdfs:label "Infrastructure"@en .
+
+
+###  https://w3id.org/cerif2/Involvement
+<https://w3id.org/cerif2/Involvement> rdf:type owl:Class ;
+                                      rdfs:subClassOf <https://w3id.org/cerif2/Activity> ;
+                                      rdfs:comment "The act or process of taking part in something,<sup>[1](#fn1)</sup> namely in a [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md)."@en ;
+                                      rdfs:label "Involvement"@en .
+
+
+###  https://w3id.org/cerif2/Language
+<https://w3id.org/cerif2/Language> rdf:type owl:Class ;
+                                   rdfs:comment "A system of communication used by people living in a particular country consisting of sounds, words, and grammar.<sup>[1](#fn1)</sup>"@en ;
+                                   rdfs:label "Language"@en .
+
+
+###  https://w3id.org/cerif2/Local_Agent_Identifier
+<https://w3id.org/cerif2/Local_Agent_Identifier> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
+                                                 rdfs:comment """A local identifier assigned to an [Agent](../entities/Agent.md). Local identifier is not adopted at global level, it 
+might be some platform identifier, regional identifier or national identifier."""@en ;
+                                                 rdfs:label "Local Agent Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Membership
+<https://w3id.org/cerif2/Membership> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/cerif2/Involvement> ;
+                                     rdfs:comment "The [Involvement](../entities/Involvement.md) of being a member in a [Group](../entities/Group.md)."@en ;
+                                     rdfs:label "Membership"@en .
+
+
+###  https://w3id.org/cerif2/Monetary_Amount
+<https://w3id.org/cerif2/Monetary_Amount> rdf:type owl:Class ;
+                                          rdfs:comment "A certain volume of money, together with the specification of a currency."@en ;
+                                          rdfs:label "Monetary Amount"@en .
+
+
+###  https://w3id.org/cerif2/ORCID_Identifier
+<https://w3id.org/cerif2/ORCID_Identifier> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
+                                           rdfs:comment "An ORCID<sup>[1](#fn1)</sup> identifier assigned to a [Person](../entities/Person.md)."@en ;
+                                           rdfs:label "ORCID Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Organisation_Unit
+<https://w3id.org/cerif2/Organisation_Unit> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
+                                            rdfs:comment """An Organisation or a part of an Organisation's structure.
+
+**Organisation**: A formal, goal-orientated group with members and a defined structure, governed by rules and procedures that guide operation.<sup>[1](#fn1)</sup>"""@en ;
+                                            rdfs:label "Organisation Unit"@en .
+
+
+###  https://w3id.org/cerif2/Organisation_Unit_with_Members
+<https://w3id.org/cerif2/Organisation_Unit_with_Members> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <https://w3id.org/cerif2/Group> ,
+                                                                         <https://w3id.org/cerif2/Organisation_Unit> ;
+                                                         rdfs:comment ""@en ;
+                                                         rdfs:label "Organisation Unit with Members"@en .
+
+
+###  https://w3id.org/cerif2/Person
+<https://w3id.org/cerif2/Person> rdf:type owl:Class ;
+                                 rdfs:subClassOf <https://w3id.org/cerif2/Agent> ;
+                                 rdfs:comment "A human being as an individual.<sup>[1](#fn1)</sup>"@en ;
+                                 rdfs:label "Person"@en .
+
+
+###  https://w3id.org/cerif2/Person_Name
+<https://w3id.org/cerif2/Person_Name> rdf:type owl:Class ;
+                                      rdfs:comment "The name of a [Person](../entities/Person.md)."@en ;
+                                      rdfs:label "Person Name"@en .
+
+
+###  https://w3id.org/cerif2/Physical_Address
+<https://w3id.org/cerif2/Physical_Address> rdf:type owl:Class ;
+                                           rdfs:comment "The location assigned to an [Organisation Unit](../entities/Organisation_Unit.md) or some other CERIF entity instance."@en ;
+                                           rdfs:label "Physical Address"@en .
+
+
+###  https://w3id.org/cerif2/Position
+<https://w3id.org/cerif2/Position> rdf:type owl:Class ;
+                                   rdfs:comment "A rank or level in a company, competition, or society.<sup>[1](#fn1)</sup>"@en ;
+                                   rdfs:label "Position"@en .
+
+
+###  https://w3id.org/cerif2/Postal_Address
+<https://w3id.org/cerif2/Postal_Address> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/cerif2/Contact_Information> ;
+                                         rdfs:comment "A postal address assigned to an [Agent](../entities/Organisation_Unit.md)."@en ;
+                                         rdfs:label "Postal Address"@en .
+
+
+###  https://w3id.org/cerif2/Prize
+<https://w3id.org/cerif2/Prize> rdf:type owl:Class ;
+                                rdfs:comment "Something valuable, such as an amount of money, that is given to someone who succeeds in a competition or game or that is given to someone as a reward for doing very good work.<sup>[1](#fn1)</sup>"@en ;
+                                rdfs:label "Prize"@en .
+
+
+###  https://w3id.org/cerif2/Prize_Award
+<https://w3id.org/cerif2/Prize_Award> rdf:type owl:Class ;
+                                      rdfs:comment "A [prize](../entities/Prize.md) or a sum of money that a person or organization is given for an achievement.<sup>[1](#fn1)</sup>"@en ;
+                                      rdfs:label "Prize Award"@en .
+
+
+###  https://w3id.org/cerif2/Project
+<https://w3id.org/cerif2/Project> rdf:type owl:Class ;
+                                  rdfs:comment """A temporary endeavor undertaken to create a unique product, service or result.<br/>
+Source: the Project Management Institute, https://www.pmi.org/about/learn-about-pmi/what-is-project-management"""@en ;
+                                  rdfs:label "Project"@en .
+
+
+###  https://w3id.org/cerif2/ROR_Identifier
+<https://w3id.org/cerif2/ROR_Identifier> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
+                                         rdfs:comment "A ROR<sup>[1](#fn1)</sup> identifier assigned to an [Organisation unit](../entities/Organisation_Unit.md)."@en ;
+                                         rdfs:label "ROR Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Resource
+<https://w3id.org/cerif2/Resource> rdf:type owl:Class ;
+                                   rdfs:comment "Anything that can be used for or in the process of research."@en ;
+                                   rdfs:label "Resource"@en .
+
+
+###  https://w3id.org/cerif2/Resource_Identifier
+<https://w3id.org/cerif2/Resource_Identifier> rdf:type owl:Class ;
+                                              rdfs:comment "An identifier that is assigned to a [Resource](../entities/Resource.md)."@en ;
+                                              rdfs:label "Resource Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Resource_Offer
+<https://w3id.org/cerif2/Resource_Offer> rdf:type owl:Class ;
+                                         rdfs:comment "An offer of a [Resource](../entities/Resource.md) for usage."@en ;
+                                         rdfs:label "Resource Offer"@en .
+
+
+###  https://w3id.org/cerif2/Resource_Request
+<https://w3id.org/cerif2/Resource_Request> rdf:type owl:Class ;
+                                           rdfs:comment "A request to use a [Resource](../entities/Resource.md)."@en ;
+                                           rdfs:label "Resource Request"@en .
+
+
+###  https://w3id.org/cerif2/Resource_Usage_Statement
+<https://w3id.org/cerif2/Resource_Usage_Statement> rdf:type owl:Class ;
+                                                   rdfs:comment "An element of a [Contribution](../entities/Contribution.md). All such elements taken together describe the Contribution."@en ;
+                                                   rdfs:label "Resource Usage Statement"@en .
+
+
+###  https://w3id.org/cerif2/Scopus_Author_Identifier
+<https://w3id.org/cerif2/Scopus_Author_Identifier> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
+                                                   rdfs:comment "A Scopus Author <sup>[1](#fn1)</sup> identifier assigned to a [Person](../entities/Person.md)."@en ;
+                                                   rdfs:label "Scopus Author Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Script
+<https://w3id.org/cerif2/Script> rdf:type owl:Class ;
+                                 rdfs:comment "Script indicates writing system variations that distinguish the written forms of a language or its dialects<sup>[1](#fn1)</sup>"@en ;
+                                 rdfs:label "Script"@en .
+
+
+###  https://w3id.org/cerif2/Simple_Physical_Address
+<https://w3id.org/cerif2/Simple_Physical_Address> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <https://w3id.org/cerif2/Physical_Address> ;
+                                                  rdfs:comment "This data type is used when a string representation of physical address is used."@en ;
+                                                  rdfs:label "Simple Postal Address"@en .
+
+
+###  https://w3id.org/cerif2/Structured_Physical_Address
+<https://w3id.org/cerif2/Structured_Physical_Address> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <https://w3id.org/cerif2/Physical_Address> ;
+                                                      rdfs:comment "This data type is used when a structured representation of physical address is used."@en ;
+                                                      rdfs:label "Structured Postal Address"@en .
+
+
+###  https://w3id.org/cerif2/Textual_Document
+<https://w3id.org/cerif2/Textual_Document> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/cerif2/Document> ;
+                                           rdfs:comment "A resource consisting primarily of words for reading.<sup>[1](#fn1)</sup>"@en ;
+                                           rdfs:label "Textual Document"@en .
+
+
+###  https://w3id.org/cerif2/Textual_Document_Accessibility_Specification
+<https://w3id.org/cerif2/Textual_Document_Accessibility_Specification> rdf:type owl:Class ;
+                                                                       rdfs:comment "[FIXME] An entity for representing vocabularies for definition of concepts to declare the access status of a resource."@en ;
+                                                                       rdfs:label "Textual Document Accessibility Rights"@en .
+
+
+###  https://w3id.org/cerif2/Visiting_Address
+<https://w3id.org/cerif2/Visiting_Address> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/cerif2/Contact_Information> ;
+                                           rdfs:comment "A visiting address assigned to an [Agent](../entities/Organisation_Unit.md)."@en ;
+                                           rdfs:label "Visiting Address"@en .
+
+
+###  https://w3id.org/cerif2/Wikidata_Agent_Identifier
+<https://w3id.org/cerif2/Wikidata_Agent_Identifier> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
+                                                    rdfs:comment "A Wikidata<sup>[1](#fn1)</sup> identifier assigned to an [Agent](../entities/Agent.md)."@en ;
+                                                    rdfs:label "Wikidata Agent Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Wikidata_Resource_Identifier
+<https://w3id.org/cerif2/Wikidata_Resource_Identifier> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://w3id.org/cerif2/Resource_Identifier> ;
+                                                       rdfs:comment "A Wikidata<sup>[1](#fn1)</sup> identifier assigned to a [Resource](../entities/Resource.md)."@en ;
+                                                       rdfs:label "Wikidata Resource Identifier"@en .
+
+
+###  Generated by the OWL API (version 5.5.0) https://github.com/owlcs/owlapi/
