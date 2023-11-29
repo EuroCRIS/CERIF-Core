@@ -456,7 +456,8 @@ public class Model {
 					
 					final OWLObjectProperty inverseProperty = inverseRelationship.getOwlObjectProperty();
 					if ( inverseProperty != null ) {
-						ont.add(  dataFactory.getOWLInverseObjectPropertiesAxiom( owlObjectProperty, inverseProperty ) );
+						ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( owlObjectProperty, inverseProperty ) );
+						ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( inverseProperty, owlObjectProperty ) );
 					}
 				}
 			}
