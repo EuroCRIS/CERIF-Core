@@ -1,0 +1,8 @@
+@startuml
+
+    !includesub core.puml!common
+    !includesub core.puml!Agent
+    !includesub core.puml!Agent_Identifier
+    !includesub core.puml!Agent_Identifier_Hierarchy
+
+@enduml

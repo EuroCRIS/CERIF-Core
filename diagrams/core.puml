@@ -15,10 +15,6 @@
     }
 !endsub
 
-!startsub Agent
-    "Agent" "1" --> "0..*" "Contact_Information" : contacts >
-!endsub
-
 !startsub Person
     class "Person" #ffffff {
         name            : Person_Name
@@ -31,7 +27,9 @@
     }
     
     "Agent_Identifier" "0..*" <-- "1" "Agent" : has identifier <
+!endsub
 
+!startsub Agent_Identifier_Hierarchy
     class "ORCID_Identifier" #ffffff {
         orcidId : ORCID_iD
     }
@@ -69,7 +67,7 @@
     "Agent_Identifier" <|-- "Wikidata_Agent_Identifier"
 
     class "Local_Agent_Identifier" #ffffff {
-           localAgentId : LocalA_Agent_ID
+           localAgentId : Local_Agent_ID
     }
 
     "Agent_Identifier" <|-- "Local_Agent_Identifier"
@@ -349,11 +347,6 @@
      "Physical_Address" <|-d- "Structured_Physical_Address"
 
      datatype("Contact_Information") {
-         postalAddress : Physical_Address
-         visitingAddress : Physical_Address
-         phone : String
-         emailAddress : URI
-         webSiteURL : URI
      }
 
      datatype("Postal_Address") {
@@ -372,6 +365,7 @@
      "Visiting_Address" --> "1" "Physical_Address"
 
      datatype("Electronic_Address") {
+          uri : URI
      }
 
      "Contact_Information" <|-d- "Electronic_Address"
@@ -411,10 +405,6 @@
         displayPersonName : String
         contacts : List<Contact_Information>
     }
-!endsub
-
-!startsub Affiliation_Statement
-    "Affiliation_Statement" --> "0..*" "Contact_Information" : contacts >
 !endsub
 
 !startsub Application

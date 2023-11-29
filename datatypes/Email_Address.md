@@ -6,12 +6,8 @@ An email address assigned to an [Agent](../entities/Organisation_Unit.md).
 ## Specialization of
 [Electronic Address](../datatypes/Electronic_Address.md)
 
-## Based on
-[URI](../datatypes/URI.md)
-
 ## Restrictions
-1. The URI must start with `mailto:`
-2. The rest of the URI must match the regular expression<sup>[1](#fn1)</sup>: `^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$`
+1. The uri component must match the regular expression<sup>[1](#fn1)</sup>: `(mailto):[\w-\.]+@([\w-]+\.)+[\w-]{2,4}`
 
 ---
 ## Matches

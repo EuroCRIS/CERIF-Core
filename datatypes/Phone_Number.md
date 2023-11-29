@@ -6,11 +6,8 @@ A phone number assigned to an [Agent](../entities/Organisation_Unit.md).
 ## Specialization of
 [Electronic Address](../datatypes/Electronic_Address.md)
 
-## Based on
-[URI](../datatypes/URI.md)
-
 ## Restrictions
-1. The URI must match RFC 3966 specification <sup>[1](#fn1)</sup>
+1. The uri component must match RFC 3966 specification <sup>[1](#fn1)</sup>
 
 ## Examples
 - `tel:+1-201-555-0123` - This URI points to a full phone number. 
