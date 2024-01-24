@@ -170,5 +170,8 @@ started in 2021 by [euroCRIS](https://www.eurocris.org/).
 The scope, structure or any other aspect can change.
 It has not been approved as the official standard yet.
 
+## Credits
+The development is carried out by [Jan Dvořák](https://orcid.org/0000-0001-8985-152X) and [Dragan Ivanović](https://orcid.org/0000-0002-9942-5521). We very much appreciate the feedback and corrections by José Francisco Salm jr.
+
 ## Development
 We follow some [guidelines](./guidelines#cerif-guidelines) and use some [tools](./tools#cerif-core-tools).
