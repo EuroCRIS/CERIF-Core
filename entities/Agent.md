@@ -20,6 +20,8 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 ## Relationships
 <a name="rel__activity">An Agent can *[be the actor](../entities/Activity.md#user-content-rel__actor)* of any number of [Activities](../entities/Activity.md).</a>
 
+<a name="rel__solicits">An Agent can *[invite](../entities/Call_for_Applications.md#user-content-rel__inviter)* any number of [Calls for Applications](../entities/Call_for_Applications.md).</a>
+
 <a name="rel__receives">An Agent can *[receive](../entities/Prize_Award.md#user-content-rel__recipient)* any number of [Prize Awards](../entities/Prize_Award.md).</a>
 
 <a name="rel__in-expertise-and-skills-possession">An Agent can *[be the agent in](../entities/Expertise_and_Skills_Possession.md#user-content-rel__by-agent)* any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md).</a>
