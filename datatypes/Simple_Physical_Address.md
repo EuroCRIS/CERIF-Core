@@ -10,6 +10,6 @@ The main intended usage of multiple strings for different languages is to allow 
 [Physical Address](../datatypes/Physical_Address.md)
 
 ## Components
-- those inherited from [Physical Address](../datatypes/Physical_Address.md#components)
+Those inherited from [Physical Address](../datatypes/Physical_Address.md#components) and:
 - address : [Multilingual String](../datatypes/Multilingual_String.md)
 

@@ -181,12 +181,34 @@
                                          rdfs:comment "An Agent can *[receive](../entities/Prize_Award.md#user-content-rel__recipient)* any number of [Prize Awards](../entities/Prize_Award.md)."@en .
 
 
+###  https://w3id.org/cerif2/Agent#solicits
+<https://w3id.org/cerif2/Agent#solicits> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                         rdfs:range <https://w3id.org/cerif2/Call_for_Applications> ;
+                                         rdfs:comment "An Agent can *[invite](../entities/Call_for_Applications.md#user-content-rel__inviter)* any number of [Calls for Applications](../entities/Call_for_Applications.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Agent_Identifier#isAssignedTo
 <https://w3id.org/cerif2/Agent_Identifier#isAssignedTo> rdf:type owl:ObjectProperty ;
                                                         owl:inverseOf <https://w3id.org/cerif2/Agent#hasIdentifier> ;
                                                         rdfs:domain <https://w3id.org/cerif2/Agent_Identifier> ;
                                                         rdfs:range <https://w3id.org/cerif2/Agent> ;
                                                         rdfs:comment "An Agent Identifier *[is assigned to](../entities/Agent.md#user-content-rel__has-identifier)* an [Agent](../entities/Agent.md)."@en .
+
+
+###  https://w3id.org/cerif2/Application#inResponseTo
+<https://w3id.org/cerif2/Application#inResponseTo> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <https://w3id.org/cerif2/Application> ;
+                                                   rdfs:range <https://w3id.org/cerif2/Call_for_Applications> ;
+                                                   rdfs:comment "An application can reference the *[in-response-to](../entities/Call_for_Applications.md#user-content-rel__applications)* [Call for Applications](../entities/Call_for_Applications.md), the invitation that this application is responding to."@en .
+
+
+###  https://w3id.org/cerif2/Call_for_Applications#inviter
+<https://w3id.org/cerif2/Call_for_Applications#inviter> rdf:type owl:ObjectProperty ;
+                                                        owl:inverseOf <https://w3id.org/cerif2/Agent#solicits> ;
+                                                        rdfs:domain <https://w3id.org/cerif2/Call_for_Applications> ;
+                                                        rdfs:range <https://w3id.org/cerif2/Agent> ;
+                                                        rdfs:comment "A Call for Applications always references the *[inviter](../entities/Agent.md#user-content-rel__solicits)*, the [Agent](../entities/Agent.md) that solicits the applications. (Note the role can be called differently in specific contexts.)"@en .
 
 
 ###  https://w3id.org/cerif2/Condition#details
