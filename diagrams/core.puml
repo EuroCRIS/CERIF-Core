@@ -267,6 +267,29 @@
     "Document" <|-- "Textual_Document"
 !endsub
 
+!startsub Publication_Channel
+    class "Publication_Channel" #ffffff {
+        title : Multilingual_String
+        acronym : Multilingual_String
+    }
+
+    class "Publication_Series" #ffffff {
+        ISSN : ISSN
+        eISSN : ISSN
+    }
+
+    "Publication_Channel" <|-- "Publication_Series"
+
+    class "Repository" #ffffff {
+        url : Website_Address
+    }
+
+    "Publication_Channel" <|-- "Repository"
+
+    "Textual_Document" *-r- "0..1" "Publication_Channel" : published via channel >
+
+!endsub
+
 !startsub Funding
      "Funding" "0..*" -- "0..*" "Funding" : is part of >
 !endsub
