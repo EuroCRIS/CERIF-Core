@@ -451,14 +451,19 @@ public class Model {
 				ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
 				ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, rangeClass ) );
 				
-				final Relationship inverseRelationship = relationshipByEntityAndRelationshipName.get( getRangeClassName() ).get( inversePropertyName );
-				if ( inverseRelationship != null ) {
-					
-					final OWLObjectProperty inverseProperty = inverseRelationship.getOwlObjectProperty();
-					if ( inverseProperty != null ) {
-						ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( owlObjectProperty, inverseProperty ) );
-						ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( inverseProperty, owlObjectProperty ) );
+				final Map<String, Relationship> inverseRangeClassRelationshipsMap = relationshipByEntityAndRelationshipName.get( getRangeClassName() );
+				if ( inverseRangeClassRelationshipsMap != null ) {
+					final Relationship inverseRelationship = inverseRangeClassRelationshipsMap.get( inversePropertyName );
+					if ( inverseRelationship != null ) {
+						
+						final OWLObjectProperty inverseProperty = inverseRelationship.getOwlObjectProperty();
+						if ( inverseProperty != null ) {
+							ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( owlObjectProperty, inverseProperty ) );
+							ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( inverseProperty, owlObjectProperty ) );
+						}
 					}
+				} else {
+					throw new IllegalArgumentException( "No inverse relationships for entity " + getRangeClassName() + "; known are just " + relationshipByEntityAndRelationshipName.keySet() );
 				}
 			}
 		};
