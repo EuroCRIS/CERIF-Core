@@ -286,7 +286,7 @@
 
     "Publication_Channel" <|-- "Repository"
 
-    "Textual_Document" *-r- "0..1" "Publication_Channel" : published via channel >
+    "Textual_Document" --> "0..1" "Publication_Channel" : published via channel >
 
 !endsub
 
@@ -326,6 +326,14 @@
 !startsub Event
     class "Event" #ffffff {
     }
+
+    class "Event_Series" #ffffff {
+    }
+
+    Event --> "0..1" "Event_Series"
+
+    Event --> "0..*" "Event" : collocated with >
+
 !endsub
 
 !startsub Contribution_Statement
