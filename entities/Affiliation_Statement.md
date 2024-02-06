@@ -14,9 +14,9 @@ They can exist as standalone objects (typically where an institution makes state
 
 ## Attributes
 
-display affiliation: [String](../datatypes/String.md) -- the raw string form of the affiliation as found e.g. in scholarly publications; more structured statements make use of the *institution* and/or *organisation unit* relationships below
+display affiliation: [String](../datatypes/String.md) – the raw string form of the affiliation as found e.g. in scholarly publications; more structured statements make use of the *institution* and/or *organisation unit* relationships below
 
-display person name: [String](../datatypes/String.md) -- the raw string form of the name of the person as found e.g. in scholarly publications; more structured statements make use of the *person* relationship below
+display person name: [String](../datatypes/String.md) – the raw string form of the name of the person as found e.g. in scholarly publications; more structured statements make use of the *person* relationship below
 
 contacts: List<[Contact Information](../datatypes/Contact_Information.md)>
 
