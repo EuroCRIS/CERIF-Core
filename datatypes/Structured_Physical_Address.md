@@ -10,11 +10,15 @@ The main intended usage of multiple strings for different languages is to allow 
 [Physical Address](../datatypes/Physical_Address.md)
 
 ## Components
-- those inherited from [Physical Address](../datatypes/Physical_Address.md#components)
-- street : [Multilingual String](../datatypes/Multilingual_String.md)
-- city : [Multilingual String](../datatypes/Multilingual_String.md)
-- ZIP code: [Multilingual String](../datatypes/Multilingual_String.md)
-- stateOrProvince: [Multilingual String](../datatypes/Multilingual_String.md)
+Those inherited from [Physical Address](../datatypes/Physical_Address.md#components)
+
+street : [Multilingual String](../datatypes/Multilingual_String.md)
+
+city : [Multilingual String](../datatypes/Multilingual_String.md)
+
+ZIP code : [Multilingual String](../datatypes/Multilingual_String.md)
+
+stateOrProvince : [Multilingual String](../datatypes/Multilingual_String.md)
 
 ---
 ## Matches

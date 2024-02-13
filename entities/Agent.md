@@ -22,6 +22,10 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 
 <a name="rel__solicits">An Agent can *[invite](../entities/Call_for_Applications.md#user-content-rel__inviter)* any number of [Calls for Applications](../entities/Call_for_Applications.md).</a>
 
+<a name="rel__is-the-applicant-in">An Agent can *[be the applicant in](../entities/Application.md#user-content-rel__has-applicant)* any number of [Applications](../entities/Application.md).</a>
+
+<a name="rel__is-the-addressee-of">An Agent can *[be the addressee of](../entities/Application.md#user-content-rel__has-addressee)* any number of [Applications](../entities/Application.md).</a>
+
 <a name="rel__receives">An Agent can *[receive](../entities/Prize_Award.md#user-content-rel__recipient)* any number of [Prize Awards](../entities/Prize_Award.md).</a>
 
 <a name="rel__in-expertise-and-skills-possession">An Agent can *[be the agent in](../entities/Expertise_and_Skills_Possession.md#user-content-rel__by-agent)* any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md).</a>
@@ -29,6 +33,8 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 <a name="rel__in-expertise-and-time-and-effort">An Agent can *[be the agent in](../entities/Expertise_and_Time_and_Effort.md#user-content-rel__agent)* any number of [Expertise and Time and Effort](../entities/Expertise_and_Time_and_Effort.md).</a>
 
 <a name="rel__has-identifier">An Agent can *[have](../entities/Agent_Identifier.md#user-content-rel__is-assigned-to)* any number of [Agent_Identifiers](../entities/Agent_Identifier.md).</a>
+
+<a name="rel__is-the-author-of">An Agent can *[be the author of](../entities/Textual_Document.md#user-content-rel__has-author)* any number of [Textual Documents](../entities/Textual_Document.md).</a>
 
 ## Illustrative Diagram
 ![The Agent diagram](../diagrams/agent.svg)

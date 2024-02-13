@@ -23,10 +23,10 @@ contacts: List<[Contact Information](../datatypes/Contact_Information.md)>
 
 ## Relationships
 
-An Affiliation Statement can optionally be linked with *institution*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).
+<a name="rel__has-institution">An Affiliation Statement *[has institution](../entities/Organisation_Unit.md#user-content-rel__is-the-institution-in)*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).</a>
 
-An Affiliation Statement can optionally be linked with *organisation unit*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).
+<a name="rel__has-organisation-unit">An Affiliation Statement can optionally *[have organisation unit](../entities/Organisation_Unit.md#user-content-rel__is-the-organisation-unit-in)*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).</a>
 
-An Affiliation Statement is typically linked with *person*: an instance of [Person](../entities/Person.md).
+<a name="rel__has-person">An Affiliation Statement typically *[has person](../entities/Person.md#user-content-rel__is-the-person-in)*, an instance of [Person](../entities/Person.md).</a>
 
 <a name="rel__is-used-in">An Affiliation Statement can optionally *[be used in](../entities/Activity.md#user-content-rel__has-affiliation-statements)* any number of [Activities](../entities/Activity.md).</a>

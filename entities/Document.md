@@ -30,6 +30,8 @@ publication date: [Date](../datatypes/Date.md) in case the document has gone thr
 
 <a name="rel__prove_Activity">A Document can *[prove_Activity](../entities/Activity.md#user-content-rel__is-evidenced-by)* any number of [Activities](../entities/Activity.md).</a>
 
+<a name="rel__"
+
 ---
 ## Matches
 1. Close match of [Bibo Document](http://purl.org/ontology/bibo/Document)

@@ -14,6 +14,7 @@ corresponding author flag: [Boolean](../datatypes/Boolean.md) – indicates whet
 
 ## Relationships
 
+FIXME! These are probably just renames of other relationships
 Beside those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#relationships), there is also a link to *author*: an instance of [Agent](../entities/Agent.md) 
 [FIXME] replacing the derived *contributor* link from [Contribution to Document](../entities/Contribution_to_Document.md) 
 

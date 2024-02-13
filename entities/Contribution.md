@@ -18,7 +18,7 @@ Beside those inherited from [Activity](../entities/Activity.md#relationships):
 
 <a name="rel__has-contribution-statement">A Contribution has any number of *[contribution statements](../entities/Contribution_Statement.md#user-content-rel__contribution)*: instances of [Contribution Statement](../entities/Contribution_Statement.md).</a>
 
-<a name="rel__has-acknowledgement-statement">A Contribution has any number of *acknowledgement statements*: instances of [Acknowledgement Statement](../entities/Acknowledgement_Statement).</a>
+<a name="rel__is-testified-by">A Contribution *[is testified by](../entities/Acknowledgement_Statement.md#user-content-rel__testifies)* any number of [Acknowledgement Statements](../entities/Acknowledgement_Statement.md).</a>
 
 ---
 ## Matches

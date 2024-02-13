@@ -19,9 +19,9 @@ Those of [Document](../entities/Document.md#relationships)
 
 A Textual Document has an optional *access rights specification*: an instance of [Textual Document Accessibility Specification](../entities/Textual_Document_Accessibility_Specification.md).
 
-A Textual Document has any number of *authorships*: instances of [Authorship](../entities/Authorship.md). This relationship is derived from *Document.contributorships* by including just those [Contributions to Documents](../entities/Contribution_to_Document.md) that are [Authorships](../entities/Authorship.md).
+<a name="rel__has-authorship">A Textual Document has any number of *[authorships](../entities/Authorship.md#user-content-rel__document)*, instances of [Authorship](../entities/Authorship.md). This relationship is derived from *Document.contributorships* by including just those [Contributions to Documents](../entities/Contribution_to_Document.md) that are [Authorships](../entities/Authorship.md).</a>
 
-A Textual Document has any number of *authors*: instances of [Agent](../entities/Agent.md). This relationships is derived: it relates the Textual Document with the *actors* of its *authorships*. This is a simplified form of expressing *authorships* without any additional qualification or context.
+<a name="rel__has-author">A Textual Document has any number of *[authors](../entities/Agent.md#user-content-rel__is-the-author-of)*, instances of [Agent](../entities/Agent.md). This relationships is derived: it relates the Textual Document with the *actors* of its *authorships*. This is a simplified form of expressing *authorships* without any additional qualification or context.</a>
 
 ## Illustrative Diagram
 

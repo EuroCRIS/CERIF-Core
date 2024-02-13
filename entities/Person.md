@@ -25,6 +25,8 @@ alternate names : List<[Person Name](../datatypes/Person_Name.md)>
 
 Those of [Agent](../entities/Agent.md#relationships)
 
+<a name="rel__is-the-person-in">A Person can *[is the person in](../entities/Affiliation_Statement.md#user-content-rel__has-person)* any number of Affiliation Statement, instances of [Affiliation Statement](../entities/Affiliation_Statement.md).</a>
+
 ---
 ## Matches
 1. Close match of [FOAF Person](http://xmlns.com/foaf/spec/#term_Person) (identified by URI http://xmlns.com/foaf/0.1/Person), which is also used in VIVO

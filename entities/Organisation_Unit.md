@@ -29,6 +29,10 @@ Those of [Agent](../entities/Agent.md#relationships)
 
 <a name="rel__has-subunit">An Organisation Unit can *[have](../entities/Organisation_Unit.md#user-content-rel__has-superunit)* any number of [Organisation subunits](../entities/Organisation_Unit.md).</a>
 
+<a name="rel__is-the-institution-in">An Organisation Unit can *[be the institution in](../entities/Affiliation_Statement.md#user-content-rel__has-institution)* any number of [Affiliation Statements](../entities/Affiliation_Statement.md).</a>
+
+<a name="rel__is-the-organisation-unit-in">An Organisation Unit can *[be the organisation unit in](../entities/Affiliation_Statement.md#user-content-rel__has-organisation-unit)* any number of [Affiliation Statements](../entities/Affiliation_Statement.md).</a>
+
 ---
 ## Matches
 1. Narrow match of [FOAF Organization](http://xmlns.com/foaf/spec/#term_Organization) 
