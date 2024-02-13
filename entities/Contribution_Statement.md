@@ -20,4 +20,7 @@ Another example of a structured contribution statement:
 statement: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
+
+<a name="rel__contribution">A Contribution Statements *[references](../entities/Contribution.md#user-content-rel__has-contribution-statement)* the [Contribution](../entities/Contribution.md) to which it relates.</a>
+
 <a name="rel__resource">A Contribution Statement can optionally *[reference](../entities/Resource.md#user-content-rel__produced-by)* a [Resource](../entities/Resource.md) that it produced. For instance it can be funding, expertise, equipment, time or space.</a>

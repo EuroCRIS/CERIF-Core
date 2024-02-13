@@ -13,7 +13,7 @@ Those inherited from [Contribution](../entities/Contribution.md#attributes)
 
 Beside those inherited from [Contribution](../entities/Contribution.md#relationships):
 
-A Contribution to Evaluation Outcome always has the *[evaluation outcome]*: an instance of [Evaluation Outcome](../entities/Evaluation_Outcome.md).
+<a name="rel__outcome">A Contribution to Evaluation Outcome always has the *[evaluation outcome](../entities/Evaluation_Outcome.md#user-content-rel__contributions)*: an instance of [Evaluation Outcome](../entities/Evaluation_Outcome.md).</a>
 
 ## Illustrative Diagram
 

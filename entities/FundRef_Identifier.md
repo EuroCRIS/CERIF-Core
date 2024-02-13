@@ -3,13 +3,16 @@
 ## Definition
 A FundRef<sup>[1](#fn1)</sup> identifier assigned to an [Organisation unit](../entities/Organisation_Unit.md).
 
+## Usage Notes
+FundRef identifiers are assigned to organizations that (also) fund research.
+
 ## Specialization of
 [Agent Identifier](../entities/Agent_Identifier.md)
 
 ## Attributes
 Besides those of [Agent Identifier](../entities/Agent_Identifier.md):
 
-FundRef ID: [FundFef ID Type](../datatypes/FundRef_ID.md) for organizations that also fund research
+FundRef ID : [FundFef ID Type](../datatypes/FundRef_ID.md)
 
 ## Relationships
 None besides those of [Agent Identifier](../entities/Agent_Identifier.md).

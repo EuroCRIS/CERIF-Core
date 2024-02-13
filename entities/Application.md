@@ -14,12 +14,12 @@ Based on one or more such outcomes, a [Decision](../entities/Decision.md) is mad
 
 This entity represents the act of applying rather than the application [Document](../entities/Document.md). 
 
+Subclasses specify the nature of the application as well the details. 
+An application typically contains the request (what is proposed to happen) and its justification (what benefits it would bring).
+
 ## Attributes
 
 application date: [Date](../datatypes/Date.md)
-
-Subclasses specify the nature of the application as well the details. 
-An application typically contains the request (what is proposed to happen) and its justification (what benefits it would bring).
 
 ## Relationships
 
