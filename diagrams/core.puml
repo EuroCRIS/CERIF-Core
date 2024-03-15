@@ -247,6 +247,17 @@
      "Resource" <|-- "Funding"
 !endsub
 
+!startsub Infrastructure
+    class "Infrastructure" #ffffff {
+        title : Multilingual_String
+        acronym : Multilingual_String
+        url : Website_Address
+    }
+
+    "Resource" <|-- "Infrastructure"
+
+!endsub
+
 !startsub Document_isa_Resource
 	"Resource" <|-- "Document"
 !endsub
@@ -281,12 +292,13 @@
     "Publication_Channel" <|-- "Publication_Series"
 
     class "Repository" #ffffff {
-        url : Website_Address
     }
 
     "Publication_Channel" <|-- "Repository"
 
-    "Textual_Document" --> "0..1" "Publication_Channel" : published via channel >
+    "Infrastructure" <|-- "Repository"
+
+    "Document" --> "0..1" "Publication_Channel" : published via channel >
 
 !endsub
 
