@@ -12,6 +12,18 @@
 #    Datatypes
 #################################################################
 
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYearMonth
+xsd:gYearMonth rdf:type rdfs:Datatype .
+
+
 ###  https://w3id.org/cerif2/Boolean
 <https://w3id.org/cerif2/Boolean> rdf:type rdfs:Datatype .
 
@@ -21,7 +33,13 @@
 
 
 ###  https://w3id.org/cerif2/Date
-<https://w3id.org/cerif2/Date> rdf:type rdfs:Datatype .
+<https://w3id.org/cerif2/Date> rdf:type rdfs:Datatype ;
+                               owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                     owl:unionOf ( xsd:date
+                                                                   xsd:gYear
+                                                                   xsd:gYearMonth
+                                                                 )
+                                                   ] .
 
 
 ###  https://w3id.org/cerif2/Decimal

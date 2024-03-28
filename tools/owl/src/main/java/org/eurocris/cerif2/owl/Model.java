@@ -93,12 +93,13 @@ public class Model {
 		datatypeByName.put( "Boolean", CompletableFuture.supplyAsync( () -> dataFactory.getBooleanOWLDatatype(), es ) );
 		datatypeByName.put( "URI", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_ANY_URI.getIRI() ), es ) );
 		datatypeByName.put( "Date", CompletableFuture.supplyAsync( () -> dateDatatype, es ) );
-		if ( moduleName.equals( "CERIF-Core" ) ) {
+		// FIXME check why this doesn't get serialized
+//		if ( moduleName.equals( "CERIF-Core" ) ) {
 			final OWLDataUnionOf owlDataUnionOf = dataFactory.getOWLDataUnionOf( dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.DATE.getIRI() ) ),
 					dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR_MONTH.getIRI() ) ),
 					dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR.getIRI() ) ) );
 			ont.add( dataFactory.getOWLDatatypeDefinitionAxiom( dateDatatype, owlDataUnionOf ) );
-		}
+//		}
 	}
 
 	public void readInDatatypeFile( final StructuredFile file ) throws ParseException {
