@@ -13,6 +13,7 @@
     	lifetime : Date_Range
     	contacts : List<Contact_Information>
     }
+    "Agent" ..> "Date_Range"
 !endsub
 
 !startsub Person
@@ -762,6 +763,16 @@
 
 !startsub Involvement
 	"Involvement" "0..*" --> "0..*" "Involvement" : part transitive >
+!endsub
+
+!startsub Activity
+    datatype("Date_Range") {
+        start_date : Date
+        start_date_inclusive : Boolean
+        end_date : Date
+        end_date_inclusive : Boolean
+	}
+	"Activity" ..> "Date_Range"
 !endsub
 
 @enduml
