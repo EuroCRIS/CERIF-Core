@@ -1,7 +1,7 @@
 # Group
 
 ## Definition
-A non-formal group of [persons](../entities/Person.md) and [organizations](../entities/Organisation_Unit.md).
+A non-formal group of [Agents](../entities/Agent.md).
 
 ## Usage notes
 
@@ -14,11 +14,9 @@ Those of [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md)
 
 ## Relationships
 
-Those of [Agent](../entities/Agent.md#relationships)
+Those of [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md).
 
 ---
 ## Matches
 1. Exact match of [FOAF Group](http://xmlns.com/foaf/spec/#term_Group) 
-
-## References
 
