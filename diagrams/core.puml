@@ -86,7 +86,7 @@
 !endsub
 
 !startsub Person
-    "Person" ..> "name" "Person_Name"
+    "Person" ..> "Person_Name"
 !endsub
 
 !startsub Group_or_Organisation_Unit
