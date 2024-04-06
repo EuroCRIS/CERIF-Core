@@ -14,6 +14,7 @@
     	contacts : List<Contact_Information>
     }
     "Agent" ..> "Date_Range"
+    "Agent" ..> "0..*" "Contact_Information"
 !endsub
 
 !startsub Person
