@@ -1082,7 +1082,8 @@ namely, submit an [Application](../entities/Application.md)."""@en ;
 
 ###  https://w3id.org/cerif2/Contribution_to_Event
 <https://w3id.org/cerif2/Contribution_to_Event> rdf:type owl:Class ;
-                                                rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to a [Event](../entities/Event.md)."@en ;
+                                                rdfs:subClassOf <https://w3id.org/cerif2/Contribution> ;
+                                                rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to an [Event](../entities/Event.md)."@en ;
                                                 rdfs:label "Contribution to Event"@en .
 
 
