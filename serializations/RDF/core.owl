@@ -381,6 +381,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                                     rdfs:comment "A Contribution to Infrastructure *[reference](../entities/Infrastructure.md#user-content-rel__has-benefitted-from)* the [Infrastructure](../entities/Infrastructure.md) that has benefitted."@en .
 
 
+###  https://w3id.org/cerif2/Contribution_to_Prize#prize
+<https://w3id.org/cerif2/Contribution_to_Prize#prize> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <https://w3id.org/cerif2/Contribution_to_Prize> ;
+                                                      rdfs:range <https://w3id.org/cerif2/Prize> ;
+                                                      rdfs:comment "A Contribution to Prize always has the *[prize](../entities/Prize.md#user-content-rel__is-helped-by)*: an instance of [Prize](../entities/Prize.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Document#contributions
 <https://w3id.org/cerif2/Document#contributions> rdf:type owl:ObjectProperty ;
                                                  rdfs:domain <https://w3id.org/cerif2/Document> ;
@@ -554,6 +561,14 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                         rdfs:domain <https://w3id.org/cerif2/Prize> ;
                                         rdfs:range <https://w3id.org/cerif2/Prize_Award> ;
                                         rdfs:comment "A Prize can be *[awarded](../entities/Prize_Award.md#user-content-rel__awards)* in [Prize Awards](../entities/Prize_Award.md)."@en .
+
+
+###  https://w3id.org/cerif2/Prize#isHelpedBy
+<https://w3id.org/cerif2/Prize#isHelpedBy> rdf:type owl:ObjectProperty ;
+                                           owl:inverseOf <https://w3id.org/cerif2/Contribution_to_Prize#prize> ;
+                                           rdfs:domain <https://w3id.org/cerif2/Prize> ;
+                                           rdfs:range <https://w3id.org/cerif2/Contribution_to_Prize> ;
+                                           rdfs:comment "A Prize can *[be helped by](../entities/Contribution_to_Prize.md#user-content-rel__prize)* any number of [Contributions to Prize](../entities/Contribution_to_Prize.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Prize_Award#awards
@@ -1092,6 +1107,13 @@ namely, submit an [Application](../entities/Application.md)."""@en ;
                                                          rdfs:subClassOf <https://w3id.org/cerif2/Contribution> ;
                                                          rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to an [Infrastructure](../entities/Infrastructure.md)."@en ;
                                                          rdfs:label "Contribution to Infrastructure"@en .
+
+
+###  https://w3id.org/cerif2/Contribution_to_Prize
+<https://w3id.org/cerif2/Contribution_to_Prize> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/cerif2/Contribution> ;
+                                                rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to a [Prize](../entities/Prize.md)."@en ;
+                                                rdfs:label "Contribution to Prize"@en .
 
 
 ###  https://w3id.org/cerif2/Contribution_to_Project
