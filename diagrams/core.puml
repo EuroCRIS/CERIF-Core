@@ -774,6 +774,7 @@
         end_date_inclusive : Boolean
 	}
 	"Activity" ..> "Date_Range"
+	"Activity" "0..*" --- "0..*" "Funding" : covers <
 !endsub
 
 @enduml
