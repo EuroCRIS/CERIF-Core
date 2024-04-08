@@ -19,6 +19,10 @@ Involvements may form a hierarchic structure which may in part reflect a hierarc
 <a name="rel__have-parent">An Involvement can have a *[parent](../entities/Involvement.md#user-content-rel__have-child)* [Involvement](../entities/Involvement.md).</a>
 Inversely, <a name="rel__have-child">an Involvement can have any number of *[child](../entities/Involvement.md#user-content-rel__have-parent)* [Involvements](../entities/Involvement.md).</a>
 
+<a name="rel__have-ancestor">An Involvement can have any number of *[ancestor](../entities/Involvement.md#user-content-rel__have-descendant)* [Involvements](../entities/Involvement.md).</a> 
+Inversely, <a name="rel__have-descendant">n Involvement can have any number of *[descendant](../entities/Involvement.md#user-content-rel__have-ancestor)* [Involvements](../entities/Involvement.md).</a> 
+FIXME: express that ancestor/descendant is the transitive closure of parent/child.
+
 ## Illustrative Diagram
 A UML diagram showing this entity in its context if one is available.
 
