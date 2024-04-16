@@ -121,8 +121,12 @@
 	"Group_or_Organisation_Unit" <|-- "Organisation_Unit"
 !endsub
 
-!startsub Group_or_Organisation_Unit
-	"Group_or_Organisation_Unit" "0..* part of" <..> "0..* parts" "Group_or_Organisation_Unit"
+!startsub Organisation_Unit
+	"Organisation_Unit" "0..* part of" <..> "0..* parts" "Organisation_Unit"
+!endsub
+
+!startsub Group
+	"Group" "0..* part of" <..> "0..* parts" "Group"
 !endsub
 
 !startsub Organisation_Unit_with_Members
