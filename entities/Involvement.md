@@ -13,6 +13,12 @@ Involvements may form a hierarchic structure which may in part reflect a hierarc
 ## Specialization of
 [Activity](../entities/Activity.md)
 
+## Attributes
+
+Those of [Activity](../entities/Activity.md).
+
+description : [Multilingual String](../datatypes/Multilingual_String.md)
+
 ## Relationships
 <a name="rel__in">An Involvement specifies that the Agent is *[involved in](../entities/Group_or_Organisation_Unit.md#user-content-rel__has-involvement)* a [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md).</a>
 
