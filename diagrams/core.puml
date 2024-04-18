@@ -153,6 +153,7 @@
 !startsub Involvement
     class "Involvement" #ffffff {
         description : Multilingual_String
+        position    : Position
     }
 !endsub
 
@@ -756,7 +757,7 @@
 !endsub
 
 !startsub Position
-	"Involvement" "0..*" --> "0..1" "Position" : position >
+	"Involvement" ..> "Position" : position >
 !endsub
 
 !startsub Involvement
