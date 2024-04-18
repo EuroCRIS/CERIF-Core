@@ -20,6 +20,7 @@ display person name: [String](../datatypes/String.md) – the raw string form of
 
 contacts: List<[Contact Information](../datatypes/Contact_Information.md)>
 
+position    : [Position](../datatypes/Position.md)
 
 ## Relationships
 

@@ -749,7 +749,7 @@
 !endsub
 
 !startsub Position
-	"Affiliation_Statement" "0..*" --> "0..1" "Position" : position >
+	"Affiliation_Statement" ..> "Position"
 !endsub
 
 !startsub Position
@@ -757,7 +757,7 @@
 !endsub
 
 !startsub Position
-	"Involvement" ..> "Position" : position >
+	"Involvement" ..> "Position"
 !endsub
 
 !startsub Involvement
