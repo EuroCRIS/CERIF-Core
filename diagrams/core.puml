@@ -455,6 +455,7 @@
         displayAffiliation_Statement : String
         displayPersonName : String
         contacts : List<Contact_Information>
+        position : Position
     }
 !endsub
 
