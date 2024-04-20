@@ -406,22 +406,22 @@ public class Model {
 		ont.saveOntology( format, System.out );
 	}
 
-	static final Pattern getEntityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
+	static final Pattern entityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
 
 	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, BasedSequence text ) throws ParseException {
-		if (!( text.startsWith( "<a name=\"" ) && text.endsWith( "</a>" ) )) {
-			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship description", node );
+		if (!( text.startsWith( "<a name=\"" ) && text.toString().contains( "</a>" ) )) {
+			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship title", node );
 		}
 		final String relName1 = text.toString().replaceFirst( "<a name=\"([^\"]*)\">.*", "$1" );
 		final String relName = CaseUtils.toCamelCase( relName1.replaceFirst( "^rel__", "" ), false, ' ', '-', '_', '.' );
 		if ( relName.equals( relName1 ) ) {
 			throw new ParseException( "Relationship name '" + relName1 + "' not starting with 'rel__'", node );
 		}
-		text = text.subSequence( text.indexOf( ">" ) + 1, text.length() - "</a>".length() );
+		text = text.subSequence( text.indexOf( ">" ) + 1, text.length() );
 		log.info( "Class " + classIRI + ", relationship " + relName );
 		final String txt = text.toString().trim();
 		
-		final Matcher entityNameMatcher = getEntityNamePattern.matcher( txt );
+		final Matcher entityNameMatcher = entityNamePattern.matcher( txt );
 		if ( ! entityNameMatcher.find() ) {
 			throw new ParseException( "No reference to the relationship inverse", node );
 		}
@@ -440,7 +440,8 @@ public class Model {
 		}
 		final String inversePropertyName = CaseUtils.toCamelCase( inverseFragment1.substring( fragmentPrefix.length() ), false, ' ', '-', '_', '.' );
 		final boolean ordered = false;
-		final Relationship relationship = new Relationship( relName, classIRI, rangeClassName, inversePropertyName, ordered, txt ) {
+		text = text.subSequence( text.indexOf( " : " ) + 3, text.length() );
+		final Relationship relationship = new Relationship( relName, classIRI, rangeClassName, inversePropertyName, ordered, text.toString() ) {
 			protected void handle() throws InterruptedException, ExecutionException {
 				final Future<? extends OWLEntity> rangeClassFuture = entityByName.get( getRangeClassName() );
 				final OWLClass rangeClass = (OWLClass) rangeClassFuture.get();
