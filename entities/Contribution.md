@@ -20,6 +20,8 @@ Beside those inherited from [Activity](../entities/Activity.md#relationships):
 
 <a name="rel__is-testified-by">A Contribution *[is testified by](../entities/Acknowledgement_Statement.md#user-content-rel__testifies)* any number of [Acknowledgement Statements](../entities/Acknowledgement_Statement.md).</a>
 
+<a name="rel__is-testified-by">is-testified-by</a> — [testify](../entities/Acknowledgement_Statement.md#user-content-rel__testify) : A Contribution can be testified by any number of [Acknowledgement Statements](../entities/Acknowledgement_Statement.md).
+
 ---
 ## Matches
 
