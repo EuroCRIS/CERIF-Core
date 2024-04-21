@@ -19,7 +19,7 @@ L3=$( cat ./entities/$X3.md | awk 'BEGIN { AFTER_REFS=0 } /^## Relationships/ { 
 C3=${L3:-\$a}
 sed -i~ -e "$C1\\
 \\
-<a name=\"rel__$X2\">$X2<\/a> — [$X4](..\\/entities\\/$X3.md#user-content-rel__$X4) : A $1 can $2 any number of [${3}s](..\\/entities\\/$X3.md)." ./entities/$X1.md
+<a name=\"rel__$X2\">$X2<\/a> \/ [$X4](..\\/entities\\/$X3.md#user-content-rel__$X4) : A $1 can $2 any number of [${3}s](..\\/entities\\/$X3.md)." ./entities/$X1.md
 sed -i~ -e "$C3\\
 \\
-<a name=\"rel__$X4\">$X4<\/a> — [$X2](..\\/entities\\/$X1.md#user-content-rel__$X2) : A $3 can $4 any number of [${1}s](..\\/entities\\/$X1.md)." ./entities/$X3.md
+<a name=\"rel__$X4\">$X4<\/a> \/ [$X2](..\\/entities\\/$X1.md#user-content-rel__$X2) : A $3 can $4 any number of [${1}s](..\\/entities\\/$X1.md)." ./entities/$X3.md
