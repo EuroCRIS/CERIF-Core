@@ -1,6 +1,7 @@
 package org.eurocris.cerif2.owl;
 
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
@@ -29,11 +30,14 @@ public class StructuredFile {
 
 	protected final Logger log = LoggerFactory.getLogger( getClass().getName() );
 
+	private final URI uri;
+	
 	private final Path path;
 	
 	private final Section section;
 	
-	public StructuredFile( final Path path ) throws IOException, ParseException {
+	public StructuredFile( final Path path, final URI uri ) throws IOException, ParseException {
+		this.uri = uri;
 		this.path = path;
 		final Document document = parser.parseReader( Files.newBufferedReader( path ) );
 		this.section = Section.create( document.getChildIterator() );
@@ -44,6 +48,10 @@ public class StructuredFile {
 		log.debug( "Reading " + path.toString() + " with title \"" + section.getTitle() + "\"" );
 	}
 
+	public URI getURI() {
+		return uri;
+	}
+	
 	public Path getPath() {
 		return path;
 	}

@@ -1,6 +1,7 @@
 package org.eurocris.cerif2.owl;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -111,7 +112,7 @@ public class Model {
 			// corresponds to an XSD complexType -> owl:Class
 			final String owlClassName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
 			final IRI classIRI = baseIRI.resolve( "datatypes" ).resolve( owlClassName );
-			datatypeByName.put( owlClassName, createClass( mainSection, owlClassName, classIRI, "Components", false ) );
+			datatypeByName.put( owlClassName, createClass( mainSection, owlClassName, classIRI, "Components", false, file.getURI() ) );
 		} else {
 			// corresponds to an XSD simpleType -> owl:Datatype
 			final String datatypeName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
@@ -125,7 +126,7 @@ public class Model {
 
 		final String owlClassName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
 		final IRI classIRI = baseIRI.resolve( owlClassName );
-		entityByName.put( owlClassName, createClass( mainSection, owlClassName, classIRI, "Attributes", true ) );
+		entityByName.put( owlClassName, createClass( mainSection, owlClassName, classIRI, "Attributes", true, file.getURI() ) );
 	}
 	
 	public void markDoneReading() {
@@ -240,7 +241,7 @@ public class Model {
 			    };
 			}
 	
-	protected Future<OWLClass> createClass( final Section mainSection, final String owlClassName, final IRI classIRI, final String attributesSectionTitle, final boolean definitionObligatory )
+	protected Future<OWLClass> createClass( final Section mainSection, final String owlClassName, final IRI classIRI, final String attributesSectionTitle, final boolean definitionObligatory, final URI docsURI )
 			throws ParseException {
 		log.info( "Declaring class '" + owlClassName + "', IRI " + classIRI );
 		final OWLClass owlClass = dataFactory.getOWLClass( classIRI );
@@ -266,6 +267,8 @@ public class Model {
 				} else if ( definitionObligatory ) {
 					throw new IllegalStateException( "Class " + owlClassName + ": definition not found (no subsection titled \"Definition\")" );
 				}
+				final OWLLiteral isDefinedByLiteral = dataFactory.getOWLLiteral( docsURI.toString(), OWL2Datatype.XSD_ANY_URI );
+				ont.add( dataFactory.getOWLAnnotationAssertionAxiom( owlClass.getIRI(), dataFactory.getOWLAnnotation( dataFactory.getRDFSIsDefinedBy(), isDefinedByLiteral ) ) );
 
 				final Section specializationOfSection = mainSection.getSubsectionByTitle( "Specialization of" );
 				if ( specializationOfSection != null ) {
@@ -340,7 +343,7 @@ public class Model {
 							// ignore
 						} else if ( text.isNotBlank() ) {
 							try {
-								processRelationshipNode( classIRI, owlClass, node, text );
+								processRelationshipNode( classIRI, owlClass, node, text, docsURI );
 							} catch ( final Exception e ) {
 								log.warn( "When processing relationship", e );
 							}
@@ -408,7 +411,7 @@ public class Model {
 
 	static final Pattern entityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
 
-	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, final BasedSequence text ) throws ParseException {
+	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, final BasedSequence text, final URI docsURI ) throws ParseException {
 		if (!( text.startsWith( "<a name=\"" ) && text.toString().contains( "</a>" ) )) {
 			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship title", node );
 		}
@@ -462,6 +465,8 @@ public class Model {
 				ont.add( dataFactory.getOWLAnnotationAssertionAxiom( owlObjectProperty.getIRI(), dataFactory.getRDFSComment( definitionLiteral ) ) );
 				ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
 				ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, rangeClass ) );
+				final OWLLiteral isDefinedByLiteral = dataFactory.getOWLLiteral( docsURI.toString() + "#user-content-" + relName1, OWL2Datatype.XSD_ANY_URI );
+				ont.add( dataFactory.getOWLAnnotationAssertionAxiom( owlObjectProperty.getIRI(), dataFactory.getOWLAnnotation( dataFactory.getRDFSIsDefinedBy(), isDefinedByLiteral ) ) );
 				
 				final Map<String, Relationship> inverseRangeClassRelationshipsMap = relationshipByEntityAndRelationshipName.get( getRangeClassName() );
 				if ( inverseRangeClassRelationshipsMap != null ) {
