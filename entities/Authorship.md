@@ -7,18 +7,12 @@
 [Contribution to Document](../entities/Contribution_to_Document.md)
 
 ## Attributes
-
-Beside those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#attributes), there are also the following specific attribute:
+Those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#attributes) plus:
 
 corresponding author flag: [Boolean](../datatypes/Boolean.md) – indicates whether this author is responsible for correspondence (true)
 
 ## Relationships
-
-FIXME! These are probably just renames of other relationships
-Beside those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#relationships), there is also a link to *author*: an instance of [Agent](../entities/Agent.md) 
-[FIXME] replacing the derived *contributor* link from [Contribution to Document](../entities/Contribution_to_Document.md) 
-
-<a name="rel__of-document">of-document</a> / [has-authorship](../entities/Textual_Document.md#user-content-rel__has-authorship) : A Authorship can of document any number of [Textual Documents](../entities/Textual_Document.md).
+None beside those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#relationships).
 
 ---
 ## Matches
