@@ -21,7 +21,7 @@ A Textual Document has an optional *access rights specification*: an instance of
 
 <a name="rel__has-authorship">has-authorship</a> / [of-document](../entities/Authorship.md#user-content-rel__of-document) : A Textual Document can have any number of [Authorships](../entities/Authorship.md). This relationship is derived from [Document.has-contribution](../entities/Document.md#user-content-rel__has-contribution) by including just those [Contributions to Documents](../entities/Contribution_to_Document.md) that are [Authorships](../entities/Authorship.md).
 
-<a name="rel__has-author">has-author</a> / [is-author-of](../entities/Agent.md#user-content-rel__is-author-of) : A Textual Document has any number of authors, instances of [Agent](../entities/Agent.md). This relationship is derived: it relates the Textual document with the *actors* of its *authorships*. This is a simplified form expressing *authorships* without any additional qualification or context.
+<a name="rel__has-author">has-author</a> / [is-author-of](../entities/Agent.md#user-content-rel__is-author-of) : A Textual Document has any number of authors, instances of [Agent](../entities/Agent.md). This relationship is derived: it relates the Textual Document with the *actors* of its *authorships*. This is a simplified form expressing *authorships* without any additional qualification or context.
 
 ## Illustrative Diagram
 
