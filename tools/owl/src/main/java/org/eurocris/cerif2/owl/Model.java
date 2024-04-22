@@ -484,9 +484,6 @@ public class Model {
 	}
 	
 	protected void processAttributeNode( final IRI classIRI, final OWLClass owlClass, final Node node, BasedSequence text ) throws ParseException {
-		if ( text.startsWith( "<a name=\"" ) && text.endsWith( "</a>" ) ) {
-			text = text.subSequence( text.indexOf( ">" ) + 1, text.length() - "</a>".length() );
-		}
 		final int colonPosition = text.indexOf( ':' );
 		if ( colonPosition < 0 ) {
 			throw new ParseException( "No colon specified", node );
@@ -496,7 +493,8 @@ public class Model {
 		final int endashPosition = rest.indexOf( '–' );
 		final BasedSequence datatypeSpec = ( endashPosition > 0 ) ? rest.subSequence( 0, endashPosition ).trim() : rest.trim();
 		final String datatypeLinkTarget = datatypeSpec.toString().replaceAll( "[^(]*\\(([^)]*)\\)[^)]*", "$1" );
-		final String attributeName = ( attributeText.contains( " " ) || Character.isUpperCase( attributeText.charAt( 0 ) ) ) ? CaseUtils.toCamelCase( attributeText, false, ' ', '-', '_', '.' ) : attributeText;
+		final String attributeName1 = attributeText.replaceFirst( "<a name=\"[^\"]*\">([^<]*)</a>", "$1" );
+		final String attributeName = ( attributeName1.contains( " " ) || Character.isUpperCase( attributeName1.charAt( 0 ) ) ) ? CaseUtils.toCamelCase( attributeName1, false, ' ', '-', '_', '.' ) : attributeName1;
 		log.info( "Attribute " + attributeName + ", datatype " + datatypeLinkTarget );
 		if ( !datatypeLinkTarget.startsWith( "../datatypes/" ) ) {
 			throw new ParseException( "Not referencing ../datatypes/", node );
