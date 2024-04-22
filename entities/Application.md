@@ -23,13 +23,14 @@ application date: [Date](../datatypes/Date.md)
 
 ## Relationships
 
-<a name="rel__has-applicant">An Application always has the *[applicant](../entities/Agent.md#user-content-rel__is-the-applicant-in)*, the [Agent](../entities/Agent.md) that is applying. (Note the role can be called differently in specific contexts.)</a>
+<a name="rel__has-applicant">has-applicant</a> / [is-applicant-in](../entities/Agent.md#user-content-rel__is-applicant-in) : An Application always has the applicant: the [Agent](../entities/Agent.md) that is applying. (Note that the role can be called differently in specific contexts.)
 
-<a name="rel__has-addressee">An application always references its *[addressee](../entities/Agent.md#user-content-rel__be-the-addressee-of)*, the [Agent](../entities/Agent.md) that is expected to consider the application. (Note the role can be called differently in specific contexts.)</a>
+<a name="rel__has-addressee">has-addressee</a> / [is-addressee-of](../entities/Agent.md#user-content-rel__is-addressee-of) : An Application always references its addressee, the [Agent](../entities/Agent.md) that is expected to consider the application. (Note the role can be called differently in specific contexts.)
 
-<a name="rel__in-response-to">An application can reference the *[in-response-to](../entities/Call_for_Applications.md#user-content-rel__applications)* [Call for Applications](../entities/Call_for_Applications.md), the invitation that this application is responding to.</a>
+<a name="rel__in-response-to">in-response-to</a> / [has-application](../entities/Call_for_Applications.md#user-content-rel__has-application) : An Application can optionally reference the [Call for Applications](../entities/Call_for_Applications.md) it responds to.
 
-<a name="rel__contents">A Call for Applications can optionally reference its *[contents](../entities/Document.md#user-content-rel__be-contents-for)*, the [Document](../entities/Document.md) that details the invitation.</a>
+<a name="rel__has-contents">has-contents</a> : An Application can optionally reference its contents: the [Document](../entities/Document.md) that details the Application.
+
 
 ---
 

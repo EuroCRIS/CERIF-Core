@@ -11,12 +11,12 @@ Anything that helps the Prize to exist and be awarded.
 [Contribution](../entities/Contribution.md)
 
 ## Attributes
-
 Those inherited from [Contribution](../entities/Contribution.md#attributes)
 
 ## Relationships
+Besides those of [Contribution](../entities/Contribution.md):
 
-<a name="rel__prize">A Contribution to Prize always has the *[prize](../entities/Prize.md#user-content-rel__is-helped-by)*: an instance of [Prize](../entities/Prize.md).</a>
+<a name="rel__has-target">has-target</a> / [has-contribution](../entities/Prize.md#user-content-rel__has-contribution) : A Contribution to Prize always has the target [Prize](../entities/Prize.md).
 
 ---
 ## Matches

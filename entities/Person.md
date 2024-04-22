@@ -17,15 +17,16 @@ One Person typically has many of these relationships.
 [Agent](../entities/Agent.md)
 
 ## Attributes
+Those of [Agent](../entities/Agent.md#relationships) plus:
+
 name            : [Person Name](../datatypes/Person_Name.md)
 
 alternate names : List<[Person Name](../datatypes/Person_Name.md)>
 
 ## Relationships
+Those of [Agent](../entities/Agent.md#relationships) plus:
 
-Those of [Agent](../entities/Agent.md#relationships)
-
-<a name="rel__is-the-person-in">A Person can *[is the person in](../entities/Affiliation_Statement.md#user-content-rel__has-person)* any number of Affiliation Statement, instances of [Affiliation Statement](../entities/Affiliation_Statement.md).</a>
+<a name="rel__is-the-person-in">is-the-person-in</a> / [has-person](../entities/Affiliation_Statement.md#user-content-rel__has-person) : A Person can be the person in any number of [Affiliation Statements](../entities/Affiliation_Statement.md).
 
 ---
 ## Matches

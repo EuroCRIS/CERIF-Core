@@ -12,8 +12,9 @@ Any contribution to an [Evaluation Outcome](../entities/Evaluation_Outcome.md) o
 Those inherited from [Contribution to Evaluation Outcome](../entities/Contribution_to_Evaluation_Outcome.md)
 
 ## Relationships
-
 Beside those inherited from [Contribution to Evaluation Outcome](../entities/Contribution_to_Evaluation_Outcome.md#relationships):
+
+FIXME
 
 ## Illustrative Diagram
 

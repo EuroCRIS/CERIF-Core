@@ -9,13 +9,13 @@ An award or honor in recognition of outstanding work.
 
 ## Attributes
 
-<a name="name">name : [datatype](../datatypes/Multilingual_String.md)</a>
+<a name="att__name">name</a> : [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
 
-<a name="rel__awarded">A Prize can be *[awarded](../entities/Prize_Award.md#user-content-rel__awards)* in [Prize Awards](../entities/Prize_Award.md).</a>
+<a name="rel__is-awarded-as">is-awarded-as</a> / [awards](../entities/Prize_Award.md#user-content-rel__awards) : A Prize can be awarded through any number of [Prize Awards](../entities/Prize_Award.md).
 
-<a name="rel__is-helped-by">A Prize can *[be helped by](../entities/Contribution_to_Prize.md#user-content-rel__prize)* any number of [Contributions to Prize](../entities/Contribution_to_Prize.md).</a>
+<a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Prize.md#user-content-rel__has-target) : A Prize can have any number of [contributions](../entities/Contribution_to_Prize.md) that help it arise or continue.
 
 ---
 ## Matches

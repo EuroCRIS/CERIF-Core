@@ -21,6 +21,8 @@ statement: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
 
-<a name="rel__contribution">A Contribution Statements *[references](../entities/Contribution.md#user-content-rel__has-contribution-statement)* the [Contribution](../entities/Contribution.md) to which it relates.</a>
+<a name="rel__references">references</a> / [has-contribution-statement](../entities/Contribution.md#user-content-rel__has-contribution-statement) : A Contribution Statement references the [Contribution](../entities/Contribution.md) to which it relates.
 
-<a name="rel__resource">A Contribution Statement can optionally *[reference](../entities/Resource.md#user-content-rel__produced-by)* a [Resource](../entities/Resource.md) that it produced. For instance it can be funding, expertise, equipment, time or space.</a>
+<a name="rel__provides">provides</a> / [is-provided-by](../entities/Resource.md#user-content-rel__is-provided-by) : A Contribution Statement can optionally provide any number of [Resources](../entities/Resource.md). These resources can be funding, expertise, equipment, time or space.
+
+<a name="rel__is-detailed-in">is-detailed-in</a> / [details](../entities/Resource_Usage_Statement.md#user-content-rel__details) : A Contribution Statement can be detailed in any number of [Resource Usage Statements](../entities/Resource_Usage_Statement.md).

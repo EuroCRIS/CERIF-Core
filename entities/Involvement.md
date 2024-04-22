@@ -22,14 +22,12 @@ description : [Multilingual String](../datatypes/Multilingual_String.md)
 position    : [Position](../datatypes/Position.md)
 
 ## Relationships
-<a name="rel__in">An Involvement specifies that the Agent is *[involved in](../entities/Group_or_Organisation_Unit.md#user-content-rel__has-involvement)* a [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md).</a>
 
-<a name="rel__have-parent">An Involvement can have a *[parent](../entities/Involvement.md#user-content-rel__have-child)* [Involvement](../entities/Involvement.md).</a>
-Inversely, <a name="rel__have-child">an Involvement can have any number of *[child](../entities/Involvement.md#user-content-rel__have-parent)* [Involvements](../entities/Involvement.md).</a>
+<a name="rel__involves-actor-in">involves-actor-in</a> / [has-involvement](../entities/Group_or_Organisation_Unit.md#user-content-rel__has-involvement) : A Involvement specifies that the *actor* Agent is involved in a [Group or Organisation Units](../entities/Group_or_Organisation_Unit.md).
 
-<a name="rel__have-ancestor">An Involvement can have any number of *[ancestor](../entities/Involvement.md#user-content-rel__have-descendant)* [Involvements](../entities/Involvement.md).</a> 
-Inversely, <a name="rel__have-descendant">n Involvement can have any number of *[descendant](../entities/Involvement.md#user-content-rel__have-ancestor)* [Involvements](../entities/Involvement.md).</a> 
-FIXME: express that ancestor/descendant is the transitive closure of parent/child.
+<a name="rel__is-part-of">is-part-of</a> / [has-part](../entities/Involvement.md#user-content-rel__has-part) : An Involvement can be part of any number of other [Involvements](../entities/Involvement.md).
+
+<a name="rel__has-part">has-part</a> / [is-part-of](../entities/Involvement.md#user-content-rel__is-part-of) : An Involvement can have any number of part [Involvements](../entities/Involvement.md).
 
 ## Illustrative Diagram
 A UML diagram showing this entity in its context if one is available.

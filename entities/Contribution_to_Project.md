@@ -13,8 +13,9 @@ Those inherited from [Contribution](../entities/Contribution.md#attributes)
 
 Beside those inherited from [Contribution](../entities/Contribution.md#relationships), a Contribution to Project always has the *[project](../entities/Resource.md)*: an instance of [Project](../entities/Resource.md).
 
-## Illustrative Diagram
+<a name="rel__has-target">has-target</a> / [has-contribution](../entities/Project.md#user-content-rel__has-contribution) : A Contribution to Project always references the target [Project](../entities/Project.md).
 
+## Illustrative Diagram
 
 ---
 ## Matches

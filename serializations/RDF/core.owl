@@ -114,18 +114,11 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/cerif2/Acknowledgement_Statement#testifies
-<https://w3id.org/cerif2/Acknowledgement_Statement#testifies> rdf:type owl:ObjectProperty ;
-                                                              rdfs:domain <https://w3id.org/cerif2/Acknowledgement_Statement> ;
-                                                              rdfs:range <https://w3id.org/cerif2/Contribution> ;
-                                                              rdfs:comment "An Acknowledgement Statement *[testifies](../entities/Contribution.md#user-content-rel__is-testified-by)* a [Contribution](../entities/Contribution.md)."@en .
-
-
-###  https://w3id.org/cerif2/Activity#actor
-<https://w3id.org/cerif2/Activity#actor> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/cerif2/Activity> ;
-                                         rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                         rdfs:comment "An Activity typically has the *[actor](../entities/Agent.md#user-content-rel__activity)*: an instance of [Agent](../entities/Agent.md).</a> For some subclasses of Activity, the Agent may not be known or disclosed (e.g. for blind reviews). Also if the actor uses a pseudonym, their identity (and sometimes event the type) are unknown, in which case just the display name is available."@en .
+###  https://w3id.org/cerif2/Acknowledgement_Statement#testify
+<https://w3id.org/cerif2/Acknowledgement_Statement#testify> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <https://w3id.org/cerif2/Acknowledgement_Statement> ;
+                                                            rdfs:range <https://w3id.org/cerif2/Contribution> ;
+                                                            rdfs:comment "An Acknowledgement Statement testifies a [Contribution](../entities/Contribution.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Activity#dateRange
@@ -134,26 +127,33 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                              rdfs:range <https://w3id.org/cerif2/Date_Range> .
 
 
-###  https://w3id.org/cerif2/Activity#hasAffiliationStatements
-<https://w3id.org/cerif2/Activity#hasAffiliationStatements> rdf:type owl:ObjectProperty ;
-                                                            rdfs:domain <https://w3id.org/cerif2/Activity> ;
-                                                            rdfs:range <https://w3id.org/cerif2/Affiliation_Statement> ;
-                                                            rdfs:comment "An Activity *[has](../entities/Affiliation_Statement.md#user-content-rel__is-used-in)* any number of [Affiliation Statements](../entities/Affiliation_Statement.md)."@en .
+###  https://w3id.org/cerif2/Activity#hasActor
+<https://w3id.org/cerif2/Activity#hasActor> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/cerif2/Activity> ;
+                                            rdfs:range <https://w3id.org/cerif2/Agent> ;
+                                            rdfs:comment "An Activity typically has the actor: an instance of [Agent](../entities/Agent.md). For some subclasses of Activity, the Agent may not be known or disclosed (e.g. for blind reviews). Also if the actor uses a pseudonym, their identity (and sometimes event the type) are unknown, in which case just a display name is available."@en .
+
+
+###  https://w3id.org/cerif2/Activity#hasAffiliationStatement
+<https://w3id.org/cerif2/Activity#hasAffiliationStatement> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <https://w3id.org/cerif2/Activity> ;
+                                                           rdfs:range <https://w3id.org/cerif2/Affiliation_Statement> ;
+                                                           rdfs:comment "An Activity can have any number of [Affiliation Statements](../entities/Affiliation_Statement.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Activity#isCoveredBy
 <https://w3id.org/cerif2/Activity#isCoveredBy> rdf:type owl:ObjectProperty ;
-                                               owl:inverseOf <https://w3id.org/cerif2/Funding#cover> ;
+                                               owl:inverseOf <https://w3id.org/cerif2/Funding#covers> ;
                                                rdfs:domain <https://w3id.org/cerif2/Activity> ;
                                                rdfs:range <https://w3id.org/cerif2/Funding> ;
-                                               rdfs:comment "An Activity can *[be covered by](../entities/Funding.md#user-content-rel__cover)* any number of [Fundings](../entities/Funding.md)."@en .
+                                               rdfs:comment "An Activity can be covered by any number of [Fundings](../entities/Funding.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Activity#isEvidencedBy
 <https://w3id.org/cerif2/Activity#isEvidencedBy> rdf:type owl:ObjectProperty ;
                                                  rdfs:domain <https://w3id.org/cerif2/Activity> ;
                                                  rdfs:range <https://w3id.org/cerif2/Document> ;
-                                                 rdfs:comment "An Activity can *[be evidenced by](../entities/Document.md#user-content-rel__prove_Activity)* any number of [Documents](../entities/Document.md)."@en .
+                                                 rdfs:comment "An Activity can be evidenced by any number of [Documents](../entities/Document.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Affiliation_Statement#hasInstitution
@@ -161,7 +161,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                                owl:inverseOf <https://w3id.org/cerif2/Organisation_Unit#isTheInstitutionIn> ;
                                                                rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
                                                                rdfs:range <https://w3id.org/cerif2/Organisation_Unit> ;
-                                                               rdfs:comment "An Affiliation Statement *[has institution](../entities/Organisation_Unit.md#user-content-rel__is-the-institution-in)*, an instance of [Organisation Unit](../entities/Organisation_Unit.md)."@en .
+                                                               rdfs:comment "An Affiliation Statement has institution, an instance of [Organisation Units](../entities/Organisation_Unit.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Affiliation_Statement#hasOrganisationUnit
@@ -169,7 +169,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                                     owl:inverseOf <https://w3id.org/cerif2/Organisation_Unit#isTheOrganisationUnitIn> ;
                                                                     rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
                                                                     rdfs:range <https://w3id.org/cerif2/Organisation_Unit> ;
-                                                                    rdfs:comment "An Affiliation Statement can optionally *[have organisation unit](../entities/Organisation_Unit.md#user-content-rel__is-the-organisation-unit-in)*, an instance of [Organisation Unit](../entities/Organisation_Unit.md)."@en .
+                                                                    rdfs:comment "An Affiliation Statement can optionally have an organisation unit, an instance of [Organisation Unit](../entities/Organisation_Unit.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Affiliation_Statement#hasPerson
@@ -177,67 +177,80 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                           owl:inverseOf <https://w3id.org/cerif2/Person#isThePersonIn> ;
                                                           rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
                                                           rdfs:range <https://w3id.org/cerif2/Person> ;
-                                                          rdfs:comment "An Affiliation Statement typically *[has person](../entities/Person.md#user-content-rel__is-the-person-in)*, an instance of [Person](../entities/Person.md)."@en .
+                                                          rdfs:comment "An Affiliation Statement typically has the person, an instance of [Person](../entities/Person.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Affiliation_Statement#isUsedIn
 <https://w3id.org/cerif2/Affiliation_Statement#isUsedIn> rdf:type owl:ObjectProperty ;
-                                                         owl:inverseOf <https://w3id.org/cerif2/Activity#hasAffiliationStatements> ;
+                                                         owl:inverseOf <https://w3id.org/cerif2/Activity#hasAffiliationStatement> ;
                                                          rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
                                                          rdfs:range <https://w3id.org/cerif2/Activity> ;
-                                                         rdfs:comment "An Affiliation Statement can optionally *[be used in](../entities/Activity.md#user-content-rel__has-affiliation-statements)* any number of [Activities](../entities/Activity.md)."@en .
+                                                         rdfs:comment "An Affiliation Statement can be used in any number of [Activities](../entities/Activity.md)."@en .
 
 
-###  https://w3id.org/cerif2/Agent#activity
-<https://w3id.org/cerif2/Agent#activity> rdf:type owl:ObjectProperty ;
-                                         owl:inverseOf <https://w3id.org/cerif2/Activity#actor> ;
-                                         rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                         rdfs:range <https://w3id.org/cerif2/Activity> ;
-                                         rdfs:comment "An Agent can *[be the actor](../entities/Activity.md#user-content-rel__actor)* of any number of [Activities](../entities/Activity.md)."@en .
+###  https://w3id.org/cerif2/Affiliation_Statement#position
+<https://w3id.org/cerif2/Affiliation_Statement#position> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Position> .
 
 
 ###  https://w3id.org/cerif2/Agent#hasIdentifier
 <https://w3id.org/cerif2/Agent#hasIdentifier> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <https://w3id.org/cerif2/Agent> ;
                                               rdfs:range <https://w3id.org/cerif2/Agent_Identifier> ;
-                                              rdfs:comment "An Agent can *[have](../entities/Agent_Identifier.md#user-content-rel__is-assigned-to)* any number of [Agent_Identifiers](../entities/Agent_Identifier.md)."@en .
+                                              rdfs:comment "An Agent can be assigned any number of [Agent Identifiers](../entities/Agent_Identifier.md)."@en .
 
 
-###  https://w3id.org/cerif2/Agent#inExpertiseAndSkillsPossession
-<https://w3id.org/cerif2/Agent#inExpertiseAndSkillsPossession> rdf:type owl:ObjectProperty ;
-                                                               owl:inverseOf <https://w3id.org/cerif2/Expertise_and_Skills_Possession#byAgent> ;
-                                                               rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                                               rdfs:range <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
-                                                               rdfs:comment "An Agent can *[be the agent in](../entities/Expertise_and_Skills_Possession.md#user-content-rel__by-agent)* any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md)."@en .
+###  https://w3id.org/cerif2/Agent#isActorIn
+<https://w3id.org/cerif2/Agent#isActorIn> rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf <https://w3id.org/cerif2/Activity#hasActor> ;
+                                          rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                          rdfs:range <https://w3id.org/cerif2/Activity> ;
+                                          rdfs:comment "An Agent can be the actor in any number of [Activities](../entities/Activity.md)."@en .
 
 
-###  https://w3id.org/cerif2/Agent#inExpertiseAndTimeAndEffort
-<https://w3id.org/cerif2/Agent#inExpertiseAndTimeAndEffort> rdf:type owl:ObjectProperty ;
-                                                            owl:inverseOf <https://w3id.org/cerif2/Expertise_and_Time_and_Effort#agent> ;
-                                                            rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                                            rdfs:range <https://w3id.org/cerif2/Expertise_and_Time_and_Effort> ;
-                                                            rdfs:comment "An Agent can *[be the agent in](../entities/Expertise_and_Time_and_Effort.md#user-content-rel__agent)* any number of [Expertise and Time and Effort](../entities/Expertise_and_Time_and_Effort.md)."@en .
-
-
-###  https://w3id.org/cerif2/Agent#isTheAddresseeOf
-<https://w3id.org/cerif2/Agent#isTheAddresseeOf> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                                 rdfs:range <https://w3id.org/cerif2/Application> ;
-                                                 rdfs:comment "An Agent can *[be the addressee of](../entities/Application.md#user-content-rel__has-addressee)* any number of [Applications](../entities/Application.md)."@en .
-
-
-###  https://w3id.org/cerif2/Agent#isTheApplicantIn
-<https://w3id.org/cerif2/Agent#isTheApplicantIn> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                                 rdfs:range <https://w3id.org/cerif2/Application> ;
-                                                 rdfs:comment "An Agent can *[be the applicant in](../entities/Application.md#user-content-rel__has-applicant)* any number of [Applications](../entities/Application.md)."@en .
-
-
-###  https://w3id.org/cerif2/Agent#isTheAuthorOf
-<https://w3id.org/cerif2/Agent#isTheAuthorOf> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/cerif2/Agent#isAddresseeOf
+<https://w3id.org/cerif2/Agent#isAddresseeOf> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                              rdfs:range <https://w3id.org/cerif2/Textual_Document> ;
-                                              rdfs:comment "An Agent can *[be the author of](../entities/Textual_Document.md#user-content-rel__has-author)* any number of [Textual Documents](../entities/Textual_Document.md)."@en .
+                                              rdfs:range <https://w3id.org/cerif2/Application> ;
+                                              rdfs:comment "An Agent can be the addressee of any number of [Applications](../entities/Application.md)."@en .
+
+
+###  https://w3id.org/cerif2/Agent#isAgentIn1
+<https://w3id.org/cerif2/Agent#isAgentIn1> rdf:type owl:ObjectProperty ;
+                                           owl:inverseOf <https://w3id.org/cerif2/Expertise_and_Skills_Possession#byAgent> ;
+                                           rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                           rdfs:range <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
+                                           rdfs:comment "An Agent can be the agent in any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md)."@en .
+
+
+###  https://w3id.org/cerif2/Agent#isAgentIn2
+<https://w3id.org/cerif2/Agent#isAgentIn2> rdf:type owl:ObjectProperty ;
+                                           owl:inverseOf <https://w3id.org/cerif2/Expertise_and_Time_and_Effort#byAgent> ;
+                                           rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                           rdfs:range <https://w3id.org/cerif2/Expertise_and_Time_and_Effort> ;
+                                           rdfs:comment "An Agent can be the agent in any number of [Expertise and Time and Effort](../entities/Expertise_and_Time_and_Effort.md) instances."@en .
+
+
+###  https://w3id.org/cerif2/Agent#isApplicantIn
+<https://w3id.org/cerif2/Agent#isApplicantIn> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                              rdfs:range <https://w3id.org/cerif2/Application> ;
+                                              rdfs:comment "An Agent can be the applicant in any number of [Applications](../entities/Application.md)."@en .
+
+
+###  https://w3id.org/cerif2/Agent#isAuthorOf
+<https://w3id.org/cerif2/Agent#isAuthorOf> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                           rdfs:range <https://w3id.org/cerif2/Textual_Document> ;
+                                           rdfs:comment "An Agent can be the author of any number of [Textual Documents](../entities/Textual_Document.md)."@en .
+
+
+###  https://w3id.org/cerif2/Agent#isRecipientOf
+<https://w3id.org/cerif2/Agent#isRecipientOf> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                              rdfs:range <https://w3id.org/cerif2/Prize_Award> ;
+                                              rdfs:comment "An Agent can be the recipient of any number of [Prize Awards](../entities/Prize_Award.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Agent#lifetime
@@ -246,19 +259,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                          rdfs:range <https://w3id.org/cerif2/Date_Range> .
 
 
-###  https://w3id.org/cerif2/Agent#receives
-<https://w3id.org/cerif2/Agent#receives> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                         rdfs:range <https://w3id.org/cerif2/Prize_Award> ;
-                                         rdfs:comment "An Agent can *[receive](../entities/Prize_Award.md#user-content-rel__recipient)* any number of [Prize Awards](../entities/Prize_Award.md)."@en .
-
-
 ###  https://w3id.org/cerif2/Agent#solicits
 <https://w3id.org/cerif2/Agent#solicits> rdf:type owl:ObjectProperty ;
-                                         owl:inverseOf <https://w3id.org/cerif2/Call_for_Applications#inviter> ;
+                                         owl:inverseOf <https://w3id.org/cerif2/Call_for_Applications#isSolicitedBy> ;
                                          rdfs:domain <https://w3id.org/cerif2/Agent> ;
                                          rdfs:range <https://w3id.org/cerif2/Call_for_Applications> ;
-                                         rdfs:comment "An Agent can *[invite](../entities/Call_for_Applications.md#user-content-rel__inviter)* any number of [Calls for Applications](../entities/Call_for_Applications.md)."@en .
+                                         rdfs:comment "An Agent can solicit any number of [Calls for Applications](../entities/Call_for_Applications.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Agent_Identifier#isAssignedTo
@@ -266,192 +272,187 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                         owl:inverseOf <https://w3id.org/cerif2/Agent#hasIdentifier> ;
                                                         rdfs:domain <https://w3id.org/cerif2/Agent_Identifier> ;
                                                         rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                        rdfs:comment "An Agent Identifier *[is assigned to](../entities/Agent.md#user-content-rel__has-identifier)* an [Agent](../entities/Agent.md)."@en .
-
-
-###  https://w3id.org/cerif2/Application#contents
-<https://w3id.org/cerif2/Application#contents> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain <https://w3id.org/cerif2/Application> ;
-                                               rdfs:range <https://w3id.org/cerif2/Document> ;
-                                               rdfs:comment "A Call for Applications can optionally reference its *[contents](../entities/Document.md#user-content-rel__be-contents-for)*, the [Document](../entities/Document.md) that details the invitation."@en .
+                                                        rdfs:comment "An Agent Identifier is assigned to an [Agent](../entities/Agent.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Application#hasAddressee
 <https://w3id.org/cerif2/Application#hasAddressee> rdf:type owl:ObjectProperty ;
+                                                   owl:inverseOf <https://w3id.org/cerif2/Agent#isAddresseeOf> ;
                                                    rdfs:domain <https://w3id.org/cerif2/Application> ;
                                                    rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                   rdfs:comment "An application always references its *[addressee](../entities/Agent.md#user-content-rel__be-the-addressee-of)*, the [Agent](../entities/Agent.md) that is expected to consider the application. (Note the role can be called differently in specific contexts.)"@en .
+                                                   rdfs:comment "An Application always references its addressee, the [Agent](../entities/Agent.md) that is expected to consider the application. (Note the role can be called differently in specific contexts.)"@en .
 
 
 ###  https://w3id.org/cerif2/Application#hasApplicant
 <https://w3id.org/cerif2/Application#hasApplicant> rdf:type owl:ObjectProperty ;
-                                                   owl:inverseOf <https://w3id.org/cerif2/Agent#isTheApplicantIn> ;
+                                                   owl:inverseOf <https://w3id.org/cerif2/Agent#isApplicantIn> ;
                                                    rdfs:domain <https://w3id.org/cerif2/Application> ;
                                                    rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                   rdfs:comment "An Application always has the *[applicant](../entities/Agent.md#user-content-rel__is-the-applicant-in)*, the [Agent](../entities/Agent.md) that is applying. (Note the role can be called differently in specific contexts.)"@en .
+                                                   rdfs:comment "An Application always has the applicant: the [Agent](../entities/Agent.md) that is applying. (Note that the role can be called differently in specific contexts.)"@en .
 
 
 ###  https://w3id.org/cerif2/Application#inResponseTo
 <https://w3id.org/cerif2/Application#inResponseTo> rdf:type owl:ObjectProperty ;
-                                                   owl:inverseOf <https://w3id.org/cerif2/Call_for_Applications#applications> ;
+                                                   owl:inverseOf <https://w3id.org/cerif2/Call_for_Applications#hasApplication> ;
                                                    rdfs:domain <https://w3id.org/cerif2/Application> ;
                                                    rdfs:range <https://w3id.org/cerif2/Call_for_Applications> ;
-                                                   rdfs:comment "An application can reference the *[in-response-to](../entities/Call_for_Applications.md#user-content-rel__applications)* [Call for Applications](../entities/Call_for_Applications.md), the invitation that this application is responding to."@en .
+                                                   rdfs:comment "An Application can optionally reference the [Call for Applications](../entities/Call_for_Applications.md) it responds to."@en .
 
 
-###  https://w3id.org/cerif2/Call_for_Applications#applications
-<https://w3id.org/cerif2/Call_for_Applications#applications> rdf:type owl:ObjectProperty ;
-                                                             rdfs:domain <https://w3id.org/cerif2/Call_for_Applications> ;
-                                                             rdfs:range <https://w3id.org/cerif2/Application> ;
-                                                             rdfs:comment "A Call for Applications can reference any number of *[applications](../entities/Application.md#user-content-rel__in-response-to)*, instances of [Application](../entities/Application.md), that are formed with a reference to it."@en .
+###  https://w3id.org/cerif2/Call_for_Applications#hasApplication
+<https://w3id.org/cerif2/Call_for_Applications#hasApplication> rdf:type owl:ObjectProperty ;
+                                                               rdfs:domain <https://w3id.org/cerif2/Call_for_Applications> ;
+                                                               rdfs:range <https://w3id.org/cerif2/Application> ;
+                                                               rdfs:comment "A Call for Applications can reference the [Applications](../entities/Application.md) that make a reference to it."@en .
 
 
-###  https://w3id.org/cerif2/Call_for_Applications#contents
-<https://w3id.org/cerif2/Call_for_Applications#contents> rdf:type owl:ObjectProperty ;
-                                                         rdfs:domain <https://w3id.org/cerif2/Call_for_Applications> ;
-                                                         rdfs:range <https://w3id.org/cerif2/Document> ;
-                                                         rdfs:comment "A Call for Applications can optionally reference its *[contents](../entities/Document.md#user-content-rel__be-contents-for)*, the [Document](../entities/Document.md) that details the invitation."@en .
+###  https://w3id.org/cerif2/Call_for_Applications#isSolicitedBy
+<https://w3id.org/cerif2/Call_for_Applications#isSolicitedBy> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <https://w3id.org/cerif2/Call_for_Applications> ;
+                                                              rdfs:range <https://w3id.org/cerif2/Agent> ;
+                                                              rdfs:comment "A Call for Applications is solicited by an [Agent](../entities/Agent.md)."@en .
 
 
-###  https://w3id.org/cerif2/Call_for_Applications#inviter
-<https://w3id.org/cerif2/Call_for_Applications#inviter> rdf:type owl:ObjectProperty ;
-                                                        rdfs:domain <https://w3id.org/cerif2/Call_for_Applications> ;
-                                                        rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                        rdfs:comment "A Call for Applications always references the *[inviter](../entities/Agent.md#user-content-rel__solicits)*, the [Agent](../entities/Agent.md) that solicits the applications. (Note the role can be called differently in specific contexts.)"@en .
-
-
-###  https://w3id.org/cerif2/Condition#details
-<https://w3id.org/cerif2/Condition#details> rdf:type owl:ObjectProperty ;
-                                            rdfs:domain <https://w3id.org/cerif2/Condition> ;
-                                            rdfs:range <https://w3id.org/cerif2/Resource_Offer> ;
-                                            rdfs:comment "A Condition *[details](../entities/Resource_Offer.md#user-content-rel__has-condition)* a [Resource Offer](../entities/Resource_Offer.md)."@en .
+###  https://w3id.org/cerif2/Condition#appliesTo
+<https://w3id.org/cerif2/Condition#appliesTo> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://w3id.org/cerif2/Condition> ;
+                                              rdfs:range <https://w3id.org/cerif2/Resource_Offer> ;
+                                              rdfs:comment "A Condition applies to a [Resource Offer](../entities/Resource_Offer.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Contribution#hasContributionStatement
 <https://w3id.org/cerif2/Contribution#hasContributionStatement> rdf:type owl:ObjectProperty ;
-                                                                owl:inverseOf <https://w3id.org/cerif2/Contribution_Statement#contribution> ;
+                                                                owl:inverseOf <https://w3id.org/cerif2/Contribution_Statement#references> ;
                                                                 rdfs:domain <https://w3id.org/cerif2/Contribution> ;
                                                                 rdfs:range <https://w3id.org/cerif2/Contribution_Statement> ;
-                                                                rdfs:comment "A Contribution has any number of *[contribution statements](../entities/Contribution_Statement.md#user-content-rel__contribution)*: instances of [Contribution Statement](../entities/Contribution_Statement.md)."@en .
+                                                                rdfs:comment "A Contribution can have any number of [Contribution Statements](../entities/Contribution_Statement.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Contribution#isTestifiedBy
 <https://w3id.org/cerif2/Contribution#isTestifiedBy> rdf:type owl:ObjectProperty ;
-                                                     owl:inverseOf <https://w3id.org/cerif2/Acknowledgement_Statement#testifies> ;
+                                                     owl:inverseOf <https://w3id.org/cerif2/Acknowledgement_Statement#testify> ;
                                                      rdfs:domain <https://w3id.org/cerif2/Contribution> ;
                                                      rdfs:range <https://w3id.org/cerif2/Acknowledgement_Statement> ;
-                                                     rdfs:comment "A Contribution *[is testified by](../entities/Acknowledgement_Statement.md#user-content-rel__testifies)* any number of [Acknowledgement Statements](../entities/Acknowledgement_Statement.md)."@en .
+                                                     rdfs:comment "A Contribution can be testified by any number of [Acknowledgement Statements](../entities/Acknowledgement_Statement.md)."@en .
 
 
-###  https://w3id.org/cerif2/Contribution_Statement#contribution
-<https://w3id.org/cerif2/Contribution_Statement#contribution> rdf:type owl:ObjectProperty ;
-                                                              rdfs:domain <https://w3id.org/cerif2/Contribution_Statement> ;
-                                                              rdfs:range <https://w3id.org/cerif2/Contribution> ;
-                                                              rdfs:comment "A Contribution Statements *[references](../entities/Contribution.md#user-content-rel__has-contribution-statement)* the [Contribution](../entities/Contribution.md) to which it relates."@en .
-
-
-###  https://w3id.org/cerif2/Contribution_Statement#resource
-<https://w3id.org/cerif2/Contribution_Statement#resource> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/cerif2/Contribution_Statement#provides
+<https://w3id.org/cerif2/Contribution_Statement#provides> rdf:type owl:ObjectProperty ;
                                                           rdfs:domain <https://w3id.org/cerif2/Contribution_Statement> ;
                                                           rdfs:range <https://w3id.org/cerif2/Resource> ;
-                                                          rdfs:comment "A Contribution Statement can optionally *[reference](../entities/Resource.md#user-content-rel__produced-by)* a [Resource](../entities/Resource.md) that it produced. For instance it can be funding, expertise, equipment, time or space."@en .
+                                                          rdfs:comment "A Contribution Statement can optionally provide any number of [Resources](../entities/Resource.md). These resources can be funding, expertise, equipment, time or space."@en .
 
 
-###  https://w3id.org/cerif2/Contribution_to_Document#document
-<https://w3id.org/cerif2/Contribution_to_Document#document> rdf:type owl:ObjectProperty ;
-                                                            owl:inverseOf <https://w3id.org/cerif2/Document#contributions> ;
-                                                            rdfs:domain <https://w3id.org/cerif2/Contribution_to_Document> ;
-                                                            rdfs:range <https://w3id.org/cerif2/Document> ;
-                                                            rdfs:comment "A Contribution to Document always has the *[document](../entities/Document.md#user-content-rel__contributions)*: an instance of [Document](../entities/Document.md)."@en .
+###  https://w3id.org/cerif2/Contribution_Statement#references
+<https://w3id.org/cerif2/Contribution_Statement#references> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <https://w3id.org/cerif2/Contribution_Statement> ;
+                                                            rdfs:range <https://w3id.org/cerif2/Contribution> ;
+                                                            rdfs:comment "A Contribution Statement references the [Contribution](../entities/Contribution.md) to which it relates."@en .
 
 
-###  https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome#outcome
-<https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome#outcome> rdf:type owl:ObjectProperty ;
-                                                                     owl:inverseOf <https://w3id.org/cerif2/Evaluation_Outcome#contributions> ;
-                                                                     rdfs:domain <https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome> ;
-                                                                     rdfs:range <https://w3id.org/cerif2/Evaluation_Outcome> ;
-                                                                     rdfs:comment "A Contribution to Evaluation Outcome always has the *[evaluation outcome](../entities/Evaluation_Outcome.md#user-content-rel__contributions)*: an instance of [Evaluation Outcome](../entities/Evaluation_Outcome.md)."@en .
+###  https://w3id.org/cerif2/Contribution_to_Document#hasTarget
+<https://w3id.org/cerif2/Contribution_to_Document#hasTarget> rdf:type owl:ObjectProperty ;
+                                                             owl:inverseOf <https://w3id.org/cerif2/Document#hasContribution> ;
+                                                             rdfs:domain <https://w3id.org/cerif2/Contribution_to_Document> ;
+                                                             rdfs:range <https://w3id.org/cerif2/Document> ;
+                                                             rdfs:comment "A Contribution to Document always references the target [Document](../entities/Document.md)."@en .
 
 
-###  https://w3id.org/cerif2/Contribution_to_Infrastructure#references
-<https://w3id.org/cerif2/Contribution_to_Infrastructure#references> rdf:type owl:ObjectProperty ;
-                                                                    owl:inverseOf <https://w3id.org/cerif2/Infrastructure#hasBenefittedFrom> ;
-                                                                    rdfs:domain <https://w3id.org/cerif2/Contribution_to_Infrastructure> ;
-                                                                    rdfs:range <https://w3id.org/cerif2/Infrastructure> ;
-                                                                    rdfs:comment "A Contribution to Infrastructure *[reference](../entities/Infrastructure.md#user-content-rel__has-benefitted-from)* the [Infrastructure](../entities/Infrastructure.md) that has benefitted."@en .
+###  https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome#hasTarget
+<https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome#hasTarget> rdf:type owl:ObjectProperty ;
+                                                                       owl:inverseOf <https://w3id.org/cerif2/Evaluation_Outcome#hasContribution> ;
+                                                                       rdfs:domain <https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome> ;
+                                                                       rdfs:range <https://w3id.org/cerif2/Evaluation_Outcome> ;
+                                                                       rdfs:comment "A Contribution to Evaluation Outcome always references the target [Evaluation Outcome](../entities/Evaluation_Outcome.md)."@en .
 
 
-###  https://w3id.org/cerif2/Contribution_to_Prize#prize
-<https://w3id.org/cerif2/Contribution_to_Prize#prize> rdf:type owl:ObjectProperty ;
-                                                      rdfs:domain <https://w3id.org/cerif2/Contribution_to_Prize> ;
-                                                      rdfs:range <https://w3id.org/cerif2/Prize> ;
-                                                      rdfs:comment "A Contribution to Prize always has the *[prize](../entities/Prize.md#user-content-rel__is-helped-by)*: an instance of [Prize](../entities/Prize.md)."@en .
+###  https://w3id.org/cerif2/Contribution_to_Event#hasTarget
+<https://w3id.org/cerif2/Contribution_to_Event#hasTarget> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <https://w3id.org/cerif2/Contribution_to_Event> ;
+                                                          rdfs:range <https://w3id.org/cerif2/Event> ;
+                                                          rdfs:comment "A Contribution to Event always references the target [Event](../entities/Event.md)."@en .
 
 
-###  https://w3id.org/cerif2/Document#contributions
-<https://w3id.org/cerif2/Document#contributions> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <https://w3id.org/cerif2/Document> ;
-                                                 rdfs:range <https://w3id.org/cerif2/Contribution_to_Document> ;
-                                                 rdfs:comment "A Document has any number of *[contributions](../entities/Contribution_to_Document.md#user-content-rel__document)*: instances of [Contribution to Document](../entities/Contribution_to_Document.md)."@en .
+###  https://w3id.org/cerif2/Contribution_to_Infrastructure#hasTarget
+<https://w3id.org/cerif2/Contribution_to_Infrastructure#hasTarget> rdf:type owl:ObjectProperty ;
+                                                                   owl:inverseOf <https://w3id.org/cerif2/Infrastructure#hasContribution> ;
+                                                                   rdfs:domain <https://w3id.org/cerif2/Contribution_to_Infrastructure> ;
+                                                                   rdfs:range <https://w3id.org/cerif2/Infrastructure> ;
+                                                                   rdfs:comment "A Contribution to Infrastructure always references the [Infrastructure](../entities/Infrastructure.md) that benefits from it."@en .
 
 
-###  https://w3id.org/cerif2/Document#proveActivity
-<https://w3id.org/cerif2/Document#proveActivity> rdf:type owl:ObjectProperty ;
-                                                 owl:inverseOf <https://w3id.org/cerif2/Activity#isEvidencedBy> ;
-                                                 rdfs:domain <https://w3id.org/cerif2/Document> ;
-                                                 rdfs:range <https://w3id.org/cerif2/Activity> ;
-                                                 rdfs:comment "A Document can *[prove_Activity](../entities/Activity.md#user-content-rel__is-evidenced-by)* any number of [Activities](../entities/Activity.md)."@en .
+###  https://w3id.org/cerif2/Contribution_to_Prize#hasTarget
+<https://w3id.org/cerif2/Contribution_to_Prize#hasTarget> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <https://w3id.org/cerif2/Contribution_to_Prize> ;
+                                                          rdfs:range <https://w3id.org/cerif2/Prize> ;
+                                                          rdfs:comment "A Contribution to Prize always has the target [Prize](../entities/Prize.md)."@en .
 
 
-###  https://w3id.org/cerif2/Document#proveExpertiseAndSkillsPossession
-<https://w3id.org/cerif2/Document#proveExpertiseAndSkillsPossession> rdf:type owl:ObjectProperty ;
-                                                                     rdfs:domain <https://w3id.org/cerif2/Document> ;
-                                                                     rdfs:range <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
-                                                                     rdfs:comment "A Document can *[prove](../entities/Expertise_and_Skills_Possession.md#user-content-rel__is-evidenced-by)* any number of [Possessions of Expertise and Skills](../entities/Expertise_and_Skills_Possession.md)."@en .
+###  https://w3id.org/cerif2/Contribution_to_Project#hasTarget
+<https://w3id.org/cerif2/Contribution_to_Project#hasTarget> rdf:type owl:ObjectProperty ;
+                                                            owl:inverseOf <https://w3id.org/cerif2/Project#hasContribution> ;
+                                                            rdfs:domain <https://w3id.org/cerif2/Contribution_to_Project> ;
+                                                            rdfs:range <https://w3id.org/cerif2/Project> ;
+                                                            rdfs:comment "A Contribution to Project always references the target [Project](../entities/Project.md)."@en .
 
 
-###  https://w3id.org/cerif2/Evaluation_Outcome#contributions
-<https://w3id.org/cerif2/Evaluation_Outcome#contributions> rdf:type owl:ObjectProperty ;
-                                                           rdfs:domain <https://w3id.org/cerif2/Evaluation_Outcome> ;
-                                                           rdfs:range <https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome> ;
-                                                           rdfs:comment "An Evaluation Outcome can have any number of *[contributions](../entities/Contribution_to_Evaluation_Outcome.md#user-content-rel__outcome)*, instances of [Contribution to Evaluation Outcome](../entities/Contribution_to_Evaluation_Outcome.md)."@en .
+###  https://w3id.org/cerif2/Document#hasContribution
+<https://w3id.org/cerif2/Document#hasContribution> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                                   rdfs:range <https://w3id.org/cerif2/Contribution_to_Document> ;
+                                                   rdfs:comment "A Document any number of [contributions](../entities/Contribution_to_Document.md) that helped it arise."@en .
 
 
-###  https://w3id.org/cerif2/Expertise_and_Skills#bePosessedBy
-<https://w3id.org/cerif2/Expertise_and_Skills#bePosessedBy> rdf:type owl:ObjectProperty ;
-                                                            rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills> ;
-                                                            rdfs:range <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
-                                                            rdfs:comment "An Expertise and Skills can *[be posessed by](../entities/Expertise_and_Skills_Possession.md#user-content-rel__posesses)* any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md)."@en .
+###  https://w3id.org/cerif2/Document#proves
+<https://w3id.org/cerif2/Document#proves> rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf <https://w3id.org/cerif2/Activity#isEvidencedBy> ;
+                                          rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                          rdfs:range <https://w3id.org/cerif2/Activity> ;
+                                          rdfs:comment "A Document can proves any number of [Activities](../entities/Activity.md)."@en .
+
+
+###  https://w3id.org/cerif2/Evaluation_Outcome#hasContribution
+<https://w3id.org/cerif2/Evaluation_Outcome#hasContribution> rdf:type owl:ObjectProperty ;
+                                                             rdfs:domain <https://w3id.org/cerif2/Evaluation_Outcome> ;
+                                                             rdfs:range <https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome> ;
+                                                             rdfs:comment "An Evaluation Outcome can have any number of [contributions](../entities/Contribution_to_Evaluation_Outcome.md) that helped it arise."@en .
+
+
+###  https://w3id.org/cerif2/Event#hasContribution
+<https://w3id.org/cerif2/Event#hasContribution> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <https://w3id.org/cerif2/Contribution_to_Event#hasTarget> ;
+                                                rdfs:domain <https://w3id.org/cerif2/Event> ;
+                                                rdfs:range <https://w3id.org/cerif2/Contribution_to_Event> ;
+                                                rdfs:comment "An Event can have any number of [contributions](../entities/Contribution_to_Event.md) that helped it take place or arise."@en .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Skills#isPossessedThrough
+<https://w3id.org/cerif2/Expertise_and_Skills#isPossessedThrough> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills> ;
+                                                                  rdfs:range <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
+                                                                  rdfs:comment "A Expertise and Skills can be possessed in any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Expertise_and_Skills_Possession#byAgent
 <https://w3id.org/cerif2/Expertise_and_Skills_Possession#byAgent> rdf:type owl:ObjectProperty ;
                                                                   rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
                                                                   rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                                  rdfs:comment "An Expertise and Skills Possession *[references](../entities/Agent.md#user-content-rel__in-expertise-and-skills-possession)* the [Agent](../entities/Agent.md) who posesses the [Expertise and Skills](../entities/Expertise_and_Skills.md)."@en .
+                                                                  rdfs:comment "An Expertise and Skills Possession references the [Agent](../entities/Agent.md) who posesses the [Expertise and Skills](../entities/Expertise_and_Skills.md)."@en .
 
 
-###  https://w3id.org/cerif2/Expertise_and_Skills_Possession#isEvidencedBy
-<https://w3id.org/cerif2/Expertise_and_Skills_Possession#isEvidencedBy> rdf:type owl:ObjectProperty ;
-                                                                        owl:inverseOf <https://w3id.org/cerif2/Document#proveExpertiseAndSkillsPossession> ;
-                                                                        rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
-                                                                        rdfs:range <https://w3id.org/cerif2/Document> ;
-                                                                        rdfs:comment "An Expertise and Skills Possession can *[be evidenced by](../entities/Document.md#user-content-rel__prove_Expertise_and_Skills_Possession)* any number of [Documents](../entities/Document.md)."@en .
+###  https://w3id.org/cerif2/Expertise_and_Skills_Possession#possesses
+<https://w3id.org/cerif2/Expertise_and_Skills_Possession#possesses> rdf:type owl:ObjectProperty ;
+                                                                    owl:inverseOf <https://w3id.org/cerif2/Expertise_and_Skills#isPossessedThrough> ;
+                                                                    rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
+                                                                    rdfs:range <https://w3id.org/cerif2/Expertise_and_Skills> ;
+                                                                    rdfs:comment "An Expertise and Skills Possession references the [Expertise and Skills](../entities/Expertise_and_Skills.md) that the Agent possesses."@en .
 
 
-###  https://w3id.org/cerif2/Expertise_and_Skills_Possession#posesses
-<https://w3id.org/cerif2/Expertise_and_Skills_Possession#posesses> rdf:type owl:ObjectProperty ;
-                                                                   owl:inverseOf <https://w3id.org/cerif2/Expertise_and_Skills#bePosessedBy> ;
-                                                                   rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
-                                                                   rdfs:range <https://w3id.org/cerif2/Expertise_and_Skills> ;
-                                                                   rdfs:comment "An Expertise and Skills Possession *[references](../entities/Expertise_and_Skills.md#user-content-rel__be-posessed-by)* the [Expertise and Skills](../entities/Expertise_and_Skills.md) that the [Agent](../entities/Agent.md) posesses."@en .
-
-
-###  https://w3id.org/cerif2/Expertise_and_Time_and_Effort#agent
-<https://w3id.org/cerif2/Expertise_and_Time_and_Effort#agent> rdf:type owl:ObjectProperty ;
-                                                              rdfs:domain <https://w3id.org/cerif2/Expertise_and_Time_and_Effort> ;
-                                                              rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                              rdfs:comment "An Expertise and Time and Effort *[references](../entities/Agent.md#user-content-rel__in-expertise-and-time-and-effort)* the [Agent](../entities/Agent.md) whose expertise, time and effort it would be."@en .
+###  https://w3id.org/cerif2/Expertise_and_Time_and_Effort#byAgent
+<https://w3id.org/cerif2/Expertise_and_Time_and_Effort#byAgent> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <https://w3id.org/cerif2/Expertise_and_Time_and_Effort> ;
+                                                                rdfs:range <https://w3id.org/cerif2/Agent> ;
+                                                                rdfs:comment "An Expertise and Time and Effort references the [Agent](../entities/Agent.md) whose expertise, time and effort it would be."@en .
 
 
 ###  https://w3id.org/cerif2/Funding#amount
@@ -460,69 +461,68 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                          rdfs:range <https://w3id.org/cerif2/Monetary_Amount> .
 
 
-###  https://w3id.org/cerif2/Funding#cover
-<https://w3id.org/cerif2/Funding#cover> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <https://w3id.org/cerif2/Funding> ;
-                                        rdfs:range <https://w3id.org/cerif2/Activity> ;
-                                        rdfs:comment "A Funding can *[cover](../entities/Activity.md#user-content-rel__is-covered-by)* any number of [Activities](../entities/Activity.md)."@en .
+###  https://w3id.org/cerif2/Funding#covers
+<https://w3id.org/cerif2/Funding#covers> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/cerif2/Funding> ;
+                                         rdfs:range <https://w3id.org/cerif2/Activity> ;
+                                         rdfs:comment "A Funding can cover any number of [Activities](../entities/Activity.md)."@en .
+
+
+###  https://w3id.org/cerif2/Funding#hasPart
+<https://w3id.org/cerif2/Funding#hasPart> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/cerif2/Funding> ;
+                                          rdfs:range <https://w3id.org/cerif2/Funding> ;
+                                          rdfs:comment "A Funding can have any number of other [Fundings](../entities/Funding.md) as parts."@en .
 
 
 ###  https://w3id.org/cerif2/Funding#isPartOf
 <https://w3id.org/cerif2/Funding#isPartOf> rdf:type owl:ObjectProperty ;
+                                           owl:inverseOf <https://w3id.org/cerif2/Funding#hasPart> ;
                                            rdfs:domain <https://w3id.org/cerif2/Funding> ;
                                            rdfs:range <https://w3id.org/cerif2/Funding> ;
-                                           rdfs:comment "A Funding can *[be part of](../entities/Funding.md#user-content-rel__has-part)* any number of [Fundings](../entities/Funding.md)."@en .
+                                           rdfs:comment "A Funding can be part of any number of other [Fundings](../entities/Funding.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Group_or_Organisation_Unit#hasInvolvement
 <https://w3id.org/cerif2/Group_or_Organisation_Unit#hasInvolvement> rdf:type owl:ObjectProperty ;
                                                                     rdfs:domain <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
                                                                     rdfs:range <https://w3id.org/cerif2/Involvement> ;
-                                                                    rdfs:comment "A Group or Organisation Unit can *[have any number of involvements](../entities/Involvement.md#user-content-rel__in)*, instances of [Involvement](../entities/Involvement.md), which involve [Agents](../entities/Agent.md)."@en .
+                                                                    rdfs:comment "A Group or Organisation Unit can have any number of [Involvements](../entities/Involvement.md), which involve [Agents](../entities/Agent.md) in it."@en .
 
 
-###  https://w3id.org/cerif2/Infrastructure#hasBenefittedFrom
-<https://w3id.org/cerif2/Infrastructure#hasBenefittedFrom> rdf:type owl:ObjectProperty ;
-                                                           rdfs:domain <https://w3id.org/cerif2/Infrastructure> ;
-                                                           rdfs:range <https://w3id.org/cerif2/Contribution_to_Infrastructure> ;
-                                                           rdfs:comment "A Infrastructure can *[has benefitted from](../entities/Contribution_to_Infrastructure.md#user-content-rel__references)* any number of Contribution to Infrastructure, instances of [Contribution to Infrastructure](../entities/Contribution_to_Infrastructure.md)."@en .
+###  https://w3id.org/cerif2/Infrastructure#hasContribution
+<https://w3id.org/cerif2/Infrastructure#hasContribution> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Infrastructure> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Contribution_to_Infrastructure> ;
+                                                         rdfs:comment "An Infrastructure can have any number of [contributions](../entities/Contribution_to_Infrastructure.md) that helped it arise, keep or develop."@en .
 
 
-###  https://w3id.org/cerif2/Involvement#in
-<https://w3id.org/cerif2/Involvement#in> rdf:type owl:ObjectProperty ;
-                                         owl:inverseOf <https://w3id.org/cerif2/Group_or_Organisation_Unit#hasInvolvement> ;
-                                         rdfs:domain <https://w3id.org/cerif2/Involvement> ;
-                                         rdfs:range <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
-                                         rdfs:comment "An Involvement specifies that the Agent is *[involved in](../entities/Group_or_Organisation_Unit.md#user-content-rel__has-involvement)* a [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md)."@en .
+###  https://w3id.org/cerif2/Involvement#involvesActorIn
+<https://w3id.org/cerif2/Involvement#involvesActorIn> rdf:type owl:ObjectProperty ;
+                                                      owl:inverseOf <https://w3id.org/cerif2/Group_or_Organisation_Unit#hasInvolvement> ;
+                                                      rdfs:domain <https://w3id.org/cerif2/Involvement> ;
+                                                      rdfs:range <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
+                                                      rdfs:comment "A Involvement specifies that the *actor* Agent is involved in a [Group or Organisation Units](../entities/Group_or_Organisation_Unit.md)."@en .
 
 
-###  https://w3id.org/cerif2/Organisation_Unit#hasSubunit
-<https://w3id.org/cerif2/Organisation_Unit#hasSubunit> rdf:type owl:ObjectProperty ;
-                                                       rdfs:domain <https://w3id.org/cerif2/Organisation_Unit> ;
-                                                       rdfs:range <https://w3id.org/cerif2/Organisation_Unit> ;
-                                                       rdfs:comment "An Organisation Unit can *[have](../entities/Organisation_Unit.md#user-content-rel__has-superunit)* any number of [Organisation subunits](../entities/Organisation_Unit.md)."@en .
-
-
-###  https://w3id.org/cerif2/Organisation_Unit#hasSuperunit
-<https://w3id.org/cerif2/Organisation_Unit#hasSuperunit> rdf:type owl:ObjectProperty ;
-                                                         owl:inverseOf <https://w3id.org/cerif2/Organisation_Unit#hasSubunit> ;
-                                                         rdfs:domain <https://w3id.org/cerif2/Organisation_Unit> ;
-                                                         rdfs:range <https://w3id.org/cerif2/Organisation_Unit> ;
-                                                         rdfs:comment "An Organisation Unit can *[have](../entities/Organisation_Unit.md#user-content-rel__has-subunit)* any number of [Organisation superunits](../entities/Organisation_Unit.md)."@en .
+###  https://w3id.org/cerif2/Involvement#position
+<https://w3id.org/cerif2/Involvement#position> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain <https://w3id.org/cerif2/Involvement> ;
+                                               rdfs:range <https://w3id.org/cerif2/Position> .
 
 
 ###  https://w3id.org/cerif2/Organisation_Unit#isTheInstitutionIn
 <https://w3id.org/cerif2/Organisation_Unit#isTheInstitutionIn> rdf:type owl:ObjectProperty ;
                                                                rdfs:domain <https://w3id.org/cerif2/Organisation_Unit> ;
                                                                rdfs:range <https://w3id.org/cerif2/Affiliation_Statement> ;
-                                                               rdfs:comment "An Organisation Unit can *[be the institution in](../entities/Affiliation_Statement.md#user-content-rel__has-institution)* any number of [Affiliation Statements](../entities/Affiliation_Statement.md)."@en .
+                                                               rdfs:comment "An Organisation Unit can be the institution in any number of [Affiliation Statements](../entities/Affiliation_Statement.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Organisation_Unit#isTheOrganisationUnitIn
 <https://w3id.org/cerif2/Organisation_Unit#isTheOrganisationUnitIn> rdf:type owl:ObjectProperty ;
                                                                     rdfs:domain <https://w3id.org/cerif2/Organisation_Unit> ;
                                                                     rdfs:range <https://w3id.org/cerif2/Affiliation_Statement> ;
-                                                                    rdfs:comment "An Organisation Unit can *[be the organisation unit in](../entities/Affiliation_Statement.md#user-content-rel__has-organisation-unit)* any number of [Affiliation Statements](../entities/Affiliation_Statement.md)."@en .
+                                                                    rdfs:comment "A Organisation Unit can is the organisation unit in any number of [Affiliation Statements](../entities/Affiliation_Statement.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Person#alternateNames
@@ -535,7 +535,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Person#isThePersonIn> rdf:type owl:ObjectProperty ;
                                                rdfs:domain <https://w3id.org/cerif2/Person> ;
                                                rdfs:range <https://w3id.org/cerif2/Affiliation_Statement> ;
-                                               rdfs:comment "A Person can *[is the person in](../entities/Affiliation_Statement.md#user-content-rel__has-person)* any number of Affiliation Statement, instances of [Affiliation Statement](../entities/Affiliation_Statement.md)."@en .
+                                               rdfs:comment "A Person can be the person in any number of [Affiliation Statements](../entities/Affiliation_Statement.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Person#name
@@ -556,96 +556,51 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                          rdfs:range <https://w3id.org/cerif2/Physical_Address> .
 
 
-###  https://w3id.org/cerif2/Prize#awarded
-<https://w3id.org/cerif2/Prize#awarded> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <https://w3id.org/cerif2/Prize> ;
-                                        rdfs:range <https://w3id.org/cerif2/Prize_Award> ;
-                                        rdfs:comment "A Prize can be *[awarded](../entities/Prize_Award.md#user-content-rel__awards)* in [Prize Awards](../entities/Prize_Award.md)."@en .
+###  https://w3id.org/cerif2/Prize#hasContribution
+<https://w3id.org/cerif2/Prize#hasContribution> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <https://w3id.org/cerif2/Contribution_to_Prize#hasTarget> ;
+                                                rdfs:domain <https://w3id.org/cerif2/Prize> ;
+                                                rdfs:range <https://w3id.org/cerif2/Contribution_to_Prize> ;
+                                                rdfs:comment "A Prize can have any number of [contributions](../entities/Contribution_to_Prize.md) that help it arise or continue."@en .
 
 
-###  https://w3id.org/cerif2/Prize#isHelpedBy
-<https://w3id.org/cerif2/Prize#isHelpedBy> rdf:type owl:ObjectProperty ;
-                                           owl:inverseOf <https://w3id.org/cerif2/Contribution_to_Prize#prize> ;
-                                           rdfs:domain <https://w3id.org/cerif2/Prize> ;
-                                           rdfs:range <https://w3id.org/cerif2/Contribution_to_Prize> ;
-                                           rdfs:comment "A Prize can *[be helped by](../entities/Contribution_to_Prize.md#user-content-rel__prize)* any number of [Contributions to Prize](../entities/Contribution_to_Prize.md)."@en .
+###  https://w3id.org/cerif2/Prize_Award#hasRecipient
+<https://w3id.org/cerif2/Prize_Award#hasRecipient> rdf:type owl:ObjectProperty ;
+                                                   owl:inverseOf <https://w3id.org/cerif2/Agent#isRecipientOf> ;
+                                                   rdfs:domain <https://w3id.org/cerif2/Prize_Award> ;
+                                                   rdfs:range <https://w3id.org/cerif2/Agent> ;
+                                                   rdfs:comment "A Prize Award can have any number of recipients, instances of [Agent](../entities/Agent.md)."@en .
 
 
-###  https://w3id.org/cerif2/Prize_Award#awards
-<https://w3id.org/cerif2/Prize_Award#awards> rdf:type owl:ObjectProperty ;
-                                             owl:inverseOf <https://w3id.org/cerif2/Prize#awarded> ;
-                                             rdfs:domain <https://w3id.org/cerif2/Prize_Award> ;
-                                             rdfs:range <https://w3id.org/cerif2/Prize> ;
-                                             rdfs:comment "A Prize Award *[awards](../entities/Prize.md#user-content-rel__awarded)* a [Prize](../entities/Prize.md)."@en .
+###  https://w3id.org/cerif2/Project#hasContribution
+<https://w3id.org/cerif2/Project#hasContribution> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <https://w3id.org/cerif2/Project> ;
+                                                  rdfs:range <https://w3id.org/cerif2/Contribution_to_Project> ;
+                                                  rdfs:comment "A Project can have any number of [contributions](../entities/Contribution_to_Project.md) that help it happen."@en .
 
 
-###  https://w3id.org/cerif2/Prize_Award#recipient
-<https://w3id.org/cerif2/Prize_Award#recipient> rdf:type owl:ObjectProperty ;
-                                                owl:inverseOf <https://w3id.org/cerif2/Agent#receives> ;
-                                                rdfs:domain <https://w3id.org/cerif2/Prize_Award> ;
-                                                rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                rdfs:comment "A Prize Award can have any number of *[recipients](../entities/Agent.md#user-content-rel__receives)*, instances of [Agent](../entities/Agent.md)."@en .
-
-
-###  https://w3id.org/cerif2/Resource#hasIdentifier
-<https://w3id.org/cerif2/Resource#hasIdentifier> rdf:type owl:ObjectProperty ;
-                                                 owl:inverseOf <https://w3id.org/cerif2/Resource_Identifier#isAssignedTo> ;
-                                                 rdfs:domain <https://w3id.org/cerif2/Resource> ;
-                                                 rdfs:range <https://w3id.org/cerif2/Resource_Identifier> ;
-                                                 rdfs:comment "A Resource can *[have](../entities/Resource_Identifier.md#user-content-rel__is-assigned-to)* any number of [Resource_Identifiers](../entities/Resource_Identifier.md)."@en .
-
-
-###  https://w3id.org/cerif2/Resource#isOfferedIn
-<https://w3id.org/cerif2/Resource#isOfferedIn> rdf:type owl:ObjectProperty ;
-                                               owl:inverseOf <https://w3id.org/cerif2/Resource_Offer#resource> ;
-                                               rdfs:domain <https://w3id.org/cerif2/Resource> ;
-                                               rdfs:range <https://w3id.org/cerif2/Resource_Offer> ;
-                                               rdfs:comment "A Resource can *[be offered in](../entities/Resource_Offer.md#user-content-rel__resource)* any number of [Resource Offers](../entities/Resource_Offer.md)."@en .
-
-
-###  https://w3id.org/cerif2/Resource#producedBy
-<https://w3id.org/cerif2/Resource#producedBy> rdf:type owl:ObjectProperty ;
-                                              owl:inverseOf <https://w3id.org/cerif2/Contribution_Statement#resource> ;
-                                              rdfs:domain <https://w3id.org/cerif2/Resource> ;
-                                              rdfs:range <https://w3id.org/cerif2/Contribution_Statement> ;
-                                              rdfs:comment "A Resource can *[be produced by](../entities/Contribution_Statement.md#user-content-rel__resource)* any number of [Contribution Statements](../entities/Contribution_Statement.md)."@en .
-
-
-###  https://w3id.org/cerif2/Resource_Identifier#isAssignedTo
-<https://w3id.org/cerif2/Resource_Identifier#isAssignedTo> rdf:type owl:ObjectProperty ;
-                                                           rdfs:domain <https://w3id.org/cerif2/Resource_Identifier> ;
-                                                           rdfs:range <https://w3id.org/cerif2/Resource> ;
-                                                           rdfs:comment "A Resource Identifier *[is assigned to](../entities/Resource.md#user-content-rel__has-identifier)* a [Resource](../entities/Resource.md)."@en .
+###  https://w3id.org/cerif2/Resource#isProvidedBy
+<https://w3id.org/cerif2/Resource#isProvidedBy> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <https://w3id.org/cerif2/Contribution_Statement#provides> ;
+                                                rdfs:domain <https://w3id.org/cerif2/Resource> ;
+                                                rdfs:range <https://w3id.org/cerif2/Contribution_Statement> ;
+                                                rdfs:comment "A Resource can be provided in any number of [Contribution Statements](../entities/Contribution_Statement.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Resource_Offer#hasCondition
 <https://w3id.org/cerif2/Resource_Offer#hasCondition> rdf:type owl:ObjectProperty ;
-                                                      owl:inverseOf <https://w3id.org/cerif2/Condition#details> ;
+                                                      owl:inverseOf <https://w3id.org/cerif2/Condition#appliesTo> ;
                                                       rdfs:domain <https://w3id.org/cerif2/Resource_Offer> ;
                                                       rdfs:range <https://w3id.org/cerif2/Condition> ;
-                                                      rdfs:comment "A Resource Offer can *[have](../entities/Condition.md#user-content-rel__details)* any number of [Conditions](../entities/Condition.md) that detail it."@en .
-
-
-###  https://w3id.org/cerif2/Resource_Offer#resource
-<https://w3id.org/cerif2/Resource_Offer#resource> rdf:type owl:ObjectProperty ;
-                                                  rdfs:domain <https://w3id.org/cerif2/Resource_Offer> ;
-                                                  rdfs:range <https://w3id.org/cerif2/Resource> ;
-                                                  rdfs:comment "A Resource Offer *[specifies](../entities/Resource.md#user-content-rel__is-offered-in)* the [Resource](../entities/Resource.md) that is the subject of this offer."@en .
+                                                      rdfs:comment "A Resource Offer can have any number of [Conditions](../entities/Condition.md) that must be satisfied for the Resource Offer to be applicable."@en .
 
 
 ###  https://w3id.org/cerif2/Textual_Document#hasAuthor
 <https://w3id.org/cerif2/Textual_Document#hasAuthor> rdf:type owl:ObjectProperty ;
-                                                     owl:inverseOf <https://w3id.org/cerif2/Agent#isTheAuthorOf> ;
+                                                     owl:inverseOf <https://w3id.org/cerif2/Agent#isAuthorOf> ;
                                                      rdfs:domain <https://w3id.org/cerif2/Textual_Document> ;
                                                      rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                     rdfs:comment "A Textual Document has any number of *[authors](../entities/Agent.md#user-content-rel__is-the-author-of)*, instances of [Agent](../entities/Agent.md). This relationships is derived: it relates the Textual Document with the *actors* of its *authorships*. This is a simplified form of expressing *authorships* without any additional qualification or context."@en .
-
-
-###  https://w3id.org/cerif2/Textual_Document#hasAuthorship
-<https://w3id.org/cerif2/Textual_Document#hasAuthorship> rdf:type owl:ObjectProperty ;
-                                                         rdfs:domain <https://w3id.org/cerif2/Textual_Document> ;
-                                                         rdfs:range <https://w3id.org/cerif2/Authorship> ;
-                                                         rdfs:comment "A Textual Document has any number of *[authorships](../entities/Authorship.md#user-content-rel__document)*, instances of [Authorship](../entities/Authorship.md). This relationship is derived from *Document.contributorships* by including just those [Contributions to Documents](../entities/Contribution_to_Document.md) that are [Authorships](../entities/Authorship.md)."@en .
+                                                     rdfs:comment "A Textual Document has any number of authors, instances of [Agent](../entities/Agent.md). This relationship is derived: it relates the Textual document with the *actors* of its *authorships*. This is a simplified form expressing *authorships* without any additional qualification or context."@en .
 
 
 ###  https://w3id.org/cerif2/Visiting_Address#physicalAddress
@@ -795,12 +750,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                      rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
-###  https://w3id.org/cerif2/Expertise_and_Time_and_Effort#amountOfTimeInPersonHours
-<https://w3id.org/cerif2/Expertise_and_Time_and_Effort#amountOfTimeInPersonHours> rdf:type owl:DatatypeProperty ;
-                                                                                  rdfs:domain <https://w3id.org/cerif2/Expertise_and_Time_and_Effort> ;
-                                                                                  rdfs:range <https://w3id.org/cerif2/Decimal> .
-
-
 ###  https://w3id.org/cerif2/FundRef_Identifier#fundrefId
 <https://w3id.org/cerif2/FundRef_Identifier#fundrefId> rdf:type owl:DatatypeProperty ;
                                                        rdfs:domain <https://w3id.org/cerif2/FundRef_Identifier> ;
@@ -829,6 +778,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/ISNI_Identifier#isniId> rdf:type owl:DatatypeProperty ;
                                                  rdfs:domain <https://w3id.org/cerif2/ISNI_Identifier> ;
                                                  rdfs:range <https://w3id.org/cerif2/ISNI_ID> .
+
+
+###  https://w3id.org/cerif2/Involvement#description
+<https://w3id.org/cerif2/Involvement#description> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/cerif2/Involvement> ;
+                                                  rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
 ###  https://w3id.org/cerif2/Language#iso6391Code
@@ -1245,7 +1200,7 @@ by an [Agent](../entities/Agent.md)."""@en ;
 ###  https://w3id.org/cerif2/Group
 <https://w3id.org/cerif2/Group> rdf:type owl:Class ;
                                 rdfs:subClassOf <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
-                                rdfs:comment "A non-formal group of [persons](../entities/Person.md) and [organizations](../entities/Organisation_Unit.md)."@en ;
+                                rdfs:comment "A non-formal group of [Agents](../entities/Agent.md)."@en ;
                                 rdfs:label "Group"@en .
 
 

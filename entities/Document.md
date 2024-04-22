@@ -24,13 +24,10 @@ title : [Multilingual String](../datatypes/Multilingual_String.md)
 publication date: [Date](../datatypes/Date.md) in case the document has gone through publication
 
 ## Relationships
-<a name="rel__contributions">A Document has any number of *[contributions](../entities/Contribution_to_Document.md#user-content-rel__document)*: instances of [Contribution to Document](../entities/Contribution_to_Document.md).</a>
 
-<a name="rel__prove_Expertise_and_Skills_Possession">A Document can *[prove](../entities/Expertise_and_Skills_Possession.md#user-content-rel__is-evidenced-by)* any number of [Possessions of Expertise and Skills](../entities/Expertise_and_Skills_Possession.md).</a>
+<a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Document.md#user-content-rel__has-target) : A Document any number of [contributions](../entities/Contribution_to_Document.md) that helped it arise.
 
-<a name="rel__prove_Activity">A Document can *[prove_Activity](../entities/Activity.md#user-content-rel__is-evidenced-by)* any number of [Activities](../entities/Activity.md).</a>
-
-<a name="rel__"
+<a name="rel__provides-evidence-of">provides-evidence-of</a> / [is-evidenced-by](../entities/Expertise_and_Skills_Possession.md#user-content-rel__is-evidenced-by) : A Document can provide evidence of any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md).
 
 ---
 ## Matches

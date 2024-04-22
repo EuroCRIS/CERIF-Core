@@ -16,7 +16,7 @@ Just those of [Activity](../entities/Activity.md).
 ## Relationships
 Beside those inherited from [Activity](../entities/Activity.md#relationships):
 
-<a name="rel__has-contribution-statement">A Contribution has any number of *[contribution statements](../entities/Contribution_Statement.md#user-content-rel__contribution)*: instances of [Contribution Statement](../entities/Contribution_Statement.md).</a>
+<a name="rel__has-contribution-statement">has-contribution-statement</a> / [references](../entities/Contribution_Statement.md#user-content-rel__references) : A Contribution can have any number of [Contribution Statements](../entities/Contribution_Statement.md).
 
 <a name="rel__is-testified-by">is-testified-by</a> / [testify](../entities/Acknowledgement_Statement.md#user-content-rel__testify) : A Contribution can be testified by any number of [Acknowledgement Statements](../entities/Acknowledgement_Statement.md).
 
