@@ -29,6 +29,8 @@ acronym : [String](../datatypes/String.md)
 
 (FIXME) funding source (link to fundings)
 
+<a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Project.md#user-content-rel__has-target) : A Project can have any number of [contributions](../entities/Contribution_to_Project.md) that help it happen.
+
 ---
 ## Matches
 

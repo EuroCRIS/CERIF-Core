@@ -24,10 +24,10 @@ position    : [Position](../datatypes/Position.md)
 
 ## Relationships
 
-<a name="rel__has-institution">An Affiliation Statement *[has institution](../entities/Organisation_Unit.md#user-content-rel__is-the-institution-in)*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).</a>
+<a name="rel__has-institution">has-institution</a> / [is-the-institution-in](../entities/Organisation_Unit.md#user-content-rel__is-the-institution-in) : An Affiliation Statement has institution, an instance of [Organisation Units](../entities/Organisation_Unit.md).
 
-<a name="rel__has-organisation-unit">An Affiliation Statement can optionally *[have organisation unit](../entities/Organisation_Unit.md#user-content-rel__is-the-organisation-unit-in)*, an instance of [Organisation Unit](../entities/Organisation_Unit.md).</a>
+<a name="rel__has-organisation-unit">has-organisation-unit</a> / [is-the-organisation-unit-in](../entities/Organisation_Unit.md#user-content-rel__is-the-organisation-unit-in) : An Affiliation Statement can optionally have an organisation unit, an instance of [Organisation Unit](../entities/Organisation_Unit.md).
 
-<a name="rel__has-person">An Affiliation Statement typically *[has person](../entities/Person.md#user-content-rel__is-the-person-in)*, an instance of [Person](../entities/Person.md).</a>
+<a name="rel__has-person">has-person</a> / [is-the-person-in](../entities/Person.md#user-content-rel__is-the-person-in) : An Affiliation Statement typically has the person, an instance of [Person](../entities/Person.md).
 
-<a name="rel__is-used-in">An Affiliation Statement can optionally *[be used in](../entities/Activity.md#user-content-rel__has-affiliation-statements)* any number of [Activities](../entities/Activity.md).</a>
+<a name="rel__is-used-in">is-used-in</a> / [has-affiliation-statement](../entities/Activity.md#user-content-rel__has-affiliation-statement) : An Affiliation Statement can be used in any number of [Activities](../entities/Activity.md).

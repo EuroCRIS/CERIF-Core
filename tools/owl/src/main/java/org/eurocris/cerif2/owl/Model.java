@@ -408,40 +408,50 @@ public class Model {
 
 	static final Pattern entityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
 
-	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, BasedSequence text ) throws ParseException {
+	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, final BasedSequence text ) throws ParseException {
 		if (!( text.startsWith( "<a name=\"" ) && text.toString().contains( "</a>" ) )) {
 			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship title", node );
 		}
-		final String relName1 = text.toString().replaceFirst( "<a name=\"([^\"]*)\">.*", "$1" );
+		final int colonIndex = text.indexOf( " : " );
+		if ( colonIndex < 0 ) {
+			throw new ParseException( "No separator ' : ' for the description of the relationship", node );
+		}
+		final int slashIndex1 = text.indexOf( " / " );
+		final int slashIndex = ( slashIndex1 >= 0 ) ? slashIndex1 : colonIndex;		
+		final String firstPart = text.subSequence( 0, slashIndex ).toString().trim();
+		final String secondPart = text.subSequence(  slashIndex + 3, colonIndex ).toString().trim();
+		final String theRest = text.subSequence( colonIndex + 3 ).toString().trim();
+		log.info( "First part = '" + firstPart + "'; second part='" + secondPart + "'" );
+
+		final String relName1 = firstPart.replaceFirst( "<a name=\"([^\"]*)\">.*", "$1" );
 		final String relName = CaseUtils.toCamelCase( relName1.replaceFirst( "^rel__", "" ), false, ' ', '-', '_', '.' );
 		if ( relName.equals( relName1 ) ) {
 			throw new ParseException( "Relationship name '" + relName1 + "' not starting with 'rel__'", node );
 		}
-		text = text.subSequence( text.indexOf( ">" ) + 1, text.length() );
 		log.info( "Class " + classIRI + ", relationship " + relName );
-		final String txt = text.toString().trim();
-		
-		final Matcher entityNameMatcher = entityNamePattern.matcher( txt );
-		if ( ! entityNameMatcher.find() ) {
-			throw new ParseException( "No reference to the relationship inverse", node );
+
+		final String inversePropertyName;
+		final String rangeClassName;
+		final Matcher entityNameMatcher = entityNamePattern.matcher( secondPart );
+		if ( entityNameMatcher.find() ) {
+			rangeClassName = entityNameMatcher.group(1);
+			final String inverseFragment1 = entityNameMatcher.group(2);
+			final String fragmentPrefix = "#user-content-rel__";
+			if ( ! inverseFragment1.startsWith( fragmentPrefix ) ) {
+				throw new ParseException( "Inverse property fragment '" + inverseFragment1 + "' not starting with '" + fragmentPrefix + "'", node );
+			}
+			inversePropertyName = CaseUtils.toCamelCase( inverseFragment1.substring( fragmentPrefix.length() ), false, ' ', '-', '_', '.' );
+		} else {
+			rangeClassName = owlClass.getIRI().getFragment();
+			final String invRelName1 = secondPart.replaceFirst( "<a name=\"([^\"]*)\">.*", "$1" );
+			final String invRelName = CaseUtils.toCamelCase( invRelName1.replaceFirst( "^rel__", "" ), false, ' ', '-', '_', '.' );
+			if ( invRelName.equals( invRelName1 ) ) {
+				throw new ParseException( "Inverse relationship name '" + invRelName1 + "' not starting with 'rel__'", node );
+			}			
+			inversePropertyName = CaseUtils.toCamelCase( invRelName, false, ' ', '-', '_', '.' );
 		}
-		final String inverseEntityName1 = entityNameMatcher.group(1);
-		final String inverseFragment1 = entityNameMatcher.group(2);
-		if ( ! entityNameMatcher.find() ) {
-			throw new ParseException( "No reference to the range class", node );
-		}
-		final String rangeClassName = entityNameMatcher.group(1);
-		if ( ! inverseEntityName1.startsWith( rangeClassName ) ) {
-			throw new ParseException( "Inverse property's entity '" + inverseEntityName1 + "' not pointing to the range class '" + rangeClassName + "'", node );
-		}
-		final String fragmentPrefix = "#user-content-rel__";
-		if ( ! inverseFragment1.startsWith( fragmentPrefix ) ) {
-			throw new ParseException( "Inverse property fragment '" + inverseFragment1 + "' not starting with '" + fragmentPrefix + "'", node );
-		}
-		final String inversePropertyName = CaseUtils.toCamelCase( inverseFragment1.substring( fragmentPrefix.length() ), false, ' ', '-', '_', '.' );
 		final boolean ordered = false;
-		text = text.subSequence( text.indexOf( " : " ) + 3, text.length() );
-		final Relationship relationship = new Relationship( relName, classIRI, rangeClassName, inversePropertyName, ordered, text.toString() ) {
+		final Relationship relationship = new Relationship( relName, classIRI, rangeClassName, inversePropertyName, ordered, theRest ) {
 			protected void handle() throws InterruptedException, ExecutionException {
 				final Future<? extends OWLEntity> rangeClassFuture = entityByName.get( getRangeClassName() );
 				final OWLClass rangeClass = (OWLClass) rangeClassFuture.get();

@@ -7,7 +7,7 @@ An identifier that is assigned to an [Agent](../entities/Agent.md).
 
 ## Relationships
 
-<a name="rel__is-assigned-to">An Agent Identifier *[is assigned to](../entities/Agent.md#user-content-rel__has-identifier)* an [Agent](../entities/Agent.md).</a>
+<a name="rel__is-assigned-to">is-assigned-to</a> / [has-identifier](../entities/Agent.md#user-content-rel__has-identifier) : An Agent Identifier is assigned to an [Agent](../entities/Agent.md).
 
 ## Illustrative Diagram
 ![The Agent identifier hierarchy](../diagrams/agentIdentifiersHierarchy.svg)

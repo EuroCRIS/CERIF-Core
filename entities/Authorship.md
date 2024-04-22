@@ -18,6 +18,8 @@ FIXME! These are probably just renames of other relationships
 Beside those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#relationships), there is also a link to *author*: an instance of [Agent](../entities/Agent.md) 
 [FIXME] replacing the derived *contributor* link from [Contribution to Document](../entities/Contribution_to_Document.md) 
 
+<a name="rel__of-document">of-document</a> / [has-authorship](../entities/Textual_Document.md#user-content-rel__has-authorship) : A Authorship can of document any number of [Textual Documents](../entities/Textual_Document.md).
+
 ---
 ## Matches
 1. Close match with the **[author](https://sparontologies.github.io/pro/current/pro.html#d4e543)** named individual from the SPAR PRO Ontology.<sup>[1](#fn1)</sup>

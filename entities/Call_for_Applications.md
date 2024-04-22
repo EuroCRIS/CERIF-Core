@@ -21,11 +21,12 @@ deadline: [Date](../datatypes/Date.md) – until when applications can be submit
 
 
 ## Relationships
-<a name="rel__inviter">A Call for Applications always references the *[inviter](../entities/Agent.md#user-content-rel__solicits)*, the [Agent](../entities/Agent.md) that solicits the applications. (Note the role can be called differently in specific contexts.)</a>
 
-<a name="rel__applications">A Call for Applications can reference any number of *[applications](../entities/Application.md#user-content-rel__in-response-to)*, instances of [Application](../entities/Application.md), that are formed with a reference to it.</a>
+<a name="rel__is-solicited-by">is-solicited-by</a> / [solicits](../entities/Agent.md#user-content-rel__solicits) : A Call for Applications is solicited by an [Agent](../entities/Agent.md).
 
-<a name="rel__contents">A Call for Applications can optionally reference its *[contents](../entities/Document.md#user-content-rel__be-contents-for)*, the [Document](../entities/Document.md) that details the invitation.</a>
+<a name="rel__has-application">has-application</a> / [in-response-to](../entities/Application.md#user-content-rel__in-response-to) : A Call for Applications can reference the [Applications](../entities/Application.md) that make a reference to it.
+
+<a name="rel__has-contents">has-contents</a> : A Call for Applications can optionally reference its contents: the [Document](../entities/Document.md) that details the call.
 
 ---
 ## References

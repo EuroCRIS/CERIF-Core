@@ -21,7 +21,7 @@ None besides those of [Resource](../entities/Resource.md).
 ## Relationships
 Besides those of [Resource](../entities/Resource.md):
 
-<a name="rel__has-benefitted-from">A Infrastructure can *[has benefitted from](../entities/Contribution_to_Infrastructure.md#user-content-rel__references)* any number of Contribution to Infrastructure, instances of [Contribution to Infrastructure](../entities/Contribution_to_Infrastructure.md).</a>
+<a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Infrastructure.md#user-content-rel__has-target) : An Infrastructure can have any number of [contributions](../entities/Contribution_to_Infrastructure.md) that helped it arise, keep or develop.
 
 ---
 ## References

@@ -15,4 +15,4 @@ description: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
 
-<a name="rel__has-involvement">A Group or Organisation Unit can *[have any number of involvements](../entities/Involvement.md#user-content-rel__in)*, instances of [Involvement](../entities/Involvement.md), which involve [Agents](../entities/Agent.md).</a>
+<a name="rel__has-involvement">has-involvement</a> / [involves-actor-in](../entities/Involvement.md#user-content-rel__involves-actor-in) : A Group or Organisation Unit can have any number of [Involvements](../entities/Involvement.md), which involve [Agents](../entities/Agent.md) in it.

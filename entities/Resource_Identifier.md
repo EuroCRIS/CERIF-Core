@@ -7,4 +7,4 @@ An identifier that is assigned to a [Resource](../entities/Resource.md).
 
 ## Relationships
 
-<a name="rel__is-assigned-to">A Resource Identifier *[is assigned to](../entities/Resource.md#user-content-rel__has-identifier)* a [Resource](../entities/Resource.md).</a>
+<a name="rel__is-assigned-to">is-assigned-to</a> / [has-identifier](../entities/Resource.md#user-content-rel__has-identifier) : A Resource Identifier can be assigned to a [Resource](../entities/Resource.md).

@@ -18,20 +18,18 @@ In the research information domain Organisation Units typically represents:
 [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md)
 
 ## Attributes
-
 Those of [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md).
 
 ## Relationships
+Those of [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md) plus:
 
-Those of [Group or Organisation Unit](../entities/Group_or_Organisation_Unit.md).
+<a name="rel__is-part-of">is-part-of</a> / [has-part](../entities/Organisation_Unit.md#user-content-rel__has-part) : An Organisation Unit can be part of any number of other [Organisation Units](../entities/Organisation_Unit.md).
 
-<a name="rel__has-superunit">An Organisation Unit can *[have](../entities/Organisation_Unit.md#user-content-rel__has-subunit)* any number of [Organisation superunits](../entities/Organisation_Unit.md).</a>
+<a name="rel__has-part">has-part</a> / [is-part-of](../entities/Organisation_Unit.md#user-content-rel__is-part-of) : An Organisation Unit can have any number of parts, instances of [Organisation Unit](../entities/Organisation_Unit.md).
 
-<a name="rel__has-subunit">An Organisation Unit can *[have](../entities/Organisation_Unit.md#user-content-rel__has-superunit)* any number of [Organisation subunits](../entities/Organisation_Unit.md).</a>
+<a name="rel__is-the-institution-in">is-the-institution-in</a> / [has-institution](../entities/Affiliation_Statement.md#user-content-rel__has-institution) : An Organisation Unit can be the institution in any number of [Affiliation Statements](../entities/Affiliation_Statement.md).
 
-<a name="rel__is-the-institution-in">An Organisation Unit can *[be the institution in](../entities/Affiliation_Statement.md#user-content-rel__has-institution)* any number of [Affiliation Statements](../entities/Affiliation_Statement.md).</a>
-
-<a name="rel__is-the-organisation-unit-in">An Organisation Unit can *[be the organisation unit in](../entities/Affiliation_Statement.md#user-content-rel__has-organisation-unit)* any number of [Affiliation Statements](../entities/Affiliation_Statement.md).</a>
+<a name="rel__is-the-organisation-unit-in">is-the-organisation-unit-in</a> / [has-organisation-unit](../entities/Affiliation_Statement.md#user-content-rel__has-organisation-unit) : A Organisation Unit can is the organisation unit in any number of [Affiliation Statements](../entities/Affiliation_Statement.md).
 
 ---
 ## Matches

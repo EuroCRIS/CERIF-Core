@@ -6,14 +6,12 @@ Any contribution an [Agent](../entities/Agent.md) made to a [Document](../entiti
 ## Usage notes
 
 ## Attributes
-
 Those inherited from [Contribution](../entities/Contribution.md#attributes)
 
 ## Relationships
-
 Beside those inherited from [Contribution](../entities/Contribution.md#relationships):
 
-<a name="rel__document">A Contribution to Document always has the *[document](../entities/Document.md#user-content-rel__contributions)*: an instance of [Document](../entities/Document.md).</a>
+<a name="rel__has-target">has-target</a> / [has-contribution](../entities/Document.md#user-content-rel__has-contribution) : A Contribution to Document always references the target [Document](../entities/Document.md).
 
 ## Illustrative Diagram
 

@@ -19,11 +19,11 @@ amount : [Monetary Amount](../datatypes/Monetary_Amount.md)
 ## Relationships
 Those of [Resource](../entities/Resource.md) plus:
 
-<a name="rel__cover">A Funding can *[cover](../entities/Activity.md#user-content-rel__is-covered-by)* any number of [Activities](../entities/Activity.md).</a>
+<a name="rel__covers">covers</a> / [is-covered-by](../entities/Activity.md#user-content-rel__is-covered-by) : A Funding can cover any number of [Activities](../entities/Activity.md).
 
-<a name="rel__is-part-of">A Funding can *[be part of](../entities/Funding.md#user-content-rel__has-part)* any number of [Fundings](../entities/Funding.md).</a>
+<a name="rel__is-part-of">is-part-of</a> / [has-part](../entities/Funding.md#user-content-rel__has-part) : A Funding can be part of any number of other [Fundings](../entities/Funding.md).
 
-<a name="rel__has-part">A Funding can have any number of [Funding](../entities/Funding.md) as *[parts](../entities/Funding.md#user-content-rel__is-part-of)*.</a>
+<a name="rel__has-part">has-part</a> / [is-part-of](../entities/Funding.md#user-content-rel__is-part-of) : A Funding can have any number of other [Fundings](../entities/Funding.md) as parts.
 
 ---
 ## References

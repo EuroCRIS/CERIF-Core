@@ -4,6 +4,8 @@
 An offer of a [Resource](../entities/Resource.md) for usage.
 
 ## Relationships
-<a name="rel__resource">A Resource Offer *[specifies](../entities/Resource.md#user-content-rel__is-offered-in)* the [Resource](../entities/Resource.md) that is the subject of this offer.</a>
 
-<a name="rel__has-condition">A Resource Offer can *[have](../entities/Condition.md#user-content-rel__details)* any number of [Conditions](../entities/Condition.md) that detail it.</a>
+<a name="rel__offers">offers</a> / [is-offered-in](../entities/Resource.md#user-content-rel__is-offered-in) : A Resource Offer specifies the [Resource](../entities/Resource.md) that is the subject of the offer.
+
+<a name="rel__has-condition">has-condition</a> / [applies-to](../entities/Condition.md#user-content-rel__applies-to) : A Resource Offer can have any number of [Conditions](../entities/Condition.md) that must be satisfied for the Resource Offer to be applicable.
+

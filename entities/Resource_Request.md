@@ -10,8 +10,8 @@ An additional description to communicate the purpose of the entity.
 [FIXME]
 
 ## Relationships
-<a name="rel__resource">A Resource Request *[specifies](../entities/Resource.md#user-content-rel__is-requested-in)* the [Resource](../entities/Resource.md) that is the subject of this request.</a>
 
+<a name="rel__requests">requests</a> / [is-requested-in](../entities/Resource.md#user-content-rel__is-requested-in) : A Resource Request specifies the [Resource](../entities/Resource.md) that is the subject of the request.
 
 ## Constraints
 Any constraints a subclass makes on its superclasses.

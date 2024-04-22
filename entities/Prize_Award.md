@@ -7,9 +7,10 @@ A [prize](../entities/Prize.md) or a sum of money that a person or organization 
 FIXME
 
 ## Relationships
-<a name="rel__awards">A Prize Award *[awards](../entities/Prize.md#user-content-rel__awarded)* a [Prize](../entities/Prize.md).</a>
 
-<a name="rel__recipient">A Prize Award can have any number of *[recipients](../entities/Agent.md#user-content-rel__receives)*, instances of [Agent](../entities/Agent.md).</a>
+<a name="rel__awards">awards</a> / [is-awarded-as](../entities/Prize.md#user-content-rel__is-awarded-as) : A Prize Award awards a specific [Prize](../entities/Prize.md).
+
+<a name="rel__has-recipient">has-recipient</a> / [is-recipient-of](../entities/Agent.md#user-content-rel__is-recipient-of) : A Prize Award can have any number of recipients, instances of [Agent](../entities/Agent.md).
 
 ---
 ## Matches

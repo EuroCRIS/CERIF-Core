@@ -17,12 +17,12 @@ which can be [offered](../entities/Resource_Offer.md), [requested](../entities/R
 ## Attributes
 Besides those of [Resource](../entities/Resource.md):
 
-<a name="amount-of-time-in-person-hours">amount of time in person hours: [Decimal](../datatypes/Decimal.md)</a>
+<a name="amount-of-time-in-person-hours">amount of time in person hours</a> : [Decimal](../datatypes/Decimal.md)
 
 ## Relationships
 Besides those of [Resource](../entities/Resource.md):
 
-<a name="rel__agent">An Expertise and Time and Effort *[references](../entities/Agent.md#user-content-rel__in-expertise-and-time-and-effort)* the [Agent](../entities/Agent.md) whose expertise, time and effort it would be.</a>
+<a name="rel__by-agent">by-agent</a> / [is-agent-in2](../entities/Agent.md#user-content-rel__is-agent-in2) : An Expertise and Time and Effort references the [Agent](../entities/Agent.md) whose expertise, time and effort it would be.
 
 ---
 ## References

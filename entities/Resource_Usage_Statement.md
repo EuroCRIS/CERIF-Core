@@ -6,10 +6,11 @@ An element of a [Contribution](../entities/Contribution.md). All such elements t
 ## Usage Notes
 
 ## Attributes
+
 statement: [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
-A Resource Usage Statement *[references](../entities/Resource.md)* the [Contribution Statement](../entities/Contribution_Statement.md) that is being used.
 
-<a name="rel__uses">A Resource Usage Statement *[references](../entities/Resource.md)* the [Resource](../entities/Resource.md#user-content-rel__used-for-contribution) that is being used.</a>
+<a name="rel__uses">uses</a> / [is-used-in](../entities/Resource.md#user-content-rel__is-used-in) : A Resource Usage Statement specifies the [Resource](../entities/Resource.md) that is being used.
 
+<a name="rel__details">details</a> / [is-detailed-in](../entities/Contribution_Statement.md#user-content-rel__is-detailed-in) : A Resource Usage Statement can detail a [Contribution Statement](../entities/Contribution_Statement.md).
