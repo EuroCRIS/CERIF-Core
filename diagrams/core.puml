@@ -225,6 +225,16 @@
     "Contribution" <|-d- "Contribution_to_Event"
 !endsub
 
+!startsub Contribution_to_Infrastructure
+    class "Contribution_to_Infrastructure" #ffffff {
+    }
+!endsub
+
+!startsub Contribution_to_Infrastructure
+    "Contribution" <|-d- "Contribution_to_Infrastructure"
+!endsub
+
+
 !startsub Activity
 	"Document" "0..*" -- "0..*" "Activity" : prove >
 !endsub
@@ -276,6 +286,10 @@
 
     "Resource" <|-- "Infrastructure"
 
+!endsub
+
+!startsub Contribution_to_Infrastructure
+    "Contribution_to_Infrastructure" --> "Infrastructure" : infrastructure >
 !endsub
 
 !startsub Document_isa_Resource
