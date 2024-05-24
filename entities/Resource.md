@@ -5,8 +5,9 @@ Anything that can be used for or in the process of research.
 
 ## Usage notes
 [Funding](../entities/Funding.md) is one example of a Resource, 
-[Expertise+Time+Effort](../entities/Expertise_and_Time_and_Effort.md) of a researcher is another, 
-[Document](../entities/Document.md) is the third one. 
+[Expertise+Time+Effort](../entities/Expertise_and_Time_and_Effort.md) of a researcher is another,
+[Infrastructure](../entities/Infrastructure.md) is the third one,
+[Document](../entities/Document.md) is the fourth one. 
 
 ## Relationships
 
