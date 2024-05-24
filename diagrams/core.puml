@@ -318,20 +318,6 @@
         acronym : Multilingual_String
     }
 
-    class "Publication_Series" #ffffff {
-        ISSN : ISSN
-        eISSN : ISSN
-    }
-
-    "Publication_Channel" <|-- "Publication_Series"
-
-    class "Repository" #ffffff {
-    }
-
-    "Publication_Channel" <|-- "Repository"
-
-    "Infrastructure" <|-- "Repository"
-
     "Document" --> "0..1" "Publication_Channel" : published via channel >
 
 !endsub
