@@ -6,7 +6,7 @@ Money provided by an organization or government for a particular purpose.<sup>[1
 ## Usage notes
 Fundings typically make up hierarchies, where the breakdown follows various criteria such as funding source, cost type, or fiscal terms.
 
-Like any other [Resource](../entities/Resource.md), Funding can can be [offered](../entities/Resource_Offer.md), [requested](../entities/Resource_Request.md), [provided](../entities/Contribution_Statement.md) or actually [used](../entities/Resource_Usage_Statement.md).
+Like any other [Resource](../entities/Resource.md), Funding can be [offered](../entities/Resource_Offer.md), [requested](../entities/Resource_Request.md), [provided](../entities/Contribution_Statement.md) or actually [used](../entities/Resource_Usage_Statement.md).
 
 ## Specialization of
 [Resource](../entities/Resource.md)
