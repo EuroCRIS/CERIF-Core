@@ -31,6 +31,12 @@ publication date: [Date](../datatypes/Date.md) in case the document has gone thr
 
 <a name="rel__published-via-channel">published-via-channel</a> / [has-publication](../entities/Publication_Channel.md#user-content-rel__has-publication) : A Document can be published via [publication channel](../entities/Publication_Channel.md).
 
+<a name="rel__describes-resource-offer">describes-resource-offer</a> / [is-described-by](../entities/Resource_Offer.md#user-content-rel__is-described-by) : A Document can provide description of a [Resource Offer](../entities/Resource_Offer.md).
+
+<a name="rel__presents-decision">presents-decision</a> / [is-expressed-by](../entities/Decision.md#user-content-rel__is-expressed-by) : A Document can present a [Decision](../entities/Decision.md).
+
+<a name="rel__awarded-by">awarded-by</a> / [awarded-for](../entities/Prize_Award.md#user-content-rel__awarded-for) : A Document can be awarded by a [Prize Award](../entities/Prize_Award.md).
+
 ---
 ## Matches
 1. Close match of [Bibo Document](http://purl.org/ontology/bibo/Document)

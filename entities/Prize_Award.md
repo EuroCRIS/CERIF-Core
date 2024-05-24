@@ -12,6 +12,8 @@ FIXME
 
 <a name="rel__has-recipient">has-recipient</a> / [is-recipient-of](../entities/Agent.md#user-content-rel__is-recipient-of) : A Prize Award can have any number of recipients, instances of [Agent](../entities/Agent.md).
 
+<a name="rel__awarded-for">awarded-for</a> / [awarded-by](../entities/Document.md#user-content-rel__awarded-by) : A Prize can be awarded for a [Document](../entities/Document.md).
+
 ---
 ## Matches
 1. Close match of [VIVO Award Receipt](http://vivoweb.org/ontology/core#AwardReceipt)
