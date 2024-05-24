@@ -29,6 +29,8 @@ publication date: [Date](../datatypes/Date.md) in case the document has gone thr
 
 <a name="rel__provides-evidence-of">provides-evidence-of</a> / [is-evidenced-by](../entities/Expertise_and_Skills_Possession.md#user-content-rel__is-evidenced-by) : A Document can provide evidence of any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md).
 
+<a name="rel__published-via-channel">published-via-channel</a> / [has-publication](../entities/Publication_Channel.md#user-content-rel__has-publication) : A Document can be published via [publication channel](../entities/Publication_Channel.md).
+
 ---
 ## Matches
 1. Close match of [Bibo Document](http://purl.org/ontology/bibo/Document)
