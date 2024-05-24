@@ -609,7 +609,7 @@
 !endsub
 
 !startsub Contribution_to_Document
-    "Contribution_to_Document" --> "Document" : document <<ordered>> >
+    "Contribution_to_Document" "0..* contributions <<ordered>>" <--> "1" "Document"
 !endsub
 
 !startsub Authorship
