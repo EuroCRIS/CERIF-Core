@@ -1,0 +1,9 @@
+@startuml
+
+    !includesub core.puml!common
+    !includesub core.puml!Contribution_to_Document
+    !includesub core.puml!Document
+    !includesub core.puml!Textual_Document
+    !includesub core.puml!Publication_Channel
+
+@enduml
