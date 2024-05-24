@@ -248,7 +248,19 @@
 
 !startsub Funding
     class "Funding" #ffffff {
+        amount  :   Monetary_Amount
     }
+!endsub
+
+!startsub Funding
+    datatype("Monetary_Amount") {
+        amount : Decimal
+        currencyCode  : ISO_4217_Alpha_Code
+    }
+!endsub
+
+!startsub Funding
+    "Funding" ..> "Monetary_Amount"
 !endsub
 
 !startsub Funding
