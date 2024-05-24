@@ -16,7 +16,13 @@ Such infrastructures may be 'single-sited', 'virtual' or 'distributed'.<sup>[2](
 [Resource](../entities/Resource.md)
 
 ## Attributes
-None besides those of [Resource](../entities/Resource.md).
+Besides those of [Resource](../entities/Resource.md):
+
+title : [Multilingual String](../datatypes/Multilingual_String.md)
+
+acronym : [Multilingual String](../datatypes/Multilingual_String.md)
+
+url : [Website Address](../datatypes/Website_Address.md)
 
 ## Relationships
 Besides those of [Resource](../entities/Resource.md):
