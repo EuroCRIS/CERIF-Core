@@ -1,0 +1,12 @@
+@startuml
+
+    !includesub core.puml!common
+    !includesub core.puml!Agent
+    !includesub core.puml!Activity
+    !includesub core.puml!Contribution
+    !includesub core.puml!Contribution_to_Project
+    !includesub core.puml!Contribution_Statement
+    !includesub core.puml!Project
+    !includesub core.puml!Funding
+
+@enduml
