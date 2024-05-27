@@ -11,7 +11,7 @@ It can be one particular event, for instance the [CRIS 2024](https://www.confide
 
 ## Attributes
 
-name : [Multilingual String](../datatypes/Multilingual_String.md)
+title : [Multilingual String](../datatypes/Multilingual_String.md)
 
 acronym : [Multilingual String](../datatypes/Multilingual_String.md)
 

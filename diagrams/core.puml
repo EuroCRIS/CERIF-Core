@@ -369,10 +369,11 @@
 
 !startsub Event
     class "Event" #ffffff {
-        name : Multilingual_String
+        title : Multilingual_String
         acronym : Multilingual_String
         description : Multilingual_String
         dateRange : Date_Range
+        ordinal number: Decimal
         contacts : List<Contact_Information>
     }
 
@@ -380,6 +381,12 @@
     "Event" ..> "0..*" "Contact_Information"
 
     class "Event_Series" #ffffff {
+        title : Multilingual_String
+        acronym : Multilingual_String
+        description : Multilingual_String
+        recurrence period : Decimal
+        recurrence unit : Multilingual String
+        contacts : List<Contact_Information>
     }
 
     Event --> "0..1" "Event_Series"
