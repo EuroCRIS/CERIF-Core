@@ -25,6 +25,8 @@ Those of [Resource](../entities/Resource.md) plus:
 
 <a name="rel__has-part">has-part</a> / [is-part-of](../entities/Funding.md#user-content-rel__is-part-of) : A Funding can have any number of other [Fundings](../entities/Funding.md) as parts.
 
+<a name="rel__covers">covers</a> / [funded-by](../entities/Project.md#user-content-rel__funded-by) : A Funding can cover any number of [Projects](../entities/Project.md) that help it happen.
+
 ---
 ## References
 <a name="fn1">\[1\]</a> Source: The Oxford Learner's Dictionary of Academic English, https://www.oxfordlearnersdictionaries.com/definition/academic/funding

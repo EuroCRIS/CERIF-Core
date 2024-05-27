@@ -25,9 +25,11 @@ acronym : [String](../datatypes/String.md)
 
 ## Relationships
 
-(FIXME) part of (link to super Project structure, might be link between a task and working package, or working package and project)
+<a name="rel__is-part-of">is-part-of</a> / [has-part](../entities/Project.md#user-content-rel__has-part) : A Project Unit (sub-project/work package/task) can be part of the other [Project unit](../entities/Project.md).
 
-(FIXME) funding source (link to fundings)
+<a name="rel__has-part">has-part</a> / [is-part-of](../entities/Project.md#user-content-rel__is-part-of) : A Project Unit can have any number of parts, instances of [Project](../entities/Project.md).
+
+<a name="rel__funded-by">funded-by</a> / [covers](../entities/Funding.md#user-content-rel__covers) : A Project can have any number of [Fundings](../entities/Funding.md) that help it happen.
 
 <a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Project.md#user-content-rel__has-target) : A Project can have any number of [contributions](../entities/Contribution_to_Project.md) that help it happen.
 
