@@ -358,6 +358,8 @@
 
 !startsub Project
     class "Project" #ffffff {
+        name : Multilingual_String
+        acronym : Multilingual_String
     }
 !endsub
 
