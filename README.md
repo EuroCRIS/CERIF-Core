@@ -61,7 +61,7 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md), [ROR Identi
 or [Local Agent Identifier](./entities/Local_Agent_Identifier.md). 
 
 A Resource can have any number of [Resource Identifiers](./entities/Resource_Identifier.md) assigned,
-for instance the [DOI Identifier](./entities/DOI_Identifier.md), or [Wikidata Resource Identifier](./entities/Wikidata_Resource_Identifier.md).
+for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resource Identifier](./entities/Wikidata_Resource_Identifier.md), or [Local Resource Identifier](./entities/Local_Resource_Identifier.md).
 
 ## Listings
 
@@ -82,26 +82,27 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), or [Wikidata Re
     * [Membership](./entities/Membership.md)
     * [Employment](./entities/Employment.md)
     * [Education](./entities/Education.md)
-* [Document](./entities/Document.md)
-  * [Textual Document](./entities/Textual_Document.md)
 * [Affiliation](./entities/Affiliation_Statement.md)
 * [Contribution Statement](./entities/Contribution_Statement.md)
 * [Textual Document Accessibility Specification](./entities/Textual_Document_Accessibility_Specification.md)
 * [Project](./entities/Project.md)
 * [Event](./entities/Event.md)
+* [Publication Channel](./entities/Publication_Channel.md)
 * [Resource](./entities/Resource.md)
   * [Funding](./entities/Funding.md)
   * [Expertise and Time and Effort](./entities/Expertise_and_Time_and_Effort.md)
   * [Infrastructure](./entities/Infrastructure.md)
+  * [Document](./entities/Document.md)
+    * [Textual Document](./entities/Textual_Document.md)
 * [Resource Offer](./entities/Resource_Offer.md)
+  * [Call for Applications](./entities/Call_for_Applications.md)
+    * [Call for Funding Applications](./entities/Call_for_Funding_Applications.md)
 * [Resource Request](./entities/Resource_Request.md)
+  * [Application](./entities/Application.md)
+    * [Funding Application](./entities/Funding_Application.md)
 * [Resource Usage Statement](./entities/Resource_Usage_Statement.md)
 * [Condition](./entities/Condition.md)
   * [Expertise and Skills Condition](./entities/Expertise_and_Skills_Condition.md)
-* [Call for Applications](./entities/Call_for_Applications.md)
-  * [Call for Funding Applications](./entities/Call_for_Funding_Applications.md)
-* [Application](./entities/Application.md)
-  * [Funding Application](./entities/Funding_Application.md) 
 * [Evaluation Outcome](./entities/Evaluation_Outcome.md)
 * [Decision](./entities/Decision.md) 	
 * [Prize](./entities/Prize.md)
@@ -119,6 +120,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), or [Wikidata Re
 * [Resource Identifier](./entities/Resource_Identifier.md)
   * [DOI identifier](./entities/DOI_Identifier.md)
   * [Wikidata Resource Identifier](./entities/Wikidata_Resource_Identifier.md)
+  * [Local Resource Identifier](./entities/Local_Resource_Identifier.md)
 
 ### Data Types
 * [String](./datatypes/String.md)
@@ -135,6 +137,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), or [Wikidata Re
 * [Wikidata ID Type](./datatypes/Wikidata_ID.md)
 * [Scopus Author ID Type](./datatypes/Scopus_Author_ID.md)
 * [Local Agent ID Type](./datatypes/Local_Agent_ID.md)
+* [Local Resource ID Type](./datatypes/Local_Resource_ID.md)
 * [Person Name](./datatypes/Person_Name.md)
 * [Physical Address](./datatypes/Physical_Address.md)
   * [Simple Physical Address](./datatypes/Simple_Physical_Address.md)
