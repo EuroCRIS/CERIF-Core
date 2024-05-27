@@ -31,10 +31,11 @@ Projects typically make use of [Infrastructure](./entities/Infrastructure.md).
 Agents can make [Contributions to Infrastructure](./entities/Contribution_to_Infrastructure.md).
 
 Scientific and other [Events](./entities/Event.md) support communication, including scholarly communication. 
-Agents can make different [Contributions to Events](./entities/Contribution_to_Event.md).
+Agents can make different [Contributions to Events](./entities/Contribution_to_Event.md). Events can be organized within [Event Series](./entities/Event_Series.md)
 
 Information and knowledge are typically stored in [Documents](./entities/Document.md), for instance [Textual Documents](./entities/Textual_Document.md).
 Agents can make different [Contributions to Documents](./entities/Contribution_to_Document.md), most notably that of [Authorship](./entities/Authorship.md).
+Documents can be published in numerous [Publication Channels](./entities/Publication_Channel.md)
 Accessibility of Documents is a pressing issue, so it can be expressed in [Textual Document Accessibility Specifications](./entities/Textual_Document_Accessibility_Specification.md).
 
 Agents prepare and submit [Applications](./entities/Application.md), for instance [Funding Applications](./entities/Funding_Application.md).
@@ -87,6 +88,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 * [Textual Document Accessibility Specification](./entities/Textual_Document_Accessibility_Specification.md)
 * [Project](./entities/Project.md)
 * [Event](./entities/Event.md)
+* [Event Series](./entities/Event_Series.md)
 * [Publication Channel](./entities/Publication_Channel.md)
 * [Resource](./entities/Resource.md)
   * [Funding](./entities/Funding.md)
