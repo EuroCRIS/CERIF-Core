@@ -369,7 +369,15 @@
 
 !startsub Event
     class "Event" #ffffff {
+        name : Multilingual_String
+        acronym : Multilingual_String
+        description : Multilingual_String
+        dateRange : Date_Range
+        contacts : List<Contact_Information>
     }
+
+    "Event" ..> "Date_Range"
+    "Event" ..> "0..*" "Contact_Information"
 
     class "Event_Series" #ffffff {
     }
