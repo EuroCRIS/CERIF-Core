@@ -1,7 +1,7 @@
 # Authorship
 
 ## Definition
-[FIXME] Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/Organisation_Unit.md)) with a [Textual Document](../entities/Textual_Document.md) or any of its specializations.
+Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/Organisation_Unit.md)) with a [Document](../entities/Document.md) or any of its specializations. Authorship implies responsibility and accountability of an Agent for published Document.
 
 ## Specialization of
 [Contribution to Document](../entities/Contribution_to_Document.md)
@@ -12,7 +12,8 @@ Those inherited from [Contribution to Document](../entities/Contribution_to_Docu
 corresponding author flag: [Boolean](../datatypes/Boolean.md) – indicates whether this author is responsible for correspondence (true)
 
 ## Relationships
-None beside those inherited from [Contribution to Document](../entities/Contribution_to_Document.md#relationships).
+Beside those inherited from [Contribution to Document](https://github.com/EuroCRIS/CERIF-Core/blob/main/entities/Contribution_to_Document.md#relationships) and its predecessors, there is also a link to *author*: an instance of [Agent](https://github.com/EuroCRIS/CERIF-Core/blob/main/entities/Agent.md)
+replacing the derived *has-actor* link from [Activity](https://github.com/EuroCRIS/CERIF-Core/blob/main/entities/Activity.md#user-content-rel__has-actor).
 
 ---
 ## Matches
