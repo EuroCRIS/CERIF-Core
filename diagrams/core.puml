@@ -492,7 +492,7 @@
 
 !startsub Affiliation_Statement
     class "Affiliation_Statement" #ffffff {
-        displayAffiliation_Statement : String
+        displayAffiliation : String
         displayPersonName : String
         contacts : List<Contact_Information>
         position : Position
