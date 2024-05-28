@@ -14,7 +14,7 @@ Subclasses specify the nature of the invitation for application as well the deta
 A Call for Applications typically covers a goal (what is intended), a means (what is requested), an offer (what is offered to support the goal) and the guidelines for preparing and submitting applications.
 
 ## Specialization of
-[Resource Request](../entities/Resource_Request.md)
+[Resource Offer](../entities/Resource_Offer.md)
 
 ## Attributes
 deadline: [Date](../datatypes/Date.md) – until when applications can be submitted
@@ -25,8 +25,6 @@ deadline: [Date](../datatypes/Date.md) – until when applications can be submit
 <a name="rel__is-solicited-by">is-solicited-by</a> / [solicits](../entities/Agent.md#user-content-rel__solicits) : A Call for Applications is solicited by an [Agent](../entities/Agent.md).
 
 <a name="rel__has-application">has-application</a> / [in-response-to](../entities/Application.md#user-content-rel__in-response-to) : A Call for Applications can reference the [Applications](../entities/Application.md) that make a reference to it.
-
-<a name="rel__has-contents">has-contents</a> : A Call for Applications can optionally reference its contents: the [Document](../entities/Document.md) that details the call.
 
 ---
 ## References
