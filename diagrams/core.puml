@@ -431,6 +431,7 @@
         street : Multilingual_String
         city : Multilingual_String
         zipCode : Multilingual_String
+        stateOrProvince : Multilingual_String
     }
 
      "Physical_Address" <|-d- "Simple_Physical_Address"
