@@ -445,7 +445,7 @@
      }
 
      "Contact_Information" <|-d- "Postal_Address"
-     "Postal_Address" --> "1" "Physical_Address"
+     "Postal_Address" ..> "Physical_Address"
 
 
      datatype("Visiting_Address") {
@@ -453,7 +453,7 @@
      }
 
      "Contact_Information" <|-d- "Visiting_Address"
-     "Visiting_Address" --> "1" "Physical_Address"
+     "Visiting_Address" ..> "Physical_Address"
 
      datatype("Electronic_Address") {
           uri : URI
