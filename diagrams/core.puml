@@ -612,7 +612,7 @@
 !endsub
 
 !startsub Affiliation_Statement
-    "Activity" "0..*" o-- "0..*" "Affiliation_Statement" : affilation statements >
+    "Activity" "0..*" o-- "0..*" "Affiliation_Statement" : affiliation statements >
     "Affiliation_Statement" "0..*" --> "1" "Organisation_Unit" : institution >
     "Affiliation_Statement" "0..*" --> "0..1" "Organisation_Unit" : organisation unit >
     "Affiliation_Statement" "0..*" --> "0..1" "Person" : person >
