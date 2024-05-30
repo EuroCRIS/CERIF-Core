@@ -813,13 +813,16 @@
 	"Involvement" "0..*" --> "0..*" "Involvement" : part transitive >
 !endsub
 
-!startsub Activity
+!startsub Date_Range
     datatype("Date_Range") {
         start_date : Date
         start_date_inclusive : Boolean
         end_date : Date
         end_date_inclusive : Boolean
 	}
+!endsub
+
+!startsub Activity
 	"Activity" ..> "Date_Range"
 !endsub
 
@@ -828,5 +831,13 @@
     "Project" "0..* covers" <---> "0..* funded by" "Funding"
 !endsub
 
+!startsub Language
+    datatype("Language") {
+        name : Multilingual_String
+        iso6391Code : ISO_639_1_Alpha2_Code
+        iso6392TCode : ISO_639_2T_Alpha3_Code
+        iso6392BCode : ISO_639_2B_Alpha3_Code
+	}
+!endsub
 
 @enduml
