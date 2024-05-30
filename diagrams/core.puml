@@ -840,4 +840,11 @@
 	}
 !endsub
 
+!startsub Script
+    datatype("Script") {
+        name : Multilingual_String
+        scriptCode : ISO_15924_Alphabetic_Code
+	}
+!endsub
+
 @enduml
