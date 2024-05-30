@@ -847,4 +847,14 @@
 	}
 !endsub
 
+!startsub Acknowledgement_Statement
+    class "Acknowledgement_Statement" #ffffff {
+        statement : Multilingual_String
+    }
+!endsub
+
+!startsub Acknowledgement_Statement
+    "Contribution" *-- "0..*" "Acknowledgement_Statement" : testified by >
+!endsub
+
 @enduml
