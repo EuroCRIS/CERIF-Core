@@ -22,8 +22,6 @@ deadline: [Date](../datatypes/Date.md) – until when applications can be submit
 
 ## Relationships
 
-<a name="rel__is-solicited-by">is-solicited-by</a> / [solicits](../entities/Agent.md#user-content-rel__solicits) : A Call for Applications is solicited by an [Agent](../entities/Agent.md).
-
 <a name="rel__has-application">has-application</a> / [in-response-to](../entities/Application.md#user-content-rel__in-response-to) : A Call for Applications can reference the [Applications](../entities/Application.md) that make a reference to it.
 
 ---

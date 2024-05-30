@@ -21,7 +21,7 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 
 <a name="rel__is-actor-in">is-actor-in</a> / [has-actor](../entities/Activity.md#user-content-rel__has-actor) : An Agent can be the actor in any number of [Activities](../entities/Activity.md).
 
-<a name="rel__solicits">solicits</a> / [is-solicited-by](../entities/Call_for_Applications.md#user-content-rel__is-solicited-by) : An Agent can solicit any number of [Calls for Applications](../entities/Call_for_Applications.md).
+<a name="rel__solicits">solicits</a> / [is-solicited-by](../entities/Resource_Offer.md#user-content-rel__is-solicited-by) : An Agent can solicit any number of [Resource Offers](../entities/Resource_Offer.md).
 
 <a name="rel__is-applicant-in">is-applicant-in</a> / [has-applicant](../entities/Application.md#user-content-rel__has-applicant) : An Agent can be the applicant in any number of [Applications](../entities/Application.md).
 

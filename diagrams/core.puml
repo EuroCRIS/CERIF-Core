@@ -563,8 +563,8 @@
     "Application" -u-> "0..1" "Agent" : addressee >
 !endsub
 
-!startsub Call_for_Applications
-	"Call_for_Applications" -u-> "issuer" "Agent"
+!startsub Resource_Offer
+	"Resource_Offer" -u-> "solicited by" "Agent"
 !endsub
 
 !startsub Evaluation_Outcome
@@ -722,7 +722,7 @@
 !endsub
 
 !startsub Resource_Offer
-	"Resource_Offer" "0..1" o-- "0..*" "Document" : described in >
+	"Resource_Offer" "0..1" o-- "0..*" "Document" : described by >
 !endsub
 
 !startsub Resource_Request

@@ -11,3 +11,5 @@ An offer of a [Resource](../entities/Resource.md) for usage.
 
 <a name="rel__is-described-by">is-described-by</a> / [describes-resource-offer](../entities/Document.md#user-content-rel__describes-resource-offer) : A Resource Offer can be described by any number of [Documents](../entities/Document.md).
 
+<a name="rel__is-solicited-by">is-solicited-by</a> / [solicits](../entities/Agent.md#user-content-rel__solicits) : A Resource Offer is solicited by an [Agent](../entities/Agent.md).
+
