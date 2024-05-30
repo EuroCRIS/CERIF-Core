@@ -12,6 +12,7 @@ data type can be found in the relation between [Postal Address](../datatypes/Pos
 
 ## Components
 - title : [Multilingual String](../datatypes/Multilingual_String.md)
+- code  : [String](../datatypes/String.md)
 
 ---
 ## Matches
