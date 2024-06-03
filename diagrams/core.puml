@@ -757,7 +757,7 @@
 !endsub
 
 !startsub Expertise_and_Skills_Possession
-	"Document" "0..*" -- "0..*" "Expertise_and_Skills_Possession" : prove >
+	"Document" "is evidenced by 0..*" <--> "provides evidence of 0..*" "Expertise_and_Skills_Possession"
 !endsub
 
 !startsub Expertise_and_Skills_Condition
