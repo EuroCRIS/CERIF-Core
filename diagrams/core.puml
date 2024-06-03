@@ -568,7 +568,7 @@
 !endsub
 
 !startsub Evaluation_Outcome
-    "Application" "0..1" -- "0..*" "Evaluation_Outcome" : of <
+    "Resource_Request" "0..1" -- "0..*" "Evaluation_Outcome" : of <
 !endsub
 
 !startsub Call_for_Applications
@@ -580,7 +580,7 @@
 !endsub
 
 !startsub Decision
-    "Application" -r- "0..1" "Decision" : on <
+    "Resource_Request" -r- "0..1" "Decision" : on <
 !endsub
 
 !startsub Decision

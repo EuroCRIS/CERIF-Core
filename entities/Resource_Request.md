@@ -9,6 +9,12 @@ Examples include job applications, grant proposals (i.e. requests for funding), 
 
 Some resource requests might be more formal representing formal applications referencing an explicit [Call for Applications](../entities/Call_for_Applications.md) (e.g. a funding call or call for nominations for an award), while other resource request are based on an implicit invitation (e.g. a manuscript submitted to a journal).
 
+Resource requests, when submitted, typically enter some kind of process which results in an [Evaluation Outcome](../entities/Evaluation_Outcome.md).
+Based on one or more such outcomes, a [Decision](../entities/Decision.md) is made.
+
+This entity represents the act of applying rather than the application [Document](../entities/Document.md).
+
+
 ## Attributes
 request date: [Date](../datatypes/Date.md)
 
@@ -23,3 +29,7 @@ request date: [Date](../datatypes/Date.md)
 <a name="rel__is-described-by">is-described-by</a> / [describes-resource-request](../entities/Document.md#user-content-rel__describes-resource-request) : A Resource Request can optionally reference its contents, the [Document](../entities/Document.md) that details the resource request.
 
 <a name="rel__revises">revises</a> : A Resource Request can revise the another [Resource Request](../entities/Document.md) that wasn't successful in the previous round.
+
+<a name="rel__has-evaluation-outcome">has-evaluation-outcome</a> / [is-an-evaluation-outcome-of](../entities/Evaluation_Outcome.md#user-content-rel__is-an-evaluation-outcome-of) : A Resource Request can have some kind of process which results in an [Evaluation Outcome](../entities/Evaluation_Outcome.md).
+
+<a name="rel__has-decision">has-decision</a> / [is-a-decision-on](../entities/Decision.md#user-content-rel__is-a-decision-on) : A Resource Request can have a [Decision](../entities/Decision.md) about accepting or refusing request made by addressee.
