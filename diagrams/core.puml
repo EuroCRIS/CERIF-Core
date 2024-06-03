@@ -592,11 +592,11 @@
 !endsub
 
 !startsub Decision
-    "Decision" -u-> "0..*" "Agent" : make <
+    "Decision" -u-> "0..*" "Agent" : made <
 !endsub
 
 !startsub Evaluation_Outcome
-    "Evaluation_Outcome" -d-> "0..1" "Decision" : form the basis for >
+    "Evaluation_Outcome" -d-> "0..1" "Decision" : provides basis for >
 !endsub
 
 !startsub Contribution_to_Evaluation_Outcome

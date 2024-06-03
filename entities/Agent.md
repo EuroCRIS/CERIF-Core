@@ -37,6 +37,9 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 
 <a name="rel__is-author-of">is-author-of</a> / [has-author](../entities/Textual_Document.md#user-content-rel__has-author) : An Agent can be the author of any number of [Textual Documents](../entities/Textual_Document.md).
 
+<a name="rel__made">made</a> / [made-by](../entities/Decision.md#user-content-rel__made-by) : An Agent can make a [Decision](../entities/Decision.md) on Resource Request based or not on Evaluation Outcomes.
+
+
 ## Illustrative Diagram
 ![The Agent diagram](../diagrams/agent.svg)
 
