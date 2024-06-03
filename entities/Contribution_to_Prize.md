@@ -5,7 +5,7 @@ Any contribution an [Agent](../entities/Agent.md) made to a [Prize](../entities/
 
 ## Usage notes
 
-Anything that helps the Prize to exist and be awarded.
+Anything that helps the Prize to exist.
 
 ## Specialization of
 [Contribution](../entities/Contribution.md)

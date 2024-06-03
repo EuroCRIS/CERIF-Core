@@ -33,6 +33,9 @@ acronym : [String](../datatypes/String.md)
 
 <a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Project.md#user-content-rel__has-target) : A Project can have any number of [contributions](../entities/Contribution_to_Project.md) that help it happen.
 
+<a name="rel__awarded-by">awarded-by</a> / [awarded-for-a-project](../entities/Prize_Award.md#user-content-rel__awarded-for-a-project) : A Project can be awarded by a [Prize Award](../entities/Prize_Award.md).
+
+
 ---
 ## Matches
 

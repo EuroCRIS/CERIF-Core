@@ -39,6 +39,9 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 
 <a name="rel__made">made</a> / [made-by](../entities/Decision.md#user-content-rel__made-by) : An Agent can make a [Decision](../entities/Decision.md) on Resource Request based or not on Evaluation Outcomes.
 
+<a name="rel__awards-prize"></a> / [awards-prize](../entities/Event.md#user-content-rel__awarded-by-whom) : An Agent can award any number of [Prize Awards](../entities/Prize_Award.md).
+
+
 
 ## Illustrative Diagram
 ![The Agent diagram](../diagrams/agent.svg)

@@ -31,6 +31,9 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 
 <a name="rel__belongs-to-series">belongs-to-series</a> / [has-instances](../entities/Event_Series.md#user-content-rel__has-instances) : An Event can be an instance of [Event Series](../entities/Event_Series.md).
 
+<a name="rel__awarded-by">awarded-by</a> / [awarded-for-an-event](../entities/Prize_Award.md#user-content-rel__awarded-for-an-event) : An Event can be awarded by a [Prize Award](../entities/Prize_Award.md).
+
+
 ---
 ## Matches
 Narrow match of Schema.org [Event](https://schema.org/Event).

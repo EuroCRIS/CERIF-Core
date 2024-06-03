@@ -234,6 +234,24 @@
     "Contribution" <|-d- "Contribution_to_Infrastructure"
 !endsub
 
+!startsub Contribution_to_Prize
+    class "Contribution_to_Prize" #ffffff {
+    }
+!endsub
+
+!startsub Contribution_to_Prize
+    "Contribution" <|-d- "Contribution_to_Prize"
+!endsub
+
+!startsub Contribution_to_Prize_Award
+    class "Contribution_to_Prize_Award" #ffffff {
+    }
+!endsub
+
+!startsub Contribution_to_Prize_Award
+    "Contribution" <|-d- "Contribution_to_Prize_Award"
+!endsub
+
 
 !startsub Activity
 	"Document" "0..*" -- "0..*" "Activity" : prove >
@@ -638,6 +656,14 @@
     "Contribution_to_Event" --> "Event" : event >
 !endsub
 
+!startsub Contribution_to_Prize
+    "Contribution_to_Prize" --> "Prize" : has target >
+!endsub
+
+!startsub Contribution_to_Prize_Award
+    "Contribution_to_Prize_Award" --> "Prize_Award" : has target >
+!endsub
+
 !startsub Contribution
      "Contribution_Statement" --> "0..1" "Resource" : provides >
 !endsub
@@ -663,11 +689,11 @@
 !endsub
 
 !startsub Prize_Award
-	"Prize_Award" "0..*" -l-o "Prize" : of >
+	"Prize_Award" "0..*" -l-o "Prize" : awards >
 !endsub
 
 !startsub Prize_Award
-	"Prize_Award" --> "Agent" : recipient >
+	"Prize_Award" "0..*" <--> "0..*" "Agent" : recipient >
 !endsub
 
 !startsub Prize_Award
