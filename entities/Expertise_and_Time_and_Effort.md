@@ -24,6 +24,9 @@ Besides those of [Resource](../entities/Resource.md):
 
 <a name="rel__by-agent">by-agent</a> / [is-agent-in2](../entities/Agent.md#user-content-rel__is-agent-in2) : An Expertise and Time and Effort references the [Agent](../entities/Agent.md) whose expertise, time and effort it would be.
 
+<a name="rel__uses-expertise-and-skills">uses-expertise-and-skills</a> / [is-used-as-a-resource](../entities/Expertise-and-Skills.md#user-content-rel__is-used-as-a-resource) : An Expertise and Time and Effort references any number of [Expertises and Skills](../entities/Expertise_and_Skills.md) belonging to the Agent who is providing its expertise and time.
+
+
 ---
 ## References
 <a name="fn1">\[1\]</a> Source: The Cambridge Dictionary of English. https://dictionary.cambridge.org/dictionary/english/expertise

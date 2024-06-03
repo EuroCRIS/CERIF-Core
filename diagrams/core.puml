@@ -779,7 +779,11 @@
 !endsub
 
 !startsub Expertise_and_Time_and_Effort
-	"Agent" <-- "0..*" "Expertise_and_Time_and_Effort" : of <
+	"Agent" "by agent 1" <--> "0..*" "Expertise_and_Time_and_Effort"
+!endsub
+
+!startsub Expertise_and_Time_and_Effort
+	"Expertise_and_Skills" "uses expertise and skills 0..*" <--> "0..*" "Expertise_and_Time_and_Effort"
 !endsub
 
 !startsub Position
