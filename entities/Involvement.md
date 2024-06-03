@@ -23,11 +23,15 @@ position    : [Position](../datatypes/Position.md)
 
 ## Relationships
 
+Beside those inherited from [Activity](../entities/Involvement.md#relationships): 
+
 <a name="rel__involves-actor-in">involves-actor-in</a> / [has-involvement](../entities/Group_or_Organisation_Unit.md#user-content-rel__has-involvement) : A Involvement specifies that the *actor* Agent is involved in a [Group or Organisation Units](../entities/Group_or_Organisation_Unit.md).
 
 <a name="rel__is-part-of">is-part-of</a> / [has-part](../entities/Involvement.md#user-content-rel__has-part) : An Involvement can be part of any number of other [Involvements](../entities/Involvement.md).
 
 <a name="rel__has-part">has-part</a> / [is-part-of](../entities/Involvement.md#user-content-rel__is-part-of) : An Involvement can have any number of part [Involvements](../entities/Involvement.md).
+
+<a name="rel__is-the-foundation-for">is-the-foundation-for</a> / [is-the-result-of](../entities/Affiliation_Statement.md#user-content-rel__is-the-result-of) : An Involvement can be foundation for an [Affiliation Statement](../entities/Affiliation_Statement.md).
 
 ## Illustrative Diagram
 A UML diagram showing this entity in its context if one is available.

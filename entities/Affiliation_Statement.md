@@ -31,3 +31,5 @@ position    : [Position](../datatypes/Position.md)
 <a name="rel__has-person">has-person</a> / [is-the-person-in](../entities/Person.md#user-content-rel__is-the-person-in) : An Affiliation Statement typically has the person, an instance of [Person](../entities/Person.md).
 
 <a name="rel__is-used-in">is-used-in</a> / [has-affiliation-statement](../entities/Activity.md#user-content-rel__has-affiliation-statement) : An Affiliation Statement can be used in any number of [Activities](../entities/Activity.md).
+
+<a name="rel__is-the-result-of">is-the-result-of</a> / [is-the-foundation-for](../entities/Involvement.md#user-content-rel__is-the-foundation-for) : An Affiliation Statement might be a result of an Agent [Involvement](../entities/Involvement.md).
