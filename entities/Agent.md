@@ -23,9 +23,9 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 
 <a name="rel__solicits">solicits</a> / [is-solicited-by](../entities/Resource_Offer.md#user-content-rel__is-solicited-by) : An Agent can solicit any number of [Resource Offers](../entities/Resource_Offer.md).
 
-<a name="rel__is-applicant-in">is-applicant-in</a> / [has-applicant](../entities/Application.md#user-content-rel__has-applicant) : An Agent can be the applicant in any number of [Applications](../entities/Application.md).
+<a name="rel__is-requester-in">is-requester-in</a> / [has-requester](../entities/Resource_Request.md#user-content-rel__has-requester) : An Agent can be the requester in any number of [Applications](../entities/Resource_Request.md).
 
-<a name="rel__is-addressee-of">is-addressee-of</a> / [has-addressee](../entities/Application.md#user-content-rel__has-addressee) : An Agent can be the addressee of any number of [Applications](../entities/Application.md).
+<a name="rel__is-addressee-of">is-addressee-of</a> / [has-addressee](../entities/Resource_Request.md#user-content-rel__has-addressee) : An Agent can be the addressee of any number of [Resource Request](../entities/Resource_Request.md).
 
 <a name="rel__is-recipient-of">is-recipient-of</a> / [has-recipient](../entities/Prize_Award.md#user-content-rel__has-recipient) : An Agent can be the recipient of any number of [Prize Awards](../entities/Prize_Award.md).
 

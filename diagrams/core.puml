@@ -555,12 +555,12 @@
 	}
 !endsub
 
-!startsub Application
-    "Application" -u-> "0..1" "Agent" : applicant >
+!startsub Resource_Request
+    "Resource_Request" -u-> "0..1" "Agent" : requester >
 !endsub
 
-!startsub Application
-    "Application" -u-> "0..1" "Agent" : addressee >
+!startsub Resource_Request
+    "Resource_Request" -u-> "0..1" "Agent" : addressee >
 !endsub
 
 !startsub Resource_Offer
@@ -575,8 +575,8 @@
     "Application" "0..*" -l- "0..1" "Call_for_Applications" : in response to >
 !endsub
 
-!startsub Application
-    "Application" o-- "0..1" "Document" : contents >
+!startsub Resource_Request
+    "Resource_Request" o-- "0..1" "Document" : described by >
 !endsub
 
 !startsub Decision
@@ -717,16 +717,12 @@
 	"Resource_Request" <|-- "Application"
 !endsub
 
-!startsub Resource_Request
-	"Resource_Request" "0..1" o-- "0..*" "Document" : described in >
-!endsub
-
 !startsub Resource_Offer
 	"Resource_Offer" "0..1" o-- "0..*" "Document" : described by >
 !endsub
 
 !startsub Resource_Request
-	"Resource_Request" "0..*" --> "0..1" "Resource_Request" : revise >
+	"Resource_Request" "0..*" --> "0..1" "Resource_Request" : revises >
 !endsub
 
 !startsub Resource_Request
