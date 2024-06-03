@@ -37,6 +37,9 @@ publication date: [Date](../datatypes/Date.md) in case the document has gone thr
 
 <a name="rel__awarded-by">awarded-by</a> / [awarded-for](../entities/Prize_Award.md#user-content-rel__awarded-for) : A Document can be awarded by a [Prize Award](../entities/Prize_Award.md).
 
+<a name="rel__proves">proves</a> / [is-evidenced-by](../entities/Activity.md#user-content-rel__is-evidenced-by) : A Document can provide evidence of any number of [Activities](../entities/Activity.md).
+
+
 ---
 ## Matches
 1. Close match of [Bibo Document](http://purl.org/ontology/bibo/Document)

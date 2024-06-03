@@ -19,6 +19,10 @@ Those of [Involvement](./entities/Involvement.md).
 ## Relationships
 Those of [Involvement](./entities/Involvement.md).
 
+Beside those inherited from [Involvement](../entities/Involvement.md#relationships) and its predecessors, there is also a link to a *contract*: an instance of [Document](../entities/Document.md)
+replacing the derived *is-evidenced-by* link from [Activity](../entities/Activity.md#user-content-rel__is-evidenced-by).
+
+
 ---
 ## Matches
 1. Close match of [whatever](url)
