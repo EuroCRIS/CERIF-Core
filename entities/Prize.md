@@ -9,7 +9,7 @@ An award or honor in recognition of outstanding work.
 
 ## Attributes
 
-<a name="att__name">name</a> : [Multilingual String](../datatypes/Multilingual_String.md)
+name : [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
 
