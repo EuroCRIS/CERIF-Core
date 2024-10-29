@@ -62,7 +62,7 @@ for instance the [ORCID Identifier](./entities/ORCID_Identifier.md), [ROR Identi
 or [Local Agent Identifier](./entities/Local_Agent_Identifier.md). 
 
 A Resource can have any number of [Resource Identifiers](./entities/Resource_Identifier.md) assigned,
-for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resource Identifier](./entities/Wikidata_Resource_Identifier.md), or [Local Resource Identifier](./entities/Local_Resource_Identifier.md).
+for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resource Identifier](./entities/Wikidata_Resource_Identifier.md), [PIDINST Identifier](./entities/PIDINST_Identifier.md), or [Local Resource Identifier](./entities/Local_Resource_Identifier.md).
 
 ## Listings
 
@@ -122,6 +122,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 * [Resource Identifier](./entities/Resource_Identifier.md)
   * [DOI identifier](./entities/DOI_Identifier.md)
   * [Wikidata Resource Identifier](./entities/Wikidata_Resource_Identifier.md)
+  * [PIDINST Identifier](./entities/PIDINST_Identifier.md)
   * [Local Resource Identifier](./entities/Local_Resource_Identifier.md)
 
 ### Data Types
@@ -134,6 +135,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 * [ROR ID Type](./datatypes/ROR_ID.md)
 * [URI Type](./datatypes/URI.md)
 * [DOI ID Type](./datatypes/DOI_ID.md)
+  * [PIDINST ID Type](./datatypes/PIDINST_ID.md)
 * [Fundref ID Type](./datatypes/FundRef_ID.md)
 * [ISNI ID Type](./datatypes/ISNI_ID.md)
 * [Wikidata ID Type](./datatypes/Wikidata_ID.md)
