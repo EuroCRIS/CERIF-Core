@@ -413,6 +413,20 @@
 
 !endsub
 
+!startsub Event_Identifier
+    class "Event_Identifier" #ffffff {
+    }
+
+    "Event_Identifier" "0..*" <-- "1" "Event" : has identifier <
+
+    class "ConfIDent_Identifier" #ffffff {
+        confIDentId : ConfIDent_ID
+    }
+
+    "Event_Identifier" <|-- "ConfIDent_Identifier"
+
+!endsub
+
 !startsub Contribution_Statement
     class "Contribution_Statement" #ffffff {
         statement : Multilingual_String
