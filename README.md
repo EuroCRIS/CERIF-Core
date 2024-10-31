@@ -31,7 +31,8 @@ Projects typically make use of [Infrastructure](./entities/Infrastructure.md).
 Agents can make [Contributions to Infrastructure](./entities/Contribution_to_Infrastructure.md).
 
 Scientific and other [Events](./entities/Event.md) support communication, including scholarly communication. 
-Agents can make different [Contributions to Events](./entities/Contribution_to_Event.md). Events can be organized within [Event Series](./entities/Event_Series.md)
+Agents can make different [Contributions to Events](./entities/Contribution_to_Event.md). An Event can have any number of [Event Identifiers](./entities/Event_Identifier.md) assigned,
+for instance the [ConfIDent Identifier](./entities/ConfIDent_Identifier.md). Events can be organized within [Event Series](./entities/Event_Series.md)
 
 Information and knowledge are typically stored in [Documents](./entities/Document.md), for instance [Textual Documents](./entities/Textual_Document.md).
 Agents can make different [Contributions to Documents](./entities/Contribution_to_Document.md), most notably that of [Authorship](./entities/Authorship.md).
@@ -124,6 +125,8 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
   * [Wikidata Resource Identifier](./entities/Wikidata_Resource_Identifier.md)
   * [PIDINST Identifier](./entities/PIDINST_Identifier.md)
   * [Local Resource Identifier](./entities/Local_Resource_Identifier.md)
+* [Event Identifier](./entities/Event_Identifier.md)
+  * [ConfIDent identifier](./entities/ConfIDent_Identifier.md)
 
 ### Data Types
 * [String](./datatypes/String.md)
@@ -136,6 +139,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 * [URI Type](./datatypes/URI.md)
 * [DOI ID Type](./datatypes/DOI_ID.md)
   * [PIDINST ID Type](./datatypes/PIDINST_ID.md)
+  * [ConfIDent ID Type](./datatypes/ConfIDent_ID.md)
 * [Fundref ID Type](./datatypes/FundRef_ID.md)
 * [ISNI ID Type](./datatypes/ISNI_ID.md)
 * [Wikidata ID Type](./datatypes/Wikidata_ID.md)
