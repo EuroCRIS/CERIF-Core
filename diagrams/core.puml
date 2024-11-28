@@ -362,12 +362,6 @@
 
     "Resource_Identifier" <|-- "Wikidata_Resource_Identifier"
 
-    class "PIDINST_Identifier" #ffffff {
-        pidinstId : PIDINST_ID
-    }
-
-    "Resource_Identifier" <|-- "PIDINST_Identifier"
-
     class "Local_Resource_Identifier" #ffffff {
         localId : Local_Resource_ID
     }
