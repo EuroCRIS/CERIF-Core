@@ -7,7 +7,7 @@ A thing that happens regularly (annually, bi-annually, etc.) about a particular 
 ## Usage notes
 
 Event series include scientific and other conferences, workshops, seminars or any other type of meeting. 
-One example is the [CRIS - International Conference on Current Research Information Systems](https://www.confident-conference.org/index.php/Event_Series:10ba49ac-d068-47b4-a82c-02c18cc1a200).
+One example is the [CRIS - International Conference on Current Research Information Systems](https://doi.org/10.25798/x86v-qy85).
 
 ## Attributes
 

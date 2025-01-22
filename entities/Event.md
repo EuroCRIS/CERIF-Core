@@ -7,7 +7,7 @@ A thing that happens, especially something important.<sup>[1](#fn1)</sup>
 ## Usage notes
 
 Events include scientific and other conferences, workshops, seminars or any other type of meeting. 
-It can be one particular event, for instance the [CRIS 2024](https://www.confident-conference.org/index.php/Event:1e5e84d7-e5d3-4b77-a1c2-852a1dbb446f) conference.
+It can be one particular event, for instance the [CRIS 2024](https://doi.org/10.25798/9mpv-rg74) conference.
 
 ## Attributes
 
