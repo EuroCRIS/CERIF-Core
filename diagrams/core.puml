@@ -417,7 +417,9 @@
     class "Event_Identifier" #ffffff {
     }
 
-    "Event_Identifier" "0..*" <-- "1" "Event" : has identifier <
+    "Event_Identifier" "0..*" <-- "0..1" "Event" : has identifier <
+
+    "Event_Identifier" "0..*" <-- "0..1" "Event_Series" : has identifier <
 
 !endsub
 

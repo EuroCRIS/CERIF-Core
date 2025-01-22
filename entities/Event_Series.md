@@ -27,6 +27,8 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 
 <a name="rel__has-instances">has-instances</a> / [belongs-to-series](../entities/Event.md#user-content-rel__belongs-to-series) : An Event Series has list of [Event](../entities/Event.md) instances which have been organized.
 
+<a name="rel__has-identifier">has-identifier</a> / [is-assigned-to](../entities/Event_Identifier.md#user-content-rel__is-assigned-to) : An Event Series can have any number of [Event Identifiers](../entities/Event_Identifier.md).
+
 ---
 ## Matches
 Narrow match of Schema.org [Event](https://schema.org/Event).
