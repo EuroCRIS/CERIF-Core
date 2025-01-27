@@ -89,7 +89,7 @@
 !startsub Group_or_Organisation_Unit
     class "Group_or_Organisation_Unit" #ffffff {
         name : Multilingual_String
-        acronym : String
+        acronym : Multilingual_String
         description : Multilingual_String
     }
 !endsub

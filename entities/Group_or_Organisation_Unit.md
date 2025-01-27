@@ -9,7 +9,7 @@ A common supertype for [Group](../entities/Group.md) and [Organisation Unit](../
 ## Attributes
 name: [Multilingual String](../datatypes/Multilingual_String.md)
 
-acronym: [String](../datatypes/String.md)
+acronym: [Multilingual String](../datatypes/Multilingual_String.md)
 
 description: [Multilingual String](../datatypes/Multilingual_String.md)
 
