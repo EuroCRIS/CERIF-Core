@@ -1,12 +1,12 @@
-name: generate plantuml
+name: generate plantuml diagrams and the OWL representation of the Core
 on:
   push:
     branches:
       - main
 jobs:
-  generate_plantuml:
+  generate:
     runs-on: ubuntu-latest
-    name: plantuml
+    name: generate
     steps:
       - name: Install Dependencies
         run: |
@@ -15,13 +15,15 @@ jobs:
         uses: actions/checkout@master
       - name: Process Diagrams
         run: ./tools/generate-diagrams.sh
-      - name: Commit Diagrams
+      - name: Generate OWL file
+        run: ./tools/compile-owl-tool-and-run-it-on-the-Core.sh
+      - name: Commit generated files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m ":rocket: adding generated diagrams" || exit 0
-      - name: Push Diagrams
+          git commit -m ":rocket: adding generated files" || exit 0
+      - name: Push
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
