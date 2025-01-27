@@ -1271,7 +1271,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 ###  https://w3id.org/cerif2/Group_or_Organisation_Unit#acronym
 <https://w3id.org/cerif2/Group_or_Organisation_Unit#acronym> rdf:type owl:DatatypeProperty ;
                                                              rdfs:domain <https://w3id.org/cerif2/Group_or_Organisation_Unit> ;
-                                                             rdfs:range <https://w3id.org/cerif2/String> .
+                                                             rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
 ###  https://w3id.org/cerif2/Group_or_Organisation_Unit#description
@@ -1417,7 +1417,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 ###  https://w3id.org/cerif2/Project#acronym
 <https://w3id.org/cerif2/Project#acronym> rdf:type owl:DatatypeProperty ;
                                           rdfs:domain <https://w3id.org/cerif2/Project> ;
-                                          rdfs:range <https://w3id.org/cerif2/String> .
+                                          rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
 ###  https://w3id.org/cerif2/Project#name
