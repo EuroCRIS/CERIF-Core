@@ -1372,6 +1372,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                    rdfs:range <https://w3id.org/cerif2/ORCID_iD> .
 
 
+###  https://w3id.org/cerif2/Person_Name#displayName
+<https://w3id.org/cerif2/Person_Name#displayName> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/cerif2/Person_Name> ;
+                                                  rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
 ###  https://w3id.org/cerif2/Person_Name#familyNames
 <https://w3id.org/cerif2/Person_Name#familyNames> rdf:type owl:DatatypeProperty ;
                                                   rdfs:domain <https://w3id.org/cerif2/Person_Name> ;
