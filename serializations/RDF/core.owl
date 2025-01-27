@@ -94,10 +94,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/ROR_ID> rdf:type rdfs:Datatype .
 
 
-###  https://w3id.org/cerif2/Scopus_Author_ID
-<https://w3id.org/cerif2/Scopus_Author_ID> rdf:type rdfs:Datatype .
-
-
 ###  https://w3id.org/cerif2/String
 <https://w3id.org/cerif2/String> rdf:type rdfs:Datatype .
 
@@ -1045,12 +1041,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                              rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
-###  https://w3id.org/cerif2/Scopus_Author_Identifier#scopusAuthorIdentifier
-<https://w3id.org/cerif2/Scopus_Author_Identifier#scopusAuthorIdentifier> rdf:type owl:DatatypeProperty ;
-                                                                          rdfs:domain <https://w3id.org/cerif2/Scopus_Author_Identifier> ;
-                                                                          rdfs:range <https://w3id.org/cerif2/Scopus_Author_ID> .
-
-
 ###  https://w3id.org/cerif2/Script#name
 <https://w3id.org/cerif2/Script#name> rdf:type owl:DatatypeProperty ;
                                       rdfs:domain <https://w3id.org/cerif2/Script> ;
@@ -1260,7 +1250,7 @@ namely, submit an [Application](../entities/Application.md)."""@en ;
 ###  https://w3id.org/cerif2/Document
 <https://w3id.org/cerif2/Document> rdf:type owl:Class ;
                                    rdfs:subClassOf <https://w3id.org/cerif2/Resource> ;
-                                   rdfs:comment """A document is a bounded representation of a body of information designed with the capacity (and usually intent) to communicate. 
+                                   rdfs:comment """A document is a bounded representation of a body of information designed with the capacity (and usually intent) to communicate.
 A document may manifest symbolic, diagrammatic or sensory-representational information.<sup>[1](#fn1)</sup>"""@en ;
                                    rdfs:label "Document"@en .
 
@@ -1315,7 +1305,7 @@ A document may manifest symbolic, diagrammatic or sensory-representational infor
 
 ###  https://w3id.org/cerif2/Expertise_and_Skills_Possession
 <https://w3id.org/cerif2/Expertise_and_Skills_Possession> rdf:type owl:Class ;
-                                                          rdfs:comment """The statement of Possession of an [Expertise or Skill](../entities/Expertise_and_Skills.md) 
+                                                          rdfs:comment """The statement of Possession of an [Expertise or Skill](../entities/Expertise_and_Skills.md)
 by an [Agent](../entities/Agent.md)."""@en ;
                                                           rdfs:label "Expertise and Skills Possession"@en .
 
@@ -1396,7 +1386,7 @@ by an [Agent](../entities/Agent.md)."""@en ;
 ###  https://w3id.org/cerif2/Local_Agent_Identifier
 <https://w3id.org/cerif2/Local_Agent_Identifier> rdf:type owl:Class ;
                                                  rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
-                                                 rdfs:comment """A local identifier assigned to an [Agent](../entities/Agent.md). Local identifier is not adopted at global level, it 
+                                                 rdfs:comment """A local identifier assigned to an [Agent](../entities/Agent.md). Local identifier is not adopted at global level, it
 might be some platform identifier, regional identifier or national identifier."""@en ;
                                                  rdfs:label "Local Agent Identifier"@en .
 
@@ -1524,13 +1514,6 @@ Source: the Project Management Institute, https://www.pmi.org/about/learn-about-
 <https://w3id.org/cerif2/Resource_Usage_Statement> rdf:type owl:Class ;
                                                    rdfs:comment "An element of a [Contribution](../entities/Contribution.md). All such elements taken together describe the Contribution."@en ;
                                                    rdfs:label "Resource Usage Statement"@en .
-
-
-###  https://w3id.org/cerif2/Scopus_Author_Identifier
-<https://w3id.org/cerif2/Scopus_Author_Identifier> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
-                                                   rdfs:comment "A Scopus Author <sup>[1](#fn1)</sup> identifier assigned to a [Person](../entities/Person.md)."@en ;
-                                                   rdfs:label "Scopus Author Identifier"@en .
 
 
 ###  https://w3id.org/cerif2/Script

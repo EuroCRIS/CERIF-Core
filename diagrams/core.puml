@@ -27,7 +27,7 @@
 !startsub Agent_Identifier
     class "Agent_Identifier" #ffffff {
     }
-    
+
     "Agent_Identifier" "0..*" <-- "1" "Agent" : has identifier <
 !endsub
 
@@ -35,7 +35,7 @@
     class "ORCID_Identifier" #ffffff {
         orcidId : ORCID_iD
     }
-    
+
     "Agent_Identifier" <|-- "ORCID_Identifier"
 
     class "ROR_Identifier" #ffffff {
@@ -55,12 +55,6 @@
         }
 
     "Agent_Identifier" <|-- "FundRef_Identifier"
-
-    class "Scopus_Author_Identifier" #ffffff {
-            scopusAuthorId : Scopus_Author_ID
-        }
-
-    "Agent_Identifier" <|-- "Scopus_Author_Identifier"
 
     class "Wikidata_Agent_Identifier" #ffffff {
            wikidataId : Wikidata_ID

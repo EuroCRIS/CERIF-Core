@@ -58,7 +58,7 @@ a specific subtype of a general [Condition](./entities/Condition.md).
 
 An Agent can have any number of [Agent Identifiers](./entities/Agent_Identifier.md) assigned,
 for instance the [ORCID Identifier](./entities/ORCID_Identifier.md), [ROR Identifier](./entities/ROR_Identifier.md), [ISNI Identifier](./entities/ISNI_Identifier.md),
-[FundRef Identifier](./entities/FundRef_Identifier.md), [Scopus Author Identifier](./entities/Scopus_Author_Identifier.md), [Wikidata Agent Identifier](./entities/Wikidata_Agent_Identifier.md), 
+[FundRef Identifier](./entities/FundRef_Identifier.md), [Wikidata Agent Identifier](./entities/Wikidata_Agent_Identifier.md), 
 or [Local Agent Identifier](./entities/Local_Agent_Identifier.md). 
 
 A Resource can have any number of [Resource Identifiers](./entities/Resource_Identifier.md) assigned,
@@ -116,7 +116,6 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
   * [ROR Identifier](./entities/ROR_Identifier.md)
   * [ISNI Identifier](./entities/ISNI_Identifier.md)
   * [FundRef Identifier](./entities/FundRef_Identifier.md)
-  * [Scopus Author Identifier](./entities/Scopus_Author_Identifier.md)
   * [Wikidata Agent Identifier](./entities/Wikidata_Agent_Identifier.md)
   * [Local Agent Identifier](./entities/Local_Agent_Identifier.md)
 * [Resource Identifier](./entities/Resource_Identifier.md)
@@ -138,7 +137,6 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 * [Fundref ID Type](./datatypes/FundRef_ID.md)
 * [ISNI ID Type](./datatypes/ISNI_ID.md)
 * [Wikidata ID Type](./datatypes/Wikidata_ID.md)
-* [Scopus Author ID Type](./datatypes/Scopus_Author_ID.md)
 * [Local Agent ID Type](./datatypes/Local_Agent_ID.md)
 * [Local Resource ID Type](./datatypes/Local_Resource_ID.md)
 * [Person Name](./datatypes/Person_Name.md)
