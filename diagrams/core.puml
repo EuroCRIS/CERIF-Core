@@ -515,8 +515,8 @@
 
 !startsub Affiliation_Statement
     class "Affiliation_Statement" #ffffff {
-        displayAffiliation : String
-        displayPersonName : String
+        displayAffiliation : Multilingual_String
+        displayPersonName : Multilingual_String
         contacts : List<Contact_Information>
         position : Position
     }
