@@ -1056,15 +1056,15 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 ###  https://w3id.org/cerif2/Affiliation_Statement#displayAffiliation
 <https://w3id.org/cerif2/Affiliation_Statement#displayAffiliation> rdf:type owl:DatatypeProperty ;
                                                                    rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
-                                                                   rdfs:range <https://w3id.org/cerif2/String> ;
-                                                                   rdfs:label "the raw string form of the affiliation as found e.g. in scholarly publications; more structured statements make use of the *institution* and/or *organisation unit* relationships below" .
+                                                                   rdfs:range <https://w3id.org/cerif2/Multilingual_String> ;
+                                                                   rdfs:label "the raw form of the affiliation as found e.g. in scholarly publications; more structured statements make use of the *institution* and/or *organisation unit* relationships below" .
 
 
 ###  https://w3id.org/cerif2/Affiliation_Statement#displayPersonName
 <https://w3id.org/cerif2/Affiliation_Statement#displayPersonName> rdf:type owl:DatatypeProperty ;
                                                                   rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
-                                                                  rdfs:range <https://w3id.org/cerif2/String> ;
-                                                                  rdfs:label "the raw string form of the name of the person as found e.g. in scholarly publications; more structured statements make use of the *person* relationship below" .
+                                                                  rdfs:range <https://w3id.org/cerif2/Multilingual_String> ;
+                                                                  rdfs:label "the raw form of the name of the person as found e.g. in scholarly publications; more structured statements make use of the *person* relationship below" .
 
 
 ###  https://w3id.org/cerif2/Agent#contacts
