@@ -78,6 +78,7 @@
         firstNames : Multilingual_String
         familyNames : Multilingual_String
         otherNames : Multilingual_String
+        displayName : Multilingual_String
     }
 !endsub
 

@@ -7,6 +7,7 @@ The name of a [Person](../entities/Person.md).
 - first names : [Multilingual String](../datatypes/Multilingual_String.md)
 - family names : [Multilingual String](../datatypes/Multilingual_String.md)
 - other names : [Multilingual String](../datatypes/Multilingual_String.md)
+- display name : [Multilingual String](../datatypes/Multilingual_String.md) - the full form of the name as conventionally displayed
 
 ## Notes
 
