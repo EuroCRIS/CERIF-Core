@@ -82,6 +82,10 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Local_Agent_ID> rdf:type rdfs:Datatype .
 
 
+###  https://w3id.org/cerif2/Local_Resource_ID
+<https://w3id.org/cerif2/Local_Resource_ID> rdf:type rdfs:Datatype .
+
+
 ###  https://w3id.org/cerif2/Multilingual_String
 <https://w3id.org/cerif2/Multilingual_String> rdf:type rdfs:Datatype .
 
@@ -100,6 +104,10 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/cerif2/URI
 <https://w3id.org/cerif2/URI> rdf:type rdfs:Datatype .
+
+
+###  https://w3id.org/cerif2/Website_Address
+<https://w3id.org/cerif2/Website_Address> rdf:type rdfs:Datatype .
 
 
 ###  https://w3id.org/cerif2/Wikidata_ID
@@ -176,6 +184,14 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                           rdfs:comment "An Affiliation Statement typically has the person, an instance of [Person](../entities/Person.md)."@en .
 
 
+###  https://w3id.org/cerif2/Affiliation_Statement#isTheResultOf
+<https://w3id.org/cerif2/Affiliation_Statement#isTheResultOf> rdf:type owl:ObjectProperty ;
+                                                              owl:inverseOf <https://w3id.org/cerif2/Involvement#isTheFoundationFor> ;
+                                                              rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
+                                                              rdfs:range <https://w3id.org/cerif2/Involvement> ;
+                                                              rdfs:comment "An Affiliation Statement might be a result of an Agent [Involvement](../entities/Involvement.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Affiliation_Statement#isUsedIn
 <https://w3id.org/cerif2/Affiliation_Statement#isUsedIn> rdf:type owl:ObjectProperty ;
                                                          owl:inverseOf <https://w3id.org/cerif2/Activity#hasAffiliationStatement> ;
@@ -188,6 +204,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Affiliation_Statement#position> rdf:type owl:ObjectProperty ;
                                                          rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
                                                          rdfs:range <https://w3id.org/cerif2/Position> .
+
+
+###  https://w3id.org/cerif2/Agent#awardsPrize
+<https://w3id.org/cerif2/Agent#awardsPrize> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                            rdfs:range <https://w3id.org/cerif2/Event> ;
+                                            rdfs:comment "An Agent can award any number of [Prize Awards](../entities/Prize_Award.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Agent#hasIdentifier
@@ -207,9 +230,10 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/cerif2/Agent#isAddresseeOf
 <https://w3id.org/cerif2/Agent#isAddresseeOf> rdf:type owl:ObjectProperty ;
+                                              owl:inverseOf <https://w3id.org/cerif2/Resource_Request#hasAddressee> ;
                                               rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                              rdfs:range <https://w3id.org/cerif2/Application> ;
-                                              rdfs:comment "An Agent can be the addressee of any number of [Applications](../entities/Application.md)."@en .
+                                              rdfs:range <https://w3id.org/cerif2/Resource_Request> ;
+                                              rdfs:comment "An Agent can be the addressee of any number of [Resource Request](../entities/Resource_Request.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Agent#isAgentIn1
@@ -228,13 +252,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                            rdfs:comment "An Agent can be the agent in any number of [Expertise and Time and Effort](../entities/Expertise_and_Time_and_Effort.md) instances."@en .
 
 
-###  https://w3id.org/cerif2/Agent#isApplicantIn
-<https://w3id.org/cerif2/Agent#isApplicantIn> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                              rdfs:range <https://w3id.org/cerif2/Application> ;
-                                              rdfs:comment "An Agent can be the applicant in any number of [Applications](../entities/Application.md)."@en .
-
-
 ###  https://w3id.org/cerif2/Agent#isAuthorOf
 <https://w3id.org/cerif2/Agent#isAuthorOf> rdf:type owl:ObjectProperty ;
                                            rdfs:domain <https://w3id.org/cerif2/Agent> ;
@@ -249,18 +266,32 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                               rdfs:comment "An Agent can be the recipient of any number of [Prize Awards](../entities/Prize_Award.md)."@en .
 
 
+###  https://w3id.org/cerif2/Agent#isRequesterIn
+<https://w3id.org/cerif2/Agent#isRequesterIn> rdf:type owl:ObjectProperty ;
+                                              owl:inverseOf <https://w3id.org/cerif2/Resource_Request#hasRequester> ;
+                                              rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                              rdfs:range <https://w3id.org/cerif2/Resource_Request> ;
+                                              rdfs:comment "An Agent can be the requester in any number of [Applications](../entities/Resource_Request.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Agent#lifetime
 <https://w3id.org/cerif2/Agent#lifetime> rdf:type owl:ObjectProperty ;
                                          rdfs:domain <https://w3id.org/cerif2/Agent> ;
                                          rdfs:range <https://w3id.org/cerif2/Date_Range> .
 
 
+###  https://w3id.org/cerif2/Agent#made
+<https://w3id.org/cerif2/Agent#made> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <https://w3id.org/cerif2/Agent> ;
+                                     rdfs:range <https://w3id.org/cerif2/Decision> ;
+                                     rdfs:comment "An Agent can make a [Decision](../entities/Decision.md) on Resource Request based or not on Evaluation Outcomes."@en .
+
+
 ###  https://w3id.org/cerif2/Agent#solicits
 <https://w3id.org/cerif2/Agent#solicits> rdf:type owl:ObjectProperty ;
-                                         owl:inverseOf <https://w3id.org/cerif2/Call_for_Applications#isSolicitedBy> ;
                                          rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                         rdfs:range <https://w3id.org/cerif2/Call_for_Applications> ;
-                                         rdfs:comment "An Agent can solicit any number of [Calls for Applications](../entities/Call_for_Applications.md)."@en .
+                                         rdfs:range <https://w3id.org/cerif2/Resource_Offer> ;
+                                         rdfs:comment "An Agent can solicit any number of [Resource Offers](../entities/Resource_Offer.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Agent_Identifier#isAssignedTo
@@ -269,22 +300,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                         rdfs:domain <https://w3id.org/cerif2/Agent_Identifier> ;
                                                         rdfs:range <https://w3id.org/cerif2/Agent> ;
                                                         rdfs:comment "An Agent Identifier is assigned to an [Agent](../entities/Agent.md)."@en .
-
-
-###  https://w3id.org/cerif2/Application#hasAddressee
-<https://w3id.org/cerif2/Application#hasAddressee> rdf:type owl:ObjectProperty ;
-                                                   owl:inverseOf <https://w3id.org/cerif2/Agent#isAddresseeOf> ;
-                                                   rdfs:domain <https://w3id.org/cerif2/Application> ;
-                                                   rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                   rdfs:comment "An Application always references its addressee, the [Agent](../entities/Agent.md) that is expected to consider the application. (Note the role can be called differently in specific contexts.)"@en .
-
-
-###  https://w3id.org/cerif2/Application#hasApplicant
-<https://w3id.org/cerif2/Application#hasApplicant> rdf:type owl:ObjectProperty ;
-                                                   owl:inverseOf <https://w3id.org/cerif2/Agent#isApplicantIn> ;
-                                                   rdfs:domain <https://w3id.org/cerif2/Application> ;
-                                                   rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                   rdfs:comment "An Application always has the applicant: the [Agent](../entities/Agent.md) that is applying. (Note that the role can be called differently in specific contexts.)"@en .
 
 
 ###  https://w3id.org/cerif2/Application#inResponseTo
@@ -300,13 +315,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                                rdfs:domain <https://w3id.org/cerif2/Call_for_Applications> ;
                                                                rdfs:range <https://w3id.org/cerif2/Application> ;
                                                                rdfs:comment "A Call for Applications can reference the [Applications](../entities/Application.md) that make a reference to it."@en .
-
-
-###  https://w3id.org/cerif2/Call_for_Applications#isSolicitedBy
-<https://w3id.org/cerif2/Call_for_Applications#isSolicitedBy> rdf:type owl:ObjectProperty ;
-                                                              rdfs:domain <https://w3id.org/cerif2/Call_for_Applications> ;
-                                                              rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                              rdfs:comment "A Call for Applications is solicited by an [Agent](../entities/Agent.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Condition#appliesTo
@@ -391,12 +399,72 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                           rdfs:comment "A Contribution to Prize always has the target [Prize](../entities/Prize.md)."@en .
 
 
+###  https://w3id.org/cerif2/Contribution_to_Prize_Award#hasTarget
+<https://w3id.org/cerif2/Contribution_to_Prize_Award#hasTarget> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <https://w3id.org/cerif2/Contribution_to_Prize_Award> ;
+                                                                rdfs:range <https://w3id.org/cerif2/Prize_Award> ;
+                                                                rdfs:comment "A Contribution to Prize Award always has the target [Prize Award](../entities/Prize_Award.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Contribution_to_Project#hasTarget
 <https://w3id.org/cerif2/Contribution_to_Project#hasTarget> rdf:type owl:ObjectProperty ;
                                                             owl:inverseOf <https://w3id.org/cerif2/Project#hasContribution> ;
                                                             rdfs:domain <https://w3id.org/cerif2/Contribution_to_Project> ;
                                                             rdfs:range <https://w3id.org/cerif2/Project> ;
                                                             rdfs:comment "A Contribution to Project always references the target [Project](../entities/Project.md)."@en .
+
+
+###  https://w3id.org/cerif2/Decision#basedOn
+<https://w3id.org/cerif2/Decision#basedOn> rdf:type owl:ObjectProperty ;
+                                           owl:inverseOf <https://w3id.org/cerif2/Evaluation_Outcome#providesBasisFor> ;
+                                           rdfs:domain <https://w3id.org/cerif2/Decision> ;
+                                           rdfs:range <https://w3id.org/cerif2/Evaluation_Outcome> ;
+                                           rdfs:comment "A Decision can be based on any number of [Evaluation Outcomes](../entities/Evaluation_Outcome.md)."@en .
+
+
+###  https://w3id.org/cerif2/Decision#isADecisionOn
+<https://w3id.org/cerif2/Decision#isADecisionOn> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <https://w3id.org/cerif2/Resource_Request#hasDecision> ;
+                                                 rdfs:domain <https://w3id.org/cerif2/Decision> ;
+                                                 rdfs:range <https://w3id.org/cerif2/Resource_Request> ;
+                                                 rdfs:comment "A Resource Request can have a [Decision](../entities/Decision.md) about accepting or refusing request made by addressee."@en .
+
+
+###  https://w3id.org/cerif2/Decision#isExpressedIn
+<https://w3id.org/cerif2/Decision#isExpressedIn> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <https://w3id.org/cerif2/Document#presentsDecision> ;
+                                                 rdfs:domain <https://w3id.org/cerif2/Decision> ;
+                                                 rdfs:range <https://w3id.org/cerif2/Document> ;
+                                                 rdfs:comment "A Decision can be expressed in a [Document](../entities/Document.md)."@en .
+
+
+###  https://w3id.org/cerif2/Decision#madeBy
+<https://w3id.org/cerif2/Decision#madeBy> rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf <https://w3id.org/cerif2/Agent#made> ;
+                                          rdfs:domain <https://w3id.org/cerif2/Decision> ;
+                                          rdfs:range <https://w3id.org/cerif2/Agent> ;
+                                          rdfs:comment "A Decision about accepting or refusing request can be made by any number of [Agents](../entities/Agent.md)."@en .
+
+
+###  https://w3id.org/cerif2/Document#awardedBy
+<https://w3id.org/cerif2/Document#awardedBy> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                             rdfs:range <https://w3id.org/cerif2/Prize_Award> ;
+                                             rdfs:comment "A Document can be awarded by a [Prize Award](../entities/Prize_Award.md)."@en .
+
+
+###  https://w3id.org/cerif2/Document#describesResourceOffer
+<https://w3id.org/cerif2/Document#describesResourceOffer> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                                          rdfs:range <https://w3id.org/cerif2/Resource_Offer> ;
+                                                          rdfs:comment "A Document can provide description of a [Resource Offer](../entities/Resource_Offer.md)."@en .
+
+
+###  https://w3id.org/cerif2/Document#describesResourceRequest
+<https://w3id.org/cerif2/Document#describesResourceRequest> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                                            rdfs:range <https://w3id.org/cerif2/Resource_Request> ;
+                                                            rdfs:comment "A Document can provide description of a [Resource Request](../entities/Resource_Request.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Document#hasContribution
@@ -406,6 +474,21 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                    rdfs:comment "A Document any number of [contributions](../entities/Contribution_to_Document.md) that helped it arise."@en .
 
 
+###  https://w3id.org/cerif2/Document#presentsDecision
+<https://w3id.org/cerif2/Document#presentsDecision> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                                    rdfs:range <https://w3id.org/cerif2/Decision> ;
+                                                    rdfs:comment "A Document can present a [Decision](../entities/Decision.md)."@en .
+
+
+###  https://w3id.org/cerif2/Document#proves
+<https://w3id.org/cerif2/Document#proves> rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf <https://w3id.org/cerif2/Activity#isEvidencedBy> ;
+                                          rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                          rdfs:range <https://w3id.org/cerif2/Activity> ;
+                                          rdfs:comment "A Document can provide evidence of any number of [Activities](../entities/Activity.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Document#providesEvidenceOf
 <https://w3id.org/cerif2/Document#providesEvidenceOf> rdf:type owl:ObjectProperty ;
                                                       rdfs:domain <https://w3id.org/cerif2/Document> ;
@@ -413,11 +496,53 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                       rdfs:comment "A Document can provide evidence of any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md)."@en .
 
 
+###  https://w3id.org/cerif2/Document#publishedViaChannel
+<https://w3id.org/cerif2/Document#publishedViaChannel> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                                       rdfs:range <https://w3id.org/cerif2/Publication_Channel> ;
+                                                       rdfs:comment "A Document can be published via [publication channel](../entities/Publication_Channel.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Evaluation_Outcome#hasContribution
 <https://w3id.org/cerif2/Evaluation_Outcome#hasContribution> rdf:type owl:ObjectProperty ;
                                                              rdfs:domain <https://w3id.org/cerif2/Evaluation_Outcome> ;
                                                              rdfs:range <https://w3id.org/cerif2/Contribution_to_Evaluation_Outcome> ;
                                                              rdfs:comment "An Evaluation Outcome can have any number of [contributions](../entities/Contribution_to_Evaluation_Outcome.md) that helped it arise."@en .
+
+
+###  https://w3id.org/cerif2/Evaluation_Outcome#isAnEvaluationOutcomeOf
+<https://w3id.org/cerif2/Evaluation_Outcome#isAnEvaluationOutcomeOf> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:domain <https://w3id.org/cerif2/Evaluation_Outcome> ;
+                                                                     rdfs:range <https://w3id.org/cerif2/Resource_Request> ;
+                                                                     rdfs:comment "An Evaluation outcome might be a result of the [Resource Request](../entities/Resource_Request.md) evaluation process."@en .
+
+
+###  https://w3id.org/cerif2/Evaluation_Outcome#providesBasisFor
+<https://w3id.org/cerif2/Evaluation_Outcome#providesBasisFor> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <https://w3id.org/cerif2/Evaluation_Outcome> ;
+                                                              rdfs:range <https://w3id.org/cerif2/Decision> ;
+                                                              rdfs:comment "Conclusions from evaluation process can be a basis for final [Decision](../entities/Decision.md)."@en .
+
+
+###  https://w3id.org/cerif2/Event#awardedBy
+<https://w3id.org/cerif2/Event#awardedBy> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/cerif2/Event> ;
+                                          rdfs:range <https://w3id.org/cerif2/Prize_Award> ;
+                                          rdfs:comment "An Event can be awarded by a [Prize Award](../entities/Prize_Award.md)."@en .
+
+
+###  https://w3id.org/cerif2/Event#belongsToSeries
+<https://w3id.org/cerif2/Event#belongsToSeries> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <https://w3id.org/cerif2/Event_Series#hasInstances> ;
+                                                rdfs:domain <https://w3id.org/cerif2/Event> ;
+                                                rdfs:range <https://w3id.org/cerif2/Event_Series> ;
+                                                rdfs:comment "An Event can be an instance of [Event Series](../entities/Event_Series.md)."@en .
+
+
+###  https://w3id.org/cerif2/Event#dateRange
+<https://w3id.org/cerif2/Event#dateRange> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/cerif2/Event> ;
+                                          rdfs:range <https://w3id.org/cerif2/Date_Range> .
 
 
 ###  https://w3id.org/cerif2/Event#hasContribution
@@ -428,11 +553,40 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                 rdfs:comment "An Event can have any number of [contributions](../entities/Contribution_to_Event.md) that helped it take place or arise."@en .
 
 
+###  https://w3id.org/cerif2/Event_Identifier#isAssignedTo
+<https://w3id.org/cerif2/Event_Identifier#isAssignedTo> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <https://w3id.org/cerif2/Event_Identifier> ;
+                                                        rdfs:range <https://w3id.org/cerif2/Event_Series> ;
+                                                        rdfs:comment "An Event Identifier can be assigned to an [Event Series](../entities/Event_Series.md)."@en .
+
+
+###  https://w3id.org/cerif2/Event_Series#hasIdentifier
+<https://w3id.org/cerif2/Event_Series#hasIdentifier> rdf:type owl:ObjectProperty ;
+                                                     owl:inverseOf <https://w3id.org/cerif2/Event_Identifier#isAssignedTo> ;
+                                                     rdfs:domain <https://w3id.org/cerif2/Event_Series> ;
+                                                     rdfs:range <https://w3id.org/cerif2/Event_Identifier> ;
+                                                     rdfs:comment "An Event Series can have any number of [Event Identifiers](../entities/Event_Identifier.md)."@en .
+
+
+###  https://w3id.org/cerif2/Event_Series#hasInstances
+<https://w3id.org/cerif2/Event_Series#hasInstances> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <https://w3id.org/cerif2/Event_Series> ;
+                                                    rdfs:range <https://w3id.org/cerif2/Event> ;
+                                                    rdfs:comment "An Event Series has list of [Event](../entities/Event.md) instances which have been organized."@en .
+
+
 ###  https://w3id.org/cerif2/Expertise_and_Skills#isPossessedThrough
 <https://w3id.org/cerif2/Expertise_and_Skills#isPossessedThrough> rdf:type owl:ObjectProperty ;
                                                                   rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills> ;
                                                                   rdfs:range <https://w3id.org/cerif2/Expertise_and_Skills_Possession> ;
                                                                   rdfs:comment "A Expertise and Skills can be possessed in any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md)."@en .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Skills#isUsedAsAResource
+<https://w3id.org/cerif2/Expertise_and_Skills#isUsedAsAResource> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain <https://w3id.org/cerif2/Expertise_and_Skills> ;
+                                                                 rdfs:range <https://w3id.org/cerif2/Expertise_and_Time_and_Effort> ;
+                                                                 rdfs:comment "A Expertise and Skills can be used as a resource in any number of [Expertise and Time and Effort](../entities/Expertise_and_Time_and_Effort.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Expertise_and_Skills_Possession#byAgent
@@ -474,8 +628,8 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 ###  https://w3id.org/cerif2/Funding#covers
 <https://w3id.org/cerif2/Funding#covers> rdf:type owl:ObjectProperty ;
                                          rdfs:domain <https://w3id.org/cerif2/Funding> ;
-                                         rdfs:range <https://w3id.org/cerif2/Activity> ;
-                                         rdfs:comment "A Funding can cover any number of [Activities](../entities/Activity.md)."@en .
+                                         rdfs:range <https://w3id.org/cerif2/Project> ;
+                                         rdfs:comment "A Funding can cover any number of [Projects](../entities/Project.md) that help it happen."@en .
 
 
 ###  https://w3id.org/cerif2/Funding#hasPart
@@ -543,6 +697,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                rdfs:domain <https://w3id.org/cerif2/Involvement> ;
                                                rdfs:range <https://w3id.org/cerif2/Involvement> ;
                                                rdfs:comment "An Involvement can be part of any number of other [Involvements](../entities/Involvement.md)."@en .
+
+
+###  https://w3id.org/cerif2/Involvement#isTheFoundationFor
+<https://w3id.org/cerif2/Involvement#isTheFoundationFor> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Involvement> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Affiliation_Statement> ;
+                                                         rdfs:comment "An Involvement can be foundation for an [Affiliation Statement](../entities/Affiliation_Statement.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Involvement#position
@@ -626,6 +787,37 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                             rdfs:comment "A Prize can be awarded through any number of [Prize Awards](../entities/Prize_Award.md)."@en .
 
 
+###  https://w3id.org/cerif2/Prize_Award#awardedByWhom
+<https://w3id.org/cerif2/Prize_Award#awardedByWhom> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <https://w3id.org/cerif2/Prize_Award> ;
+                                                    rdfs:range <https://w3id.org/cerif2/Event> ;
+                                                    rdfs:comment "A Prize can be awarded by any number of [Agents](../entities/Agent.md)."@en .
+
+
+###  https://w3id.org/cerif2/Prize_Award#awardedForADocument
+<https://w3id.org/cerif2/Prize_Award#awardedForADocument> rdf:type owl:ObjectProperty ;
+                                                          owl:inverseOf <https://w3id.org/cerif2/Document#awardedBy> ;
+                                                          rdfs:domain <https://w3id.org/cerif2/Prize_Award> ;
+                                                          rdfs:range <https://w3id.org/cerif2/Document> ;
+                                                          rdfs:comment "A Prize can be awarded for a [Document](../entities/Document.md)."@en .
+
+
+###  https://w3id.org/cerif2/Prize_Award#awardedForAProject
+<https://w3id.org/cerif2/Prize_Award#awardedForAProject> rdf:type owl:ObjectProperty ;
+                                                         owl:inverseOf <https://w3id.org/cerif2/Project#awardedBy> ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Prize_Award> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Project> ;
+                                                         rdfs:comment "A Prize can be awarded for a [Project](../entities/Project.md)."@en .
+
+
+###  https://w3id.org/cerif2/Prize_Award#awardedForAnEvent
+<https://w3id.org/cerif2/Prize_Award#awardedForAnEvent> rdf:type owl:ObjectProperty ;
+                                                        owl:inverseOf <https://w3id.org/cerif2/Event#awardedBy> ;
+                                                        rdfs:domain <https://w3id.org/cerif2/Prize_Award> ;
+                                                        rdfs:range <https://w3id.org/cerif2/Event> ;
+                                                        rdfs:comment "A Prize can be awarded for an [Event](../entities/Event.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Prize_Award#awards
 <https://w3id.org/cerif2/Prize_Award#awards> rdf:type owl:ObjectProperty ;
                                              owl:inverseOf <https://w3id.org/cerif2/Prize#isAwardedAs> ;
@@ -642,11 +834,49 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                    rdfs:comment "A Prize Award can have any number of recipients, instances of [Agent](../entities/Agent.md)."@en .
 
 
+###  https://w3id.org/cerif2/Project#awardedBy
+<https://w3id.org/cerif2/Project#awardedBy> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/cerif2/Project> ;
+                                            rdfs:range <https://w3id.org/cerif2/Prize_Award> ;
+                                            rdfs:comment "A Project can be awarded by a [Prize Award](../entities/Prize_Award.md)."@en .
+
+
+###  https://w3id.org/cerif2/Project#fundedBy
+<https://w3id.org/cerif2/Project#fundedBy> rdf:type owl:ObjectProperty ;
+                                           owl:inverseOf <https://w3id.org/cerif2/Funding#covers> ;
+                                           rdfs:domain <https://w3id.org/cerif2/Project> ;
+                                           rdfs:range <https://w3id.org/cerif2/Funding> ;
+                                           rdfs:comment "A Project can have any number of [Fundings](../entities/Funding.md) that help it happen."@en .
+
+
 ###  https://w3id.org/cerif2/Project#hasContribution
 <https://w3id.org/cerif2/Project#hasContribution> rdf:type owl:ObjectProperty ;
                                                   rdfs:domain <https://w3id.org/cerif2/Project> ;
                                                   rdfs:range <https://w3id.org/cerif2/Contribution_to_Project> ;
                                                   rdfs:comment "A Project can have any number of [contributions](../entities/Contribution_to_Project.md) that help it happen."@en .
+
+
+###  https://w3id.org/cerif2/Project#hasPart
+<https://w3id.org/cerif2/Project#hasPart> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/cerif2/Project> ;
+                                          rdfs:range <https://w3id.org/cerif2/Project> ;
+                                          rdfs:comment "A Project Unit can have any number of parts, instances of [Project](../entities/Project.md)."@en .
+
+
+###  https://w3id.org/cerif2/Project#isPartOf
+<https://w3id.org/cerif2/Project#isPartOf> rdf:type owl:ObjectProperty ;
+                                           owl:inverseOf <https://w3id.org/cerif2/Project#hasPart> ;
+                                           rdfs:domain <https://w3id.org/cerif2/Project> ;
+                                           rdfs:range <https://w3id.org/cerif2/Project> ;
+                                           rdfs:comment "A Project Unit (sub-project/work package/task) can be part of the other [Project unit](../entities/Project.md)."@en .
+
+
+###  https://w3id.org/cerif2/Publication_Channel#hasPublication
+<https://w3id.org/cerif2/Publication_Channel#hasPublication> rdf:type owl:ObjectProperty ;
+                                                             owl:inverseOf <https://w3id.org/cerif2/Document#publishedViaChannel> ;
+                                                             rdfs:domain <https://w3id.org/cerif2/Publication_Channel> ;
+                                                             rdfs:range <https://w3id.org/cerif2/Document> ;
+                                                             rdfs:comment "A Publication Channel has any number of [documents](../entities/Document.md) which has been published via the channel."@en .
 
 
 ###  https://w3id.org/cerif2/Resource#hasIdentifier
@@ -704,11 +934,64 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                       rdfs:comment "A Resource Offer can have any number of [Conditions](../entities/Condition.md) that must be satisfied for the Resource Offer to be applicable."@en .
 
 
+###  https://w3id.org/cerif2/Resource_Offer#isDescribedBy
+<https://w3id.org/cerif2/Resource_Offer#isDescribedBy> rdf:type owl:ObjectProperty ;
+                                                       owl:inverseOf <https://w3id.org/cerif2/Document#describesResourceOffer> ;
+                                                       rdfs:domain <https://w3id.org/cerif2/Resource_Offer> ;
+                                                       rdfs:range <https://w3id.org/cerif2/Document> ;
+                                                       rdfs:comment "A Resource Offer can be described by any number of [Documents](../entities/Document.md)."@en .
+
+
+###  https://w3id.org/cerif2/Resource_Offer#isSolicitedBy
+<https://w3id.org/cerif2/Resource_Offer#isSolicitedBy> rdf:type owl:ObjectProperty ;
+                                                       owl:inverseOf <https://w3id.org/cerif2/Agent#solicits> ;
+                                                       rdfs:domain <https://w3id.org/cerif2/Resource_Offer> ;
+                                                       rdfs:range <https://w3id.org/cerif2/Agent> ;
+                                                       rdfs:comment "A Resource Offer is solicited by an [Agent](../entities/Agent.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Resource_Offer#offers
 <https://w3id.org/cerif2/Resource_Offer#offers> rdf:type owl:ObjectProperty ;
                                                 rdfs:domain <https://w3id.org/cerif2/Resource_Offer> ;
                                                 rdfs:range <https://w3id.org/cerif2/Resource> ;
                                                 rdfs:comment "A Resource Offer specifies the [Resource](../entities/Resource.md) that is the subject of the offer."@en .
+
+
+###  https://w3id.org/cerif2/Resource_Request#hasAddressee
+<https://w3id.org/cerif2/Resource_Request#hasAddressee> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <https://w3id.org/cerif2/Resource_Request> ;
+                                                        rdfs:range <https://w3id.org/cerif2/Agent> ;
+                                                        rdfs:comment "A Resource Request always references its addressee, the [Agent](../entities/Agent.md) that is expected to consider the resource request. (Note the role can be called differently in specific contexts.)"@en .
+
+
+###  https://w3id.org/cerif2/Resource_Request#hasDecision
+<https://w3id.org/cerif2/Resource_Request#hasDecision> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <https://w3id.org/cerif2/Resource_Request> ;
+                                                       rdfs:range <https://w3id.org/cerif2/Decision> ;
+                                                       rdfs:comment "A Resource Request can have a [Decision](../entities/Decision.md) about accepting or refusing request made by addressee."@en .
+
+
+###  https://w3id.org/cerif2/Resource_Request#hasEvaluationOutcome
+<https://w3id.org/cerif2/Resource_Request#hasEvaluationOutcome> rdf:type owl:ObjectProperty ;
+                                                                owl:inverseOf <https://w3id.org/cerif2/Evaluation_Outcome#isAnEvaluationOutcomeOf> ;
+                                                                rdfs:domain <https://w3id.org/cerif2/Resource_Request> ;
+                                                                rdfs:range <https://w3id.org/cerif2/Evaluation_Outcome> ;
+                                                                rdfs:comment "A Resource Request can have some kind of process which results in an [Evaluation Outcome](../entities/Evaluation_Outcome.md)."@en .
+
+
+###  https://w3id.org/cerif2/Resource_Request#hasRequester
+<https://w3id.org/cerif2/Resource_Request#hasRequester> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <https://w3id.org/cerif2/Resource_Request> ;
+                                                        rdfs:range <https://w3id.org/cerif2/Agent> ;
+                                                        rdfs:comment "A Resource Request always has the requester: the [Agent](../entities/Agent.md) that is requesting a resource. (Note that the role can be called differently in specific contexts, for instance applicant.)"@en .
+
+
+###  https://w3id.org/cerif2/Resource_Request#isDescribedBy
+<https://w3id.org/cerif2/Resource_Request#isDescribedBy> rdf:type owl:ObjectProperty ;
+                                                         owl:inverseOf <https://w3id.org/cerif2/Document#describesResourceRequest> ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Resource_Request> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Document> ;
+                                                         rdfs:comment "A Resource Request can optionally reference its contents, the [Document](../entities/Document.md) that details the resource request."@en .
 
 
 ###  https://w3id.org/cerif2/Resource_Request#requests
@@ -758,6 +1041,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
+###  https://w3id.org/cerif2/Acknowledgement_Statement#statement
+<https://w3id.org/cerif2/Acknowledgement_Statement#statement> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:domain <https://w3id.org/cerif2/Acknowledgement_Statement> ;
+                                                              rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
 ###  https://w3id.org/cerif2/Affiliation_Statement#contacts
 <https://w3id.org/cerif2/Affiliation_Statement#contacts> rdf:type owl:DatatypeProperty ;
                                                          rdfs:domain <https://w3id.org/cerif2/Affiliation_Statement> ;
@@ -788,12 +1077,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Agent#keywords> rdf:type owl:DatatypeProperty ;
                                          rdfs:domain <https://w3id.org/cerif2/Agent> ;
                                          rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
-
-
-###  https://w3id.org/cerif2/Application#applicationDate
-<https://w3id.org/cerif2/Application#applicationDate> rdf:type owl:DatatypeProperty ;
-                                                      rdfs:domain <https://w3id.org/cerif2/Application> ;
-                                                      rdfs:range <https://w3id.org/cerif2/Date> .
 
 
 ###  https://w3id.org/cerif2/Authorship#correspondingAuthorFlag
@@ -859,6 +1142,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                         rdfs:range <https://w3id.org/cerif2/Boolean> .
 
 
+###  https://w3id.org/cerif2/Decision#date
+<https://w3id.org/cerif2/Decision#date> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/cerif2/Decision> ;
+                                        rdfs:range <https://w3id.org/cerif2/Date> .
+
+
 ###  https://w3id.org/cerif2/Document#publicationDate
 <https://w3id.org/cerif2/Document#publicationDate> rdf:type owl:DatatypeProperty ;
                                                    rdfs:domain <https://w3id.org/cerif2/Document> ;
@@ -881,6 +1170,78 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Electronic_Address#uri> rdf:type owl:DatatypeProperty ;
                                                  rdfs:domain <https://w3id.org/cerif2/Electronic_Address> ;
                                                  rdfs:range <https://w3id.org/cerif2/URI> .
+
+
+###  https://w3id.org/cerif2/Evaluation_Outcome#conslusions
+<https://w3id.org/cerif2/Evaluation_Outcome#conslusions> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <https://w3id.org/cerif2/Evaluation_Outcome> ;
+                                                         rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Event#acronym
+<https://w3id.org/cerif2/Event#acronym> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/cerif2/Event> ;
+                                        rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Event#contacts
+<https://w3id.org/cerif2/Event#contacts> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/cerif2/Event> ;
+                                         rdfs:range <https://w3id.org/cerif2/Contact_Information> .
+
+
+###  https://w3id.org/cerif2/Event#description
+<https://w3id.org/cerif2/Event#description> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/cerif2/Event> ;
+                                            rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Event#ordinalNumber
+<https://w3id.org/cerif2/Event#ordinalNumber> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/cerif2/Event> ;
+                                              rdfs:range <https://w3id.org/cerif2/Decimal> .
+
+
+###  https://w3id.org/cerif2/Event#title
+<https://w3id.org/cerif2/Event#title> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <https://w3id.org/cerif2/Event> ;
+                                      rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Event_Series#acronym
+<https://w3id.org/cerif2/Event_Series#acronym> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/cerif2/Event_Series> ;
+                                               rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Event_Series#contacts
+<https://w3id.org/cerif2/Event_Series#contacts> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/cerif2/Event_Series> ;
+                                                rdfs:range <https://w3id.org/cerif2/Contact_Information> .
+
+
+###  https://w3id.org/cerif2/Event_Series#description
+<https://w3id.org/cerif2/Event_Series#description> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <https://w3id.org/cerif2/Event_Series> ;
+                                                   rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Event_Series#recurrencePeriod
+<https://w3id.org/cerif2/Event_Series#recurrencePeriod> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <https://w3id.org/cerif2/Event_Series> ;
+                                                        rdfs:range <https://w3id.org/cerif2/Decimal> .
+
+
+###  https://w3id.org/cerif2/Event_Series#recurrenceUnit
+<https://w3id.org/cerif2/Event_Series#recurrenceUnit> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain <https://w3id.org/cerif2/Event_Series> ;
+                                                      rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Event_Series#title
+<https://w3id.org/cerif2/Event_Series#title> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/cerif2/Event_Series> ;
+                                             rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
 ###  https://w3id.org/cerif2/Expertise_and_Skills#description
@@ -931,6 +1292,24 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                  rdfs:range <https://w3id.org/cerif2/ISNI_ID> .
 
 
+###  https://w3id.org/cerif2/Infrastructure#acronym
+<https://w3id.org/cerif2/Infrastructure#acronym> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/cerif2/Infrastructure> ;
+                                                 rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Infrastructure#title
+<https://w3id.org/cerif2/Infrastructure#title> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/cerif2/Infrastructure> ;
+                                               rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Infrastructure#url
+<https://w3id.org/cerif2/Infrastructure#url> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/cerif2/Infrastructure> ;
+                                             rdfs:range <https://w3id.org/cerif2/Website_Address> .
+
+
 ###  https://w3id.org/cerif2/Involvement#description
 <https://w3id.org/cerif2/Involvement#description> rdf:type owl:DatatypeProperty ;
                                                   rdfs:domain <https://w3id.org/cerif2/Involvement> ;
@@ -965,6 +1344,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Local_Agent_Identifier#localId> rdf:type owl:DatatypeProperty ;
                                                          rdfs:domain <https://w3id.org/cerif2/Local_Agent_Identifier> ;
                                                          rdfs:range <https://w3id.org/cerif2/Local_Agent_ID> .
+
+
+###  https://w3id.org/cerif2/Local_Resource_Identifier#localId
+<https://w3id.org/cerif2/Local_Resource_Identifier#localId> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:domain <https://w3id.org/cerif2/Local_Resource_Identifier> ;
+                                                            rdfs:range <https://w3id.org/cerif2/Local_Resource_ID> .
 
 
 ###  https://w3id.org/cerif2/Monetary_Amount#amount
@@ -1005,6 +1390,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                  rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
+###  https://w3id.org/cerif2/Position#code
+<https://w3id.org/cerif2/Position#code> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/cerif2/Position> ;
+                                        rdfs:range <https://w3id.org/cerif2/String> .
+
+
 ###  https://w3id.org/cerif2/Position#title
 <https://w3id.org/cerif2/Position#title> rdf:type owl:DatatypeProperty ;
                                          rdfs:domain <https://w3id.org/cerif2/Position> ;
@@ -1033,6 +1424,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/ROR_Identifier#rorId> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain <https://w3id.org/cerif2/ROR_Identifier> ;
                                                rdfs:range <https://w3id.org/cerif2/ROR_ID> .
+
+
+###  https://w3id.org/cerif2/Resource_Request#requestDate
+<https://w3id.org/cerif2/Resource_Request#requestDate> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain <https://w3id.org/cerif2/Resource_Request> ;
+                                                       rdfs:range <https://w3id.org/cerif2/Date> .
 
 
 ###  https://w3id.org/cerif2/Resource_Usage_Statement#statement
@@ -1131,6 +1528,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/cerif2/Application
 <https://w3id.org/cerif2/Application> rdf:type owl:Class ;
+                                      rdfs:subClassOf <https://w3id.org/cerif2/Resource_Request> ;
                                       rdfs:comment "A formal request to be considered for a position or to be allowed to do or have something, submitted to an authority, institution, or organization.<sup>[1](#fn1)</sup>"@en ;
                                       rdfs:label "Application"@en .
 
@@ -1145,13 +1543,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 ###  https://w3id.org/cerif2/Authorship
 <https://w3id.org/cerif2/Authorship> rdf:type owl:Class ;
                                      rdfs:subClassOf <https://w3id.org/cerif2/Contribution_to_Document> ;
-                                     rdfs:comment "[FIXME] Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/Organisation_Unit.md)) with a [Textual Document](../entities/Textual_Document.md) or any of its specializations."@en ;
+                                     rdfs:comment "Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/Organisation_Unit.md)) with a [Document](../entities/Document.md) or any of its specializations. Authorship implies responsibility and accountability of an Agent for published Document."@en ;
                                      rdfs:label "Authorship"@en .
 
 
 ###  https://w3id.org/cerif2/Call_for_Applications
 <https://w3id.org/cerif2/Call_for_Applications> rdf:type owl:Class ;
-                                                rdfs:subClassOf <https://w3id.org/cerif2/Resource_Request> ;
+                                                rdfs:subClassOf <https://w3id.org/cerif2/Resource_Offer> ;
                                                 rdfs:comment """A written or verbal request inviting someone to go somewhere or to do something,<sup>[1](#fn1)</sup>
 namely, submit an [Application](../entities/Application.md)."""@en ;
                                                 rdfs:label "Call for Applications"@en .
@@ -1216,6 +1614,13 @@ namely, submit an [Application](../entities/Application.md)."""@en ;
                                                 rdfs:label "Contribution to Prize"@en .
 
 
+###  https://w3id.org/cerif2/Contribution_to_Prize_Award
+<https://w3id.org/cerif2/Contribution_to_Prize_Award> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <https://w3id.org/cerif2/Contribution> ;
+                                                      rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to a [Prize Award](../entities/Prize_Award.md)."@en ;
+                                                      rdfs:label "Contribution to Prize Award"@en .
+
+
 ###  https://w3id.org/cerif2/Contribution_to_Project
 <https://w3id.org/cerif2/Contribution_to_Project> rdf:type owl:Class ;
                                                   rdfs:comment "Any contribution an [Agent](../entities/Agent.md) made to a [Project](../entities/Resource.md)."@en ;
@@ -1243,14 +1648,14 @@ namely, submit an [Application](../entities/Application.md)."""@en ;
 
 ###  https://w3id.org/cerif2/Decision
 <https://w3id.org/cerif2/Decision> rdf:type owl:Class ;
-                                   rdfs:comment "The conclusions from considering an Application."@en ;
-                                   rdfs:label "Evaluation Outcome"@en .
+                                   rdfs:comment "The conclusions from considering a [Resource Request](../entities/Resource_Request.md)."@en ;
+                                   rdfs:label "Decision"@en .
 
 
 ###  https://w3id.org/cerif2/Document
 <https://w3id.org/cerif2/Document> rdf:type owl:Class ;
                                    rdfs:subClassOf <https://w3id.org/cerif2/Resource> ;
-                                   rdfs:comment """A document is a bounded representation of a body of information designed with the capacity (and usually intent) to communicate.
+                                   rdfs:comment """A document is a bounded representation of a body of information designed with the capacity (and usually intent) to communicate. 
 A document may manifest symbolic, diagrammatic or sensory-representational information.<sup>[1](#fn1)</sup>"""@en ;
                                    rdfs:label "Document"@en .
 
@@ -1288,6 +1693,18 @@ A document may manifest symbolic, diagrammatic or sensory-representational infor
                                 rdfs:label "Event"@en .
 
 
+###  https://w3id.org/cerif2/Event_Identifier
+<https://w3id.org/cerif2/Event_Identifier> rdf:type owl:Class ;
+                                           rdfs:comment "An identifier that is assigned to an [Event](../entities/Event.md)."@en ;
+                                           rdfs:label "Event Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Event_Series
+<https://w3id.org/cerif2/Event_Series> rdf:type owl:Class ;
+                                       rdfs:comment "A thing that happens regularly (annually, bi-annually, etc.) about a particular subject."@en ;
+                                       rdfs:label "Event_Series"@en .
+
+
 ###  https://w3id.org/cerif2/Expertise_and_Skills
 <https://w3id.org/cerif2/Expertise_and_Skills> rdf:type owl:Class ;
                                                rdfs:comment """**Expertise**: A high level of knowledge or skill.<sup>[1](#fn1)</sup>
@@ -1305,7 +1722,7 @@ A document may manifest symbolic, diagrammatic or sensory-representational infor
 
 ###  https://w3id.org/cerif2/Expertise_and_Skills_Possession
 <https://w3id.org/cerif2/Expertise_and_Skills_Possession> rdf:type owl:Class ;
-                                                          rdfs:comment """The statement of Possession of an [Expertise or Skill](../entities/Expertise_and_Skills.md)
+                                                          rdfs:comment """The statement of Possession of an [Expertise or Skill](../entities/Expertise_and_Skills.md) 
 by an [Agent](../entities/Agent.md)."""@en ;
                                                           rdfs:label "Expertise and Skills Possession"@en .
 
@@ -1386,9 +1803,17 @@ by an [Agent](../entities/Agent.md)."""@en ;
 ###  https://w3id.org/cerif2/Local_Agent_Identifier
 <https://w3id.org/cerif2/Local_Agent_Identifier> rdf:type owl:Class ;
                                                  rdfs:subClassOf <https://w3id.org/cerif2/Agent_Identifier> ;
-                                                 rdfs:comment """A local identifier assigned to an [Agent](../entities/Agent.md). Local identifier is not adopted at global level, it
+                                                 rdfs:comment """A local identifier assigned to an [Agent](../entities/Agent.md). Local identifier is not adopted at global level, it 
 might be some platform identifier, regional identifier or national identifier."""@en ;
                                                  rdfs:label "Local Agent Identifier"@en .
+
+
+###  https://w3id.org/cerif2/Local_Resource_Identifier
+<https://w3id.org/cerif2/Local_Resource_Identifier> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <https://w3id.org/cerif2/Resource_Identifier> ;
+                                                    rdfs:comment """A local identifier assigned to a [Resource](../entities/Resource.md). Local identifier is not adopted at global level, it 
+might be some platform identifier, regional identifier or national identifier."""@en ;
+                                                    rdfs:label "Local Resource Identifier"@en .
 
 
 ###  https://w3id.org/cerif2/Membership
@@ -1477,6 +1902,12 @@ might be some platform identifier, regional identifier or national identifier.""
                                   rdfs:comment """A temporary endeavor undertaken to create a unique product, service or result.<br/>
 Source: the Project Management Institute, https://www.pmi.org/about/learn-about-pmi/what-is-project-management"""@en ;
                                   rdfs:label "Project"@en .
+
+
+###  https://w3id.org/cerif2/Publication_Channel
+<https://w3id.org/cerif2/Publication_Channel> rdf:type owl:Class ;
+                                              rdfs:comment "A Publication Channel is a medium for publishing documents."@en ;
+                                              rdfs:label "Publication Channel"@en .
 
 
 ###  https://w3id.org/cerif2/ROR_Identifier
