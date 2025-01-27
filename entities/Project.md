@@ -21,7 +21,7 @@ The Project entity only captures details of the project scope and plan. Informat
 
 name : [Multilingual String](../datatypes/Multilingual_String.md)
 
-acronym : [String](../datatypes/String.md)
+acronym : [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
 
