@@ -398,7 +398,7 @@
         acronym : Multilingual_String
         description : Multilingual_String
         recurrence period : Decimal
-        recurrence unit : Multilingual String
+        recurrence unit : Multilingual_String
         contacts : List<Contact_Information>
     }
 
