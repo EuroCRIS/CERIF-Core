@@ -335,8 +335,8 @@
 
 !endsub
 
-!startsub Funding
-     "Funding" "0..*" -- "0..*" "Funding" : is part of >
+!startsub Resource
+     "Resource" "0..*" -- "0..*" "Resource" : is part of >
 !endsub
 
 !startsub Resource_Identifier

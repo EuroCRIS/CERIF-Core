@@ -21,6 +21,10 @@ Anything that can be used for or in the process of research.
 
 <a name="rel__is-used-in">is-used-in</a> / [uses](../entities/Resource_Usage_Statement.md#user-content-rel__uses) : When a Resource is used, the usage can be detailed in [Resource Usage Statements](../entities/Resource_Usage_Statement.md). For instance, a funding, a dataset or a piece of equipment can be used in producing a journal article.
 
+<a name="rel__is-part-of">is-part-of</a> / [has-part](../entities/Resource.md#user-content-rel__has-part) : A Resource can be part of any number of other [Resources](../entities/Resource.md).
+
+<a name="rel__has-part">has-part</a> / [is-part-of](../entities/Resource.md#user-content-rel__is-part-of) : A Resource can have any number of other [Resources](../entities/Resource.md) as parts.
+
 ---
 ## Matches
 
