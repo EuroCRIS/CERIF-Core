@@ -130,6 +130,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 * [Boolean](./datatypes/Boolean.md)
 * [Decimal](./datatypes/Decimal.md)
 * [Multilingual String](./datatypes/Multilingual_String.md)
+  * [HTML Multilingual String](./datatypes/HTML_Multilingual_String.md) 
 * [ORCID iD Type](./datatypes/ORCID_iD.md)
 * [ROR ID Type](./datatypes/ROR_ID.md)
 * [URI Type](./datatypes/URI.md)
