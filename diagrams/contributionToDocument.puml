@@ -6,7 +6,6 @@
     !includesub core.puml!Contribution
     !includesub core.puml!Contribution_to_Document
     !includesub core.puml!Contribution_Statement
-    !includesub core.puml!Textual_Document
     !includesub core.puml!Affiliation_Statement
     !includesub core.puml!Document
     !includesub core.puml!Resource

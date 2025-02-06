@@ -33,10 +33,9 @@ Agents can make [Contributions to Infrastructure](./entities/Contribution_to_Inf
 Scientific and other [Events](./entities/Event.md) support communication, including scholarly communication. 
 Agents can make different [Contributions to Events](./entities/Contribution_to_Event.md). An Event can have any number of [Event Identifiers](./entities/Event_Identifier.md) assigned. Events can be organized within [Event Series](./entities/Event_Series.md)
 
-Information and knowledge are typically stored in [Documents](./entities/Document.md), for instance [Textual Documents](./entities/Textual_Document.md).
-Agents can make different [Contributions to Documents](./entities/Contribution_to_Document.md), most notably that of [Authorship](./entities/Authorship.md).
-Documents can be published in numerous [Publication Channels](./entities/Publication_Channel.md)
-Accessibility of Documents is a pressing issue, so it can be expressed in [Textual Document Accessibility Specifications](./entities/Textual_Document_Accessibility_Specification.md).
+Information and knowledge are typically stored in [Documents](./entities/Document.md).
+Agents can be actors in [Contributions to Documents](./entities/Contribution_to_Document.md).
+Documents can be published in numerous [Publication Channels](./entities/Publication_Channel.md).
 
 Agents prepare and submit [Applications](./entities/Application.md), for instance [Funding Applications](./entities/Funding_Application.md).
 This can occur in response to a [Call for Applications](./entities/Call_for_Applications.md), for instance a [Call for Funding Applications](./entities/Call_for_Funding_Applications.md), or outside of any such call, perhaps based on an implicit invitation to do so.
@@ -72,8 +71,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
   * [Organisation Unit](./entities/Organisation_Unit.md), [Group](./entities/Group.md) (or [Group_or_Organisation_Unit](./entities/Group_or_Organisation_Unit.md) to represent the union of these two, or [Organisation Unit with Members](./entities/Organisation_Unit_with_Members.md) to represent the intersection of these two)
 * [Activity](./entities/Activity.md)
   * [Contribution](./entities/Contribution.md)
-    * [Contribution to Document](./entities/Contribution_to_Document.md)    
-      * [Authorship](./entities/Authorship.md)
+    * [Contribution to Document](./entities/Contribution_to_Document.md)
     * [Contribution to Project](./entities/Contribution_to_Project.md)
     * [Contribution to Event](./entities/Contribution_to_Event.md)
     * [Contribution to Evaluation Outcome](./entities/Contribution_to_Evaluation_Outcome.md)
@@ -85,7 +83,6 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
     * [Education](./entities/Education.md)
 * [Affiliation](./entities/Affiliation_Statement.md)
 * [Contribution Statement](./entities/Contribution_Statement.md)
-* [Textual Document Accessibility Specification](./entities/Textual_Document_Accessibility_Specification.md)
 * [Project](./entities/Project.md)
 * [Event](./entities/Event.md)
 * [Event Series](./entities/Event_Series.md)
@@ -95,7 +92,6 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
   * [Expertise and Time and Effort](./entities/Expertise_and_Time_and_Effort.md)
   * [Infrastructure](./entities/Infrastructure.md)
   * [Document](./entities/Document.md)
-    * [Textual Document](./entities/Textual_Document.md)
 * [Resource Offer](./entities/Resource_Offer.md)
   * [Call for Applications](./entities/Call_for_Applications.md)
     * [Call for Funding Applications](./entities/Call_for_Funding_Applications.md)
@@ -130,6 +126,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 * [Boolean](./datatypes/Boolean.md)
 * [Decimal](./datatypes/Decimal.md)
 * [Multilingual String](./datatypes/Multilingual_String.md)
+  * [HTML Multilingual String](./datatypes/HTML_Multilingual_String.md) 
 * [ORCID iD Type](./datatypes/ORCID_iD.md)
 * [ROR ID Type](./datatypes/ROR_ID.md)
 * [URI Type](./datatypes/URI.md)

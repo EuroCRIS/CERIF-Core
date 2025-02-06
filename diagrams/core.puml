@@ -316,15 +316,6 @@
     }
 !endsub
 
-!startsub Textual_Document
-    class "Textual_Document" #ffffff {
-    }
-!endsub
-
-!startsub Textual_Document
-    "Document" <|-- "Textual_Document"
-!endsub
-
 !startsub Publication_Channel
     class "Publication_Channel" #ffffff {
         title : Multilingual_String
@@ -335,8 +326,8 @@
 
 !endsub
 
-!startsub Funding
-     "Funding" "0..*" -- "0..*" "Funding" : is part of >
+!startsub Resource
+     "Resource" "0..*" -- "0..*" "Resource" : is part of >
 !endsub
 
 !startsub Resource_Identifier
@@ -427,17 +418,6 @@
 !startsub Resource_Usage_Statement
     class "Resource_Usage_Statement" #ffffff {
         statement : Multilingual_String
-    }
-!endsub
-
-!startsub Textual_Document_Accessibility_Specification
-    class "Textual_Document_Accessibility_Specification" #ffffff {
-    }
-!endsub
-
-!startsub Authorship
-    class "Authorship" #ffffff {
-        correspondingAuthorFlag : Boolean
     }
 !endsub
 
@@ -649,14 +629,6 @@
     "Contribution_to_Document" "0..* contributions <<ordered>>" <--> "1" "Document"
 !endsub
 
-!startsub Authorship
-    "Authorship" --o "Textual_Document"
-!endsub
-
-!startsub Authorship
-    "Contribution_to_Document" <|-- "Authorship"
-!endsub
-
 !startsub Contribution_to_Event
     "Contribution_to_Event" --> "Event" : event >
 !endsub
@@ -679,18 +651,6 @@
 
 !startsub Resource_Usage_Statement
      "Contribution_Statement" o-l- "0..*" "Resource_Usage_Statement"
-!endsub
-
-!startsub Authorship
-    "Authorship" "0..*" --o "0..1 author" "Agent"
-!endsub
-
-!startsub Textual_Document_Accessibility_Specification
-    "Textual_Document" *-r- "0..*" "Textual_Document_Accessibility_Specification" : has access >
-!endsub
-
-!startsub Authorship
-    "Textual_Document" "0..* authoredDocuments" o-- "0..* authors" "Agent"
 !endsub
 
 !startsub Prize_Award

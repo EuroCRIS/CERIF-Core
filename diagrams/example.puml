@@ -46,24 +46,6 @@
         }
     !endsub
 
-    !startsub aut
-    object "<u>Authorship 1 : Authorship</u>" as Aut1 #ffffff {
-            contacts = [ "mailto:xxxxxxxx@hnu.de" ] ^^ Collection<URI>
-            displayName = "Ulrike Reisach"
-            correspondingAuthorFlag = True
-            author = X ^^ Agent
-            document = 10.1016/j.ejor.2020.09.020 ^^ Document
-            Affiliation_Statement = [Affiliation 1] ^^ List<Affiliation_Statement>
-        }
-    !endsub
-
-    !startsub autDoc
-        Aut1 o--> "author" X
-    !endsub
-    !startsub autDoc
-        Aut1 *--> "0..* Affiliation_Statement" Aff1
-    !endsub
-
     !startsub Affiliation_Statement
         Aff1 o--> "institution" Ins1
     !endsub
