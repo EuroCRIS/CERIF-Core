@@ -252,13 +252,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                            rdfs:comment "An Agent can be the agent in any number of [Expertise and Time and Effort](../entities/Expertise_and_Time_and_Effort.md) instances."@en .
 
 
-###  https://w3id.org/cerif2/Agent#isAuthorOf
-<https://w3id.org/cerif2/Agent#isAuthorOf> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain <https://w3id.org/cerif2/Agent> ;
-                                           rdfs:range <https://w3id.org/cerif2/Textual_Document> ;
-                                           rdfs:comment "An Agent can be the author of any number of [Textual Documents](../entities/Textual_Document.md)."@en .
-
-
 ###  https://w3id.org/cerif2/Agent#isRecipientOf
 <https://w3id.org/cerif2/Agent#isRecipientOf> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <https://w3id.org/cerif2/Agent> ;
@@ -632,21 +625,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                          rdfs:comment "A Funding can cover any number of [Projects](../entities/Project.md) that help it happen."@en .
 
 
-###  https://w3id.org/cerif2/Funding#hasPart
-<https://w3id.org/cerif2/Funding#hasPart> rdf:type owl:ObjectProperty ;
-                                          rdfs:domain <https://w3id.org/cerif2/Funding> ;
-                                          rdfs:range <https://w3id.org/cerif2/Funding> ;
-                                          rdfs:comment "A Funding can have any number of other [Fundings](../entities/Funding.md) as parts."@en .
-
-
-###  https://w3id.org/cerif2/Funding#isPartOf
-<https://w3id.org/cerif2/Funding#isPartOf> rdf:type owl:ObjectProperty ;
-                                           owl:inverseOf <https://w3id.org/cerif2/Funding#hasPart> ;
-                                           rdfs:domain <https://w3id.org/cerif2/Funding> ;
-                                           rdfs:range <https://w3id.org/cerif2/Funding> ;
-                                           rdfs:comment "A Funding can be part of any number of other [Fundings](../entities/Funding.md)."@en .
-
-
 ###  https://w3id.org/cerif2/Group#hasPart
 <https://w3id.org/cerif2/Group#hasPart> rdf:type owl:ObjectProperty ;
                                         rdfs:domain <https://w3id.org/cerif2/Group> ;
@@ -887,12 +865,27 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                  rdfs:comment "A Resource can have any number of [identifiers](../entities/Resource_Identifier.md)."@en .
 
 
+###  https://w3id.org/cerif2/Resource#hasPart
+<https://w3id.org/cerif2/Resource#hasPart> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <https://w3id.org/cerif2/Resource> ;
+                                           rdfs:range <https://w3id.org/cerif2/Resource> ;
+                                           rdfs:comment "A Resource can have any number of other [Resources](../entities/Resource.md) as parts."@en .
+
+
 ###  https://w3id.org/cerif2/Resource#isOfferedIn
 <https://w3id.org/cerif2/Resource#isOfferedIn> rdf:type owl:ObjectProperty ;
                                                owl:inverseOf <https://w3id.org/cerif2/Resource_Offer#offers> ;
                                                rdfs:domain <https://w3id.org/cerif2/Resource> ;
                                                rdfs:range <https://w3id.org/cerif2/Resource_Offer> ;
                                                rdfs:comment "A Resource can be offered in any number of [Resource Offers](../entities/Resource_Offer.md)."@en .
+
+
+###  https://w3id.org/cerif2/Resource#isPartOf
+<https://w3id.org/cerif2/Resource#isPartOf> rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf <https://w3id.org/cerif2/Resource#hasPart> ;
+                                            rdfs:domain <https://w3id.org/cerif2/Resource> ;
+                                            rdfs:range <https://w3id.org/cerif2/Resource> ;
+                                            rdfs:comment "A Resource can be part of any number of other [Resources](../entities/Resource.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Resource#isProvidedBy
@@ -1016,21 +1009,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                         rdfs:comment "A Resource Usage Statement specifies the [Resource](../entities/Resource.md) that is being used."@en .
 
 
-###  https://w3id.org/cerif2/Textual_Document#hasAuthor
-<https://w3id.org/cerif2/Textual_Document#hasAuthor> rdf:type owl:ObjectProperty ;
-                                                     owl:inverseOf <https://w3id.org/cerif2/Agent#isAuthorOf> ;
-                                                     rdfs:domain <https://w3id.org/cerif2/Textual_Document> ;
-                                                     rdfs:range <https://w3id.org/cerif2/Agent> ;
-                                                     rdfs:comment "A Textual Document has any number of authors, instances of [Agent](../entities/Agent.md). This relationship is derived: it relates the Textual Document with the *actors* of its *authorships*. This is a simplified form expressing *authorships* without any additional qualification or context."@en .
-
-
-###  https://w3id.org/cerif2/Textual_Document#hasAuthorship
-<https://w3id.org/cerif2/Textual_Document#hasAuthorship> rdf:type owl:ObjectProperty ;
-                                                         rdfs:domain <https://w3id.org/cerif2/Textual_Document> ;
-                                                         rdfs:range <https://w3id.org/cerif2/Authorship> ;
-                                                         rdfs:comment "A Textual Document can have any number of [Authorships](../entities/Authorship.md). This relationship is derived from [Document.has-contribution](../entities/Document.md#user-content-rel__has-contribution) by including just those [Contributions to Documents](../entities/Contribution_to_Document.md) that are [Authorships](../entities/Authorship.md)."@en .
-
-
 ###  https://w3id.org/cerif2/Visiting_Address#physicalAddress
 <https://w3id.org/cerif2/Visiting_Address#physicalAddress> rdf:type owl:ObjectProperty ;
                                                            rdfs:domain <https://w3id.org/cerif2/Visiting_Address> ;
@@ -1077,13 +1055,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Agent#keywords> rdf:type owl:DatatypeProperty ;
                                          rdfs:domain <https://w3id.org/cerif2/Agent> ;
                                          rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
-
-
-###  https://w3id.org/cerif2/Authorship#correspondingAuthorFlag
-<https://w3id.org/cerif2/Authorship#correspondingAuthorFlag> rdf:type owl:DatatypeProperty ;
-                                                             rdfs:domain <https://w3id.org/cerif2/Authorship> ;
-                                                             rdfs:range <https://w3id.org/cerif2/Boolean> ;
-                                                             rdfs:label "indicates whether this author is responsible for correspondence (true)" .
 
 
 ###  https://w3id.org/cerif2/Call_for_Applications#deadline
@@ -1546,13 +1517,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                              rdfs:label "Application Review"@en .
 
 
-###  https://w3id.org/cerif2/Authorship
-<https://w3id.org/cerif2/Authorship> rdf:type owl:Class ;
-                                     rdfs:subClassOf <https://w3id.org/cerif2/Contribution_to_Document> ;
-                                     rdfs:comment "Structured information about linking an [Agent](../entities/Agent.md) or any of its specializations ([Person](../entities/Person.md), [Organisation Unit](../entities/Organisation_Unit.md)) with a [Document](../entities/Document.md) or any of its specializations. Authorship implies responsibility and accountability of an Agent for published Document."@en ;
-                                     rdfs:label "Authorship"@en .
-
-
 ###  https://w3id.org/cerif2/Call_for_Applications
 <https://w3id.org/cerif2/Call_for_Applications> rdf:type owl:Class ;
                                                 rdfs:subClassOf <https://w3id.org/cerif2/Resource_Offer> ;
@@ -1971,19 +1935,6 @@ Source: the Project Management Institute, https://www.pmi.org/about/learn-about-
                                                       rdfs:subClassOf <https://w3id.org/cerif2/Physical_Address> ;
                                                       rdfs:comment "This data type is used when a structured representation of physical address is used."@en ;
                                                       rdfs:label "Structured Postal Address"@en .
-
-
-###  https://w3id.org/cerif2/Textual_Document
-<https://w3id.org/cerif2/Textual_Document> rdf:type owl:Class ;
-                                           rdfs:subClassOf <https://w3id.org/cerif2/Document> ;
-                                           rdfs:comment "A resource consisting primarily of words for reading.<sup>[1](#fn1)</sup>"@en ;
-                                           rdfs:label "Textual Document"@en .
-
-
-###  https://w3id.org/cerif2/Textual_Document_Accessibility_Specification
-<https://w3id.org/cerif2/Textual_Document_Accessibility_Specification> rdf:type owl:Class ;
-                                                                       rdfs:comment "[FIXME] An entity for representing vocabularies for definition of concepts to declare the access status of a resource."@en ;
-                                                                       rdfs:label "Textual Document Accessibility Rights"@en .
 
 
 ###  https://w3id.org/cerif2/Visiting_Address
