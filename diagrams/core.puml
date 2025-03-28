@@ -314,6 +314,11 @@
         title : Multilingual_String
         publicationDate : Date
     }
+
+    "Document" "0..*" -- "0..*" "Document" : is part of >
+
+    "Document" "0..*" -- "0..*" "Document" : another representation of >
+
 !endsub
 
 !startsub Publication_Channel
@@ -322,12 +327,31 @@
         acronym : Multilingual_String
     }
 
-    "Document" --> "0..1" "Publication_Channel" : published via channel >
+    "Document" --> "0..1" "Document_Publication_Channel" : published via channel >
+
+    class "Document_Publication_Channel" #ffffff {
+        startPage : String
+        endPage : String
+        articleNumber : String
+        volume : String
+        number : String
+        startFrame : Time
+        endFrame : Time
+    }
+
+    "Document_Publication_Channel" --> "0..1" "Publication_Channel" : published in >
+
+    class "Repository" #ffffff {
+    }
+
+    "Publication_Channel" <|-- "Repository"
+
+    "Infrastructure" <|-- "Repository"
 
 !endsub
 
-!startsub Resource
-     "Resource" "0..*" -- "0..*" "Resource" : is part of >
+!startsub Funding
+     "Funding" "0..*" -- "0..*" "Funding" : is part of >
 !endsub
 
 !startsub Resource_Identifier
@@ -377,7 +401,7 @@
         acronym : Multilingual_String
         description : Multilingual_String
         dateRange : Date_Range
-        ordinal number: Decimal
+        ordinalNumber: Decimal
         contacts : List<Contact_Information>
     }
 
@@ -388,8 +412,8 @@
         title : Multilingual_String
         acronym : Multilingual_String
         description : Multilingual_String
-        recurrence period : Decimal
-        recurrence unit : Multilingual_String
+        recurrencePeriod : Decimal
+        recurrenceUnit : Multilingual_String
         contacts : List<Contact_Information>
     }
 
@@ -757,7 +781,7 @@
 
 !startsub Expertise_and_Time_and_Effort
 	class "Expertise_and_Time_and_Effort" #ffffff {
-	  amount_of_time_in_person_hours : Decimal
+	  amountOfTimeInPersonHours : Decimal
 	}
 !endsub
 
@@ -806,10 +830,10 @@
 
 !startsub Date_Range
     datatype("Date_Range") {
-        start_date : Date
-        start_date_inclusive : Boolean
-        end_date : Date
-        end_date_inclusive : Boolean
+        startDate : Date
+        startDateInclusive : Boolean
+        endDate : Date
+        endDateInclusive : Boolean
 	}
 !endsub
 
@@ -846,6 +870,35 @@
 
 !startsub Acknowledgement_Statement
     "Contribution" *-- "0..*" "Acknowledgement_Statement" : testified by >
+!endsub
+
+!startsub Form
+    class "Text" #ffffff {
+        numberOfPages : Decimal
+        numberOfWords : Decimal
+        numberOfCharacters : Decimal
+    }
+
+    class "Video" #ffffff {
+        duration : Time_Amount
+    }
+
+    class "Audio" #ffffff {
+        duration : Time_Amount
+    }
+
+    class "Tangible" #ffffff {
+    }
+
+    class "Downloadable" #ffffff {
+        downloadURL : Website_Address
+        mimeType    : String
+        size        : Decimal
+    }
+
+    datatype("Time_Amount") {
+    }
+
 !endsub
 
 @enduml
