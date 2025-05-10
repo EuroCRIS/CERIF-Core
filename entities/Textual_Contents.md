@@ -11,6 +11,11 @@ A text is any stretch of language that can be understood in context.
 It may be as simple as 1-2 words (such as a stop sign) or as complex as a novel. 
 Any sequence of sentences that belong together can be considered a text.<sup>[2](#fn2)</sup>
 
+## Attributes
+<a name="numberOfPages">numberOfPages : [Decimal](../datatypes/Decimal.md)</a>
+<a name="numberOfWords">numberOfWords : [Decimal](../datatypes/Decimal.md)</a>
+<a name="numberOfCharacters">numberOfCharacters : [Decimal](../datatypes/Decimal.md)</a>
+
 ---
 ## Matches
 Close match of the [*Text* COAR Resource Type](http://purl.org/coar/resource_type/c_18cf).
