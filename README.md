@@ -29,13 +29,14 @@ actually [used](./entities/Resource_Usage_Statement.md).
 
 Projects typically make use of [Infrastructure](./entities/Infrastructure.md).
 Agents can make [Contributions to Infrastructure](./entities/Contribution_to_Infrastructure.md).
+[Repositories](./entities/Repository.md) are one subtype of Infrastructures.
 
 Scientific and other [Events](./entities/Event.md) support communication, including scholarly communication. 
 Agents can make different [Contributions to Events](./entities/Contribution_to_Event.md). An Event can have any number of [Event Identifiers](./entities/Event_Identifier.md) assigned. Events can be organized within [Event Series](./entities/Event_Series.md)
 
 Information and knowledge are typically stored in [Documents](./entities/Document.md).
 Agents can be actors in [Contributions to Documents](./entities/Contribution_to_Document.md).
-Documents can be published in numerous [Publication Channels](./entities/Publication_Channel.md).
+Documents can be published in one or several [Publication Channels](./entities/Publication_Channel.md).
 The form of a document can be further specified as [Text](./entities/Textual_Contents.md), [Video](./entities/Video_Contents.md), [Audio](./entities/Audio_Contents.md) or [Tangible](./entities/Tangible.md). Digital objects can be marked as [Downloadable](./entities/Downloadable.md).
 
 Agents prepare and submit [Applications](./entities/Application.md), for instance [Funding Applications](./entities/Funding_Application.md).
@@ -97,6 +98,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
   * [Funding](./entities/Funding.md)
   * [Expertise and Time and Effort](./entities/Expertise_and_Time_and_Effort.md)
   * [Infrastructure](./entities/Infrastructure.md)
+    * [Repository](./entities/Repository.md)
   * [Document](./entities/Document.md)
 * [Resource Offer](./entities/Resource_Offer.md)
   * [Call for Applications](./entities/Call_for_Applications.md)
