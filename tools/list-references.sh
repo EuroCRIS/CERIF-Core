@@ -84,6 +84,16 @@ if [ -s ${TMPDIR}/CERIF-entities-undescribed-$$.txt ] ; then
 	echo 'Entities missing from the Listing / Entities section in the README.md file:'
 	sed -e 's/\(\.\/entities\/\)\([A-Za-z0-9_]*\)\(\.md\)/* [\2](\1\2\3)/' ${TMPDIR}/CERIF-entities-undescribed-$$.txt
 fi
+grep 'class "' diagrams/core.puml | sed -e 's/^.*class "/.\/entities\//' -e 's/".*/.md/' \
+| sort \
+| diff -U0 - ${TMPDIR}/CERIF-entities-$$.txt \
+| sed -e 1,2d -e '/^@@ /d' >${TMPDIR}/CERIF-entities-diff-diagram-$$.txt
+if [ -s ${TMPDIR}/CERIF-entities-diff-diagram-$$.txt ] ; then
+	echo
+	echo 'Entities from the diagrams vs entities defined in ./entities/:'
+	sed -e 's/\(\.\/entities\/\)\([A-Za-z0-9_]*\)\(\.md\)/\2/' ${TMPDIR}/CERIF-entities-diff-diagram-$$.txt
+fi
+
 
 ls ./datatypes/*.md >${TMPDIR}/CERIF-datatypes-$$.txt
 sed <README.md -e '1,/### Data Types/d' -e '/^## /,$d' \
