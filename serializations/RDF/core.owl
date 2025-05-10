@@ -1517,6 +1517,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                              rdfs:label "Application Review"@en .
 
 
+###  https://w3id.org/cerif2/Audio_Contents
+<https://w3id.org/cerif2/Audio_Contents> rdf:type owl:Class ;
+                                         rdfs:comment "A resource primarily intended to be heard.<sup>[1](#fn1)</sup>"@en ;
+                                         rdfs:label "Audio Contents"@en .
+
+
 ###  https://w3id.org/cerif2/Call_for_Applications
 <https://w3id.org/cerif2/Call_for_Applications> rdf:type owl:Class ;
                                                 rdfs:subClassOf <https://w3id.org/cerif2/Resource_Offer> ;
@@ -1628,6 +1634,12 @@ namely, submit an [Application](../entities/Application.md)."""@en ;
                                    rdfs:comment """A document is a bounded representation of a body of information designed with the capacity (and usually intent) to communicate. 
 A document may manifest symbolic, diagrammatic or sensory-representational information.<sup>[1](#fn1)</sup>"""@en ;
                                    rdfs:label "Document"@en .
+
+
+###  https://w3id.org/cerif2/Downloadable
+<https://w3id.org/cerif2/Downloadable> rdf:type owl:Class ;
+                                       rdfs:comment "Anything that is accessible on the World Wide Web."@en ;
+                                       rdfs:label "Downloadable"@en .
 
 
 ###  https://w3id.org/cerif2/Education
@@ -1935,6 +1947,24 @@ Source: the Project Management Institute, https://www.pmi.org/about/learn-about-
                                                       rdfs:subClassOf <https://w3id.org/cerif2/Physical_Address> ;
                                                       rdfs:comment "This data type is used when a structured representation of physical address is used."@en ;
                                                       rdfs:label "Structured Postal Address"@en .
+
+
+###  https://w3id.org/cerif2/Tangible
+<https://w3id.org/cerif2/Tangible> rdf:type owl:Class ;
+                                   rdfs:comment "Something that is real and able to be shown or touched.<sup>[1](#fn1)</sup>"@en ;
+                                   rdfs:label "Tangible"@en .
+
+
+###  https://w3id.org/cerif2/Textual_Contents
+<https://w3id.org/cerif2/Textual_Contents> rdf:type owl:Class ;
+                                           rdfs:comment "A resource consisting primarily of words for reading.<sup>[1](#fn1)</sup>"@en ;
+                                           rdfs:label "Textual Contents"@en .
+
+
+###  https://w3id.org/cerif2/Video_Contents
+<https://w3id.org/cerif2/Video_Contents> rdf:type owl:Class ;
+                                         rdfs:comment "Media that makes use of images (usually \"moving\"), with or without sound, over a period of playback time.<sup>[1](#fn1)</sup>"@en ;
+                                         rdfs:label "Video Contents"@en .
 
 
 ###  https://w3id.org/cerif2/Visiting_Address
