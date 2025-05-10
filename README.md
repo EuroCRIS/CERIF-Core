@@ -48,6 +48,7 @@ All the contributions mentioned above are subclasses of [Contribution](./entitie
 A Contribution is another type of Activity.
 Contributions can be detailed with any number of [Contribution Statements](./entities/Contribution_Statement.md).
 These can in turn be further refined with [Resource Usage Statements](./entities/Resource_Usage_Statement.md) which represent the fact of a Resource being used for the Activity.
+A Contribution can be acknowledged by an [Acknowledgment Statement](./entities/Acknowledgement_Statement.md).
 
 [Expertise or Skills](./entities/Expertise_and_Skills.md) can be [posessed](./entities/Expertise_and_Skills_Possession.md) by Agents.
 When joined with availability and willingness in [Expertise and Time and Effort](./entities/Expertise_and_Time_and_Effort.md), it forms yet another subclass of Resource.
@@ -55,6 +56,7 @@ Expertise and Skills can also be [conditions](./entities/Expertise_and_Skills_Co
 a specific subtype of a general [Condition](./entities/Condition.md).
 
 [Prizes](./entities/Prize.md) are conferred on Agents in [Prize Awards](./entities/Prize_Award.md).
+Agents also make [Contributions to Prizes](./entities/Contribution_to_Prize.md) or [Contributions to Prize Awards](./entities/Contribution_to_Prize_Award.md).
 
 An Agent can have any number of [Agent Identifiers](./entities/Agent_Identifier.md) assigned,
 for instance the [ORCID Identifier](./entities/ORCID_Identifier.md), [ROR Identifier](./entities/ROR_Identifier.md), [ISNI Identifier](./entities/ISNI_Identifier.md),
@@ -78,11 +80,14 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
     * [Contribution to Evaluation Outcome](./entities/Contribution_to_Evaluation_Outcome.md)
       * [Application Review](./entities/Application_Review.md)
     * [Contribution_to_Infrastructure](./entities/Contribution_to_Infrastructure.md)
+    * [Contribution_to_Prize](./entities/Contribution_to_Prize.md)
+    * [Contribution_to_Prize_Award](./entities/Contribution_to_Prize_Award.md)
   * [Involvement](./entities/Involvement.md)
     * [Membership](./entities/Membership.md)
     * [Employment](./entities/Employment.md)
     * [Education](./entities/Education.md)
 * [Affiliation](./entities/Affiliation_Statement.md)
+* [Acknowledgement_Statement](./entities/Acknowledgement_Statement.md)
 * [Contribution Statement](./entities/Contribution_Statement.md)
 * [Project](./entities/Project.md)
 * [Event](./entities/Event.md)
