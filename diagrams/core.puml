@@ -858,7 +858,7 @@
 !startsub Script
     datatype("Script") {
         name : Multilingual_String
-        scriptCode : ISO_15924_Alphabetic_Code
+        scriptCode : ISO_15924_Alpha4_Code
 	}
 !endsub
 

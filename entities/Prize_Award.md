@@ -22,7 +22,7 @@ date : [Date](../datatypes/Date.md)
 
 <a name="rel__awarded-by-whom">awarded-by-whom</a> / [awards-prize](../entities/Event.md#user-content-rel__awards-prize) : A Prize can be awarded by any number of [Agents](../entities/Agent.md).
 
-<a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Prize_Awards.md#user-content-rel__has-target) : A Prize Award can have any number of [contributions](../entities/Contribution_to_Prize_Awards.md) that help its organization.
+<a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Prize_Award.md#user-content-rel__has-target) : A Prize Award can have any number of [contributions](../entities/Contribution_to_Prize_Award.md) that help its organization.
 
 
 ---
