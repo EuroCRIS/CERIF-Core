@@ -874,9 +874,9 @@
 
 !startsub Form
     class "Textual_Contents" #ffffff {
-#        numberOfPages : Decimal
-#        numberOfWords : Decimal
-#        numberOfCharacters : Decimal
+        numberOfPages : Decimal
+        numberOfWords : Decimal
+        numberOfCharacters : Decimal
     }
 
     class "Video_Contents" #ffffff {
