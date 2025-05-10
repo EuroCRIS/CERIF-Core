@@ -36,6 +36,7 @@ Agents can make different [Contributions to Events](./entities/Contribution_to_E
 Information and knowledge are typically stored in [Documents](./entities/Document.md).
 Agents can be actors in [Contributions to Documents](./entities/Contribution_to_Document.md).
 Documents can be published in numerous [Publication Channels](./entities/Publication_Channel.md).
+The form of a document can be further specified as [Text](./entities/Textual_Contents.md), [Video](./entities/Video_Contents.md), [Audio](./entities/Audio_Contents.md) or [Tangible](./entities/Tangible.md). Digital objects can be marked as [Downloadable](./entities/Downloadable.md).
 
 Agents prepare and submit [Applications](./entities/Application.md), for instance [Funding Applications](./entities/Funding_Application.md).
 This can occur in response to a [Call for Applications](./entities/Call_for_Applications.md), for instance a [Call for Funding Applications](./entities/Call_for_Funding_Applications.md), or outside of any such call, perhaps based on an implicit invitation to do so.
@@ -119,10 +120,16 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
   * [Wikidata Resource Identifier](./entities/Wikidata_Resource_Identifier.md)
   * [Local Resource Identifier](./entities/Local_Resource_Identifier.md)
 * [Event Identifier](./entities/Event_Identifier.md)
+* [Textual_Contents](./entities/Textual_Contents.md)
+* [Audio_Contents](./entities/Audio_Contents.md)
+* [Video_Contents](./entities/Video_Contents.md)
+* [Downloadable](./entities/Downloadable.md)
+* [Tangible](./entities/Tangible.md)
 
 ### Data Types
 * [String](./datatypes/String.md)
 * [Date](./datatypes/Date.md), [Date Range](./datatypes/Date_Range.md)
+* [Duration](./datatypes/Duration.md)
 * [Boolean](./datatypes/Boolean.md)
 * [Decimal](./datatypes/Decimal.md)
 * [Multilingual String](./datatypes/Multilingual_String.md)

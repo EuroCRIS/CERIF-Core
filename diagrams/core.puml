@@ -873,30 +873,30 @@
 !endsub
 
 !startsub Form
-    class "Text" #ffffff {
-        numberOfPages : Decimal
-        numberOfWords : Decimal
-        numberOfCharacters : Decimal
+    class "Textual_Contents" #ffffff {
+#        numberOfPages : Decimal
+#        numberOfWords : Decimal
+#        numberOfCharacters : Decimal
     }
 
-    class "Video" #ffffff {
-        duration : Time_Amount
+    class "Video_Contents" #ffffff {
+        duration : Duration
     }
 
-    class "Audio" #ffffff {
-        duration : Time_Amount
+    class "Audio_Contents" #ffffff {
+        duration : Duration
     }
 
     class "Tangible" #ffffff {
     }
 
     class "Downloadable" #ffffff {
-        downloadURL : Website_Address
+        downloadURL : URI
         mimeType    : String
         size        : Decimal
     }
 
-    datatype("Time_Amount") {
+    datatype("Duration") {
     }
 
 !endsub
