@@ -804,6 +804,14 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                              rdfs:comment "A Prize Award awards a specific [Prize](../entities/Prize.md)."@en .
 
 
+###  https://w3id.org/cerif2/Prize_Award#hasContribution
+<https://w3id.org/cerif2/Prize_Award#hasContribution> rdf:type owl:ObjectProperty ;
+                                                      owl:inverseOf <https://w3id.org/cerif2/Contribution_to_Prize_Award#hasTarget> ;
+                                                      rdfs:domain <https://w3id.org/cerif2/Prize_Award> ;
+                                                      rdfs:range <https://w3id.org/cerif2/Contribution_to_Prize_Award> ;
+                                                      rdfs:comment "A Prize Award can have any number of [contributions](../entities/Contribution_to_Prize_Award.md) that help its organization."@en .
+
+
 ###  https://w3id.org/cerif2/Prize_Award#hasRecipient
 <https://w3id.org/cerif2/Prize_Award#hasRecipient> rdf:type owl:ObjectProperty ;
                                                    owl:inverseOf <https://w3id.org/cerif2/Agent#isRecipientOf> ;
