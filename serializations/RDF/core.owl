@@ -1907,6 +1907,14 @@ Source: the Project Management Institute, https://www.pmi.org/about/learn-about-
                                          rdfs:label "ROR Identifier"@en .
 
 
+###  https://w3id.org/cerif2/Repository
+<https://w3id.org/cerif2/Repository> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/cerif2/Infrastructure> ,
+                                                     <https://w3id.org/cerif2/Publication_Channel> ;
+                                     rdfs:comment "A place where things are stored and can be found.<sup>[1](#fn1)</sup>"@en ;
+                                     rdfs:label "Repository"@en .
+
+
 ###  https://w3id.org/cerif2/Resource
 <https://w3id.org/cerif2/Resource> rdf:type owl:Class ;
                                    rdfs:comment "Anything that can be used for or in the process of research."@en ;
