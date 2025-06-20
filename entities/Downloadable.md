@@ -4,7 +4,7 @@
 Anything that is accessible on the World Wide Web.
 
 ## Usage notes
-A marker class to be used together with [Document](../entities/Document.md) or its subclass
+A class to be used together with [Document](../entities/Document.md) or its subclass
 to indicate the document can be accessed on the web.
 
 ## Attributes

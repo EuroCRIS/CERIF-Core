@@ -4,7 +4,7 @@
 A resource primarily intended to be heard.<sup>[1](#fn1)</sup>
 
 ## Usage notes
-A marker class to be used together with [Document](../entities/Document.md) or its subclass
+A class to be used together with [Document](../entities/Document.md) or its subclass
 to indicate the document has an important audio component.
 
 ## Attributes
