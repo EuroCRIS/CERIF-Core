@@ -1007,7 +1007,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                            owl:inverseOf <https://w3id.org/cerif2/Contribution_Statement#isDetailedIn> ;
                                                            rdfs:domain <https://w3id.org/cerif2/Resource_Usage_Statement> ;
                                                            rdfs:range <https://w3id.org/cerif2/Contribution_Statement> ;
-                                                           rdfs:comment "A Resource Usage Statement can detail a [Contribution Statement](../entities/Contribution_Statement.md)."@en .
+                                                           rdfs:comment "A Resource Usage Statement can detail any number of [Contribution Statements](../entities/Contribution_Statement.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Resource_Usage_Statement#uses
