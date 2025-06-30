@@ -327,9 +327,9 @@
         acronym : Multilingual_String
     }
 
-    "Document" --> "0..1" "Document_Publication_Channel" : published via channel >
+    "Document" --> "0..*" "Document_Manifestation" : published via channel >
 
-    class "Document_Publication_Channel" #ffffff {
+    class "Document_Manifestation" #ffffff {
         startPage : String
         endPage : String
         articleNumber : String
@@ -339,7 +339,7 @@
         endFrame : Time
     }
 
-    "Document_Publication_Channel" --> "0..1" "Publication_Channel" : published in >
+    "Document_Manifestation" --> "0..1" "Publication_Channel" : published in >
 
     class "Repository" #ffffff {
     }
