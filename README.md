@@ -36,8 +36,9 @@ Agents can make different [Contributions to Events](./entities/Contribution_to_E
 
 Information and knowledge are typically stored in [Documents](./entities/Document.md).
 Agents can be actors in [Contributions to Documents](./entities/Contribution_to_Document.md).
-Documents can be published in one or several [Publication Channels](./entities/Publication_Channel.md).
-The form of a document can be further specified as [Text](./entities/Textual_Contents.md), [Video](./entities/Video_Contents.md), [Audio](./entities/Audio_Contents.md) or [Tangible](./entities/Tangible.md). Digital objects can be marked as [Downloadable](./entities/Downloadable.md).
+Documents can be [published](./entities/Document_Publication.md) in one or several [Publication Channels](./entities/Publication_Channel.md).
+The form of a document can be further specified as [Text](./entities/Textual_Contents.md), [Video](./entities/Video_Contents.md), [Audio](./entities/Audio_Contents.md) or [Tangible](./entities/Tangible.md).
+Digital objects can be marked as [Accessible on the Web](./entities/Accessible_on_the_Web.md) or even [Downloadable](./entities/Downloadable.md).
 
 Agents prepare and submit [Applications](./entities/Application.md), for instance [Funding Applications](./entities/Funding_Application.md).
 This can occur in response to a [Call for Applications](./entities/Call_for_Applications.md), for instance a [Call for Funding Applications](./entities/Call_for_Funding_Applications.md), or outside of any such call, perhaps based on an implicit invitation to do so.
@@ -131,12 +132,15 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 * [Audio_Contents](./entities/Audio_Contents.md)
 * [Video_Contents](./entities/Video_Contents.md)
 * [Downloadable](./entities/Downloadable.md)
+* [Accessible on the Web](./entities/Accessible_on_the_Web.md)
 * [Tangible](./entities/Tangible.md)
+* [Document Publication](./entities/Document_Publication.md)
 
 ### Data Types
 * [String](./datatypes/String.md)
 * [Date](./datatypes/Date.md), [Date Range](./datatypes/Date_Range.md)
 * [Duration](./datatypes/Duration.md)
+* [Time](./datatypes/Time.md)
 * [Boolean](./datatypes/Boolean.md)
 * [Decimal](./datatypes/Decimal.md)
 * [Multilingual String](./datatypes/Multilingual_String.md)
@@ -169,6 +173,9 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 * Codes for countries: [ISO 3166 Alpha2 Code](./datatypes/ISO_3166_Alpha2_Code.md)
 * Codes for currencies: [ISO 4217 Alpha Code](./datatypes/ISO_4217_Alpha_Code.md)
 * Codes for scripts: [ISO 15924 Alpha4 Code](./datatypes/ISO_15924_Alpha4_Code.md)
+* [Contents Location](./datatypes/Contents_Location.md)
+  * [Page Based Contents Location](./datatypes/Page_Based_Contents_Location.md) 
+  * [Time Based Contents Location](./datatypes/Time_Based_Contents_Location.md)
 
 ## Illustrative Diagram
 ![The CERIF Core diagram](./diagrams/core.svg)
