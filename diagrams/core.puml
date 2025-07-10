@@ -363,14 +363,14 @@
         acronym : Multilingual_String
     }
 
-    "Document" --> "0..*" "Document_Manifestation" : published as >
+    "Document" --> "0..*" "Document_Publication" : published as >
 
-    class "Document_Manifestation" #ffffff {
+    class "Document_Publication" #ffffff {
         publicationDate : Date
     }
 
-    "Document_Manifestation" --> "0..1" "Publication_Channel" : published in >
-    ("Document_Manifestation", "Publication_Channel") .. "Contents_Location"
+    "Document_Publication" --> "0..1" "Publication_Channel" : in >
+    ("Document_Publication", "Publication_Channel") .. "Contents_Location"
 
     class "Repository" #ffffff {
     }

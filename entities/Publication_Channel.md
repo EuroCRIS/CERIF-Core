@@ -10,7 +10,7 @@ An example of publication channel is a publication series such as journal or boo
 
 ## Relationships
 
-<a name="rel__has-publication">has-publication</a> / [published-via-channel](../entities/Document.md#user-content-rel__published-via-channel) : A Publication Channel has any number of [documents](../entities/Document.md) which has been published via the channel.
+<a name="rel__contains">contains</a> / [in](../entities/Document_Publication.md#user-content-rel__in) : A Publication Channel contains any number of [Document Publications](../entities/Document_Publication.md).
 
 ---
 ## Matches

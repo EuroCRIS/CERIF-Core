@@ -25,15 +25,13 @@ Should that be necessary, a particular module should undertake this effort.
 ## Attributes
 title : [Multilingual String](../datatypes/Multilingual_String.md)
 
-publication date: [Date](../datatypes/Date.md) in case the document has gone through publication
-
 ## Relationships
 
 <a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Document.md#user-content-rel__has-target) : A Document any number of [contributions](../entities/Contribution_to_Document.md) that helped it arise.
 
 <a name="rel__provides-evidence-of">provides-evidence-of</a> / [is-evidenced-by](../entities/Expertise_and_Skills_Possession.md#user-content-rel__is-evidenced-by) : A Document can provide evidence of any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md).
 
-<a name="rel__published-via-channel">published-via-channel</a> / [has-publication](../entities/Publication_Channel.md#user-content-rel__has-publication) : A Document can be published via [publication channel](../entities/Publication_Channel.md).
+<a name="rel__published-as">published-as</a> / [of](../entities/Document_Publication.md#user-content-rel__of) : A Document can be published as [Document Publication](../entities/Document_Publication.md), once or even multiple times.
 
 <a name="rel__describes-resource-request">describes-resource-request</a> / [is-described-by](../entities/Resource_Request.md#user-content-rel__is-described-by) : A Document can provide description of a [Resource Request](../entities/Resource_Request.md).
 
