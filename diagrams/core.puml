@@ -312,12 +312,48 @@
 !startsub Document
     class "Document" #ffffff {
         title : Multilingual_String
-        publicationDate : Date
     }
 
     "Document" "0..*" -- "0..*" "Document" : is part of >
+    ("Document", "Document") .. "Contents_Location"
 
     "Document" "0..*" -- "0..*" "Document" : another representation of >
+
+!endsub
+
+!startsub Document
+    datatype("Contents_Location") {
+        number : String
+    }
+
+    datatype("Page_Based_Contents_Location") {
+        startPage : String
+        endPage : String
+    }
+
+    "Contents_Location" <|-- "Page_Based_Contents_Location"
+
+    datatype("Textual_Contents_Location") {
+    }
+
+    "Page_Based_Contents_Location" <|-- "Textual_Contents_Location"
+
+    datatype("Time_Based_Contents_Location") {
+        startTime : Time
+        endTime : Time
+    }
+
+    "Contents_Location" <|-- "Time_Based_Contents_Location"
+
+    datatype("Video_Contents_Location") {
+    }
+
+    "Time_Based_Contents_Location" <|-- "Video_Contents_Location"
+
+    datatype("Audio_Contents_Location") {
+    }
+
+    "Time_Based_Contents_Location" <|-- "Audio_Contents_Location"
 
 !endsub
 
@@ -327,19 +363,14 @@
         acronym : Multilingual_String
     }
 
-    "Document" --> "0..*" "Document_Manifestation" : published via channel >
+    "Document" --> "0..*" "Document_Manifestation" : published as >
 
     class "Document_Manifestation" #ffffff {
-        startPage : String
-        endPage : String
-        articleNumber : String
-        volume : String
-        number : String
-        startFrame : Time
-        endFrame : Time
+        publicationDate : Date
     }
 
     "Document_Manifestation" --> "0..1" "Publication_Channel" : published in >
+    ("Document_Manifestation", "Publication_Channel") .. "Contents_Location"
 
     class "Repository" #ffffff {
     }
@@ -896,7 +927,8 @@
         size        : Decimal
     }
 
-    datatype("Duration") {
+    class "AccessibleOnTheWeb" #ffffff {
+        accessURL : URI
     }
 
 !endsub
