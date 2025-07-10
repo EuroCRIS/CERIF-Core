@@ -927,7 +927,7 @@
         size        : Decimal
     }
 
-    class "AccessibleOnTheWeb" #ffffff {
+    class "Accessible_on_the_Web" #ffffff {
         accessURL : URI
     }
 
