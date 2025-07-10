@@ -7,6 +7,8 @@ A Publication Channel is a medium for publishing documents.
 An example of publication channel is a publication series such as journal or book series (e.g. Lecture Notes in Computer Sciences). Moreover, a repository is also a publication channel. 
 
 ## Attributes
+- title : [Multilingual String](../datatypes/Multilingual_String.md)
+- acronym : [Multilingual String](../datatypes/Multilingual_String.md)
 
 ## Relationships
 
