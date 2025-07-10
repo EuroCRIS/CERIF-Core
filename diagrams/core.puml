@@ -333,27 +333,12 @@
 
     "Contents_Location" <|-- "Page_Based_Contents_Location"
 
-    datatype("Textual_Contents_Location") {
-    }
-
-    "Page_Based_Contents_Location" <|-- "Textual_Contents_Location"
-
     datatype("Time_Based_Contents_Location") {
         startTime : Time
         endTime : Time
     }
 
     "Contents_Location" <|-- "Time_Based_Contents_Location"
-
-    datatype("Video_Contents_Location") {
-    }
-
-    "Time_Based_Contents_Location" <|-- "Video_Contents_Location"
-
-    datatype("Audio_Contents_Location") {
-    }
-
-    "Time_Based_Contents_Location" <|-- "Audio_Contents_Location"
 
 !endsub
 
