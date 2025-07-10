@@ -102,6 +102,10 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/String> rdf:type rdfs:Datatype .
 
 
+###  https://w3id.org/cerif2/Time
+<https://w3id.org/cerif2/Time> rdf:type rdfs:Datatype .
+
+
 ###  https://w3id.org/cerif2/URI
 <https://w3id.org/cerif2/URI> rdf:type rdfs:Datatype .
 
@@ -467,6 +471,21 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                    rdfs:comment "A Document any number of [contributions](../entities/Contribution_to_Document.md) that helped it arise."@en .
 
 
+###  https://w3id.org/cerif2/Document#hasPart
+<https://w3id.org/cerif2/Document#hasPart> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                           rdfs:range <https://w3id.org/cerif2/Document> ;
+                                           rdfs:comment "A Document can have any number of [Documents](../entities/Document.md) as parts. [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association."@en .
+
+
+###  https://w3id.org/cerif2/Document#isPartOf
+<https://w3id.org/cerif2/Document#isPartOf> rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf <https://w3id.org/cerif2/Document#hasPart> ;
+                                            rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                            rdfs:range <https://w3id.org/cerif2/Document> ;
+                                            rdfs:comment "A Document can be part of any number of other [Documents](../entities/Document.md). [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association."@en .
+
+
 ###  https://w3id.org/cerif2/Document#presentsDecision
 <https://w3id.org/cerif2/Document#presentsDecision> rdf:type owl:ObjectProperty ;
                                                     rdfs:domain <https://w3id.org/cerif2/Document> ;
@@ -489,11 +508,26 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                       rdfs:comment "A Document can provide evidence of any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md)."@en .
 
 
-###  https://w3id.org/cerif2/Document#publishedViaChannel
-<https://w3id.org/cerif2/Document#publishedViaChannel> rdf:type owl:ObjectProperty ;
-                                                       rdfs:domain <https://w3id.org/cerif2/Document> ;
-                                                       rdfs:range <https://w3id.org/cerif2/Publication_Channel> ;
-                                                       rdfs:comment "A Document can be published via [publication channel](../entities/Publication_Channel.md)."@en .
+###  https://w3id.org/cerif2/Document#publishedAs
+<https://w3id.org/cerif2/Document#publishedAs> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain <https://w3id.org/cerif2/Document> ;
+                                               rdfs:range <https://w3id.org/cerif2/Document_Publication> ;
+                                               rdfs:comment "A Document can be published as [Document Publication](../entities/Document_Publication.md), once or even multiple times."@en .
+
+
+###  https://w3id.org/cerif2/Document_Publication#in
+<https://w3id.org/cerif2/Document_Publication#in> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <https://w3id.org/cerif2/Document_Publication> ;
+                                                  rdfs:range <https://w3id.org/cerif2/Publication_Channel> ;
+                                                  rdfs:comment "A Document Publication can be published in any number of [Publication Channels](../entities/Publication_Channel.md). [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association."@en .
+
+
+###  https://w3id.org/cerif2/Document_Publication#of
+<https://w3id.org/cerif2/Document_Publication#of> rdf:type owl:ObjectProperty ;
+                                                  owl:inverseOf <https://w3id.org/cerif2/Document#publishedAs> ;
+                                                  rdfs:domain <https://w3id.org/cerif2/Document_Publication> ;
+                                                  rdfs:range <https://w3id.org/cerif2/Document> ;
+                                                  rdfs:comment "A Document Publication references the published [Document](../entities/Document.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Evaluation_Outcome#hasContribution
@@ -857,12 +891,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                            rdfs:comment "A Project Unit (sub-project/work package/task) can be part of the other [Project unit](../entities/Project.md)."@en .
 
 
-###  https://w3id.org/cerif2/Publication_Channel#hasPublication
-<https://w3id.org/cerif2/Publication_Channel#hasPublication> rdf:type owl:ObjectProperty ;
-                                                             owl:inverseOf <https://w3id.org/cerif2/Document#publishedViaChannel> ;
-                                                             rdfs:domain <https://w3id.org/cerif2/Publication_Channel> ;
-                                                             rdfs:range <https://w3id.org/cerif2/Document> ;
-                                                             rdfs:comment "A Publication Channel has any number of [documents](../entities/Document.md) which has been published via the channel."@en .
+###  https://w3id.org/cerif2/Publication_Channel#contains
+<https://w3id.org/cerif2/Publication_Channel#contains> rdf:type owl:ObjectProperty ;
+                                                       owl:inverseOf <https://w3id.org/cerif2/Document_Publication#in> ;
+                                                       rdfs:domain <https://w3id.org/cerif2/Publication_Channel> ;
+                                                       rdfs:range <https://w3id.org/cerif2/Document_Publication> ;
+                                                       rdfs:comment "A Publication Channel contains any number of [Document Publications](../entities/Document_Publication.md). [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association."@en .
 
 
 ###  https://w3id.org/cerif2/Resource#hasIdentifier
@@ -1127,16 +1161,16 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                         rdfs:range <https://w3id.org/cerif2/Date> .
 
 
-###  https://w3id.org/cerif2/Document#publicationDate
-<https://w3id.org/cerif2/Document#publicationDate> rdf:type owl:DatatypeProperty ;
-                                                   rdfs:domain <https://w3id.org/cerif2/Document> ;
-                                                   rdfs:range <https://w3id.org/cerif2/Date> .
-
-
 ###  https://w3id.org/cerif2/Document#title
 <https://w3id.org/cerif2/Document#title> rdf:type owl:DatatypeProperty ;
                                          rdfs:domain <https://w3id.org/cerif2/Document> ;
                                          rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Document_Publication#publicationDate
+<https://w3id.org/cerif2/Document_Publication#publicationDate> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:domain <https://w3id.org/cerif2/Document_Publication> ;
+                                                               rdfs:range <https://w3id.org/cerif2/Date> .
 
 
 ###  https://w3id.org/cerif2/Education#completed
@@ -1351,6 +1385,18 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                    rdfs:range <https://w3id.org/cerif2/ORCID_iD> .
 
 
+###  https://w3id.org/cerif2/Page_Based_Contents_Location#endPage
+<https://w3id.org/cerif2/Page_Based_Contents_Location#endPage> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:domain <https://w3id.org/cerif2/Page_Based_Contents_Location> ;
+                                                               rdfs:range <https://w3id.org/cerif2/String> .
+
+
+###  https://w3id.org/cerif2/Page_Based_Contents_Location#startPage
+<https://w3id.org/cerif2/Page_Based_Contents_Location#startPage> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:domain <https://w3id.org/cerif2/Page_Based_Contents_Location> ;
+                                                                 rdfs:range <https://w3id.org/cerif2/String> .
+
+
 ###  https://w3id.org/cerif2/Person_Name#displayName
 <https://w3id.org/cerif2/Person_Name#displayName> rdf:type owl:DatatypeProperty ;
                                                   rdfs:domain <https://w3id.org/cerif2/Person_Name> ;
@@ -1403,6 +1449,18 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Project#name> rdf:type owl:DatatypeProperty ;
                                        rdfs:domain <https://w3id.org/cerif2/Project> ;
                                        rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Publication_Channel#acronym
+<https://w3id.org/cerif2/Publication_Channel#acronym> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain <https://w3id.org/cerif2/Publication_Channel> ;
+                                                      rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
+
+
+###  https://w3id.org/cerif2/Publication_Channel#title
+<https://w3id.org/cerif2/Publication_Channel#title> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <https://w3id.org/cerif2/Publication_Channel> ;
+                                                    rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
 ###  https://w3id.org/cerif2/ROR_Identifier#rorId
@@ -1465,6 +1523,18 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                               rdfs:range <https://w3id.org/cerif2/Multilingual_String> .
 
 
+###  https://w3id.org/cerif2/Time_Based_Contents_Location#endTime
+<https://w3id.org/cerif2/Time_Based_Contents_Location#endTime> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:domain <https://w3id.org/cerif2/Time_Based_Contents_Location> ;
+                                                               rdfs:range <https://w3id.org/cerif2/Time> .
+
+
+###  https://w3id.org/cerif2/Time_Based_Contents_Location#startTime
+<https://w3id.org/cerif2/Time_Based_Contents_Location#startTime> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:domain <https://w3id.org/cerif2/Time_Based_Contents_Location> ;
+                                                                 rdfs:range <https://w3id.org/cerif2/Time> .
+
+
 ###  https://w3id.org/cerif2/Wikidata_Agent_Identifier#wikidataId
 <https://w3id.org/cerif2/Wikidata_Agent_Identifier#wikidataId> rdf:type owl:DatatypeProperty ;
                                                                rdfs:domain <https://w3id.org/cerif2/Wikidata_Agent_Identifier> ;
@@ -1480,6 +1550,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 #################################################################
 #    Classes
 #################################################################
+
+###  https://w3id.org/cerif2/Accessible_on_the_Web
+<https://w3id.org/cerif2/Accessible_on_the_Web> rdf:type owl:Class ;
+                                                rdfs:comment "Anything that can be accessed on the World Wide Web."@en ;
+                                                rdfs:label "Accessible on the Web"@en .
+
 
 ###  https://w3id.org/cerif2/Acknowledgement_Statement
 <https://w3id.org/cerif2/Acknowledgement_Statement> rdf:type owl:Class ;
@@ -1550,6 +1626,12 @@ namely, submit an [Application](../entities/Application.md)."""@en ;
 <https://w3id.org/cerif2/Condition> rdf:type owl:Class ;
                                     rdfs:comment "A condition that needs to be satisfied for a Resource Offer to be applicable.<sup>[1](#fn1)</sup>"@en ;
                                     rdfs:label "Condition"@en .
+
+
+###  https://w3id.org/cerif2/Contents_Location
+<https://w3id.org/cerif2/Contents_Location> rdf:type owl:Class ;
+                                            rdfs:comment "Location of contents of a [Document](../entities/Document.md)."@en ;
+                                            rdfs:label "Contents Location"@en .
 
 
 ###  https://w3id.org/cerif2/Contribution
@@ -1644,9 +1726,15 @@ A document may manifest symbolic, diagrammatic or sensory-representational infor
                                    rdfs:label "Document"@en .
 
 
+###  https://w3id.org/cerif2/Document_Publication
+<https://w3id.org/cerif2/Document_Publication> rdf:type owl:Class ;
+                                               rdfs:comment "The act of making information or stories available to people in a printed or electronic form.<sup>[1](#fn1)</sup>"@en ;
+                                               rdfs:label "Document Publication"@en .
+
+
 ###  https://w3id.org/cerif2/Downloadable
 <https://w3id.org/cerif2/Downloadable> rdf:type owl:Class ;
-                                       rdfs:comment "Anything that is accessible on the World Wide Web."@en ;
+                                       rdfs:comment "Anything that can be downloaded from the World Wide Web."@en ;
                                        rdfs:label "Downloadable"@en .
 
 
@@ -1843,6 +1931,13 @@ might be some platform identifier, regional identifier or national identifier.""
                                                          rdfs:label "Organisation Unit with Members"@en .
 
 
+###  https://w3id.org/cerif2/Page_Based_Contents_Location
+<https://w3id.org/cerif2/Page_Based_Contents_Location> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://w3id.org/cerif2/Contents_Location> ;
+                                                       rdfs:comment "A [Contents Location](../datatypes/Contents_Location.md) that is based on a range of pages."@en ;
+                                                       rdfs:label "Page Based Contents Location"@en .
+
+
 ###  https://w3id.org/cerif2/Person
 <https://w3id.org/cerif2/Person> rdf:type owl:Class ;
                                  rdfs:subClassOf <https://w3id.org/cerif2/Agent> ;
@@ -1975,6 +2070,13 @@ Source: the Project Management Institute, https://www.pmi.org/about/learn-about-
 <https://w3id.org/cerif2/Textual_Contents> rdf:type owl:Class ;
                                            rdfs:comment "A resource consisting primarily of words for reading.<sup>[1](#fn1)</sup>"@en ;
                                            rdfs:label "Textual Contents"@en .
+
+
+###  https://w3id.org/cerif2/Time_Based_Contents_Location
+<https://w3id.org/cerif2/Time_Based_Contents_Location> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://w3id.org/cerif2/Contents_Location> ;
+                                                       rdfs:comment "A [Contents Location](../datatypes/Contents_Location.md) that is based on a time interval."@en ;
+                                                       rdfs:label "Time Based Contents Location"@en .
 
 
 ###  https://w3id.org/cerif2/Video_Contents
