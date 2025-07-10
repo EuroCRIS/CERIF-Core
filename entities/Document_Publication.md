@@ -13,7 +13,7 @@ publication date: [Date](../datatypes/Date.md) the date when the document is mad
 
 <a name="rel__of">of</a> / [published-as](../entities/Document.md#user-content-rel__published-as) : A Document Publication references the published [Document](../entities/Document.md).
 
-<a name="rel__in">in</a> / [contains](../entities/Publication_Channel.md#user-content-rel__contains) : A Document Publication can in any number of [Publication Channels](../entities/Publication_Channel.md).
+<a name="rel__in">in</a> / [contains](../entities/Publication_Channel.md#user-content-rel__contains) : A Document Publication can be published in any number of [Publication Channels](../entities/Publication_Channel.md). [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association.
 
 ---
 ## References

@@ -43,6 +43,9 @@ title : [Multilingual String](../datatypes/Multilingual_String.md)
 
 <a name="rel__proves">proves</a> / [is-evidenced-by](../entities/Activity.md#user-content-rel__is-evidenced-by) : A Document can provide evidence of any number of [Activities](../entities/Activity.md).
 
+<a name="rel__is-part-of">is-part-of</a> / [has-part](../entities/Document.md#user-content-rel__has-part) : A Document can be part of any number of other [Documents](../entities/Document.md). [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association.
+
+<a name="rel__has-part">has-part</a> / [is-part-of](../entities/Document.md#user-content-rel__is-part-of) : A Document can have any number of [Documents](../entities/Document.md) as parts. [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association.
 
 ---
 ## Matches
