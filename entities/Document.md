@@ -1,7 +1,7 @@
 # Document
 
 ## URI
-https://w3id.org/cerif2/core/Document
+https://w3id.org/cerif2/Document
 
 ## Definition
 A document is a bounded representation of a body of information designed with the capacity (and usually intent) to communicate. 

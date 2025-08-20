@@ -1,7 +1,7 @@
 # Document Publication
 
 ## URI
-https://w3id.org/cerif2/core/Document_Publication
+https://w3id.org/cerif2/Document_Publication
 
 ## Definition
 The act of making information or stories available to people in a printed or electronic form.<sup>[1](#fn1)</sup>
