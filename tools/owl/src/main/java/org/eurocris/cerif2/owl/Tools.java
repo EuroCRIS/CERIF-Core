@@ -26,27 +26,29 @@ public class Tools {
 			}
 		} catch ( final IOException | ParseException | OWLOntologyStorageException | OWLOntologyCreationException e ) {
 			log.error( "When processing", e );
-		}
-	}
+        }
+		log.info( "Done" );
+    }
 
 	private void readInAndProcess( final String dir ) throws IOException, ParseException, OWLOntologyCreationException, OWLOntologyStorageException {
 		final File moduleBaseDir = new File( dir );
-		final Model model = new Model( moduleBaseDir.getName() );
-		if ( moduleBaseDir.isDirectory() ) {
-			try ( final DirectoryStream<Path> datatypes = Files.newDirectoryStream( moduleBaseDir.toPath().resolve( "datatypes" ), "*.md" ) ) {
-				for ( final Path datatypeFilePath : datatypes ) {
-					model.readInDatatypeFile( new StructuredFile( datatypeFilePath ) );
+		try ( final Model model = new Model( moduleBaseDir.getName() ) ) {
+			if (moduleBaseDir.isDirectory()) {
+				try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(moduleBaseDir.toPath().resolve("datatypes"), "*.md")) {
+					for (final Path datatypeFilePath : datatypes) {
+						model.readInDatatypeFile(new StructuredFile(datatypeFilePath));
+					}
 				}
-			}
-			try ( final DirectoryStream<Path> entities = Files.newDirectoryStream( moduleBaseDir.toPath().resolve( "entities" ), "*.md" ) ) {
-				for ( final Path entityFilePath : entities ) {
-					model.readInEntityFile( new StructuredFile( entityFilePath ) );
+				try (final DirectoryStream<Path> entities = Files.newDirectoryStream(moduleBaseDir.toPath().resolve("entities"), "*.md")) {
+					for (final Path entityFilePath : entities) {
+						model.readInEntityFile(new StructuredFile(entityFilePath));
+					}
 				}
+			} else {
+				throw new IllegalArgumentException(dir + " does not resolve to a directory");
 			}
-		} else {
-			throw new IllegalArgumentException( dir + " does not resolve to a directory" );
+			model.save();
 		}
-		model.save();
 	}
 	
 }

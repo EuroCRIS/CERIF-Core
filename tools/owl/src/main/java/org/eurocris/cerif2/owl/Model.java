@@ -48,7 +48,7 @@ import com.vladsch.flexmark.util.sequence.BasedSequence;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString;
 
-public class Model {
+public class Model implements AutoCloseable {
 
 	protected final Logger log = LoggerFactory.getLogger( getClass().getName() );
 
@@ -135,7 +135,12 @@ public class Model {
 	private static <T> T nvl( T a, T b ) {
 		return ( a != null ) ? a : b;
 	}
-	
+
+	@Override
+	public void close() {
+		es.shutdown();
+	}
+
 	/**
 	 * Represents data of a relationship.
 	 */
