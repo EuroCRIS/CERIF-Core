@@ -11,6 +11,8 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.xml.transform.TransformerException;
+
 public class Tools {
 	
 	protected final static Logger log = LoggerFactory.getLogger( Tools.class );
@@ -24,13 +26,13 @@ public class Tools {
 			for ( final String dir : args ) {
 				tools.readInAndProcess( dir );
 			}
-		} catch ( final IOException | ParseException | OWLOntologyStorageException | OWLOntologyCreationException e ) {
+		} catch ( final IOException | ParseException | OWLOntologyStorageException | OWLOntologyCreationException | TransformerException e ) {
 			log.error( "When processing", e );
         }
 		log.info( "Done" );
     }
 
-	private void readInAndProcess( final String dir ) throws IOException, ParseException, OWLOntologyCreationException, OWLOntologyStorageException {
+	private void readInAndProcess( final String dir ) throws IOException, ParseException, OWLOntologyCreationException, OWLOntologyStorageException, TransformerException {
 		final File moduleBaseDir = new File( dir );
 		try ( final Model model = new Model( moduleBaseDir.getName() ) ) {
 			if (moduleBaseDir.isDirectory()) {

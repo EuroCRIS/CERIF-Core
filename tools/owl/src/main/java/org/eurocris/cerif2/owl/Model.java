@@ -18,6 +18,7 @@ import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import net.sf.saxon.BasicTransformerFactory;
 import org.apache.commons.text.CaseUtils;
 import org.jetbrains.annotations.NotNull;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -51,6 +52,13 @@ import com.vladsch.flexmark.util.collection.iteration.ReversiblePeekingIterable;
 import com.vladsch.flexmark.util.sequence.BasedSequence;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString;
+
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 public class Model implements AutoCloseable {
 
@@ -415,6 +423,12 @@ public class Model implements AutoCloseable {
 		log.info( "Wrote " + outputFilePath + ".owl" );
 		ont.saveOntology( new RDFXMLDocumentFormat(), new FileDocumentTarget( new File( outputFilePath + ".rdf" ) ) );
 		log.info( "Wrote " + outputFilePath + ".rdf" );
+
+		final TransformerFactory tf = new BasicTransformerFactory();
+		final Transformer transformer = tf.newTransformer( new StreamSource( this.getClass().getResourceAsStream( "/split-up.xslt" ) ) );
+		transformer.setParameter( "baseUri", "https://w3id.org/cerif2/" );
+		transformer.transform( new StreamSource( outputFilePath + ".rdf" ), new StreamResult( new File( outputFilePath + ".xml" ) ) );
+		log.info( "XSLT transformed " + outputFilePath + ".rdf" );
 	}
 
 	static final Pattern entityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
