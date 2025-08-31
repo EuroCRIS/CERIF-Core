@@ -34,7 +34,7 @@ public class Tools {
 
 	private void readInAndProcess( final String dir ) throws IOException, ParseException, OWLOntologyCreationException, OWLOntologyStorageException, TransformerException {
 		final File moduleBaseDir = new File( dir );
-		try ( final Model model = new Model( moduleBaseDir.getName() ) ) {
+		try ( final CERIF2Model model = new CERIF2Model( moduleBaseDir.getName() ) ) {
 			if (moduleBaseDir.isDirectory()) {
 				try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(moduleBaseDir.toPath().resolve("datatypes"), "*.md")) {
 					for (final Path datatypeFilePath : datatypes) {
