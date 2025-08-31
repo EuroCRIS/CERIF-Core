@@ -14,7 +14,6 @@
                 <xslt:variable name="uri" select="."/>
                 <xslt:variable name="className" select="substring-after( $uri, $baseUri )"/>
                 <xslt:if test="$uri and matches( $className, '^[A-Z0-9_]+$', 'i' )">
-                    <xslt:message>Uri <xslt:value-of select="$uri"/> ; class name <xslt:value-of select="$className"/></xslt:message>
                     <xslt:result-document href="per-class/{$className}.rdf" indent="true">
                         <xslt:for-each select="$baseDocument">
                             <xslt:copy>
