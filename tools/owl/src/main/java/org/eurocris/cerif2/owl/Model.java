@@ -413,6 +413,8 @@ public class Model implements AutoCloseable {
 		}
 		ont.saveOntology( new TurtleDocumentFormat(), new FileDocumentTarget( new File( outputFilePath + ".owl" ) ) );
 		log.info( "Wrote " + outputFilePath + ".owl" );
+		ont.saveOntology( new RDFXMLDocumentFormat(), new FileDocumentTarget( new File( outputFilePath + ".rdf" ) ) );
+		log.info( "Wrote " + outputFilePath + ".rdf" );
 	}
 
 	static final Pattern entityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
