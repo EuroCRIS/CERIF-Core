@@ -4,4 +4,4 @@
 	cd tools/owl
 	mvn clean package
 ) && \
-java -jar tools/owl/target/cerif2-owl-tools-*-jar-with-dependencies.jar . >serializations/RDF/core.owl
+java -jar tools/owl/target/cerif2-owl-tools-*-jar-with-dependencies.jar .

@@ -47,7 +47,7 @@ public class Tools {
 			} else {
 				throw new IllegalArgumentException(dir + " does not resolve to a directory");
 			}
-			model.save();
+			model.save( "serializations/RDF/core" );
 		}
 	}
 	

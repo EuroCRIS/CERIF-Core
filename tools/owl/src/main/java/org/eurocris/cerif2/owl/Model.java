@@ -1,6 +1,8 @@
 package org.eurocris.cerif2.owl;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +21,9 @@ import java.util.regex.Pattern;
 import org.apache.commons.text.CaseUtils;
 import org.jetbrains.annotations.NotNull;
 import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.formats.RDFXMLDocumentFormat;
 import org.semanticweb.owlapi.formats.TurtleDocumentFormat;
+import org.semanticweb.owlapi.io.FileDocumentTarget;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotationValue;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -370,7 +374,7 @@ public class Model implements AutoCloseable {
 		};
 	}
 
-	public void save() throws OWLOntologyStorageException {
+	public void save( final String outputFilePath ) throws OWLOntologyStorageException, TransformerException {
 		log.info( "About to write the ontology" );
 		synchronized ( this ) {
 			for ( final Map.Entry<String, Future<? extends OWLEntity>> x : datatypeByName.entrySet() ) {
@@ -407,8 +411,8 @@ public class Model implements AutoCloseable {
 				}
 			}
 		}
-		final OWLDocumentFormat format = new TurtleDocumentFormat();
-		ont.saveOntology( format, System.out );
+		ont.saveOntology( new TurtleDocumentFormat(), new FileDocumentTarget( new File( outputFilePath + ".owl" ) ) );
+		log.info( "Wrote " + outputFilePath + ".owl" );
 	}
 
 	static final Pattern entityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
