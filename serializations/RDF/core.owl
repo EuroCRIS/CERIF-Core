@@ -1747,6 +1747,16 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Contents_Location#number -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Contents_Location#number">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Contents_Location"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/String"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Contribution_Statement#statement -->
 
 
