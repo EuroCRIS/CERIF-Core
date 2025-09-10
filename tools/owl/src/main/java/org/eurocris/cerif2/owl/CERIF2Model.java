@@ -547,7 +547,7 @@ public class CERIF2Model implements AutoCloseable {
 		final BasedSequence rest = text.subSequence( colonPosition + 1 ).trim();
 		final int endashPosition = rest.indexOf( '–' );
 		final BasedSequence datatypeSpec = ( endashPosition > 0 ) ? rest.subSequence( 0, endashPosition ).trim() : rest.trim();
-		final String datatypeLinkTarget = datatypeSpec.toString().replaceAll( "[^(]*\\(([^)]*)\\)[^)]*", "$1" );
+		final String datatypeLinkTarget = datatypeSpec.toString().replaceAll( "[^(]*\\(([^)]*)\\).*", "$1" );
 		final String attributeName1 = attributeText.replaceFirst( "<a name=\"[^\"]*\">([^<]*)</a>", "$1" );
 		final String attributeName = ( attributeName1.contains( " " ) || Character.isUpperCase( attributeName1.charAt( 0 ) ) ) ? CaseUtils.toCamelCase( attributeName1, false, ' ', '-', '_', '.' ) : attributeName1;
 		log.info( "Attribute " + attributeName + ", datatype " + datatypeLinkTarget );
