@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
+import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.slf4j.Logger;
@@ -32,22 +34,23 @@ public class Tools {
 		log.info( "Done" );
     }
 
+	public final IRI iriBase = IRI.create( "https://w3id.org/cerif2/" );
+
 	private void readInAndProcess( final String dir ) throws IOException, ParseException, OWLOntologyCreationException, OWLOntologyStorageException, TransformerException {
-		final File moduleBaseDir = new File( dir );
-		try ( final CERIF2Model model = new CERIF2Model( moduleBaseDir.getName() ) ) {
-			if (moduleBaseDir.isDirectory()) {
-				try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(moduleBaseDir.toPath().resolve("datatypes"), "*.md")) {
-					for (final Path datatypeFilePath : datatypes) {
-						model.readInDatatypeFile(new StructuredFile(datatypeFilePath));
-					}
+		final Path path = Paths.get( dir ).toAbsolutePath().normalize();
+		if ( ! Files.isDirectory( path ) ) {
+			throw new IllegalArgumentException(dir + " does not resolve to a directory");
+		}
+		try ( final CERIF2Model model = new CERIF2Model( path ) ) {
+			try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(path.resolve("datatypes"), "*.md")) {
+				for (final Path datatypeFilePath : datatypes) {
+					model.readInDatatypeFile(new StructuredFile(datatypeFilePath));
 				}
-				try (final DirectoryStream<Path> entities = Files.newDirectoryStream(moduleBaseDir.toPath().resolve("entities"), "*.md")) {
-					for (final Path entityFilePath : entities) {
-						model.readInEntityFile(new StructuredFile(entityFilePath));
-					}
+			}
+			try (final DirectoryStream<Path> entities = Files.newDirectoryStream(path.resolve("entities"), "*.md")) {
+				for (final Path entityFilePath : entities) {
+					model.readInEntityFile(new StructuredFile(entityFilePath));
 				}
-			} else {
-				throw new IllegalArgumentException(dir + " does not resolve to a directory");
 			}
 			model.save( "serializations/RDF/core" );
 		}

@@ -1,0 +1,13 @@
+@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+
+<https://w3id.org/cerif2/> a doap:Project;
+    doap:name "CERIF Core";
+    doap:repository [
+                        a doap:GitRepository;
+                        doap:location "https://github.com/EuroCRIS/CERIF-Core.git"
+                    ];
+#    meta:owlFilename "serializations/RDF/core.owl"
+.

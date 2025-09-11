@@ -1,27 +1,18 @@
 package org.eurocris.cerif2.owl;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.*;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.FutureTask;
-import java.util.function.Supplier;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
-
+import com.vladsch.flexmark.ast.BulletList;
+import com.vladsch.flexmark.ast.Link;
+import com.vladsch.flexmark.util.ast.Node;
+import com.vladsch.flexmark.util.collection.iteration.ReversiblePeekingIterable;
+import com.vladsch.flexmark.util.sequence.BasedSequence;
 import net.sf.saxon.BasicTransformerFactory;
 import org.apache.commons.text.CaseUtils;
 import org.eclipse.rdf4j.model.Model;
+import org.eclipse.rdf4j.model.Resource;
+import org.eclipse.rdf4j.model.Statement;
+import org.eclipse.rdf4j.model.util.Models;
+import org.eclipse.rdf4j.model.util.Values;
+import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.Rio;
 import org.jetbrains.annotations.NotNull;
@@ -29,31 +20,11 @@ import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.formats.RDFXMLDocumentFormat;
 import org.semanticweb.owlapi.formats.TurtleDocumentFormat;
 import org.semanticweb.owlapi.io.FileDocumentTarget;
-import org.semanticweb.owlapi.model.IRI;
-import org.semanticweb.owlapi.model.OWLAnnotationValue;
-import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLDataProperty;
-import org.semanticweb.owlapi.model.OWLDataUnionOf;
-import org.semanticweb.owlapi.model.OWLDatatype;
-import org.semanticweb.owlapi.model.OWLEntity;
-import org.semanticweb.owlapi.model.OWLLiteral;
-import org.semanticweb.owlapi.model.OWLObjectProperty;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.vocab.OWL2Datatype;
 import org.semanticweb.owlapi.vocab.XSDVocabulary;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.vladsch.flexmark.ast.BulletList;
-import com.vladsch.flexmark.ast.Link;
-import com.vladsch.flexmark.util.ast.Node;
-import com.vladsch.flexmark.util.collection.iteration.ReversiblePeekingIterable;
-import com.vladsch.flexmark.util.sequence.BasedSequence;
-
 import uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString;
 
 import javax.xml.transform.Transformer;
@@ -61,6 +32,18 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.Supplier;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class CERIF2Model implements AutoCloseable {
 
@@ -76,8 +59,6 @@ public class CERIF2Model implements AutoCloseable {
 	
 	private final Map<String, Map<String, Relationship>> relationshipByEntityAndRelationshipName = new HashMap<>();
 
-	public static final IRI IRI_BASE = IRI.create( "https://w3id.org/cerif2/" );
-
 	public static final String DEFAULT_LANGUAGE_CODE = "en";
 
 	private final IRI baseIRI;
@@ -91,29 +72,51 @@ public class CERIF2Model implements AutoCloseable {
 	private final OWLDatatype dateDatatype;
 	
 	private final ExecutorService es = Executors.newCachedThreadPool();
-	
-	public CERIF2Model(final String moduleName ) throws OWLOntologyCreationException, IOException, ParseException {
+
+	private final static String CONTROL_FILE_NAME = "cerif2.ttl";
+
+	private final static String DOAP_PREFIX = "http://usefulinc.com/ns/doap#";
+
+	private final static org.eclipse.rdf4j.model.IRI DOAP_PROJECT = Values.iri( DOAP_PREFIX, "Project" );
+
+	private final static org.eclipse.rdf4j.model.IRI DOAP_NAME = Values.iri( DOAP_PREFIX, "name" );
+
+	public CERIF2Model( final Path path ) throws OWLOntologyCreationException, IOException, ParseException {
 		super();
-		this.baseIRI = IRI.create( IRI_BASE.toString(), moduleName + "/" );
-		log.info( "Starting model for module '" + moduleName + "', IRI " + baseIRI );
-		this.ont = man.createOntology( baseIRI );
+		final Path controlFilePath = path.resolve( CONTROL_FILE_NAME );
+		try (final InputStream in = Files.newInputStream( controlFilePath ) ) {
+			final Model m = Rio.parse( in, "", RDFFormat.TURTLE );
+			final Iterator<Resource> mainSubjectsIt = m.filter(null, RDF.TYPE, DOAP_PROJECT).subjects().iterator();
+			if ( ! mainSubjectsIt.hasNext() ) {
+				throw new IllegalArgumentException( "No rdf:type statement found in " + controlFilePath );
+			}
+			final Resource mainIRI = mainSubjectsIt.next();
+			this.baseIRI = IRI.create( mainIRI.toString() );
+			if ( mainSubjectsIt.hasNext() ) {
+				throw new IllegalArgumentException( "More than one rdf:type statement found in " + controlFilePath );
+			}
 
-		final IRI dateDatatypeIRI = baseIRI.resolve( "datatypes" ).resolve( "Date" );
-		this.dateDatatype = dataFactory.getOWLDatatype( dateDatatypeIRI );
+			final String moduleName = Models.objectString( m.filter( mainIRI, DOAP_NAME, null ) ).orElse( "-" );
+			log.info( "Starting model for module '" + moduleName + "', IRI " + baseIRI );
+			this.ont = man.createOntology( baseIRI );
 
-		datatypeByName.put( "String", CompletableFuture.supplyAsync( () -> dataFactory.getStringOWLDatatype(), es ) );
-		datatypeByName.put( "Multilingual_String", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.RDF_PLAIN_LITERAL.getIRI() ), es ) );
-		datatypeByName.put( "Decimal", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_DECIMAL.getIRI() ), es ) );
-		datatypeByName.put( "Boolean", CompletableFuture.supplyAsync( () -> dataFactory.getBooleanOWLDatatype(), es ) );
-		datatypeByName.put( "URI", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_ANY_URI.getIRI() ), es ) );
-		datatypeByName.put( "Date", CompletableFuture.supplyAsync( () -> dateDatatype, es ) );
-		// FIXME check why this doesn't get serialized
+			final IRI dateDatatypeIRI = baseIRI.resolve( "datatypes" ).resolve( "Date" );
+			this.dateDatatype = dataFactory.getOWLDatatype( dateDatatypeIRI );
+
+			datatypeByName.put( "String", CompletableFuture.supplyAsync( () -> dataFactory.getStringOWLDatatype(), es ) );
+			datatypeByName.put( "Multilingual_String", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.RDF_PLAIN_LITERAL.getIRI() ), es ) );
+			datatypeByName.put( "Decimal", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_DECIMAL.getIRI() ), es ) );
+			datatypeByName.put( "Boolean", CompletableFuture.supplyAsync( () -> dataFactory.getBooleanOWLDatatype(), es ) );
+			datatypeByName.put( "URI", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_ANY_URI.getIRI() ), es ) );
+			datatypeByName.put( "Date", CompletableFuture.supplyAsync( () -> dateDatatype, es ) );
+			// FIXME check why this doesn't get serialized
 //		if ( moduleName.equals( "CERIF-Core" ) ) {
 			final OWLDataUnionOf owlDataUnionOf = dataFactory.getOWLDataUnionOf( dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.DATE.getIRI() ) ),
 					dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR_MONTH.getIRI() ) ),
 					dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR.getIRI() ) ) );
 			ont.add( dataFactory.getOWLDatatypeDefinitionAxiom( dateDatatype, owlDataUnionOf ) );
 //		}
+		}
 	}
 
 	public void readInDatatypeFile( final StructuredFile file ) throws ParseException {
@@ -436,7 +439,7 @@ public class CERIF2Model implements AutoCloseable {
 		// Do the splitting
 		final TransformerFactory tf = new BasicTransformerFactory();
 		final Transformer transformer = tf.newTransformer( new StreamSource( this.getClass().getResourceAsStream( "/split-up.xslt" ) ) );
-		transformer.setParameter( "baseUri", "https://w3id.org/cerif2/" );
+		transformer.setParameter( "baseUri", baseIRI.toString() );
 		final File xmlOutputFile = new File( outputFilePath + ".xml" );
 		transformer.transform( new StreamSource( outputFilePath + ".owl" ), new StreamResult( xmlOutputFile ) );
 		log.info( "XSLT transformed into " + outputFilePath + ".xml" );
