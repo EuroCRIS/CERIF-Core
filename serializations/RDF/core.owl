@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/cerif2/./"
-     xml:base="https://w3id.org/cerif2/./"
+<rdf:RDF xmlns="https://w3id.org/cerif2/"
+     xml:base="https://w3id.org/cerif2/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://w3id.org/cerif2/./"/>
+    <owl:Ontology rdf:about="https://w3id.org/cerif2/"/>
     
 
 
@@ -1743,6 +1743,16 @@
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Call_for_Applications"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Date"/>
         <rdfs:label>until when applications can be submitted</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Contents_Location#number -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Contents_Location#number">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Contents_Location"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/String"/>
     </owl:DatatypeProperty>
     
 

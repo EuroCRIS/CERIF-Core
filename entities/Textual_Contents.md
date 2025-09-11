@@ -13,7 +13,9 @@ Any sequence of sentences that belong together can be considered a text.<sup>[2]
 
 ## Attributes
 <a name="numberOfPages">numberOfPages : [Decimal](../datatypes/Decimal.md)</a>
+
 <a name="numberOfWords">numberOfWords : [Decimal](../datatypes/Decimal.md)</a>
+
 <a name="numberOfCharacters">numberOfCharacters : [Decimal](../datatypes/Decimal.md)</a>
 
 ---

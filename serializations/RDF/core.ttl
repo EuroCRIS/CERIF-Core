@@ -1106,6 +1106,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                          rdfs:label "until when applications can be submitted" .
 
 
+###  https://w3id.org/cerif2/Contents_Location#number
+<https://w3id.org/cerif2/Contents_Location#number> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain :Contents_Location ;
+                                                   rdfs:range :String .
+
+
 ###  https://w3id.org/cerif2/Contribution_Statement#statement
 <https://w3id.org/cerif2/Contribution_Statement#statement> rdf:type owl:DatatypeProperty ;
                                                            rdfs:domain <https://w3id.org/cerif2/Contribution_Statement> ;
