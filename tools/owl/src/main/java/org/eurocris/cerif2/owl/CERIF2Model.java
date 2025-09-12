@@ -69,11 +69,11 @@ public class CERIF2Model implements AutoCloseable {
 
 	private final OWLDataFactory dataFactory = man.getOWLDataFactory();
 
-	private final OWLDatatype dateDatatype;
-	
 	private final ExecutorService es = Executors.newCachedThreadPool();
 
 	private final static String CONTROL_FILE_NAME = "cerif2.ttl";
+
+	private final static String CERIF_CORE_URI = "https://w3id.org/cerif2/";
 
 	private final static String DOAP_PREFIX = "http://usefulinc.com/ns/doap#";
 
@@ -99,24 +99,27 @@ public class CERIF2Model implements AutoCloseable {
 			final String moduleName = Models.objectString( m.filter( mainIRI, DOAP_NAME, null ) ).orElse( "-" );
 			log.info( "Starting model for module '" + moduleName + "', IRI " + baseIRI );
 			this.ont = man.createOntology( baseIRI );
-
-			final IRI dateDatatypeIRI = baseIRI.resolve( "datatypes" ).resolve( "Date" );
-			this.dateDatatype = dataFactory.getOWLDatatype( dateDatatypeIRI );
-
-			datatypeByName.put( "String", CompletableFuture.supplyAsync( () -> dataFactory.getStringOWLDatatype(), es ) );
-			datatypeByName.put( "Multilingual_String", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.RDF_PLAIN_LITERAL.getIRI() ), es ) );
-			datatypeByName.put( "Decimal", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_DECIMAL.getIRI() ), es ) );
-			datatypeByName.put( "Boolean", CompletableFuture.supplyAsync( () -> dataFactory.getBooleanOWLDatatype(), es ) );
-			datatypeByName.put( "URI", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_ANY_URI.getIRI() ), es ) );
-			datatypeByName.put( "Date", CompletableFuture.supplyAsync( () -> dateDatatype, es ) );
-			// FIXME check why this doesn't get serialized
-//		if ( moduleName.equals( "CERIF-Core" ) ) {
-			final OWLDataUnionOf owlDataUnionOf = dataFactory.getOWLDataUnionOf( dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.DATE.getIRI() ) ),
-					dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR_MONTH.getIRI() ) ),
-					dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR.getIRI() ) ) );
-			ont.add( dataFactory.getOWLDatatypeDefinitionAxiom( dateDatatype, owlDataUnionOf ) );
-//		}
+			if ( mainIRI.toString().equals( CERIF_CORE_URI ) ) {
+				initializeBasicCoreDatatypes();
+			}
 		}
+	}
+
+	private void initializeBasicCoreDatatypes() {
+		final IRI dateDatatypeIRI = baseIRI.resolve( "datatypes" ).resolve( "Date" );
+		final OWLDatatype dateDatatype = dataFactory.getOWLDatatype( dateDatatypeIRI );
+
+		datatypeByName.put( "String", CompletableFuture.supplyAsync( () -> dataFactory.getStringOWLDatatype(), es ) );
+		datatypeByName.put( "Multilingual_String", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.RDF_PLAIN_LITERAL.getIRI() ), es ) );
+		datatypeByName.put( "Decimal", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_DECIMAL.getIRI() ), es ) );
+		datatypeByName.put( "Boolean", CompletableFuture.supplyAsync( () -> dataFactory.getBooleanOWLDatatype(), es ) );
+		datatypeByName.put( "URI", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_ANY_URI.getIRI() ), es ) );
+		datatypeByName.put( "Date", CompletableFuture.supplyAsync( () -> dateDatatype, es ) );
+		// FIXME check why this doesn't get serialized
+		final OWLDataUnionOf owlDataUnionOf = dataFactory.getOWLDataUnionOf( dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.DATE.getIRI() ) ),
+				dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR_MONTH.getIRI() ) ),
+				dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR.getIRI() ) ) );
+		ont.add( dataFactory.getOWLDatatypeDefinitionAxiom( dateDatatype, owlDataUnionOf ) );
 	}
 
 	public void readInDatatypeFile( final StructuredFile file ) throws ParseException {
