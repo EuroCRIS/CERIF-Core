@@ -13,7 +13,7 @@ jobs:
       - name: Process Diagrams
         run: ./tools/generate-diagrams.sh
       - name: Generate OWL file
-        run: ./tools/compile-owl-tool-and-run-it-on-the-Core.sh
+        run: ./tools/compile-owl-tool-and-run-it.sh
       - name: Commit generated files
         run: |
           git config --local user.email "action@github.com"
