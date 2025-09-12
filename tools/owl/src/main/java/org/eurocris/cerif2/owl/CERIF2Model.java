@@ -117,15 +117,16 @@ public class CERIF2Model implements AutoCloseable {
 	}
 
 	private void initializeBasicCoreDatatypes() {
-		final IRI dateDatatypeIRI = baseIRI.resolve( "datatypes" ).resolve( "Date" );
+		final IRI coreDatatypesIRIBase = baseIRI.resolve("datatypes");
+		final IRI dateDatatypeIRI = coreDatatypesIRIBase.resolve( "Date" );
 		final OWLDatatype dateDatatype = dataFactory.getOWLDatatype( dateDatatypeIRI );
 
-		datatypeByName.put( "String", CompletableFuture.supplyAsync( () -> dataFactory.getStringOWLDatatype(), es ) );
-		datatypeByName.put( "Multilingual_String", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.RDF_PLAIN_LITERAL.getIRI() ), es ) );
-		datatypeByName.put( "Decimal", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_DECIMAL.getIRI() ), es ) );
-		datatypeByName.put( "Boolean", CompletableFuture.supplyAsync( () -> dataFactory.getBooleanOWLDatatype(), es ) );
-		datatypeByName.put( "URI", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_ANY_URI.getIRI() ), es ) );
-		datatypeByName.put( "Date", CompletableFuture.supplyAsync( () -> dateDatatype, es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("String"), CompletableFuture.supplyAsync( () -> dataFactory.getStringOWLDatatype(), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("Multilingual_String"), CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.RDF_PLAIN_LITERAL.getIRI() ), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("Decimal"), CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_DECIMAL.getIRI() ), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("Boolean"), CompletableFuture.supplyAsync( () -> dataFactory.getBooleanOWLDatatype(), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("URI"), CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_ANY_URI.getIRI() ), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("Date"), CompletableFuture.supplyAsync( () -> dateDatatype, es ) );
 		// FIXME check why this doesn't get serialized
 		final OWLDataUnionOf owlDataUnionOf = dataFactory.getOWLDataUnionOf( dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.DATE.getIRI() ) ),
 				dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR_MONTH.getIRI() ) ),
@@ -142,11 +143,12 @@ public class CERIF2Model implements AutoCloseable {
 			// corresponds to an XSD complexType -> owl:Class
 			final String owlClassName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
 			final IRI classIRI = baseIRI.resolve( "datatypes" ).resolve( owlClassName );
-			datatypeByName.put( owlClassName, createClass( mainSection, owlClassName, classIRI, "Components", false ) );
+			datatypeByIRI.put( classIRI, createClass( mainSection, owlClassName, classIRI, "Components", false ) );
 		} else {
 			// corresponds to an XSD simpleType -> owl:Datatype
 			final String datatypeName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
-			datatypeByName.put( datatypeName, CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( baseIRI.resolve( "datatypes" ).resolve( datatypeName ) ) ) );
+			final IRI datatypeIRI = baseIRI.resolve( "datatypes" ).resolve( datatypeName );
+			datatypeByIRI.put( datatypeIRI, CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( datatypeIRI ) ) );
 		}
 	}
 
@@ -404,7 +406,7 @@ public class CERIF2Model implements AutoCloseable {
 	public void save( final String outputFilePath ) throws OWLOntologyStorageException, TransformerException, IOException {
 		log.info( "About to write the ontology" );
 		synchronized ( this ) {
-			for ( final Map.Entry<String, Future<? extends OWLEntity>> x : datatypeByName.entrySet() ) {
+			for ( final Map.Entry<IRI, Future<? extends OWLEntity>> x : datatypeByIRI.entrySet() ) {
 				try {
 					log.debug( "Getting datatype " + x.getKey() );
 					x.getValue().get();
