@@ -9,7 +9,6 @@ import net.sf.saxon.BasicTransformerFactory;
 import org.apache.commons.text.CaseUtils;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Resource;
-import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.model.util.Models;
 import org.eclipse.rdf4j.model.util.Values;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
@@ -52,7 +51,7 @@ public class CERIF2Model implements AutoCloseable {
 
 	private final List<Section> datatypes = new ArrayList<>();
 
-	private final Map<String, Future<? extends OWLEntity>> datatypeByName = new HashMap<>();
+	private final Map<IRI, Future<? extends OWLEntity>> datatypeByIRI = new HashMap<>();
 
 	private final List<Section> entities = new ArrayList<>();
 	
@@ -102,6 +101,16 @@ public class CERIF2Model implements AutoCloseable {
 			this.ont = man.createOntology( baseIRI );
 			if ( mainIRI.toString().equals( CERIF_CORE_URI ) ) {
 				initializeBasicCoreDatatypes();
+			} else {
+				// FIXME this is a mock, should be replaced with properly handling dependencies
+				log.info( "Reading in the CERIF Core first" );
+				final CERIF2Model cerifCore = new CERIF2Model( path.getParent().resolve( "CERIF-Core" ) );
+				dependencies.put( "https://github.com/euroCRIS/CERIF-Core/blob/main", cerifCore );
+				dependencies.put( "https://github.com/EuroCRIS/CERIF-Core/blob/main", cerifCore );
+				log.info( "Finished reading the CERIF Core" );
+				log.info( "" );
+				log.info( "================================================================================" );
+				log.info( "" );
 			}
 			try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(path.resolve("datatypes"), "*.md")) {
 				for (final Path datatypeFilePath : datatypes) {
@@ -172,6 +181,9 @@ public class CERIF2Model implements AutoCloseable {
 	@Override
 	public void close() {
 		es.shutdown();
+		for ( final CERIF2Model module : dependencies.values() ) {
+			module.close();
+		}
 	}
 
 	/**
@@ -570,40 +582,39 @@ public class CERIF2Model implements AutoCloseable {
 		final String attributeName1 = attributeText.replaceFirst( "<a name=\"[^\"]*\">([^<]*)</a>", "$1" );
 		final String attributeName = ( attributeName1.contains( " " ) || Character.isUpperCase( attributeName1.charAt( 0 ) ) ) ? CaseUtils.toCamelCase( attributeName1, false, ' ', '-', '_', '.' ) : attributeName1;
 		log.info( "Attribute " + attributeName + ", datatype " + datatypeLinkTarget );
-		if ( !datatypeLinkTarget.startsWith( "../datatypes/" ) ) {
-			throw new ParseException( "Not referencing ../datatypes/", node );
+		if ( !datatypeLinkTarget.contains( "/datatypes/" ) ) {
+			throw new ParseException( "Not referencing any **/datatypes/", node );
 		}
 		if ( datatypeLinkTarget.contains( " " ) ) {
 			throw new ParseException( "Missing endash", node );
 		}
 		final IRI attributeIRI = classIRI.resolve( "#" + attributeName );
-		final String datatypeName = datatypeLinkTarget.replaceFirst( "\\.\\./datatypes/(.*)\\.md", "$1" );
-		@SuppressWarnings( "unchecked" )
-		final Future<OWLEntity> owlDatatypeFuture = (Future<OWLEntity>) datatypeByName.get( datatypeName );
-		if ( owlDatatypeFuture == null ) {
-			throw new IllegalStateException( "Unknown datatype " + datatypeName );
+		final Pattern p1 = Pattern.compile( "^\\.\\./datatypes/(.*)\\.md$" );
+		final Matcher m1 = p1.matcher( datatypeLinkTarget );
+		if ( m1.matches() ) { // This module's datatype
+			final String datatypeName = m1.group(1);
+			final OWLEntity owlDatatype = getDatatypeByName( datatypeName );
+			if ( owlDatatype == null ) {
+				throw new IllegalStateException( "Unknown datatype " + datatypeName );
+			}
+            addAttribute( owlClass, owlDatatype, attributeIRI );
 		} else {
-			try {
-				final OWLEntity owlDatatype = owlDatatypeFuture.get();
-				if ( owlDatatype instanceof OWLClass ) {
-					final OWLClass owlClass2 = (OWLClass) owlDatatype;
-					final OWLObjectProperty owlObjectProperty = dataFactory.getOWLObjectProperty( attributeIRI );
-					ont.add( dataFactory.getOWLDeclarationAxiom( owlObjectProperty ) );
-					ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
-					ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, owlClass2 ) );
-				} else if ( owlDatatype instanceof OWLDatatype ) {
-					final OWLDatatype datatype = (OWLDatatype) owlDatatype;
-					final OWLDataProperty owlDataProperty = dataFactory.getOWLDataProperty( attributeIRI );
-					ont.add( dataFactory.getOWLDeclarationAxiom( owlDataProperty ) );
-					ont.add( dataFactory.getOWLDataPropertyDomainAxiom( owlDataProperty, owlClass ) );
-					ont.add( dataFactory.getOWLDataPropertyRangeAxiom( owlDataProperty, datatype ) );
-				} else {
-					throw new IllegalStateException( "Unknown construct " + owlDatatype );
+			final Pattern p2 = Pattern.compile( "^(.*?)/datatypes/(.*).md$" );
+			final Matcher m2 = p2.matcher( datatypeLinkTarget );
+			if ( m2.matches() ) { // Some other module's datatype
+				final String datatypeModuleURI = m2.group(1);
+				final CERIF2Model module = locateByGithubUri( datatypeModuleURI );
+				if ( module == null ) {
+					throw new IllegalStateException( "Unknown module with URI " + datatypeModuleURI );
 				}
-			} catch ( final ExecutionException e ) {
-				throw new RuntimeException( e.getCause() );
-			} catch ( final InterruptedException e ) {
-				Thread.currentThread().interrupt();
+				final String datatypeName = m2.group(2);
+				final OWLEntity owlDatatype = module.getDatatypeByName( datatypeName );;
+				if ( owlDatatype == null ) {
+					throw new IllegalStateException( "Unknown datatype " + datatypeName );
+				}
+				addAttribute( owlClass, owlDatatype, attributeIRI );
+			} else {
+				throw new IllegalStateException( "Don't know how to process datatype " + datatypeLinkTarget );
 			}
 		}
 
@@ -611,6 +622,45 @@ public class CERIF2Model implements AutoCloseable {
 			final OWLAnnotationValue value = new OWLLiteralImplString( rest.subSequence( endashPosition + 1 ).toString().trim() );
 			ont.add( dataFactory.getOWLAnnotationAssertionAxiom( dataFactory.getRDFSLabel(), attributeIRI, value ) );
 		}
+	}
+
+	private void addAttribute( final OWLClass owlClass, final OWLEntity owlDatatype, final IRI attributeIRI ) {
+		if (owlDatatype instanceof OWLClass) {
+			final OWLClass owlClass2 = (OWLClass) owlDatatype;
+			final OWLObjectProperty owlObjectProperty = dataFactory.getOWLObjectProperty(attributeIRI);
+			ont.add(dataFactory.getOWLDeclarationAxiom(owlObjectProperty));
+			ont.add(dataFactory.getOWLObjectPropertyDomainAxiom(owlObjectProperty, owlClass));
+			ont.add(dataFactory.getOWLObjectPropertyRangeAxiom(owlObjectProperty, owlClass2));
+		} else if (owlDatatype instanceof OWLDatatype) {
+			final OWLDatatype datatype = (OWLDatatype) owlDatatype;
+			final OWLDataProperty owlDataProperty = dataFactory.getOWLDataProperty(attributeIRI);
+			ont.add(dataFactory.getOWLDeclarationAxiom(owlDataProperty));
+			ont.add(dataFactory.getOWLDataPropertyDomainAxiom(owlDataProperty, owlClass));
+			ont.add(dataFactory.getOWLDataPropertyRangeAxiom(owlDataProperty, datatype));
+		} else {
+			throw new IllegalStateException("Unknown construct " + owlDatatype);
+		}
+	}
+
+	public OWLEntity getDatatypeByName(final String datatypeName ) {
+		final IRI datatypeIRI = baseIRI.resolve(datatypeName);
+		@SuppressWarnings("unchecked") final Future<OWLEntity> owlDatatypeFuture = (Future<OWLEntity>) datatypeByIRI.get(datatypeIRI);
+		if (owlDatatypeFuture != null) {
+			try {
+				return owlDatatypeFuture.get();
+			} catch (final ExecutionException e) {
+				throw new RuntimeException(e.getCause());
+			} catch (final InterruptedException e) {
+				Thread.currentThread().interrupt();
+			}
+		}
+		return null;
+	}
+
+	private final Map<String, CERIF2Model> dependencies = new HashMap<String, CERIF2Model>();
+
+	public CERIF2Model locateByGithubUri(final String cerifModuleURI ) {
+		return dependencies.get( cerifModuleURI );
 	}
 
 }
