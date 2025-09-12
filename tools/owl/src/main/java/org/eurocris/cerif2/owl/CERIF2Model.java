@@ -36,6 +36,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -101,6 +102,16 @@ public class CERIF2Model implements AutoCloseable {
 			this.ont = man.createOntology( baseIRI );
 			if ( mainIRI.toString().equals( CERIF_CORE_URI ) ) {
 				initializeBasicCoreDatatypes();
+			}
+			try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(path.resolve("datatypes"), "*.md")) {
+				for (final Path datatypeFilePath : datatypes) {
+					readInDatatypeFile(new StructuredFile(datatypeFilePath));
+				}
+			}
+			try (final DirectoryStream<Path> entities = Files.newDirectoryStream(path.resolve("entities"), "*.md")) {
+				for (final Path entityFilePath : entities) {
+					readInEntityFile(new StructuredFile(entityFilePath));
+				}
 			}
 		}
 	}
