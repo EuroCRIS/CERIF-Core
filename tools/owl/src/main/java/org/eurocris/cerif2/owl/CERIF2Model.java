@@ -432,7 +432,7 @@ public class CERIF2Model implements AutoCloseable {
 		// Here is where we will put the files split up by class names
 		final Path perClassDirectory = Path.of( outputFilePath ).resolveSibling( "per-class" );
 		// Create if it does not exist
-		Files.createDirectory( perClassDirectory );
+		Files.createDirectories( perClassDirectory );
 		// Erase first
 		try ( final Stream<Path> paths = Files.walk( perClassDirectory ) ) {
 			paths.sorted( Comparator.reverseOrder() ).map( Path::toFile ).forEach( File::delete );
