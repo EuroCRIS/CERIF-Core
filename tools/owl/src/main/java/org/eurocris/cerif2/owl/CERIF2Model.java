@@ -47,6 +47,9 @@ import java.util.stream.Stream;
 
 public class CERIF2Model implements AutoCloseable {
 
+	public static final Pattern PATTERN_ATTR = Pattern.compile("^([^()]*?)/datatypes/(.*).md$");
+	public static final Pattern PATTERN_REL = Pattern.compile( "\\(([^()]*?)/entities/([^.]*)\\.md(#[^)]*)?\\)" );
+
 	protected final Logger log = LoggerFactory.getLogger( getClass().getName() );
 
 	private final List<Section> datatypes = new ArrayList<>();
@@ -55,9 +58,9 @@ public class CERIF2Model implements AutoCloseable {
 
 	private final List<Section> entities = new ArrayList<>();
 	
-	private final Map<String, Future<? extends OWLEntity>> entityByName = new HashMap<>();
+	private final Map<IRI, Future<? extends OWLEntity>> entityByIRI = new HashMap<>();
 	
-	private final Map<String, Map<String, Relationship>> relationshipByEntityAndRelationshipName = new HashMap<>();
+	private final Map<IRI, Map<String, Relationship>> relationshipByEntityAndRelationshipName = new HashMap<>();
 
 	public static final String DEFAULT_LANGUAGE_CODE = "en";
 
@@ -167,7 +170,7 @@ public class CERIF2Model implements AutoCloseable {
 
 		final String owlClassName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
 		final IRI classIRI = baseIRI.resolve( owlClassName );
-		entityByName.put( owlClassName, createClass( mainSection, owlClassName, classIRI, "Attributes", true ) );
+		entityByIRI.put( classIRI, createClass( mainSection, owlClassName, classIRI, "Attributes", true ) );
 	}
 	
 	public void markDoneReading() {
@@ -197,7 +200,7 @@ public class CERIF2Model implements AutoCloseable {
 
 		private final IRI domainClassIRI;
 		
-		private final String rangeClassName;
+		private final IRI rangeClassIRI;
 		
 		private final String inversePropropertyName;
 		
@@ -207,12 +210,12 @@ public class CERIF2Model implements AutoCloseable {
 		
 		protected OWLObjectProperty owlObjectProperty = null;
 		
-		public Relationship( final String relName, final IRI domainClassIRI, final String rangeClassName, final String inversePropropertyName, final boolean ordered, final String definitionLine ) {
+		public Relationship( final String relName, final IRI domainClassIRI, final IRI rangeClassIRI, final String inversePropropertyName, final boolean ordered, final String definitionLine ) {
 			super();
 			this.relName = relName;
 			this.iri = domainClassIRI.resolve( "#" + relName );
 			this.domainClassIRI = domainClassIRI;
-			this.rangeClassName = rangeClassName;
+			this.rangeClassIRI = rangeClassIRI;
 			this.inversePropropertyName = inversePropropertyName;
 			this.ordered = ordered;
 			this.definitionLine = definitionLine;
@@ -232,8 +235,15 @@ public class CERIF2Model implements AutoCloseable {
 			return domainClassIRI;
 		}
 
+		public IRI getRangeClassIRI() { return rangeClassIRI; }
+
+		/**
+		 * @deprecated use {@link #getRangeClassIRI()} instead
+		 * @return
+		 */
+		@Deprecated
 		public String getRangeClassName() {
-			return rangeClassName;
+			return null;
 		}
 
 		public String getInversePropropertyName() {
@@ -253,18 +263,17 @@ public class CERIF2Model implements AutoCloseable {
 		}
 		
 		public String toString() {
-			return domainClassIRI + " --( " + relName + " )--> " + rangeClassName;
+			return domainClassIRI + " --( " + relName + " )--> " + rangeClassIRI;
 		}
 		
 		public void index() {
-			final String classNameFragment = domainClassIRI.getFragment();
 			final Map<String, Relationship> secondStageMap1 = new HashMap<>();
-			final Map<String, Relationship> secondStageMap = nvl( relationshipByEntityAndRelationshipName.putIfAbsent( classNameFragment, secondStageMap1 ), secondStageMap1 );
+			final Map<String, Relationship> secondStageMap = nvl( relationshipByEntityAndRelationshipName.putIfAbsent( domainClassIRI, secondStageMap1 ), secondStageMap1 );
 			secondStageMap.put( relName, this );
 		}
 		
 		public void deindex() {
-			relationshipByEntityAndRelationshipName.get( domainClassIRI.getFragment() ).remove( relName, this );
+			relationshipByEntityAndRelationshipName.get( domainClassIRI ).remove( relName, this );
 		}
 
 	}
@@ -430,7 +439,7 @@ public class CERIF2Model implements AutoCloseable {
 			}
 		}
 		synchronized ( this ) {
-			for ( final Map.Entry<String, Future<? extends OWLEntity>> x : entityByName.entrySet() ) {
+			for ( final Map.Entry<IRI, Future<? extends OWLEntity>> x : entityByIRI.entrySet() ) {
 				try {
 					log.debug( "Getting entity " + x.getKey() );
 					x.getValue().get();
@@ -494,8 +503,6 @@ public class CERIF2Model implements AutoCloseable {
 		);
 	}
 
-	static final Pattern entityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
-
 	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, final BasedSequence text ) throws ParseException {
 		if (!( text.startsWith( "<a name=\"" ) && text.toString().contains( "</a>" ) )) {
 			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship title", node );
@@ -519,18 +526,19 @@ public class CERIF2Model implements AutoCloseable {
 		log.info( "Class " + classIRI + ", relationship " + relName );
 
 		final String inversePropertyName;
-		final String rangeClassName;
-		final Matcher entityNameMatcher = entityNamePattern.matcher( secondPart );
+		final IRI rangeClassIRI;
+		final Matcher entityNameMatcher = PATTERN_REL.matcher( secondPart );
 		if ( entityNameMatcher.find() ) {
-			rangeClassName = entityNameMatcher.group(1);
-			final String inverseFragment1 = entityNameMatcher.group(2);
+			final CERIF2Model rangeModel = locateByGithubUri( entityNameMatcher.group(1) );
+			rangeClassIRI = rangeModel.getEntityIRI( entityNameMatcher.group(2) );
+			final String inverseFragment1 = entityNameMatcher.group(3);
 			final String fragmentPrefix = "#user-content-rel__";
 			if ( ! inverseFragment1.startsWith( fragmentPrefix ) ) {
 				throw new ParseException( "Inverse property fragment '" + inverseFragment1 + "' not starting with '" + fragmentPrefix + "'", node );
 			}
 			inversePropertyName = CaseUtils.toCamelCase( inverseFragment1.substring( fragmentPrefix.length() ), false, ' ', '-', '_', '.' );
 		} else {
-			rangeClassName = owlClass.getIRI().getFragment();
+			rangeClassIRI = owlClass.getIRI();
 			final String invRelName1 = secondPart.replaceFirst( "<a name=\"([^\"]*)\">.*", "$1" );
 			final String invRelName = CaseUtils.toCamelCase( invRelName1.replaceFirst( "^rel__", "" ), false, ' ', '-', '_', '.' );
 			if ( invRelName.equals( invRelName1 ) ) {
@@ -538,10 +546,11 @@ public class CERIF2Model implements AutoCloseable {
 			}			
 			inversePropertyName = CaseUtils.toCamelCase( invRelName, false, ' ', '-', '_', '.' );
 		}
+		log.info( "Class " + classIRI + ", relationship " + relName + ", inversePropertyName " + inversePropertyName );
 		final boolean ordered = false;
-		final Relationship relationship = new Relationship( relName, classIRI, rangeClassName, inversePropertyName, ordered, theRest ) {
+		final Relationship relationship = new Relationship( relName, classIRI, rangeClassIRI, inversePropertyName, ordered, theRest ) {
 			protected void handle() throws InterruptedException, ExecutionException {
-				final Future<? extends OWLEntity> rangeClassFuture = entityByName.get( getRangeClassName() );
+				final Future<? extends OWLEntity> rangeClassFuture = entityByIRI.get( getRangeClassIRI() );
 				final OWLClass rangeClass = (OWLClass) rangeClassFuture.get();
 
 				this.owlObjectProperty = dataFactory.getOWLObjectProperty( getIri() );
@@ -551,16 +560,13 @@ public class CERIF2Model implements AutoCloseable {
 				ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
 				ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, rangeClass ) );
 				
-				final Map<String, Relationship> inverseRangeClassRelationshipsMap = relationshipByEntityAndRelationshipName.get( getRangeClassName() );
+				final Map<String, Relationship> inverseRangeClassRelationshipsMap = relationshipByEntityAndRelationshipName.get( getRangeClassIRI() );
 				if ( inverseRangeClassRelationshipsMap != null ) {
 					final Relationship inverseRelationship = inverseRangeClassRelationshipsMap.get( inversePropertyName );
 					if ( inverseRelationship != null ) {
-						
 						final OWLObjectProperty inverseProperty = inverseRelationship.getOwlObjectProperty();
-						if ( inverseProperty != null ) {
-							ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( owlObjectProperty, inverseProperty ) );
-							ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( inverseProperty, owlObjectProperty ) );
-						}
+						ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(owlObjectProperty, inverseProperty));
+						ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(inverseProperty, owlObjectProperty));
 					}
 				} else {
 					throw new IllegalArgumentException( "No inverse relationships for entity " + getRangeClassName() + "; known are just " + relationshipByEntityAndRelationshipName.keySet() );
@@ -591,33 +597,21 @@ public class CERIF2Model implements AutoCloseable {
 			throw new ParseException( "Missing endash", node );
 		}
 		final IRI attributeIRI = classIRI.resolve( "#" + attributeName );
-		final Pattern p1 = Pattern.compile( "^\\.\\./datatypes/(.*)\\.md$" );
-		final Matcher m1 = p1.matcher( datatypeLinkTarget );
-		if ( m1.matches() ) { // This module's datatype
-			final String datatypeName = m1.group(1);
-			final OWLEntity owlDatatype = getDatatypeByName( datatypeName );
+		final Matcher m = PATTERN_ATTR.matcher( datatypeLinkTarget );
+		if ( m.matches() ) { // This module's datatype
+			final String datatypeModuleURI = m.group(1);
+			final CERIF2Model module = locateByGithubUri( datatypeModuleURI );
+			if ( module == null ) {
+				throw new IllegalStateException( "Unknown module with URI " + datatypeModuleURI );
+			}
+			final String datatypeName = m.group(2);
+			final OWLEntity owlDatatype = module.getDatatypeByName( datatypeName );;
 			if ( owlDatatype == null ) {
 				throw new IllegalStateException( "Unknown datatype " + datatypeName );
 			}
-            addAttribute( owlClass, owlDatatype, attributeIRI );
+			addAttribute( owlClass, owlDatatype, attributeIRI );
 		} else {
-			final Pattern p2 = Pattern.compile( "^(.*?)/datatypes/(.*).md$" );
-			final Matcher m2 = p2.matcher( datatypeLinkTarget );
-			if ( m2.matches() ) { // Some other module's datatype
-				final String datatypeModuleURI = m2.group(1);
-				final CERIF2Model module = locateByGithubUri( datatypeModuleURI );
-				if ( module == null ) {
-					throw new IllegalStateException( "Unknown module with URI " + datatypeModuleURI );
-				}
-				final String datatypeName = m2.group(2);
-				final OWLEntity owlDatatype = module.getDatatypeByName( datatypeName );;
-				if ( owlDatatype == null ) {
-					throw new IllegalStateException( "Unknown datatype " + datatypeName );
-				}
-				addAttribute( owlClass, owlDatatype, attributeIRI );
-			} else {
-				throw new IllegalStateException( "Don't know how to process datatype " + datatypeLinkTarget );
-			}
+			throw new IllegalStateException( "Don't know how to process datatype " + datatypeLinkTarget );
 		}
 
 		if ( endashPosition > 0 ) {
@@ -645,7 +639,7 @@ public class CERIF2Model implements AutoCloseable {
 	}
 
 	public OWLEntity getDatatypeByName(final String datatypeName ) {
-		final IRI datatypeIRI = baseIRI.resolve(datatypeName);
+		final IRI datatypeIRI = getDatatypeIRI(datatypeName);
 		@SuppressWarnings("unchecked") final Future<OWLEntity> owlDatatypeFuture = (Future<OWLEntity>) datatypeByIRI.get(datatypeIRI);
 		if (owlDatatypeFuture != null) {
 			try {
@@ -659,10 +653,18 @@ public class CERIF2Model implements AutoCloseable {
 		return null;
 	}
 
+	public IRI getDatatypeIRI(final String datatypeName ) {
+		return baseIRI.resolve(datatypeName);
+	}
+
+	public IRI getEntityIRI(final String entityName ) {
+		return baseIRI.resolve(entityName);
+	}
+
 	private final Map<String, CERIF2Model> dependencies = new HashMap<String, CERIF2Model>();
 
-	public CERIF2Model locateByGithubUri(final String cerifModuleURI ) {
-		return dependencies.get( cerifModuleURI );
+	public CERIF2Model locateByGithubUri( final String cerifModuleURI ) {
+		return ( "..".equals( cerifModuleURI ) ) ? this : dependencies.get( cerifModuleURI );
 	}
 
 }
