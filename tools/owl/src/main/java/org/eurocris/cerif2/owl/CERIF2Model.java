@@ -527,11 +527,15 @@ public class CERIF2Model implements AutoCloseable {
 				if ( inverseRangeClassRelationshipsMap != null ) {
 					final Relationship inverseRelationship = inverseRangeClassRelationshipsMap.get( inversePropertyName );
 					if ( inverseRelationship != null ) {
-						
 						final OWLObjectProperty inverseProperty = inverseRelationship.getOwlObjectProperty();
 						if ( inverseProperty != null ) {
-							ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( owlObjectProperty, inverseProperty ) );
-							ont.add( dataFactory.getOWLInverseObjectPropertiesAxiom( inverseProperty, owlObjectProperty ) );
+							if ( inverseProperty.compareTo( owlObjectProperty ) > 0 ) {
+								ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(owlObjectProperty, inverseProperty));
+								ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(inverseProperty, owlObjectProperty));
+							} else {
+								ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(inverseProperty, owlObjectProperty));
+								ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(owlObjectProperty, inverseProperty));
+							}
 						}
 					}
 				} else {
