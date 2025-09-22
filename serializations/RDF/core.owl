@@ -223,6 +223,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Acknowledgement_Statement#testify">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Contribution#isTestifiedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Acknowledgement_Statement"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Contribution"/>
         <rdfs:comment xml:lang="en">An Acknowledgement Statement testifies a [Contribution](../entities/Contribution.md).</rdfs:comment>
@@ -244,6 +245,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Activity#hasActor">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Agent#isActorIn"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Activity"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:comment xml:lang="en">An Activity typically has the actor: an instance of [Agent](../entities/Agent.md). For some subclasses of Activity, the Agent may not be known or disclosed (e.g. for blind reviews). Also if the actor uses a pseudonym, their identity (and sometimes event the type) are unknown, in which case just a display name is available.</rdfs:comment>
@@ -255,6 +257,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Activity#hasAffiliationStatement">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Affiliation_Statement#isUsedIn"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Activity"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Affiliation_Statement"/>
         <rdfs:comment xml:lang="en">An Activity can have any number of [Affiliation Statements](../entities/Affiliation_Statement.md).</rdfs:comment>
@@ -278,6 +281,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Activity#isEvidencedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document#proves"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Activity"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:comment xml:lang="en">An Activity can be evidenced by any number of [Documents](../entities/Document.md).</rdfs:comment>
@@ -337,7 +341,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Affiliation_Statement#isUsedIn">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Activity#hasAffiliationStatement"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Affiliation_Statement"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Activity"/>
         <rdfs:comment xml:lang="en">An Affiliation Statement can be used in any number of [Activities](../entities/Activity.md).</rdfs:comment>
@@ -370,6 +373,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Agent#hasIdentifier">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Agent_Identifier#isAssignedTo"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Agent_Identifier"/>
         <rdfs:comment xml:lang="en">An Agent can be assigned any number of [Agent Identifiers](../entities/Agent_Identifier.md).</rdfs:comment>
@@ -381,7 +385,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Agent#isActorIn">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Activity#hasActor"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Activity"/>
         <rdfs:comment xml:lang="en">An Agent can be the actor in any number of [Activities](../entities/Activity.md).</rdfs:comment>
@@ -429,6 +432,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Agent#isRecipientOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Prize_Award#hasRecipient"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:comment xml:lang="en">An Agent can be the recipient of any number of [Prize Awards](../entities/Prize_Award.md).</rdfs:comment>
@@ -462,6 +466,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Agent#made">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Decision#madeBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Decision"/>
         <rdfs:comment xml:lang="en">An Agent can make a [Decision](../entities/Decision.md) on Resource Request based or not on Evaluation Outcomes.</rdfs:comment>
@@ -473,6 +478,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Agent#solicits">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource_Offer#isSolicitedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource_Offer"/>
         <rdfs:comment xml:lang="en">An Agent can solicit any number of [Resource Offers](../entities/Resource_Offer.md).</rdfs:comment>
@@ -484,7 +490,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Agent_Identifier#isAssignedTo">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Agent#hasIdentifier"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Agent_Identifier"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:comment xml:lang="en">An Agent Identifier is assigned to an [Agent](../entities/Agent.md).</rdfs:comment>
@@ -519,6 +524,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Condition#appliesTo">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource_Offer#hasCondition"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Condition"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource_Offer"/>
         <rdfs:comment xml:lang="en">A Condition applies to a [Resource Offer](../entities/Resource_Offer.md).</rdfs:comment>
@@ -542,7 +548,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Contribution#isTestifiedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Acknowledgement_Statement#testify"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Contribution"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Acknowledgement_Statement"/>
         <rdfs:comment xml:lang="en">A Contribution can be testified by any number of [Acknowledgement Statements](../entities/Acknowledgement_Statement.md).</rdfs:comment>
@@ -554,6 +559,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Contribution_Statement#isDetailedIn">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource_Usage_Statement#details"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Contribution_Statement"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource_Usage_Statement"/>
         <rdfs:comment xml:lang="en">A Contribution Statement can be detailed in any number of [Resource Usage Statements](../entities/Resource_Usage_Statement.md).</rdfs:comment>
@@ -565,6 +571,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Contribution_Statement#provides">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource#isProvidedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Contribution_Statement"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:comment xml:lang="en">A Contribution Statement can optionally provide any number of [Resources](../entities/Resource.md). These resources can be funding, expertise, equipment, time or space.</rdfs:comment>
@@ -611,6 +618,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Contribution_to_Event#hasTarget">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Event#hasContribution"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Contribution_to_Event"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Event"/>
         <rdfs:comment xml:lang="en">A Contribution to Event always references the target [Event](../entities/Event.md).</rdfs:comment>
@@ -634,6 +642,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Contribution_to_Prize#hasTarget">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Prize#hasContribution"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Contribution_to_Prize"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Prize"/>
         <rdfs:comment xml:lang="en">A Contribution to Prize always has the target [Prize](../entities/Prize.md).</rdfs:comment>
@@ -645,6 +654,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Contribution_to_Prize_Award#hasTarget">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Prize_Award#hasContribution"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Contribution_to_Prize_Award"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:comment xml:lang="en">A Contribution to Prize Award always has the target [Prize Award](../entities/Prize_Award.md).</rdfs:comment>
@@ -704,7 +714,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Decision#madeBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Agent#made"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Decision"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:comment xml:lang="en">A Decision about accepting or refusing request can be made by any number of [Agents](../entities/Agent.md).</rdfs:comment>
@@ -716,6 +725,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#awardedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Prize_Award#awardedForADocument"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:comment xml:lang="en">A Document can be awarded by a [Prize Award](../entities/Prize_Award.md).</rdfs:comment>
@@ -727,6 +737,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#describesResourceOffer">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource_Offer#isDescribedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource_Offer"/>
         <rdfs:comment xml:lang="en">A Document can provide description of a [Resource Offer](../entities/Resource_Offer.md).</rdfs:comment>
@@ -738,6 +749,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#describesResourceRequest">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource_Request#isDescribedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource_Request"/>
         <rdfs:comment xml:lang="en">A Document can provide description of a [Resource Request](../entities/Resource_Request.md).</rdfs:comment>
@@ -760,6 +772,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document#isPartOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:comment xml:lang="en">A Document can have any number of [Documents](../entities/Document.md) as parts. [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association.</rdfs:comment>
@@ -771,7 +784,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#isPartOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document#hasPart"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:comment xml:lang="en">A Document can be part of any number of other [Documents](../entities/Document.md). [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association.</rdfs:comment>
@@ -794,7 +806,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#proves">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Activity#isEvidencedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Activity"/>
         <rdfs:comment xml:lang="en">A Document can provide evidence of any number of [Activities](../entities/Activity.md).</rdfs:comment>
@@ -806,6 +817,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#providesEvidenceOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills_Possession#isEvidencedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills_Possession"/>
         <rdfs:comment xml:lang="en">A Document can provide evidence of any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md).</rdfs:comment>
@@ -817,6 +829,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#publishedAs">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document_Publication#of"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document_Publication"/>
         <rdfs:comment xml:lang="en">A Document can be published as [Document Publication](../entities/Document_Publication.md), once or even multiple times.</rdfs:comment>
@@ -828,6 +841,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document_Publication#in">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Publication_Channel#contains"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document_Publication"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Publication_Channel"/>
         <rdfs:comment xml:lang="en">A Document Publication can be published in any number of [Publication Channels](../entities/Publication_Channel.md). [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association.</rdfs:comment>
@@ -839,7 +853,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document_Publication#of">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document#publishedAs"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document_Publication"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:comment xml:lang="en">A Document Publication references the published [Document](../entities/Document.md).</rdfs:comment>
@@ -862,6 +875,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Evaluation_Outcome#isAnEvaluationOutcomeOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource_Request#hasEvaluationOutcome"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Evaluation_Outcome"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource_Request"/>
         <rdfs:comment xml:lang="en">An Evaluation outcome might be a result of the [Resource Request](../entities/Resource_Request.md) evaluation process.</rdfs:comment>
@@ -884,6 +898,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Event#awardedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Prize_Award#awardedForAnEvent"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Event"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:comment xml:lang="en">An Event can be awarded by a [Prize Award](../entities/Prize_Award.md).</rdfs:comment>
@@ -917,7 +932,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Event#hasContribution">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Contribution_to_Event#hasTarget"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Event"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Contribution_to_Event"/>
         <rdfs:comment xml:lang="en">An Event can have any number of [contributions](../entities/Contribution_to_Event.md) that helped it take place or arise.</rdfs:comment>
@@ -929,6 +943,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Event_Identifier#isAssignedTo">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Event_Series#hasIdentifier"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Event_Identifier"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Event_Series"/>
         <rdfs:comment xml:lang="en">An Event Identifier can be assigned to an [Event Series](../entities/Event_Series.md).</rdfs:comment>
@@ -940,7 +955,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Event_Series#hasIdentifier">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Event_Identifier#isAssignedTo"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Event_Series"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Event_Identifier"/>
         <rdfs:comment xml:lang="en">An Event Series can have any number of [Event Identifiers](../entities/Event_Identifier.md).</rdfs:comment>
@@ -963,6 +977,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Expertise_and_Skills#isPossessedThrough">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills_Possession#possesses"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills_Possession"/>
         <rdfs:comment xml:lang="en">A Expertise and Skills can be possessed in any number of [Expertise and Skills Possessions](../entities/Expertise_and_Skills_Possession.md).</rdfs:comment>
@@ -996,7 +1011,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Expertise_and_Skills_Possession#isEvidencedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document#providesEvidenceOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills_Possession"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:comment xml:lang="en">An Expertise and Skills Possession can be evidenced by any number of [Documents](../entities/Document.md).</rdfs:comment>
@@ -1008,7 +1022,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Expertise_and_Skills_Possession#possesses">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills#isPossessedThrough"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills_Possession"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills"/>
         <rdfs:comment xml:lang="en">An Expertise and Skills Possession references the [Expertise and Skills](../entities/Expertise_and_Skills.md) that the Agent possesses.</rdfs:comment>
@@ -1041,6 +1054,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Funding#covers">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Project#fundedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Funding"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Project"/>
         <rdfs:comment xml:lang="en">A Funding can cover any number of [Projects](../entities/Project.md) that help it happen.</rdfs:comment>
@@ -1052,6 +1066,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Group#hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Group#isPartOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Group"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Group"/>
         <rdfs:comment xml:lang="en">A Group can have any number of parts, instances of [Group](../entities/Group.md).</rdfs:comment>
@@ -1063,7 +1078,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Group#isPartOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Group#hasPart"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Group"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Group"/>
         <rdfs:comment xml:lang="en">A Group can be part of any number of other [Groups](../entities/Group.md).</rdfs:comment>
@@ -1075,6 +1089,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Group_or_Organisation_Unit#hasInvolvement">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Involvement#involvesActorIn"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Group_or_Organisation_Unit"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Involvement"/>
         <rdfs:comment xml:lang="en">A Group or Organisation Unit can have any number of [Involvements](../entities/Involvement.md), which involve [Agents](../entities/Agent.md) in it.</rdfs:comment>
@@ -1097,6 +1112,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Involvement#hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Involvement#isPartOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Involvement"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Involvement"/>
         <rdfs:comment xml:lang="en">An Involvement can have any number of part [Involvements](../entities/Involvement.md).</rdfs:comment>
@@ -1108,7 +1124,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Involvement#involvesActorIn">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Group_or_Organisation_Unit#hasInvolvement"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Involvement"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Group_or_Organisation_Unit"/>
         <rdfs:comment xml:lang="en">A Involvement specifies that the *actor* Agent is involved in a [Group or Organisation Units](../entities/Group_or_Organisation_Unit.md).</rdfs:comment>
@@ -1120,7 +1135,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Involvement#isPartOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Involvement#hasPart"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Involvement"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Involvement"/>
         <rdfs:comment xml:lang="en">An Involvement can be part of any number of other [Involvements](../entities/Involvement.md).</rdfs:comment>
@@ -1153,6 +1167,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Organisation_Unit#hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Organisation_Unit#isPartOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Organisation_Unit"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Organisation_Unit"/>
         <rdfs:comment xml:lang="en">An Organisation Unit can have any number of parts, instances of [Organisation Unit](../entities/Organisation_Unit.md).</rdfs:comment>
@@ -1164,7 +1179,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Organisation_Unit#isPartOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Organisation_Unit#hasPart"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Organisation_Unit"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Organisation_Unit"/>
         <rdfs:comment xml:lang="en">An Organisation Unit can be part of any number of other [Organisation Units](../entities/Organisation_Unit.md).</rdfs:comment>
@@ -1249,7 +1263,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Prize#hasContribution">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Contribution_to_Prize#hasTarget"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Contribution_to_Prize"/>
         <rdfs:comment xml:lang="en">A Prize can have any number of [contributions](../entities/Contribution_to_Prize.md) that help it arise or continue.</rdfs:comment>
@@ -1261,6 +1274,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Prize#isAwardedAs">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Prize_Award#awards"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:comment xml:lang="en">A Prize can be awarded through any number of [Prize Awards](../entities/Prize_Award.md).</rdfs:comment>
@@ -1283,7 +1297,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Prize_Award#awardedForADocument">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document#awardedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:comment xml:lang="en">A Prize can be awarded for a [Document](../entities/Document.md).</rdfs:comment>
@@ -1307,7 +1320,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Prize_Award#awardedForAnEvent">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Event#awardedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Event"/>
         <rdfs:comment xml:lang="en">A Prize can be awarded for an [Event](../entities/Event.md).</rdfs:comment>
@@ -1319,7 +1331,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Prize_Award#awards">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Prize#isAwardedAs"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Prize"/>
         <rdfs:comment xml:lang="en">A Prize Award awards a specific [Prize](../entities/Prize.md).</rdfs:comment>
@@ -1331,7 +1342,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Prize_Award#hasContribution">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Contribution_to_Prize_Award#hasTarget"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Contribution_to_Prize_Award"/>
         <rdfs:comment xml:lang="en">A Prize Award can have any number of [contributions](../entities/Contribution_to_Prize_Award.md) that help its organization.</rdfs:comment>
@@ -1343,7 +1353,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Prize_Award#hasRecipient">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Agent#isRecipientOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:comment xml:lang="en">A Prize Award can have any number of recipients, instances of [Agent](../entities/Agent.md).</rdfs:comment>
@@ -1366,7 +1375,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Project#fundedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Funding#covers"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Project"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Funding"/>
         <rdfs:comment xml:lang="en">A Project can have any number of [Fundings](../entities/Funding.md) that help it happen.</rdfs:comment>
@@ -1389,6 +1397,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Project#hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Project#isPartOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Project"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Project"/>
         <rdfs:comment xml:lang="en">A Project Unit can have any number of parts, instances of [Project](../entities/Project.md).</rdfs:comment>
@@ -1400,7 +1409,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Project#isPartOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Project#hasPart"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Project"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Project"/>
         <rdfs:comment xml:lang="en">A Project Unit (sub-project/work package/task) can be part of the other [Project unit](../entities/Project.md).</rdfs:comment>
@@ -1412,7 +1420,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Publication_Channel#contains">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document_Publication#in"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Publication_Channel"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document_Publication"/>
         <rdfs:comment xml:lang="en">A Publication Channel contains any number of [Document Publications](../entities/Document_Publication.md). [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association.</rdfs:comment>
@@ -1436,6 +1443,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource#hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource#isPartOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:comment xml:lang="en">A Resource can have any number of other [Resources](../entities/Resource.md) as parts.</rdfs:comment>
@@ -1459,7 +1467,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource#isPartOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource#hasPart"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:comment xml:lang="en">A Resource can be part of any number of other [Resources](../entities/Resource.md).</rdfs:comment>
@@ -1471,7 +1478,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource#isProvidedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Contribution_Statement#provides"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Contribution_Statement"/>
         <rdfs:comment xml:lang="en">A Resource can be provided in any number of [Contribution Statements](../entities/Contribution_Statement.md).</rdfs:comment>
@@ -1518,7 +1524,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource_Offer#hasCondition">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Condition#appliesTo"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Offer"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Condition"/>
         <rdfs:comment xml:lang="en">A Resource Offer can have any number of [Conditions](../entities/Condition.md) that must be satisfied for the Resource Offer to be applicable.</rdfs:comment>
@@ -1530,7 +1535,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource_Offer#isDescribedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document#describesResourceOffer"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Offer"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:comment xml:lang="en">A Resource Offer can be described by any number of [Documents](../entities/Document.md).</rdfs:comment>
@@ -1542,7 +1546,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource_Offer#isSolicitedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Agent#solicits"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Offer"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:comment xml:lang="en">A Resource Offer is solicited by an [Agent](../entities/Agent.md).</rdfs:comment>
@@ -1587,7 +1590,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource_Request#hasEvaluationOutcome">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Evaluation_Outcome#isAnEvaluationOutcomeOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Request"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Evaluation_Outcome"/>
         <rdfs:comment xml:lang="en">A Resource Request can have some kind of process which results in an [Evaluation Outcome](../entities/Evaluation_Outcome.md).</rdfs:comment>
@@ -1610,7 +1612,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource_Request#isDescribedBy">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Document#describesResourceRequest"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Request"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
         <rdfs:comment xml:lang="en">A Resource Request can optionally reference its contents, the [Document](../entities/Document.md) that details the resource request.</rdfs:comment>
@@ -1633,7 +1634,6 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource_Usage_Statement#details">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Contribution_Statement#isDetailedIn"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Usage_Statement"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Contribution_Statement"/>
         <rdfs:comment xml:lang="en">A Resource Usage Statement can detail any number of [Contribution Statements](../entities/Contribution_Statement.md).</rdfs:comment>
