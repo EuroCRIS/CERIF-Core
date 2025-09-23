@@ -5,6 +5,13 @@ import com.vladsch.flexmark.ast.Link;
 import com.vladsch.flexmark.util.ast.Node;
 import com.vladsch.flexmark.util.collection.iteration.ReversiblePeekingIterable;
 import com.vladsch.flexmark.util.sequence.BasedSequence;
+import fr.sparna.rdf.shacl.app.InputModelReader;
+import fr.sparna.rdf.shacl.generate.*;
+import fr.sparna.rdf.shacl.generate.providers.BaseShaclGeneratorDataProvider;
+import fr.sparna.rdf.shacl.generate.providers.SamplingShaclGeneratorDataProvider;
+import fr.sparna.rdf.shacl.generate.providers.ShaclGeneratorDataProviderIfc;
+import fr.sparna.rdf.shacl.generate.visitors.AssignDatatypesAndClassesToIriOrLiteralVisitor;
+import fr.sparna.rdf.shacl.generate.visitors.AssignLabelRoleVisitor;
 import net.sf.saxon.BasicTransformerFactory;
 import org.apache.commons.text.CaseUtils;
 import org.eclipse.rdf4j.model.Model;
@@ -44,6 +51,10 @@ import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+
+import org.apache.jena.rdf.model.ModelFactory;
+
+import java.io.FileOutputStream;
 
 public class CERIF2Model implements AutoCloseable {
 
@@ -470,7 +481,7 @@ public class CERIF2Model implements AutoCloseable {
 
 	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, final BasedSequence text ) throws ParseException {
 		if (!( text.startsWith( "<a name=\"" ) && text.toString().contains( "</a>" ) )) {
-			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship title", node );
+			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship title "+text, node );
 		}
 		final int colonIndex = text.indexOf( " : " );
 		if ( colonIndex < 0 ) {
@@ -599,4 +610,40 @@ public class CERIF2Model implements AutoCloseable {
 		}
 	}
 
+    public void generateShaclShapes( final String outputFilePath ) throws OWLOntologyStorageException, TransformerException, IOException {
+        String inputPath = outputFilePath + ".ttl";
+        org.apache.jena.rdf.model.Model inputModel = ModelFactory.createDefaultModel();
+        log.info("Loading model for the purpose of generating SHACL shapes - " + inputPath);
+        inputModel.read(inputPath, "Turtle");
+        ModelProcessorIfc modelProcessor = new DefaultModelProcessor();
+        Configuration configuration = new Configuration(modelProcessor);
+        configuration.setShapesOntology("https://shacl-play.sparna.fr/shapes/");
+        configuration.setShapesNamespacePrefix("shape");
+
+        ShaclGeneratorDataProviderIfc dataProvider = new SamplingShaclGeneratorDataProvider(new PaginatedQuery(100), inputModel);
+        ShaclGenerator generator = new ShaclGenerator();
+        generator.getExtraVisitors().add(new AssignLabelRoleVisitor());
+        generator.getExtraVisitors().add(new AssignDatatypesAndClassesToIriOrLiteralVisitor(dataProvider, modelProcessor));
+
+        // generator.setGenerateLabels(false);
+        // generator.setSkipClasses(true);
+        // generator.setSkipDatatypes(true);
+
+        org.apache.jena.rdf.model.Model shaclModel = generator.generateShapes(
+                configuration,
+                dataProvider);
+
+        // copy over the namespaces from original model
+        for (Map.Entry<String, String> aMapping : inputModel.getNsPrefixMap().entrySet()) {
+            if(shaclModel.getNsPrefixURI(aMapping.getKey()) == null) {
+                shaclModel.setNsPrefix(aMapping.getKey(), aMapping.getValue());
+            }
+        }
+
+
+        try (OutputStream out = new FileOutputStream(outputFilePath + "ShaclShapes.ttl")) {
+            shaclModel.write(out, "Turtle");
+        }
+        log.info("SHACL shapes generated - " + outputFilePath + "ShaclShapes.ttl");
+    }
 }

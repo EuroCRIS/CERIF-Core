@@ -19,7 +19,9 @@ public class Tools {
 	
 	protected final static Logger log = LoggerFactory.getLogger( Tools.class );
 
-	public Tools() {
+	protected final static String OUTPUT_FILE_PATH = "serializations/RDF/core";
+
+    public Tools() {
 	}
 
 	public static void main( final String[] args ) {
@@ -52,7 +54,8 @@ public class Tools {
 					model.readInEntityFile(new StructuredFile(entityFilePath));
 				}
 			}
-			model.save( "serializations/RDF/core" );
+			model.save(Tools.OUTPUT_FILE_PATH);
+            model.generateShaclShapes(Tools.OUTPUT_FILE_PATH);
 		}
 	}
 	
