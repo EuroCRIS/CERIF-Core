@@ -12,6 +12,6 @@ The datatype that represents the [ROR](https://ror.org/) identifier.
 
 ---
 ## References
-<a name="fn1">\[1\]</a> *Facts*. ROR. Available from https://ror.org/facts/
+<a name="fn1">\[1\]</a> *Facts*. ROR. Available from https://ror.readme.io/docs/identifier
 
 <a name="fn2">\[2\]</a> *ISO/IEC 7064:2003. Information technology — Security techniques — Check character systems.* International Standards Organization.

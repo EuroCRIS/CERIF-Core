@@ -19,4 +19,4 @@ A ROR Identifier can only [be assigned](../entities/Agent_Identifier.md#user-con
 
 ---
 ## References
-<a name="fn1">\[1\]</a> *Facts*. ROR. Available from https://ror.org/facts/
+<a name="fn1">\[1\]</a> *Facts*. ROR. Available from https://ror.readme.io/docs/identifier
