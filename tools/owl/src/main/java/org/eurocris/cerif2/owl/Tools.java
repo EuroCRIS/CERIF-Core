@@ -40,7 +40,7 @@ public class Tools {
 			throw new IllegalArgumentException(dir + " does not resolve to a directory");
 		}
 		try ( final CERIF2Model model = new CERIF2Model( path ) ) {
-			model.save( "serializations/RDF/core" );
+			model.save( "serializations/RDF/" );
 		}
 	}
 	

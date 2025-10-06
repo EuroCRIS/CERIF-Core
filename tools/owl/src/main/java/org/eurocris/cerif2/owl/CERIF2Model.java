@@ -425,8 +425,17 @@ public class CERIF2Model implements AutoCloseable {
 		};
 	}
 
-	public void save( final String outputFilePath ) throws OWLOntologyStorageException, TransformerException, IOException {
-		log.info( "About to write the ontology" );
+	/**
+	 * Save the ontology as both <code>.ttl</code> (Turtle) and <code>.owl</code> (OWL XML).
+	 * The name of the files is <code>core.*</code> for the CERIF Core, <code>module.*</code> otherwise.
+	 * @param outputFileDir the directory where the resulting files should be placed
+	 * @throws OWLOntologyStorageException
+	 * @throws TransformerException
+	 * @throws IOException
+	 */
+	public void save( final String outputFileDir ) throws OWLOntologyStorageException, TransformerException, IOException {
+		final String outputFilePath = outputFileDir + ( ( CERIF_CORE_URI.equals( baseIRI.toString() ) ) ? "core" : "module" );
+		log.info( "About to write the ontology to {}", outputFilePath );
 		synchronized ( this ) {
 			for ( final Map.Entry<IRI, Future<? extends OWLEntity>> x : datatypeByIRI.entrySet() ) {
 				try {
@@ -492,7 +501,7 @@ public class CERIF2Model implements AutoCloseable {
 					try ( final InputStream is = Files.newInputStream( path ) ) {
 						final Model model = Rio.parse( is, "", RDFFormat.RDFXML );
 						final Path path2 = path.resolveSibling( path.getFileName().toString().replaceFirst( "\\.owl$", ".ttl" ) );
-						log.info( "Read " + path + ", writing " + path2 );
+						log.debug( "Read " + path + ", writing " + path2 );
 						try ( final OutputStream os = Files.newOutputStream( path2 ) ) {
 							Rio.write( model, os, RDFFormat.TURTLE );
 						}
