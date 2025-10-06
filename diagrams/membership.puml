@@ -7,7 +7,6 @@
     !includesub core.puml!Person
     !includesub core.puml!Group
     !includesub core.puml!Organisation_Unit
-    !includesub core.puml!Organisation_Unit_with_Members
     !includesub core.puml!Group_or_Organisation_Unit
     !includesub core.puml!Involvement
     !includesub core.puml!Affiliation_Statement

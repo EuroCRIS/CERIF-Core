@@ -7,6 +7,5 @@
     !includesub core.puml!Group_or_Organisation_Unit
     !includesub core.puml!Organisation_Unit
     !includesub core.puml!Group
-    !includesub core.puml!Organisation_Unit_with_Members
 
 @enduml
