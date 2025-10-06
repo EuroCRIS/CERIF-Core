@@ -114,6 +114,7 @@ public class CERIF2Model implements AutoCloseable {
 				log.info( "" );
 				log.info( "================================================================================" );
 				log.info( "" );
+				log.info( "Back to constructing model for module '" + moduleName + "', IRI " + baseIRI );
 			}
 			try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(path.resolve("datatypes"), "*.md")) {
 				for (final Path datatypeFilePath : datatypes) {
