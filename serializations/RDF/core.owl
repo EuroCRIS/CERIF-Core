@@ -3094,18 +3094,6 @@ might be some platform identifier, regional identifier or national identifier.</
     
 
 
-    <!-- https://w3id.org/cerif2/Organisation_Unit_with_Members -->
-
-
-    <owl:Class rdf:about="https://w3id.org/cerif2/Organisation_Unit_with_Members">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/cerif2/Group"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/cerif2/Organisation_Unit"/>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:label xml:lang="en">Organisation Unit with Members</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/cerif2/Page_Based_Contents_Location -->
 
 

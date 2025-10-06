@@ -1929,14 +1929,6 @@ might be some platform identifier, regional identifier or national identifier.""
                    rdfs:label "Organisation Unit"@en .
 
 
-###  https://w3id.org/cerif2/Organisation_Unit_with_Members
-:Organisation_Unit_with_Members rdf:type owl:Class ;
-                                rdfs:subClassOf :Group ,
-                                                :Organisation_Unit ;
-                                rdfs:comment ""@en ;
-                                rdfs:label "Organisation Unit with Members"@en .
-
-
 ###  https://w3id.org/cerif2/Page_Based_Contents_Location
 :Page_Based_Contents_Location rdf:type owl:Class ;
                               rdfs:subClassOf :Contents_Location ;

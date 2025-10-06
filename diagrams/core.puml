@@ -124,19 +124,6 @@
 	"Group" "0..* part of" <..> "0..* parts" "Group"
 !endsub
 
-!startsub Organisation_Unit_with_Members
-    class "Organisation_Unit_with_Members" #ffffff {
-    }
-!endsub
-
-!startsub Organisation_Unit_with_Members
-    "Group" <|-- "Organisation_Unit_with_Members"
-!endsub
-
-!startsub Organisation_Unit_with_Members
-    "Organisation_Unit" <|-- "Organisation_Unit_with_Members"
-!endsub
-
 ' === Activity hierarchy ===
 
 !startsub Activity
