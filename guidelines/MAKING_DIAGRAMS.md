@@ -1,6 +1,6 @@
 # Making UML Diagrams
 
-We use the wonderful [PlantUML](https://plantuml.com/) to provide UML diagrams.
+We use the [PlantUML](https://plantuml.com/) to provide UML diagrams.
 The source files of the diagrams (`*.puml`) in the PlantUML notation, together with their SVG renderings (`*.svg`), 
 are stored in the [diagrams](../diagrams/) directory. 
 There is a [Github action](../.github/workflows/plantuml.yml) to re-build the SVG renderings on every push.
