@@ -173,6 +173,7 @@
 
 !startsub Contribution
     class "Contribution" #ffffff {
+        contributionSortingKey : Decimal
     }
 !endsub
 

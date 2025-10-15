@@ -11,7 +11,9 @@ The particular ways of contributing are represented by the linked [Contribution 
 [Activity](../entities/Activity.md)
 
 ## Attributes
-Just those of [Activity](../entities/Activity.md).
+Those of [Activity](../entities/Activity.md) plus:
+
+contribution sorting key : [Decimal](../datatypes/Decimal.md) – An optional numeric sorting key: for one linked object it establishes the sequence of contributions of a specific kind. This is to be used where the order is conventionally important, such as authors or editors of a Document.
 
 ## Relationships
 Beside those inherited from [Activity](../entities/Activity.md#relationships):

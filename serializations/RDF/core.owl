@@ -1757,6 +1757,17 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Contribution#contributionSortingKey -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Contribution#contributionSortingKey">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Contribution"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Decimal"/>
+        <rdfs:label>An optional numeric sorting key: for one linked object it establishes the sequence of contributions of a specific kind. This is to be used where the order is conventionally important, such as authors or editors of a Document.</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Contribution_Statement#statement -->
 
 

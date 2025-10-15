@@ -1112,6 +1112,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                    rdfs:range :String .
 
 
+###  https://w3id.org/cerif2/Contribution#contributionSortingKey
+<https://w3id.org/cerif2/Contribution#contributionSortingKey> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:domain :Contribution ;
+                                                              rdfs:range :Decimal ;
+                                                              rdfs:label "An optional numeric sorting key: for one linked object it establishes the sequence of contributions of a specific kind. This is to be used where the order is conventionally important, such as authors or editors of a Document." .
+
+
 ###  https://w3id.org/cerif2/Contribution_Statement#statement
 <https://w3id.org/cerif2/Contribution_Statement#statement> rdf:type owl:DatatypeProperty ;
                                                            rdfs:domain :Contribution_Statement ;
