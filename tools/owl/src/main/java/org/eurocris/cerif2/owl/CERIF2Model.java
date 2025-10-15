@@ -522,7 +522,7 @@ public class CERIF2Model implements AutoCloseable {
 			throw new ParseException( "No separator ' : ' for the description of the relationship", node );
 		}
 		final int slashIndex1 = text.indexOf( " / " );
-		final int slashIndex = ( slashIndex1 >= 0 ) ? slashIndex1 : colonIndex;		
+		final int slashIndex = ( slashIndex1 >= 0 ) ? slashIndex1 : colonIndex - 3;
 		final String firstPart = text.subSequence( 0, slashIndex ).toString().trim();
 		final String secondPart = text.subSequence(  slashIndex + 3, colonIndex ).toString().trim();
 		final String theRest = text.subSequence( colonIndex + 3 ).toString().trim();
@@ -550,11 +550,15 @@ public class CERIF2Model implements AutoCloseable {
 		} else {
 			rangeClassIRI = owlClass.getIRI();
 			final String invRelName1 = secondPart.replaceFirst( "<a name=\"([^\"]*)\">.*", "$1" );
-			final String invRelName = CaseUtils.toCamelCase( invRelName1.replaceFirst( "^rel__", "" ), false, ' ', '-', '_', '.' );
-			if ( invRelName.equals( invRelName1 ) ) {
-				throw new ParseException( "Inverse relationship name '" + invRelName1 + "' not starting with 'rel__'", node );
-			}			
-			inversePropertyName = CaseUtils.toCamelCase( invRelName, false, ' ', '-', '_', '.' );
+			if ( !invRelName1.isEmpty() ) {
+				final String invRelName = CaseUtils.toCamelCase(invRelName1.replaceFirst("^rel__", ""), false, ' ', '-', '_', '.');
+				if (invRelName.equals(invRelName1)) {
+					throw new ParseException("Inverse relationship name '" + invRelName1 + "' not starting with 'rel__'", node);
+				}
+				inversePropertyName = CaseUtils.toCamelCase(invRelName, false, ' ', '-', '_', '.');
+			} else {
+				inversePropertyName = null;
+			}
 		}
 		log.info( "Class " + classIRI + ", relationship " + relName + ", inversePropertyName " + inversePropertyName );
 		final boolean ordered = false;
