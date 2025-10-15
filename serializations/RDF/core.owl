@@ -918,6 +918,17 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Event#collocatedWith -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Event#collocatedWith">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Event"/>
+        <rdfs:comment xml:lang="en">An Event can be collocated with the another [Events](../entities/Event.md).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Event#dateRange -->
 
 
@@ -1626,6 +1637,17 @@
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Request"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:comment xml:lang="en">A Resource Request specifies the [Resource](../entities/Resource.md) that is the subject of the request.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Resource_Request#revises -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource_Request#revises">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Request"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource_Request"/>
+        <rdfs:comment xml:lang="en">A Resource Request can revise the another [Resource Request](../entities/Document.md) that wasn&apos;t successful in the previous round.</rdfs:comment>
     </owl:ObjectProperty>
     
 

@@ -1,8 +1,6 @@
 package org.eurocris.cerif2.owl;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -42,17 +40,7 @@ public class Tools {
 			throw new IllegalArgumentException(dir + " does not resolve to a directory");
 		}
 		try ( final CERIF2Model model = new CERIF2Model( path ) ) {
-			try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(path.resolve("datatypes"), "*.md")) {
-				for (final Path datatypeFilePath : datatypes) {
-					model.readInDatatypeFile(new StructuredFile(datatypeFilePath));
-				}
-			}
-			try (final DirectoryStream<Path> entities = Files.newDirectoryStream(path.resolve("entities"), "*.md")) {
-				for (final Path entityFilePath : entities) {
-					model.readInEntityFile(new StructuredFile(entityFilePath));
-				}
-			}
-			model.save( "serializations/RDF/core" );
+			model.save( "serializations/RDF/" );
 		}
 	}
 	

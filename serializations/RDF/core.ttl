@@ -581,6 +581,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                 rdfs:comment "An Event can be an instance of [Event Series](../entities/Event_Series.md)."@en .
 
 
+###  https://w3id.org/cerif2/Event#collocatedWith
+<https://w3id.org/cerif2/Event#collocatedWith> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain :Event ;
+                                               rdfs:range :Event ;
+                                               rdfs:comment "An Event can be collocated with the another [Events](../entities/Event.md)."@en .
+
+
 ###  https://w3id.org/cerif2/Event#dateRange
 <https://w3id.org/cerif2/Event#dateRange> rdf:type owl:ObjectProperty ;
                                           rdfs:domain :Event ;
@@ -1035,6 +1042,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                     rdfs:domain :Resource_Request ;
                                                     rdfs:range :Resource ;
                                                     rdfs:comment "A Resource Request specifies the [Resource](../entities/Resource.md) that is the subject of the request."@en .
+
+
+###  https://w3id.org/cerif2/Resource_Request#revises
+<https://w3id.org/cerif2/Resource_Request#revises> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain :Resource_Request ;
+                                                   rdfs:range :Resource_Request ;
+                                                   rdfs:comment "A Resource Request can revise the another [Resource Request](../entities/Document.md) that wasn't successful in the previous round."@en .
 
 
 ###  https://w3id.org/cerif2/Resource_Usage_Statement#details

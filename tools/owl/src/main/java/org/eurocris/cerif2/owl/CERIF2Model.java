@@ -9,7 +9,6 @@ import net.sf.saxon.BasicTransformerFactory;
 import org.apache.commons.text.CaseUtils;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Resource;
-import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.model.util.Models;
 import org.eclipse.rdf4j.model.util.Values;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
@@ -36,6 +35,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -47,17 +47,20 @@ import java.util.stream.Stream;
 
 public class CERIF2Model implements AutoCloseable {
 
+	public static final Pattern PATTERN_ATTR = Pattern.compile("^([^()]*?)/datatypes/(.*).md$");
+	public static final Pattern PATTERN_REL = Pattern.compile( "\\(([^()]*?)/entities/([^.]*)\\.md(#[^)]*)?\\)" );
+
 	protected final Logger log = LoggerFactory.getLogger( getClass().getName() );
 
 	private final List<Section> datatypes = new ArrayList<>();
 
-	private final Map<String, Future<? extends OWLEntity>> datatypeByName = new HashMap<>();
+	private final Map<IRI, Future<? extends OWLEntity>> datatypeByIRI = new HashMap<>();
 
 	private final List<Section> entities = new ArrayList<>();
 	
-	private final Map<String, Future<? extends OWLEntity>> entityByName = new HashMap<>();
+	private final Map<IRI, Future<? extends OWLEntity>> entityByIRI = new HashMap<>();
 	
-	private final Map<String, Map<String, Relationship>> relationshipByEntityAndRelationshipName = new HashMap<>();
+	private final Map<IRI, Map<String, Relationship>> relationshipByEntityAndRelationshipName = new HashMap<>();
 
 	public static final String DEFAULT_LANGUAGE_CODE = "en";
 
@@ -69,11 +72,11 @@ public class CERIF2Model implements AutoCloseable {
 
 	private final OWLDataFactory dataFactory = man.getOWLDataFactory();
 
-	private final OWLDatatype dateDatatype;
-	
 	private final ExecutorService es = Executors.newCachedThreadPool();
 
 	private final static String CONTROL_FILE_NAME = "cerif2.ttl";
+
+	private final static String CERIF_CORE_URI = "https://w3id.org/cerif2/";
 
 	private final static String DOAP_PREFIX = "http://usefulinc.com/ns/doap#";
 
@@ -99,24 +102,49 @@ public class CERIF2Model implements AutoCloseable {
 			final String moduleName = Models.objectString( m.filter( mainIRI, DOAP_NAME, null ) ).orElse( "-" );
 			log.info( "Starting model for module '" + moduleName + "', IRI " + baseIRI );
 			this.ont = man.createOntology( baseIRI );
-
-			final IRI dateDatatypeIRI = baseIRI.resolve( "datatypes" ).resolve( "Date" );
-			this.dateDatatype = dataFactory.getOWLDatatype( dateDatatypeIRI );
-
-			datatypeByName.put( "String", CompletableFuture.supplyAsync( () -> dataFactory.getStringOWLDatatype(), es ) );
-			datatypeByName.put( "Multilingual_String", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.RDF_PLAIN_LITERAL.getIRI() ), es ) );
-			datatypeByName.put( "Decimal", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_DECIMAL.getIRI() ), es ) );
-			datatypeByName.put( "Boolean", CompletableFuture.supplyAsync( () -> dataFactory.getBooleanOWLDatatype(), es ) );
-			datatypeByName.put( "URI", CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_ANY_URI.getIRI() ), es ) );
-			datatypeByName.put( "Date", CompletableFuture.supplyAsync( () -> dateDatatype, es ) );
-			// FIXME check why this doesn't get serialized
-//		if ( moduleName.equals( "CERIF-Core" ) ) {
-			final OWLDataUnionOf owlDataUnionOf = dataFactory.getOWLDataUnionOf( dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.DATE.getIRI() ) ),
-					dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR_MONTH.getIRI() ) ),
-					dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR.getIRI() ) ) );
-			ont.add( dataFactory.getOWLDatatypeDefinitionAxiom( dateDatatype, owlDataUnionOf ) );
-//		}
+			if ( mainIRI.toString().equals( CERIF_CORE_URI ) ) {
+				initializeBasicCoreDatatypes();
+			} else {
+				// FIXME this is a mock, should be replaced with properly handling dependencies
+				log.info( "Reading in the CERIF Core first" );
+				final CERIF2Model cerifCore = new CERIF2Model( path.getParent().resolve( "CERIF-Core" ) );
+				dependencies.put( "https://github.com/euroCRIS/CERIF-Core/blob/main", cerifCore );
+				dependencies.put( "https://github.com/EuroCRIS/CERIF-Core/blob/main", cerifCore );
+				log.info( "Finished reading the CERIF Core" );
+				log.info( "" );
+				log.info( "================================================================================" );
+				log.info( "" );
+				log.info( "Back to constructing model for module '" + moduleName + "', IRI " + baseIRI );
+			}
+			try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(path.resolve("datatypes"), "*.md")) {
+				for (final Path datatypeFilePath : datatypes) {
+					readInDatatypeFile(new StructuredFile(datatypeFilePath));
+				}
+			}
+			try (final DirectoryStream<Path> entities = Files.newDirectoryStream(path.resolve("entities"), "*.md")) {
+				for (final Path entityFilePath : entities) {
+					readInEntityFile(new StructuredFile(entityFilePath));
+				}
+			}
 		}
+	}
+
+	private void initializeBasicCoreDatatypes() {
+		final IRI coreDatatypesIRIBase = baseIRI.resolve("datatypes");
+		final IRI dateDatatypeIRI = coreDatatypesIRIBase.resolve( "Date" );
+		final OWLDatatype dateDatatype = dataFactory.getOWLDatatype( dateDatatypeIRI );
+
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("String"), CompletableFuture.supplyAsync( () -> dataFactory.getStringOWLDatatype(), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("Multilingual_String"), CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.RDF_PLAIN_LITERAL.getIRI() ), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("Decimal"), CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_DECIMAL.getIRI() ), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("Boolean"), CompletableFuture.supplyAsync( () -> dataFactory.getBooleanOWLDatatype(), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("URI"), CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( OWL2Datatype.XSD_ANY_URI.getIRI() ), es ) );
+		datatypeByIRI.put( coreDatatypesIRIBase.resolve("Date"), CompletableFuture.supplyAsync( () -> dateDatatype, es ) );
+		// FIXME check why this doesn't get serialized
+		final OWLDataUnionOf owlDataUnionOf = dataFactory.getOWLDataUnionOf( dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.DATE.getIRI() ) ),
+				dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR_MONTH.getIRI() ) ),
+				dataFactory.getOWLDatatype( dataFactory.getOWLDatatype( XSDVocabulary.G_YEAR.getIRI() ) ) );
+		ont.add( dataFactory.getOWLDatatypeDefinitionAxiom( dateDatatype, owlDataUnionOf ) );
 	}
 
 	public void readInDatatypeFile( final StructuredFile file ) throws ParseException {
@@ -128,11 +156,12 @@ public class CERIF2Model implements AutoCloseable {
 			// corresponds to an XSD complexType -> owl:Class
 			final String owlClassName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
 			final IRI classIRI = baseIRI.resolve( "datatypes" ).resolve( owlClassName );
-			datatypeByName.put( owlClassName, createClass( mainSection, owlClassName, classIRI, "Components", false ) );
+			datatypeByIRI.put( classIRI, createClass( mainSection, owlClassName, classIRI, "Components", false ) );
 		} else {
 			// corresponds to an XSD simpleType -> owl:Datatype
 			final String datatypeName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
-			datatypeByName.put( datatypeName, CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( baseIRI.resolve( "datatypes" ).resolve( datatypeName ) ) ) );
+			final IRI datatypeIRI = baseIRI.resolve( "datatypes" ).resolve( datatypeName );
+			datatypeByIRI.put( datatypeIRI, CompletableFuture.supplyAsync( () -> dataFactory.getOWLDatatype( datatypeIRI ) ) );
 		}
 	}
 
@@ -142,7 +171,7 @@ public class CERIF2Model implements AutoCloseable {
 
 		final String owlClassName = file.getPath().getFileName().toString().replaceFirst( "\\.md$", "" );
 		final IRI classIRI = baseIRI.resolve( owlClassName );
-		entityByName.put( owlClassName, createClass( mainSection, owlClassName, classIRI, "Attributes", true ) );
+		entityByIRI.put( classIRI, createClass( mainSection, owlClassName, classIRI, "Attributes", true ) );
 	}
 	
 	public void markDoneReading() {
@@ -156,6 +185,9 @@ public class CERIF2Model implements AutoCloseable {
 	@Override
 	public void close() {
 		es.shutdown();
+		for ( final CERIF2Model module : dependencies.values() ) {
+			module.close();
+		}
 	}
 
 	/**
@@ -169,7 +201,7 @@ public class CERIF2Model implements AutoCloseable {
 
 		private final IRI domainClassIRI;
 		
-		private final String rangeClassName;
+		private final IRI rangeClassIRI;
 		
 		private final String inversePropropertyName;
 		
@@ -179,12 +211,12 @@ public class CERIF2Model implements AutoCloseable {
 		
 		protected OWLObjectProperty owlObjectProperty = null;
 		
-		public Relationship( final String relName, final IRI domainClassIRI, final String rangeClassName, final String inversePropropertyName, final boolean ordered, final String definitionLine ) {
+		public Relationship( final String relName, final IRI domainClassIRI, final IRI rangeClassIRI, final String inversePropropertyName, final boolean ordered, final String definitionLine ) {
 			super();
 			this.relName = relName;
 			this.iri = domainClassIRI.resolve( "#" + relName );
 			this.domainClassIRI = domainClassIRI;
-			this.rangeClassName = rangeClassName;
+			this.rangeClassIRI = rangeClassIRI;
 			this.inversePropropertyName = inversePropropertyName;
 			this.ordered = ordered;
 			this.definitionLine = definitionLine;
@@ -204,8 +236,15 @@ public class CERIF2Model implements AutoCloseable {
 			return domainClassIRI;
 		}
 
+		public IRI getRangeClassIRI() { return rangeClassIRI; }
+
+		/**
+		 * @deprecated use {@link #getRangeClassIRI()} instead
+		 * @return
+		 */
+		@Deprecated
 		public String getRangeClassName() {
-			return rangeClassName;
+			return null;
 		}
 
 		public String getInversePropropertyName() {
@@ -225,18 +264,17 @@ public class CERIF2Model implements AutoCloseable {
 		}
 		
 		public String toString() {
-			return domainClassIRI + " --( " + relName + " )--> " + rangeClassName;
+			return domainClassIRI + " --( " + relName + " )--> " + rangeClassIRI;
 		}
 		
 		public void index() {
-			final String classNameFragment = domainClassIRI.getFragment();
 			final Map<String, Relationship> secondStageMap1 = new HashMap<>();
-			final Map<String, Relationship> secondStageMap = nvl( relationshipByEntityAndRelationshipName.putIfAbsent( classNameFragment, secondStageMap1 ), secondStageMap1 );
+			final Map<String, Relationship> secondStageMap = nvl( relationshipByEntityAndRelationshipName.putIfAbsent( domainClassIRI, secondStageMap1 ), secondStageMap1 );
 			secondStageMap.put( relName, this );
 		}
 		
 		public void deindex() {
-			relationshipByEntityAndRelationshipName.get( domainClassIRI.getFragment() ).remove( relName, this );
+			relationshipByEntityAndRelationshipName.get( domainClassIRI ).remove( relName, this );
 		}
 
 	}
@@ -387,10 +425,19 @@ public class CERIF2Model implements AutoCloseable {
 		};
 	}
 
-	public void save( final String outputFilePath ) throws OWLOntologyStorageException, TransformerException, IOException {
-		log.info( "About to write the ontology" );
+	/**
+	 * Save the ontology as both <code>.ttl</code> (Turtle) and <code>.owl</code> (OWL XML).
+	 * The name of the files is <code>core.*</code> for the CERIF Core, <code>module.*</code> otherwise.
+	 * @param outputFileDir the directory where the resulting files should be placed
+	 * @throws OWLOntologyStorageException
+	 * @throws TransformerException
+	 * @throws IOException
+	 */
+	public void save( final String outputFileDir ) throws OWLOntologyStorageException, TransformerException, IOException {
+		final String outputFilePath = outputFileDir + ( ( CERIF_CORE_URI.equals( baseIRI.toString() ) ) ? "core" : "module" );
+		log.info( "About to write the ontology to {}", outputFilePath );
 		synchronized ( this ) {
-			for ( final Map.Entry<String, Future<? extends OWLEntity>> x : datatypeByName.entrySet() ) {
+			for ( final Map.Entry<IRI, Future<? extends OWLEntity>> x : datatypeByIRI.entrySet() ) {
 				try {
 					log.debug( "Getting datatype " + x.getKey() );
 					x.getValue().get();
@@ -402,7 +449,7 @@ public class CERIF2Model implements AutoCloseable {
 			}
 		}
 		synchronized ( this ) {
-			for ( final Map.Entry<String, Future<? extends OWLEntity>> x : entityByName.entrySet() ) {
+			for ( final Map.Entry<IRI, Future<? extends OWLEntity>> x : entityByIRI.entrySet() ) {
 				try {
 					log.debug( "Getting entity " + x.getKey() );
 					x.getValue().get();
@@ -454,7 +501,7 @@ public class CERIF2Model implements AutoCloseable {
 					try ( final InputStream is = Files.newInputStream( path ) ) {
 						final Model model = Rio.parse( is, "", RDFFormat.RDFXML );
 						final Path path2 = path.resolveSibling( path.getFileName().toString().replaceFirst( "\\.owl$", ".ttl" ) );
-						log.info( "Read " + path + ", writing " + path2 );
+						log.debug( "Read " + path + ", writing " + path2 );
 						try ( final OutputStream os = Files.newOutputStream( path2 ) ) {
 							Rio.write( model, os, RDFFormat.TURTLE );
 						}
@@ -466,8 +513,6 @@ public class CERIF2Model implements AutoCloseable {
 		);
 	}
 
-	static final Pattern entityNamePattern = Pattern.compile( "\\(\\.\\./entities/([^.]*)\\.md(#[^)]*)?\\)" );
-
 	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, final BasedSequence text ) throws ParseException {
 		if (!( text.startsWith( "<a name=\"" ) && text.toString().contains( "</a>" ) )) {
 			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship title", node );
@@ -477,7 +522,7 @@ public class CERIF2Model implements AutoCloseable {
 			throw new ParseException( "No separator ' : ' for the description of the relationship", node );
 		}
 		final int slashIndex1 = text.indexOf( " / " );
-		final int slashIndex = ( slashIndex1 >= 0 ) ? slashIndex1 : colonIndex;		
+		final int slashIndex = ( slashIndex1 >= 0 ) ? slashIndex1 : colonIndex - 3;
 		final String firstPart = text.subSequence( 0, slashIndex ).toString().trim();
 		final String secondPart = text.subSequence(  slashIndex + 3, colonIndex ).toString().trim();
 		final String theRest = text.subSequence( colonIndex + 3 ).toString().trim();
@@ -491,29 +536,35 @@ public class CERIF2Model implements AutoCloseable {
 		log.info( "Class " + classIRI + ", relationship " + relName );
 
 		final String inversePropertyName;
-		final String rangeClassName;
-		final Matcher entityNameMatcher = entityNamePattern.matcher( secondPart );
+		final IRI rangeClassIRI;
+		final Matcher entityNameMatcher = PATTERN_REL.matcher( secondPart );
 		if ( entityNameMatcher.find() ) {
-			rangeClassName = entityNameMatcher.group(1);
-			final String inverseFragment1 = entityNameMatcher.group(2);
+			final CERIF2Model rangeModel = locateByGithubUri( entityNameMatcher.group(1) );
+			rangeClassIRI = rangeModel.getEntityIRI( entityNameMatcher.group(2) );
+			final String inverseFragment1 = entityNameMatcher.group(3);
 			final String fragmentPrefix = "#user-content-rel__";
 			if ( ! inverseFragment1.startsWith( fragmentPrefix ) ) {
 				throw new ParseException( "Inverse property fragment '" + inverseFragment1 + "' not starting with '" + fragmentPrefix + "'", node );
 			}
 			inversePropertyName = CaseUtils.toCamelCase( inverseFragment1.substring( fragmentPrefix.length() ), false, ' ', '-', '_', '.' );
 		} else {
-			rangeClassName = owlClass.getIRI().getFragment();
+			rangeClassIRI = owlClass.getIRI();
 			final String invRelName1 = secondPart.replaceFirst( "<a name=\"([^\"]*)\">.*", "$1" );
-			final String invRelName = CaseUtils.toCamelCase( invRelName1.replaceFirst( "^rel__", "" ), false, ' ', '-', '_', '.' );
-			if ( invRelName.equals( invRelName1 ) ) {
-				throw new ParseException( "Inverse relationship name '" + invRelName1 + "' not starting with 'rel__'", node );
-			}			
-			inversePropertyName = CaseUtils.toCamelCase( invRelName, false, ' ', '-', '_', '.' );
+			if ( !invRelName1.isEmpty() ) {
+				final String invRelName = CaseUtils.toCamelCase(invRelName1.replaceFirst("^rel__", ""), false, ' ', '-', '_', '.');
+				if (invRelName.equals(invRelName1)) {
+					throw new ParseException("Inverse relationship name '" + invRelName1 + "' not starting with 'rel__'", node);
+				}
+				inversePropertyName = CaseUtils.toCamelCase(invRelName, false, ' ', '-', '_', '.');
+			} else {
+				inversePropertyName = null;
+			}
 		}
+		log.info( "Class " + classIRI + ", relationship " + relName + ", inversePropertyName " + inversePropertyName );
 		final boolean ordered = false;
-		final Relationship relationship = new Relationship( relName, classIRI, rangeClassName, inversePropertyName, ordered, theRest ) {
+		final Relationship relationship = new Relationship( relName, classIRI, rangeClassIRI, inversePropertyName, ordered, theRest ) {
 			protected void handle() throws InterruptedException, ExecutionException {
-				final Future<? extends OWLEntity> rangeClassFuture = entityByName.get( getRangeClassName() );
+				final Future<? extends OWLEntity> rangeClassFuture = entityByIRI.get( getRangeClassIRI() );
 				final OWLClass rangeClass = (OWLClass) rangeClassFuture.get();
 
 				this.owlObjectProperty = dataFactory.getOWLObjectProperty( getIri() );
@@ -523,7 +574,7 @@ public class CERIF2Model implements AutoCloseable {
 				ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
 				ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, rangeClass ) );
 				
-				final Map<String, Relationship> inverseRangeClassRelationshipsMap = relationshipByEntityAndRelationshipName.get( getRangeClassName() );
+				final Map<String, Relationship> inverseRangeClassRelationshipsMap = relationshipByEntityAndRelationshipName.get( getRangeClassIRI() );
 				if ( inverseRangeClassRelationshipsMap != null ) {
 					final Relationship inverseRelationship = inverseRangeClassRelationshipsMap.get( inversePropertyName );
 					if ( inverseRelationship != null ) {
@@ -560,47 +611,81 @@ public class CERIF2Model implements AutoCloseable {
 		final String attributeName1 = attributeText.replaceFirst( "<a name=\"[^\"]*\">([^<]*)</a>", "$1" );
 		final String attributeName = ( attributeName1.contains( " " ) || Character.isUpperCase( attributeName1.charAt( 0 ) ) ) ? CaseUtils.toCamelCase( attributeName1, false, ' ', '-', '_', '.' ) : attributeName1;
 		log.info( "Attribute " + attributeName + ", datatype " + datatypeLinkTarget );
-		if ( !datatypeLinkTarget.startsWith( "../datatypes/" ) ) {
-			throw new ParseException( "Not referencing ../datatypes/", node );
+		if ( !datatypeLinkTarget.contains( "/datatypes/" ) ) {
+			throw new ParseException( "Not referencing any **/datatypes/", node );
 		}
 		if ( datatypeLinkTarget.contains( " " ) ) {
 			throw new ParseException( "Missing endash", node );
 		}
 		final IRI attributeIRI = classIRI.resolve( "#" + attributeName );
-		final String datatypeName = datatypeLinkTarget.replaceFirst( "\\.\\./datatypes/(.*)\\.md", "$1" );
-		@SuppressWarnings( "unchecked" )
-		final Future<OWLEntity> owlDatatypeFuture = (Future<OWLEntity>) datatypeByName.get( datatypeName );
-		if ( owlDatatypeFuture == null ) {
-			throw new IllegalStateException( "Unknown datatype " + datatypeName );
-		} else {
-			try {
-				final OWLEntity owlDatatype = owlDatatypeFuture.get();
-				if ( owlDatatype instanceof OWLClass ) {
-					final OWLClass owlClass2 = (OWLClass) owlDatatype;
-					final OWLObjectProperty owlObjectProperty = dataFactory.getOWLObjectProperty( attributeIRI );
-					ont.add( dataFactory.getOWLDeclarationAxiom( owlObjectProperty ) );
-					ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
-					ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, owlClass2 ) );
-				} else if ( owlDatatype instanceof OWLDatatype ) {
-					final OWLDatatype datatype = (OWLDatatype) owlDatatype;
-					final OWLDataProperty owlDataProperty = dataFactory.getOWLDataProperty( attributeIRI );
-					ont.add( dataFactory.getOWLDeclarationAxiom( owlDataProperty ) );
-					ont.add( dataFactory.getOWLDataPropertyDomainAxiom( owlDataProperty, owlClass ) );
-					ont.add( dataFactory.getOWLDataPropertyRangeAxiom( owlDataProperty, datatype ) );
-				} else {
-					throw new IllegalStateException( "Unknown construct " + owlDatatype );
-				}
-			} catch ( final ExecutionException e ) {
-				throw new RuntimeException( e.getCause() );
-			} catch ( final InterruptedException e ) {
-				Thread.currentThread().interrupt();
+		final Matcher m = PATTERN_ATTR.matcher( datatypeLinkTarget );
+		if ( m.matches() ) { // This module's datatype
+			final String datatypeModuleURI = m.group(1);
+			final CERIF2Model module = locateByGithubUri( datatypeModuleURI );
+			if ( module == null ) {
+				throw new IllegalStateException( "Unknown module with URI " + datatypeModuleURI );
 			}
+			final String datatypeName = m.group(2);
+			final OWLEntity owlDatatype = module.getDatatypeByName( datatypeName );;
+			if ( owlDatatype == null ) {
+				throw new IllegalStateException( "Unknown datatype " + datatypeName );
+			}
+			addAttribute( owlClass, owlDatatype, attributeIRI );
+		} else {
+			throw new IllegalStateException( "Don't know how to process datatype " + datatypeLinkTarget );
 		}
 
 		if ( endashPosition > 0 ) {
 			final OWLAnnotationValue value = new OWLLiteralImplString( rest.subSequence( endashPosition + 1 ).toString().trim() );
 			ont.add( dataFactory.getOWLAnnotationAssertionAxiom( dataFactory.getRDFSLabel(), attributeIRI, value ) );
 		}
+	}
+
+	private void addAttribute( final OWLClass owlClass, final OWLEntity owlDatatype, final IRI attributeIRI ) {
+		if (owlDatatype instanceof OWLClass) {
+			final OWLClass owlClass2 = (OWLClass) owlDatatype;
+			final OWLObjectProperty owlObjectProperty = dataFactory.getOWLObjectProperty(attributeIRI);
+			ont.add(dataFactory.getOWLDeclarationAxiom(owlObjectProperty));
+			ont.add(dataFactory.getOWLObjectPropertyDomainAxiom(owlObjectProperty, owlClass));
+			ont.add(dataFactory.getOWLObjectPropertyRangeAxiom(owlObjectProperty, owlClass2));
+		} else if (owlDatatype instanceof OWLDatatype) {
+			final OWLDatatype datatype = (OWLDatatype) owlDatatype;
+			final OWLDataProperty owlDataProperty = dataFactory.getOWLDataProperty(attributeIRI);
+			ont.add(dataFactory.getOWLDeclarationAxiom(owlDataProperty));
+			ont.add(dataFactory.getOWLDataPropertyDomainAxiom(owlDataProperty, owlClass));
+			ont.add(dataFactory.getOWLDataPropertyRangeAxiom(owlDataProperty, datatype));
+		} else {
+			throw new IllegalStateException("Unknown construct " + owlDatatype);
+		}
+	}
+
+	public OWLEntity getDatatypeByName(final String datatypeName ) {
+		final IRI datatypeIRI = getDatatypeIRI(datatypeName);
+		@SuppressWarnings("unchecked") final Future<OWLEntity> owlDatatypeFuture = (Future<OWLEntity>) datatypeByIRI.get(datatypeIRI);
+		if (owlDatatypeFuture != null) {
+			try {
+				return owlDatatypeFuture.get();
+			} catch (final ExecutionException e) {
+				throw new RuntimeException(e.getCause());
+			} catch (final InterruptedException e) {
+				Thread.currentThread().interrupt();
+			}
+		}
+		return null;
+	}
+
+	public IRI getDatatypeIRI(final String datatypeName ) {
+		return baseIRI.resolve(datatypeName);
+	}
+
+	public IRI getEntityIRI(final String entityName ) {
+		return baseIRI.resolve(entityName);
+	}
+
+	private final Map<String, CERIF2Model> dependencies = new HashMap<String, CERIF2Model>();
+
+	public CERIF2Model locateByGithubUri( final String cerifModuleURI ) {
+		return ( "..".equals( cerifModuleURI ) ) ? this : dependencies.get( cerifModuleURI );
 	}
 
 }
