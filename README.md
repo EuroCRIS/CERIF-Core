@@ -182,7 +182,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
 ## Usage
 The Core is seldom used on its own, one almost always needs to add one or several additional modules.
 We include the following example:
-* [Person](./examples/Person_Example1.md)
+* [Person](./examples/README.md#person-example)
 
 ## Status
 This is the experimental Core of CERIF, 

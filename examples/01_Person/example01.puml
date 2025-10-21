@@ -20,13 +20,6 @@
     	}
     !endsub
 
-
-    !startsub elsevier
-    object "<u>Elsevier B.V.:Organisation_Unit</u>" as Elsevier #ffffff {
-            name = "Elsevier B.V."@en
-        }
-    !endsub
-
     !startsub Affiliation_Statement
     object "<u>Affiliation 1 : Affiliation_Statement</u>" as Aff1 #ffffff {
             displayAffiliation = "Department of Information Management,

@@ -1,6 +1,11 @@
-# Person Example
+# Examples of usage for CERIF Scholarly Publications Module
 
-## Description
+The module includes the following examples:
+* [Person](#person-example)
+
+## Person Example
+
+### Description
 The example provides representation of the following researcher in the CERIF format by using [Person entity](../entities/Person.md) and associate entities:
 
 ````
@@ -15,8 +20,8 @@ Wiley-Street 1, D-89231 Neu-Ulm, Germany
 
 ## Illustrative diagram
 
-![Person Example diagram](../diagrams/personExample.svg)
+![Person Example diagram](01_Person/example01.svg)
 
 ## Serialization
 
-[Person Example serialization](../serializations/RDF/personExample1.owl)
+[Person Example serialization](01_Person/example01.owl)
