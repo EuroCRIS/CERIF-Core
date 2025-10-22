@@ -1,7 +1,0 @@
-@startuml
-
-    !includesub example.puml!person
-    !includesub example.puml!ins
-    !includesub example.puml!Affiliation_Statement
-
-@enduml
