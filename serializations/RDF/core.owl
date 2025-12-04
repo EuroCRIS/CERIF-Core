@@ -81,6 +81,13 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Duration -->
+
+
+    <rdfs:Datatype rdf:about="https://w3id.org/cerif2/Duration"/>
+    
+
+
     <!-- https://w3id.org/cerif2/FundRef_ID -->
 
 
@@ -1000,6 +1007,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Expertise_and_Skills#isUsedAsAResource">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Expertise_and_Time_and_Effort#usesExpertiseAndSkills"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Expertise_and_Time_and_Effort"/>
         <rdfs:comment xml:lang="en">A Expertise and Skills can be used as a resource in any number of [Expertise and Time and Effort](../entities/Expertise_and_Time_and_Effort.md).</rdfs:comment>
@@ -1047,6 +1055,17 @@
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Expertise_and_Time_and_Effort"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:comment xml:lang="en">An Expertise and Time and Effort references the [Agent](../entities/Agent.md) whose expertise, time and effort it would be.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Expertise_and_Time_and_Effort#usesExpertiseAndSkills -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Expertise_and_Time_and_Effort#usesExpertiseAndSkills">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Expertise_and_Time_and_Effort"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Expertise_and_Skills"/>
+        <rdfs:comment xml:lang="en">An Expertise and Time and Effort references any number of [Expertises and Skills](../entities/Expertise_and_Skills.md) belonging to the Agent who is providing its expertise and time.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -1696,6 +1715,17 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Accessible_on_the_Web#url -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Accessible_on_the_Web#url">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Accessible_on_the_Web"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/URI"/>
+        <rdfs:label>the location of the resource</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Acknowledgement_Statement#statement -->
 
 
@@ -1754,6 +1784,16 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Agent#keywords">
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Multilingual_String"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Audio_Contents#duration -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Audio_Contents#duration">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Audio_Contents"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Duration"/>
     </owl:DatatypeProperty>
     
 
@@ -1897,6 +1937,39 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Document_Publication#publicationDate">
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document_Publication"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Downloadable#downloadUrl -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Downloadable#downloadUrl">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Downloadable"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/URI"/>
+        <rdfs:label>the location from which the resource can be downloaded</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Downloadable#mimeType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Downloadable#mimeType">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Downloadable"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/String"/>
+        <rdfs:label>the format of the resource</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Downloadable#size -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Downloadable#size">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Downloadable"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Decimal"/>
+        <rdfs:label>the size of the resource (if known)</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2343,6 +2416,26 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Prize_Award#date -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Prize_Award#date">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Prize_Award#statement -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Prize_Award#statement">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Multilingual_String"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Project#acronym -->
 
 
@@ -2483,6 +2576,36 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Textual_Contents#numberOfCharacters -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Textual_Contents#numberOfCharacters">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Textual_Contents"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Textual_Contents#numberOfPages -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Textual_Contents#numberOfPages">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Textual_Contents"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Textual_Contents#numberOfWords -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Textual_Contents#numberOfWords">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Textual_Contents"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Time_Based_Contents_Location#endTime -->
 
 
@@ -2499,6 +2622,16 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Time_Based_Contents_Location#startTime">
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Time_Based_Contents_Location"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Time"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Video_Contents#duration -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Video_Contents#duration">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Video_Contents"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Duration"/>
     </owl:DatatypeProperty>
     
 

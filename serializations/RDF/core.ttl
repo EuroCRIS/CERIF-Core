@@ -46,6 +46,10 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 :Decimal rdf:type rdfs:Datatype .
 
 
+###  https://w3id.org/cerif2/Duration
+:Duration rdf:type rdfs:Datatype .
+
+
 ###  https://w3id.org/cerif2/FundRef_ID
 :FundRef_ID rdf:type rdfs:Datatype .
 
@@ -633,6 +637,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/cerif2/Expertise_and_Skills#isUsedAsAResource
 <https://w3id.org/cerif2/Expertise_and_Skills#isUsedAsAResource> rdf:type owl:ObjectProperty ;
+                                                                 owl:inverseOf <https://w3id.org/cerif2/Expertise_and_Time_and_Effort#usesExpertiseAndSkills> ;
                                                                  rdfs:domain :Expertise_and_Skills ;
                                                                  rdfs:range :Expertise_and_Time_and_Effort ;
                                                                  rdfs:comment "A Expertise and Skills can be used as a resource in any number of [Expertise and Time and Effort](../entities/Expertise_and_Time_and_Effort.md)."@en .
@@ -664,6 +669,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                                 rdfs:domain :Expertise_and_Time_and_Effort ;
                                                                 rdfs:range :Agent ;
                                                                 rdfs:comment "An Expertise and Time and Effort references the [Agent](../entities/Agent.md) whose expertise, time and effort it would be."@en .
+
+
+###  https://w3id.org/cerif2/Expertise_and_Time_and_Effort#usesExpertiseAndSkills
+<https://w3id.org/cerif2/Expertise_and_Time_and_Effort#usesExpertiseAndSkills> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:domain :Expertise_and_Time_and_Effort ;
+                                                                               rdfs:range :Expertise_and_Skills ;
+                                                                               rdfs:comment "An Expertise and Time and Effort references any number of [Expertises and Skills](../entities/Expertise_and_Skills.md) belonging to the Agent who is providing its expertise and time."@en .
 
 
 ###  https://w3id.org/cerif2/Funding#amount
@@ -1075,6 +1087,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
+###  https://w3id.org/cerif2/Accessible_on_the_Web#url
+<https://w3id.org/cerif2/Accessible_on_the_Web#url> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain :Accessible_on_the_Web ;
+                                                    rdfs:range :URI ;
+                                                    rdfs:label "the location of the resource" .
+
+
 ###  https://w3id.org/cerif2/Acknowledgement_Statement#statement
 <https://w3id.org/cerif2/Acknowledgement_Statement#statement> rdf:type owl:DatatypeProperty ;
                                                               rdfs:domain :Acknowledgement_Statement ;
@@ -1111,6 +1130,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Agent#keywords> rdf:type owl:DatatypeProperty ;
                                          rdfs:domain :Agent ;
                                          rdfs:range :Multilingual_String .
+
+
+###  https://w3id.org/cerif2/Audio_Contents#duration
+<https://w3id.org/cerif2/Audio_Contents#duration> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain :Audio_Contents ;
+                                                  rdfs:range :Duration .
 
 
 ###  https://w3id.org/cerif2/Call_for_Applications#deadline
@@ -1198,6 +1223,27 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Document_Publication#publicationDate> rdf:type owl:DatatypeProperty ;
                                                                rdfs:domain :Document_Publication ;
                                                                rdfs:range :Date .
+
+
+###  https://w3id.org/cerif2/Downloadable#downloadUrl
+<https://w3id.org/cerif2/Downloadable#downloadUrl> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain :Downloadable ;
+                                                   rdfs:range :URI ;
+                                                   rdfs:label "the location from which the resource can be downloaded" .
+
+
+###  https://w3id.org/cerif2/Downloadable#mimeType
+<https://w3id.org/cerif2/Downloadable#mimeType> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain :Downloadable ;
+                                                rdfs:range :String ;
+                                                rdfs:label "the format of the resource" .
+
+
+###  https://w3id.org/cerif2/Downloadable#size
+<https://w3id.org/cerif2/Downloadable#size> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain :Downloadable ;
+                                            rdfs:range :Decimal ;
+                                            rdfs:label "the size of the resource (if known)" .
 
 
 ###  https://w3id.org/cerif2/Education#completed
@@ -1466,6 +1512,18 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                      rdfs:range :Multilingual_String .
 
 
+###  https://w3id.org/cerif2/Prize_Award#date
+<https://w3id.org/cerif2/Prize_Award#date> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain :Prize_Award ;
+                                           rdfs:range :Date .
+
+
+###  https://w3id.org/cerif2/Prize_Award#statement
+<https://w3id.org/cerif2/Prize_Award#statement> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain :Prize_Award ;
+                                                rdfs:range :Multilingual_String .
+
+
 ###  https://w3id.org/cerif2/Project#acronym
 <https://w3id.org/cerif2/Project#acronym> rdf:type owl:DatatypeProperty ;
                                           rdfs:domain :Project ;
@@ -1550,6 +1608,24 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                               rdfs:range :Multilingual_String .
 
 
+###  https://w3id.org/cerif2/Textual_Contents#numberOfCharacters
+<https://w3id.org/cerif2/Textual_Contents#numberOfCharacters> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:domain :Textual_Contents ;
+                                                              rdfs:range :Decimal .
+
+
+###  https://w3id.org/cerif2/Textual_Contents#numberOfPages
+<https://w3id.org/cerif2/Textual_Contents#numberOfPages> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain :Textual_Contents ;
+                                                         rdfs:range :Decimal .
+
+
+###  https://w3id.org/cerif2/Textual_Contents#numberOfWords
+<https://w3id.org/cerif2/Textual_Contents#numberOfWords> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain :Textual_Contents ;
+                                                         rdfs:range :Decimal .
+
+
 ###  https://w3id.org/cerif2/Time_Based_Contents_Location#endTime
 <https://w3id.org/cerif2/Time_Based_Contents_Location#endTime> rdf:type owl:DatatypeProperty ;
                                                                rdfs:domain :Time_Based_Contents_Location ;
@@ -1560,6 +1636,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 <https://w3id.org/cerif2/Time_Based_Contents_Location#startTime> rdf:type owl:DatatypeProperty ;
                                                                  rdfs:domain :Time_Based_Contents_Location ;
                                                                  rdfs:range :Time .
+
+
+###  https://w3id.org/cerif2/Video_Contents#duration
+<https://w3id.org/cerif2/Video_Contents#duration> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain :Video_Contents ;
+                                                  rdfs:range :Duration .
 
 
 ###  https://w3id.org/cerif2/Wikidata_Agent_Identifier#wikidataId
