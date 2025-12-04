@@ -515,7 +515,7 @@ public class CERIF2Model implements AutoCloseable {
 
 	protected void processRelationshipNode( final IRI classIRI, final OWLClass owlClass, final Node node, final BasedSequence text ) throws ParseException {
 		if (!( text.startsWith( "<a name=\"" ) && text.toString().contains( "</a>" ) )) {
-			throw new ParseException( "Not having an enveloping <a name=\"...\"> ... </a> around relationship title", node );
+			throw new ParseException( classIRI + ": Not having an enveloping <a name=\"...\"> ... </a> around relationship title", node );
 		}
 		final int colonIndex = text.indexOf( " : " );
 		if ( colonIndex < 0 ) {
@@ -565,32 +565,36 @@ public class CERIF2Model implements AutoCloseable {
 		final Relationship relationship = new Relationship( relName, classIRI, rangeClassIRI, inversePropertyName, ordered, theRest ) {
 			protected void handle() throws InterruptedException, ExecutionException {
 				final Future<? extends OWLEntity> rangeClassFuture = entityByIRI.get( getRangeClassIRI() );
-				final OWLClass rangeClass = (OWLClass) rangeClassFuture.get();
+				if ( rangeClassFuture != null ) {
+					final OWLClass rangeClass = (OWLClass) rangeClassFuture.get();
 
-				this.owlObjectProperty = dataFactory.getOWLObjectProperty( getIri() );
-				ont.add( dataFactory.getOWLDeclarationAxiom( owlObjectProperty ) );
-				final OWLLiteral definitionLiteral = dataFactory.getOWLLiteral( getDefinitionLine() + "@" + DEFAULT_LANGUAGE_CODE, OWL2Datatype.RDF_PLAIN_LITERAL );
-				ont.add( dataFactory.getOWLAnnotationAssertionAxiom( owlObjectProperty.getIRI(), dataFactory.getRDFSComment( definitionLiteral ) ) );
-				ont.add( dataFactory.getOWLObjectPropertyDomainAxiom( owlObjectProperty, owlClass ) );
-				ont.add( dataFactory.getOWLObjectPropertyRangeAxiom( owlObjectProperty, rangeClass ) );
-				
-				final Map<String, Relationship> inverseRangeClassRelationshipsMap = relationshipByEntityAndRelationshipName.get( getRangeClassIRI() );
-				if ( inverseRangeClassRelationshipsMap != null ) {
-					final Relationship inverseRelationship = inverseRangeClassRelationshipsMap.get( inversePropertyName );
-					if ( inverseRelationship != null ) {
-						final OWLObjectProperty inverseProperty = inverseRelationship.getOwlObjectProperty();
-						if ( inverseProperty != null ) {
-							if ( inverseProperty.compareTo( owlObjectProperty ) > 0 ) {
-								ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(owlObjectProperty, inverseProperty));
-								ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(inverseProperty, owlObjectProperty));
-							} else {
-								ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(inverseProperty, owlObjectProperty));
-								ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(owlObjectProperty, inverseProperty));
+					this.owlObjectProperty = dataFactory.getOWLObjectProperty(getIri());
+					ont.add(dataFactory.getOWLDeclarationAxiom(owlObjectProperty));
+					final OWLLiteral definitionLiteral = dataFactory.getOWLLiteral(getDefinitionLine() + "@" + DEFAULT_LANGUAGE_CODE, OWL2Datatype.RDF_PLAIN_LITERAL);
+					ont.add(dataFactory.getOWLAnnotationAssertionAxiom(owlObjectProperty.getIRI(), dataFactory.getRDFSComment(definitionLiteral)));
+					ont.add(dataFactory.getOWLObjectPropertyDomainAxiom(owlObjectProperty, owlClass));
+					ont.add(dataFactory.getOWLObjectPropertyRangeAxiom(owlObjectProperty, rangeClass));
+
+					final Map<String, Relationship> inverseRangeClassRelationshipsMap = relationshipByEntityAndRelationshipName.get(getRangeClassIRI());
+					if (inverseRangeClassRelationshipsMap != null) {
+						final Relationship inverseRelationship = inverseRangeClassRelationshipsMap.get(inversePropertyName);
+						if (inverseRelationship != null) {
+							final OWLObjectProperty inverseProperty = inverseRelationship.getOwlObjectProperty();
+							if (inverseProperty != null) {
+								if (inverseProperty.compareTo(owlObjectProperty) > 0) {
+									ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(owlObjectProperty, inverseProperty));
+									ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(inverseProperty, owlObjectProperty));
+								} else {
+									ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(inverseProperty, owlObjectProperty));
+									ont.add(dataFactory.getOWLInverseObjectPropertiesAxiom(owlObjectProperty, inverseProperty));
+								}
 							}
 						}
+					} else {
+						throw new IllegalArgumentException("No inverse relationships for entity " + getRangeClassName() + "; known are just " + relationshipByEntityAndRelationshipName.keySet());
 					}
 				} else {
-					throw new IllegalArgumentException( "No inverse relationships for entity " + getRangeClassName() + "; known are just " + relationshipByEntityAndRelationshipName.keySet() );
+					throw new IllegalArgumentException( "No range class " + getRangeClassIRI() + " when processing " + getIri() );
 				}
 			}
 		};
