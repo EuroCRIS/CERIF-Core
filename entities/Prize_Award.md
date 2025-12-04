@@ -4,8 +4,8 @@
 A [prize](../entities/Prize.md) or a sum of money that a person or organization is given for an achievement.<sup>[1](#fn1)</sup>
 
 ## Attributes
-
 statement : [Multilingual String](../datatypes/Multilingual_String.md)
+
 date : [Date](../datatypes/Date.md)
 
 ## Relationships

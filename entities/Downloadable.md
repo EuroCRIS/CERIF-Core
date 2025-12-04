@@ -8,6 +8,9 @@ A class to be used together with [Document](../entities/Document.md) or its subc
 to indicate the document can be downloaded the web.
 
 ## Attributes
-<a name="downloadUrl">downloadUrl : [URI](../datatypes/URI.md)</a> – the location from which the resource can be downloaded
-<a name="mimeType">mimeType : [String](../datatypes/String.md)</a> – the format of the resource
-<a name="size">size : [Decimal](../datatypes/Decimal.md)</a> – the size of the resource (if known)
+downloadUrl : [URI](../datatypes/URI.md) – the location from which the resource can be downloaded
+
+mimeType : [String](../datatypes/String.md) – the format of the resource
+
+size : [Decimal](../datatypes/Decimal.md) – the size of the resource (if known)
+

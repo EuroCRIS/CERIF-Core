@@ -1,5 +1,7 @@
 # Expertise and Skills Condition
 
+FIXME
+
 ## Definition
 The scope of the entity and its meaning.<sup>[1](#fn1)</sup>
 
@@ -12,7 +14,6 @@ An additional description to communicate the purpose of the entity.
 ## Attributes
 
 ## Relationships
-Use `./tools/new-relationship.sh` to generate the skeleton of a relationship description.
 
 ---
 ## Matches

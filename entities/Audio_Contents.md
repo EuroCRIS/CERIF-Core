@@ -8,7 +8,7 @@ A class to be used together with [Document](../entities/Document.md) or its subc
 to indicate the document has an important audio component.
 
 ## Attributes
-<a name="duration">duration : [Duration](../datatypes/Duration.md)</a>
+duration : [Duration](../datatypes/Duration.md)
 
 ## Matches
 Close match of the [*Sound* COAR Resource Type](http://purl.org/coar/resource_type/c_18cc).
