@@ -495,6 +495,22 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                            rdfs:comment "A Document can have any number of [Documents](../entities/Document.md) as parts. [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association."@en .
 
 
+###  https://w3id.org/cerif2/Document#isDescriptionOf
+<https://w3id.org/cerif2/Document#isDescriptionOf> rdf:type owl:ObjectProperty ;
+                                                   owl:inverseOf <https://w3id.org/cerif2/Resource#hasDescription> ;
+                                                   rdfs:domain :Document ;
+                                                   rdfs:range :Resource ;
+                                                   rdfs:comment "A Document can be a description of a [Resource](../entities/Resource.md) or Resources."@en .
+
+
+###  https://w3id.org/cerif2/Document#isMetadataOf
+<https://w3id.org/cerif2/Document#isMetadataOf> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <https://w3id.org/cerif2/Resource#hasMetadata> ;
+                                                rdfs:domain :Document ;
+                                                rdfs:range :Resource ;
+                                                rdfs:comment "A Document can be metadata of a [Resource](../entities/Resource.md) or Resources."@en .
+
+
 ###  https://w3id.org/cerif2/Document#isPartOf
 <https://w3id.org/cerif2/Document#isPartOf> rdf:type owl:ObjectProperty ;
                                             rdfs:domain :Document ;
@@ -925,6 +941,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                        rdfs:comment "A Publication Channel contains any number of [Document Publications](../entities/Document_Publication.md). [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association."@en .
 
 
+###  https://w3id.org/cerif2/Resource#hasDescription
+<https://w3id.org/cerif2/Resource#hasDescription> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain :Resource ;
+                                                  rdfs:range :Document ;
+                                                  rdfs:comment "A Resource can have any number of [Documents](../entities/Document.md) as descriptions. Note that formalized metadata descriptions should rather use the specific relationship."@en .
+
+
 ###  https://w3id.org/cerif2/Resource#hasIdentifier
 <https://w3id.org/cerif2/Resource#hasIdentifier> rdf:type owl:ObjectProperty ;
                                                  owl:inverseOf <https://w3id.org/cerif2/Resource_Identifier#isAssignedTo> ;
@@ -933,12 +956,27 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                  rdfs:comment "A Resource can have any number of [identifiers](../entities/Resource_Identifier.md)."@en .
 
 
+###  https://w3id.org/cerif2/Resource#hasMetadata
+<https://w3id.org/cerif2/Resource#hasMetadata> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain :Resource ;
+                                               rdfs:range :Document ;
+                                               rdfs:comment "A Resource can have any number of [Documents](../entities/Document.md) as metadata descriptions."@en .
+
+
 ###  https://w3id.org/cerif2/Resource#hasPart
 <https://w3id.org/cerif2/Resource#hasPart> rdf:type owl:ObjectProperty ;
                                            owl:inverseOf <https://w3id.org/cerif2/Resource#isPartOf> ;
                                            rdfs:domain :Resource ;
                                            rdfs:range :Resource ;
                                            rdfs:comment "A Resource can have any number of other [Resources](../entities/Resource.md) as parts."@en .
+
+
+###  https://w3id.org/cerif2/Resource#isNewVersionOf
+<https://w3id.org/cerif2/Resource#isNewVersionOf> rdf:type owl:ObjectProperty ;
+                                                  owl:inverseOf <https://w3id.org/cerif2/Resource#isPreviousVersionOf> ;
+                                                  rdfs:domain :Resource ;
+                                                  rdfs:range :Resource ;
+                                                  rdfs:comment "A Resource can be a new version of another [Resource](../entities/Resource.md) or Resources."@en .
 
 
 ###  https://w3id.org/cerif2/Resource#isOfferedIn
@@ -954,6 +992,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                             rdfs:domain :Resource ;
                                             rdfs:range :Resource ;
                                             rdfs:comment "A Resource can be part of any number of other [Resources](../entities/Resource.md)."@en .
+
+
+###  https://w3id.org/cerif2/Resource#isPreviousVersionOf
+<https://w3id.org/cerif2/Resource#isPreviousVersionOf> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain :Resource ;
+                                                       rdfs:range :Resource ;
+                                                       rdfs:comment "A Resource can be a previous version of another [Resource](../entities/Resource.md) or Resources."@en .
 
 
 ###  https://w3id.org/cerif2/Resource#isProvidedBy

@@ -47,6 +47,10 @@ title : [Multilingual String](../datatypes/Multilingual_String.md)
 
 <a name="rel__has-part">has-part</a> / [is-part-of](../entities/Document.md#user-content-rel__is-part-of) : A Document can have any number of [Documents](../entities/Document.md) as parts. [Contents Location](../datatypes/Contents_Location.md) can be attached to such an association.
 
+<a name="rel__is-description-of">is-description-of</a> / [has-description](../entities/Resource.md#user-content-rel__has-description) : A Document can be a description of a [Resource](../entities/Resource.md) or Resources.
+
+<a name="rel__is-metadata-of">is-metadata-of</a> / [has-metadata](../entities/Resource.md#user-content-rel__has-metadata) : A Document can be metadata of a [Resource](../entities/Resource.md) or Resources.
+
 ---
 ## Matches
 1. Close match of [Bibo Document](http://purl.org/ontology/bibo/Document)

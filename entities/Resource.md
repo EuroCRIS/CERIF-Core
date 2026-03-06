@@ -25,6 +25,14 @@ Anything that can be used for or in the process of research.
 
 <a name="rel__has-part">has-part</a> / [is-part-of](../entities/Resource.md#user-content-rel__is-part-of) : A Resource can have any number of other [Resources](../entities/Resource.md) as parts.
 
+<a name="rel__has-description">has-description</a> / [is-description-of](../entities/Document.md#user-content-rel__is-description-of) : A Resource can have any number of [Documents](../entities/Document.md) as descriptions. Note that formalized metadata descriptions should rather use the specific relationship.
+
+<a name="rel__has-metadata">has-metadata</a> / [is-metadata-of](../entities/Document.md#user-content-rel__is-metadata-of) : A Resource can have any number of [Documents](../entities/Document.md) as metadata descriptions.
+
+<a name="rel__is-new-version-of">is-new-version-of</a> / [is-previous-version-of](../entities/Resource.md#user-content-rel__is-previous-version-of) : A Resource can be a new version of another [Resource](../entities/Resource.md) or Resources.
+
+<a name="rel__is-previous-version-of">is-previous-version-of</a> / [is-new-version-of](../entities/Resource.md#user-content-rel__is-new-version-of) : A Resource can be a previous version of another [Resource](../entities/Resource.md) or Resources.
+
 ---
 ## Matches
 

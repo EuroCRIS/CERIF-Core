@@ -787,6 +787,30 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Document#isDescriptionOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#isDescriptionOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource#hasDescription"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:comment xml:lang="en">A Document can be a description of a [Resource](../entities/Resource.md) or Resources.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Document#isMetadataOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#isMetadataOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource#hasMetadata"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:comment xml:lang="en">A Document can be metadata of a [Resource](../entities/Resource.md) or Resources.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Document#isPartOf -->
 
 
@@ -1457,6 +1481,17 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Resource#hasDescription -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource#hasDescription">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
+        <rdfs:comment xml:lang="en">A Resource can have any number of [Documents](../entities/Document.md) as descriptions. Note that formalized metadata descriptions should rather use the specific relationship.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Resource#hasIdentifier -->
 
 
@@ -1469,6 +1504,17 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Resource#hasMetadata -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource#hasMetadata">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
+        <rdfs:comment xml:lang="en">A Resource can have any number of [Documents](../entities/Document.md) as metadata descriptions.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Resource#hasPart -->
 
 
@@ -1477,6 +1523,18 @@
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:comment xml:lang="en">A Resource can have any number of other [Resources](../entities/Resource.md) as parts.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Resource#isNewVersionOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource#isNewVersionOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource#isPreviousVersionOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:comment xml:lang="en">A Resource can be a new version of another [Resource](../entities/Resource.md) or Resources.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -1500,6 +1558,17 @@
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
         <rdfs:comment xml:lang="en">A Resource can be part of any number of other [Resources](../entities/Resource.md).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Resource#isPreviousVersionOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource#isPreviousVersionOf">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:comment xml:lang="en">A Resource can be a previous version of another [Resource](../entities/Resource.md) or Resources.</rdfs:comment>
     </owl:ObjectProperty>
     
 

@@ -255,6 +255,8 @@
 !startsub Resource
     class "Resource" #ffffff {
     }
+
+    "Resource" "0..*" -- "0..*" "Resource" : is part of >
 !endsub
 
 !startsub Funding
@@ -295,6 +297,10 @@
 
 !startsub Document_isa_Resource
 	"Resource" <|-- "Document"
+
+    "Resource" "0..*" -- "0..*" "Document" : has metadata >
+
+    "Resource" "0..*" -- "0..*" "Document" : has description >
 !endsub
 
 !startsub Document
