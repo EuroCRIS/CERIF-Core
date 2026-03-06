@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     name: connect
     steps:
-      - name: connect ssh
+      - name: Checkout Repository
+        uses: actions/checkout@master
+      - name: Connect SSH
         env:
           CERIF2_SSH_KEY: ${{ secrets.CERIF2_SSH_KEY }}
         run: |
@@ -15,5 +17,4 @@ jobs:
           umask 077
           echo $CERIF2_SSH_KEY | base64 --decode > ~/.ssh/id_ed25519
           echo 'cerif2.eu ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK1gSq5xdHG/Bvqk1kvevx18bSMnw1enaOTIdr7PEPdR' > ~/.ssh/known_hosts
-          ls -l ~/.ssh
-          ssh -v cerif2@cerif2.eu echo 'Hello, world!'
+          ./tools/publish-RDF-on-main.sh
