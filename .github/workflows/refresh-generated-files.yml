@@ -1,5 +1,7 @@
 name: generate plantuml diagrams and the OWL representation of the Core
-on: push
+on:
+  push:
+    branches: main
 jobs:
   generate:
     runs-on: ubuntu-latest
