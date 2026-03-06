@@ -16,5 +16,4 @@ jobs:
           echo $CERIF2_SSH_KEY | base64 --decode > ~/.ssh/id_ed25519
           echo 'cerif2.eu ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK1gSq5xdHG/Bvqk1kvevx18bSMnw1enaOTIdr7PEPdR' > ~/.ssh/known_hosts
           ls -l ~/.ssh
-          shasum -a 256 ~/ssh/*
           ssh -v cerif2@cerif2.eu echo 'Hello, world!'
