@@ -26,6 +26,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref_name }}
       - name: Deploy to server
+        if: ${{ github.ref_name == 'main' }}
         env:
           CERIF2_SSH_KEY: ${{ secrets.CERIF2_SSH_KEY }}
         run: |
