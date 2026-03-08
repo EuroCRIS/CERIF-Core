@@ -25,3 +25,13 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref_name }}
+      - name: Deploy to server
+        env:
+          CERIF2_SSH_KEY: ${{ secrets.CERIF2_SSH_KEY }}
+        run: |
+          mkdir -p -m 700 ~/.ssh
+          umask 077
+          trap 'rm 2>/dev/null -f ~/.ssh/id_ed25519' EXIT
+          echo $CERIF2_SSH_KEY | base64 --decode > ~/.ssh/id_ed25519
+          echo 'cerif2.eu ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK1gSq5xdHG/Bvqk1kvevx18bSMnw1enaOTIdr7PEPdR' > ~/.ssh/known_hosts
+          ./tools/publish-RDF-on-main.sh
