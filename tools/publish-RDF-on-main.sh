@@ -12,7 +12,7 @@ if [ "$(basename $( pwd ) )" != "CERIF-Core" ] ; then
 fi
 
 if [ "$(git branch --show-current)" == "main" ] ; then
-  rsync -v -hhh --ignore-times --delay-updates serializations/RDF/core.* serializations/RDF/per-class/* $SERVER_HOSTNAME:/var/www/cerif2.eu/
+  rsync -v -hhh --checksum --delay-updates serializations/RDF/core.* serializations/RDF/per-class/* $SERVER_HOSTNAME:/var/www/cerif2.eu/
 else
   echo >>/dev/stderr "Not on the main branch, not deploying, but attempting a connection"
   ssh $SERVER_HOSTNAME echo 'Hello, world!'
