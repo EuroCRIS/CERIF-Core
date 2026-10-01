@@ -34,6 +34,7 @@ Scientific and other [Events](./entities/Event.md) support communication, includ
 Agents can make different [Contributions to Events](./entities/Contribution_to_Event.md). An Event can have any number of [Event Identifiers](./entities/Event_Identifier.md) assigned. Events can be organized within [Event Series](./entities/Event_Series.md)
 
 Information and knowledge are typically stored in [Documents](./entities/Document.md).
+A Document can be a [Metadata Set](./entities/Metadata_Set.md) — a formalized set of metadata about some other resource.
 Agents can be actors in [Contributions to Documents](./entities/Contribution_to_Document.md).
 Documents can be [published](./entities/Document_Publication.md) in one or several [Publication Channels](./entities/Publication_Channel.md).
 The form of a document can be further specified as [Text](./entities/Textual_Contents.md), [Video](./entities/Video_Contents.md), [Audio](./entities/Audio_Contents.md) or [Tangible](./entities/Tangible.md).
@@ -100,6 +101,7 @@ for instance the [DOI Identifier](./entities/DOI_Identifier.md), [Wikidata Resou
   * [Infrastructure](./entities/Infrastructure.md)
     * [Repository](./entities/Repository.md)
   * [Document](./entities/Document.md)
+    * [Metadata Set](./entities/Metadata_Set.md)
 * [Resource Offer](./entities/Resource_Offer.md)
   * [Call for Applications](./entities/Call_for_Applications.md)
     * [Call for Funding Applications](./entities/Call_for_Funding_Applications.md)

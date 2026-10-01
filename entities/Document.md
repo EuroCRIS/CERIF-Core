@@ -49,8 +49,6 @@ title : [Multilingual String](../datatypes/Multilingual_String.md)
 
 <a name="rel__is-description-of">is-description-of</a> / [has-description](../entities/Resource.md#user-content-rel__has-description) : A Document can be a description of a [Resource](../entities/Resource.md) or Resources.
 
-<a name="rel__is-metadata-of">is-metadata-of</a> / [has-metadata](../entities/Resource.md#user-content-rel__has-metadata) : A Document can be metadata of a [Resource](../entities/Resource.md) or Resources.
-
 ---
 ## Matches
 1. Close match of [Bibo Document](http://purl.org/ontology/bibo/Document)

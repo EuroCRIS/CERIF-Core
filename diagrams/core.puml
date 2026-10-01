@@ -301,7 +301,7 @@
 !startsub Document_isa_Resource
 	"Resource" <|-- "Document"
 
-    "Resource" "0..*" -- "0..*" "Document" : has metadata >
+    "Resource" "0..*" -- "0..*" "Metadata_Set" : has metadata >
 
     "Resource" "0..*" -- "0..*" "Document" : has description >
 !endsub
@@ -316,6 +316,13 @@
 
     "Document" "0..*" -- "0..*" "Document" : another representation of >
 
+!endsub
+
+!startsub Metadata_Set
+    class "Metadata_Set" #ffffff {
+    }
+
+    "Document" <|-- "Metadata_Set"
 !endsub
 
 !startsub Document
