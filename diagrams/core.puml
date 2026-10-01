@@ -236,7 +236,7 @@
 !endsub
 
 
-!startsub Activity
+!startsub Document_proves_Activity
 	"Document" "0..*" -- "0..*" "Activity" : prove >
 !endsub
 

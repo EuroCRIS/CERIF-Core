@@ -3,6 +3,7 @@
     !includesub core.puml!common
     !includesub core.puml!Agent
     !includesub core.puml!Activity
+    !includesub core.puml!Document_proves_Activity
     !includesub core.puml!Contribution
     !includesub core.puml!Contribution_to_Document
     !includesub core.puml!Contribution_Statement
