@@ -6,6 +6,7 @@
     !includesub core.puml!Resource
     !includesub core.puml!Document
     !includesub core.puml!Agent
+    !includesub core.puml!Agent_has_Contact_Information
     !includesub core.puml!Resource_Offer
     !includesub core.puml!Resource_Request
     !includesub core.puml!Condition

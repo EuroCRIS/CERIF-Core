@@ -2,6 +2,7 @@
 
     !includesub core.puml!common
     !includesub core.puml!Agent
+    !includesub core.puml!Agent_has_Contact_Information
     !includesub core.puml!Person
     !includesub core.puml!Agent_Identifier
     !includesub core.puml!Group_or_Organisation_Unit

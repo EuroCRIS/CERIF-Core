@@ -18,6 +18,7 @@
     !includesub core.puml!Project
     !includesub core.puml!Event
     !includesub core.puml!Agent
+    !includesub core.puml!Agent_has_Contact_Information
     !includesub core.puml!Group_or_Organisation_Unit
     !includesub core.puml!Position
 
