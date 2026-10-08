@@ -799,18 +799,6 @@
     
 
 
-    <!-- https://w3id.org/cerif2/Document#isMetadataOf -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Document#isMetadataOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource#hasMetadata"/>
-        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Document"/>
-        <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
-        <rdfs:comment xml:lang="en">A Document can be metadata of a [Resource](../entities/Resource.md) or Resources.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/cerif2/Document#isPartOf -->
 
 
@@ -1217,6 +1205,18 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Metadata_Set#isMetadataOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Metadata_Set#isMetadataOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Resource#hasMetadata"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Metadata_Set"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:comment xml:lang="en">A Metadata Set can be metadata of a [Resource](../entities/Resource.md) or Resources.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Organisation_Unit#hasPart -->
 
 
@@ -1509,8 +1509,8 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource#hasMetadata">
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
-        <rdfs:range rdf:resource="https://w3id.org/cerif2/Document"/>
-        <rdfs:comment xml:lang="en">A Resource can have any number of [Documents](../entities/Document.md) as metadata descriptions.</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Metadata_Set"/>
+        <rdfs:comment xml:lang="en">A Resource can have any number of [Metadata Sets](../entities/Metadata_Set.md) as metadata descriptions.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -2982,7 +2982,7 @@ namely, submit an [Application](../entities/Application.md).</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/cerif2/DOI_Identifier">
         <rdfs:subClassOf rdf:resource="https://w3id.org/cerif2/Resource_Identifier"/>
-        <rdfs:comment xml:lang="en">A DOI&lt;sup&gt;[1](#fn1)&lt;/sup&gt; identifier assigned to a [Document](../entities/Document.md).</rdfs:comment>
+        <rdfs:comment xml:lang="en">A DOI&lt;sup&gt;[1](#fn1)&lt;/sup&gt; identifier assigned to a [Resource](../entities/Resource.md).</rdfs:comment>
         <rdfs:label xml:lang="en">DOI Identifier</rdfs:label>
     </owl:Class>
     
@@ -3291,6 +3291,17 @@ might be some platform identifier, regional identifier or national identifier.</
         <rdfs:subClassOf rdf:resource="https://w3id.org/cerif2/Involvement"/>
         <rdfs:comment xml:lang="en">The [Involvement](../entities/Involvement.md) of being a member in a [Group](../entities/Group.md).</rdfs:comment>
         <rdfs:label xml:lang="en">Membership</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/cerif2/Metadata_Set -->
+
+
+    <owl:Class rdf:about="https://w3id.org/cerif2/Metadata_Set">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cerif2/Document"/>
+        <rdfs:comment xml:lang="en">A document that is a set of formalized metadata about some other resource.&lt;sup&gt;[1](#fn1)&lt;/sup&gt;</rdfs:comment>
+        <rdfs:label xml:lang="en">Metadata Set</rdfs:label>
     </owl:Class>
     
 

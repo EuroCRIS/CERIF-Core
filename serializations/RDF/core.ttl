@@ -503,14 +503,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                    rdfs:comment "A Document can be a description of a [Resource](../entities/Resource.md) or Resources."@en .
 
 
-###  https://w3id.org/cerif2/Document#isMetadataOf
-<https://w3id.org/cerif2/Document#isMetadataOf> rdf:type owl:ObjectProperty ;
-                                                owl:inverseOf <https://w3id.org/cerif2/Resource#hasMetadata> ;
-                                                rdfs:domain :Document ;
-                                                rdfs:range :Resource ;
-                                                rdfs:comment "A Document can be metadata of a [Resource](../entities/Resource.md) or Resources."@en .
-
-
 ###  https://w3id.org/cerif2/Document#isPartOf
 <https://w3id.org/cerif2/Document#isPartOf> rdf:type owl:ObjectProperty ;
                                             rdfs:domain :Document ;
@@ -773,6 +765,14 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                rdfs:range :Position .
 
 
+###  https://w3id.org/cerif2/Metadata_Set#isMetadataOf
+<https://w3id.org/cerif2/Metadata_Set#isMetadataOf> rdf:type owl:ObjectProperty ;
+                                                    owl:inverseOf <https://w3id.org/cerif2/Resource#hasMetadata> ;
+                                                    rdfs:domain :Metadata_Set ;
+                                                    rdfs:range :Resource ;
+                                                    rdfs:comment "A Metadata Set can be metadata of a [Resource](../entities/Resource.md) or Resources."@en .
+
+
 ###  https://w3id.org/cerif2/Organisation_Unit#hasPart
 <https://w3id.org/cerif2/Organisation_Unit#hasPart> rdf:type owl:ObjectProperty ;
                                                     owl:inverseOf <https://w3id.org/cerif2/Organisation_Unit#isPartOf> ;
@@ -959,8 +959,8 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 ###  https://w3id.org/cerif2/Resource#hasMetadata
 <https://w3id.org/cerif2/Resource#hasMetadata> rdf:type owl:ObjectProperty ;
                                                rdfs:domain :Resource ;
-                                               rdfs:range :Document ;
-                                               rdfs:comment "A Resource can have any number of [Documents](../entities/Document.md) as metadata descriptions."@en .
+                                               rdfs:range :Metadata_Set ;
+                                               rdfs:comment "A Resource can have any number of [Metadata Sets](../entities/Metadata_Set.md) as metadata descriptions."@en .
 
 
 ###  https://w3id.org/cerif2/Resource#hasPart
@@ -1856,7 +1856,7 @@ namely, submit an [Application](../entities/Application.md)."""@en ;
 ###  https://w3id.org/cerif2/DOI_Identifier
 :DOI_Identifier rdf:type owl:Class ;
                 rdfs:subClassOf :Resource_Identifier ;
-                rdfs:comment "A DOI<sup>[1](#fn1)</sup> identifier assigned to a [Document](../entities/Document.md)."@en ;
+                rdfs:comment "A DOI<sup>[1](#fn1)</sup> identifier assigned to a [Resource](../entities/Resource.md)."@en ;
                 rdfs:label "DOI Identifier"@en .
 
 
@@ -2053,6 +2053,13 @@ might be some platform identifier, regional identifier or national identifier.""
             rdfs:subClassOf :Involvement ;
             rdfs:comment "The [Involvement](../entities/Involvement.md) of being a member in a [Group](../entities/Group.md)."@en ;
             rdfs:label "Membership"@en .
+
+
+###  https://w3id.org/cerif2/Metadata_Set
+:Metadata_Set rdf:type owl:Class ;
+              rdfs:subClassOf :Document ;
+              rdfs:comment "A document that is a set of formalized metadata about some other resource.<sup>[1](#fn1)</sup>"@en ;
+              rdfs:label "Metadata Set"@en .
 
 
 ###  https://w3id.org/cerif2/Monetary_Amount
