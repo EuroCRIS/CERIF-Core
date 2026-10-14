@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -58,3 +58,11 @@ PlantUML sources are in `diagrams/*.puml`; rendered SVGs alongside them. `core.p
 ### Module extensibility
 
 CERIF Core is designed to be extended by separate module repos. Scripts accept extra directory arguments (e.g. `./tools/list-references.sh ../CERIF-Module-X`) to check cross-repo link integrity or generate diagrams that span multiple modules.
+
+## Git conventions
+
+Git commit messages are generally structured as follows:
+1. Subject line, follows the "If applied, this commit will ..." pattern
+2. Descriptive body containing more details about the commit; optional, and usually omitted for commits proposed by an AI agent, as the prompts listed below carry the context
+3. In case the commit is proposed by an AI agent, a Co-Authored-By line mentioning the agent and the organization on whose behalf the AI agent runs, e.g. in commit ec3d668f
+4. In case the commit is proposed by an AI agent, the important prompts are listed as lines starting with "Prompt:", each on its own line separated by blank lines
