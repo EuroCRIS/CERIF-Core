@@ -257,6 +257,7 @@
 
 !startsub Resource
     class "Resource" #ffffff {
+        description : Multilingual_String
     }
 
     "Resource" "0..*" -- "0..*" "Resource" : is part of >

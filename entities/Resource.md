@@ -9,6 +9,9 @@ Anything that can be used for or in the process of research.
 [Infrastructure](../entities/Infrastructure.md) is the third one,
 [Document](../entities/Document.md) is the fourth one. 
 
+## Attributes
+description : [Multilingual String](../datatypes/Multilingual_String.md) – a free-text description of the resource; for longer or formalized descriptions, use the has-description or has-metadata relationship
+
 ## Relationships
 
 <a name="rel__is-provided-by">is-provided-by</a> / [provides](../entities/Contribution_Statement.md#user-content-rel__provides) : A Resource can be provided in any number of [Contribution Statements](../entities/Contribution_Statement.md).
