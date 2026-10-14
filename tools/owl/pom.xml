@@ -73,8 +73,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.16.0</version>
 				<configuration>
-					<source>${maven.compiler.version}</source>
-					<target>${maven.compiler.version}</target>
+					<release>${maven.compiler.version}</release>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
