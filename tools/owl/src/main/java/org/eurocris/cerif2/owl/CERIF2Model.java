@@ -43,12 +43,14 @@ import java.util.concurrent.*;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CERIF2Model implements AutoCloseable {
 
 	public static final Pattern PATTERN_ATTR = Pattern.compile("^([^()]*?)/datatypes/(.*).md$");
 	public static final Pattern PATTERN_REL = Pattern.compile( "\\(([^()]*?)/entities/([^.]*)\\.md(#[^)]*)?\\)" );
+	public static final Pattern PATTERN_REL_URL = Pattern.compile( "^([^()]*?)/(entities|datatypes)/([^.]*)\\.md(#[^()]*)?$" );
 
 	protected final Logger log = LoggerFactory.getLogger( getClass().getName() );
 
@@ -116,9 +118,11 @@ public class CERIF2Model implements AutoCloseable {
 				log.info( "" );
 				log.info( "Back to constructing model for module '" + moduleName + "', IRI " + baseIRI );
 			}
-			try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(path.resolve("datatypes"), "*.md")) {
-				for (final Path datatypeFilePath : datatypes) {
-					readInDatatypeFile(new StructuredFile(datatypeFilePath));
+			if ( Files.isDirectory( path.resolve( "datatypes" ) ) ) {
+				try (final DirectoryStream<Path> datatypes = Files.newDirectoryStream(path.resolve("datatypes"), "*.md")) {
+					for (final Path datatypeFilePath : datatypes) {
+						readInDatatypeFile(new StructuredFile(datatypeFilePath));
+					}
 				}
 			}
 			try (final DirectoryStream<Path> entities = Files.newDirectoryStream(path.resolve("entities"), "*.md")) {
@@ -332,8 +336,17 @@ public class CERIF2Model implements AutoCloseable {
 					Link x = (Link) specializationOfSection.getContents().get( 0 ).getChildOfType( Link.class );
 					while ( x != null ) {
 						final String linkUrl = x.getUrl().toString();
-						final String linkUrlBase = linkUrl.replaceAll( ".*/", "" ).replaceFirst( "\\.md$", "" );
-						final IRI superclassIRI = baseIRI.resolve( linkUrlBase );
+						final Matcher superclassMatcher = PATTERN_REL_URL.matcher( linkUrl );
+						if ( ! superclassMatcher.matches() ) {
+							throw new ParseException( classIRI + ": Specialization of link '" + linkUrl + "' not in the form <module path>/{entities|datatypes}/<name>.md", x );
+						}
+						final CERIF2Model superclassModel = locateByGithubUri( superclassMatcher.group(1) );
+						if ( superclassModel == null ) {
+							throw new ParseException( classIRI + ": Unknown module in Specialization of link '" + linkUrl + "'", x );
+						}
+						final IRI superclassIRI = ( "entities".equals( superclassMatcher.group(2) ) )
+								? superclassModel.getEntityIRI( superclassMatcher.group(3) )
+								: superclassModel.getDatatypeIRI( superclassMatcher.group(3) );
 						final OWLClass owlSuperclass = dataFactory.getOWLClass( superclassIRI );
 						ont.add( dataFactory.getOWLSubClassOfAxiom( owlClass, owlSuperclass ) );
 						x = (Link) x.getNextAny( Link.class );
@@ -494,8 +507,15 @@ public class CERIF2Model implements AutoCloseable {
 		log.info( "XSLT transformed into " + outputFilePath + ".xml" );
 		xmlOutputFile.delete();
 
-		// And transform each split-up file back to Turtle
-		Files.list( perClassDirectory ).forEach(
+		// And transform each split-up file back to Turtle.
+		// Take a snapshot first: the loop writes new .ttl files into the same
+		// directory, and open directory streams are not guaranteed to ignore
+		// entries created after they were opened (on macOS they can return them).
+		final List<Path> splitUpFiles = Files.list( perClassDirectory )
+				.filter( ( Path path ) -> path.getFileName().toString().endsWith( ".owl" ) )
+				.sorted()
+				.collect( Collectors.toList() );
+		splitUpFiles.forEach(
 			( Path path ) -> {
 				try {
 					try ( final InputStream is = Files.newInputStream( path ) ) {
@@ -689,7 +709,7 @@ public class CERIF2Model implements AutoCloseable {
 	private final Map<String, CERIF2Model> dependencies = new HashMap<String, CERIF2Model>();
 
 	public CERIF2Model locateByGithubUri( final String cerifModuleURI ) {
-		return ( "..".equals( cerifModuleURI ) ) ? this : dependencies.get( cerifModuleURI );
+		return ( "..".equals( cerifModuleURI ) || ".".equals( cerifModuleURI ) ) ? this : dependencies.get( cerifModuleURI );
 	}
 
 }
