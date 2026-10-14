@@ -2555,6 +2555,17 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Resource#description -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Resource#description">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Multilingual_String"/>
+        <rdfs:label>a free-text description of the resource; for longer or formalized descriptions, use the has-description or has-metadata relationship</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Resource_Request#requestDate -->
 
 

@@ -1599,6 +1599,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                rdfs:range :ROR_ID .
 
 
+###  https://w3id.org/cerif2/Resource#description
+<https://w3id.org/cerif2/Resource#description> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :Resource ;
+                                               rdfs:range :Multilingual_String ;
+                                               rdfs:label "a free-text description of the resource; for longer or formalized descriptions, use the has-description or has-metadata relationship" .
+
+
 ###  https://w3id.org/cerif2/Resource_Request#requestDate
 <https://w3id.org/cerif2/Resource_Request#requestDate> rdf:type owl:DatatypeProperty ;
                                                        rdfs:domain :Resource_Request ;
