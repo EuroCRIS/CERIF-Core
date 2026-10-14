@@ -14,39 +14,39 @@
 
 	<properties>
 		<fully.qualified.main.class.name>org.eurocris.cerif2.owl.Tools</fully.qualified.main.class.name>
-		<maven.compiler.version>11</maven.compiler.version>
+		<maven.compiler.version>25</maven.compiler.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>[1.4.12,)</version>
+			<version>1.6.5</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-text</artifactId>
-		    <version>[1.14.0,2)</version>
+		    <version>1.15.0</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>owlapi-api</artifactId>
-			<version>[5.5.0,5.6)</version>
+			<version>5.5.1</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>owlapi-apibinding</artifactId>
-			<version>[5.5.0,5.6)</version>
+			<version>5.5.1</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>owlapi-impl</artifactId>
-			<version>[5.5.0,5.6)</version>
+			<version>5.5.1</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>owlapi-rio</artifactId>
-			<version>[5.5.0,5.6)</version>
+			<version>5.5.1</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.apache.httpcomponents</groupId>
@@ -57,12 +57,12 @@
  		<dependency>
 			<groupId>com.vladsch.flexmark</groupId>
 			<artifactId>flexmark-all</artifactId>
-			<version>[0.64.8,1)</version>
+			<version>0.64.8</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.saxon</groupId>
 			<artifactId>Saxon-HE</artifactId>
-			<version>[12,)</version>
+			<version>12.10</version>
 		</dependency>
 	</dependencies>
 
@@ -71,7 +71,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.13.0</version>
+				<version>3.16.0</version>
 				<configuration>
 					<source>${maven.compiler.version}</source>
 					<target>${maven.compiler.version}</target>
@@ -81,7 +81,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.3.1</version>
+				<version>3.5.0</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
@@ -89,7 +89,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.5.2</version>
+				<version>3.6.2</version>
 				<configuration>
 					<filters>
 						<filter>
