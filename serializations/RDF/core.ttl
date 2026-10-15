@@ -1110,13 +1110,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                     rdfs:comment "A Resource Request specifies the [Resource](../entities/Resource.md) that is the subject of the request."@en .
 
 
-###  https://w3id.org/cerif2/Resource_Request#revises
-<https://w3id.org/cerif2/Resource_Request#revises> rdf:type owl:ObjectProperty ;
-                                                   rdfs:domain :Resource_Request ;
-                                                   rdfs:range :Resource_Request ;
-                                                   rdfs:comment "A Resource Request can revise the another [Resource Request](../entities/Document.md) that wasn't successful in the previous round."@en .
-
-
 ###  https://w3id.org/cerif2/Resource_Usage_Statement#details
 <https://w3id.org/cerif2/Resource_Usage_Statement#details> rdf:type owl:ObjectProperty ;
                                                            rdfs:domain :Resource_Usage_Statement ;

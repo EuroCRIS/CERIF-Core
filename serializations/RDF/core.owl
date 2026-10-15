@@ -1742,17 +1742,6 @@
     
 
 
-    <!-- https://w3id.org/cerif2/Resource_Request#revises -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Resource_Request#revises">
-        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Request"/>
-        <rdfs:range rdf:resource="https://w3id.org/cerif2/Resource_Request"/>
-        <rdfs:comment xml:lang="en">A Resource Request can revise the another [Resource Request](../entities/Document.md) that wasn&apos;t successful in the previous round.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/cerif2/Resource_Usage_Statement#details -->
 
 
