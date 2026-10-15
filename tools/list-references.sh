@@ -106,8 +106,7 @@ do
   fi
 done
 
-
-ls ./datatypes/*.md >${TMPDIR}/CERIF-datatypes-$$.txt
+ls ./datatypes/*.md >${TMPDIR}/CERIF-datatypes-$$.txt 2>/dev/null
 sed <README.md -e '1,/### Data Types/d' -e '/^## /,$d' \
 | grep -oh -e '\(./datatypes/[A-Za-z0-9_]*\.md\)' \
 | sort \
