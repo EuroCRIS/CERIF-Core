@@ -28,8 +28,6 @@ request date: [Date](../datatypes/Date.md)
 
 <a name="rel__is-described-by">is-described-by</a> / [describes-resource-request](../entities/Document.md#user-content-rel__describes-resource-request) : A Resource Request can optionally reference its contents, the [Document](../entities/Document.md) that details the resource request.
 
-<a name="rel__revises">revises</a> : A Resource Request can revise the another [Resource Request](../entities/Document.md) that wasn't successful in the previous round.
-
 <a name="rel__has-evaluation-outcome">has-evaluation-outcome</a> / [is-an-evaluation-outcome-of](../entities/Evaluation_Outcome.md#user-content-rel__is-an-evaluation-outcome-of) : A Resource Request can have some kind of process which results in an [Evaluation Outcome](../entities/Evaluation_Outcome.md).
 
 <a name="rel__has-decision">has-decision</a> / [is-a-decision-on](../entities/Decision.md#user-content-rel__is-a-decision-on) : A Resource Request can have a [Decision](../entities/Decision.md) about accepting or refusing request made by addressee.
