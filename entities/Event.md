@@ -27,7 +27,9 @@ contacts : List<[Contact_Information](../datatypes/Contact_Information.md)>
 
 <a name="rel__has-contribution">has-contribution</a> / [has-target](../entities/Contribution_to_Event.md#user-content-rel__has-target) : An Event can have any number of [contributions](../entities/Contribution_to_Event.md) that helped it take place or arise.
 
-<a name="rel__collocated-with">collocated-with</a> : An Event can be collocated with the another [Events](../entities/Event.md).
+<a name="rel__is-collocated-with">is-collocated-with</a> / [hosts-collocated](../entities/Event.md#user-content-rel__hosts-collocated) : A Event can is collocated with any number of [Events](../entities/Event.md).
+
+<a name="rel__hosts-collocated">hosts-collocated</a> / [is-collocated-with](../entities/Event.md#user-content-rel__is-collocated-with) : A Event can hosts collocated any number of [Events](../entities/Event.md).
 
 <a name="rel__belongs-to-series">belongs-to-series</a> / [has-instances](../entities/Event_Series.md#user-content-rel__has-instances) : An Event can be an instance of [Event Series](../entities/Event_Series.md).
 

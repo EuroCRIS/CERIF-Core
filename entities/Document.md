@@ -37,7 +37,7 @@ title : [Multilingual String](../datatypes/Multilingual_String.md)
 
 <a name="rel__describes-resource-offer">describes-resource-offer</a> / [is-described-by](../entities/Resource_Offer.md#user-content-rel__is-described-by) : A Document can provide description of a [Resource Offer](../entities/Resource_Offer.md).
 
-<a name="rel__presents-decision">presents-decision</a> / [is-expressed-by](../entities/Decision.md#user-content-rel__is-expressed-by) : A Document can present a [Decision](../entities/Decision.md).
+<a name="rel__presents-decision">presents-decision</a> / [is-expressed-in](../entities/Decision.md#user-content-rel__is-expressed-in) : A Document can present a [Decision](../entities/Decision.md).
 
 <a name="rel__awarded-by">awarded-by</a> / [awarded-for-a-document](../entities/Prize_Award.md#user-content-rel__awarded-for-a-document) : A Document can be awarded by a [Prize Award](../entities/Prize_Award.md).
 
