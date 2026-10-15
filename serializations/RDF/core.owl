@@ -369,8 +369,9 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Agent#awardsPrize">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Prize_Award#awardedByWhom"/>
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Agent"/>
-        <rdfs:range rdf:resource="https://w3id.org/cerif2/Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
         <rdfs:comment xml:lang="en">An Agent can award any number of [Prize Awards](../entities/Prize_Award.md).</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -937,17 +938,6 @@
     
 
 
-    <!-- https://w3id.org/cerif2/Event#collocatedWith -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Event#collocatedWith">
-        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Event"/>
-        <rdfs:range rdf:resource="https://w3id.org/cerif2/Event"/>
-        <rdfs:comment xml:lang="en">An Event can be collocated with the another [Events](../entities/Event.md).</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/cerif2/Event#dateRange -->
 
 
@@ -965,6 +955,29 @@
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Event"/>
         <rdfs:range rdf:resource="https://w3id.org/cerif2/Contribution_to_Event"/>
         <rdfs:comment xml:lang="en">An Event can have any number of [contributions](../entities/Contribution_to_Event.md) that helped it take place or arise.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Event#hostsCollocated -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Event#hostsCollocated">
+        <owl:inverseOf rdf:resource="https://w3id.org/cerif2/Event#isCollocatedWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Event"/>
+        <rdfs:comment xml:lang="en">A Event can hosts collocated any number of [Events](../entities/Event.md).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/cerif2/Event#isCollocatedWith -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Event#isCollocatedWith">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Event"/>
+        <rdfs:comment xml:lang="en">A Event can is collocated with any number of [Events](../entities/Event.md).</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -1341,7 +1354,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/cerif2/Prize_Award#awardedByWhom">
         <rdfs:domain rdf:resource="https://w3id.org/cerif2/Prize_Award"/>
-        <rdfs:range rdf:resource="https://w3id.org/cerif2/Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:comment xml:lang="en">A Prize can be awarded by any number of [Agents](../entities/Agent.md).</rdfs:comment>
     </owl:ObjectProperty>
     

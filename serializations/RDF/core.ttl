@@ -219,8 +219,9 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/cerif2/Agent#awardsPrize
 <https://w3id.org/cerif2/Agent#awardsPrize> rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf <https://w3id.org/cerif2/Prize_Award#awardedByWhom> ;
                                             rdfs:domain :Agent ;
-                                            rdfs:range :Event ;
+                                            rdfs:range :Prize_Award ;
                                             rdfs:comment "An Agent can award any number of [Prize Awards](../entities/Prize_Award.md)."@en .
 
 
@@ -593,13 +594,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                 rdfs:comment "An Event can be an instance of [Event Series](../entities/Event_Series.md)."@en .
 
 
-###  https://w3id.org/cerif2/Event#collocatedWith
-<https://w3id.org/cerif2/Event#collocatedWith> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain :Event ;
-                                               rdfs:range :Event ;
-                                               rdfs:comment "An Event can be collocated with the another [Events](../entities/Event.md)."@en .
-
-
 ###  https://w3id.org/cerif2/Event#dateRange
 <https://w3id.org/cerif2/Event#dateRange> rdf:type owl:ObjectProperty ;
                                           rdfs:domain :Event ;
@@ -611,6 +605,21 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                 rdfs:domain :Event ;
                                                 rdfs:range :Contribution_to_Event ;
                                                 rdfs:comment "An Event can have any number of [contributions](../entities/Contribution_to_Event.md) that helped it take place or arise."@en .
+
+
+###  https://w3id.org/cerif2/Event#hostsCollocated
+<https://w3id.org/cerif2/Event#hostsCollocated> rdf:type owl:ObjectProperty ;
+                                                owl:inverseOf <https://w3id.org/cerif2/Event#isCollocatedWith> ;
+                                                rdfs:domain :Event ;
+                                                rdfs:range :Event ;
+                                                rdfs:comment "A Event can hosts collocated any number of [Events](../entities/Event.md)."@en .
+
+
+###  https://w3id.org/cerif2/Event#isCollocatedWith
+<https://w3id.org/cerif2/Event#isCollocatedWith> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain :Event ;
+                                                 rdfs:range :Event ;
+                                                 rdfs:comment "A Event can is collocated with any number of [Events](../entities/Event.md)."@en .
 
 
 ###  https://w3id.org/cerif2/Event_Identifier#isAssignedTo
@@ -851,7 +860,7 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 ###  https://w3id.org/cerif2/Prize_Award#awardedByWhom
 <https://w3id.org/cerif2/Prize_Award#awardedByWhom> rdf:type owl:ObjectProperty ;
                                                     rdfs:domain :Prize_Award ;
-                                                    rdfs:range :Event ;
+                                                    rdfs:range :Agent ;
                                                     rdfs:comment "A Prize can be awarded by any number of [Agents](../entities/Agent.md)."@en .
 
 
