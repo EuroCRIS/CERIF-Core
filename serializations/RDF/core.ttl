@@ -54,6 +54,10 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
 :FundRef_ID rdf:type rdfs:Datatype .
 
 
+###  https://w3id.org/cerif2/Handle_ID
+:Handle_ID rdf:type rdfs:Datatype .
+
+
 ###  https://w3id.org/cerif2/ISNI_ID
 :ISNI_ID rdf:type rdfs:Datatype .
 
@@ -1419,6 +1423,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                           rdfs:range :Multilingual_String .
 
 
+###  https://w3id.org/cerif2/Handle_Identifier#handleId
+<https://w3id.org/cerif2/Handle_Identifier#handleId> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain :Handle_Identifier ;
+                                                     rdfs:range :Handle_ID .
+
+
 ###  https://w3id.org/cerif2/ISNI_Identifier#isniId
 <https://w3id.org/cerif2/ISNI_Identifier#isniId> rdf:type owl:DatatypeProperty ;
                                                  rdfs:domain :ISNI_Identifier ;
@@ -2019,6 +2029,13 @@ by an [Agent](../entities/Agent.md)."""@en ;
                             rdfs:subClassOf :Agent ;
                             rdfs:comment "A common supertype for [Group](../entities/Group.md) and [Organisation Unit](../entities/Organisation_Unit.md)."@en ;
                             rdfs:label "Group or Organisation Unit"@en .
+
+
+###  https://w3id.org/cerif2/Handle_Identifier
+:Handle_Identifier rdf:type owl:Class ;
+                   rdfs:subClassOf :Resource_Identifier ;
+                   rdfs:comment "A Handle<sup>[1](#fn1)</sup> identifier assigned to a [Resource](../entities/Resource.md)."@en ;
+                   rdfs:label "Handle Identifier"@en .
 
 
 ###  https://w3id.org/cerif2/ISNI_Identifier

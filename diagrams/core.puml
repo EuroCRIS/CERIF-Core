@@ -388,6 +388,12 @@
 
     "Resource_Identifier" <|-- "DOI_Identifier"
 
+    class "Handle_Identifier" #ffffff {
+        handleId : Handle_ID
+    }
+
+    "Resource_Identifier" <|-- "Handle_Identifier"
+
     class "Wikidata_Resource_Identifier" #ffffff {
         wikidataId : Wikidata_ID
     }

@@ -95,6 +95,13 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Handle_ID -->
+
+
+    <rdfs:Datatype rdf:about="https://w3id.org/cerif2/Handle_ID"/>
+    
+
+
     <!-- https://w3id.org/cerif2/ISNI_ID -->
 
 
@@ -2255,6 +2262,16 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Handle_Identifier#handleId -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Handle_Identifier#handleId">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Handle_Identifier"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Handle_ID"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/ISNI_Identifier#isniId -->
 
 
@@ -3237,6 +3254,17 @@ by an [Agent](../entities/Agent.md).</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/cerif2/Agent"/>
         <rdfs:comment xml:lang="en">A common supertype for [Group](../entities/Group.md) and [Organisation Unit](../entities/Organisation_Unit.md).</rdfs:comment>
         <rdfs:label xml:lang="en">Group or Organisation Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/cerif2/Handle_Identifier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/cerif2/Handle_Identifier">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/cerif2/Resource_Identifier"/>
+        <rdfs:comment xml:lang="en">A Handle&lt;sup&gt;[1](#fn1)&lt;/sup&gt; identifier assigned to a [Resource](../entities/Resource.md).</rdfs:comment>
+        <rdfs:label xml:lang="en">Handle Identifier</rdfs:label>
     </owl:Class>
     
 
