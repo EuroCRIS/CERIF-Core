@@ -377,6 +377,7 @@
 
 !startsub Resource_Identifier
     class "Resource_Identifier" #ffffff {
+        principal : Boolean
     }
 
     "Resource_Identifier" "0..*" <-- "1" "Resource" : has identifier <

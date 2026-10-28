@@ -2568,6 +2568,17 @@
     
 
 
+    <!-- https://w3id.org/cerif2/Resource_Identifier#principal -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/cerif2/Resource_Identifier#principal">
+        <rdfs:domain rdf:resource="https://w3id.org/cerif2/Resource_Identifier"/>
+        <rdfs:range rdf:resource="https://w3id.org/cerif2/Boolean"/>
+        <rdfs:label>whether this identifier is the principal one for the Resource it identifies, i.e. the identifier the Resource is primarily registered or published with; other identifiers attached to a Resource are supplementary</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/cerif2/Resource_Request#requestDate -->
 
 

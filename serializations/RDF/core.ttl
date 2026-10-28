@@ -1608,6 +1608,13 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                rdfs:label "a free-text description of the resource; for longer or formalized descriptions, use the has-description or has-metadata relationship" .
 
 
+###  https://w3id.org/cerif2/Resource_Identifier#principal
+<https://w3id.org/cerif2/Resource_Identifier#principal> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain :Resource_Identifier ;
+                                                        rdfs:range :Boolean ;
+                                                        rdfs:label "whether this identifier is the principal one for the Resource it identifies, i.e. the identifier the Resource is primarily registered or published with; other identifiers attached to a Resource are supplementary" .
+
+
 ###  https://w3id.org/cerif2/Resource_Request#requestDate
 <https://w3id.org/cerif2/Resource_Request#requestDate> rdf:type owl:DatatypeProperty ;
                                                        rdfs:domain :Resource_Request ;
