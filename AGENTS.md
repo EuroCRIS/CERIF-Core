@@ -19,6 +19,8 @@ All scripts are run from the **repository root**.
 | Build the OWL Java tool alone | `cd tools/owl && mvn clean package` |
 | Create a new entity skeleton | `./tools/new-entity.sh "Entity Name" ["Parent Entity Name"]` |
 | Create a new relationship (inserts into both entity files) | `./tools/new-relationship.sh "Class1" "role1to2" "Class2" "role2to1"` |
+| List the diagram model sections (available vs. referenced via `!includesub`) | `./tools/list-model-sections.sh` |
+| Deploy generated RDF to cerif2.eu manually over ssh | `./tools/publish-RDF-on-main.sh` (does nothing off `main`; CI also deploys on every push) |
 
 **Requires Java 8+** for diagram generation and the OWL tool. Diagrams use `tools/plantuml.jar`.
 
@@ -29,6 +31,12 @@ CI (`.github/workflows/refresh-generated-files.yml`) runs `generate-diagrams.sh`
 ### Markdown-as-model
 
 `entities/*.md` and `datatypes/*.md` are the authoritative source for the model. The Java OWL tool (`tools/owl/`) parses these files to generate `serializations/RDF/` — do not edit files under `serializations/` by hand; they are regenerated on every push.
+
+### Adding and editing model elements
+
+There is no script for creating datatypes: create the file by hand from `guidelines/TEMPLATE_DATATYPE_SIMPLE.md` or `guidelines/TEMPLATE_DATATYPE_COMPLEX.md` (entities and relationships are handled by `new-entity.sh` / `new-relationship.sh` above).
+
+After adding or removing entities, datatypes, or relationships, run `generate-diagrams.sh` and `compile-owl-tool-and-run-it.sh` immediately, and commit the regenerated artifacts together with the Markdown changes, along with the updated `README.md` rows (the narrative entity lists and the entity/datatype index). Textual edits to an existing datatype (e.g. refining a restrictions regular expression) do not change the serializations and require no regeneration — the serializations carry the declarations and structure, not the datatype prose.
 
 ### Entity/Datatype file structure
 
@@ -57,7 +65,16 @@ PlantUML sources are in `diagrams/*.puml`; rendered SVGs alongside them. `core.p
 
 ### Module extensibility
 
-CERIF Core is designed to be extended by separate module repos. Scripts accept extra directory arguments (e.g. `./tools/list-references.sh ../CERIF-Module-X`) to check cross-repo link integrity or generate diagrams that span multiple modules.
+CERIF Core is designed to be extended by separate module repos. Scripts accept extra directory arguments (e.g. `./tools/list-references.sh ../CERIF-Module-X`) to check cross-repo link integrity or generate diagrams that span multiple modules. In this workspace the module repos are checked out side-by-side (e.g. `../CERIF-InstrumentsModule`). When a module references a new Core element (e.g. in its mapping tables), commit the Core change first, then update and commit the module.
+
+### Regular-expression restrictions
+
+Identifier datatypes carry regular-expression restrictions. Lessons from devising them (see `Handle_ID.md` vs. the simpler `DOI_ID.md`):
+
+- Ground the syntax in the relevant specification's ABNF, but constrain to the *practical* syntax where the formal grammar is looser than actual practice (e.g. RFC 3651 allows arbitrary UTF-8 handle naming authorities, yet the Global Handle Registry only issues numeric prefixes).
+- Iterate the pattern against positive and negative test cases until all pass — in particular all spellings the datatype must reject (URI and URL forms of the identifier, scheme-less hostname forms) and malformed values (empty prefix/suffix, superfluous dots, etc.). Verify with a throwaway script (e.g. `python3` plus `re`) instead of by inspection, and do not commit the script.
+- Anchor the pattern (`^...$`) so it cannot merely match inside superset strings under a partial-matching implementation — essential whenever a restriction excludes URI/URL spellings of an identifier.
+- Document the resulting design decisions and any deviation from the spec in the restriction bullet, with the specification cited in the footnotes.
 
 ## Git conventions
 
